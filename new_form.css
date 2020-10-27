@@ -1,3 +1,6 @@
+body {
+	background-image: url("background.jpg");
+}
 h4{
 	cursor: pointer;
 }
@@ -15,7 +18,7 @@ h4{
 	float: left;
 	display:none
 }
-.col-l-12 {
+.col-xl-12 {
 	height:50px;
 }
 .col-s-5 {
@@ -140,12 +143,41 @@ h4{
   border:solid 1px #000;
 }
 
+#airhole1 {
+	border-left:solid 7px black;
+	height:100px;
+	width:5%;
+	float:left;
+	margin-left:50px;
+	margin-right:none;
+	margin-top:9px;
+	margin-bottom:24px;
+	border-top-left-radius: 40px 50px;
+	border-bottom-left-radius: 40px 50px;
+}
+
+#airhole2 {
+	border-left:solid 7px black;
+	height:100px;
+	width:5%;
+	float:left;
+	margin-left: none;
+	margin-right:none;
+	margin-top:9px;
+	margin-bottom:24px;
+	border-top-left-radius: 40px 50px;
+	border-bottom-left-radius: 40px 50px;
+}
+
 #centerraised {
 	height:120px;
-	border:solid 1px #000;
+	border:solid 3px #000;
 	width:80%;
-	margin-left: 20%;
+	float:right;
+	/*margin-left: 20%;*/
+	margin-right: none;
 	padding-right: 0px;
+	margin-bottom:13px;
 	border-top-left-radius: 60px 70px;
 	border-bottom-left-radius: 60px 70px;
 }

@@ -51,13 +51,13 @@ def index():
         }
     locations = {
         '':'',
-        "US Units":"U",
-        "System International":"S",
-        "Canadian":"C",
+        "US":"U",
+        "SI":"S",
+        "CA":"C",
         }
-    pets = ['Toast','Ghost','Boba']
-    foods = ['Salmon','Chicken','Beef']
-    activities = ['eat','play','snuggle']
+    three_points = {'None':'X','Hot Water Reheat Coil':'H','Radiator':'R','Chilled Water Coil':'C'}
+    zero_ten = {'None':'X','Hot Water Reheat Coil':'H','Radiator':'R','Chilled Water Coil':'C'}
+    binary_out = {'None':'X','Fan':'F','BO1':'B1','BO2':'B2'}
     pet = ""
     try:
         pet = request.form['pet'][:-1]
@@ -73,9 +73,9 @@ def index():
             For ease, the key:value pairs in the arguments should match.
     """
     return render_template('new_form.html',
-        pets=pets,
-        foods=foods,
-        activities=activities,
+        threepts=three_points,
+        zten=zero_ten,
+        binaryout=binary_out,
         pet=pet,
         dxrs=dxrs,
         etypes=etypes,

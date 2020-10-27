@@ -11,9 +11,7 @@
 
 	<!-- Step 11: Include links to bootstrap -->
 	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 	<!-- Step 12: Include link to our javascript file. This is the file that will read objects
 	from this html page, and send AJAX requests to our python Flask server. -->
@@ -28,15 +26,15 @@
 	are collected and sent by AJAX to flask via a post request. Once we handle the data in Flask (our python
 	file) we will pass it back as a JSON value to be shown in the success alert banner. -->
 	<div class='row'>
-		<div id="successAlert" class="col-l-12 alert alert-success" role="alert"></div>
-		<div id="errorAlert" class="col-l-12 alert alert-danger" role="alert" style="display:none"></div>
+		<div id="successAlert" class="col-lg-12 alert alert-success" role="alert"></div>
 	</div>
 
 	<div class='row'>
-		<div class='col-sm-12'>blah</div>
+		<div class='col-sm-12'>
+		</div>
 	</div>
 	<div class='row'>
-		<div class='col-l-6' id="rectangle">
+		<div id="rectangle">
 			<div id='toprail'>
 				<div id='usb-container'>
 				     <div class="outer-square">
@@ -109,11 +107,15 @@
 			     </div>
 			</div>
 			<div id='top-space'></div>
-			<div id='centerraised'>
-				<p><span id="siemens">SIEMENS</span></p>
-				<div id='run'><span id='r'>RUN</span></div>
-				<br>
-				<div id='service'><span id='svc'>SVC</span></div>
+			<div id='center-container'>
+				<div id='airhole1'></div>
+				<div id='airhole2'></div>
+				<div id='centerraised'>
+					<p><span id="siemens">SIEMENS</span></p>
+					<div id='run'><span id='r'>RUN</span></div>
+					<br>
+					<div id='service'><span id='svc'>SVC</span></div>
+				</div>
 			</div>
 			<div id='bottom-space'></div>
 			<div id="bottomrail">
@@ -185,11 +187,12 @@
 			     </div>
 			</div>
 	     </div>
-	     <div class='col-s-5'>
+	     <div class='col-sm-4'>
 	     	<!-- Step 15: Create a form container to hold our selection objects -->
 			<form>
 				<div id='container'>
-					<div class="form-inline" id='first'>
+					<div id='first'>
+						<label><span class="badge badge-secondary">NAME</span></label>
 						<select name='dxr-selection' class='select' id='dxrSelection'>
 							{% for key, value in dxrs.items() %}
 								<option value="{{value}}">{{key}}</option>
@@ -198,21 +201,24 @@
 					</div>
 
 
-					<div class="form-inline" id='second-1'>
+					<div id='second-1'>
+						<label><span class="badge badge-secondary">TYPE</span></label>
 						<select name='etype-selection' class='select' id='etypeSelection'>
 							{% for key, value in etypes.items() %}
 								<option value="{{value}}">{{key}}</option>
 							{% endfor %}
 						</select>
 					</div>
-					<div class="form-inline" id='second-2'>
+					<div id='second-2'>
+						<label><span class="badge badge-secondary">TYPE</span></label>
 						<select name='mtype-selection' class='select' id='mtypeSelection'>
 							{% for key, value in mtypes.items() %}
 								<option value="{{value}}">{{key}}</option>
 							{% endfor %}
 						</select>
 					</div>
-					<div class="form-inline" id='second-3'>
+					<div id='second-3'>
+						<label><span class="badge badge-secondary">TYPE</span></label>
 						<select name='ptype-selection' class='select' id='ptypeSelection'>
 							{% for key, value in ptypes.items() %}
 								<option value="{{value}}">{{key}}</option>
@@ -221,7 +227,8 @@
 					</div>
 
 
-					<div class="form-inline" id='third'>
+					<div id='third'>
+						<label><span class="badge badge-secondary">UNITS</span></label>
 						<select name='loc-selection' class='select' id='locSelection'>
 							{% for key, value in locations.items() %}
 								<option value="{{value}}">{{key}}</option>
@@ -240,23 +247,34 @@
 				- Note** All of the select tags are part of the 'select' class, but have their own unique IDs-->
 				<h3><span class="badge badge-secondary">AO:3ptFloating</span></h3>
 				<div class="form-inline">
-					<select name='pet-selection' class='select' id='petSelection'>
-						{% for pet in pets %}
-							<option selected="{{pet}}">{{pet}}</option>
+					<label><span class="badge badge-secondary">Y1,Y2</span></label>
+					<select name='y1y2-3pt' class='select' id='y1y2-3pt'>
+						{% for key, value in threepts.items() %}
+							<option value="{{value}}">{{key}}</option>
 						{% endfor %}
 					</select>
 				</div>
 				<div class="form-inline">
-					<select name='food-selection' class='select' id='foodSelection'>
-						{% for food in foods %}
-							<option selected="{{food}}">{{food}}</option>
+					<label><span class="badge badge-secondary">Y3,Y4</span></label>
+					<select name='y3y4-3pt' class='select' id='y3y4-3pt'>
+						{% for key, value in threepts.items() %}
+							<option value="{{value}}">{{key}}</option>
 						{% endfor %}
 					</select>
 				</div>
 				<div class="form-inline">
-					<select name='activity-selection' class='select' id='activitySelection'>
-						{% for activity in activities %}
-							<option selected="{{activity}}">{{activity}}</option>
+					<label><span class="badge badge-secondary">Y5,Y6</span></label>
+					<select name='y5y6-3pt' class='select' id='y5y6-3pt'>
+						{% for key, value in threepts.items() %}
+							<option value="{{value}}">{{key}}</option>
+						{% endfor %}
+					</select>
+				</div>
+				<div class="form-inline">
+					<label><span class="badge badge-secondary">Y7,Y8</span></label>
+					<select name='y7y8-3pt' class='select' id='y7y8-3pt'>
+						{% for key, value in threepts.items() %}
+							<option value="{{value}}">{{key}}</option>
 						{% endfor %}
 					</select>
 				</div>
@@ -265,5 +283,8 @@
 	</div>
 	<br>
 </div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>

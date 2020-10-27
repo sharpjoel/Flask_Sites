@@ -18,9 +18,10 @@ $(document).ready(function(){
 		var mtype_str = ""
 		var ptype_str = ""
 		var loc_str = ""
-		var name_str = ""
-		var food_str = ""
-		var activity_str = ""
+		var y1y2_str = ""
+		var y3y4_str = ""
+		var y5y6_str = ""
+		var y7y8_str = ""
 		var str = ""
 
 		// Step 20: Read the select tags by their individual IDs, and collect
@@ -81,20 +82,52 @@ $(document).ready(function(){
 		$( "select#locSelection" ).each(function() {
 			loc_str += $( this ).val();
 		});
-		$( "select#petSelection option:selected" ).each(function() {
-			name_str += $( this ).text() + "_";
+		$( "select#y1y2-3pt option:selected" ).each(function() {
+			y1y2_str += $( this ).val();
+			if(y1y2_str != 'X'){
+				$("#y1").css('background','green');
+				$("#y2").css('background','green');
+			}else{
+				$("#y1").css('background','');
+				$("#y2").css('background','');
+			};
 		});
-		$( "select#foodSelection option:selected" ).each(function() {
-			food_str += $( this ).text() + "_";
+		$( "select#y3y4-3pt option:selected" ).each(function() {
+			y3y4_str += $( this ).val();
+			if(y3y4_str != 'X'){
+				$("#y3").css('background','green');
+				$("#y4").css('background','green');
+			}else{
+				$("#y3").css('background','');
+				$("#y4").css('background','');
+			};
 		});
-		$( "select#activitySelection option:selected" ).each(function() {
-			activity_str += $( this ).text() + "_";
+		$( "select#y5y6-3pt option:selected" ).each(function() {
+			y5y6_str += $( this ).val();
+			if(y5y6_str != 'X'){
+				$("#y5").css('background','green');
+				$("#y6").css('background','green');
+			}else{
+				$("#y5").css('background','');
+				$("#y6").css('background','');
+			};
+		});
+		$( "select#y7y8-3pt option:selected" ).each(function() {
+			y7y8_str += $( this ).val();
+			if(y7y8_str != 'X'){
+				$("#y7").css('background','green');
+				$("#y8").css('background','green');
+			}else{
+				$("#y7").css('background','');
+				$("#y8").css('background','');
+			};
 		});
 
 		// Step 21: Concatenate the variables into a single string.
-		var DXR = dxr_str + etype_str + mtype_str + ptype_str + loc_str + "_" 
-		str = DXR + name_str + food_str + activity_str
-
+		var DXR = dxr_str + etype_str + mtype_str + ptype_str + loc_str + "_";
+		var AO3pt = y1y2_str + y3y4_str + y5y6_str + y7y8_str + "_";
+		str = DXR + AO3pt;
+		$('#successAlert').text("Name: " + str).show();
 		// Step 22: Construct your AJAX requests. Without AJAX, the select tags would need
 		//	method='POST' and action='/home'. However, we would need to refresh our use a submit
 		// button to see the results change or to pass the results to a different url.
@@ -108,7 +141,7 @@ $(document).ready(function(){
 		$.ajax({
             type: 'POST',
             url: '/home',
-            data: { pet:name_str },
+            data: { pet:y1y2_str },
             dataType: 'json'
         });
 		$.ajax({
@@ -129,7 +162,7 @@ $(document).ready(function(){
 				$('#successAlert').hide();
 			}
 			else {
-				$('#successAlert').text("Name: " + data.name).show();
+				// $('#successAlert').text("Name: " + data.name).show();
 				$('#errorAlert').hide();
 			}
 		});
