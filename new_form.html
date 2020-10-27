@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<!-- Step 9: Create the title for your page. This is what shows up in the tab -->
+	<title>AJAX Example</title>
+
+	<!-- Step 10: Include the links to ajax and jquery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+	<!-- Step 11: Include links to bootstrap -->
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+	<!-- Step 12: Include link to our javascript file. This is the file that will read objects
+	from this html page, and send AJAX requests to our python Flask server. -->
+	<script src="{{ url_for('static', filename='js/new_form.js') }}"></script>
+	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/new_form.css') }}">
+</head>
+<body>
+<div class="container">
+	<br><br><br><br>
+
+	<!-- Step 14: Create your alert banners. We will be displaying the data from our selected values, which
+	are collected and sent by AJAX to flask via a post request. Once we handle the data in Flask (our python
+	file) we will pass it back as a JSON value to be shown in the success alert banner. -->
+	<div class='row'>
+		<div id="successAlert" class="col-l-12 alert alert-success" role="alert"></div>
+		<div id="errorAlert" class="col-l-12 alert alert-danger" role="alert" style="display:none"></div>
+	</div>
+
+	<div class='row'>
+		<div class='col-sm-12'>blah</div>
+	</div>
+	<div class='row'>
+		<div class='col-l-6' id="rectangle">
+			<div id='toprail'>
+				<div id='usb-container'>
+				     <div class="outer-square">
+					     <div class="inner-square">&nbsp;</div>
+					 </div>
+				 </div>
+			     <div class="blank">
+			     </div>
+			     <div class="blank">
+			     </div>
+			     <div class="blank">
+			     </div>
+			     <div class="blank">
+			     </div>
+			     <div class="terminal" id='x2'>
+			     	<div class="top-screwterminal">&nbsp;</div>
+			     	<p><span class="top-terminal-text">X2</span></p>
+			     </div>
+			     <div class="terminal" id='topground2'>
+			     	<div class="top-screwterminal">&nbsp;</div>
+			     	<p><span class="top-terminal-text">24-</span></p>
+			     </div>
+			     <div class="terminal" id='toppower'>
+			     	<div class="top-screwterminal">&nbsp;</div>
+			     	<p><span class="top-terminal-text">24+</span></p>
+			     </div>
+			     <div class="terminal" id='x1'>
+			     	<div class="top-screwterminal">&nbsp;</div>
+			     	<p><span class="top-terminal-text">X1</span></p>
+			     </div>
+			     <div class="terminal" id='topground1'>
+			     	<div class="top-screwterminal">&nbsp;</div>
+			     	<p><span class="top-terminal-text">24-</span></p>
+			     </div>
+			     <div class="terminal" id='D1'>
+			     	<div class="top-screwterminal">&nbsp;</div>
+			     	<p><span class="top-terminal-text">D1</span></p>
+			     </div>
+			     <div id='eth-container'>
+				     <div class='nic' id='nic2'>
+						<div class="nicpiece" id="nics1">&nbsp;</div>
+						<div class="nicpiece" id="nics2">&nbsp;</div>
+					</div>
+				     <div class='nic' id='nic1'>
+						<div class="nicpiece" id="nics1">&nbsp;</div>
+						<div class="nicpiece" id="nics2">&nbsp;</div>
+					</div>
+				</div>
+				<div id='mstp-container'>
+					<div class="mstp-terminal" id='shield485'>
+			     		<div class="top-screwterminal">&nbsp;</div>
+			     		<p><span class="top-terminal-text">S</span></p>
+			     	</div>
+			     	<div class="mstp-terminal" id='rx485'>
+			     		<div class="top-screwterminal">&nbsp;</div>
+			     		<p><span class="top-terminal-text">-</span></p>
+			     	</div>
+			     	<div class="mstp-terminal" id='tx485'>
+			     		<div class="top-screwterminal">&nbsp;</div>
+			     		<p><span class="top-terminal-text">+</span></p>
+			     	</div>
+				</div>
+				<div class="pl" id='plrx'>
+			     	<div class="top-screwterminal">&nbsp;</div>
+			     	<p><span class="pl-terminal-text">KNX-</span></p>
+			     </div>
+			     <div class="pl" id='pltx'>
+			     	<div class="top-screwterminal">&nbsp;</div>
+			     	<p><span class="pl-terminal-text">KNX+</span></p>
+			     </div>
+			</div>
+			<div id='top-space'></div>
+			<div id='centerraised'>
+				<p><span id="siemens">SIEMENS</span></p>
+				<div id='run'><span id='r'>RUN</span></div>
+				<br>
+				<div id='service'><span id='svc'>SVC</span></div>
+			</div>
+			<div id='bottom-space'></div>
+			<div id="bottomrail">
+			     <div class="terminal" id='y20'>
+			     	<div class="screwterminal">&nbsp;</div>
+			     	<p><span class="bottom-terminal-text">Y20</span></p>
+			     </div>
+			     <div class="terminal" id='bottomground'>
+			     	<div class="screwterminal">&nbsp;</div>
+			     	<p><span class="bottom-terminal-text">24-</span></p>
+			     </div>
+			     <div class="terminal" id='toppower'>
+			     	<div class="screwterminal">&nbsp;</div>
+			     	<p><span class="bottom-terminal-text">24+</span></p>
+			     </div>
+			     <div class="terminal" id='y10'>
+			     	<div class="screwterminal">&nbsp;</div>
+			     	<p><span class="bottom-terminal-text">Y10</span></p>
+			     </div>
+			     <div class="blank">
+			     </div>
+			     <div class="terminal" id='y8'>
+			     	<div class="screwterminal">&nbsp;</div>
+			     	<p><span class="bottom-terminal-text">Y8</span></p>
+			     </div>
+			     <div class="terminal" id='y7'>
+			     	<div class="screwterminal">&nbsp;</div>
+			     	<p><span class="bottom-terminal-text">Y7</span></p>
+			     </div>
+			     <div class="terminal" id='y6'>
+			     	<div class="screwterminal">&nbsp;</div>
+			     	<p><span class="bottom-terminal-text">Y6</span></p>
+			     </div>
+			     <div class="terminal" id='y5'>
+			     	<div class="screwterminal">&nbsp;</div>
+			     	<p><span class="bottom-terminal-text">Y5</span></p>
+			     </div>
+			     <div class="terminal" id='y4'>
+			     	<div class="screwterminal">&nbsp;</div>
+			     	<p><span class="bottom-terminal-text">Y4</span></p>
+			     </div>
+			     <div class="terminal" id='y3'>
+			     	<div class="screwterminal">&nbsp;</div>
+			     	<p><span class="bottom-terminal-text">Y3</span></p>
+			     </div>
+			     <div class="terminal" id='y2'>
+			     	<div class="screwterminal">&nbsp;</div>
+			     	<p><span class="bottom-terminal-text">Y2</span></p>
+			     </div>
+			     <div class="terminal" id='y1'>
+			     	<div class="screwterminal">&nbsp;</div>
+			     	<p><span class="bottom-terminal-text">Y1</span></p>
+			     </div>
+			     <div id='P1'>
+					<div class="outer" id="p1hi">
+				         <div class="inner">&nbsp;</div>
+				     </div>
+					<div class="outer" id="p1lo">
+				         <div class="inner">&nbsp;</div>
+				     </div>
+			     </div>
+			     <div class="main-terminal" id='mainground'>
+			     	<div class="screwterminal">&nbsp;</div>
+			     	<p><span class="bottom-terminal-text">24-</span></p>
+			     </div>
+			     <div class="main-terminal" id='mainpower'>
+			     	<div class="screwterminal">&nbsp;</div>
+			     	<p><span class="bottom-terminal-text">24+</span></p>
+			     </div>
+			</div>
+	     </div>
+	     <div class='col-s-5'>
+	     	<!-- Step 15: Create a form container to hold our selection objects -->
+			<form>
+				<div id='container'>
+					<div class="form-inline" id='first'>
+						<select name='dxr-selection' class='select' id='dxrSelection'>
+							{% for key, value in dxrs.items() %}
+								<option value="{{value}}">{{key}}</option>
+							{% endfor %}
+						</select>
+					</div>
+
+
+					<div class="form-inline" id='second-1'>
+						<select name='etype-selection' class='select' id='etypeSelection'>
+							{% for key, value in etypes.items() %}
+								<option value="{{value}}">{{key}}</option>
+							{% endfor %}
+						</select>
+					</div>
+					<div class="form-inline" id='second-2'>
+						<select name='mtype-selection' class='select' id='mtypeSelection'>
+							{% for key, value in mtypes.items() %}
+								<option value="{{value}}">{{key}}</option>
+							{% endfor %}
+						</select>
+					</div>
+					<div class="form-inline" id='second-3'>
+						<select name='ptype-selection' class='select' id='ptypeSelection'>
+							{% for key, value in ptypes.items() %}
+								<option value="{{value}}">{{key}}</option>
+							{% endfor %}
+						</select>
+					</div>
+
+
+					<div class="form-inline" id='third'>
+						<select name='loc-selection' class='select' id='locSelection'>
+							{% for key, value in locations.items() %}
+								<option value="{{value}}">{{key}}</option>
+							{% endfor %}
+						</select>
+					</div>
+				</div>
+			</form>
+			<!-- <form>
+				<h4 id='show'>Click to show dropdowns</h4>
+				<h4 id='hide'>Click to hide dropdowns</h4>
+			</form> -->
+			<form id='myForm'>
+				<!-- Step 16: Create a selection to choose items from the list that was passed from Flask to this rendered
+				template as arguments. 
+				- Note** All of the select tags are part of the 'select' class, but have their own unique IDs-->
+				<h3><span class="badge badge-secondary">AO:3ptFloating</span></h3>
+				<div class="form-inline">
+					<select name='pet-selection' class='select' id='petSelection'>
+						{% for pet in pets %}
+							<option selected="{{pet}}">{{pet}}</option>
+						{% endfor %}
+					</select>
+				</div>
+				<div class="form-inline">
+					<select name='food-selection' class='select' id='foodSelection'>
+						{% for food in foods %}
+							<option selected="{{food}}">{{food}}</option>
+						{% endfor %}
+					</select>
+				</div>
+				<div class="form-inline">
+					<select name='activity-selection' class='select' id='activitySelection'>
+						{% for activity in activities %}
+							<option selected="{{activity}}">{{activity}}</option>
+						{% endfor %}
+					</select>
+				</div>
+			</form>
+	     </div>
+	</div>
+	<br>
+</div>
+</body>
+</html>

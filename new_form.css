@@ -1,0 +1,360 @@
+h4{
+	cursor: pointer;
+}
+#first{
+	float: left;
+}
+#second-1{
+	float: left;
+}
+#second-2{
+	float: left;
+	display:none
+}
+#second-3{
+	float: left;
+	display:none
+}
+.col-l-12 {
+	height:50px;
+}
+.col-s-5 {
+	background-color:red;
+}
+
+@font-face {
+   font-family: 'Siemens' ;
+   src: url('Siemens Sans Black Regular.ttf');
+
+}
+
+.outer {
+    background-color:black;
+    width:25px; /* You can define it by % also */
+    height:25px; /* You can define it by % also */
+    position:relative;
+    border:1px solid black;
+    border-radius: 50%;
+}
+
+
+.inner {
+    background-color:grey;
+    top: 25%; left:25%; /* of the container */
+    width:50%; /* of the container */
+    height:50%; /* of the container */
+    position: relative;
+    border:1px solid black;
+    border-radius: 50%;
+}
+
+.outer-square {
+    background-color:black;
+    width:40px; /* You can define it by % also */
+    height:40px; /* You can define it by % also */
+    top:15px;
+    position:relative;
+    border:1px solid black;
+    margin-right:10px;
+}
+
+
+.inner-square {
+    background-color:grey;
+    top: 25%; left:25%; /* of the container */
+    width:50%; /* of the container */
+    height:50%; /* of the container */
+    position: relative;
+    border:1px solid black;
+}
+
+.screw {
+    background-color:grey;
+    top: 10%; /* of the container */
+    width:30%; /* of the container */
+    height:30%; /* of the container */
+    position: relative;
+    border:1px solid black;
+    border-radius: 50%;
+}
+
+.screwterminal {
+    background-color:grey;
+    top: 10%; /* of the container */
+    width:35%; /* of the container */
+    height:23%; /* of the container */
+    left:12px;
+    margin-bottom:10px;
+    position: relative;
+    border:1px solid black;
+    border-radius: 50%;
+}
+
+.top-screwterminal {
+    background-color:grey;
+    top: 70%; /* of the container */
+    width:35%; /* of the container */
+    height:25%; /* of the container */
+    left:12px;
+    position: relative;
+    border:1px solid black;
+    border-radius: 50%;
+}
+
+#top-space {
+	height:5px;
+}
+
+#bottom-space {
+	height:13px;
+}
+
+.blank {
+	float:right;
+	width: 40px;
+	height: 60px;
+	background: #f2f2f2;
+	border:none;
+}
+
+#p1hi {
+	float:right;
+}
+
+#screw1{
+	float:right;
+}
+
+#P1 {
+	float:right;
+	width:60px;
+	/*border:solid 1px #f00;*/
+	padding: 30px 3px 5px 3px;
+	/*padding-top:30px; */
+}
+
+#rectangle {
+  width: 680px;
+  height: 270px;
+  background: #f2f2f2;
+  border:solid 1px #000;
+}
+
+#centerraised {
+	height:120px;
+	border:solid 1px #000;
+	width:80%;
+	margin-left: 20%;
+	padding-right: 0px;
+	border-top-left-radius: 60px 70px;
+	border-bottom-left-radius: 60px 70px;
+}
+
+#toprail {
+	height: 70px;
+	/*border:solid 1px #000;*/
+}
+
+#bottomrail {
+	margin-bottom: none;
+	height: 65px;
+	/*border:solid 1px #f00;*/
+}
+
+#vac {
+	float:right;
+	width: 50px;
+	height: 60px;
+	background: orange;
+	border:solid 1px #000;
+}
+
+.nic {
+	float:right;
+	width: 50px;
+	height: 50px;
+	margin-right: 5px;
+	margin-left: 5px;
+	background: grey;
+	border:solid 1px #000;
+	/*visibility:hidden;*/
+}
+
+.terminal {
+	float:right;
+	width: 40px;
+	height: 60px;
+	background: white;
+	border:solid 1px #000;
+}
+
+#shield485 {
+	float:right;
+	width: 40px;
+	height: 60px;
+	background: #99ff99;
+	border:solid 1px #000;
+	bottom:10px;
+}
+
+#rx485 
+{
+	float:right;
+	width: 40px;
+	height: 60px;
+	background: #99ff99;
+	border:solid 1px #000;
+}
+
+#tx485 
+{
+	float:right;
+	width: 40px;
+	height: 60px;
+	background: #99ff99;
+	border:solid 1px #000;
+}
+
+/* for this section, to get the mstp and ethernet containers
+to swap. I did the following:
+1. visibility:hidden on eth
+2. position:absolute on eth
+3. comment out visibility on mstp
+4. comment out position on mstp
+Javascript will be used to toggle
+visibility between "hidden" and "" and
+position between "absolute" and ""*/
+#eth-container {
+	float:right;
+	margin-right: 8px;
+	margin-left: 12px;
+	height:60px;
+	width:120px;
+	background: #f2f2f2;
+}
+
+#mstp-container {
+	float:right;
+	margin-right: 8px;
+	margin-left: 12px;
+	height:60px;
+	width:120px;
+	background: #f2f2f2;
+	display:none;
+}
+
+#usb-container {
+	float:right;
+	margin-right: none;
+	margin-left: none;
+	background: #f2f2f2;
+}
+
+#y20{
+	margin-right:10px;
+}
+
+.nicpiece {
+	height: 10px;
+	width: 10px;
+	margin-left:6px;
+	margin-right:6px;
+	background: black;
+}
+
+#nics1 {
+	float:right;
+}
+
+.main-terminal {
+	float:right;
+	width: 40px;
+	height: 60px;
+	background: orange;
+	border:solid 1px #000;
+}
+
+.pl {
+	float:right;
+	width: 40px;
+	height: 60px;
+	background: #99ff99;
+	border:solid 1px #000;
+}
+
+.top-terminal-text {
+	font-weight:bold;
+	font-size:12px;
+	padding-left: 10px;
+}
+
+.pl-terminal-text {
+	font-weight:bold;
+	font-size:12px;
+	padding-left: 2px;
+}
+
+.bottom-terminal-text {
+	font-weight:bold;
+	font-size:12px;
+	padding-left: 10px;
+	top: 10%;
+}
+
+#siemens {
+	padding-left:50px;
+	font-weight:bold;
+	font-family: 'Siemens';
+	font-size:18px;
+}
+
+#run {
+	float:right;
+	height:10px;
+	width:10px;
+	margin-right:22px;
+	margin-left:100px;
+	background:green;
+}
+
+#service {
+	background-color:green;
+    width:25px; /* You can define it by % also */
+    height:25px; /* You can define it by % also */
+    margin-top:none;
+    margin-right:15px;
+    margin-left:100px;
+    float:right;
+    border:1px solid green;
+    border-radius: 50%;
+}
+
+#svc {
+	float:right;
+	padding-right:30px;
+	font-size:12px;
+	padding-top:5px;
+}
+
+#r {
+	float:right;
+	padding-right:25px;
+	font-size:12px;
+}
+
+.bottombr {
+	height:5px;
+}
+
+.col-sm-1 {
+	background-color: red;
+}
+.col-xl-5 {
+	background-color: red;
+}
+.col-l-6 {
+	background-color: red;
+}
+.col-xl-12{
+	height:150px;
+}
