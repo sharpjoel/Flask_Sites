@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'Siemens Sans';
+    src: url('SiemensSans-Black.eot');
+    src: url('SiemensSans-Black.eot?#iefix') format('embedded-opentype'),
+        url('SiemensSans-Black.woff2') format('woff2'),
+        url('SiemensSans-Black.woff') format('woff'),
+        url('SiemensSans-Black.ttf') format('truetype'),
+        url('SiemensSans-Black.svg#SiemensSans-Black') format('svg');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
