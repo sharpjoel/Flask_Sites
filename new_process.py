@@ -5,10 +5,11 @@
     - jsonify: converts arguments or keyword arguments into a dictionary
 """
 from flask import Flask, render_template, request, jsonify
-
+from services.services import Services
 # Step 2: Create an Instance of Flask. This will be your application
 app = Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
+services = Services()
 """
 Step 3: Create the route to your homepage.
     - @app.route('url extension') must preceed all functions
@@ -106,16 +107,32 @@ def process():
         *** Note - 500 error implies that you're trying to read a JSON key that doesn't exist.
         If this happens, check out you AJAX data request and make sure it was set up correctly.
     """
-    name = request.form['name'][:-1]
-    print(name)
-    return jsonify({'name': name})
+    try:
+        results = services.setDXR(**request.json)
+    except Exception as e:
+        return {"error": str(e)}
+    return results
+    #name = request.form['name'][:-1]
+    #print(name)
+    #return jsonify({'name': name})
+
+
+@app.route('/custom_name/<string:custom_name>', methods=['GET'])
+def get_dxr_custom_name(custom_name=None):
+    if custom_name is None:
+        return {"error": "Must supply custom_name"}
+    try:
+        results = services.getDXRCN(custom_name=custom_name)
+    except Exception as e:
+        return {"error": str(e)}
+    return results
 
 """
 Step 8 - Run your application. debug=True makes it so you don't have to stop and restart your
     webserver.
 """
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host="192.168.1.13", port=5000)
 
 
 
