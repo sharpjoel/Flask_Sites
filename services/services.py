@@ -2,6 +2,7 @@ from models.dataobjects import DXR
 from mongoengine import *
 from flask import jsonify
 import sys
+import json
 
 
 class Services(object):
@@ -24,8 +25,11 @@ class Services(object):
 
     def getDXRMID(self, **kwargs): #Get DXR via mongo _id
         id = kwargs.get('id')
-        dxrs = DXR.objects.get(id=id)
-        return {"dxr" : dxrs.location, "id": str(id)}
+        try:
+            dxr = DXR.objects.get(id=id)
+        except Exception as e:
+            return {"error": str(e)}
+        return {"dxr" : dxr.location, "id": str(id)}
 
     def getDXRTN(self, **kwargs): #Get DXR via custom template name.
         template_name = kwargs.get('template_name')
@@ -36,8 +40,11 @@ class Services(object):
         return {"dxr" : dxr.location, "id": str(dxr.id), "template_name": dxr.template_name}
 
     def getAllTemplates(self, **kwargs):
-        # not using any kwargs
-        try:
-            pass
-        except:
-            pass
+        # not using any kwargs at moment
+        try: # get all dxr templates
+            dxr = DXR.objects()
+        except Exception as e:
+            return {"error": str(e)}
+        return {"dxrs" : dxr.to_json() }
+
+

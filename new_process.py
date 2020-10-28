@@ -188,16 +188,24 @@ def process():
     #print(name)
     #return jsonify({'name': name})
 
-
-@app.route('/custom_name/<string:custom_name>', methods=['GET'])
-def get_dxr_custom_name(custom_name=None):
-    if custom_name is None:
-        return {"error": "Must supply custom_name"}
+@app.route('/template_name/<string:template_name>', methods=['GET'])
+def get_dxr_template_name(template_name=None):
+    if template_name is None:
+        return {"error": "Must supply template_name"}
     try:
-        results = services.getDXRCN(custom_name=custom_name)
+        results = services.getDXRTN(template_name=template_name)
     except Exception as e:
         return {"error": str(e)}
     return results
+
+@app.route('/get_all_templates', methods=['GET'])
+def get_all_dxr_templates():
+    try:
+        results = services.getAllTemplates()
+    except Exception as e:
+        return {"error": str(e)}
+    return results
+
 
 """
 Step 8 - Run your application. debug=True makes it so you don't have to stop and restart your
@@ -205,7 +213,5 @@ Step 8 - Run your application. debug=True makes it so you don't have to stop and
 """
 if __name__ == '__main__':
     app.run(debug=True, host="192.168.1.13", port=5000)
-
-
 
 
