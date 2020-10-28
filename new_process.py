@@ -56,9 +56,75 @@ def index():
         "SI":"S",
         "CA":"C",
         }
-    three_points = {'None':'X','Hot Water Reheat Coil':'H','Radiator':'R','Chilled Water Coil':'C'}
-    zero_ten = {'None':'X','Hot Water Reheat Coil':'H','Radiator':'R','Chilled Water Coil':'C'}
-    binary_out = {'None':'X','Fan':'F','BO1':'B1','BO2':'B2'}
+    three_points = {
+        'None':'X',
+        'Supply Damper':'A',
+        'Exhaust Damper':'B',
+        'Hot Water Reheat Coil':'C',
+        'Radiator':'D',
+        'Chilled Water Coil':'E',
+        'Windows':'F'
+        }
+    zero_ten_1030 = {
+        'None':'X',
+        'Supply Damper':'A',
+        'Hot Water Reheat Coil':'C',
+        'Radiator':'D',
+        'Chilled Water Coil':'E',
+        'Windows':'F',
+        '0-10V General':'Z'
+        }
+    zero_ten_2040 = {
+        'None':'X',
+        'Exhaust Damper':'B',
+        'Hot Water Reheat Coil':'C',
+        'Radiator':'D',
+        'Chilled Water Coil':'E',
+        'Windows':'F',
+        '0-10V General':'Z'
+        }
+    analog_in = {
+        "None":"X",
+        "Sup Press":"A",
+        "Sup Flow":"B",
+        "Sup Temp":"C",
+        "Exh Press":"D",
+        "Exh Flow":"E",
+        "Exh Temp P1":"F"
+        }
+    pressure = {
+        "None":"X",
+        "Sup P1":"A",
+        "Exh P2":"B",
+        "Sup SCOM P1":"C",
+        "Sup SCOM P3":"D",
+        "Exh SCOM P2":"E",
+        "Exh SCOM P4":"F",
+        "FH SCOM P1":"G"
+        }
+    binary_in = {
+        'None':'X',
+        'Fan Status':'A',
+        'Window Contact':'B',
+        'Presence Detector':'C',
+        'Condensation Sensor':'D',
+        'Condensation Alarm':'E',
+        'Door Contact':'F',
+        'Binary Input General':'G'
+        }
+    binary_out = {
+        'None':'X',
+        'Fan':'A',
+        'Binary Output General':'B',
+        }
+    appfuncs = {
+        'None':'X',
+        'Room Stpt Determination':'A',
+        'Heat/Cool Determination':'B',
+        'Rapid Ventilation':'C',
+        'Ventilation/DCV':'D'
+        }
+    knx= {'None':'X','P30':'A','P40':'B','P70':'C','P34':'D','P37':'E','P74':'F'}
     pet = ""
     try:
         pet = request.form['pet'][:-1]
@@ -74,15 +140,21 @@ def index():
             For ease, the key:value pairs in the arguments should match.
     """
     return render_template('new_form.html',
+        appfuncs=appfuncs,
+        analogin=analog_in,
+        pressure=pressure,
         threepts=three_points,
-        zten=zero_ten,
+        zten1030=zero_ten_1030,
+        zten2040=zero_ten_2040,
         binaryout=binary_out,
+        binaryin=binary_in,
         pet=pet,
         dxrs=dxrs,
         etypes=etypes,
         mtypes=mtypes,
         ptypes=ptypes,
-        locations=locations
+        locations=locations,
+        knx=knx
         )
 
 """

@@ -16,21 +16,70 @@
 	<!-- Step 12: Include link to our javascript file. This is the file that will read objects
 	from this html page, and send AJAX requests to our python Flask server. -->
 	<script src="{{ url_for('static', filename='js/new_form.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/html2canvas.js') }}"></script>
 	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/new_form.css') }}">
 </head>
 <body>
 <div class="container">
-	<br><br><br><br>
+	<br>
 
 	<!-- Step 14: Create your alert banners. We will be displaying the data from our selected values, which
 	are collected and sent by AJAX to flask via a post request. Once we handle the data in Flask (our python
 	file) we will pass it back as a JSON value to be shown in the success alert banner. -->
 	<div class='row'>
-		<div id="successAlert" class="col-lg-12 alert alert-success" role="alert"></div>
+		<div id="successAlert" class="col-lg-10 alert alert-success" role="alert"></div>
 	</div>
 
 	<div class='row'>
-		<div class='col-sm-12'>
+		<div class='col-md-6'>
+			<form>
+				<div class='container'>
+					<div id='first'>
+						<label><span class="badge badge-secondary">NAME</span></label>
+						<select name='dxr-selection' class='select' id='dxrSelection'>
+							{% for key, value in dxrs.items() %}
+								<option value="{{value}}">{{key}}</option>
+							{% endfor %}
+						</select>
+					</div>
+
+
+					<div id='second-1'>
+						<label><span class="badge badge-secondary">TYPE</span></label>
+						<select name='etype-selection' class='select' id='etypeSelection'>
+							{% for key, value in etypes.items() %}
+								<option value="{{value}}">{{key}}</option>
+							{% endfor %}
+						</select>
+					</div>
+					<div id='second-2'>
+						<label><span class="badge badge-secondary">TYPE</span></label>
+						<select name='mtype-selection' class='select' id='mtypeSelection'>
+							{% for key, value in mtypes.items() %}
+								<option value="{{value}}">{{key}}</option>
+							{% endfor %}
+						</select>
+					</div>
+					<div id='second-3'>
+						<label><span class="badge badge-secondary">TYPE</span></label>
+						<select name='ptype-selection' class='select' id='ptypeSelection'>
+							{% for key, value in ptypes.items() %}
+								<option value="{{value}}">{{key}}</option>
+							{% endfor %}
+						</select>
+					</div>
+
+
+					<div id='third'>
+						<label><span class="badge badge-secondary">UNITS</span></label>
+						<select name='loc-selection' class='select' id='locSelection'>
+							{% for key, value in locations.items() %}
+								<option value="{{value}}">{{key}}</option>
+							{% endfor %}
+						</select>
+					</div>
+				</div>
+			</form>
 		</div>
 	</div>
 	<div class='row'>
@@ -242,100 +291,594 @@
 			     </div>
 			</div>
 	     </div>
-	     <div class='col-sm-4'>
-	     	<!-- Step 15: Create a form container to hold our selection objects -->
-			<form>
-				<div id='container'>
-					<div id='first'>
-						<label><span class="badge badge-secondary">NAME</span></label>
-						<select name='dxr-selection' class='select' id='dxrSelection'>
-							{% for key, value in dxrs.items() %}
-								<option value="{{value}}">{{key}}</option>
-							{% endfor %}
-						</select>
-					</div>
-
-
-					<div id='second-1'>
-						<label><span class="badge badge-secondary">TYPE</span></label>
-						<select name='etype-selection' class='select' id='etypeSelection'>
-							{% for key, value in etypes.items() %}
-								<option value="{{value}}">{{key}}</option>
-							{% endfor %}
-						</select>
-					</div>
-					<div id='second-2'>
-						<label><span class="badge badge-secondary">TYPE</span></label>
-						<select name='mtype-selection' class='select' id='mtypeSelection'>
-							{% for key, value in mtypes.items() %}
-								<option value="{{value}}">{{key}}</option>
-							{% endfor %}
-						</select>
-					</div>
-					<div id='second-3'>
-						<label><span class="badge badge-secondary">TYPE</span></label>
-						<select name='ptype-selection' class='select' id='ptypeSelection'>
-							{% for key, value in ptypes.items() %}
-								<option value="{{value}}">{{key}}</option>
-							{% endfor %}
-						</select>
-					</div>
-
-
-					<div id='third'>
-						<label><span class="badge badge-secondary">UNITS</span></label>
-						<select name='loc-selection' class='select' id='locSelection'>
-							{% for key, value in locations.items() %}
-								<option value="{{value}}">{{key}}</option>
-							{% endfor %}
-						</select>
-					</div>
-				</div>
-			</form>
-			<!-- <form>
-				<h4 id='show'>Click to show dropdowns</h4>
-				<h4 id='hide'>Click to hide dropdowns</h4>
-			</form> -->
-			<form id='myForm'>
+	     <br>
+	</div>
+	<br>
+	<div class='row'>
+		<div class='col-lg-10 knx-rail clearfix'>
+			<div class='knx-slot' id="knx-slot-1"><span class='knx-add'>KNX-1</span>
+				<div class='knx-terminal' id='knx-term-1'></div>
+			</div>
+			<div class='knx-slot' id="knx-slot-2"><span class='knx-add'>KNX-2</span>
+				<div class='knx-terminal' id='knx-term-2'></div>
+			</div>
+			<div class='knx-slot' id="knx-slot-3"><span class='knx-add'>KNX-3</span>
+				<div class='knx-terminal' id='knx-term-3'></div>
+			</div>
+			<div class='knx-slot' id="knx-slot-4"><span class='knx-add'>KNX-4</span>
+				<div class='knx-terminal' id='knx-term-4'></div>
+			</div>
+			<div class='knx-slot' id="knx-slot-5"><span class='knx-add'>KNX-5</span>
+				<div class='knx-terminal' id='knx-term-5'></div>
+			</div>
+			<div class='knx-slot' id="knx-slot-6"><span class='knx-add'>KNX-6</span>
+				<div class='knx-terminal' id='knx-term-6'></div>
+			</div>
+			<div class='knx-slot' id="knx-slot-7"><span class='knx-add'>KNX-7</span>
+				<div class='knx-terminal' id='knx-term-7'></div>
+			</div>
+			<div class='knx-slot' id="knx-slot-8"><span class='knx-add'>KNX-8</span>
+				<div class='knx-terminal' id='knx-term-8'></div>
+			</div>
+			<div class='knx-slot' id="knx-slot-9"><span class='knx-add'>KNX-9</span>
+				<div class='knx-terminal' id='knx-term-9'></div>
+			</div>
+			<div class='knx-slot' id="knx-slot-10"><span class='knx-add'>KNX-10</span>
+				<div class='knx-terminal' id='knx-term-10'></div>
+			</div>
+			<div class='knx-slot' id="knx-slot-11"><span class='knx-add'>KNX-11</span>
+				<div class='knx-terminal' id='knx-term-11'></div>
+			</div>
+			<div class='knx-slot' id="knx-slot-12"><span class='knx-add'>KNX-12</span>
+				<div class='knx-terminal' id='knx-term-12'></div>
+			</div>
+			<div class='knx-slot' id="knx-slot-13"><span class='knx-add'>KNX-13</span>
+				<div class='knx-terminal' id='knx-term-13'></div>
+			</div>
+			<div class='knx-slot' id="knx-slot-14"><span class='knx-add'>KNX-14</span>
+				<div class='knx-terminal' id='knx-term-14'></div>
+			</div>
+			<div class='knx-slot' id="knx-slot-15"><span class='knx-add'>KNX-15</span>
+				<div class='knx-terminal' id='knx-term-15'></div>
+			</div>
+			<div class='knx-slot' id="knx-slot-16"><span class='knx-add'>KNX-16</span>
+				<div class='knx-terminal' id='knx-term-16'></div>
+			</div>
+			<div class='knx-slot' id="knx-slot-17"><span class='knx-add'>KNX-17</span>
+				<div class='knx-terminal' id='knx-term-17'></div>
+			</div>
+			<div class='knx-slot' id="knx-slot-18"><span class='knx-add'>KNX-18</span>
+				<div class='knx-terminal' id='knx-term-18'></div>
+			</div>
+			<div class='knx-slot' id="knx-slot-19"><span class='knx-add'>KNX-19</span>
+				<div class='knx-terminal' id='knx-term-19'></div>
+			</div>
+			<div class='knx-slot' id="knx-slot-20"><span class='knx-add'>KNX-20</span>
+				<div class='knx-terminal' id='knx-term-20'></div>
+		</div>
+		<!-- <div class='col-lg-2'></div> -->
+	</div>
+	<br>
+	<div class='row'>
+     	<!-- Step 15: Create a form container to hold our selection objects -->
+		<!-- <form>
+			<h4 id='show'>Click to show dropdowns</h4>
+			<h4 id='hide'>Click to hide dropdowns</h4>
+		</form> -->
+		<div id="output-container">
+			<form class='form-container' id='myForm'>
 				<!-- Step 16: Create a selection to choose items from the list that was passed from Flask to this rendered
 				template as arguments. 
 				- Note** All of the select tags are part of the 'select' class, but have their own unique IDs-->
-				<h3><span class="badge badge-secondary">AO:3ptFloating</span></h3>
-				<div class="form-inline">
-					<label><span class="badge badge-secondary">Y1,Y2</span></label>
-					<select name='y1y2-3pt' class='select' id='y1y2-3pt'>
-						{% for key, value in threepts.items() %}
-							<option value="{{value}}">{{key}}</option>
-						{% endfor %}
-					</select>
-				</div>
-				<div class="form-inline">
-					<label><span class="badge badge-secondary">Y3,Y4</span></label>
-					<select name='y3y4-3pt' class='select' id='y3y4-3pt'>
-						{% for key, value in threepts.items() %}
-							<option value="{{value}}">{{key}}</option>
-						{% endfor %}
-					</select>
-				</div>
-				<div class="form-inline">
-					<label><span class="badge badge-secondary">Y5,Y6</span></label>
-					<select name='y5y6-3pt' class='select' id='y5y6-3pt'>
-						{% for key, value in threepts.items() %}
-							<option value="{{value}}">{{key}}</option>
-						{% endfor %}
-					</select>
-				</div>
-				<div class="form-inline">
-					<label><span class="badge badge-secondary">Y7,Y8</span></label>
-					<select name='y7y8-3pt' class='select' id='y7y8-3pt'>
-						{% for key, value in threepts.items() %}
-							<option value="{{value}}">{{key}}</option>
-						{% endfor %}
-					</select>
+				<div class='form-container'>
+					<h3><span class="badge badge-secondary">AO:3ptFloating</span></h3>
+					<div class="form-inline">
+						<label><span class="badge badge-secondary">Y1,Y2</span></label>
+						<select name='y1y2-3pt' class='select' id='y1y2-3pt'>
+							{% for key, value in threepts.items() %}
+								<option value="{{value}}">{{key}}</option>
+							{% endfor %}
+						</select>
+					</div>
+					<div class="form-inline">
+						<label><span class="badge badge-secondary">Y3,Y4</span></label>
+						<select name='y3y4-3pt' class='select' id='y3y4-3pt'>
+							{% for key, value in threepts.items() %}
+								<option value="{{value}}">{{key}}</option>
+							{% endfor %}
+						</select>
+					</div>
+					<div class="form-inline">
+						<label><span class="badge badge-secondary">Y5,Y6</span></label>
+						<select name='y5y6-3pt' class='select' id='y5y6-3pt'>
+							{% for key, value in threepts.items() %}
+								<option value="{{value}}">{{key}}</option>
+							{% endfor %}
+						</select>
+					</div>
+					<div class="form-inline">
+						<label><span class="badge badge-secondary">Y7,Y8</span></label>
+						<select name='y7y8-3pt' class='select' id='y7y8-3pt'>
+							{% for key, value in threepts.items() %}
+								<option value="{{value}}">{{key}}</option>
+							{% endfor %}
+						</select>
+					</div>
 				</div>
 			</form>
-	     </div>
-	</div>
+			<form class='' id='zeroTenForm'>
+				<!-- Step 16: Create a selection to choose items from the list that was passed from Flask to this rendered
+				template as arguments. 
+				- Note** All of the select tags are part of the 'select' class, but have their own unique IDs-->
+				<div class='form-container'>
+					<h3><span class="badge badge-secondary">AO:0-10V</span></h3>
+					<div class="form-inline">
+						<label><span class="badge badge-secondary">Y10</span></label>
+						<select name='y10' class='select' id='y10'>
+							{% for key, value in zten1030.items() %}
+								<option value="{{value}}">{{key}}</option>
+							{% endfor %}
+						</select>
+					</div>
+					<div class="form-inline">
+						<label><span class="badge badge-secondary">Y20</span></label>
+						<select name='y20' class='select' id='y20'>
+							{% for key, value in zten2040.items() %}
+								<option value="{{value}}">{{key}}</option>
+							{% endfor %}
+						</select>
+					</div>
+					<div class="form-inline">
+						<label><span class="badge badge-secondary">Y30</span></label>
+						<select name='y30' class='select' id='y30'>
+							{% for key, value in zten1030.items() %}
+								<option value="{{value}}">{{key}}</option>
+							{% endfor %}
+						</select>
+					</div>
+					<div class="form-inline">
+						<label><span class="badge badge-secondary">Y40</span></label>
+						<select name='y40' class='select' id='y40'>
+							{% for key, value in zten2040.items() %}
+								<option value="{{value}}">{{key}}</option>
+							{% endfor %}
+						</select>
+					</div>
+				</div>
+			</form>
+			<form class='form-container' id='boForm'>
+				<!-- Step 16: Create a selection to choose items from the list that was passed from Flask to this rendered
+				template as arguments. 
+				- Note** All of the select tags are part of the 'select' class, but have their own unique IDs-->
+				<div class='form-container'>
+					<h3><span class="badge badge-secondary">BO:24Volt</span></h3>
+					<div class="form-inline">
+						<label><span class="badge badge-secondary">Y1</span></label>
+						<select name='y1bo' class='select' id='y1bo'>
+							{% for key, value in binaryout.items() %}
+								<option value="{{value}}">{{key}}</option>
+							{% endfor %}
+						</select>
+					</div>
+					<div class="form-inline">
+						<label><span class="badge badge-secondary">Y2</span></label>
+						<select name='y2bo' class='select' id='y2bo'>
+							{% for key, value in binaryout.items() %}
+								<option value="{{value}}">{{key}}</option>
+							{% endfor %}
+						</select>
+					</div>
+					<div class="form-inline">
+						<label><span class="badge badge-secondary">Y3</span></label>
+						<select name='y3bo' class='select' id='y3bo'>
+							{% for key, value in binaryout.items() %}
+								<option value="{{value}}">{{key}}</option>
+							{% endfor %}
+						</select>
+					</div>
+					<div class="form-inline">
+						<label><span class="badge badge-secondary">Y4</span></label>
+						<select name='y4bo' class='select' id='y4bo'>
+							{% for key, value in binaryout.items() %}
+								<option value="{{value}}">{{key}}</option>
+							{% endfor %}
+						</select>
+					</div>
+					<div class="form-inline">
+						<label><span class="badge badge-secondary">Y5</span></label>
+						<select name='y5bo' class='select' id='y5bo'>
+							{% for key, value in binaryout.items() %}
+								<option value="{{value}}">{{key}}</option>
+							{% endfor %}
+						</select>
+					</div>
+					<div class="form-inline">
+						<label><span class="badge badge-secondary">Y6</span></label>
+						<select name='y6bo' class='select' id='y6bo'>
+							{% for key, value in binaryout.items() %}
+								<option value="{{value}}">{{key}}</option>
+							{% endfor %}
+						</select>
+					</div>
+					<div class="form-inline">
+						<label><span class="badge badge-secondary">Y7</span></label>
+						<select name='y7bo' class='select' id='y7bo'>
+							{% for key, value in binaryout.items() %}
+								<option value="{{value}}">{{key}}</option>
+							{% endfor %}
+						</select>
+					</div>
+					<div class="form-inline">
+						<label><span class="badge badge-secondary">Y8</span></label>
+						<select name='y8bo' class='select' id='y8bo'>
+							{% for key, value in binaryout.items() %}
+								<option value="{{value}}">{{key}}</option>
+							{% endfor %}
+						</select>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div id="input-container">
+			<form class='form-container'>
+				<div class='form-container'>
+					<h3><span class="badge badge-secondary">AI:V+Ohm+mA</span></h3>
+					<div class="form-inline">
+						<label><span class="badge badge-secondary">X1</span></label>
+						<select name='x1ai' class='select' id='x1ai'>
+							{% for key, value in analogin.items() %}
+								<option value="{{value}}">{{key}}</option>
+							{% endfor %}
+						</select>
+					</div>
+					<div class="form-inline">
+						<label><span class="badge badge-secondary">X2</span></label>
+						<select name='x2ai' class='select' id='x2ai'>
+							{% for key, value in analogin.items() %}
+								<option value="{{value}}">{{key}}</option>
+							{% endfor %}
+						</select>
+					</div>
+					<div class="form-inline">
+						<label><span class="badge badge-secondary">X3</span></label>
+						<select name='x3ai' class='select' id='x3ai'>
+							{% for key, value in analogin.items() %}
+								<option value="{{value}}">{{key}}</option>
+							{% endfor %}
+						</select>
+					</div>
+					<div class="form-inline">
+						<label><span class="badge badge-secondary">X4</span></label>
+						<select name='x4ai' class='select' id='x4ai'>
+							{% for key, value in analogin.items() %}
+								<option value="{{value}}">{{key}}</option>
+							{% endfor %}
+						</select>
+					</div>
+				</div>
+			</form>
+			<form class='' id='biForm'>
+				<!-- Step 16: Create a selection to choose items from the list that was passed from Flask to this rendered
+				template as arguments. 
+				- Note** All of the select tags are part of the 'select' class, but have their own unique IDs-->
+				<div class='form-container'>
+					<h3><span class="badge badge-secondary">BI:Dry Contact</span></h3>
+					<div class="form-inline">
+						<label><span class="badge badge-secondary">D1</span></label>
+						<select name='d1bi' class='select' id='d1bi'>
+							{% for key, value in binaryin.items() %}
+								<option value="{{value}}">{{key}}</option>
+							{% endfor %}
+						</select>
+					</div>
+					<div class="form-inline">
+						<label><span class="badge badge-secondary">D2</span></label>
+						<select name='d2bi' class='select' id='d2bi'>
+							{% for key, value in binaryin.items() %}
+								<option value="{{value}}">{{key}}</option>
+							{% endfor %}
+						</select>
+					</div>
+					<div class="form-inline">
+						<label><span class="badge badge-secondary">X1</span></label>
+						<select name='x1bi' class='select' id='x1bi'>
+							{% for key, value in binaryin.items() %}
+								<option value="{{value}}">{{key}}</option>
+							{% endfor %}
+						</select>
+					</div>
+					<div class="form-inline">
+						<label><span class="badge badge-secondary">X2</span></label>
+						<select name='x2bi' class='select' id='x2bi'>
+							{% for key, value in binaryin.items() %}
+								<option value="{{value}}">{{key}}</option>
+							{% endfor %}
+						</select>
+					</div>
+					<div class="form-inline">
+						<label><span class="badge badge-secondary">X3</span></label>
+						<select name='x3bi' class='select' id='x3bi'>
+							{% for key, value in binaryin.items() %}
+								<option value="{{value}}">{{key}}</option>
+							{% endfor %}
+						</select>
+					</div>
+					<div class="form-inline">
+						<label><span class="badge badge-secondary">X4</span></label>
+						<select name='x4bi' class='select' id='x4bi'>
+							{% for key, value in binaryin.items() %}
+								<option value="{{value}}">{{key}}</option>
+							{% endfor %}
+						</select>
+					</div>
+				</div>
+			</form>
+			<form class='' id='biForm'>
+				<!-- Step 16: Create a selection to choose items from the list that was passed from Flask to this rendered
+				template as arguments. 
+				- Note** All of the select tags are part of the 'select' class, but have their own unique IDs-->
+				<div class='form-container'>
+					<h3><span class="badge badge-secondary">Pressure</span></h3>
+					<div class="form-inline">
+						<label><span class="badge badge-secondary">P1</span></label>
+						<select name='p1pres' class='select' id='p1pres'>
+							{% for key, value in pressure.items() %}
+								<option value="{{value}}">{{key}}</option>
+							{% endfor %}
+						</select>
+					</div>
+					<div class="form-inline">
+						<label><span class="badge badge-secondary">SCOM</span></label>
+						<select name='scom1pres' class='select' id='scom1pres'>
+							{% for key, value in pressure.items() %}
+								<option value="{{value}}">{{key}}</option>
+							{% endfor %}
+						</select>
+					</div>
+					<div class="form-inline">
+						<label><span class="badge badge-secondary">SCOM</span></label>
+						<select name='scom2pres' class='select' id='scom2pres'>
+							{% for key, value in pressure.items() %}
+								<option value="{{value}}">{{key}}</option>
+							{% endfor %}
+						</select>
+					</div>
+					<div class="form-inline">
+						<label><span class="badge badge-secondary">SCOM</span></label>
+						<select name='scom3pres' class='select' id='scom3pres'>
+							{% for key, value in pressure.items() %}
+								<option value="{{value}}">{{key}}</option>
+							{% endfor %}
+						</select>
+					</div>
+					<div class="form-inline">
+						<label><span class="badge badge-secondary">SCOM</span></label>
+						<select name='scom4pres' class='select' id='scom4pres'>
+							{% for key, value in pressure.items() %}
+								<option value="{{value}}">{{key}}</option>
+							{% endfor %}
+						</select>
+					</div>
+				</div>
+			</form>
+		</div>
+		<form class='form-container' id='knxForm'>
+			<!-- Step 16: Create a selection to choose items from the list that was passed from Flask to this rendered
+			template as arguments. 
+			- Note** All of the select tags are part of the 'select' class, but have their own unique IDs-->
+			<div class='form-container'>
+				<h3><span class="badge badge-secondary">KNX PL-Link</span></h3>
+				<div class="form-inline">
+					<label><span class="badge badge-secondary">KNX-1</span></label>
+					<select name='knx-1' class='select' id='knx-1'>
+						{% for key, value in knx.items() %}
+							<option value="{{value}}">{{key}}</option>
+						{% endfor %}
+					</select>
+				</div>
+				<div class="form-inline">
+					<label><span class="badge badge-secondary">KNX-2</span></label>
+					<select name='knx-2' class='select' id='knx-2'>
+						{% for key, value in knx.items() %}
+							<option value="{{value}}">{{key}}</option>
+						{% endfor %}
+					</select>
+				</div>
+				<div class="form-inline">
+					<label><span class="badge badge-secondary">KNX-3</span></label>
+					<select name='knx-3' class='select' id='knx-3'>
+						{% for key, value in knx.items() %}
+							<option value="{{value}}">{{key}}</option>
+						{% endfor %}
+					</select>
+				</div>
+				<div class="form-inline">
+					<label><span class="badge badge-secondary">KNX-4</span></label>
+					<select name='knx-4' class='select' id='knx-4'>
+						{% for key, value in knx.items() %}
+							<option value="{{value}}">{{key}}</option>
+						{% endfor %}
+					</select>
+				</div>
+				<div class="form-inline">
+					<label><span class="badge badge-secondary">KNX-5</span></label>
+					<select name='knx-5' class='select' id='knx-5'>
+						{% for key, value in knx.items() %}
+							<option value="{{value}}">{{key}}</option>
+						{% endfor %}
+					</select>
+				</div>
+				<div class="form-inline">
+					<label><span class="badge badge-secondary">KNX-6</span></label>
+					<select name='knx-6' class='select' id='knx-6'>
+						{% for key, value in knx.items() %}
+							<option value="{{value}}">{{key}}</option>
+						{% endfor %}
+					</select>
+				</div>
+				<div class="form-inline">
+					<label><span class="badge badge-secondary">KNX-7</span></label>
+					<select name='knx-7' class='select' id='knx-7'>
+						{% for key, value in knx.items() %}
+							<option value="{{value}}">{{key}}</option>
+						{% endfor %}
+					</select>
+				</div>
+				<div class="form-inline">
+					<label><span class="badge badge-secondary">KNX-8</span></label>
+					<select name='knx-8' class='select' id='knx-8'>
+						{% for key, value in knx.items() %}
+							<option value="{{value}}">{{key}}</option>
+						{% endfor %}
+					</select>
+				</div>
+				<div class="form-inline">
+					<label><span class="badge badge-secondary">KNX-9</span></label>
+					<select name='knx-9' class='select' id='knx-9'>
+						{% for key, value in knx.items() %}
+							<option value="{{value}}">{{key}}</option>
+						{% endfor %}
+					</select>
+				</div>
+				<div class="form-inline">
+					<label><span class="badge badge-secondary">KNX-10</span></label>
+					<select name='knx-10' class='select' id='knx-10'>
+						{% for key, value in knx.items() %}
+							<option value="{{value}}">{{key}}</option>
+						{% endfor %}
+					</select>
+				</div>
+				<div class="form-inline">
+					<label><span class="badge badge-secondary">KNX-11</span></label>
+					<select name='knx-11' class='select' id='knx-11'>
+						{% for key, value in knx.items() %}
+							<option value="{{value}}">{{key}}</option>
+						{% endfor %}
+					</select>
+				</div>
+				<div class="form-inline">
+					<label><span class="badge badge-secondary">KNX-12</span></label>
+					<select name='knx-12' class='select' id='knx-12'>
+						{% for key, value in knx.items() %}
+							<option value="{{value}}">{{key}}</option>
+						{% endfor %}
+					</select>
+				</div>
+				<div class="form-inline">
+					<label><span class="badge badge-secondary">KNX-13</span></label>
+					<select name='knx-13' class='select' id='knx-13'>
+						{% for key, value in knx.items() %}
+							<option value="{{value}}">{{key}}</option>
+						{% endfor %}
+					</select>
+				</div>
+				<div class="form-inline">
+					<label><span class="badge badge-secondary">KNX-14</span></label>
+					<select name='knx-14' class='select' id='knx-14'>
+						{% for key, value in knx.items() %}
+							<option value="{{value}}">{{key}}</option>
+						{% endfor %}
+					</select>
+				</div>
+				<div class="form-inline">
+					<label><span class="badge badge-secondary">KNX-15</span></label>
+					<select name='knx-15' class='select' id='knx-15'>
+						{% for key, value in knx.items() %}
+							<option value="{{value}}">{{key}}</option>
+						{% endfor %}
+					</select>
+				</div>
+				<div class="form-inline">
+					<label><span class="badge badge-secondary">KNX-16</span></label>
+					<select name='knx-16' class='select' id='knx-16'>
+						{% for key, value in knx.items() %}
+							<option value="{{value}}">{{key}}</option>
+						{% endfor %}
+					</select>
+				</div>
+				<div class="form-inline">
+					<label><span class="badge badge-secondary">KNX-17</span></label>
+					<select name='knx-17' class='select' id='knx-17'>
+						{% for key, value in knx.items() %}
+							<option value="{{value}}">{{key}}</option>
+						{% endfor %}
+					</select>
+				</div>
+				<div class="form-inline">
+					<label><span class="badge badge-secondary">KNX-18</span></label>
+					<select name='knx-18' class='select' id='knx-18'>
+						{% for key, value in knx.items() %}
+							<option value="{{value}}">{{key}}</option>
+						{% endfor %}
+					</select>
+				</div>
+				<div class="form-inline">
+					<label><span class="badge badge-secondary">KNX-19</span></label>
+					<select name='knx-19' class='select' id='knx-19'>
+						{% for key, value in knx.items() %}
+							<option value="{{value}}">{{key}}</option>
+						{% endfor %}
+					</select>
+				</div>
+				<div class="form-inline">
+					<label><span class="badge badge-secondary">KNX-20</span></label>
+					<select name='knx-20' class='select' id='knx-20'>
+						{% for key, value in knx.items() %}
+							<option value="{{value}}">{{key}}</option>
+						{% endfor %}
+					</select>
+				</div>
+			</div>
+		</form>
+		<form class='form-container' id='appForm'>
+			<!-- Step 16: Create a selection to choose items from the list that was passed from Flask to this rendered
+			template as arguments. 
+			- Note** All of the select tags are part of the 'select' class, but have their own unique IDs-->
+			<div class='form-container'>
+				<h3><span class="badge badge-secondary">App Functions</span></h3>
+				<div class="form-inline">
+					<label><span class="badge badge-secondary">Function 1</span></label>
+					<select name='func-1' class='select' id='func-1'>
+						{% for key, value in appfuncs.items() %}
+							<option value="{{value}}">{{key}}</option>
+						{% endfor %}
+					</select>
+				</div>
+				<div class="form-inline">
+					<label><span class="badge badge-secondary">Function 2</span></label>
+					<select name='func-2' class='select' id='func-2'>
+						{% for key, value in appfuncs.items() %}
+							<option value="{{value}}">{{key}}</option>
+						{% endfor %}
+					</select>
+				</div>
+				<div class="form-inline">
+					<label><span class="badge badge-secondary">Function 3</span></label>
+					<select name='func-3' class='select' id='func-3'>
+						{% for key, value in appfuncs.items() %}
+							<option value="{{value}}">{{key}}</option>
+						{% endfor %}
+					</select>
+				</div>
+				<div class="form-inline">
+					<label><span class="badge badge-secondary">Function 4</span></label>
+					<select name='func-4' class='select' id='func-4'>
+						{% for key, value in appfuncs.items() %}
+							<option value="{{value}}">{{key}}</option>
+						{% endfor %}
+					</select>
+				</div>
+				<div class="form-inline">
+					<label><span class="badge badge-secondary">Function 5</span></label>
+					<select name='func-5' class='select' id='func-5'>
+						{% for key, value in appfuncs.items() %}
+							<option value="{{value}}">{{key}}</option>
+						{% endfor %}
+					</select>
+				</div>
+			</div>
+		</form>
+     </div>
 	<br>
 </div>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
