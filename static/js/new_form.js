@@ -1,13 +1,39 @@
 // Step 17: Create the jquery header function
 $(document).ready(function(){
 
-	// $("#hide").click(function(){
-	//   $("#myForm").hide();
-	// });
+	// Template selection: Set Starting Values based on selection.
+	$( "select#tempSelection" ).change(function() {
 
-	// $("#show").click(function(){
-	//   $("#myForm").show();
-	// });
+		var template = ""
+
+		$( "select#tempSelection" ).each(function() {
+			template += $( this ).val();
+
+			// Refer back to Flask file for dictionary
+
+			if(template == 'A'){ 
+				// Reset values to default before setting template.
+				$( ".select-reset" ).prop('selectedIndex',0);
+				$( "#dxrSelection" ).val("E");
+				$( "#etypeSelection" ).val("C");
+				$( "#locSelection" ).val("U");
+				$( "#y1y2-3pt" ).val("A");
+				$( "#y5y6-3pt" ).val("C");
+			}
+			else if(template == 'B'){
+				$( ".select-reset" ).prop('selectedIndex',0);
+				$( "#dxrSelection" ).val("M");
+				$( "#mtypeSelection" ).val("C");
+				$( "#locSelection" ).val("U");
+				$( "#y1y2-3pt" ).val("X");
+				$( "#y3y4-3pt" ).val("C");
+				$( "#y1b0" ).val("A");
+			}
+			else{
+				$( ".select-reset" ).prop('selectedIndex',0);
+			}
+		});
+	});
 
 	// Step 18: Use JQuery to detect anything a select tag in our html file is changed.
 	$( "select" ).change(function() {
@@ -22,6 +48,7 @@ $(document).ready(function(){
 		var y3y4_str = ""
 		var y5y6_str = ""
 		var y7y8_str = ""
+		var knx1_str = ""
 		var str = ""
 
 		// Step 20: Read the select tags by their individual IDs, and collect
@@ -122,6 +149,16 @@ $(document).ready(function(){
 				$("#y8").css('background','');
 			};
 		});
+		$( "select.selection-knx option:selected" ).each(function() {
+			knx1_str += $( this ).val();
+			// if(y7y8_str != 'X'){
+			// 	$("#y7").css('background','green');
+			// 	$("#y8").css('background','green');
+			// }else{
+			// 	$("#y7").css('background','');
+			// 	$("#y8").css('background','');
+			// };
+		});
 
 		// Bottom Terminal Selection
 		var type_str = etype_str + mtype_str + ptype_str
@@ -179,7 +216,8 @@ $(document).ready(function(){
 		// Step 21: Concatenate the variables into a single string.
 		var DXR = dxr_str + type_str + loc_str + "_";
 		var AO3pt = y1y2_str + y3y4_str + y5y6_str + y7y8_str + "_";
-		str = DXR + AO3pt;
+		var KNX = knx1_str + "_"
+		str = DXR + AO3pt + KNX;
 		$('#successAlert').text("Name: " + str).show();
 		// Step 22: Construct your AJAX requests. Without AJAX, the select tags would need
 		//	method='POST' and action='/home'. However, we would need to refresh our use a submit
