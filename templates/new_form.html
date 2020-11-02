@@ -296,7 +296,6 @@
 				{% endfor %}
 			</div>
 		</div>
-		<br>
 		<div class='knx-row'>
 			<div class='knx-rail clearfix'>
 				{% for item in range(11,21) %}
@@ -306,8 +305,25 @@
 				{% endfor %}
 			</div>
 		</div>
+		<div id='app-container'>
+			<form class='form-container' id='appForm'>
+				<!--
+					APPLICATION FUNCTION CHECKBOX SELECTION
+				-->
+				<div class='form-container'>
+					<h3><span class="badge badge-secondary">App Functions</span></h3>
+					{% for item in appfuncs %}
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="" id="{{item}}">
+	  						<label class="form-check-label" for="{{item}}"><span class="badge badge-secondary">{{item}}</span></label>
+	  					</div>
+	  				{% endfor %}
+				</div>
+			</form>
+		</div>
 	</div>
 		<div id='selection-container'>
+			<div id='io-container'>
 			<div id="output-container">
 				<form class='form-container' id='myForm'>
 					<!-- Step 16: Create a selection to choose items from the list that was passed from Flask to this rendered
@@ -462,13 +478,6 @@
 					</div>
 				</form>
 			</div>
-		</div>
-		<div>
-	     	<!-- Step 15: Create a form container to hold our selection objects -->
-			<!-- <form>
-				<h4 id='show'>Click to show dropdowns</h4>
-				<h4 id='hide'>Click to hide dropdowns</h4>
-			</form> -->
 			<div id="input-container">
 				<form class='form-container'>
 					<div class='form-container'>
@@ -572,40 +581,55 @@
 					</div>
 				</form>
 			</div>
-			<form class='form-container' id='knxForm'>
-				<!-- Step 16: Create a selection to choose items from the list that was passed from Flask to this rendered
-				template as arguments. 
-				- Note** All of the select tags are part of the 'select' class, but have their own unique IDs-->
-				<div class='form-container'>
-					<h3><span class="badge badge-secondary">KNX PL-Link</span></h3>
-					{% for item in range(1,21) %}
-					<div class="form-inline">
-						<label><span class="badge badge-secondary select-badge">KNX-{{item}}</span></label>
-						<select name='knx-{{item}}' class='select selection-knx' id='knx-{{item}}'>
-							{% for key, value in knx.items() %}
-								<option value="{{value}}">{{key}}</option>
+		</div>
+			<div id='knx-container'>
+				<form class='knx-form-container' id='knxForm'>
+					<!-- Step 16: Create a selection to choose items from the list that was passed from Flask to this rendered
+					template as arguments. 
+					- Note** All of the select tags are part of the 'select' class, but have their own unique IDs-->
+					<div class='knx-form-container'>
+						<div id='knx-list-1'>
+							<h3><span class="badge badge-secondary">KNX PL-Link</span></h3>
+							{% for item in range(1,11) %}
+							<div class="form-inline">
+								<label><span class="badge badge-secondary select-badge">KNX-{{item}}</span></label>
+								<select name='knx-{{item}}' class='select selection-knx' id='knx-{{item}}'>
+									{% for key, value in knx.items() %}
+										<option value="{{value}}">{{key}}</option>
+									{% endfor %}
+								</select>
+							</div>
 							{% endfor %}
-						</select>
+						</div>
+						<div id='knx-list-2'>
+							{% for item in range(11,21) %}
+							<div class="form-inline">
+								<label><span class="badge badge-secondary select-badge">KNX-{{item}}</span></label>
+								<select name='knx-{{item}}' class='select selection-knx' id='knx-{{item}}'>
+									{% for key, value in knx.items() %}
+										<option value="{{value}}">{{key}}</option>
+									{% endfor %}
+								</select>
+							</div>
+							{% endfor %}
+						</div>
 					</div>
-					{% endfor %}
-				</div>
-			</form>
-			<form class='form-container' id='appForm'>
-				<!--
-					APPLICATION FUNCTION CHECKBOX SELECTION
-				-->
-				<div class='form-container'>
-					<h3><span class="badge badge-secondary">App Functions</span></h3>
-					{% for item in appfuncs %}
-						<div class="form-check">
-							<input class="form-check-input" type="checkbox" value="" id="{{item}}">
-	  						<label class="form-check-label" for="{{item}}"><span class="badge badge-secondary">{{item}}</span></label>
-	  					</div>
-	  				{% endfor %}
-				</div>
-			</form>
-	     </div>
-		<br>
+				</form>
+			</div>
+	</div>
+	<div>
+	</div>	
+	<br>
+</div>
+<br><br>
+<div id='sequence-container'>
+	<h3><span class="badge badge-secondary">Sequence Of Operation</span></h3>
+	<h4><span class="badge badge-secondary">Some Sequence</span></h4>
+	<p>blah blah</p>
+	<h4><span class="badge badge-secondary">Some Sequence</span></h4>	
+	<p>blah blah</p>
+	<h4><span class="badge badge-secondary">Some Sequence</span></h4>	
+	<p>blah blah</p>	
 </div>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

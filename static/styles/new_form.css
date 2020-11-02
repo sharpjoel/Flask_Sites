@@ -16,11 +16,11 @@ body {
 }
 
 .scaleable-wrapper {
-  padding: 20px;
+  padding: none;
   resize: both;
   position: relative;
-  /*height: 1080px;*/
-  height:700px;
+  margin-bottom:1%;
+  height:950px;
 }
 
 .type-container{
@@ -31,15 +31,15 @@ body {
 
 #very-specific-container {
 	float:left;
-  width: 60%;
-  height: 100%;
-  margin-left: none;
-  margin-right: none;
-  padding-left: 0px;
-  padding-right: 0px;
-  position: relative;
-  left: 2%;
-  top: 5%;
+	width: 60%;
+	height: 100%;
+	margin-left: none;
+	margin-right: none;
+	padding-left: none;
+	padding-right: none;
+	position: relative;
+	left: 2%;
+	top: 5%;
   /*transform: translate(-50%, -50%);
   transform-origin: center center;*/
 }
@@ -599,6 +599,11 @@ Values divided by 920 on 10/30/2020
 	border:solid 1px black;
 	height:100px;
 }
+
+.knx-row{
+	margin-bottom:2%;
+}
+
 .knx-slot{
 	float:left;
 	width:10%;
@@ -630,8 +635,6 @@ Values divided by 920 on 10/30/2020
 }
 .form-container{
 	float:left;
-	margin-top:5px;
-	margin-right:20px;
 }
 
 #selection-container{
@@ -643,4 +646,53 @@ Values divided by 920 on 10/30/2020
 	padding-left: none;
 	padding-right: none;
 	position:relative;
+}
+
+#io-container{
+	width:100%;
+	height:40%;
+}
+
+#output-container{
+	width:50%;
+}
+
+#input-container{
+	float:right;
+	margin-right:5%;
+	top:-68%;
+	width:45%;
+	position:relative;
+}
+
+#knx-container{
+	width:100%;
+	height:60%;
+	position:relative;
+}
+
+.knx-form-container{
+	width:100%;
+	height:100%;
+	position:relative;
+}
+
+#knx-list-1{
+	float:left;
+	width:30%;
+	position:relative;
+}
+
+#knx-list-2{
+	float:left;
+	width:50%;
+	top:-12%;
+	position:relative;
+}
+
+#sequence-container{
+	float:left;
+	margin-left:3%;
+	width:100%;
+	height:500px;
 }

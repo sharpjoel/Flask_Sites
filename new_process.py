@@ -26,6 +26,7 @@ def index():
     # Step 4: Create some data. We will pass this to our html file for rendering.
 
     dxrs = {'':'','Ethernet':'E','MSTP':'M','P1':'P'}
+    # etypes: dictionary of ethernet dxrs
     etypes = {
         '':'',
         '10PL':'A',
@@ -36,6 +37,7 @@ def index():
         '17C':'F',
         '17CX':'G',
         }
+    # mtypes: dictionary of mstp dxrs
     mtypes = {
         '':'',
         '10PL':'A',
@@ -44,17 +46,20 @@ def index():
         '12PX':'D',
         '18':'E',
         }
+    # ptypes: dictionary of P1 dxrs
     ptypes = {
         '':'',
         '10':'A',
         '18':'B',
         }
+    # locations: dictionary of units
     locations = {
         '':'',
         "US":"U",
         "SI":"S",
         "CA":"C",
         }
+    # three_points: dictionary of three point floating actuators
     three_points = {
         'None':'X',
         'Supply Damper':'A',
@@ -64,6 +69,7 @@ def index():
         'Chilled Water Coil':'E',
         'Windows':'F'
         }
+    # zero_ten_1030: dictionary of 0-10 Volt actuators for Y10 & Y30
     zero_ten_1030 = {
         'None':'X',
         'Supply Damper':'A',
@@ -73,6 +79,7 @@ def index():
         'Windows':'F',
         '0-10V General':'Z'
         }
+    # zero_ten_2040: dictionary of 0-10 Volt actuators for Y20 & Y40
     zero_ten_2040 = {
         'None':'X',
         'Exhaust Damper':'B',
@@ -82,15 +89,35 @@ def index():
         'Windows':'F',
         '0-10V General':'Z'
         }
-    analog_in = {
+    #inputs: dictionary of analog inputs
+    x1x4_in = {
         "None":"X",
         "Sup Press":"A",
         "Sup Flow":"B",
         "Sup Temp":"C",
         "Exh Press":"D",
         "Exh Flow":"E",
-        "Exh Temp P1":"F"
+        "Exh Temp P1":"F",
+        'Fan Status':'G',
+        'Window Contact':'H',
+        'Presence Detector':'I',
+        'Condensation Sensor':'J',
+        'Condensation Alarm':'K',
+        'Door Contact':'L',
+        'Analog Input General':'M',
+        'Binary Input General':'N'
         }
+    d1d2_in = {
+        "None":"X",
+        'Fan Status':'G',
+        'Window Contact':'H',
+        'Presence Detector':'I',
+        'Condensation Sensor':'J',
+        'Condensation Alarm':'K',
+        'Door Contact':'L',
+        'Binary Input General':'N'
+        }
+    #pressure: dictionary of pressure sensors
     pressure = {
         "None":"X",
         "Sup P1":"A",
@@ -101,29 +128,31 @@ def index():
         "Exh SCOM P4":"F",
         "FH SCOM P1":"G"
         }
-    binary_in = {
-        'None':'X',
-        'Fan Status':'A',
-        'Window Contact':'B',
-        'Presence Detector':'C',
-        'Condensation Sensor':'D',
-        'Condensation Alarm':'E',
-        'Door Contact':'F',
-        'Binary Input General':'G'
-        }
+    #binary_out: dictionary of binary outputs
     binary_out = {
         'None':'X',
         'Fan':'A',
         'Binary Output General':'B',
         }
+    #appfuncs: dictionary of application functions
     appfuncs = {
-        'None':'X',
-        'Room Stpt Determination':'A',
-        'Heat/Cool Determination':'B',
-        'Rapid Ventilation':'C',
-        'Ventilation/DCV':'D'
+        'Room Op Mode Determination':'A',
+        'Room Stpt Determination':'B',
+        'Heat/Cool Determination':'C',
+        'Temperature Control for Cooling':'D',
+        'Temperature Control for Heating':'E',
+        'Rapid Ventilation':'F',
+        'Ventilation/DCV':'G',
+        'Air Volume Tracking':'H',
+        'Greenleaf':'I',
         }
-    knx= {'None':'X','P30':'A','P40':'B','P70':'C','P34':'D','P37':'E','P74':'F'}
+    templates = {
+        'Blank':'',
+        '14023':'A',
+        '14050':'B'
+    }
+    #knx: dictionary of knx devices
+    knx = {'None':'X','P30':'A','P40':'B','P70':'C','P34':'D','P37':'E','P74':'F'}
     pet = ""
     try:
         pet = request.form['pet'][:-1]
@@ -140,20 +169,21 @@ def index():
     """
     return render_template('new_form.html',
         appfuncs=appfuncs,
-        analogin=analog_in,
+        x1x4=x1x4_in,
+        d1d2=d1d2_in,
         pressure=pressure,
         threepts=three_points,
         zten1030=zero_ten_1030,
         zten2040=zero_ten_2040,
         binaryout=binary_out,
-        binaryin=binary_in,
         pet=pet,
         dxrs=dxrs,
         etypes=etypes,
         mtypes=mtypes,
         ptypes=ptypes,
         locations=locations,
-        knx=knx
+        knx=knx,
+        templates=templates
         )
 
 """
