@@ -19,6 +19,28 @@
 	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/new_form.css') }}">
 </head>
 <body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Pacific Zone Technical Center</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Features</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Pricing</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+    </ul>
+  </div>
+</nav>
 <div class="scaleable-wrapper" id="scaleable-wrapper">
 	<div class="container" id="very-specific-container">
 		<br>
@@ -134,13 +156,13 @@
 				     	<div class="top-screwterminal">&nbsp;</div>
 				     	<p><span class="top-terminal-text">24-</span></p>
 				     </div> -->
-				     <div class="terminal" id='D2'>
+				     <div class="terminal" id='B2D2'>
 				     	<div class="top-screwterminal">&nbsp;</div>
-				     	<p><span class="top-terminal-text" id="d2text">D2</span></p>
+				     	<p><span class="top-terminal-text" id="b2d2text">D2</span></p>
 				     </div>
-				     <div class="terminal" id='D1'>
+				     <div class="terminal" id='B1D1'>
 				     	<div class="top-screwterminal">&nbsp;</div>
-				     	<p><span class="top-terminal-text">D1</span></p>
+				     	<p><span class="top-terminal-text" id="b1d1text">D1</span></p>
 				     </div>
 				     <div id='eth-container'>
 					     <div class='nic' id='nic2'>
@@ -249,17 +271,17 @@
 					     	<div class="screwterminal">&nbsp;</div>
 					     	<p><span class="bottom-terminal-text">D3</span></p>
 					     </div>
-						<div class="mstp-terminal terminal-17" id='shield-scom'>
+						<div class="mstp-terminal terminal-17 scom" id='shield-scom'>
 				     		<div class="screwterminal">&nbsp;</div>
-				     		<p><span class="top-terminal-text">S</span></p>
+				     		<p><span class="top-terminal-text">+</span></p>
 				     	</div>
-				     	<div class="mstp-terminal terminal-17" id='rx-scom'>
+				     	<div class="mstp-terminal terminal-17 scom" id='rx-scom'>
 				     		<div class="screwterminal">&nbsp;</div>
 				     		<p><span class="top-terminal-text">-</span></p>
 				     	</div>
-				     	<div class="mstp-terminal terminal-17" id='tx-scom'>
+				     	<div class="mstp-terminal terminal-17 scom" id='tx-scom'>
 				     		<div class="screwterminal">&nbsp;</div>
-				     		<p><span class="top-terminal-text">+</span></p>
+				     		<p><span class="top-terminal-text">S</span></p>
 				     	</div>
 					</div>
 				     <div id='P1-container'>
@@ -485,6 +507,30 @@
 						<div class="form-inline">
 							<label><span class="badge badge-secondary">D1</span></label>
 							<select name='d1bi' class='select select-reset' id='d1bi'>
+								{% for key, value in d1d2d3.items() %}
+									<option value="{{value}}">{{key}}</option>
+								{% endfor %}
+							</select>
+						</div>
+						<div class="form-inline">
+							<label><span class="badge badge-secondary">D2</span></label>
+							<select name='d1bi' class='select select-reset' id='d2bi'>
+								{% for key, value in d1d2d3.items() %}
+									<option value="{{value}}">{{key}}</option>
+								{% endfor %}
+							</select>
+						</div>
+						<div class="form-inline">
+							<label><span class="badge badge-secondary">D3</span></label>
+							<select name='d1bi' class='select select-reset' id='d3bi'>
+								{% for key, value in d1d2d3.items() %}
+									<option value="{{value}}">{{key}}</option>
+								{% endfor %}
+							</select>
+						</div>
+						<div class="form-inline">
+							<label><span class="badge badge-secondary">D1</span></label>
+							<select name='d1bi' class='select select-reset' id='b1d1bi'>
 								{% for key, value in d1d2.items() %}
 									<option value="{{value}}">{{key}}</option>
 								{% endfor %}
@@ -492,7 +538,7 @@
 						</div>
 						<div class="form-inline">
 							<label><span class="badge badge-secondary">D2</span></label>
-							<select name='d2bi' class='select select-reset' id='d2bi'>
+							<select name='d2bi' class='select select-reset' id='b2d2bi'>
 								{% for key, value in d1d2.items() %}
 									<option value="{{value}}">{{key}}</option>
 								{% endfor %}
@@ -584,12 +630,12 @@
 		</div>
 			<div id='knx-container'>
 				<form class='knx-form-container' id='knxForm'>
+					<h3><span class="badge badge-secondary">KNX PL-Link</span></h3>
 					<!-- Step 16: Create a selection to choose items from the list that was passed from Flask to this rendered
 					template as arguments. 
 					- Note** All of the select tags are part of the 'select' class, but have their own unique IDs-->
 					<div class='knx-form-container'>
 						<div id='knx-list-1'>
-							<h3><span class="badge badge-secondary">KNX PL-Link</span></h3>
 							{% for item in range(1,11) %}
 							<div class="form-inline">
 								<label><span class="badge badge-secondary select-badge">KNX-{{item}}</span></label>

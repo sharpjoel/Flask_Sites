@@ -117,6 +117,16 @@ def index():
         'Door Contact':'L',
         'Binary Input General':'N'
         }
+    d1d2d3_in = {
+        "None":"X",
+        'Fan Status':'G',
+        'Window Contact':'H',
+        'Presence Detector':'I',
+        'Condensation Sensor':'J',
+        'Condensation Alarm':'K',
+        'Door Contact':'L',
+        'Binary Input General':'N'
+        }
     #pressure: dictionary of pressure sensors
     pressure = {
         "None":"X",
@@ -171,6 +181,7 @@ def index():
         appfuncs=appfuncs,
         x1x4=x1x4_in,
         d1d2=d1d2_in,
+        d1d2d3=d1d2d3_in,
         pressure=pressure,
         threepts=three_points,
         zten1030=zero_ten_1030,
