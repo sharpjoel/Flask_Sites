@@ -32,6 +32,8 @@ body {
 #very-specific-container {
 	float:left;
 	width: 60%;
+	max-width: 865px;
+	max-height: 950px;
 	height: 100%;
 	margin-left: none;
 	margin-right: none;
@@ -639,7 +641,9 @@ Values divided by 920 on 10/30/2020
 #selection-container{
 	float:left;
 	width: 40%;
+	max-width: 575px;
 	height: 100%;
+	max-height: 950px;
 	top:5%;
 	margin-right: none;
 	padding-left: none;
@@ -649,7 +653,9 @@ Values divided by 920 on 10/30/2020
 
 #io-container{
 	width:100%;
+	max-width: 575px;
 	height:51%;
+	max-height:485px;
 }
 
 #output-container{
@@ -658,10 +664,9 @@ Values divided by 920 on 10/30/2020
 
 #input-container{
 	float:right;
-	margin-right:5%;
-	top:-54.5%;
-	width:45%;
-	position:relative;
+	margin-left:45%;
+	position:absolute;
+	z-index: 1000;
 }
 
 #knx-container{
@@ -684,8 +689,6 @@ Values divided by 920 on 10/30/2020
 
 #knx-list-2{
 	float:left;
-	width:50%;
-	top:-28%;
 	position:relative;
 }
 

@@ -20,6 +20,8 @@ $(document).ready(function(){
 				$( "#y1y2-3pt" ).val("A");
 				$( "#y5y6-3pt" ).val("C");
 				$( "#p1pres" ).val("A");
+				$( "#b1d1bi" ).val("A");
+				$( "#x2ai" ).val("C");
 			}
 			else if(template == 'B'){
 				$( ".select-reset" ).prop('selectedIndex',0);
@@ -29,6 +31,7 @@ $(document).ready(function(){
 				$( "#y1y2-3pt" ).val("X");
 				$( "#y3y4-3pt" ).val("C");
 				$( "#y1b0" ).val("A");
+				$( "#b1d1bi" ).val("A");
 			}
 			else{
 				$( ".select-reset" ).prop('selectedIndex',0);
@@ -61,6 +64,15 @@ $(document).ready(function(){
 		var y20_str = "" 
 		var y30_str = ""
 		var y40_str = ""
+		var d1bi_str = ""
+		var d2bi_str = ""
+		var d3bi_str = ""
+		var x1_str = ""
+		var x2_str = ""
+		var x3_str = ""
+		var x4_str = ""
+		var b1d1_str = ""
+		var b2d2_str = ""
 		var p1_str = ""
 		var scom_str = ""
 		var scom1_str = ""
@@ -118,6 +130,15 @@ $(document).ready(function(){
 				$("#y7bo").prop('selectedIndex',0);
 				$("#y8bo").prop('selectedIndex',0);
 				$("select#p1pres").prop('selectedIndex',0);
+			}
+			else{
+				$("select#scom1pres").prop('selectedIndex',0);
+				$("select#scom2pres").prop('selectedIndex',0);
+				$("select#scom3pres").prop('selectedIndex',0);
+				$("select#scom4pres").prop('selectedIndex',0);
+				$("select#d1bi").prop('selectedIndex',0);
+				$("select#d2bi").prop('selectedIndex',0);
+				$("select#d3bi").prop('selectedIndex',0);
 			};
 			if(dxr_str == 'E' && (etype_str != 'E' && etype_str != 'F' && etype_str != 'G')){
 				$("#y7y8-3pt").prop('selectedIndex',0);
@@ -129,6 +150,12 @@ $(document).ready(function(){
 				$("select#scom2pres").prop('selectedIndex',0);
 				$("select#scom3pres").prop('selectedIndex',0);
 				$("select#scom4pres").prop('selectedIndex',0);
+				$("select#d1bi").prop('selectedIndex',0);
+				$("select#d2bi").prop('selectedIndex',0);
+				$("select#d3bi").prop('selectedIndex',0);
+				$("select#b2d2bi").prop('selectedIndex',0);
+				$("select#x3ai").prop('selectedIndex',0);
+				$("select#x4ai").prop('selectedIndex',0);
 			};
 		});
 		$( "select#mtypeSelection" ).each(function() {
@@ -148,6 +175,12 @@ $(document).ready(function(){
 				$("select#scom2pres").prop('selectedIndex',0);
 				$("select#scom3pres").prop('selectedIndex',0);
 				$("select#scom4pres").prop('selectedIndex',0);
+				$("select#d1bi").prop('selectedIndex',0);
+				$("select#d2bi").prop('selectedIndex',0);
+				$("select#d3bi").prop('selectedIndex',0);
+				$("select#b2d2bi").prop('selectedIndex',0);
+				$("select#x3ai").prop('selectedIndex',0);
+				$("select#x4ai").prop('selectedIndex',0);
 			};
 		});
 		$( "select#ptypeSelection" ).each(function() {
@@ -498,16 +531,121 @@ $(document).ready(function(){
 		$( "select#scom4pres option:selected" ).each(function() {
 			scom4_str += $( this ).val();
 		});
+		$( "select#d1bi option:selected" ).each(function() {
+			d1bi_str += $( this ).val();
+			if(d1bi_str == 'X'){
+				$("#d1").css('background','');
+			}
+			else{
+				$("#d1").css('background','green');
+			}
+		});
+		$( "select#d2bi option:selected" ).each(function() {
+			d2bi_str += $( this ).val();
+			if(d2bi_str == 'X'){
+				$("#d2").css('background','');
+			}
+			else{
+				$("#d2").css('background','green');
+			}
+		});
+		$( "select#d3bi option:selected" ).each(function() {
+			d3bi_str += $( this ).val();
+			if(d3bi_str == 'X'){
+				$("#d3").css('background','');
+			}
+			else{
+				$("#d3").css('background','green');
+			}
+		});
+		$( "select#x1ai option:selected" ).each(function() {
+			x1_str += $( this ).val();
+			if(x1_str == 'X'){
+				$("#x1").css('background','');
+			}
+			else{
+				$("#x1").css('background','green');
+			}
+		});
+		$( "select#x2ai option:selected" ).each(function() {
+			x2_str += $( this ).val();
+			if(x2_str == 'X'){
+				$("#x2").css('background','');
+			}
+			else{
+				$("#x2").css('background','green');
+			}
+		});
+		$( "select#x3ai option:selected" ).each(function() {
+			x3_str += $( this ).val();
+			if(x3_str == 'X'){
+				$("#x3").css('background','');
+			}
+			else{
+				$("#x3").css('background','green');
+			}
+		});
+		$( "select#x4ai option:selected" ).each(function() {
+			x4_str += $( this ).val();
+			if(x4_str == 'X'){
+				$("#x4").css('background','');
+			}
+			else{
+				$("#x4").css('background','green');
+			}
+		});
 
-		// Bottom Terminal Selection
+		//
+
 		var type_str = etype_str + mtype_str + ptype_str
 		console.log("type string is: " + type_str)
+
+		//
+
+		$( "select#b1d1bi option:selected" ).each(function() {
+			b1d1_str += $( this ).val();
+			if((type_str == 'E' || type_str == 'F' || type_str == 'G') && b1d1_str == 'X'){
+				$("#B1D1").css('background','');
+			}
+			else if((type_str != 'E' && type_str != 'F' && type_str != 'G') && b1d1_str == 'X'){
+				$("#B1D1").css('background','');
+				$("#B2D2").css('background','');
+			}
+			else if(type_str != 'E' && type_str != 'F' && type_str != 'G' && b1d1_str != 'X'){
+				$("#B2D2").css('background','green');
+			}
+			else if((type_str == 'E' || type_str == 'F' || type_str == 'G') && b1d1_str != 'X'){
+				$("#B1D1").css('background','green');
+			}
+		});
+		$( "select#b2d2bi option:selected" ).each(function() {
+			b2d2_str += $( this ).val();
+			if(type_str == 'E' || type_str == 'F' || type_str == 'G')
+				if(b2d2_str == 'X'){
+					$("#B2D2").css('background','');
+				}
+				else{
+					$("#B2D2").css('background','green');
+				}
+		});
+
+		// Bottom Terminal Selection
+		
 		if(type_str == 'E'){
 				$("#P1-container").hide();
 				$("#scom-container").hide();
 				$("#blank-container").show();
 				$('#B1D1').css('visibility','visible');
 				$('#B2D2').css('visibility','visible');
+				$('span#b1d1-badge').text('D1');
+				$('span#b2d2-badge').text('D2');
+				$('span.lab-d1d2d3').hide();
+				$('select.lab-d1d2d3').hide();
+				$('span#b2d2-badge').show();
+				$('select#b2d2bi').show();
+				$('span.x3x4-badge').show();
+				$('select#x3ai').show();
+				$('select#x4ai').show();
 				$('#b1d1text').text('D1');
 				$('#b2d2text').text('D2');
 				$("select#y5y6-3pt").show();
@@ -538,6 +676,15 @@ $(document).ready(function(){
 				$("#scom-container").show();
 				$("#blank-container").hide();
 				$('#B1D1').css('visibility','visible');
+				$('span#b1d1-badge').text('B1');
+				$('span#b2d2-badge').text('B2');
+				$('span.lab-d1d2d3').show();
+				$('select.lab-d1d2d3').show();
+				$('span#b2d2-badge').show();
+				$('select#b2d2bi').show();
+				$('span.x3x4-badge').show();
+				$('select#x3ai').show();
+				$('select#x4ai').show();
 				$('#b1d1text').text('B1');
 				$('#b2d2text').text('B2');
 				$('#y5').css('visibility','hidden');
@@ -571,6 +718,15 @@ $(document).ready(function(){
 				$("#scom-container").show();
 				$("#blank-container").hide();
 				$('#B1D1').css('visibility','visible');
+				$('span#b1d1-badge').text('B1');
+				$('span#b2d2-badge').text('B2');
+				$('span.lab-d1d2d3').show();
+				$('select.lab-d1d2d3').show();
+				$('span#b2d2-badge').show();
+				$('select#b2d2bi').show();
+				$('span.x3x4-badge').show();
+				$('select#x3ai').show();
+				$('select#x4ai').show();
 				$('#b1d1text').text('B1');
 				$('#b2d2text').text('B2');
 				$('#y5').css('visibility','hidden');
@@ -604,6 +760,15 @@ $(document).ready(function(){
 				$("#scom-container").hide();
 				$("#blank-container").hide();
 				$('#B1D1').css('visibility','hidden');
+				$('span.lab-d1d2d3').hide();
+				$('span#b1d1-badge').text('D1');
+				$('span#b2d2-badge').text('D2');
+				$('span#b2d2-badge').hide();
+				$('select#b2d2bi').hide();
+				$('span.x3x4-badge').hide();
+				$('select#x3ai').hide();
+				$('select#x4ai').hide();
+				$('select.lab-d1d2d3').hide();
 				$('#b2d2text').text('D1');
 				$("select#y5y6-3pt").show();
 				$("select#y5bo").show();
@@ -636,9 +801,10 @@ $(document).ready(function(){
 		var AO3pt = y1y2_str + y3y4_str + y5y6_str + y7y8_str + "_";
 		var AOten = y10_str + y20_str + y30_str + y40_str + "_";
 		var BO = y1_str + y2_str + y3_str + y4_str + y5_str + y6_str + y7_str + y8_str + "_";
-		var SCOM = p1_str + scom1_str + scom2_str + scom3_str + scom4_str + "_";
+		var IN = b1d1_str + b2d2_str + x1_str + x2_str + x3_str + x4_str + d1bi_str + d2bi_str + d3bi_str + "_";
+		var PRES = p1_str + scom1_str + scom2_str + scom3_str + scom4_str + "_";
 		var KNX = knx1_str + "_";
-		str = DXR + AO3pt + AOten + BO + SCOM + KNX;
+		str = DXR + AO3pt + AOten + BO + IN + PRES + KNX;
 		$('#successAlert').text(str).show();
 		// Step 22: Construct your AJAX requests. Without AJAX, the select tags would need
 		//	method='POST' and action='/home'. However, we would need to refresh our use a submit

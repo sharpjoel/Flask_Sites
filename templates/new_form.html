@@ -505,40 +505,40 @@
 					<div class='form-container'>
 						<h3><span class="badge badge-secondary">Inputs:Binary+Analog</span></h3>
 						<div class="form-inline">
-							<label><span class="badge badge-secondary">D1</span></label>
-							<select name='d1bi' class='select select-reset' id='d1bi'>
+							<label><span class="badge badge-secondary lab-d1d2d3">D1</span></label>
+							<select name='d1bi' class='select select-reset lab-d1d2d3' id='d1bi'>
 								{% for key, value in d1d2d3.items() %}
 									<option value="{{value}}">{{key}}</option>
 								{% endfor %}
 							</select>
 						</div>
 						<div class="form-inline">
-							<label><span class="badge badge-secondary">D2</span></label>
-							<select name='d1bi' class='select select-reset' id='d2bi'>
+							<label><span class="badge badge-secondary lab-d1d2d3">D2</span></label>
+							<select name='d2bi' class='select select-reset lab-d1d2d3' id='d2bi'>
 								{% for key, value in d1d2d3.items() %}
 									<option value="{{value}}">{{key}}</option>
 								{% endfor %}
 							</select>
 						</div>
 						<div class="form-inline">
-							<label><span class="badge badge-secondary">D3</span></label>
-							<select name='d1bi' class='select select-reset' id='d3bi'>
+							<label><span class="badge badge-secondary lab-d1d2d3">D3</span></label>
+							<select name='d3bi' class='select select-reset lab-d1d2d3' id='d3bi'>
 								{% for key, value in d1d2d3.items() %}
 									<option value="{{value}}">{{key}}</option>
 								{% endfor %}
 							</select>
 						</div>
 						<div class="form-inline">
-							<label><span class="badge badge-secondary">D1</span></label>
-							<select name='d1bi' class='select select-reset' id='b1d1bi'>
+							<label><span class="badge badge-secondary" id='b1d1-badge'>D1</span></label>
+							<select name='b1d1bi' class='select select-reset' id='b1d1bi'>
 								{% for key, value in d1d2.items() %}
 									<option value="{{value}}">{{key}}</option>
 								{% endfor %}
 							</select>
 						</div>
 						<div class="form-inline">
-							<label><span class="badge badge-secondary">D2</span></label>
-							<select name='d2bi' class='select select-reset' id='b2d2bi'>
+							<label><span class="badge badge-secondary" id='b2d2-badge'>D2</span></label>
+							<select name='b2d2bi' class='select select-reset' id='b2d2bi'>
 								{% for key, value in d1d2.items() %}
 									<option value="{{value}}">{{key}}</option>
 								{% endfor %}
@@ -561,7 +561,7 @@
 							</select>
 						</div>
 						<div class="form-inline">
-							<label><span class="badge badge-secondary">X3</span></label>
+							<label><span class="badge badge-secondary x3x4-badge">X3</span></label>
 							<select name='x3ai' class='select select-reset' id='x3ai'>
 								{% for key, value in x1x4.items() %}
 									<option value="{{value}}">{{key}}</option>
@@ -569,7 +569,7 @@
 							</select>
 						</div>
 						<div class="form-inline">
-							<label><span class="badge badge-secondary">X4</span></label>
+							<label><span class="badge badge-secondary x3x4-badge">X4</span></label>
 							<select name='x4ai' class='select select-reset' id='x4ai'>
 								{% for key, value in x1x4.items() %}
 									<option value="{{value}}">{{key}}</option>
