@@ -20,7 +20,7 @@ body {
   resize: both;
   position: relative;
   margin-bottom:1%;
-  height:950px;
+  height:1200px;
 }
 
 .type-container{
@@ -33,7 +33,7 @@ body {
 	float:left;
 	width: 60%;
 	max-width: 865px;
-	max-height: 950px;
+	max-height: 1200px;
 	height: 100%;
 	margin-left: none;
 	margin-right: none;
@@ -685,7 +685,7 @@ Values divided by 920 on 10/30/2020
 
 #knx-list-1{
 	float:left;
-	width:30%;
+	width:45%;
 	position:relative;
 }
 
@@ -699,7 +699,24 @@ Values divided by 920 on 10/30/2020
 	margin-left:3%;
 	width:100%;
 	margin-right:40%;
-	height:500px;
+	height:1000px;
+}
+
+#appForm{
+	width:95%;
+}
+
+#standard-seq-1{
+	margin-right:2%;
+}
+
+#standard-seq-2{
+	float:left;
+	margin-right:2%;
+}
+
+#standard-seq-3{
+	float:left;
 }
 
 .seq-font{

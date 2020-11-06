@@ -333,9 +333,27 @@
 				<!--
 					APPLICATION FUNCTION CHECKBOX SELECTION
 				-->
-				<div class='form-container'>
-					<h3><span class="badge badge-secondary">App Functions</span></h3>
+				<div class='form-container' id="standard-seq-1">
+					<h3><span class="badge badge-secondary">HVAC Sequences</span></h3>
 					{% for item in appfuncs %}
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="" id="{{item}}">
+	  						<label class="form-check-label" for="{{item}}"><span class="badge badge-secondary">{{item}}</span></label>
+	  					</div>
+	  				{% endfor %}
+				</div>
+				<div class='form-container' id="standard-seq-2">
+					<h3><span class="badge badge-secondary">TRA Sequences</span></h3>
+					{% for item in appfuncs2 %}
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="" id="{{item}}">
+	  						<label class="form-check-label" for="{{item}}"><span class="badge badge-secondary">{{item}}</span></label>
+	  					</div>
+	  				{% endfor %}
+				</div>
+				<div class='form-container' id="standard-seq-3">
+					<h3><span class="badge badge-secondary">Central Functions</span></h3>
+					{% for item in cenfuncs %}
 						<div class="form-check">
 							<input class="form-check-input" type="checkbox" value="" id="{{item}}">
 	  						<label class="form-check-label" for="{{item}}"><span class="badge badge-secondary">{{item}}</span></label>

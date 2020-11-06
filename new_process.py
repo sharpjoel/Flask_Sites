@@ -150,15 +150,31 @@ def index():
         }
     #appfuncs: dictionary of application functions
     appfuncs = {
-        'Room Op Mode Determination':'A',
-        'Room Stpt Determination':'B',
-        'Heat/Cool Determination':'C',
-        'Temperature Control for Cooling':'D',
-        'Temperature Control for Heating':'E',
-        'Rapid Ventilation':'F',
-        'Ventilation/DCV':'G',
-        'Air Volume Tracking':'H',
-        'Greenleaf':'I',
+        'Occupied Mode':'A',
+        'Unoccupied Mode':'B',
+        'Night-Cooling Mode':'C',
+        'Warm-up Mode':'D',
+        'Cool-down Mode':'E',
+        'Presence Detection':'F',
+        'Heat/Cool Determination':'G',
+        'VAV Cooling Sequence':'H',
+        'VAV Heating Sequence':'I',
+        'Ventilation/DCV':'J',
+        'Rapid Ventilation':'K',
+        'Air Volume Tracking':'L',
+        'Dehumidification':'M',
+        'Greenleaf':'N',
+        'Natural Ventilation':'O'
+        }
+    appfuncs2 = {
+        'Lighting':'A',
+        'Shading':'B',
+        }
+    cenfuncs = {
+        'Operating Mode':'A',
+        'Delayed Op Mode':'B',
+        'Static Reset':'C',
+        'Temp Reset':'D',
         }
     templates = {
         'Blank':'',
@@ -193,6 +209,8 @@ def index():
     """
     return render_template('new_form.html',
         appfuncs=appfuncs,
+        appfuncs2=appfuncs2,
+        cenfuncs=cenfuncs,
         x1x4=x1x4_in,
         d1d2=d1d2_in,
         d1d2d3=d1d2d3_in,
