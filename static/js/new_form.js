@@ -20,8 +20,9 @@ $(document).ready(function(){
 				$( "#y1y2-3pt" ).val("A");
 				$( "#y5y6-3pt" ).val("C");
 				$( "#p1pres" ).val("A");
-				$( "#b1d1bi" ).val("A");
+				$( "#b1d1bi" ).val("I");
 				$( "#x2ai" ).val("C");
+				$( "#knx-1" ).val("D");
 			}
 			else if(template == 'B'){
 				$( ".select-reset" ).prop('selectedIndex',0);
@@ -80,6 +81,25 @@ $(document).ready(function(){
 		var scom3_str = ""
 		var scom4_str = ""
 		var knx1_str = ""
+		var knx2_str = ""
+		var knx3_str = ""
+		var knx4_str = ""
+		var knx5_str = ""
+		var knx6_str = ""
+		var knx7_str = ""
+		var knx8_str = ""
+		var knx9_str = ""
+		var knx10_str = ""
+		var knx11_str = ""
+		var knx12_str = ""
+		var knx13_str = ""
+		var knx14_str = ""
+		var knx15_str = ""
+		var knx16_str = ""
+		var knx17_str = ""
+		var knx18_str = ""
+		var knx19_str = ""
+		var knx20_str = ""
 		var str = ""
 
 		// Step 20: Read the select tags by their individual IDs, and collect
@@ -247,24 +267,6 @@ $(document).ready(function(){
 				$("#y6").css('background','');
 			};
 		});
-		// $( "select#y7y8-3pt option:selected" ).each(function() {
-		// 	y7y8_str += $( this ).val();
-		// 	if(y7y8_str != 'X'){
-		// 		$("#y7bo").prop('selectedIndex',0);
-		// 		$("#y8bo").prop('selectedIndex',0);
-		// 		$("#y7bo").hide();
-		// 		$("#y8bo").hide();
-		// 		$("#y7").css('background','green');
-		// 		$("#y8").css('background','green');
-		// 	}else{
-		// 		if(y7y8_str == 'X'){
-		// 			$("#y7bo").show();
-		// 			$("#y8bo").show();
-		// 		};
-		// 		$("#y7").css('background','');
-		// 		$("#y8").css('background','');
-		// 	};
-		// });
 		$( "select#y7y8-3pt option:selected" ).each(function() {
 			y7y8_str += $( this ).val();
 			if(type_str == 'F' || type_str == 'G'){
@@ -296,16 +298,192 @@ $(document).ready(function(){
 				};
 			};
 		});
-		$( "select.selection-knx option:selected" ).each(function() {
+
+		// **** KNX SELECTION ***
+
+		$( "select#knx-1 option:selected" ).each(function() {
 			knx1_str += $( this ).val();
-			// if(y7y8_str != 'X'){
-			// 	$("#y7").css('background','green');
-			// 	$("#y8").css('background','green');
-			// }else{
-			// 	$("#y7").css('background','');
-			// 	$("#y8").css('background','');
-			// };
+			if(knx1_str != 'X'){
+				$('#knx-term-1').css('background-color','green');
+			}
+			else{
+				$('#knx-term-1').css('background','');
+			}
 		});
+		$( "select#knx-2 option:selected" ).each(function() {
+			knx2_str += $( this ).val();
+			if(knx2_str != 'X'){
+				$('#knx-term-2').css('background-color','green');
+			}
+			else{
+				$('#knx-term-2').css('background','');
+			}
+		});
+		$( "select#knx-3 option:selected" ).each(function() {
+			knx3_str += $( this ).val();
+			if(knx3_str != 'X'){
+				$('#knx-term-3').css('background-color','green');
+			}
+			else{
+				$('#knx-term-3').css('background','');
+			}
+		});
+		$( "select#knx-4 option:selected" ).each(function() {
+			knx4_str += $( this ).val();
+			if(knx4_str != 'X'){
+				$('#knx-term-4').css('background-color','green');
+			}
+			else{
+				$('#knx-term-4').css('background','');
+			}
+		});
+		$( "select#knx-5 option:selected" ).each(function() {
+			knx5_str += $( this ).val();
+			if(knx5_str != 'X'){
+				$('#knx-term-5').css('background-color','green');
+			}
+			else{
+				$('#knx-term-5').css('background','');
+			}
+		});
+		$( "select#knx-6 option:selected" ).each(function() {
+			knx6_str += $( this ).val();
+			if(knx6_str != 'X'){
+				$('#knx-term-6').css('background-color','green');
+			}
+			else{
+				$('#knx-term-6').css('background','');
+			}
+		});
+		$( "select#knx-7 option:selected" ).each(function() {
+			knx7_str += $( this ).val();
+			if(knx7_str != 'X'){
+				$('#knx-term-7').css('background-color','green');
+			}
+			else{
+				$('#knx-term-7').css('background','');
+			}
+		});
+		$( "select#knx-8 option:selected" ).each(function() {
+			knx8_str += $( this ).val();
+			if(knx8_str != 'X'){
+				$('#knx-term-8').css('background-color','green');
+			}
+			else{
+				$('#knx-term-8').css('background','');
+			}
+		});
+		$( "select#knx-9 option:selected" ).each(function() {
+			knx9_str += $( this ).val();
+			if(knx9_str != 'X'){
+				$('#knx-term-9').css('background-color','green');
+			}
+			else{
+				$('#knx-term-9').css('background','');
+			}
+		});
+		$( "select#knx-10 option:selected" ).each(function() {
+			knx10_str += $( this ).val();
+			if(knx10_str != 'X'){
+				$('#knx-term-10').css('background-color','green');
+			}
+			else{
+				$('#knx-term-10').css('background','');
+			}
+		});
+		$( "select#knx-11 option:selected" ).each(function() {
+			knx11_str += $( this ).val();
+			if(knx11_str != 'X'){
+				$('#knx-term-11').css('background-color','green');
+			}
+			else{
+				$('#knx-term-11').css('background','');
+			}
+		});
+		$( "select#knx-12 option:selected" ).each(function() {
+			knx12_str += $( this ).val();
+			if(knx12_str != 'X'){
+				$('#knx-term-12').css('background-color','green');
+			}
+			else{
+				$('#knx-term-12').css('background','');
+			}
+		});
+		$( "select#knx-13 option:selected" ).each(function() {
+			knx13_str += $( this ).val();
+			if(knx13_str != 'X'){
+				$('#knx-term-13').css('background-color','green');
+			}
+			else{
+				$('#knx-term-13').css('background','');
+			}
+		});
+		$( "select#knx-14 option:selected" ).each(function() {
+			knx14_str += $( this ).val();
+			if(knx14_str != 'X'){
+				$('#knx-term-14').css('background-color','green');
+			}
+			else{
+				$('#knx-term-14').css('background','');
+			}
+		});
+		$( "select#knx-15 option:selected" ).each(function() {
+			knx15_str += $( this ).val();
+			if(knx15_str != 'X'){
+				$('#knx-term-15').css('background-color','green');
+			}
+			else{
+				$('#knx-term-15').css('background','');
+			}
+		});
+		$( "select#knx-16 option:selected" ).each(function() {
+			knx16_str += $( this ).val();
+			if(knx16_str != 'X'){
+				$('#knx-term-16').css('background-color','green');
+			}
+			else{
+				$('#knx-term-16').css('background','');
+			}
+		});
+		$( "select#knx-17 option:selected" ).each(function() {
+			knx17_str += $( this ).val();
+			if(knx17_str != 'X'){
+				$('#knx-term-17').css('background-color','green');
+			}
+			else{
+				$('#knx-term-17').css('background','');
+			}
+		});
+		$( "select#knx-18 option:selected" ).each(function() {
+			knx18_str += $( this ).val();
+			if(knx18_str != 'X'){
+				$('#knx-term-18').css('background-color','green');
+			}
+			else{
+				$('#knx-term-18').css('background','');
+			}
+		});
+		$( "select#knx-19 option:selected" ).each(function() {
+			knx19_str += $( this ).val();
+			if(knx19_str != 'X'){
+				$('#knx-term-19').css('background-color','green');
+			}
+			else{
+				$('#knx-term-19').css('background','');
+			}
+		});
+		$( "select#knx-20 option:selected" ).each(function() {
+			knx20_str += $( this ).val();
+			if(knx20_str != 'X'){
+				$('#knx-term-20').css('background-color','green');
+			}
+			else{
+				$('#knx-term-20').css('background','');
+			}
+		});
+
+		// *** 0-10 VOLT SELECTION ***
+
 		$( "select#y10 option:selected" ).each(function() {
 			y10_str += $( this ).val();
 			if(y10_str != 'X'){
@@ -338,118 +516,175 @@ $(document).ready(function(){
 				$("#y40").css('background','');
 			};
 		});
+
+		// *** BINARY OUTPUT SELECTION ***
+
 		$( "select#y1bo option:selected" ).each(function() {
 			y1_str += $( this ).val();
-			if(y1_str != 'X'){
+			if(type_str == 'F' || type_str == 'G'){
 				$("#y1y2-3pt").prop('selectedIndex',0);
-				$("#y1y2-3pt").hide();
-				$("#y1").css('background','green');
+				$("#y1bo").prop('selectedIndex',0);
+				$("#y1y2-3pt").hide()
+				$("#y1bo").hide();
+				$("#y1").css('background','');
 			}
 			else{
-				if(y1_str == 'X' && y2_str == 'X'){
-					$("#y1y2-3pt").show();
-				};
-				if(y1y2_str == 'X'){
-					$("#y1").css('background','');
+				if(y1_str != 'X'){
+					$("#y1y2-3pt").prop('selectedIndex',0);
+					$("#y1y2-3pt").hide();
+					$("#y1").css('background','green');
 				}
 				else{
-					$("#y1").css('background','green');
+					if(y1_str == 'X' && y2_str == 'X'){
+						$("#y1y2-3pt").show();
+					};
+					if(y1y2_str == 'X'){
+						$("#y1").css('background','');
+					}
+					else{
+						$("#y1").css('background','green');
+					}
 				};
 			};
 		});
 		$( "select#y2bo option:selected" ).each(function() {
 			y2_str += $( this ).val();
-			if(y2_str != 'X'){
+			if(type_str == 'F' || type_str == 'G'){
 				$("#y1y2-3pt").prop('selectedIndex',0);
-				$("#y1y2-3pt").hide();
-				$("#y2").css('background','green');
+				$("#y2bo").prop('selectedIndex',0);
+				$("#y1y2-3pt").hide()
+				$("#y2bo").hide();
+				$("#y2").css('background','');
 			}
 			else{
-				if(y1_str == 'X' && y2_str == 'X'){
-					$("#y1y2-3pt").show();
-				};
-				if(y1y2_str == 'X'){
-					$("#y2").css('background','');
-				}
-				else{
+				if(y2_str != 'X'){
+					$("#y1y2-3pt").prop('selectedIndex',0);
+					$("#y1y2-3pt").hide()
 					$("#y2").css('background','green');
 				}
+				else{
+					if(y1_str == 'X' && y2_str == 'X'){
+						$("#y1y2-3pt").show();
+					};
+					if(y1y2_str == 'X'){
+						$("#y2").css('background','');
+					}
+					else{
+						$("#y2").css('background','green');
+					}
+				};
 			};
 		});
 		$( "select#y3bo option:selected" ).each(function() {
 			y3_str += $( this ).val();
-			if(y3_str != 'X'){
+			if(type_str == 'F' || type_str == 'G'){
 				$("#y3y4-3pt").prop('selectedIndex',0);
-				$("#y3y4-3pt").hide();
-				$("#y3").css('background','green');
+				$("#y3bo").prop('selectedIndex',0);
+				$("#y3y4-3pt").hide()
+				$("#y3bo").hide();
+				$("#y3").css('background','');
 			}
 			else{
-				if(y3_str == 'X' && y4_str == 'X'){
-					$("#y3y4-3pt").show();
-				};
-				if(y3y4_str == 'X'){
-					$("#y3").css('background','');
-				}
-				else{
+				if(y3_str != 'X'){
+					$("#y3y4-3pt").prop('selectedIndex',0);
+					$("#y3y4-3pt").hide();
 					$("#y3").css('background','green');
 				}
+				else{
+					if(y3_str == 'X' && y4_str == 'X'){
+						$("#y3y4-3pt").show();
+					};
+					if(y3y4_str == 'X'){
+						$("#y3").css('background','');
+					}
+					else{
+						$("#y3").css('background','green');
+					}
+				};
 			};
 		});
 		$( "select#y4bo option:selected" ).each(function() {
 			y4_str += $( this ).val();
-			if(y4_str != 'X'){
+			if(type_str == 'F' || type_str == 'G'){
 				$("#y3y4-3pt").prop('selectedIndex',0);
-				$("#y3y4-3pt").hide();
-				$("#y4").css('background','green');
+				$("#y4bo").prop('selectedIndex',0);
+				$("#y3y4-3pt").hide()
+				$("#y4bo").hide();
+				$("#y4").css('background','');
 			}
 			else{
-				if(y3_str == 'X' && y4_str == 'X'){
-					$("#y3y4-3pt").show();
-				};
-				if(y3y4_str == 'X'){
-					$("#y4").css('background','');
-				}
-				else{
+				if(y4_str != 'X'){
+					$("#y3y4-3pt").prop('selectedIndex',0);
+					$("#y3y4-3pt").hide()
 					$("#y4").css('background','green');
 				}
+				else{
+					if(y3_str == 'X' && y4_str == 'X'){
+						$("#y3y4-3pt").show();
+					};
+					if(y3y4_str == 'X'){
+						$("#y4").css('background','');
+					}
+					else{
+						$("#y4").css('background','green');
+					}
+				};
 			};
 		});
 		$( "select#y5bo option:selected" ).each(function() {
 			y5_str += $( this ).val();
-			if(y5_str != 'X'){
+			if(type_str == 'F' || type_str == 'G'){
 				$("#y5y6-3pt").prop('selectedIndex',0);
-				$("#y5y6-3pt").hide();
-				$("#y5").css('background','green');
+				$("#y5bo").prop('selectedIndex',0);
+				$("#y5y6-3pt").hide()
+				$("#y5bo").hide();
+				$("#y5").css('background','');
 			}
 			else{
-				if(y5_str == 'X' && y6_str == 'X'){
-					$("#y5y6-3pt").show();
-				};
-				if(y5y6_str == 'X'){
-					$("#y5").css('background','');
-				}
-				else{
+				if(y5_str != 'X'){
+					$("#y5y6-3pt").prop('selectedIndex',0);
+					$("#y5y6-3pt").hide();
 					$("#y5").css('background','green');
 				}
+				else{
+					if(y5_str == 'X' && y6_str == 'X'){
+						$("#y5y6-3pt").show();
+					};
+					if(y5y6_str == 'X'){
+						$("#y5").css('background','');
+					}
+					else{
+						$("#y5").css('background','green');
+					}
+				};
 			};
 		});
 		$( "select#y6bo option:selected" ).each(function() {
 			y6_str += $( this ).val();
-			if(y6_str != 'X'){
+			if(type_str == 'F' || type_str == 'G'){
 				$("#y5y6-3pt").prop('selectedIndex',0);
+				$("#y6bo").prop('selectedIndex',0);
 				$("#y5y6-3pt").hide()
-				$("#y6").css('background','green');
+				$("#y6bo").hide();
+				$("#y6").css('background','');
 			}
 			else{
-				if(y5_str == 'X' && y6_str == 'X'){
-					$("#y5y6-3pt").show();
-				};
-				if(y5y6_str == 'X'){
-					$("#y6").css('background','');
-				}
-				else{
+				if(y6_str != 'X'){
+					$("#y5y6-3pt").prop('selectedIndex',0);
+					$("#y5y6-3pt").hide()
 					$("#y6").css('background','green');
 				}
+				else{
+					if(y5_str == 'X' && y6_str == 'X'){
+						$("#y5y6-3pt").show();
+					};
+					if(y5y6_str == 'X'){
+						$("#y6").css('background','');
+					}
+					else{
+						$("#y6").css('background','green');
+					}
+				};
 			};
 		});
 		$( "select#y7bo option:selected" ).each(function() {
@@ -509,6 +744,9 @@ $(document).ready(function(){
 				};
 			};
 		});
+
+		// *** PRESSURE SELECTION ***
+
 		$( "select#p1pres option:selected" ).each(function() {
 			p1_str += $( this ).val();
 			if(p1_str != 'X'){
@@ -531,6 +769,9 @@ $(document).ready(function(){
 		$( "select#scom4pres option:selected" ).each(function() {
 			scom4_str += $( this ).val();
 		});
+
+		// *** INPUT SELECTION ***
+
 		$( "select#d1bi option:selected" ).each(function() {
 			d1bi_str += $( this ).val();
 			if(d1bi_str == 'X'){
@@ -770,9 +1011,9 @@ $(document).ready(function(){
 				$('select#x4ai').hide();
 				$('select.lab-d1d2d3').hide();
 				$('#b2d2text').text('D1');
-				$("select#y5y6-3pt").show();
-				$("select#y5bo").show();
-				$("select#y6bo").show();
+				// $("select#y5y6-3pt").show();
+				// $("select#y5bo").show();
+				// $("select#y6bo").show();
 				$('#y5').css('visibility','visible');
 				$('#y6').css('visibility','visible');
 				$('#y7').css('visibility','hidden');
@@ -803,7 +1044,8 @@ $(document).ready(function(){
 		var BO = y1_str + y2_str + y3_str + y4_str + y5_str + y6_str + y7_str + y8_str + "_";
 		var IN = b1d1_str + b2d2_str + x1_str + x2_str + x3_str + x4_str + d1bi_str + d2bi_str + d3bi_str + "_";
 		var PRES = p1_str + scom1_str + scom2_str + scom3_str + scom4_str + "_";
-		var KNX = knx1_str + "_";
+		var KNX = knx1_str +  knx2_str +  knx3_str +  knx4_str +  knx5_str +  knx6_str +  knx7_str +  knx8_str +  knx9_str +  knx10_str;
+		KNX = KNX + knx11_str +  knx12_str +  knx13_str +  knx14_str +  knx15_str +  knx16_str +  knx17_str +  knx18_str +  knx19_str +  knx20_str + "_";
 		str = DXR + AO3pt + AOten + BO + IN + PRES + KNX;
 		$('#successAlert').text(str).show();
 		// Step 22: Construct your AJAX requests. Without AJAX, the select tags would need

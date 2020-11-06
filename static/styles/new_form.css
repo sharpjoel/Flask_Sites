@@ -616,11 +616,13 @@ Values divided by 920 on 10/30/2020
 	border-right:solid 1px black;
 	border-bottom:solid 2px black;
 }
+
 .knx-add{
 	font-size: 65%;
 	padding-left: 0.1em;
 	padding-right:0px;
 }
+
 .knx-terminal{
 	position:relative;
 	width:100%;
@@ -696,5 +698,15 @@ Values divided by 920 on 10/30/2020
 	float:left;
 	margin-left:3%;
 	width:100%;
+	margin-right:40%;
 	height:500px;
+}
+
+.seq-font{
+	color:white;
+	margin-bottom:0px;
+}
+
+#uoc-badge{
+	margin-top: 10px;
 }

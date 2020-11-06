@@ -3,7 +3,7 @@
 <head>
 
 	<!-- Step 9: Create the title for your page. This is what shows up in the tab -->
-	<title>AJAX Example</title>
+	<title>PZTC Engineering Tool</title>
 
 	<!-- Step 10: Include the links to ajax and jquery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -15,6 +15,7 @@
 
 	<!-- Step 12: Include link to our javascript file. This is the file that will read objects
 	from this html page, and send AJAX requests to our python Flask server. -->
+	<script src="{{ url_for('static', filename='js/sequence.js') }}"></script>
 	<script src="{{ url_for('static', filename='js/new_form.js') }}"></script>
 	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/new_form.css') }}">
 </head>
@@ -313,7 +314,7 @@
 			<div class='knx-rail clearfix'>
 				{% for item in range(1,11) %}
 					<div class='knx-slot' id="knx-slot-{{item}}"><span class='knx-add'>KNX-{{item}}</span>
-						<div class='knx-terminal' id='knx-term-{{item}}'></div>
+						<div class='knx-terminal' id='knx-term-{{item}}'><span class='knx-dev' id='knx-dev-{{item}}'></span></div>
 					</div>
 				{% endfor %}
 			</div>
@@ -322,7 +323,7 @@
 			<div class='knx-rail clearfix'>
 				{% for item in range(11,21) %}
 					<div class='knx-slot' id="knx-slot-{{item}}"><span class='knx-add'>KNX-{{item}}</span>
-						<div class='knx-terminal' id='knx-term-{{item}}'></div>
+						<div class='knx-terminal' id='knx-term-{{item}}'><span class='knx-dev' id='knx-dev-{{item}}'></span></div>
 					</div>
 				{% endfor %}
 			</div>
@@ -670,12 +671,10 @@
 <br><br>
 <div id='sequence-container'>
 	<h3><span class="badge badge-secondary">Sequence Of Operation</span></h3>
-	<h4><span class="badge badge-secondary">Some Sequence</span></h4>
-	<p>blah blah</p>
-	<h4><span class="badge badge-secondary">Some Sequence</span></h4>	
-	<p>blah blah</p>
-	<h4><span class="badge badge-secondary">Some Sequence</span></h4>	
-	<p>blah blah</p>	
+	<h4><span class="badge badge-secondary">Occupied</span></h4>
+	<p id='occ-starting-p'></p>
+	<h4><span class="badge badge-secondary" id="uoc-badge">Unoccupied</span></h4>
+	<p id='uoc-starting-p'></p>
 </div>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

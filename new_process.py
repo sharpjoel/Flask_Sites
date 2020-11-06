@@ -5,6 +5,9 @@
     - jsonify: converts arguments or keyword arguments into a dictionary
 """
 from flask import Flask, render_template, request, jsonify
+import pandas as pd
+
+product_dictionary = pd.read_excel('products.xlsx')
 
 # Step 2: Create an Instance of Flask. This will be your application
 app = Flask(__name__)
@@ -60,15 +63,16 @@ def index():
         "CA":"C",
         }
     # three_points: dictionary of three point floating actuators
-    three_points = {
-        'None':'X',
-        'Supply Damper':'A',
-        'Exhaust Damper':'B',
-        'Hot Water Reheat Coil':'C',
-        'Radiator':'D',
-        'Chilled Water Coil':'E',
-        'Windows':'F'
-        }
+    # three_points = {
+    #     'None':'X',
+    #     'Supply Damper':'A',
+    #     'Exhaust Damper':'B',
+    #     'Hot Water Reheat Coil':'C',
+    #     'Radiator':'D',
+    #     'Chilled Water Coil':'E',
+    #     'Windows':'F'
+    #     }
+    three_points = product_dictionary.set_index('3pt Floating Actuator Key')['3pt Floating Actuator Value'].to_dict()
     # zero_ten_1030: dictionary of 0-10 Volt actuators for Y10 & Y30
     zero_ten_1030 = {
         'None':'X',
@@ -162,7 +166,17 @@ def index():
         '14050':'B'
     }
     #knx: dictionary of knx devices
-    knx = {'None':'X','P30':'A','P40':'B','P70':'C','P34':'D','P37':'E','P74':'F'}
+    knx = {
+        'None':'X',
+        'P30':'A',
+        'P40':'B',
+        'P70':'C',
+        'P34':'D',
+        'P37':'E',
+        'P74':'F',
+        'UP285':'G',
+        '5WG1-LGT':'H'
+        }
     pet = ""
     try:
         pet = request.form['pet'][:-1]
