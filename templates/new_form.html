@@ -376,7 +376,7 @@
 							<label><span class="badge badge-secondary">Y1,Y2</span></label>
 							<select name='y1y2-3pt' class='select select-reset' id='y1y2-3pt'>
 								{% for key, value in threepts.items() %}
-									<option value="{{value}}">{{key}}</option>
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
 								{% endfor %}
 							</select>
 						</div>
@@ -604,8 +604,8 @@
 					<div class='form-container'>
 						<h3><span class="badge badge-secondary">Pressure</span></h3>
 						<div class="form-inline">
-							<label><span class="badge badge-secondary">P1</span></label>
-							<select name='p1pres' class='select select-reset' id='p1pres'>
+							<label  class="p1-style"><span class="badge badge-secondary">P1</span></label>
+							<select name='p1pres' class="select select-reset" id='p1pres'>
 								{% for key, value in pressure.items() %}
 									<option value="{{value}}">{{key}}</option>
 								{% endfor %}
@@ -688,11 +688,198 @@
 </div>
 <br><br>
 <div id='sequence-container'>
-	<h3><span class="badge badge-secondary">Sequence Of Operation</span></h3>
-	<h4><span class="badge badge-secondary">Occupied</span></h4>
-	<p id='occ-starting-p'></p>
-	<h4><span class="badge badge-secondary" id="uoc-badge">Unoccupied</span></h4>
-	<p id='uoc-starting-p'></p>
+	<h3><span class="badge badge-secondary sequence-start">Sequence Of Operation</span></h3>
+
+	<!-- General Functionality -->
+
+	<h5><span class="badge badge-secondary">General Functionality</span></h5>
+	<h6>Operation</h6>
+	<p class="seq-font">The Siemens DXR controller operation is broken down into two roles:</p>
+	<ol>
+		<li class="seq-font"><span style="font-weight: bold">Room Operating Mode:</span> Based on schedule and central commands.</li>
+		<li class="seq-font"><span style="font-weight: bold">Plant Operating Mode:</span> Based on Room Operating Mode and input conditions such as presence detectors and window contacts.</li>
+	</ol>
+
+	<!-- Heating/Cooling -->
+
+	<div class="htcl" style="display:none">
+		<h6>Temperature Control</h6>
+		<p class="seq-font">The terminal unit will have the following adjustable Heating/Cooling setpoints:</p>
+		<ul>
+			<li class="seq-font" id="occ-cool" style="display:none">Occupied Cooling: 74°F</li>
+			<li class="seq-font" id="occ-heat" style="display:none">Occupied Heating: 70°F</li>
+			<li class="seq-font" id="standby-cool" style="display:none">Standby Cooling: 76°F</li>
+			<li class="seq-font" id="standby-heat" style="display:none">Standby Heating: 68°F</li>
+			<li class="seq-font" id="unocc-cool" style="display:none">Unoccupied Cooling: 85°F</li>
+			<li class="seq-font" id="unocc-heat" style="display:none">Unoccupied Heating: 58°F</li>
+		</ul>
+		<p class="seq-font cool-mode heat-mode" style="display:none">The terminal unit will control temperature by executing the following sequence:</p>
+		<ul>
+			<li class="seq-font cool-mode" id="cool-mode" style="display:none">If the room temperature rises above the cooling setpoint by 2°F (adjustable) for 10 minutes(adjustable), the terminal unit will enter cooling mode and engage the cooling PID controller. Upon initialization, the airflow setpoint will be set to the minimum cooling cfm. The PID controller will engage the following actuators (if present) in the following order: 1. Radiant Floor/Ceiling 2. Chilled Water. If these actuators are fully open and fail to bring the room temperature down to setpoint, the airflow setpoint will be set to the maximum cooling cfm. As the temperature begins to fall, the airflow setpoint will revert to minimum cooling cfm and cooling actuators will close before finally disengaging the cooling PID controller.</li>
+			<li class="seq-font heat-mode" id="heat-mode" style="display:none">If the room temperature falls below the heating setpoint by 2°F (adjustable) for 10 minutes(adjustable), the terminal unit will enter heating mode and engage the heating PID controller. Upon initialization, the airflow setpoint will be set to the minimum heating cfm. The PID controller will engage the following actuators (if present) in the following order: 1. Radiator Fin-Tube 2. Radiant Floor/Ceiling 3. Heating Hot Water to maintain a discharge air temperature of 95°F. If these actuators fail to bring the room temperature up to setpoint, the airflow setpoint will be set to the maximum heating cfm. As the temperature begins to rise, the airflow setpoint will revert to minimum heating cfm and heating actuators will close before finally disengaging the heating PID controller.</li>
+		</ul>
+	</div>
+
+	<!-- VAV Air Volume Flow Tracking -->
+
+	<div id="vav-tracking" style="display:none">
+		<h6>Air Volume Tracking</h6>
+		<p class="seq-font">When both supply and exhaust controls are present for the space, the equation for calculating volume differential offset (exhuast cfm setpoint - supply cfm setpoint) will be used. The terminal unit will maintain a differential cfm offset by executing the following sequence:</p>
+		<ul>
+			<li class="seq-font">In conditions were the room volume differential offset is negative, the supply airflow setpoint will track the exhuast airflow setpoint to prevent contaminates from exiting the space.</li>
+			<li class="seq-font">In conditions were the room volume differential offset is positive, the exhaust airflow setpoint will track the supply airflow setpoint to prevent contaminates from entering the space.</li>
+			<li class="seq-font">In conditions were the room volume differential offset is neutral, the exhaust airflow setpoint will track the supply airflow setpoint to prevent contaminates from entering or exiting the space.</li>
+		</ul>
+	</div>
+
+	<!-- Dehumidification -->
+
+	<div id="dehum" style="display:none">
+		<h6>Dehumidification</h6>
+		<p class="seq-font"=>The terminal unit will control humidity by executing the following sequence:</p>
+		<ul>
+			<li class="seq-font">If the room humidity rises above the humidity setpoint by 5% (adjustable) the terminal unit will enter dehumidification mode and engage the dehumidification PID controller. Upon initialization, the airflow setpoint will be set to the minimum cooling cfm. If this fails to bring the room humidity down to setpoint, the airflow setpoint will be set to the maximum cooling cfm. As the humidity begins to fall, the airflow setpoint will revert to minimum cooling cfm before finally disengaging the cooling PID controller.</li>
+			<li class="seq-font">A signal will be sent to the Air Handling Unit that dehumidification is needed in a particular zone.</li>
+			<li class="seq-font">In the event that the room temperature falls below the heating setpoint during dehumidification, heating-mode will be initiated simulataneously and executed according to the VAV Heating Sequence.</li>
+		</ul>
+	</div>
+
+	<!-- Rapid Ventilation -->
+
+	<div id="rapid-vent" style="display:none">
+		<h6>Rapid Ventilation</h6>
+		<p class="seq-font">The terminal unit will purge the space by executing the following sequence:</p>
+		<ul>
+			<li class="seq-font">Utilizing the room operator unit(thermostat) the occupant will be able to manually override the terminal unit to maintain the maximum ventilation air volume setpoint for a period of 15 minutes (adjustable).</li>
+		</ul>
+	</div>
+
+	<!-- Greenleaf -->
+
+	<div id="greenleaf" style="display:none">
+		<h6>Greenleaf</h6>
+		<p class="seq-font">The terminal unit will evaluate the energy efficiency of the room by analyzing the HVAC conditions of the space along with Lighting and Shading where applicable when utilizing Siemens Total Room Automation and execute the following sequence:</p>
+		<ul>
+			<li class="seq-font">Occupants will receive a notification on the room operator unit indicating whether the conditions in the room are energy conditions are energy efficient. If the conditions are not efficient, the occupant will have the option to revert the room back to an energy efficient state.</li>
+		</ul>
+	</div>
+
+	<h5><span class="badge badge-secondary">Operating Mode-Specific Functionality</span></h5>
+
+	<!-- Occupied -->
+
+	<div id="occupied-mode" style="display:none">
+		<h6>Comfort(Occupied) Mode</h6>
+		<ul>
+			<li class="seq-font">Triggers:</li>
+			<ol id="room-operation-list">
+				<li class="seq-font">User defined schedule.</li>
+				<li class="seq-font">Manual command from the central controller.</li>
+				<li class="seq-font temp-comfort-btn" style="display:none">Manual override via local room operator unit for 2 hours(adjustable).</li>
+				<li class="seq-font standby-mode" style="display:none">Automatic if a configured occupancy detector detects movement.</li>
+			</ol>
+			<li class="seq-font">Sequence</li>
+			<ol>
+				<li class="seq-font">Terminal unit will maintain the occupied temperature setpoints.</li>
+				<li class="seq-font" id="occ-ventilation-mode" style="display:none">If the room temperature is within the heating/cooling deadband and room CO2 levels are below the high-limit threshold, the terminal unit will maintain the occupied minimum ventilation airflow setpoint. If room CO2 levels rise above 1000ppm (adjustable), the terminal unit will engage the ventilation PID controller to increase airflow into the space to meet the occupied maximum ventilation airflow setpoint until room CO2 levels fall below 800ppm (adjustable), at which point, the ventilation PID controller will disengage. The ventilation PID controller takes precedence over both the heating and cooling PID controllers.</li>
+				<li class="seq-font" id="occ-ventilation-off" style="display:show">If the room temperature is within the heating/cooling deadband, the terminal unit will turn off.</li>
+			</ol>
+		</ul>
+	</div>
+
+	<!-- Pre-Comfort -->
+
+	<div class="standby-mode" id="standby-mode" style="display:none">
+		<h6>Pre-Comfort(Standby) Mode</h6>
+		<ul>
+			<li class="seq-font">Triggers:</li>
+			<ol>
+				<li class="seq-font">User defined schedule.</li>
+				<li class="seq-font">Manual command from the central controller.</li>
+				<li class="seq-font standby-mode" style="display:none">Automatic if a configured occupancy detector detects no movement for 10 minutes(adjustable).</li>
+			</ol>
+			<li class="seq-font">Sequence</li>
+			<ol>
+				<li class="seq-font">Terminal unit will maintain the standby temperature setpoints.</li>
+				<li class="seq-font" id="standby-ventilation-mode" style="display:none">If the room temperature is within the heating/cooling deadband and room CO2 levels are below the high-limit threshold, the terminal unit will maintain the standby minimum ventilation airflow setpoint. If room CO2 levels rise above 1100ppm (adjustable), the terminal unit will engage the ventilation PID controller to increase airflow into the space to meet the occupied maximum ventilation airflow setpoint until room CO2 levels fall below 800ppm (adjustable), at which point, the ventilation PID controller will disengage. The ventilation PID controller takes precedence over both the heating and cooling PID controllers.</li>
+				<li class="seq-font" id="standby-ventilation-off" style="display:show">If the room temperature is within the heating/cooling deadband, the terminal unit will turn off.</li>
+			</ol>
+		</ul>
+	</div>
+
+	<!-- Unoccupied -->
+
+	<div id="unoccupied-mode" style="display:none">
+		<h6>Economy(Unoccupied) Mode</h6>
+		<ul>
+			<li class="seq-font">Triggers:</li>
+			<ol>
+				<li class="seq-font">User defined schedule</li>
+				<li class="seq-font">Manual command from the central controller.</li>
+				<li class="seq-font temp-comfort-btn" style="display:none">Automatic upon expiration of manual override.</li>
+			</ol>
+			<li class="seq-font">Sequence</li>
+			<ol>
+				<li class="seq-font">Terminal unit will maintain the unoccupied temperature setpoints.</li>
+				<li class="seq-font unocc-ventilation-mode" style="display:none">If the room temperature is within the heating/cooling deadband and room CO2 levels are below the high-limit threshold, the terminal unit will maintain the unoccupied minimum ventilation airflow setpoint. If room CO2 levels rise above 1200ppm (adjustable), the terminal unit will engage the ventilation PID controller to increase airflow into the space to meet the occupied maximum ventilation airflow setpoint until room CO2 levels fall below 800ppm (adjustable), at which point, the ventilation PID controller will disengage. The ventilation PID controller takes precedence over both the heating and cooling PID controllers.</li>
+				<li class="seq-font unocc-ventilation-off" style="display:show">If the room temperature is within the heating/cooling deadband, the terminal unit will turn off.</li>
+			</ol>
+		</ul>
+	</div>
+
+	<!-- Warm-up -->
+
+	<div id="warmup-mode" style="display:none">
+		<h6>Morning Warm-Up Mode</h6>
+		<ul>
+			<li class="seq-font">Triggers:</li>
+			<ol>
+				<li class="seq-font">Manual command from the central controller during scheduled unoccupancy.</li>
+			</ol>
+			<li class="seq-font">Sequence</li>
+			<ol>
+				<li class="seq-font">Terminal unit will maintain the warmup temperature setpoints.</li>
+				<li class="seq-font unocc-ventilation-mode" style="display:none">If the room temperature is within the heating/cooling deadband and room CO2 levels are below the high-limit threshold, the terminal unit will maintain the occupied minimum ventilation airflow setpoint. If room CO2 levels rise above 1200ppm (adjustable), the terminal unit will engage the ventilation PID controller to increase airflow into the space to meet the occupied maximum ventilation airflow setpoint until room CO2 levels fall below 800ppm (adjustable), at which point, the ventilation PID controller will disengage. The ventilation PID controller takes precedence over both the heating and cooling PID controllers.</li>
+				<li class="seq-font unocc-ventilation-off" style="display:show">If the room temperature is within the heating/cooling deadband, the terminal unit will turn off.</li>
+			</ol>
+		</ul>
+	</div>
+
+	<!-- Cooldown -->
+
+	<div id="cooldown-mode" style="display:none">
+		<h6>Morning Cool-Down Mode</h6>
+		<ul>
+			<li class="seq-font">Triggers:</li>
+			<ol>
+				<li class="seq-font">Manual command from the central controller during scheduled unoccupancy.</li>
+			</ol>
+			<li class="seq-font">Sequence</li>
+			<ol>
+				<li class="seq-font">Terminal unit will maintain the cooldown temperature setpoints.</li>
+				<li class="seq-font unocc-ventilation-mode" style="display:none">If the room temperature is within the heating/cooling deadband and room CO2 levels are below the high-limit threshold, the terminal unit will maintain the occupied minimum ventilation airflow setpoint. If room CO2 levels rise above 1200ppm (adjustable), the terminal unit will engage the ventilation PID controller to increase airflow into the space to meet the occupied maximum ventilation airflow setpoint until room CO2 levels fall below 800ppm (adjustable), at which point, the ventilation PID controller will disengage. The ventilation PID controller takes precedence over both the heating and cooling PID controllers.</li>
+				<li class="seq-font unocc-ventilation-off" style="display:show">If the room temperature is within the heating/cooling deadband, the terminal unit will turn off.</li>
+			</ol>
+		</ul>
+	</div>
+
+	<!-- Night-Cooling -->
+
+	<div id="nightcool-mode" style="display:none">
+		<h6>Night Cooling Mode</h6>
+		<ul>
+			<li class="seq-font">Triggers:</li>
+			<ol>
+				<li class="seq-font">Manual command from the central controller during scheduled unoccupancy<span class="standby-mode" style="display:none"> and occupancy detector detects no movement for 10 minutes(adjustable)</span>.</li>
+			</ol>
+			<li class="seq-font">Sequence</li>
+			<ol>
+				<li class="seq-font">Terminal unit will maintain the occupied cooling setpoints.</li>
+				<li class="seq-font unocc-ventilation-mode" style="display:none">If the room temperature is within the heating/cooling deadband and room CO2 levels are below the high-limit threshold, the terminal unit will maintain the unoccupied minimum ventilation airflow setpoint. If room CO2 levels rise above 1200ppm (adjustable), the terminal unit will engage the ventilation PID controller to increase airflow into the space to meet the occupied maximum ventilation airflow setpoint until room CO2 levels fall below 800ppm (adjustable), at which point, the ventilation PID controller will disengage. The ventilation PID controller takes precedence over both the heating and cooling PID controllers.</li>
+				<li class="seq-font unocc-ventilation-off" style="display:show">If the room temperature is within the heating/cooling deadband, the terminal unit will turn off.</li>
+			</ol>
+		</ul>
+	</div>
 </div>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

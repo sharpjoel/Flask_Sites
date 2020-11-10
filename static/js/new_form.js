@@ -750,8 +750,8 @@ $(document).ready(function(){
 		$( "select#p1pres option:selected" ).each(function() {
 			p1_str += $( this ).val();
 			if(p1_str != 'X'){
-				$(".p1-single").css('background','yellow');
-				$(".inner").css('background','yellow');
+				$(".p1-single").css('background','green');
+				$(".inner").css('background','green');
 			}else{
 				$(".p1-single").css('background','');
 				$(".inner").css('background','');
