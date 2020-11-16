@@ -73,7 +73,7 @@
 
 
 					<div id='second-1'>
-						<label><span class="badge badge-secondary">TYPE</span></label>
+						<label><span class="badge badge-secondary">PLATFORM</span></label>
 						<select name='etype-selection' class='select select-reset' id='etypeSelection'>
 							{% for key, value in etypes.items() %}
 								<option value="{{value}}">{{key}}</option>
@@ -81,7 +81,7 @@
 						</select>
 					</div>
 					<div id='second-2'>
-						<label><span class="badge badge-secondary">TYPE</span></label>
+						<label><span class="badge badge-secondary">PLATFORM</span></label>
 						<select name='mtype-selection' class='select select-reset' id='mtypeSelection'>
 							{% for key, value in mtypes.items() %}
 								<option value="{{value}}">{{key}}</option>
@@ -89,7 +89,7 @@
 						</select>
 					</div>
 					<div id='second-3'>
-						<label><span class="badge badge-secondary">TYPE</span></label>
+						<label><span class="badge badge-secondary">PLATFORM</span></label>
 						<select name='ptype-selection' class='select select-reset' id='ptypeSelection'>
 							{% for key, value in ptypes.items() %}
 								<option value="{{value}}">{{key}}</option>
@@ -102,6 +102,12 @@
 						<label><span class="badge badge-secondary">UNITS</span></label>
 						<select name='loc-selection' class='select select-reset' id='locSelection'>
 							{% for key, value in locations.items() %}
+								<option value="{{value}}">{{key}}</option>
+							{% endfor %}
+						</select>
+						<label><span class="badge badge-secondary">TYPE</span></label>
+						<select name='func-selection' class='select select-reset' id='funcSelection'>
+							{% for key, value in function.items() %}
 								<option value="{{value}}">{{key}}</option>
 							{% endfor %}
 						</select>
@@ -372,37 +378,102 @@
 					- Note** All of the select tags are part of the 'select' class, but have their own unique IDs-->
 					<div class='form-container'>
 						<h3><span class="badge badge-secondary">AO:3ptFloating</span></h3>
+
+						<!-- Y1Y2 SELECTION -->
+
 						<div class="form-inline">
 							<label><span class="badge badge-secondary">Y1,Y2</span></label>
-							<select name='y1y2-3pt' class='select select-reset' id='y1y2-3pt'>
-								{% for key, value in threepts.items() %}
+
+							<!-- VAV -->
+
+							<select name='vav-y1y2-3pt' class='select select-reset y1y2-3pt' id='vav-y1y2-3pt'>
+								{% for key, value in threeptsVAVy1y2.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+
+							<!-- FPB -->
+
+							<select name='fpb-y1y2-3pt' class='select select-reset y1y2-3pt' id='fpb-y1y2-3pt' style="display:none">
+								{% for key, value in threeptsFPBy1y2.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+
+							<!-- FCU -->
+
+							<select name='fcu-y1y2-3pt' class='select select-reset y1y2-3pt' id='fcu-y1y2-3pt' style="display:none">
+								{% for key, value in threeptsFCUy1y2.items() %}
 									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
 								{% endfor %}
 							</select>
 						</div>
+
+						<!-- Y3Y4 SELECTION -->
+
 						<div class="form-inline">
 							<label><span class="badge badge-secondary">Y3,Y4</span></label>
-							<select name='y3y4-3pt' class='select select-reset' id='y3y4-3pt'>
-								{% for key, value in threepts.items() %}
-									<option value="{{value}}">{{key}}</option>
+
+							<!-- VAV -->
+
+							<select name='vav-y3y4-3pt' class='select select-reset y3y4-3pt' id='vav-y3y4-3pt'>
+								{% for key, value in threeptsVAVy3y4.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+
+							<!-- FPB -->
+
+							<select name='fpb-y3Y4-3pt' class='select select-reset y3y4-3pt' id='fpb-y3y4-3pt' style="display:none">
+								{% for key, value in threeptsFPBy3y4.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
 								{% endfor %}
 							</select>
 						</div>
+
+						<!-- Y5Y6 SELECTION -->
+
 						<div class="form-inline">
 							<label><span class="badge badge-secondary">Y5,Y6</span></label>
-							<select name='y5y6-3pt' class='select select-reset' id='y5y6-3pt'>
-								{% for key, value in threepts.items() %}
-									<option value="{{value}}">{{key}}</option>
+
+							<!-- VAV -->
+
+							<select name='vav-y5y6-3pt' class='select select-reset y5y6-3pt' id='vav-y5y6-3pt'>
+								{% for key, value in threeptsVAVy5y6.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+
+							<!-- FPB -->
+
+							<select name='fpb-y5Y6-3pt' class='select select-reset y5y6-3pt' id='fpb-y5y6-3pt' style="display:none">
+								{% for key, value in threeptsFPBy5y6.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
 								{% endfor %}
 							</select>
 						</div>
+
+						<!-- Y7Y8 SELECTION -->
+
 						<div class="form-inline">
 							<label><span class="badge badge-secondary">Y7,Y8</span></label>
-							<select name='y7y8-3pt' class='select select-reset' id='y7y8-3pt'>
-								{% for key, value in threepts.items() %}
-									<option value="{{value}}">{{key}}</option>
+
+							<!-- VAV -->
+
+							<select name='vav-y7y8-3pt' class='select select-reset y7y8-3pt' id='vav-y7y8-3pt'>
+								{% for key, value in threeptsVAVy7y8.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
 								{% endfor %}
 							</select>
+
+							<!-- FPB -->
+
+							<select name='fpb-y7Y8-3pt' class='select select-reset y7y8-3pt' id='fpb-y7y8-3pt' style="display:none">
+								{% for key, value in threeptsFPBy7y8.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+
 						</div>
 					</div>
 				</form>
@@ -691,6 +762,22 @@
 	<h3><span class="badge badge-secondary sequence-start">Sequence Of Operation</span></h3>
 
 	<!-- General Functionality -->
+	<!-- General Functionality -->
+	<!-- General Functionality -->
+	<!-- General Functionality -->
+	<!-- General Functionality -->
+	<!-- General Functionality -->
+	<!-- General Functionality -->
+	<!-- General Functionality -->
+	<!-- General Functionality -->
+	<!-- General Functionality -->
+	<!-- General Functionality -->
+	<!-- General Functionality -->
+	<!-- General Functionality -->
+	<!-- General Functionality -->
+	<!-- General Functionality -->
+	<!-- General Functionality -->
+	<!-- General Functionality -->
 
 	<h5><span class="badge badge-secondary">General Functionality</span></h5>
 	<h6>Operation</h6>
@@ -763,6 +850,70 @@
 			<li class="seq-font">Occupants will receive a notification on the room operator unit indicating whether the conditions in the room are energy conditions are energy efficient. If the conditions are not efficient, the occupant will have the option to revert the room back to an energy efficient state.</li>
 		</ul>
 	</div>
+
+	<!-- Central Functions -->
+	<!-- Central Functions -->
+	<!-- Central Functions -->
+	<!-- Central Functions -->
+	<!-- Central Functions -->
+	<!-- Central Functions -->
+	<!-- Central Functions -->
+	<!-- Central Functions -->
+	<!-- Central Functions -->
+	<!-- Central Functions -->
+	<!-- Central Functions -->
+	<!-- Central Functions -->
+	<!-- Central Functions -->
+	<!-- Central Functions -->
+
+	<!-- Static Reset -->
+
+	<div id="static-reset" style="display:none">
+		<h6>Static Pressure Reset</h6>
+		<p class="seq-font">Static Reset will be requested by the Central Controller by evaluating the following conditions from all terminal units served by a particular air handling unit every minute (adjustable):</p>
+		<ol>
+			<li class="seq-font">Damper Position is open more than 90% (adjustable).</li>
+			<li class="seq-font">Airflow deviation from setpoint exceeds 0% (adjustable).</li>
+			<li class="seq-font">The static pressure setpoint at the unit will increase by 0.1"wc (adjustable) every 5 minutes (adjustable) if 3 or more terminal units (adjustable) are requesting more pressure.</li>
+			<li class="seq-font">The static pressure setpoint at the unit will decrease by 0.1"wc (adjustable) every 5 minutes (adjustable) if all units (adjustable) are satisfied.</li>
+			<li class="seq-font">The terminal unit can be excluded from sending requests the the AHU through a manual command from the operator.</li>
+		</ol>
+	</div>
+
+	<!-- Temperature Reset -->
+
+	<div id="temp-reset" style="display:none">
+		<h6>Temperature Reset</h6>
+		<p class="seq-font">Temperature Reset will be requested by the Central Controller by evaluating the following conditions from all terminal units served by a particular air handling unit:</p>
+		<ol>
+			<li class="seq-font">The cooling demand percentage from all of the terminal units.</li>
+			<li class="seq-font">The heating demand percentage from all of the terminal units.</li>
+			<li class="seq-font">The highest 10 demands will be averaged by the Central Controller and will be used by the AHU to reset the discharge air temperature setpoint up and down.</li>
+			<li class="seq-font">The terminal unit can be excluded from sending requests the the AHU through a manual command from the operator.</li>
+		</ol>
+	</div>
+	
+
+	<!-- Operating Mode Specific Functionality -->
+	<!-- Operating Mode Specific Functionality -->
+	<!-- Operating Mode Specific Functionality -->
+	<!-- Operating Mode Specific Functionality -->
+	<!-- Operating Mode Specific Functionality -->
+	<!-- Operating Mode Specific Functionality -->
+	<!-- Operating Mode Specific Functionality -->
+	<!-- Operating Mode Specific Functionality -->
+	<!-- Operating Mode Specific Functionality -->
+	<!-- Operating Mode Specific Functionality -->
+	<!-- Operating Mode Specific Functionality -->
+	<!-- Operating Mode Specific Functionality -->
+	<!-- Operating Mode Specific Functionality -->
+	<!-- Operating Mode Specific Functionality -->
+	<!-- Operating Mode Specific Functionality -->
+	<!-- Operating Mode Specific Functionality -->
+	<!-- Operating Mode Specific Functionality -->
+	<!-- Operating Mode Specific Functionality -->
+	<!-- Operating Mode Specific Functionality -->
+	<!-- Operating Mode Specific Functionality -->
 
 	<h5><span class="badge badge-secondary">Operating Mode-Specific Functionality</span></h5>
 

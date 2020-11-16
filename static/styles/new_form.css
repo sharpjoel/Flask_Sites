@@ -714,7 +714,7 @@ Values divided by 920 on 10/30/2020
 
 #input-container{
 	float:right;
-	margin-left:45%;
+	margin-left:47%;
 	position:absolute;
 	z-index: 1000;
 }
@@ -782,6 +782,12 @@ Values divided by 920 on 10/30/2020
 
 .X{
 	font-weight: bold;
+}
+
+.S{
+	font-weight: bold;
+	font-size:12px;
+	background:pink;
 }
 
 .select{

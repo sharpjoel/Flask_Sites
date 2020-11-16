@@ -29,10 +29,14 @@ $(document).ready(function(){
       $('input[id="VAV Dehumidification"]').prop("checked", false);
       $('input[id="Rapid Ventilation"]').prop("checked", false);
       $('input[id="Greenleaf"]').prop("checked", false);
+      $('input[id="Static Reset"]').prop("checked", false);
+      $('input[id="Temp Reset"]').prop("checked", false);
       $("#vav-tracking").hide();
       $("#dehum").hide();
       $("#rapid-vent").hide();
       $("#greenleaf").hide();
+      $("#static-reset").hide();
+      $("#temp-reset").hide();
     }
   });
 
@@ -286,6 +290,34 @@ $(document).ready(function(){
     }
     else if($(this).prop("checked")==false){
       $("#greenleaf").hide();
+    }
+    else{
+      $(this).prop('checked', false);
+    }
+  });
+
+  // ****** Static Reset ******
+
+  $('input[id="Static Reset"]').click(function(){
+    if($('input[id="Occupied Mode"]').prop("checked") == true && $(this).prop("checked") == true){
+      $("#static-reset").show();
+    }
+    else if($(this).prop("checked")==false){
+      $("#static-reset").hide();
+    }
+    else{
+      $(this).prop('checked', false);
+    }
+  });
+
+  // ****** Temperature Reset ******
+
+  $('input[id="Temp Reset"]').click(function(){
+    if($('input[id="Occupied Mode"]').prop("checked") == true && $(this).prop("checked") == true){
+      $("#temp-reset").show();
+    }
+    else if($(this).prop("checked")==false){
+      $("#temp-reset").hide();
     }
     else{
       $(this).prop('checked', false);

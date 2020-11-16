@@ -1,6 +1,9 @@
 // Step 17: Create the jquery header function
 $(document).ready(function(){
 
+	var good = 'green';
+	var bad = 'purple';
+
 	// Template selection: Set Starting Values based on selection.
 	$( "select#tempSelection" ).change(function() {
 
@@ -17,7 +20,8 @@ $(document).ready(function(){
 				$( "#dxrSelection" ).val("E");
 				$( "#etypeSelection" ).val("C");
 				$( "#locSelection" ).val("U");
-				$( "#y1y2-3pt" ).val("A");
+				$( "#funcSelection" ).val("1");
+				$( "#vav-y1y2-3pt" ).val("A");
 				$( "#y5y6-3pt" ).val("C");
 				$( "#p1pres" ).val("A");
 				$( "#b1d1bi" ).val("I");
@@ -29,7 +33,8 @@ $(document).ready(function(){
 				$( "#dxrSelection" ).val("M");
 				$( "#mtypeSelection" ).val("C");
 				$( "#locSelection" ).val("U");
-				$( "#y1y2-3pt" ).val("X");
+				$( "#funcSelection" ).val("4");
+				$( "#vav-y1y2-3pt" ).val("X");
 				$( "#y3y4-3pt" ).val("C");
 				$( "#y1b0" ).val("A");
 				$( "#b1d1bi" ).val("A");
@@ -49,6 +54,7 @@ $(document).ready(function(){
 		var mtype_str = ""
 		var ptype_str = ""
 		var loc_str = ""
+		var func_str = ""
 		var y1_str = ""
 		var y2_str = ""
 		var y3_str = ""
@@ -102,6 +108,170 @@ $(document).ready(function(){
 		var knx20_str = ""
 		var str = ""
 
+		$("select#funcSelection").each(function(){
+			func_str += $(this).val();
+			if(func_str == "1"){
+
+				var triac_show = [$("#vav-y1y2-3pt"),$("#vav-y3y4-3pt"),$("#vav-y5y6-3pt"),$("#vav-y7y8-3pt")]
+				var triac_hide = [
+				$("#fcu-y1y2-3pt"),$("#fcu-y3y4-3pt"),$("#fcu-y5y6-3pt"),$("#fcu-y7y8-3pt"),
+				$("#fpb-y1y2-3pt"),$("#fpb-y3y4-3pt"),$("#fpb-y5y6-3pt"),$("#fpb-y7y8-3pt"),
+				$("#wshp-y1y2-3pt"),$("#wshp-y3y4-3pt"),$("#wshp-y5y6-3pt"),$("#wshp-y7y8-3pt"),
+				$("#lab-y1y2-3pt"),$("#lab-y3y4-3pt"),$("#lab-y5y6-3pt"),$("#lab-y7y8-3pt"),
+				$("#hood-y1y2-3pt"),$("#hood-y3y4-3pt"),$("#hood-y5y6-3pt"),$("#hood-y7y8-3pt"),
+				$("#cenfunc-y1y2-3pt"),$("#cenfunc-y3y4-3pt"),$("#cenfunc-y5y6-3pt"),$("#cenfunc-y7y8-3pt")
+				]
+				$(triac_show).each(function(){
+					$(this).show();
+				});
+				$(triac_hide).each(function(){
+					$(this).prop('selectedIndex',0);
+					$(this).hide();
+				});
+
+			}
+			else if(func_str == "2"){
+
+				var triac_show = [$("#fpb-y1y2-3pt"),$("#fpb-y3y4-3pt"),$("#fpb-y5y6-3pt"),$("#fpb-y7y8-3pt")]
+				var triac_hide = [
+				$("#fcu-y1y2-3pt"),$("#fcu-y3y4-3pt"),$("#fcu-y5y6-3pt"),$("#fcu-y7y8-3pt"),
+				$("#vav-y1y2-3pt"),$("#vav-y3y4-3pt"),$("#vav-y5y6-3pt"),,$("#vav-y7y8-3pt"),
+				$("#wshp-y1y2-3pt"),$("#wshp-y3y4-3pt"),$("#wshp-y5y6-3pt"),$("#wshp-y7y8-3pt"),
+				$("#lab-y1y2-3pt"),$("#lab-y3y4-3pt"),$("#lab-y5y6-3pt"),$("#lab-y7y8-3pt"),
+				$("#hood-y1y2-3pt"),$("#hood-y3y4-3pt"),$("#hood-y5y6-3pt"),$("#hood-y7y8-3pt"),
+				$("#cenfunc-y1y2-3pt"),$("#cenfunc-y3y4-3pt"),$("#cenfunc-y5y6-3pt"),$("#cenfunc-y7y8-3pt")
+				]
+				$(triac_show).each(function(){
+					$(this).show();
+				});
+				$(triac_hide).each(function(){
+					$(this).prop('selectedIndex',0);
+					$(this).hide();
+				});
+
+			}
+			else if(func_str == "3"){
+				
+				var triac_show = [$("#wshp-y1y2-3pt"),$("#wshp-y3y4-3pt"),$("#wshp-y5y6-3pt"),$("#wshp-y7y8-3pt")]
+				var triac_hide = [
+				$("#fcu-y1y2-3pt"),$("#fcu-y3y4-3pt"),$("#fcu-y5y6-3pt"),$("#fcu-y7y8-3pt"),
+				$("#vav-y1y2-3pt"),$("#vav-y3y4-3pt"),$("#vav-y5y6-3pt"),
+				$("#fpb-y1y2-3pt"),$("#fpb-y3y4-3pt"),$("#fpb-y5y6-3pt"),$("#fpb-y7y8-3pt"),
+				$("#lab-y1y2-3pt"),$("#lab-y3y4-3pt"),$("#lab-y5y6-3pt"),$("#lab-y7y8-3pt"),
+				$("#hood-y1y2-3pt"),$("#hood-y3y4-3pt"),$("#hood-y5y6-3pt"),$("#hood-y7y8-3pt"),
+				$("#cenfunc-y1y2-3pt"),$("#cenfunc-y3y4-3pt"),$("#cenfunc-y5y6-3pt"),$("#cenfunc-y7y8-3pt")
+				]
+				$(triac_show).each(function(){
+					$(this).show();
+				});
+				$(triac_hide).each(function(){
+					$(this).prop('selectedIndex',0);
+					$(this).hide();
+				});
+
+			}
+			else if(func_str == "4"){
+				
+				var triac_show = [$("#fcu-y1y2-3pt"),$("#fcu-y3y4-3pt"),$("#fcu-y5y6-3pt"),$("#fcu-y7y8-3pt")]
+				var triac_hide = [
+				$("#wshp-y1y2-3pt"),$("#wshp-y3y4-3pt"),$("#wshp-y5y6-3pt"),$("#wshp-y7y8-3pt"),
+				$("#vav-y1y2-3pt"),$("#vav-y3y4-3pt"),$("#vav-y5y6-3pt"),
+				$("#fpb-y1y2-3pt"),$("#fpb-y3y4-3pt"),$("#fpb-y5y6-3pt"),$("#fpb-y7y8-3pt"),
+				$("#lab-y1y2-3pt"),$("#lab-y3y4-3pt"),$("#lab-y5y6-3pt"),$("#lab-y7y8-3pt"),
+				$("#hood-y1y2-3pt"),$("#hood-y3y4-3pt"),$("#hood-y5y6-3pt"),$("#hood-y7y8-3pt"),
+				$("#cenfunc-y1y2-3pt"),$("#cenfunc-y3y4-3pt"),$("#cenfunc-y5y6-3pt"),$("#cenfunc-y7y8-3pt")
+				]
+				$(triac_show).each(function(){
+					$(this).show();
+				});
+				$(triac_hide).each(function(){
+					$(this).prop('selectedIndex',0);
+					$(this).hide();
+				});
+
+			}
+			else if(func_str == "5"){
+				
+
+				var triac_show = [$("#lab-y1y2-3pt"),$("#lab-y3y4-3pt"),$("#lab-y5y6-3pt"),$("#lab-y7y8-3pt")]
+				var triac_hide = [
+				$("#wshp-y1y2-3pt"),$("#wshp-y3y4-3pt"),$("#wshp-y5y6-3pt"),$("#wshp-y7y8-3pt"),
+				$("#vav-y1y2-3pt"),$("#vav-y3y4-3pt"),$("#vav-y5y6-3pt"),
+				$("#fpb-y1y2-3pt"),$("#fpb-y3y4-3pt"),$("#fpb-y5y6-3pt"),$("#fpb-y7y8-3pt"),
+				$("#fcu-y1y2-3pt"),$("#fcu-y3y4-3pt"),$("#fcu-y5y6-3pt"),$("#fcu-y7y8-3pt"),
+				$("#hood-y1y2-3pt"),$("#hood-y3y4-3pt"),$("#hood-y5y6-3pt"),$("#hood-y7y8-3pt"),
+				$("#cenfunc-y1y2-3pt"),$("#cenfunc-y3y4-3pt"),$("#cenfunc-y5y6-3pt"),$("#cenfunc-y7y8-3pt")
+				]
+				$(triac_show).each(function(){
+					$(this).show();
+				});
+				$(triac_hide).each(function(){
+					$(this).prop('selectedIndex',0);
+					$(this).hide();
+				});
+
+			}
+			else if(func_str == "6"){
+				
+				var triac_show = [$("#hood-y1y2-3pt"),$("#hood-y3y4-3pt"),$("#hood-y5y6-3pt"),$("#hood-y7y8-3pt")]
+				var triac_hide = [
+				$("#wshp-y1y2-3pt"),$("#wshp-y3y4-3pt"),$("#wshp-y5y6-3pt"),$("#wshp-y7y8-3pt"),
+				$("#vav-y1y2-3pt"),$("#vav-y3y4-3pt"),$("#vav-y5y6-3pt"),
+				$("#fpb-y1y2-3pt"),$("#fpb-y3y4-3pt"),$("#fpb-y5y6-3pt"),$("#fpb-y7y8-3pt"),
+				$("#lab-y1y2-3pt"),$("#lab-y3y4-3pt"),$("#lab-y5y6-3pt"),$("#lab-y7y8-3pt"),
+				$("#fcu-y1y2-3pt"),$("#fcu-y3y4-3pt"),$("#fcu-y5y6-3pt"),$("#fcu-y7y8-3pt"),
+				$("#cenfunc-y1y2-3pt"),$("#cenfunc-y3y4-3pt"),$("#cenfunc-y5y6-3pt"),$("#cenfunc-y7y8-3pt")
+				]
+				$(triac_show).each(function(){
+					$(this).show();
+				});
+				$(triac_hide).each(function(){
+					$(this).prop('selectedIndex',0);
+					$(this).hide();
+				});
+
+			}
+			else if(func_str == "7"){
+				
+				var triac_show = [$("#cenfunc-y1y2-3pt"),$("#cenfunc-y3y4-3pt"),$("#cenfunc-y5y6-3pt"),$("#cenfunc-y7y8-3pt")]
+				var triac_hide = [
+				$("#wshp-y1y2-3pt"),$("#wshp-y3y4-3pt"),$("#wshp-y5y6-3pt"),$("#wshp-y7y8-3pt"),
+				$("#vav-y1y2-3pt"),$("#vav-y3y4-3pt"),$("#vav-y5y6-3pt"),
+				$("#fpb-y1y2-3pt"),$("#fpb-y3y4-3pt"),$("#fpb-y5y6-3pt"),$("#fpb-y7y8-3pt"),
+				$("#lab-y1y2-3pt"),$("#lab-y3y4-3pt"),$("#lab-y5y6-3pt"),$("#lab-y7y8-3pt"),
+				$("#fcu-y1y2-3pt"),$("#fcu-y3y4-3pt"),$("#fcu-y5y6-3pt"),$("#fcu-y7y8-3pt"),
+				$("#hood-y1y2-3pt"),$("#hood-y3y4-3pt"),$("#hood-y5y6-3pt"),$("#hood-y7y8-3pt")
+				]
+				$(triac_show).each(function(){
+					$(this).show();
+				});
+				$(triac_hide).each(function(){
+					$(this).prop('selectedIndex',0);
+					$(this).hide();
+				});
+			}
+			else{
+
+				var triac_show = []
+				var triac_hide = [
+				$("#vav-y1y2-3pt"),$("#vav-y3y4-3pt"),$("#vav-y5y6-3pt"),$("#vav-y7y8-3pt"),
+				$("#fcu-y1y2-3pt"),$("#fcu-y3y4-3pt"),$("#fcu-y5y6-3pt"),$("#fcu-y7y8-3pt"),
+				$("#fpb-y1y2-3pt"),$("#fpb-y3y4-3pt"),$("#fpb-y5y6-3pt"),$("#fpb-y7y8-3pt"),
+				$("#wshp-y1y2-3pt"),$("#wshp-y3y4-3pt"),$("#wshp-y5y6-3pt"),$("#wshp-y7y8-3pt"),
+				$("#lab-y1y2-3pt"),$("#lab-y3y4-3pt"),$("#lab-y5y6-3pt"),$("#lab-y7y8-3pt"),
+				$("#hood-y1y2-3pt"),$("#hood-y3y4-3pt"),$("#hood-y5y6-3pt"),$("#hood-y7y8-3pt"),
+				$("#cenfunc-y1y2-3pt"),$("#cenfunc-y3y4-3pt"),$("#cenfunc-y5y6-3pt"),$("#cenfunc-y7y8-3pt")
+				]
+				$(triac_show).each(function(){
+					$(this).show();
+				});
+				$(triac_hide).each(function(){
+					$(this).prop('selectedIndex',0);
+					$(this).hide();
+				});
+			}
+		});
+
 		// Step 20: Read the select tags by their individual IDs, and collect
 			// their values. Write their text values to their respective variable.
 		$( "select#dxrSelection" ).each(function() {
@@ -143,6 +313,13 @@ $(document).ready(function(){
 				etype_str = etype_str.substring(1);
 			}
 			if(dxr_str == 'E' && (etype_str == 'F' || etype_str == 'G')){
+				$("#funcSelection option[value='1']").hide();
+				$("#funcSelection option[value='2']").hide();
+				$("#funcSelection option[value='3']").hide();
+				$("#funcSelection option[value='4']").hide();
+				$("#funcSelection option[value='5']").show();
+				$("#funcSelection option[value='6']").show();
+				$("#funcSelection option[value='7']").hide();
 				$("#y5y6-3pt").prop('selectedIndex',0);
 				$("#y7y8-3pt").prop('selectedIndex',0);
 				$("#y5bo").prop('selectedIndex',0);
@@ -152,6 +329,13 @@ $(document).ready(function(){
 				$("select#p1pres").prop('selectedIndex',0);
 			}
 			else{
+				$("#funcSelection option[value='1']").show();
+				$("#funcSelection option[value='2']").show();
+				$("#funcSelection option[value='3']").show();
+				$("#funcSelection option[value='4']").show();
+				$("#funcSelection option[value='5']").hide();
+				$("#funcSelection option[value='6']").hide();
+				$("#funcSelection option[value='7']").show();
 				$("select#scom1pres").prop('selectedIndex',0);
 				$("select#scom2pres").prop('selectedIndex',0);
 				$("select#scom3pres").prop('selectedIndex',0);
@@ -161,6 +345,13 @@ $(document).ready(function(){
 				$("select#d3bi").prop('selectedIndex',0);
 			};
 			if(dxr_str == 'E' && (etype_str != 'E' && etype_str != 'F' && etype_str != 'G')){
+				$("#funcSelection option[value='1']").show();
+				$("#funcSelection option[value='2']").show();
+				$("#funcSelection option[value='3']").hide();
+				$("#funcSelection option[value='4']").hide();
+				$("#funcSelection option[value='5']").hide();
+				$("#funcSelection option[value='6']").hide();
+				$("#funcSelection option[value='7']").hide();
 				$("#y7y8-3pt").prop('selectedIndex',0);
 				$("#y7bo").prop('selectedIndex',0);
 				$("#y8bo").prop('selectedIndex',0);
@@ -213,8 +404,12 @@ $(document).ready(function(){
 		$( "select#locSelection" ).each(function() {
 			loc_str += $( this ).val();
 		});
-		$( "select#y1y2-3pt option:selected" ).each(function() {
+		$( "select.y1y2-3pt option:selected" ).each(function() {
 			y1y2_str += $( this ).val();
+			y1y2_str = y1y2_str.replace("X","");
+			if(y1y2_str.length == 0){
+				y1y2_str += 'X';
+			}
 			if(y1y2_str != 'X'){
 				$("#y1bo").prop('selectedIndex',0);
 				$("#y2bo").prop('selectedIndex',0);
@@ -231,8 +426,12 @@ $(document).ready(function(){
 				$("#y2").css('background','');
 			};
 		});
-		$( "select#y3y4-3pt option:selected" ).each(function() {
+		$( "select.y3y4-3pt option:selected" ).each(function() {
 			y3y4_str += $( this ).val();
+			y3y4_str = y3y4_str.replace("X","");
+			if(y3y4_str.length == 0){
+				y3y4_str += 'X';
+			}
 			if(y3y4_str != 'X'){
 				$("#y3bo").prop('selectedIndex',0);
 				$("#y4bo").prop('selectedIndex',0);
@@ -249,8 +448,12 @@ $(document).ready(function(){
 				$("#y4").css('background','');
 			};
 		});
-		$( "select#y5y6-3pt option:selected" ).each(function() {
+		$( "select.y5y6-3pt option:selected" ).each(function() {
 			y5y6_str += $( this ).val();
+			y5y6_str = y5y6_str.replace("X","");
+			if(y5y6_str.length == 0){
+				y5y6_str += 'X';
+			}
 			if(y5y6_str != 'X'){
 				$("#y5bo").prop('selectedIndex',0);
 				$("#y6bo").prop('selectedIndex',0);
@@ -267,13 +470,17 @@ $(document).ready(function(){
 				$("#y6").css('background','');
 			};
 		});
-		$( "select#y7y8-3pt option:selected" ).each(function() {
+		$( "select.y7y8-3pt option:selected" ).each(function() {
 			y7y8_str += $( this ).val();
+			y7y8_str = y7y8_str.replace("X","");
+			if(y7y8_str.length == 0){
+				y7y8_str += 'X';
+			}
 			if(type_str == 'F' || type_str == 'G'){
-				$("#y7y8-3pt").prop('selectedIndex',0);
+				$(".y7y8-3pt").prop('selectedIndex',0);
 				$("#y7bo").prop('selectedIndex',0);
 				$("#y8bo").prop('selectedIndex',0);
-				$("#y7y8-3pt").hide()
+				$(".y7y8-3pt").hide()
 				$("#y7bo").hide();
 				$("#y8bo").hide();
 				$("#y7").css('background','');
@@ -522,24 +729,31 @@ $(document).ready(function(){
 		$( "select#y1bo option:selected" ).each(function() {
 			y1_str += $( this ).val();
 			if(type_str == 'F' || type_str == 'G'){
-				$("#y1y2-3pt").prop('selectedIndex',0);
+				$(".y1y2-3pt").prop('selectedIndex',0);
 				$("#y1bo").prop('selectedIndex',0);
-				$("#y1y2-3pt").hide()
+				$(".y1y2-3pt").hide()
 				$("#y1bo").hide();
 				$("#y1").css('background','');
 			}
 			else{
 				if(y1_str != 'X'){
-					$("#y1y2-3pt").prop('selectedIndex',0);
-					$("#y1y2-3pt").hide();
+					$(".y1y2-3pt").prop('selectedIndex',0);
+					$(".y1y2-3pt").hide();
 					$("#y1").css('background','green');
 				}
 				else{
 					if(y1_str == 'X' && y2_str == 'X'){
-						$("#y1y2-3pt").show();
+						if(func_str == "1"){
+							$("#vav-y1y2-3pt").show();
+						}else{
+							$("#fpb-y1y2-3pt").show();
+						}
 					};
 					if(y1y2_str == 'X'){
 						$("#y1").css('background','');
+					}
+					else if(y1y2_str == 'S'){
+						$("#y1").css('background','#d534eb');
 					}
 					else{
 						$("#y1").css('background','green');
@@ -550,24 +764,32 @@ $(document).ready(function(){
 		$( "select#y2bo option:selected" ).each(function() {
 			y2_str += $( this ).val();
 			if(type_str == 'F' || type_str == 'G'){
-				$("#y1y2-3pt").prop('selectedIndex',0);
+				$(".y1y2-3pt").prop('selectedIndex',0);
 				$("#y2bo").prop('selectedIndex',0);
-				$("#y1y2-3pt").hide()
+				$(".y1y2-3pt").hide()
 				$("#y2bo").hide();
 				$("#y2").css('background','');
 			}
 			else{
 				if(y2_str != 'X'){
-					$("#y1y2-3pt").prop('selectedIndex',0);
-					$("#y1y2-3pt").hide()
+					$(".y1y2-3pt").prop('selectedIndex',0);
+					$(".y1y2-3pt").hide()
 					$("#y2").css('background','green');
 				}
 				else{
 					if(y1_str == 'X' && y2_str == 'X'){
-						$("#y1y2-3pt").show();
+						if(func_str == "1"){
+							$("#vav-y1y2-3pt").show();
+						}else{
+							$("#fpb-y1y2-3pt").show();
+						}
 					};
 					if(y1y2_str == 'X'){
 						$("#y2").css('background','');
+					}
+
+					else if(y1y2_str == 'S'){
+						$("#y2").css('background','#d534eb');
 					}
 					else{
 						$("#y2").css('background','green');
@@ -578,24 +800,31 @@ $(document).ready(function(){
 		$( "select#y3bo option:selected" ).each(function() {
 			y3_str += $( this ).val();
 			if(type_str == 'F' || type_str == 'G'){
-				$("#y3y4-3pt").prop('selectedIndex',0);
+				$(".y3y4-3pt").prop('selectedIndex',0);
 				$("#y3bo").prop('selectedIndex',0);
-				$("#y3y4-3pt").hide()
+				$(".y3y4-3pt").hide()
 				$("#y3bo").hide();
 				$("#y3").css('background','');
 			}
 			else{
 				if(y3_str != 'X'){
-					$("#y3y4-3pt").prop('selectedIndex',0);
-					$("#y3y4-3pt").hide();
+					$(".y3y4-3pt").prop('selectedIndex',0);
+					$(".y3y4-3pt").hide();
 					$("#y3").css('background','green');
 				}
 				else{
 					if(y3_str == 'X' && y4_str == 'X'){
-						$("#y3y4-3pt").show();
+						if(func_str == "1"){
+							$("#vav-y3y4-3pt").show();
+						}else{
+							$("#fpb-y3y4-3pt").show();
+						}
 					};
 					if(y3y4_str == 'X'){
 						$("#y3").css('background','');
+					}
+					else if(y3y4_str == 'S'){
+						$("#y3").css('background','#d534eb');
 					}
 					else{
 						$("#y3").css('background','green');
@@ -606,24 +835,31 @@ $(document).ready(function(){
 		$( "select#y4bo option:selected" ).each(function() {
 			y4_str += $( this ).val();
 			if(type_str == 'F' || type_str == 'G'){
-				$("#y3y4-3pt").prop('selectedIndex',0);
+				$(".y3y4-3pt").prop('selectedIndex',0);
 				$("#y4bo").prop('selectedIndex',0);
-				$("#y3y4-3pt").hide()
+				$(".y3y4-3pt").hide()
 				$("#y4bo").hide();
 				$("#y4").css('background','');
 			}
 			else{
 				if(y4_str != 'X'){
-					$("#y3y4-3pt").prop('selectedIndex',0);
-					$("#y3y4-3pt").hide()
+					$(".y3y4-3pt").prop('selectedIndex',0);
+					$(".y3y4-3pt").hide()
 					$("#y4").css('background','green');
 				}
 				else{
 					if(y3_str == 'X' && y4_str == 'X'){
-						$("#y3y4-3pt").show();
+						if(func_str == "1"){
+							$("#vav-y3y4-3pt").show();
+						}else{
+							$("#fpb-y3y4-3pt").show();
+						}
 					};
 					if(y3y4_str == 'X'){
 						$("#y4").css('background','');
+					}
+					else if(y3y4_str == 'S'){
+						$("#y4").css('background','#d534eb');
 					}
 					else{
 						$("#y4").css('background','green');
@@ -634,24 +870,31 @@ $(document).ready(function(){
 		$( "select#y5bo option:selected" ).each(function() {
 			y5_str += $( this ).val();
 			if(type_str == 'F' || type_str == 'G'){
-				$("#y5y6-3pt").prop('selectedIndex',0);
+				$(".y5y6-3pt").prop('selectedIndex',0);
 				$("#y5bo").prop('selectedIndex',0);
-				$("#y5y6-3pt").hide()
+				$(".y5y6-3pt").hide()
 				$("#y5bo").hide();
 				$("#y5").css('background','');
 			}
 			else{
 				if(y5_str != 'X'){
-					$("#y5y6-3pt").prop('selectedIndex',0);
-					$("#y5y6-3pt").hide();
+					$(".y5y6-3pt").prop('selectedIndex',0);
+					$(".y5y6-3pt").hide();
 					$("#y5").css('background','green');
 				}
 				else{
 					if(y5_str == 'X' && y6_str == 'X'){
-						$("#y5y6-3pt").show();
+						if(func_str == "1"){
+							$("#vav-y5y6-3pt").show();
+						}else{
+							$("#fpb-y5y6-3pt").show();
+						}
 					};
 					if(y5y6_str == 'X'){
 						$("#y5").css('background','');
+					}
+					else if(y5y6_str == 'S'){
+						$("#y5").css('background','#d534eb');
 					}
 					else{
 						$("#y5").css('background','green');
@@ -662,24 +905,31 @@ $(document).ready(function(){
 		$( "select#y6bo option:selected" ).each(function() {
 			y6_str += $( this ).val();
 			if(type_str == 'F' || type_str == 'G'){
-				$("#y5y6-3pt").prop('selectedIndex',0);
+				$(".y5y6-3pt").prop('selectedIndex',0);
 				$("#y6bo").prop('selectedIndex',0);
-				$("#y5y6-3pt").hide()
+				$(".y5y6-3pt").hide()
 				$("#y6bo").hide();
 				$("#y6").css('background','');
 			}
 			else{
 				if(y6_str != 'X'){
-					$("#y5y6-3pt").prop('selectedIndex',0);
-					$("#y5y6-3pt").hide()
+					$(".y5y6-3pt").prop('selectedIndex',0);
+					$(".y5y6-3pt").hide()
 					$("#y6").css('background','green');
 				}
 				else{
 					if(y5_str == 'X' && y6_str == 'X'){
-						$("#y5y6-3pt").show();
+						if(func_str == "1"){
+							$("#vav-y5y6-3pt").show();
+						}else{
+							$("#fpb-y5y6-3pt").show();
+						}
 					};
 					if(y5y6_str == 'X'){
 						$("#y6").css('background','');
+					}
+					else if(y5y6_str == 'S'){
+						$("#y6").css('background','#d534eb');
 					}
 					else{
 						$("#y6").css('background','green');
@@ -690,25 +940,32 @@ $(document).ready(function(){
 		$( "select#y7bo option:selected" ).each(function() {
 			y7_str += $( this ).val();
 			if(type_str == 'F' || type_str == 'G'){
-				$("#y7y8-3pt").prop('selectedIndex',0);
+				$(".y7y8-3pt").prop('selectedIndex',0);
 				$("#y7bo").prop('selectedIndex',0);
-				$("#y7y8-3pt").hide()
+				$(".y7y8-3pt").hide()
 				$("#y7bo").hide();
 				$("#y7").css('background','');
 			}
 			else{
 				if(y7_str != 'X'){
-					$("#y7y8-3pt").prop('selectedIndex',0);
-					$("#y7y8-3pt").hide();
+					$(".y7y8-3pt").prop('selectedIndex',0);
+					$(".y7y8-3pt").hide();
 					console.log("Checking Y7");
 					$("#y7").css('background','green');
 				}
 				else{
 					if(y7_str == 'X' && y8_str == 'X'){
-						$("#y7y8-3pt").show();
+						if(func_str == "1"){
+							$("#vav-y7y8-3pt").show();
+						}else{
+							$("#fpb-y7y8-3pt").show();
+						}
 					};
 					if(y7y8_str == 'X'){
 						$("#y7").css('background','');
+					}
+					else if(y7y8_str == 'S'){
+						$("#y7").css('background','#d534eb');
 					}
 					else{
 						$("#y7").css('background','green');
@@ -719,24 +976,31 @@ $(document).ready(function(){
 		$( "select#y8bo option:selected" ).each(function() {
 			y8_str += $( this ).val();
 			if(type_str == 'F' || type_str == 'G'){
-				$("#y7y8-3pt").prop('selectedIndex',0);
+				$(".y7y8-3pt").prop('selectedIndex',0);
 				$("#y8bo").prop('selectedIndex',0);
-				$("#y7y8-3pt").hide()
+				$(".y7y8-3pt").hide()
 				$("#y8bo").hide();
 				$("#y8").css('background','');
 			}
 			else{
 				if(y8_str != 'X'){
-					$("#y7y8-3pt").prop('selectedIndex',0);
-					$("#y7y8-3pt").hide()
+					$(".y7y8-3pt").prop('selectedIndex',0);
+					$(".y7y8-3pt").hide()
 					$("#y8").css('background','green');
 				}
 				else{
 					if(y7_str == 'X' && y8_str == 'X'){
-						$("#y7y8-3pt").show();
+						if(func_str == "1"){
+							$("#vav-y7y8-3pt").show();
+						}else{
+							$("#fpb-y7y8-3pt").show();
+						}
 					};
 					if(y7y8_str == 'X'){
 						$("#y8").css('background','');
+					}
+					else if(y7y8_str == 'S'){
+						$("#y8").css('background','#d534eb');
 					}
 					else{
 						$("#y8").css('background','green');
@@ -889,9 +1153,8 @@ $(document).ready(function(){
 				$('select#x4ai').show();
 				$('#b1d1text').text('D1');
 				$('#b2d2text').text('D2');
-				$("select#y5y6-3pt").show();
-				$("select#y5bo").show();
-				$("select#y6bo").show();
+				// $("select#y5bo").show();
+				// $("select#y6bo").show();
 				$('#y5').css('visibility','visible');
 				$('#y6').css('visibility','visible');
 				$('#y7').css('visibility','visible');
@@ -905,11 +1168,36 @@ $(document).ready(function(){
 				$("select#scom2pres").hide();
 				$("select#scom3pres").hide();
 				$("select#scom4pres").hide();
-				if(y7_str == 'X' && y8_str == 'X'){
-					$("select#y7y8-3pt").show();
+				if(y5_str == 'X' && y6_str == 'X'){
+					if(func_str == "1"){
+						$("#vav-y5y6-3pt").show();
+						$("#fpb-y5y6-3pt").prop('selectedIndex',0);
+						$("#fpb-y5y6-3pt").hide();
+					}
+				else if(func_str == "2"){
+					$("#vav-y5y6-3pt").prop('selectedIndex',0);
+					$("#vav-y5y6-3pt").hide();
+					$("#fpb-y5y6-3pt").show();
+					}
 				}
 				else{
-					$("select#y7y8-3pt").hide();
+					$("select.y5y6-3pt").hide();
+				}
+
+				if(y7_str == 'X' && y8_str == 'X'){
+					if(func_str == "1"){
+						$("#fpb-y7y8-3pt").prop('selectedIndex',0);
+						$("#vav-y7y8-3pt").show();
+						$("#fpb-y7y8-3pt").hide();
+					}
+				else if(func_str == "2"){
+					$("#vav-y7y8-3pt").prop('selectedIndex',0);
+					$("#vav-y7y8-3pt").hide();
+					$("#fpb-y7y8-3pt").show();
+					}
+				}
+				else{
+					$("select.y7y8-3pt").hide();
 				}
 			}
 			else if(type_str == 'F'){
@@ -934,14 +1222,14 @@ $(document).ready(function(){
 				$('#y8').css('visibility','hidden');
 				$(".y30y40-container").css('visibility','visible');
 				$(".x3x4-container").css('visibility','visible');
-				$("select#y5y6-3pt").prop('selectedIndex',0);
-				$("select#y5y6-3pt").hide();
+				$("select.y5y6-3pt").prop('selectedIndex',0);
+				$("select.y5y6-3pt").hide();
 				$("select#y5bo").prop('selectedIndex',0);
 				$("select#y5bo").hide();
 				$("select#y6bo").prop('selectedIndex',0);
 				$("select#y6bo").hide();
-				$("select#y7y8-3pt").prop('selectedIndex',0);
-				$("select#y7y8-3pt").hide();
+				$("select.y7y8-3pt").prop('selectedIndex',0);
+				$("select.y7y8-3pt").hide();
 				$("select#y7bo").prop('selectedIndex',0);
 				$("select#y7bo").hide();
 				$("select#y8bo").prop('selectedIndex',0);
@@ -976,14 +1264,14 @@ $(document).ready(function(){
 				$('#y8').css('visibility','hidden');
 				$(".y30y40-container").css('visibility','visible');
 				$(".x3x4-container").css('visibility','visible');
-				$("select#y5y6-3pt").prop('selectedIndex',0);
-				$("select#y5y6-3pt").hide();
+				$("select.y5y6-3pt").prop('selectedIndex',0);
+				$("select.y5y6-3pt").hide();
 				$("select#y5bo").prop('selectedIndex',0);
 				$("select#y5bo").hide();
 				$("select#y6bo").prop('selectedIndex',0);
 				$("select#y6bo").hide();
-				$("select#y7y8-3pt").prop('selectedIndex',0);
-				$("select#y7y8-3pt").hide();
+				$("select.y7y8-3pt").prop('selectedIndex',0);
+				$("select.y7y8-3pt").hide();
 				$("select#y7bo").prop('selectedIndex',0);
 				$("select#y7bo").hide();
 				$("select#y8bo").prop('selectedIndex',0);
@@ -1020,8 +1308,8 @@ $(document).ready(function(){
 				$('#y8').css('visibility','hidden');
 				$(".y30y40-container").css('visibility','hidden');
 				$(".x3x4-container").css('visibility','hidden');
-				$("select#y7y8-3pt").prop('selectedIndex',0);
-				$("select#y7y8-3pt").hide();
+				$("select.y7y8-3pt").prop('selectedIndex',0);
+				$("select.y7y8-3pt").hide();
 				$("select#y7bo").prop('selectedIndex',0);
 				$("select#y7bo").hide();
 				$("select#y8bo").prop('selectedIndex',0);
@@ -1046,6 +1334,17 @@ $(document).ready(function(){
 		var PRES = p1_str + scom1_str + scom2_str + scom3_str + scom4_str + "_";
 		var KNX = knx1_str +  knx2_str +  knx3_str +  knx4_str +  knx5_str +  knx6_str +  knx7_str +  knx8_str +  knx9_str +  knx10_str;
 		KNX = KNX + knx11_str +  knx12_str +  knx13_str +  knx14_str +  knx15_str +  knx16_str +  knx17_str +  knx18_str +  knx19_str +  knx20_str + "_";
+		try {
+		  var knx_alert = KNX.match(/A/g).length;
+		  $('select.selection-knx option:selected').each(function(){
+		  	if($(this).val() == 'A' && knx_alert > 1){
+		  		$('.knx-terminal').css('background-color','#d534eb');
+		  	}
+		  });
+		}
+		catch(err) {
+		  console.log("No characters!");
+		}
 		str = DXR + AO3pt + AOten + BO + IN + PRES + KNX;
 		$('#successAlert').text(str).show();
 		// Step 22: Construct your AJAX requests. Without AJAX, the select tags would need
@@ -1086,6 +1385,7 @@ $(document).ready(function(){
 				$('#errorAlert').hide();
 			}
 		});
+
 		});
 	// });
 });

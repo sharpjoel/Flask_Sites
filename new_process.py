@@ -43,11 +43,10 @@ def index():
     # mtypes: dictionary of mstp dxrs
     mtypes = {
         '':'',
-        '10PL':'A',
-        '10PLX':'B',
+        '10':'A',
+        '11':'B',
         '12P':'C',
-        '12PX':'D',
-        '18':'E',
+        '18':'E'
         }
     # ptypes: dictionary of P1 dxrs
     ptypes = {
@@ -62,17 +61,27 @@ def index():
         "SI":"S",
         "CA":"C",
         }
+    # function: dictionary of units
+    function = product_dictionary.set_index('Functionality Key')['Functionality Value'].to_dict()
+    three_points_VAV_y1y2 = product_dictionary.set_index('Y1Y2 VAV Key')['Y1Y2 VAV Value'].to_dict()
+    three_points_FPB_y1y2 = product_dictionary.set_index('Y1Y2 FPB Key')['Y1Y2 FPB Value'].to_dict()
+    three_points_VAV_y3y4 = product_dictionary.set_index('Y3Y4 VAV Key')['Y3Y4 VAV Value'].to_dict()
+    three_points_FPB_y3y4 = product_dictionary.set_index('Y3Y4 FPB Key')['Y3Y4 FPB Value'].to_dict()
+    three_points_VAV_y5y6 = product_dictionary.set_index('Y5Y6 VAV Key')['Y5Y6 VAV Value'].to_dict()
+    three_points_FPB_y5y6 = product_dictionary.set_index('Y5Y6 FPB Key')['Y5Y6 FPB Value'].to_dict()
+    three_points_VAV_y7y8 = product_dictionary.set_index('Y7Y8 VAV Key')['Y7Y8 VAV Value'].to_dict()
+    three_points_FPB_y7y8 = product_dictionary.set_index('Y7Y8 FPB Key')['Y7Y8 FPB Value'].to_dict()
     # three_points: dictionary of three point floating actuators
-    # three_points = {
-    #     'None':'X',
-    #     'Supply Damper':'A',
-    #     'Exhaust Damper':'B',
-    #     'Hot Water Reheat Coil':'C',
-    #     'Radiator':'D',
-    #     'Chilled Water Coil':'E',
-    #     'Windows':'F'
-    #     }
-    three_points = product_dictionary.set_index('3pt Floating Actuator Key')['3pt Floating Actuator Value'].to_dict()
+    three_points_FCU_y1y2 = {
+        'None':'X',
+        'Supply Damper':'S',
+        'Exhaust Damper':'S',
+        'Hot Water Reheat Coil':'C',
+        'Radiator':'D',
+        'Chilled Water Coil':'S',
+        'Windows':'S'
+        }
+    # three_points = product_dictionary.set_index('3pt Floating Actuator Key')['3pt Floating Actuator Value'].to_dict()
     # zero_ten_1030: dictionary of 0-10 Volt actuators for Y10 & Y30
     zero_ten_1030 = {
         'None':'X',
@@ -218,7 +227,15 @@ def index():
         d1d2=d1d2_in,
         d1d2d3=d1d2d3_in,
         pressure=pressure,
-        threepts=three_points,
+        threeptsVAVy1y2=three_points_VAV_y1y2,
+        threeptsFPBy1y2=three_points_FPB_y1y2,
+        threeptsFCUy1y2=three_points_FCU_y1y2,
+        threeptsVAVy3y4=three_points_VAV_y3y4,
+        threeptsFPBy3y4=three_points_FPB_y3y4,
+        threeptsVAVy5y6=three_points_VAV_y5y6,
+        threeptsFPBy5y6=three_points_FPB_y5y6,
+        threeptsVAVy7y8=three_points_VAV_y7y8,
+        threeptsFPBy7y8=three_points_FPB_y7y8,
         zten1030=zero_ten_1030,
         zten2040=zero_ten_2040,
         binaryout=binary_out,
@@ -228,6 +245,7 @@ def index():
         mtypes=mtypes,
         ptypes=ptypes,
         locations=locations,
+        function=function,
         knx=knx,
         templates=templates
         )
