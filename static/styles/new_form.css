@@ -200,12 +200,13 @@ h4{
 	padding: 30px 3px 5px 3px;
 }*/
 
-#rectangle {
+.rectangle {
   /*width: 680px;*/
   /*width:87.6%;*/
   width:72%;
-  height: 270px;
-  background: #f2f2f2;
+  height: 350px;
+  padding-top: 5px;
+  background-color: black;
   border:solid 0.2em #000;
   margin-left: none;
 }
@@ -663,7 +664,7 @@ Values divided by 920 on 10/30/2020
 }
 
 .knx-add{
-	font-size: 62%;
+	font-size: 50%;
 	color:white;
 	font-weight: bold;
 	padding-left: 0.1em;
@@ -704,8 +705,8 @@ Values divided by 920 on 10/30/2020
 #io-container{
 	width:100%;
 	max-width: 575px;
-	height:55%;
-	max-height:485px;
+	height:57%;
+	max-height:550px;
 }
 
 #output-container{
