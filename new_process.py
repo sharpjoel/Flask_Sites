@@ -43,10 +43,11 @@ def index():
     # mtypes: dictionary of mstp dxrs
     mtypes = {
         '':'',
-        '10':'A',
-        '11':'B',
+        '10PL':'A',
+        '10PLX':'B',
         '12P':'C',
-        '18':'E'
+        '12PX':'D',
+        '18':'E',
         }
     # ptypes: dictionary of P1 dxrs
     ptypes = {

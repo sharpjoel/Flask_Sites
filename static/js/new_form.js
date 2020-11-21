@@ -25,6 +25,7 @@ $(document).ready(function(){
     var x4 = svgObject.getElementById('terminal-x4-term');
 	// bottom rail variables
 	var pressure = svgObject.getElementsByClassName('pressure');
+    var pressuretext = svgObject.getElementById('text-p1p2');
     var d1 = svgObject.getElementById('terminal-d1');
     var d1common = svgObject.getElementById('terminal-d1-common-term');
     var d2 = svgObject.getElementById('terminal-d2-term');
@@ -51,6 +52,22 @@ $(document).ready(function(){
     var y30power = svgObject.getElementById('terminal-y30-power-term');
     var y30common = svgObject.getElementById('terminal-y30-common-term');
     var y40 = svgObject.getElementById('terminal-y40-term');
+    // m10 variables
+    var m10pl = svgObject.getElementsByClassName('m10pl');
+    var m10press = svgObject.getElementsByClassName('m10-pressure');
+    var dxrvoltageout = svgObject.getElementsByClassName('dxr-voltage-out');
+    var dxrtopinputs = svgObject.getElementsByClassName('dxr-toprow-inputs');
+    var usb = svgObject.getElementsByClassName('usb');
+    var dxrrunsvc = svgObject.getElementsByClassName('dxr-run-svc');
+    var y1y2text = svgObject.getElementById('text-y1y2');
+    var y1y2terminals = svgObject.getElementsByClassName('y1y2');
+    var m10y10 = svgObject.getElementById('terminal-m10-y10-term');
+    var m10y10common = svgObject.getElementById('terminal-m10-y10-common-term');
+    var m10d1 = svgObject.getElementById('terminal-m10-d1-term');
+    var m10d1common = svgObject.getElementById('terminal-m10-d1-common-term');
+    var m10x1 = svgObject.getElementById('terminal-m10-x1-term');
+    var m10x2 = svgObject.getElementById('terminal-m10-x2-term');
+    var m10x1common = svgObject.getElementById('terminal-m10-x1-common-term');
 
 	// Template selection: Set Starting Values based on selection.
 	$( "select#tempSelection" ).change(function() {
@@ -762,8 +779,12 @@ $(document).ready(function(){
 			y10_str += $( this ).val();
 			if(y10_str != 'X'){
 				$(y10).css({'fill':'green'});
+				$(m10y10).css({'fill':'green'});
+				$(m10y10common).css({'fill':'green'});
 			}else{
 				$(y10).css({'fill':'#f5f5f5'});
+				$(m10y10).css({'fill':'#f5f5f5'});
+				$(m10y10common).css({'fill':'#f5f5f5'});
 			};
 		});
 		$( "select#y20 option:selected" ).each(function() {
@@ -1166,8 +1187,10 @@ $(document).ready(function(){
 			p1_str += $( this ).val();
 			if(p1_str == 'A' || p1_str == 'B'){
 				$(pressure).css({'fill':'#40ff00'});
+				$(m10press).css({'fill':'#40ff00'});
 			}else{
 				$(pressure).css({'fill':'#f5f5f5'});
+				$(m10press).css({'fill':'#f5f5f5'});
 			};
 		});
 		$( "select#scom1pres option:selected" ).each(function() {
@@ -1270,18 +1293,22 @@ $(document).ready(function(){
 			x1_str += $( this ).val();
 			if($(this).val() == 'X'){
 				$(x1).css({'fill':'#f5f5f5'});
+				$(m10x1).css({'fill':'#f5f5f5'});
 			}
 			else{
 				$(x1).css({'fill':'green'});
+				$(m10x1).css({'fill':'green'});
 			}
 		});
 		$( "select#x2ai option:selected" ).each(function() {
 			x2_str += $( this ).val();
 			if($(this).val() == 'X'){
 				$(x2).css({'fill':'#f5f5f5'});
+				$(m10x2).css({'fill':'#f5f5f5'});
 			}
 			else{
 				$(x2).css({'fill':'green'});
+				$(m10x2).css({'fill':'green'});
 			}
 		});
 
@@ -1308,9 +1335,11 @@ $(document).ready(function(){
 
 		if(x1_str == "X" && x2_str == "X"){
 			$(x1common).css({'fill':'#f5f5f5'});
+			$(m10x1common).css({'fill':'#f5f5f5'});
 		}
 		else{
 			$(x1common).css({'fill':'green'});
+			$(m10x1common).css({'fill':'green'});
 		}
 
 		if(x3_str == "X" && x4_str == "X"){
@@ -1350,6 +1379,15 @@ $(document).ready(function(){
 				}
 				else{
 					$(b1d1).css({'fill':'green'});
+				}
+			}else if(type_str == 'A' || type_str == 'B'){
+				if($(this).val() == 'X'){
+					$(m10d1).css({'fill':'#f5f5f5'});
+					$(m10d1common).css({'fill':'#f5f5f5'});
+				}
+				else{
+					$(m10d1).css({'fill':'green'});
+					$(m10d1common).css({'fill':'green'});
 				}
 			}
 			else{
@@ -1404,13 +1442,16 @@ $(document).ready(function(){
 		*
 		*/
 		if(type_str == 'E'){
+			$(dxrvoltageout).show();
+			$(dxrtopinputs).show();
 			var layout_hide = [
-				type12,type17,$('span.lab-d1d2d3'),$('select.lab-d1d2d3'),$("select#scom1pres"),
+				type12,type17,m10pl,$('span.lab-d1d2d3'),$('select.lab-d1d2d3'),$("select#scom1pres"),
 				$("select#scom2pres"),$("select#scom3pres"),$("select#scom4pres"),$("select#p1pres")]
 
 			var layout_show = [
-				type18,$('span#b2d2-badge'),$('select#b2d2bi'),$('span.x3x4-badge'),
-				$('select#x3ai'),$('select#x4ai'),$("select#y30"),$("select#y40")]
+				type18,y1y2text,dxrrunsvc,usb,$('span#b2d2-badge'),$('select#b2d2bi'),$('span.x3x4-badge'),
+				$('select#x3ai'),$('select#x4ai'),$("select#y30"),$("select#y40"),
+				$("select#y1bo"),$("select#y2bo"),$("select#y20")]
 				$('span#b1d1-badge').text('D1');
 				$('span#b2d2-badge').text('D2');
 			$(layout_hide).each(function(){
@@ -1419,6 +1460,21 @@ $(document).ready(function(){
 			$(layout_show).each(function(){
 				$(this).show();
 			});
+			if(y1_str == 'X' && y2_str == 'X'){
+				if(func_str == "1"){
+					$("#vav-y1y2-3pt").show();
+					$("#fpb-y1y2-3pt").prop('selectedIndex',0);
+					$("#fpb-y1y2-3pt").hide();
+				}
+			else if(func_str == "2"){
+				$("#vav-y1y2-3pt").prop('selectedIndex',0);
+				$("#vav-y1y2-3pt").hide();
+				$("#fpb-y1y2-3pt").show();
+				}
+			}
+			else{
+				$("select.y1y2-3pt").hide();
+			}
 			if(y5_str == 'X' && y6_str == 'X'){
 				if(func_str == "1"){
 					$("#vav-y5y6-3pt").show();
@@ -1450,17 +1506,20 @@ $(document).ready(function(){
 			else{
 				$("select.y7y8-3pt").hide();
 			}
+			$(m10pl).hide();
 		}
 		else if(type_str == 'F' || type_str == 'G'){
-			console.log("Checking y8 @ 1405")
+			$(dxrvoltageout).show();
+			$(dxrtopinputs).show();
 			var layout_hide = [
-				type12,type18,$("select.y5y6-3pt"),$("select#y5bo"),$("select#y6bo"),$("select.y7y8-3pt")
+				type12,type18,m10pl,$("select.y5y6-3pt"),$("select#y5bo"),$("select#y6bo"),$("select.y7y8-3pt")
 				,$("select#p1pres"),$("select#y7bo"),$("select#y8bo")]
 
 			var layout_show = [
-				type17,$('span.lab-d1d2d3'),$('select.lab-d1d2d3'),$('span#b2d2-badge'),$('select#b2d2bi'),
+				type17,y1y2text,dxrrunsvc,usb,$('span.lab-d1d2d3'),$('select.lab-d1d2d3'),$('span#b2d2-badge'),$('select#b2d2bi'),
 				$('span.x3x4-badge'),$('select#x3ai'),$('select#x4ai'),$("select#scom1pres"),
-				$("select#scom2pres"),$("select#scom3pres"),$("select#scom4pres"),$("select#y30"),$("select#y40")]
+				$("select#scom2pres"),$("select#scom3pres"),$("select#scom4pres"),$("select#y30"),$("select#y40"),
+				$("select#y1bo"),$("select#y2bo"),$("select#y20")]
 
 			var layout_prop = [
 			$("select.y5y6-3pt"),$("select#y5bo"),$("select#y6bo"),$("select.y7y8-3pt"),
@@ -1478,14 +1537,57 @@ $(document).ready(function(){
 			$(layout_show).each(function(){
 				$(this).show();
 			});
+			if(y1_str == 'X' && y2_str == 'X'){
+				if(func_str == "1"){
+					$("#vav-y1y2-3pt").show();
+					$("#fpb-y1y2-3pt").prop('selectedIndex',0);
+					$("#fpb-y1y2-3pt").hide();
+				}
+			else if(func_str == "2"){
+				$("#vav-y1y2-3pt").prop('selectedIndex',0);
+				$("#vav-y1y2-3pt").hide();
+				$("#fpb-y1y2-3pt").show();
+				}
+			}
+			else{
+				$("select.y1y2-3pt").hide();
+			}
+			$(m10pl).hide();
+		}
+		else if(type_str == 'A' || type_str == 'B'){
+			$(type18).hide()
+			$(type17).hide()
+			$(type12).show()
+			var layout_hide = [
+				usb,pressure,pressuretext,dxrrunsvc,y1y2text,y1y2terminals,dxrvoltageout,dxrtopinputs,
+				$("select.y7y8-3pt"),$("select#y7bo"),$("select#y8bo"),$("select#y30"),$("select#y40"),$("select#scom1pres"),
+				$("select#scom2pres"),$("select#scom3pres"),$("select#scom4pres"),$('select.lab-d1d2d3'),
+				$('select#x3ai'),$('select#x4ai'),$('span.lab-d1d2d3'),$('span#b2d2-badge'),$('select#b2d2bi'),
+				$('span.x3x4-badge'),$("select#y20"),$("select.y1y2-3pt"),$("select#y1bo"),$("select#y2bo")];
+			var layout_show = [m10pl,$("select#p1pres")];
+			var layout_prop = [
+				$("select.y1y2-3pt"),$("select.y7y8-3pt"),$("select#y7bo"),$("select#y8bo"),$("select#y20"),
+				$("select#y30"),$("select#y40"),$("select#y1bo"),$("select#y2bo")]
+
+			$(layout_prop).each(function(){
+				$(this).prop('selectedIndex',0);
+			});
+			$(layout_hide).each(function(){
+				$(this).hide();
+			});
+			$(layout_show).each(function(){
+				$(this).show();
+			});
 		}
 		else{
-			console.log("Checking y8 @ 1432")
+			$(dxrvoltageout).show();
+			$(dxrtopinputs).show();
 			var layout_hide = [
-			$(type18),$(type17),$("select.y7y8-3pt"),$("select#y7bo"),$("select#y8bo"),$("select#y30"),$("select#y40"),
+			type18,type17,$("select.y7y8-3pt"),$("select#y7bo"),$("select#y8bo"),$("select#y30"),$("select#y40"),
 			$("select#scom1pres"),$("select#scom2pres"),$("select#scom3pres"),$("select#scom4pres"),$('select.lab-d1d2d3'),
 			$('select#x3ai'),$('select#x4ai'),$('span.lab-d1d2d3'),$('span#b2d2-badge'),$('select#b2d2bi'),$('span.x3x4-badge')]
-			var layout_show = [$(type12),$("select#p1pres")]
+			var layout_show = [$(type12),$(y1y2text),$("select#p1pres"),$(pressure),$(pressuretext),$(dxrrunsvc),$(usb),
+				$("select#y1bo"),$("select#y2bo"),$("select#y20")]
 			var layout_prop = [$("select.y7y8-3pt"),$("select#y7bo"),$("select#y8bo"),$("select#y30"),$("select#y40")]
 			$('span#b1d1-badge').text('D1');
 			$('span#b2d2-badge').text('D2');
@@ -1498,6 +1600,22 @@ $(document).ready(function(){
 			$(layout_show).each(function(){
 				$(this).show();
 			});
+			if(y1_str == 'X' && y2_str == 'X'){
+				if(func_str == "1"){
+					$("#vav-y1y2-3pt").show();
+					$("#fpb-y1y2-3pt").prop('selectedIndex',0);
+					$("#fpb-y1y2-3pt").hide();
+				}
+			else if(func_str == "2"){
+				$("#vav-y1y2-3pt").prop('selectedIndex',0);
+				$("#vav-y1y2-3pt").hide();
+				$("#fpb-y1y2-3pt").show();
+				}
+			}
+			else{
+				$("select.y1y2-3pt").hide();
+			}
+			$(m10pl).hide();
 		};
 		/*
 		*

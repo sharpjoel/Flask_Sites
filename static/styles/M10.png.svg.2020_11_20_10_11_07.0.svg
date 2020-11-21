@@ -1,0 +1,3068 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="svg521"
+   width="218"
+   height="331"
+   viewBox="0 0 218 331"
+   sodipodi:docname="M10.png.svg"
+   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">
+  <style
+     id="style12">.damper-screw-top { fill:#40ff00; }
+.damper-label { fill:#40ff00; }
+</style>
+  <metadata
+     id="metadata527">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs525">
+    <linearGradient
+       id="linearGradient3316"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop3314" />
+    </linearGradient>
+  </defs>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1344"
+     inkscape:window-height="810"
+     id="namedview523"
+     showgrid="false"
+     inkscape:zoom="1.1162544"
+     inkscape:cx="26.579245"
+     inkscape:cy="-168.1024"
+     inkscape:window-x="96"
+     inkscape:window-y="23"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="g529"
+     inkscape:document-rotation="0" />
+  <g
+     inkscape:groupmode="layer"
+     inkscape:label="Image"
+     id="g529">
+    <g
+       id="dxr"
+       transform="matrix(0.67114094,0,0,1.9227885,-1591.8135,-1131.9372)">
+      <g
+         id="g48">
+        <rect
+           x="1059.1453"
+           y="543.83008"
+           class="st0"
+           width="15.73"
+           height="15.73"
+           id="rect46" />
+        <rect
+           x="788.74707"
+           y="383.77371"
+           class="st0"
+           width="15.73"
+           height="15.73"
+           id="rect40" />
+        <rect
+           x="788.74707"
+           y="543.83008"
+           class="st0"
+           width="15.73"
+           height="15.73"
+           id="rect44" />
+        <rect
+           x="1058.4766"
+           y="383.77371"
+           class="st0"
+           width="15.73"
+           height="15.73"
+           id="rect42" />
+        <g
+           id="g38">
+          <rect
+             x="783.5"
+             y="397.5"
+             class="st0"
+             width="298"
+             height="148"
+             id="rect26" />
+          <line
+             class="st0"
+             x1="783.5"
+             y1="434.5"
+             x2="1081.5"
+             y2="434.5"
+             id="line28" />
+          <line
+             class="st0"
+             x1="783.5"
+             y1="508.5"
+             x2="1081.5"
+             y2="508.5"
+             id="line30" />
+          <path
+             class="st0"
+             d="m 1078.5,504.5 h -257 c 0,0 -11,-8 -11,-33 0,-19 11,-34 11,-34 h 257 z"
+             id="path32" />
+          <path
+             class="st1"
+             d="m 805.56055,495.71055 c 0,0 -6.2111,-5.89877 -6.2111,-24.33874 0,-14.01839 6.2111,-25.08236 6.2111,-25.08236"
+             id="path34" />
+          <path
+             class="st1"
+             d="m 799.15055,495.71057 c 0,0 -6.21112,-5.89883 -6.21112,-24.33879 0,-14.01837 6.21112,-25.08235 6.21112,-25.08235"
+             id="path36" />
+        </g>
+        <rect
+           x="791.39703"
+           y="386.42374"
+           class="st0 inner-square"
+           width="10.43"
+           height="10.43"
+           id="rect20" />
+        <rect
+           x="1061.1366"
+           y="386.42374"
+           class="st0 inner-square"
+           width="10.43"
+           height="10.43"
+           id="rect22" />
+        <rect
+           x="791.39703"
+           y="546.14612"
+           class="st0 inner-square"
+           width="10.43"
+           height="10.43"
+           id="rect24" />
+      </g>
+      <rect
+         x="1061.8053"
+         y="546.4801"
+         class="st0 inner-square"
+         width="10.43"
+         height="10.43"
+         id="rect50" />
+      <text
+         transform="translate(1044.2897,490.94)"
+         class="st2 st3"
+         id="text52"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.7882px;font-family:'Siemens Sans Black';-inkscape-font-specification:'Siemens Sans Black, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">SVC</text>
+      <text
+         transform="translate(1042.6383,471.5001)"
+         class="st2 st3"
+         id="text54"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.7882px;font-family:'Siemens Sans Black';-inkscape-font-specification:'Siemens Sans Black, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">RUN</text>
+      <text
+         transform="translate(831.4894,450.9469)"
+         class="st4 st3"
+         id="text56"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6922px;font-family:'Siemens Sans Black';-inkscape-font-specification:'Siemens Sans Black, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">SIEMENS</text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:6.43048px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.160762"
+         x="943.93671"
+         y="502.1131"
+         id="text-y1y2"
+         transform="scale(0.96276098,1.0386794)"
+         inkscape:label="text-y1y2"><tspan
+           sodipodi:role="line"
+           id="tspan1182"
+           x="943.93671"
+           y="502.1131"
+           style="font-size:6.43048px;stroke-width:0.160762"><tspan
+   style="font-size:5.34611px;stroke-width:0.160762"
+   id="tspan1336">Y1</tspan> ⊥ <tspan
+   style="font-size:5.34611px;stroke-width:0.160762"
+   id="tspan1340">Y2</tspan></tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:6.43048px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.160762"
+         x="968.7132"
+         y="502.1131"
+         id="text-y3y4"
+         transform="scale(0.96276098,1.0386794)"
+         inkscape:label="text-y3y4"><tspan
+           sodipodi:role="line"
+           id="tspan1182-8"
+           x="968.7132"
+           y="502.1131"
+           style="font-size:6.43048px;stroke-width:0.160762"><tspan
+   style="font-size:5.34611px;stroke-width:0.160762"
+   id="tspan1336-5">Y3</tspan> ⊥ <tspan
+   style="font-size:5.34611px;stroke-width:0.160762"
+   id="tspan1340-4">Y4</tspan></tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:6.43048px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.160762"
+         x="994.00861"
+         y="502.10526"
+         id="text-y5y6"
+         transform="scale(0.96276098,1.0386794)"
+         class="type-18-text  type-12-text type-18 type-12"
+         inkscape:label="text-y5y6"><tspan
+           sodipodi:role="line"
+           id="tspan1182-8-5"
+           x="994.00861"
+           y="502.10526"
+           style="font-size:6.43048px;stroke-width:0.160762"><tspan
+   style="font-size:5.34611px;stroke-width:0.160762"
+   id="tspan1336-5-7">Y5</tspan> ⊥ <tspan
+   style="font-size:5.34611px;stroke-width:0.160762"
+   id="tspan1340-4-9">Y6</tspan></tspan><tspan
+           sodipodi:role="line"
+           x="994.00861"
+           y="510.21521"
+           style="font-size:6.43048px;stroke-width:0.160762"
+           id="tspan1390" /></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:6.43048px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.160762"
+         x="1018.6769"
+         y="502.12091"
+         id="text-y7y8"
+         transform="scale(0.96276098,1.0386794)"
+         class="type-18-text type-18"
+         inkscape:label="text-y7y8"><tspan
+           sodipodi:role="line"
+           id="tspan1182-8-5-7"
+           x="1018.6769"
+           y="502.12091"
+           style="font-size:6.43048px;stroke-width:0.160762"><tspan
+   style="font-size:5.34611px;stroke-width:0.160762"
+   id="tspan1336-5-7-5">Y7</tspan> ⊥ <tspan
+   style="font-size:5.34611px;stroke-width:0.160762"
+   id="tspan1340-4-9-3">Y8</tspan></tspan><tspan
+           sodipodi:role="line"
+           x="1018.6769"
+           y="510.23087"
+           style="font-size:6.43048px;stroke-width:0.160762"
+           id="tspan1390-9" /></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:6.43048px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.160762"
+         x="1049.3055"
+         y="502.11047"
+         id="text-y10y20"
+         transform="scale(0.96276098,1.0386794)"
+         inkscape:label="text-y10y20"><tspan
+           sodipodi:role="line"
+           id="tspan1182-8-5-7-5"
+           x="1049.3055"
+           y="502.11047"
+           style="font-size:6.43048px;stroke-width:0.160762"><tspan
+   style="font-size:5.34611px;stroke-width:0.160762"
+   id="tspan1336-5-7-5-9">Y10 </tspan><tspan
+   style="font-size:5.34611px"
+   id="tspan1481">V~ </tspan>⊥ </tspan><tspan
+           sodipodi:role="line"
+           x="1049.3055"
+           y="510.22043"
+           style="font-size:6.43048px;stroke-width:0.160762"
+           id="tspan1390-9-3" /></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:6.43048px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.160762"
+         x="1074.1007"
+         y="502.1131"
+         id="text1184-6-4-9-2"
+         transform="scale(0.96276098,1.0386794)"><tspan
+           sodipodi:role="line"
+           id="tspan1182-8-5-7-9"
+           x="1074.1007"
+           y="502.1131"
+           style="font-size:5.34611px;stroke-width:0.160762">Y20</tspan><tspan
+           sodipodi:role="line"
+           x="1074.1007"
+           y="510.15118"
+           style="font-size:6.43048px;stroke-width:0.160762"
+           id="tspan1390-9-7" /></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:6.43048px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.160762"
+         x="1083.5857"
+         y="502.1131"
+         id="text-y30y40"
+         transform="scale(0.96276098,1.0386794)"
+         class="type-18-text  type-17-text type-18 type-17"
+         inkscape:label="text-y30y40"><tspan
+           sodipodi:role="line"
+           id="tspan1182-8-5-7-5-5"
+           x="1083.5857"
+           y="502.1131"
+           style="font-size:6.43048px;stroke-width:0.160762"><tspan
+   style="font-size:5.34611px"
+   id="tspan1829">Y30V~ </tspan>⊥ <tspan
+   style="font-size:5.34611px"
+   id="tspan1516">Y40</tspan> </tspan><tspan
+           sodipodi:role="line"
+           x="1083.5857"
+           y="510.22305"
+           style="font-size:6.43048px;stroke-width:0.160762"
+           id="tspan1390-9-3-1" /></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:6.43048px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.160762"
+         x="829.341"
+         y="501.439"
+         id="text-main-power"
+         transform="scale(0.96276098,1.0386794)"
+         inkscape:label="text-main-power"><tspan
+           sodipodi:role="line"
+           id="tspan1182-8-5-7-6"
+           x="829.341"
+           y="501.439"
+           style="font-size:6.43048px;stroke-width:0.160762"><tspan
+   style="font-size:5.34611px"
+   id="tspan1563"><tspan
+   style="font-size:6.23713px"
+   id="tspan1567">~</tspan> </tspan> ⊥ </tspan><tspan
+           sodipodi:role="line"
+           x="829.341"
+           y="509.54895"
+           style="font-size:6.43048px;stroke-width:0.160762"
+           id="tspan1390-9-2" /></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:6.43048px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.160762"
+         x="857.86273"
+         y="502.1131"
+         id="text-d1d2"
+         transform="scale(0.96276098,1.0386794)"
+         class="type-17-text type-17"
+         inkscape:label="text-d1d2"><tspan
+           sodipodi:role="line"
+           id="tspan1182-80"
+           x="857.86273"
+           y="502.1131"
+           style="font-size:6.43048px;stroke-width:0.160762"><tspan
+   style="font-size:5.34611px;stroke-width:0.160762"
+   id="tspan1336-1">D1</tspan> ⊥ <tspan
+   style="font-size:5.34611px"
+   id="tspan1595">D</tspan><tspan
+   style="font-size:5.34611px;stroke-width:0.160762"
+   id="tspan1340-5">2</tspan></tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:6.43048px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.160762"
+         x="883.36804"
+         y="502.1131"
+         id="text-d3"
+         transform="scale(0.96276098,1.0386794)"
+         class="type-17-text type-17"
+         inkscape:label="text-d3"><tspan
+           sodipodi:role="line"
+           id="tspan1182-80-9"
+           x="883.36804"
+           y="502.1131"
+           style="font-size:6.43048px;stroke-width:0.160762">⊥ <tspan
+   style="font-size:5.34611px;stroke-width:0.160762"
+   id="tspan1595-3">D3</tspan></tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:6.43048px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.160762"
+         x="910.73303"
+         y="502.15491"
+         id="text-scom"
+         transform="scale(0.96276098,1.0386794)"
+         class="type-17-text type-17"
+         inkscape:label="text-scom"><tspan
+           sodipodi:role="line"
+           id="tspan1182-80-9-1"
+           x="910.73303"
+           y="502.15491"
+           style="font-size:6.43048px;stroke-width:0.160762">+   -  ⏚ </tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:6.43048px;line-height:1.25;font-family:sans-serif;white-space:pre;inline-size:2.06714;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.160762"
+         x="-848.5697"
+         y="-393.70419"
+         id="text1184-6-4-9-4-2"
+         transform="matrix(-0.96263477,-0.01557122,0.01683366,-1.0385433,0,0)"><tspan
+           x="-848.5697"
+           y="-393.70419"
+           id="tspan85"><tspan
+             dx="0 5.2624435"
+             style="font-size:6.43048px;stroke-width:0.160762"
+             id="tspan83">+ </tspan></tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:6.43048px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.160762"
+         x="829.04315"
+         y="410.1991"
+         id="text-knx"
+         transform="scale(0.96276098,1.0386794)"
+         inkscape:label="text-knx"><tspan
+           id="tspan1182-8-5-7-6-11"
+           x="829.04315"
+           y="410.1991"
+           style="font-size:6.43048px;stroke-width:0.160762"
+           sodipodi:role="line">+   - </tspan><tspan
+           x="829.04315"
+           y="418.23718"
+           style="font-size:6.43048px;stroke-width:0.160762"
+           id="tspan1390-9-2-9"
+           sodipodi:role="line" /></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:6.43048px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.160762"
+         x="894.76007"
+         y="410.1991"
+         id="text-mstp"
+         transform="scale(0.96276098,1.0386794)"
+         inkscape:label="text-mstp"
+         class="mstp-container"><tspan
+           sodipodi:role="line"
+           id="tspan1182-80-9-1-5"
+           x="894.76007"
+           y="410.1991"
+           style="font-size:6.43048px;stroke-width:0.160762">+   -  ⏚ </tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:6.43048px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.160762"
+         x="943.12817"
+         y="410.15729"
+         id="text-b1d1b2d2"
+         transform="scale(0.96276098,1.0386794)"
+         class="type-18-text type-18"
+         inkscape:label="text-b1d1b2d2"><tspan
+           sodipodi:role="line"
+           id="tspan1182-0"
+           x="943.12817"
+           y="410.15729"
+           style="font-size:6.43048px;stroke-width:0.160762"><tspan
+   style="font-size:5.34611px;stroke-width:0.160762"
+   id="tspan1336-0">D1 D2 </tspan> ⊥ <tspan
+   style="font-size:5.34611px;stroke-width:0.160762"
+   id="tspan1340-8" /></tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:6.43048px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.160762"
+         x="968.80475"
+         y="410.08942"
+         id="text-x1"
+         transform="scale(0.96276098,1.0386794)"
+         inkscape:label="text-x1"><tspan
+           sodipodi:role="line"
+           id="tspan1182-0-3"
+           x="968.80475"
+           y="410.08942"
+           style="font-size:6.43048px;stroke-width:0.160762"><tspan
+   style="font-size:5.34611px;stroke-width:0.160762"
+   id="tspan1336-0-4">X1 V~ </tspan>⊥ </tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:6.43048px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.160762"
+         x="993.45319"
+         y="410.15729"
+         id="text-x2"
+         transform="scale(0.96276098,1.0386794)"
+         inkscape:label="text-x2"><tspan
+           sodipodi:role="line"
+           id="tspan1182-0-3-0"
+           x="993.45319"
+           y="410.15729"
+           style="font-size:6.43048px;stroke-width:0.160762"><tspan
+   style="font-size:5.34611px;stroke-width:0.160762"
+   id="tspan1336-0-4-9">X2</tspan> </tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:6.43048px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.160762"
+         x="1000.7858"
+         y="410.15729"
+         id="text-x3x4"
+         transform="scale(0.96276098,1.0386794)"
+         class="type-18-text  type-17-text type-18 type-17"
+         inkscape:label="text-x3x4"><tspan
+           sodipodi:role="line"
+           id="tspan1182-0-3-2"
+           x="1000.7858"
+           y="410.15729"
+           style="font-size:6.43048px;stroke-width:0.160762"> <tspan
+   style="font-size:5.34611px"
+   id="tspan1833">X3 V~ </tspan>⊥  <tspan
+   style="font-size:5.34611px"
+   id="tspan1825">X4</tspan> </tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:6.43048px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.160762"
+         x="944.08984"
+         y="410.15729"
+         id="text-b1b2"
+         transform="scale(0.96276098,1.0386794)"
+         class="type-17-text type-17"
+         inkscape:label="text-b1b2"><tspan
+           sodipodi:role="line"
+           id="tspan1182-0-8"
+           x="944.08984"
+           y="410.15729"
+           style="font-size:6.43048px;stroke-width:0.160762"><tspan
+   style="font-size:5.34611px;stroke-width:0.160762"
+   id="tspan1336-0-9">B1 B2 </tspan> ⊥ <tspan
+   style="font-size:5.34611px;stroke-width:0.160762"
+   id="tspan1340-8-2" /></tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:6.43048px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.160762"
+         x="897.50293"
+         y="502.03217"
+         id="text-p1p2"
+         transform="scale(0.96276098,1.0386794)"
+         class="type-12-text type-12"
+         inkscape:label="text-p1p2"><tspan
+           sodipodi:role="line"
+           id="tspan1182-80-9-1-0"
+           x="897.50293"
+           y="502.03217"
+           style="font-size:6.43048px;stroke-width:0.160762"><tspan
+   style="font-size:5.34611px"
+   id="tspan1879">P+</tspan>        <tspan
+   style="font-size:5.34611px"
+   id="tspan1883"> P-</tspan> </tspan></text>
+      <circle
+         class="st0 led"
+         cx="1067"
+         cy="488"
+         r="5"
+         id="circle14" />
+      <circle
+         class="st0 led"
+         cx="1067"
+         cy="488"
+         r="2.9400001"
+         id="circle16" />
+      <rect
+         x="1064.5"
+         y="465.5"
+         class="st0 led"
+         width="5"
+         height="5"
+         id="rect18" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:6.43048px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.160762"
+         x="952.61755"
+         y="410.08942"
+         id="text-type-12-d1"
+         transform="scale(0.96276098,1.0386794)"
+         class="type-12-text type-12"
+         inkscape:label="text-type-12-d1"><tspan
+           sodipodi:role="line"
+           id="tspan1182-0-8-9"
+           x="952.61755"
+           y="410.08942"
+           style="font-size:6.43048px;stroke-width:0.160762"><tspan
+   style="font-size:5.34611px;stroke-width:0.160762"
+   id="tspan1336-0-9-2">D1</tspan> ⊥ </tspan></text>
+    </g>
+    <g
+       id="pressure"
+       class="type-12"
+       transform="matrix(0.67114094,0,0,1.9227885,-1591.8135,-1131.9372)">
+      <g
+         id="pressure-outer">
+        <circle
+           class="st0  pressure"
+           cx="866.5"
+           cy="533.5"
+           id="pressure-hi"
+           r="8.5"
+           inkscape:label="pressure-hi" />
+        <circle
+           class="st0  pressure"
+           cx="887.5"
+           cy="533.5"
+           id="pressure-low"
+           r="8.5"
+           inkscape:label="pressure-low" />
+      </g>
+      <g
+         id="pressure-inner"
+         class="pressure">
+        <circle
+           class="st0 pressure"
+           cx="866.5"
+           cy="533.5"
+           r="5"
+           id="circle64" />
+        <circle
+           class="st0 pressure"
+           cx="887.5"
+           cy="533.5"
+           r="5"
+           id="circle66" />
+      </g>
+    </g>
+    <g
+       id="terminal"
+       transform="matrix(0.67114094,0,0,1.9227885,-1591.8135,-1131.9372)">
+      <g
+         id="terminal-24-common"
+         inkscape:label="terminal-24-common"
+         class="main-power">
+        <rect
+           x="804.5"
+           y="524.5"
+           class="st0 main-power"
+           width="8"
+           height="21"
+           id="rect70" />
+        <line
+           class="st0 main-power"
+           x1="812.5"
+           y1="542.5"
+           x2="804.5"
+           y2="542.5"
+           id="line72" />
+        <line
+           class="st0 main-power"
+           x1="804.5"
+           y1="531.5"
+           x2="812.5"
+           y2="531.5"
+           id="line74" />
+      </g>
+      <g
+         id="terminal-screw-24-common"
+         inkscape:label="terminal-screw-24-common"
+         class="terminal-screws">
+        <circle
+           class="st0 terminal-screws"
+           cx="808.5"
+           cy="536.5"
+           r="3"
+           id="circle77" />
+        <line
+           class="st0"
+           x1="805.5"
+           y1="536.5"
+           x2="811.5"
+           y2="536.5"
+           id="line79" />
+      </g>
+      <g
+         id="terminal-24-power"
+         transform="translate(-8)"
+         class="main-power "
+         inkscape:label="terminal-24-power">
+        <rect
+           x="804.5"
+           y="524.5"
+           class="st0 main-power"
+           width="8"
+           height="21"
+           id="rect70-6" />
+        <line
+           class="st0 main-power"
+           x1="812.5"
+           y1="542.5"
+           x2="804.5"
+           y2="542.5"
+           id="line72-9" />
+        <line
+           class="st0 main-power"
+           x1="804.5"
+           y1="531.5"
+           x2="812.5"
+           y2="531.5"
+           id="line74-4" />
+      </g>
+      <g
+         id="terminal-screw-24-power"
+         inkscape:label="terminal-screw-24-power"
+         class="terminal-screws"
+         transform="translate(-8)">
+        <circle
+           class="st0 terminal-screws"
+           cx="808.5"
+           cy="536.5"
+           r="3"
+           id="circle77-3" />
+        <line
+           class="st0"
+           x1="805.5"
+           y1="536.5"
+           x2="811.5"
+           y2="536.5"
+           id="line79-7" />
+      </g>
+    </g>
+    <g
+       id="ethernet"
+       transform="matrix(0.49078498,0,0,1.8329141,-1439.3318,-1096.3811)">
+      <g
+         id="g101">
+        <g
+           id="g93">
+          <rect
+             x="845.75"
+             y="397.5"
+             class="st0  eth-container"
+             width="70"
+             height="22"
+             id="rect83" />
+          <g
+             id="g89"
+             transform="matrix(1.015444,0,0,0.55822992,-13.332074,175.48005)"
+             class="eth-container">
+            <rect
+               x="855.25"
+               y="397.5"
+               class="st0 eth-container"
+               width="6"
+               height="11"
+               id="rect85" />
+            <rect
+               x="865.25"
+               y="397.5"
+               class="st0 eth-container"
+               width="6"
+               height="11"
+               id="rect87" />
+          </g>
+          <line
+             class="st0  eth-container"
+             x1="880.75"
+             y1="397.5"
+             x2="880.75"
+             y2="419"
+             id="line91" />
+        </g>
+        <g
+           id="g99"
+           transform="matrix(1.017459,0,0,0.5744546,-15.68253,169.02251)"
+           class="eth-container">
+          <rect
+             x="890.25"
+             y="397.5"
+             class="st0 eth-container"
+             width="6"
+             height="11"
+             id="rect95" />
+          <rect
+             x="900.25"
+             y="397.5"
+             class="st0 eth-container"
+             width="6"
+             height="11"
+             id="rect97" />
+        </g>
+      </g>
+    </g>
+    <path
+       id="usb-inner-4"
+       class="st0 usb-grey"
+       d="m -882.035,-311.86792 h -13.18121 c -0.62416,0 -1.12751,-1.44209 -1.12751,-3.23028 v -37.76357 c 0,-1.78819 0.50335,-3.23028 1.12751,-3.23028 h 13.18121 c 0.62416,0 1.12752,1.44209 1.12752,3.23028 v 37.76357 c 0,1.76896 -0.50336,3.23028 -1.12752,3.23028 z"
+       style="fill:#b8b8b8;stroke:#000000;stroke-width:1.13599;stroke-miterlimit:10" />
+    <polygon
+       id="usb-outer-1-9"
+       class="st5 usb-black"
+       points="1056.5,411 1051.5,407.01 1044,407.01 1039,411 1039,422.99 1056.5,422.99 "
+       style="fill:#000000;stroke:#000000;stroke-linejoin:round;stroke-miterlimit:10"
+       transform="matrix(0.67114094,0,0,1.9227885,-1591.8135,-1131.9372)" />
+    <rect
+       id="usb-outer-2-5"
+       x="-891.31018"
+       y="-341.67114"
+       class="st0 usb-grey"
+       width="5.3691273"
+       height="15.382307"
+       style="fill:#b8b8b8;stroke:#000000;stroke-width:1.13599;stroke-miterlimit:10" />
+    <g
+       id="terminal-y1y2-common"
+       inkscape:label="terminal-y1y2-common"
+       class="y1  y2  type-12  type-18  type-17"
+       transform="matrix(0.67114094,0,0,1.9227885,-1517.1036,-1132.2392)"
+       style="fill:none">
+      <rect
+         x="804.5"
+         y="524.5"
+         class="st0 y1 y2"
+         width="8"
+         height="21"
+         id="terminal-y1y2-common-term" />
+      <line
+         class="st0 y1 y2"
+         x1="812.5"
+         y1="542.5"
+         x2="804.5"
+         y2="542.5"
+         id="line72-3" />
+      <line
+         class="st0 y1 y2"
+         x1="804.5"
+         y1="531.5"
+         x2="812.5"
+         y2="531.5"
+         id="line74-7" />
+    </g>
+    <g
+       id="terminal-screw-y1y2-common"
+       inkscape:label="terminal-screw-y1y2-common"
+       class="terminal-screws  type-12  type-18  type-17"
+       transform="matrix(0.67114094,0,0,1.9227885,-1517.1036,-1132.2392)"
+       style="fill:#b8b8b8">
+      <circle
+         class="st0 terminal-screws"
+         cx="808.5"
+         cy="536.5"
+         r="3"
+         id="circle77-0" />
+      <line
+         class="st0"
+         x1="805.5"
+         y1="536.5"
+         x2="811.5"
+         y2="536.5"
+         id="line79-2" />
+    </g>
+    <g
+       id="terminal-y1"
+       transform="matrix(0.67114094,0,0,1.9227885,-1522.4727,-1132.2392)"
+       inkscape:label="terminal-y1"
+       class="y1  type-12  type-18  type-17"
+       style="fill:none">
+      <rect
+         x="804.5"
+         y="524.5"
+         class="st0 y1"
+         width="8"
+         height="21"
+         id="terminal-y1-term" />
+      <line
+         class="st0 y1"
+         x1="812.5"
+         y1="542.5"
+         x2="804.5"
+         y2="542.5"
+         id="line72-9-7" />
+      <line
+         class="st0 y1"
+         x1="804.5"
+         y1="531.5"
+         x2="812.5"
+         y2="531.5"
+         id="line74-4-1" />
+    </g>
+    <g
+       id="terminal-screw-y1"
+       inkscape:label="terminal-screw-y1"
+       class="terminal-screws  type-12  type-18  type-17"
+       transform="matrix(0.67114094,0,0,1.9227885,-1522.4727,-1132.2392)"
+       style="fill:#b8b8b8">
+      <circle
+         class="st0 terminal-screws"
+         cx="808.5"
+         cy="536.5"
+         r="3"
+         id="circle77-3-5" />
+      <line
+         class="st0"
+         x1="805.5"
+         y1="536.5"
+         x2="811.5"
+         y2="536.5"
+         id="line79-7-8" />
+    </g>
+    <g
+       id="terminal-y2"
+       inkscape:label="terminal-y1y2-common"
+       transform="matrix(0.67114094,0,0,1.9227885,-1511.7345,-1132.2392)"
+       class="y2  type-12  type-18  type-17"
+       style="fill:none">
+      <rect
+         x="804.5"
+         y="524.5"
+         class="st0 y2"
+         width="8"
+         height="21"
+         id="terminal-y2-term" />
+      <line
+         class="st0 y2"
+         x1="812.5"
+         y1="542.5"
+         x2="804.5"
+         y2="542.5"
+         id="line72-3-3" />
+      <line
+         class="st0 y2"
+         x1="804.5"
+         y1="531.5"
+         x2="812.5"
+         y2="531.5"
+         id="line74-7-0" />
+    </g>
+    <g
+       id="terminal-screw-y2"
+       inkscape:label="terminal-screw-y2"
+       class="terminal-screws  type-12  type-18  type-17"
+       transform="matrix(0.67114094,0,0,1.9227885,-1511.7345,-1132.2392)"
+       style="fill:#b8b8b8">
+      <circle
+         class="st0 terminal-screws"
+         cx="808.5"
+         cy="536.5"
+         r="3"
+         id="circle77-0-0" />
+      <line
+         class="st0"
+         x1="805.5"
+         y1="536.5"
+         x2="811.5"
+         y2="536.5"
+         id="line79-2-4" />
+    </g>
+    <g
+       id="terminal-y3y4-common"
+       inkscape:label="terminal-y3y4-common"
+       transform="matrix(0.67114094,0,0,1.9227885,-1500.9962,-1132.2392)"
+       class="y3  y4  type-12  type-18  type-17">
+      <rect
+         x="804.5"
+         y="524.5"
+         class="st0 y3 y4"
+         width="8"
+         height="21"
+         id="terminal-y3y4-common-term" />
+      <line
+         class="st0 y3 y4"
+         x1="812.5"
+         y1="542.5"
+         x2="804.5"
+         y2="542.5"
+         id="line72-3-7" />
+      <line
+         class="st0 y3 y4"
+         x1="804.5"
+         y1="531.5"
+         x2="812.5"
+         y2="531.5"
+         id="line74-7-8" />
+    </g>
+    <g
+       id="terminal-screw-y3y4-common"
+       inkscape:label="terminal-screw-y3y4-common"
+       class="terminal-screws  type-12  type-18  type-17"
+       transform="matrix(0.67114094,0,0,1.9227885,-1500.9962,-1132.2392)"
+       style="fill:#b8b8b8">
+      <circle
+         class="st0 terminal-screws"
+         cx="808.5"
+         cy="536.5"
+         r="3"
+         id="circle77-0-4" />
+      <line
+         class="st0"
+         x1="805.5"
+         y1="536.5"
+         x2="811.5"
+         y2="536.5"
+         id="line79-2-5" />
+    </g>
+    <g
+       id="terminal-y3"
+       transform="matrix(0.67114094,0,0,1.9227885,-1506.3653,-1132.2392)"
+       inkscape:label="terminal-y3"
+       class="y3  type-12  type-18  type-17">
+      <rect
+         x="804.5"
+         y="524.5"
+         class="st0 y3"
+         width="8"
+         height="21"
+         id="terminal-y3-term" />
+      <line
+         class="st0 y3"
+         x1="812.5"
+         y1="542.5"
+         x2="804.5"
+         y2="542.5"
+         id="line72-9-7-0" />
+      <line
+         class="st0 y3"
+         x1="804.5"
+         y1="531.5"
+         x2="812.5"
+         y2="531.5"
+         id="line74-4-1-6" />
+    </g>
+    <g
+       id="terminal-screw-y3"
+       inkscape:label="terminal-screw-y3"
+       class="terminal-screws  type-12  type-18  type-17"
+       transform="matrix(0.67114094,0,0,1.9227885,-1506.3653,-1132.2392)"
+       style="fill:#b8b8b8">
+      <circle
+         class="st0 terminal-screws"
+         cx="808.5"
+         cy="536.5"
+         r="3"
+         id="circle77-3-5-3" />
+      <line
+         class="st0"
+         x1="805.5"
+         y1="536.5"
+         x2="811.5"
+         y2="536.5"
+         id="line79-7-8-3" />
+    </g>
+    <g
+       id="terminal-y4"
+       inkscape:label="terminal-y4"
+       transform="matrix(0.67114094,0,0,1.9227885,-1495.6271,-1132.2392)"
+       class="y4  type-12  type-18  type-17">
+      <rect
+         x="804.5"
+         y="524.5"
+         class="st0 y4"
+         width="8"
+         height="21"
+         id="terminal-y4-term" />
+      <line
+         class="st0 y4"
+         x1="812.5"
+         y1="542.5"
+         x2="804.5"
+         y2="542.5"
+         id="line72-3-3-7" />
+      <line
+         class="st0 y4"
+         x1="804.5"
+         y1="531.5"
+         x2="812.5"
+         y2="531.5"
+         id="line74-7-0-1" />
+    </g>
+    <g
+       id="terminal-screw-y4"
+       inkscape:label="terminal-screw-y4"
+       class="terminal-screws  type-12  type-18  type-17"
+       transform="matrix(0.67114094,0,0,1.9227885,-1495.6271,-1132.2392)"
+       style="fill:#b8b8b8">
+      <circle
+         class="st0 terminal-screws"
+         cx="808.5"
+         cy="536.5"
+         r="3"
+         id="circle77-0-0-0" />
+      <line
+         class="st0"
+         x1="805.5"
+         y1="536.5"
+         x2="811.5"
+         y2="536.5"
+         id="line79-2-4-2" />
+    </g>
+    <g
+       id="terminal-y5y6-common"
+       inkscape:label="terminal-y5y6-common"
+       transform="matrix(0.67114094,0,0,1.9227885,-1484.8888,-1132.2392)"
+       class="y5  y6  type-12  type-18  y5y6">
+      <rect
+         x="804.5"
+         y="524.5"
+         class="st0 y5 y6"
+         width="8"
+         height="21"
+         id="terminal-y5y6-common-term" />
+      <line
+         class="st0 y5 y6"
+         x1="812.5"
+         y1="542.5"
+         x2="804.5"
+         y2="542.5"
+         id="line72-3-7-6" />
+      <line
+         class="st0 y5 y6"
+         x1="804.5"
+         y1="531.5"
+         x2="812.5"
+         y2="531.5"
+         id="line74-7-8-8" />
+    </g>
+    <g
+       id="terminal-screw-y5y6-common"
+       inkscape:label="terminal-screw-y5y6-common"
+       class="terminal-screws  type-12  type-18  y5y6"
+       transform="matrix(0.67114094,0,0,1.9227885,-1484.8888,-1132.2392)"
+       style="fill:#b8b8b8">
+      <circle
+         class="st0 terminal-screws"
+         cx="808.5"
+         cy="536.5"
+         r="3"
+         id="circle77-0-4-4" />
+      <line
+         class="st0"
+         x1="805.5"
+         y1="536.5"
+         x2="811.5"
+         y2="536.5"
+         id="line79-2-5-7" />
+    </g>
+    <g
+       id="terminal-y5"
+       transform="matrix(0.67114094,0,0,1.9227885,-1490.2579,-1132.2392)"
+       inkscape:label="terminal-y5"
+       class="y5  type-12  type-18  y5y6">
+      <rect
+         x="804.5"
+         y="524.5"
+         class="st0 y5"
+         width="8"
+         height="21"
+         id="terminal-y5-term" />
+      <line
+         class="st0 y5"
+         x1="812.5"
+         y1="542.5"
+         x2="804.5"
+         y2="542.5"
+         id="line72-9-7-0-6" />
+      <line
+         class="st0 y5"
+         x1="804.5"
+         y1="531.5"
+         x2="812.5"
+         y2="531.5"
+         id="line74-4-1-6-6" />
+    </g>
+    <g
+       id="terminal-screw-y5"
+       inkscape:label="terminal-screw-y5"
+       class="terminal-screws  type-12  type-18  y5y6"
+       transform="matrix(0.67114094,0,0,1.9227885,-1490.2579,-1132.2392)"
+       style="fill:#b8b8b8">
+      <circle
+         class="st0 terminal-screws"
+         cx="808.5"
+         cy="536.5"
+         r="3"
+         id="circle77-3-5-3-7" />
+      <line
+         class="st0"
+         x1="805.5"
+         y1="536.5"
+         x2="811.5"
+         y2="536.5"
+         id="line79-7-8-3-0" />
+    </g>
+    <g
+       id="terminal-y6"
+       inkscape:label="terminal-y6"
+       transform="matrix(0.67114094,0,0,1.9227885,-1479.5197,-1132.2392)"
+       class="y6  type-12  type-18  y5y6">
+      <rect
+         x="804.5"
+         y="524.5"
+         class="st0 y6"
+         width="8"
+         height="21"
+         id="terminal-y6-term" />
+      <line
+         class="st0 y6"
+         x1="812.5"
+         y1="542.5"
+         x2="804.5"
+         y2="542.5"
+         id="line72-3-3-7-4" />
+      <line
+         class="st0 y6"
+         x1="804.5"
+         y1="531.5"
+         x2="812.5"
+         y2="531.5"
+         id="line74-7-0-1-8" />
+    </g>
+    <g
+       id="terminal-screw-y6"
+       inkscape:label="terminal-screw-y6"
+       class="terminal-screws  type-12  type-18  y5y6"
+       transform="matrix(0.67114094,0,0,1.9227885,-1479.5197,-1132.2392)"
+       style="fill:#b8b8b8">
+      <circle
+         class="st0 terminal-screws"
+         cx="808.5"
+         cy="536.5"
+         r="3"
+         id="circle77-0-0-0-1" />
+      <line
+         class="st0"
+         x1="805.5"
+         y1="536.5"
+         x2="811.5"
+         y2="536.5"
+         id="line79-2-4-2-0" />
+    </g>
+    <g
+       id="terminal-y7y8-common"
+       inkscape:label="terminal-y7y8-common"
+       transform="matrix(0.67114094,0,0,1.9227885,-1468.7814,-1132.2392)"
+       class="y7  y8  type-18  y7y8">
+      <rect
+         x="804.5"
+         y="524.5"
+         class="st0 y7 y8"
+         width="8"
+         height="21"
+         id="terminal-y7y8-common-term" />
+      <line
+         class="st0 y7 y8"
+         x1="812.5"
+         y1="542.5"
+         x2="804.5"
+         y2="542.5"
+         id="line72-3-7-6-4" />
+      <line
+         class="st0 y7 y8"
+         x1="804.5"
+         y1="531.5"
+         x2="812.5"
+         y2="531.5"
+         id="line74-7-8-8-6" />
+    </g>
+    <g
+       id="terminal-screw-y7y8-common"
+       inkscape:label="terminal-screw-y7y8-common"
+       class="terminal-screws  type-18  y7y8"
+       transform="matrix(0.67114094,0,0,1.9227885,-1468.7814,-1132.2392)"
+       style="fill:#b8b8b8">
+      <circle
+         class="st0 terminal-screws"
+         cx="808.5"
+         cy="536.5"
+         r="3"
+         id="circle77-0-4-4-0" />
+      <line
+         class="st0"
+         x1="805.5"
+         y1="536.5"
+         x2="811.5"
+         y2="536.5"
+         id="line79-2-5-7-2" />
+    </g>
+    <g
+       id="terminal-y7"
+       transform="matrix(0.67114094,0,0,1.9227885,-1474.1506,-1132.2392)"
+       inkscape:label="terminal-y7"
+       class="y7  type-18  y7y8">
+      <rect
+         x="804.5"
+         y="524.5"
+         class="st0 y7"
+         width="8"
+         height="21"
+         id="terminal-y7-term" />
+      <line
+         class="st0 y7"
+         x1="812.5"
+         y1="542.5"
+         x2="804.5"
+         y2="542.5"
+         id="line72-9-7-0-6-4" />
+      <line
+         class="st0 y7"
+         x1="804.5"
+         y1="531.5"
+         x2="812.5"
+         y2="531.5"
+         id="line74-4-1-6-6-3" />
+    </g>
+    <g
+       id="terminal-screw-y7"
+       inkscape:label="terminal-screw-y7"
+       class="terminal-screws  type-18  y7y8"
+       transform="matrix(0.67114094,0,0,1.9227885,-1474.1506,-1132.2392)"
+       style="fill:#b8b8b8">
+      <circle
+         class="st0 terminal-screws"
+         cx="808.5"
+         cy="536.5"
+         r="3"
+         id="circle77-3-5-3-7-7" />
+      <line
+         class="st0"
+         x1="805.5"
+         y1="536.5"
+         x2="811.5"
+         y2="536.5"
+         id="line79-7-8-3-0-9" />
+    </g>
+    <g
+       id="terminal-y8"
+       inkscape:label="terminal-y8"
+       transform="matrix(0.67114094,0,0,1.9227885,-1463.4123,-1132.2392)"
+       class="y8  type-18  y7y8">
+      <rect
+         x="804.5"
+         y="524.5"
+         class="st0 y8"
+         width="8"
+         height="21"
+         id="terminal-y8-term" />
+      <line
+         class="st0 y8"
+         x1="812.5"
+         y1="542.5"
+         x2="804.5"
+         y2="542.5"
+         id="line72-3-3-7-4-5" />
+      <line
+         class="st0 y8"
+         x1="804.5"
+         y1="531.5"
+         x2="812.5"
+         y2="531.5"
+         id="line74-7-0-1-8-2" />
+    </g>
+    <g
+       id="terminal-screw-y8"
+       inkscape:label="terminal-screw-y8"
+       class="terminal-screws  type-18  y7y8"
+       transform="matrix(0.67114094,0,0,1.9227885,-1463.4123,-1132.2392)"
+       style="fill:#b8b8b8">
+      <circle
+         class="st0 terminal-screws"
+         cx="808.5"
+         cy="536.5"
+         r="3"
+         id="circle77-0-0-0-1-7" />
+      <line
+         class="st0"
+         x1="805.5"
+         y1="536.5"
+         x2="811.5"
+         y2="536.5"
+         id="line79-2-4-2-0-0" />
+    </g>
+    <g
+       id="terminal-y10"
+       inkscape:label="terminal-y10"
+       transform="matrix(0.67114094,0,0,1.9227885,-1453.2005,-1132.2392)"
+       class="y10  type-12  type-18  type-17">
+      <rect
+         x="804.5"
+         y="524.5"
+         class="st0 y10"
+         width="8"
+         height="21"
+         id="terminal-y10-term" />
+      <line
+         class="st0 y10"
+         x1="812.5"
+         y1="542.5"
+         x2="804.5"
+         y2="542.5"
+         id="line72-3-7-0" />
+      <line
+         class="st0 y10"
+         x1="804.5"
+         y1="531.5"
+         x2="812.5"
+         y2="531.5"
+         id="line74-7-8-2" />
+    </g>
+    <g
+       id="terminal-screw-y10"
+       inkscape:label="terminal-screw-y10"
+       class="terminal-screws  type-12  type-18  type-17"
+       transform="matrix(0.67114094,0,0,1.9227885,-1453.2005,-1132.2392)"
+       style="fill:#b8b8b8">
+      <circle
+         class="st0 terminal-screws"
+         cx="808.5"
+         cy="536.5"
+         r="3"
+         id="circle77-0-4-5" />
+      <line
+         class="st0"
+         x1="805.5"
+         y1="536.5"
+         x2="811.5"
+         y2="536.5"
+         id="line79-2-5-9" />
+    </g>
+    <g
+       id="terminal-y10-power"
+       inkscape:label="terminal-y10-power"
+       transform="matrix(0.67114094,0,0,1.9227885,-1447.8314,-1132.2392)"
+       class="y10  y20  type-12  type-18  type-17">
+      <rect
+         x="804.5"
+         y="524.5"
+         class="st0 y10 y20"
+         width="8"
+         height="21"
+         id="terminal-y10-power-term" />
+      <line
+         class="st0 y10 y20"
+         x1="812.5"
+         y1="542.5"
+         x2="804.5"
+         y2="542.5"
+         id="line72-3-3-7-40" />
+      <line
+         class="st0 y10 y20"
+         x1="804.5"
+         y1="531.5"
+         x2="812.5"
+         y2="531.5"
+         id="line74-7-0-1-2" />
+    </g>
+    <g
+       id="terminal-screw-y10-power"
+       inkscape:label="terminal-screw-y10-power"
+       class="terminal-screws  type-12  type-18  type-17"
+       transform="matrix(0.67114094,0,0,1.9227885,-1447.8314,-1132.2392)"
+       style="fill:#b8b8b8">
+      <circle
+         class="st0 terminal-screws"
+         cx="808.5"
+         cy="536.5"
+         r="3"
+         id="circle77-0-0-0-13" />
+      <line
+         class="st0"
+         x1="805.5"
+         y1="536.5"
+         x2="811.5"
+         y2="536.5"
+         id="line79-2-4-2-6" />
+    </g>
+    <g
+       id="terminal-y20"
+       inkscape:label="terminal-y20"
+       transform="matrix(0.67114094,0,0,1.9227885,-1437.0931,-1132.2392)"
+       class="y20  type-12  type-18  type-17">
+      <rect
+         x="804.5"
+         y="524.5"
+         class="st0 y20"
+         width="8"
+         height="21"
+         id="terminal-y20-term" />
+      <line
+         class="st0 y20"
+         x1="812.5"
+         y1="542.5"
+         x2="804.5"
+         y2="542.5"
+         id="line72-3-7-6-1" />
+      <line
+         class="st0 y20"
+         x1="804.5"
+         y1="531.5"
+         x2="812.5"
+         y2="531.5"
+         id="line74-7-8-8-9" />
+    </g>
+    <g
+       id="terminal-screw-y20"
+       inkscape:label="terminal-screw-y20"
+       class="terminal-screws  type-12  type-18  type-17"
+       transform="matrix(0.67114094,0,0,1.9227885,-1437.0931,-1132.2392)"
+       style="fill:#b8b8b8">
+      <circle
+         class="st0 terminal-screws"
+         cx="808.5"
+         cy="536.5"
+         r="3"
+         id="circle77-0-4-4-2" />
+      <line
+         class="st0"
+         x1="805.5"
+         y1="536.5"
+         x2="811.5"
+         y2="536.5"
+         id="line79-2-5-7-1" />
+    </g>
+    <g
+       id="terminal-y10-common"
+       transform="matrix(0.67114094,0,0,1.9227885,-1442.4623,-1132.2392)"
+       inkscape:label="terminal-y10-common"
+       class="y10  y20  type-12  type-18  type-17">
+      <rect
+         x="804.5"
+         y="524.5"
+         class="st0 y10 y20"
+         width="8"
+         height="21"
+         id="terminal-y10-common-term" />
+      <line
+         class="st0 y10 y20"
+         x1="812.5"
+         y1="542.5"
+         x2="804.5"
+         y2="542.5"
+         id="line72-9-7-0-6-9" />
+      <line
+         class="st0 y10 y20"
+         x1="804.5"
+         y1="531.5"
+         x2="812.5"
+         y2="531.5"
+         id="line74-4-1-6-6-0" />
+    </g>
+    <g
+       id="terminal-screw-y10-common"
+       inkscape:label="terminal-screw-y10-common"
+       class="terminal-screws  type-12  type-18  type-17"
+       transform="matrix(0.67114094,0,0,1.9227885,-1442.4623,-1132.2392)"
+       style="fill:#b8b8b8">
+      <circle
+         class="st0 terminal-screws"
+         cx="808.5"
+         cy="536.5"
+         r="3"
+         id="circle77-3-5-3-7-0" />
+      <line
+         class="st0"
+         x1="805.5"
+         y1="536.5"
+         x2="811.5"
+         y2="536.5"
+         id="line79-7-8-3-0-3" />
+    </g>
+    <g
+       id="terminal-y30"
+       inkscape:label="terminal-y30"
+       transform="matrix(0.67114094,0,0,1.9227885,-1431.724,-1132.2392)"
+       class="y30  type-18  type-17  y30y40">
+      <rect
+         x="804.5"
+         y="524.5"
+         class="st0 y30"
+         width="8"
+         height="21"
+         id="terminal-y30-term" />
+      <line
+         class="st0 y30"
+         x1="812.5"
+         y1="542.5"
+         x2="804.5"
+         y2="542.5"
+         id="line72-3-3-7-4-3" />
+      <line
+         class="st0 y30"
+         x1="804.5"
+         y1="531.5"
+         x2="812.5"
+         y2="531.5"
+         id="line74-7-0-1-8-29" />
+    </g>
+    <g
+       id="terminal-screw-y30"
+       inkscape:label="terminal-screw-y30"
+       class="terminal-screws  type-18  type-17  y30y40"
+       transform="matrix(0.67114094,0,0,1.9227885,-1431.724,-1132.2392)"
+       style="fill:#b8b8b8">
+      <circle
+         class="st0 terminal-screws"
+         cx="808.5"
+         cy="536.5"
+         r="3"
+         id="circle77-0-0-0-1-2" />
+      <line
+         class="st0"
+         x1="805.5"
+         y1="536.5"
+         x2="811.5"
+         y2="536.5"
+         id="line79-2-4-2-0-1" />
+    </g>
+    <g
+       id="terminal-y30-common"
+       inkscape:label="terminal-y30-common"
+       transform="matrix(0.67114094,0,0,1.9227885,-1420.9857,-1132.2392)"
+       class="y30  y40  type-18  type-17  y30y40">
+      <rect
+         x="804.5"
+         y="524.5"
+         class="st0 y30 y40"
+         width="8"
+         height="21"
+         id="terminal-y30-common-term" />
+      <line
+         class="st0 y30 y40"
+         x1="812.5"
+         y1="542.5"
+         x2="804.5"
+         y2="542.5"
+         id="line72-3-7-6-4-4" />
+      <line
+         class="st0 y30 y40"
+         x1="804.5"
+         y1="531.5"
+         x2="812.5"
+         y2="531.5"
+         id="line74-7-8-8-6-8" />
+    </g>
+    <g
+       id="terminal-screw-y30-common"
+       inkscape:label="terminal-screw-y30-common"
+       class="terminal-screws  type-18  type-17  y30y40"
+       transform="matrix(0.67114094,0,0,1.9227885,-1420.9857,-1132.2392)"
+       style="fill:#b8b8b8">
+      <circle
+         class="st0 terminal-screws"
+         cx="808.5"
+         cy="536.5"
+         r="3"
+         id="circle77-0-4-4-0-1" />
+      <line
+         class="st0"
+         x1="805.5"
+         y1="536.5"
+         x2="811.5"
+         y2="536.5"
+         id="line79-2-5-7-2-1" />
+    </g>
+    <g
+       id="terminal-y30-power"
+       transform="matrix(0.67114094,0,0,1.9227885,-1426.3549,-1132.2392)"
+       inkscape:label="terminal-y30-power"
+       class="y30  y40  type-18  type-17  y30y40">
+      <rect
+         x="804.5"
+         y="524.5"
+         class="st0 y30 y40"
+         width="8"
+         height="21"
+         id="terminal-y30-power-term" />
+      <line
+         class="st0 y30 y40"
+         x1="812.5"
+         y1="542.5"
+         x2="804.5"
+         y2="542.5"
+         id="line72-9-7-0-6-4-9" />
+      <line
+         class="st0 y30 y40"
+         x1="804.5"
+         y1="531.5"
+         x2="812.5"
+         y2="531.5"
+         id="line74-4-1-6-6-3-8" />
+    </g>
+    <g
+       id="terminal-screw-y30-power"
+       inkscape:label="terminal-screw-y30-power"
+       class="terminal-screws  type-18  type-17  y30y40"
+       transform="matrix(0.67114094,0,0,1.9227885,-1426.3549,-1132.2392)"
+       style="fill:#b8b8b8">
+      <circle
+         class="st0 terminal-screws"
+         cx="808.5"
+         cy="536.5"
+         r="3"
+         id="circle77-3-5-3-7-7-2" />
+      <line
+         class="st0"
+         x1="805.5"
+         y1="536.5"
+         x2="811.5"
+         y2="536.5"
+         id="line79-7-8-3-0-9-2" />
+    </g>
+    <g
+       id="terminal-y40"
+       inkscape:label="terminal-y40"
+       transform="matrix(0.67114094,0,0,1.9227885,-1415.6166,-1132.2392)"
+       class="y40  type-18  type-17  y30y40">
+      <rect
+         x="804.5"
+         y="524.5"
+         class="st0 y40"
+         width="8"
+         height="21"
+         id="terminal-y40-term" />
+      <line
+         class="st0 y40"
+         x1="812.5"
+         y1="542.5"
+         x2="804.5"
+         y2="542.5"
+         id="line72-3-3-7-4-5-1" />
+      <line
+         class="st0 y40"
+         x1="804.5"
+         y1="531.5"
+         x2="812.5"
+         y2="531.5"
+         id="line74-7-0-1-8-2-3" />
+    </g>
+    <g
+       id="terminal-screw-y40"
+       inkscape:label="terminal-screw-y40"
+       class="terminal-screws  type-18  type-17  y30y40"
+       transform="matrix(0.67114094,0,0,1.9227885,-1415.6166,-1132.2392)"
+       style="fill:#b8b8b8">
+      <circle
+         class="st0 terminal-screws"
+         cx="808.5"
+         cy="536.5"
+         r="3"
+         id="circle77-0-0-0-1-7-7" />
+      <line
+         class="st0"
+         x1="805.5"
+         y1="536.5"
+         x2="811.5"
+         y2="536.5"
+         id="line79-2-4-2-0-0-6" />
+    </g>
+    <g
+       id="terminal-d1-common"
+       inkscape:label="terminal-d1-common"
+       transform="matrix(0.67114094,0,0,1.9227885,-1572.9418,-1131.9716)"
+       class="d2  d1  d1d2d3  type-17">
+      <rect
+         x="804.5"
+         y="524.5"
+         class="st0 d1 d2"
+         width="8"
+         height="21"
+         id="terminal-d1-common-term" />
+      <line
+         class="st0 d1 d2"
+         x1="812.5"
+         y1="542.5"
+         x2="804.5"
+         y2="542.5"
+         id="line72-3-36" />
+      <line
+         class="st0 d1 d2"
+         x1="804.5"
+         y1="531.5"
+         x2="812.5"
+         y2="531.5"
+         id="line74-7-3" />
+    </g>
+    <g
+       id="terminal-screw-d1-common"
+       inkscape:label="terminal-screw-d1-common"
+       class="terminal-screws  d1d2d3  type-17"
+       transform="matrix(0.67114094,0,0,1.9227885,-1572.9418,-1131.9716)"
+       style="fill:#b8b8b8">
+      <circle
+         class="st0 terminal-screws"
+         cx="808.5"
+         cy="536.5"
+         r="3"
+         id="circle77-0-7" />
+      <line
+         class="st0"
+         x1="805.5"
+         y1="536.5"
+         x2="811.5"
+         y2="536.5"
+         id="line79-2-40" />
+    </g>
+    <rect
+       x="-1038.3781"
+       y="-123.46899"
+       class="st0  d1  d1d2d3  type-17"
+       width="5.3691278"
+       height="40.378555"
+       id="terminal-d1"
+       inkscape:label="terminal-d1"
+       style="fill:#f5f5f5;stroke:#000000;stroke-width:1.13598;stroke-miterlimit:10" />
+    <line
+       class="st0  d1d2d3  type-17"
+       x1="-1033.0089"
+       y1="-88.858818"
+       x2="-1038.3781"
+       y2="-88.858818"
+       id="line72-9-7-02"
+       style="fill:#f5f5f5;stroke:#000000;stroke-width:1.13598;stroke-miterlimit:10" />
+    <line
+       class="st0  d1d2d3  type-17"
+       x1="-1038.3781"
+       y1="-110.00951"
+       x2="-1033.0089"
+       y2="-110.00951"
+       id="line74-4-1-5"
+       style="fill:#f5f5f5;stroke:#000000;stroke-width:1.13598;stroke-miterlimit:10" />
+    <g
+       id="terminal-screw-d1"
+       inkscape:label="terminal-screw-d1"
+       class="terminal-screws  d1d2d3  type-17"
+       transform="matrix(0.67114094,0,0,1.9227885,-1578.3109,-1131.9716)"
+       style="fill:#b8b8b8">
+      <circle
+         class="st0 terminal-screws"
+         cx="808.5"
+         cy="536.5"
+         r="3"
+         id="circle77-3-5-2" />
+      <line
+         class="st0"
+         x1="805.5"
+         y1="536.5"
+         x2="811.5"
+         y2="536.5"
+         id="line79-7-8-1" />
+    </g>
+    <g
+       id="terminal-d2"
+       inkscape:label="terminal-d2"
+       transform="matrix(0.67114094,0,0,1.9227885,-1567.5727,-1131.9716)"
+       class="d2  d1d2d3  type-17">
+      <rect
+         x="804.5"
+         y="524.5"
+         class="st0 d2"
+         width="8"
+         height="21"
+         id="terminal-d2-term" />
+      <line
+         class="st0 d2"
+         x1="812.5"
+         y1="542.5"
+         x2="804.5"
+         y2="542.5"
+         id="line72-3-3-2" />
+      <line
+         class="st0 d2"
+         x1="804.5"
+         y1="531.5"
+         x2="812.5"
+         y2="531.5"
+         id="line74-7-0-3" />
+    </g>
+    <g
+       id="terminal-screw-d2"
+       inkscape:label="terminal-screw-d2"
+       class="terminal-screws  d1d2d3  type-17"
+       transform="matrix(0.67114094,0,0,1.9227885,-1567.5727,-1131.9716)"
+       style="fill:#b8b8b8">
+      <circle
+         class="st0 terminal-screws"
+         cx="808.5"
+         cy="536.5"
+         r="3"
+         id="circle77-0-0-1" />
+      <line
+         class="st0"
+         x1="805.5"
+         y1="536.5"
+         x2="811.5"
+         y2="536.5"
+         id="line79-2-4-6" />
+    </g>
+    <g
+       id="terminal-d3"
+       inkscape:label="terminal-d3"
+       transform="matrix(0.67114094,0,0,1.9227885,-1556.8345,-1131.9716)"
+       class="d3  d1d2d3  type-17">
+      <rect
+         x="804.5"
+         y="524.5"
+         class="st0 d3"
+         width="8"
+         height="21"
+         id="terminal-d3-term" />
+      <line
+         class="st0 d3"
+         x1="812.5"
+         y1="542.5"
+         x2="804.5"
+         y2="542.5"
+         id="line72-3-7-05" />
+      <line
+         class="st0 d3"
+         x1="804.5"
+         y1="531.5"
+         x2="812.5"
+         y2="531.5"
+         id="line74-7-8-7" />
+    </g>
+    <g
+       id="terminal-screw-d3"
+       inkscape:label="terminal-screw-d3"
+       class="terminal-screws  d1d2d3  type-17"
+       transform="matrix(0.67114094,0,0,1.9227885,-1556.8345,-1131.9716)"
+       style="fill:#b8b8b8">
+      <circle
+         class="st0 terminal-screws"
+         cx="808.5"
+         cy="536.5"
+         r="3"
+         id="circle77-0-4-8" />
+      <line
+         class="st0"
+         x1="805.5"
+         y1="536.5"
+         x2="811.5"
+         y2="536.5"
+         id="line79-2-5-0" />
+    </g>
+    <g
+       id="terminal-d2-common"
+       transform="matrix(0.67114094,0,0,1.9227885,-1562.2036,-1131.9716)"
+       inkscape:label="terminal-d2-common"
+       class="d3  d1d2d3  type-17">
+      <rect
+         x="804.5"
+         y="524.5"
+         class="st0 d2 d3"
+         width="8"
+         height="21"
+         id="terminal-d2-common-term" />
+      <line
+         class="st0 d2 d3"
+         x1="812.5"
+         y1="542.5"
+         x2="804.5"
+         y2="542.5"
+         id="line72-9-7-0-5" />
+      <line
+         class="st0 d2 d3"
+         x1="804.5"
+         y1="531.5"
+         x2="812.5"
+         y2="531.5"
+         id="line74-4-1-6-9" />
+    </g>
+    <g
+       id="terminal-screw-d2-common"
+       inkscape:label="terminal-screw-d2-common"
+       class="terminal-screws  d1d2d3  type-17"
+       transform="matrix(0.67114094,0,0,1.9227885,-1562.2036,-1131.9716)"
+       style="fill:#b8b8b8">
+      <circle
+         class="st0 terminal-screws"
+         cx="808.5"
+         cy="536.5"
+         r="3"
+         id="circle77-3-5-3-8" />
+      <line
+         class="st0"
+         x1="805.5"
+         y1="536.5"
+         x2="811.5"
+         y2="536.5"
+         id="line79-7-8-3-3" />
+    </g>
+    <g
+       id="terminal-scom-rx"
+       inkscape:label="terminal-scom-rx"
+       transform="matrix(0.67114094,0,0,1.9227885,-1539.3154,-1132.139)"
+       class="scom-terminals  scom  type-17">
+      <rect
+         x="804.5"
+         y="524.5"
+         class="st0 scom"
+         width="8"
+         height="21"
+         id="rect70-7-8-7-5" />
+      <line
+         class="st0 scom"
+         x1="812.5"
+         y1="542.5"
+         x2="804.5"
+         y2="542.5"
+         id="line72-3-7-6-5" />
+      <line
+         class="st0 scom"
+         x1="804.5"
+         y1="531.5"
+         x2="812.5"
+         y2="531.5"
+         id="line74-7-8-8-91" />
+    </g>
+    <g
+       id="terminal-screw-scom-rx"
+       inkscape:label="terminal-screw-scom-rx"
+       class="terminal-screws  scom  type-17"
+       transform="matrix(0.67114094,0,0,1.9227885,-1539.3154,-1132.139)"
+       style="fill:#b8b8b8">
+      <circle
+         class="st0 terminal-screws"
+         cx="808.5"
+         cy="536.5"
+         r="3"
+         id="circle77-0-4-4-4" />
+      <line
+         class="st0"
+         x1="805.5"
+         y1="536.5"
+         x2="811.5"
+         y2="536.5"
+         id="line79-2-5-7-4" />
+    </g>
+    <g
+       id="terminal-scom-tx"
+       transform="matrix(0.67114094,0,0,1.9227885,-1544.6845,-1132.139)"
+       inkscape:label="terminal-scom-tx"
+       class="scom-terminals  scom  type-17">
+      <rect
+         x="804.5"
+         y="524.5"
+         class="st0 scom"
+         width="8"
+         height="21"
+         id="rect70-6-8-1-6-6" />
+      <line
+         class="st0 scom"
+         x1="812.5"
+         y1="542.5"
+         x2="804.5"
+         y2="542.5"
+         id="line72-9-7-0-6-3" />
+      <line
+         class="st0 scom"
+         x1="804.5"
+         y1="531.5"
+         x2="812.5"
+         y2="531.5"
+         id="line74-4-1-6-6-6" />
+    </g>
+    <g
+       id="terminal-screw-scom-tx"
+       inkscape:label="terminal-screw-scom-tx"
+       class="terminal-screws  scom  type-17"
+       transform="matrix(0.67114094,0,0,1.9227885,-1544.6845,-1132.139)"
+       style="fill:#b8b8b8">
+      <circle
+         class="st0 terminal-screws"
+         cx="808.5"
+         cy="536.5"
+         r="3"
+         id="circle77-3-5-3-7-1" />
+      <line
+         class="st0"
+         x1="805.5"
+         y1="536.5"
+         x2="811.5"
+         y2="536.5"
+         id="line79-7-8-3-0-0" />
+    </g>
+    <g
+       id="terminal-scom-shield"
+       inkscape:label="terminal-scom-shield"
+       transform="matrix(0.67114094,0,0,1.9227885,-1533.9462,-1132.139)"
+       class="scom-terminals  scom  type-17">
+      <rect
+         x="804.5"
+         y="524.5"
+         class="st0 scom"
+         width="8"
+         height="21"
+         id="rect70-7-0-2-1-16" />
+      <line
+         class="st0 scom"
+         x1="812.5"
+         y1="542.5"
+         x2="804.5"
+         y2="542.5"
+         id="line72-3-3-7-4-0" />
+      <line
+         class="st0 scom"
+         x1="804.5"
+         y1="531.5"
+         x2="812.5"
+         y2="531.5"
+         id="line74-7-0-1-8-8" />
+    </g>
+    <g
+       id="terminal-screw-scom-shield"
+       inkscape:label="terminal-screw-scom-shield"
+       class="terminal-screws  scom  type-17"
+       transform="matrix(0.67114094,0,0,1.9227885,-1533.9462,-1132.139)"
+       style="fill:#b8b8b8">
+      <circle
+         class="st0 terminal-screws"
+         cx="808.5"
+         cy="536.5"
+         r="3"
+         id="circle77-0-0-0-1-5" />
+      <line
+         class="st0"
+         x1="805.5"
+         y1="536.5"
+         x2="811.5"
+         y2="536.5"
+         id="line79-2-4-2-0-8" />
+    </g>
+    <g
+       id="terminal-knx-rx"
+       class="knx"
+       transform="matrix(-0.67113506,-0.00805414,0.00281126,-1.9227716,-513.52917,687.78717)">
+      <rect
+         x="804.5"
+         y="524.5"
+         class="st0 knx"
+         width="8"
+         height="21"
+         id="rect70-1" />
+      <line
+         class="st0 knx"
+         x1="812.5"
+         y1="542.5"
+         x2="804.5"
+         y2="542.5"
+         id="line72-2" />
+      <line
+         class="st0 knx"
+         x1="804.5"
+         y1="531.5"
+         x2="812.5"
+         y2="531.5"
+         id="line74-5" />
+    </g>
+    <g
+       id="terminal-screw-knx-rx"
+       inkscape:label="terminal-screw-knx-rx"
+       class="terminal-screws"
+       transform="matrix(-0.67113506,-0.00805414,0.00281126,-1.9227716,-513.52917,687.78717)"
+       style="fill:#b8b8b8">
+      <circle
+         class="st0 terminal-screws"
+         cx="808.5"
+         cy="536.5"
+         r="3"
+         id="circle77-4" />
+      <line
+         class="st0"
+         x1="805.5"
+         y1="536.5"
+         x2="811.5"
+         y2="536.5"
+         id="line79-8" />
+    </g>
+    <g
+       id="terminal-knx-tx"
+       transform="matrix(-0.67113506,-0.00805414,0.00281126,-1.9227716,-508.1601,687.8516)"
+       class="knx">
+      <rect
+         x="804.5"
+         y="524.5"
+         class="st0 knx"
+         width="8"
+         height="21"
+         id="rect70-6-1" />
+      <line
+         class="st0 knx"
+         x1="812.5"
+         y1="542.5"
+         x2="804.5"
+         y2="542.5"
+         id="line72-9-0" />
+      <line
+         class="st0 knx"
+         x1="804.5"
+         y1="531.5"
+         x2="812.5"
+         y2="531.5"
+         id="line74-4-5" />
+    </g>
+    <g
+       id="terminal-screw-knx-tx"
+       inkscape:label="terminal-screw-knx-tx"
+       class="terminal-screws"
+       transform="matrix(-0.67113506,-0.00805414,0.00281126,-1.9227716,-508.1601,687.8516)"
+       style="fill:#b8b8b8">
+      <circle
+         class="st0 terminal-screws"
+         cx="808.5"
+         cy="536.5"
+         r="3"
+         id="circle77-3-2" />
+      <line
+         class="st0"
+         x1="805.5"
+         y1="536.5"
+         x2="811.5"
+         y2="536.5"
+         id="line79-7-6" />
+    </g>
+    <g
+       id="terminal-b1d1"
+       transform="matrix(-0.67113506,-0.00805414,0.00281126,-1.9227716,-438.86553,687.9022)"
+       inkscape:label="terminal-b1d1"
+       class="type-18  type-17">
+      <rect
+         x="804.5"
+         y="524.5"
+         class="st0 b1d1"
+         width="8"
+         height="21"
+         id="terminal-b1d1-term" />
+      <line
+         class="st0 b1d1"
+         x1="812.5"
+         y1="542.5"
+         x2="804.5"
+         y2="542.5"
+         id="line72-9-0-4" />
+      <line
+         class="st0 b1d1"
+         x1="804.5"
+         y1="531.5"
+         x2="812.5"
+         y2="531.5"
+         id="line74-4-5-5" />
+    </g>
+    <g
+       id="terminal-screw-b1d1"
+       inkscape:label="terminal-screw-b1d1"
+       class="terminal-screws  type-18  type-17"
+       transform="matrix(-0.67113506,-0.00805414,0.00281126,-1.9227716,-438.86553,687.9022)"
+       style="fill:#b8b8b8">
+      <circle
+         class="st0 terminal-screws"
+         cx="808.5"
+         cy="536.5"
+         r="3"
+         id="circle77-3-2-1" />
+      <line
+         class="st0"
+         x1="805.5"
+         y1="536.5"
+         x2="811.5"
+         y2="536.5"
+         id="line79-7-6-3" />
+    </g>
+    <g
+       id="terminal-b2d2"
+       transform="matrix(-0.67113506,-0.00805414,0.00281126,-1.9227716,-433.49646,687.96664)"
+       inkscape:label="terminal-b2d2"
+       class="type-18  type-17  type-12">
+      <rect
+         x="804.5"
+         y="524.5"
+         class="st0 b2d2"
+         width="8"
+         height="21"
+         id="terminal-b2d2-term" />
+      <line
+         class="st0 b2d2"
+         x1="812.5"
+         y1="542.5"
+         x2="804.5"
+         y2="542.5"
+         id="line72-9-0-4-7" />
+      <line
+         class="st0 b2d2"
+         x1="804.5"
+         y1="531.5"
+         x2="812.5"
+         y2="531.5"
+         id="line74-4-5-5-2" />
+    </g>
+    <g
+       id="terminal-screw-b2d2"
+       inkscape:label="terminal-screw-b2d2"
+       class="terminal-screws  type-18  type-17  type-12"
+       transform="matrix(-0.67113506,-0.00805414,0.00281126,-1.9227716,-433.49646,687.96664)"
+       style="fill:#b8b8b8">
+      <circle
+         class="st0 terminal-screws"
+         cx="808.5"
+         cy="536.5"
+         r="3"
+         id="circle77-3-2-1-6" />
+      <line
+         class="st0"
+         x1="805.5"
+         y1="536.5"
+         x2="811.5"
+         y2="536.5"
+         id="line79-7-6-3-1" />
+    </g>
+    <g
+       id="terminal-mstp"
+       transform="matrix(-0.67113506,-0.00805414,0.00281126,-1.9227716,-460.16014,687.5401)"
+       inkscape:label="terminal-mstp">
+      <g
+         id="terminal-mstp-rx"
+         transform="translate(8)"
+         inkscape:label="terminal-mstp-rx"
+         class="mstp-terminals  mstp-container">
+        <rect
+           x="804.5"
+           y="524.5"
+           class="st0 mstp-terminals"
+           width="8"
+           height="21"
+           id="rect70-1-8-9-4-2-3" />
+        <line
+           class="st0 mstp-terminals"
+           x1="812.5"
+           y1="542.5"
+           x2="804.5"
+           y2="542.5"
+           id="line72-2-3-0-6-2-3" />
+        <line
+           class="st0 mstp-terminals"
+           x1="804.5"
+           y1="531.5"
+           x2="812.5"
+           y2="531.5"
+           id="line74-5-9-1-7-7-9" />
+      </g>
+      <g
+         id="terminal-screw-mstp-rx"
+         inkscape:label="terminal-screw-mstp-rx"
+         class="terminal-screws  mstp-container"
+         transform="translate(8)">
+        <circle
+           class="st0 terminal-screws"
+           cx="808.5"
+           cy="536.5"
+           r="3"
+           id="circle77-4-3-8-9-7-4" />
+        <line
+           class="st0"
+           x1="805.5"
+           y1="536.5"
+           x2="811.5"
+           y2="536.5"
+           id="line79-8-0-2-2-5-7" />
+      </g>
+      <g
+         id="terminal-mstp-shield"
+         transform="translate(16)"
+         inkscape:label="terminal-mstp-shield"
+         class="mstp-terminals  mstp-container">
+        <rect
+           x="804.5"
+           y="524.5"
+           class="st0 mstp-terminals"
+           width="8"
+           height="21"
+           id="rect70-1-8-9-4-2-3-1" />
+        <line
+           class="st0 mstp-terminals"
+           x1="812.5"
+           y1="542.5"
+           x2="804.5"
+           y2="542.5"
+           id="line72-2-3-0-6-2-3-8" />
+        <line
+           class="st0 mstp-terminals"
+           x1="804.5"
+           y1="531.5"
+           x2="812.5"
+           y2="531.5"
+           id="line74-5-9-1-7-7-9-0" />
+      </g>
+      <g
+         id="terminal-screw-mstp-shield"
+         inkscape:label="terminal-screw-mstp-shield"
+         class="terminal-screws  mstp-container"
+         transform="translate(16)">
+        <circle
+           class="st0 terminal-screws"
+           cx="808.5"
+           cy="536.5"
+           r="3"
+           id="circle77-4-3-8-9-7-4-8" />
+        <line
+           class="st0"
+           x1="805.5"
+           y1="536.5"
+           x2="811.5"
+           y2="536.5"
+           id="line79-8-0-2-2-5-7-1" />
+      </g>
+      <g
+         id="terminal-mstp-tx"
+         inkscape:label="terminal-mstp-tx"
+         class="mstp-terminals  mstp-container">
+        <rect
+           x="804.5"
+           y="524.5"
+           class="st0 mstp-terminals"
+           width="8"
+           height="21"
+           id="rect70-1-8-9-4-2-3-2" />
+        <line
+           class="st0 mstp-terminals"
+           x1="812.5"
+           y1="542.5"
+           x2="804.5"
+           y2="542.5"
+           id="line72-2-3-0-6-2-3-3" />
+        <line
+           class="st0 mstp-terminals"
+           x1="804.5"
+           y1="531.5"
+           x2="812.5"
+           y2="531.5"
+           id="line74-5-9-1-7-7-9-2" />
+      </g>
+      <g
+         id="terminal-screw-mstp-tx"
+         inkscape:label="terminal-screw-mstp-tx"
+         class="terminal-screws  mstp-container">
+        <circle
+           class="st0 terminal-screws"
+           cx="808.5"
+           cy="536.5"
+           r="3"
+           id="circle77-4-3-8-9-7-4-83" />
+        <line
+           class="st0"
+           x1="805.5"
+           y1="536.5"
+           x2="811.5"
+           y2="536.5"
+           id="line79-8-0-2-2-5-7-6" />
+      </g>
+    </g>
+    <g
+       id="terminal-bd-common"
+       transform="matrix(-0.67113506,-0.00805414,0.00281126,-1.9227716,-428.12739,688.03111)"
+       inkscape:label="terminal-bd-common"
+       class="type-18  type-17  type-12">
+      <rect
+         x="804.5"
+         y="524.5"
+         class="st0 b1d1 b2d2"
+         width="8"
+         height="21"
+         id="terminal-bd-common-term" />
+      <line
+         class="st0 b1d1 b2d2"
+         x1="812.5"
+         y1="542.5"
+         x2="804.5"
+         y2="542.5"
+         id="line72-9-0-4-7-5" />
+      <line
+         class="st0 b1d1 b2d2"
+         x1="804.5"
+         y1="531.5"
+         x2="812.5"
+         y2="531.5"
+         id="line74-4-5-5-2-9" />
+    </g>
+    <g
+       id="terminal-screw-bd-common"
+       inkscape:label="terminal-screw-bd-common"
+       class="terminal-screws  type-18  type-17  type-12"
+       transform="matrix(-0.67113506,-0.00805414,0.00281126,-1.9227716,-428.12739,688.03111)"
+       style="fill:#b8b8b8">
+      <circle
+         class="st0 terminal-screws"
+         cx="808.5"
+         cy="536.5"
+         r="3"
+         id="circle77-3-2-1-6-8" />
+      <line
+         class="st0"
+         x1="805.5"
+         y1="536.5"
+         x2="811.5"
+         y2="536.5"
+         id="line79-7-6-3-1-5" />
+    </g>
+    <g
+       id="terminal-x1"
+       transform="matrix(-0.67113506,-0.00805414,0.00281126,-1.9227716,-422.75831,688.09561)"
+       inkscape:label="terminal-x1"
+       class="type-12  type-18  type-17">
+      <rect
+         x="804.5"
+         y="524.5"
+         class="st0 x1"
+         width="8"
+         height="21"
+         id="terminal-x1-term" />
+      <line
+         class="st0 x1"
+         x1="812.5"
+         y1="542.5"
+         x2="804.5"
+         y2="542.5"
+         id="line72-9-0-4-7-5-4" />
+      <line
+         class="st0 x1"
+         x1="804.5"
+         y1="531.5"
+         x2="812.5"
+         y2="531.5"
+         id="line74-4-5-5-2-9-0" />
+    </g>
+    <g
+       id="terminal-screw-x1"
+       inkscape:label="terminal-screw-x1"
+       class="terminal-screws  type-12  type-18  type-17"
+       transform="matrix(-0.67113506,-0.00805414,0.00281126,-1.9227716,-422.75831,688.09561)"
+       style="fill:#b8b8b8">
+      <circle
+         class="st0 terminal-screws"
+         cx="808.5"
+         cy="536.5"
+         r="3"
+         id="circle77-3-2-1-6-8-2" />
+      <line
+         class="st0"
+         x1="805.5"
+         y1="536.5"
+         x2="811.5"
+         y2="536.5"
+         id="line79-7-6-3-1-5-3" />
+    </g>
+    <g
+       id="terminal-x1-power"
+       transform="matrix(-0.67113506,-0.00805414,0.00281126,-1.9227716,-417.38919,688.16005)"
+       inkscape:label="terminal-x1-power"
+       class="type-12  type-18  type-17">
+      <rect
+         x="804.5"
+         y="524.5"
+         class="st0 x1-power x2-power"
+         width="8"
+         height="21"
+         id="terminal-x1-power-term" />
+      <line
+         class="st0 x1-power x2-power"
+         x1="812.5"
+         y1="542.5"
+         x2="804.5"
+         y2="542.5"
+         id="line72-9-0-4-7-5-4-1" />
+      <line
+         class="st0 x1-power x2-power"
+         x1="804.5"
+         y1="531.5"
+         x2="812.5"
+         y2="531.5"
+         id="line74-4-5-5-2-9-0-5" />
+    </g>
+    <g
+       id="terminal-screw-x1-power"
+       inkscape:label="terminal-screw-x1-power"
+       class="terminal-screws  type-12  type-18  type-17"
+       transform="matrix(-0.67113506,-0.00805414,0.00281126,-1.9227716,-417.38919,688.16005)"
+       style="fill:#b8b8b8">
+      <circle
+         class="st0 terminal-screws"
+         cx="808.5"
+         cy="536.5"
+         r="3"
+         id="circle77-3-2-1-6-8-2-8" />
+      <line
+         class="st0"
+         x1="805.5"
+         y1="536.5"
+         x2="811.5"
+         y2="536.5"
+         id="line79-7-6-3-1-5-3-5" />
+    </g>
+    <g
+       id="terminal-x1-common"
+       transform="matrix(-0.67113506,-0.00805414,0.00281126,-1.9227716,-412.0201,688.22443)"
+       inkscape:label="terminal-x1-common"
+       class="type-12  type-18  type-17">
+      <rect
+         x="804.5"
+         y="524.5"
+         class="st0 x1-power x2-power x1 x2"
+         width="8"
+         height="21"
+         id="terminal-x1-common-term" />
+      <line
+         class="st0 x1-power x2-power x1 x2"
+         x1="812.5"
+         y1="542.5"
+         x2="804.5"
+         y2="542.5"
+         id="line72-9-0-4-7-5-4-1-1" />
+      <line
+         class="st0 x1-power x2-power x1 x2"
+         x1="804.5"
+         y1="531.5"
+         x2="812.5"
+         y2="531.5"
+         id="line74-4-5-5-2-9-0-5-0" />
+    </g>
+    <g
+       id="terminal-screw-x1-common"
+       inkscape:label="terminal-screw-x1-common"
+       class="terminal-screws  type-12  type-18  type-17"
+       transform="matrix(-0.67113506,-0.00805414,0.00281126,-1.9227716,-412.0201,688.22443)"
+       style="fill:#b8b8b8">
+      <circle
+         class="st0 terminal-screws"
+         cx="808.5"
+         cy="536.5"
+         r="3"
+         id="circle77-3-2-1-6-8-2-8-7" />
+      <line
+         class="st0"
+         x1="805.5"
+         y1="536.5"
+         x2="811.5"
+         y2="536.5"
+         id="line79-7-6-3-1-5-3-5-9" />
+    </g>
+    <g
+       id="terminal-x2"
+       transform="matrix(-0.67113506,-0.00805414,0.00281126,-1.9227716,-406.65103,688.2889)"
+       inkscape:label="terminal-x2"
+       class="type-12  type-18  type-17">
+      <rect
+         x="804.5"
+         y="524.5"
+         class="st0 x2"
+         width="8"
+         height="21"
+         id="terminal-x2-term" />
+      <line
+         class="st0 x2"
+         x1="812.5"
+         y1="542.5"
+         x2="804.5"
+         y2="542.5"
+         id="line72-9-0-4-7-5-4-1-1-9" />
+      <line
+         class="st0 x2"
+         x1="804.5"
+         y1="531.5"
+         x2="812.5"
+         y2="531.5"
+         id="line74-4-5-5-2-9-0-5-0-2" />
+    </g>
+    <g
+       id="terminal-screw-x2"
+       inkscape:label="terminal-screw-x2"
+       class="terminal-screws  type-12  type-18  type-17"
+       transform="matrix(-0.67113506,-0.00805414,0.00281126,-1.9227716,-406.65103,688.2889)"
+       style="fill:#b8b8b8">
+      <circle
+         class="st0 terminal-screws"
+         cx="808.5"
+         cy="536.5"
+         r="3"
+         id="circle77-3-2-1-6-8-2-8-7-6" />
+      <line
+         class="st0"
+         x1="805.5"
+         y1="536.5"
+         x2="811.5"
+         y2="536.5"
+         id="line79-7-6-3-1-5-3-5-9-9" />
+    </g>
+    <g
+       id="terminal-x3"
+       transform="matrix(-0.67113506,-0.00805414,0.00281126,-1.9227716,-401.28195,688.35334)"
+       inkscape:label="terminal-x3"
+       class="type-18  type-17">
+      <rect
+         x="804.5"
+         y="524.5"
+         class="st0 x3"
+         width="8"
+         height="21"
+         id="terminal-x3-term" />
+      <line
+         class="st0 x3"
+         x1="812.5"
+         y1="542.5"
+         x2="804.5"
+         y2="542.5"
+         id="line72-9-0-4-7-5-4-1-1-9-0" />
+      <line
+         class="st0 x3"
+         x1="804.5"
+         y1="531.5"
+         x2="812.5"
+         y2="531.5"
+         id="line74-4-5-5-2-9-0-5-0-2-1" />
+    </g>
+    <g
+       id="terminal-screw-x3"
+       inkscape:label="terminal-screw-x3"
+       class="terminal-screws  type-18  type-17"
+       transform="matrix(-0.67113506,-0.00805414,0.00281126,-1.9227716,-401.28195,688.35334)"
+       style="fill:#b8b8b8">
+      <circle
+         class="st0 terminal-screws"
+         cx="808.5"
+         cy="536.5"
+         r="3"
+         id="circle77-3-2-1-6-8-2-8-7-6-2" />
+      <line
+         class="st0"
+         x1="805.5"
+         y1="536.5"
+         x2="811.5"
+         y2="536.5"
+         id="line79-7-6-3-1-5-3-5-9-9-1" />
+    </g>
+    <g
+       id="terminal-x3-power"
+       transform="matrix(-0.67113506,-0.00805414,0.00281126,-1.9227716,-395.91288,688.41781)"
+       inkscape:label="terminal-x3-power"
+       class="type-18  type-17">
+      <rect
+         x="804.5"
+         y="524.5"
+         class="st0 x3-power x4-power"
+         width="8"
+         height="21"
+         id="terminal-x3-power-term" />
+      <line
+         class="st0 x3-power x4-power"
+         x1="812.5"
+         y1="542.5"
+         x2="804.5"
+         y2="542.5"
+         id="line72-9-0-4-7-5-4-1-1-9-0-4" />
+      <line
+         class="st0 x3-power x4-power"
+         x1="804.5"
+         y1="531.5"
+         x2="812.5"
+         y2="531.5"
+         id="line74-4-5-5-2-9-0-5-0-2-1-7" />
+    </g>
+    <g
+       id="terminal-screw-x3-power"
+       inkscape:label="terminal-screw-x3-power"
+       class="terminal-screws  type-18  type-17"
+       transform="matrix(-0.67113506,-0.00805414,0.00281126,-1.9227716,-395.91288,688.41781)"
+       style="fill:#b8b8b8">
+      <circle
+         class="st0 terminal-screws"
+         cx="808.5"
+         cy="536.5"
+         r="3"
+         id="circle77-3-2-1-6-8-2-8-7-6-2-5" />
+      <line
+         class="st0"
+         x1="805.5"
+         y1="536.5"
+         x2="811.5"
+         y2="536.5"
+         id="line79-7-6-3-1-5-3-5-9-9-1-8" />
+    </g>
+    <g
+       id="terminal-x3-common"
+       transform="matrix(-0.67113506,-0.00805414,0.00281126,-1.9227716,-390.5438,688.48228)"
+       inkscape:label="terminal-x3-common"
+       class="type-18  type-17">
+      <rect
+         x="804.5"
+         y="524.5"
+         class="st0 x3-power x4-power x3 x4"
+         width="8"
+         height="21"
+         id="terminal-x3-common-term" />
+      <line
+         class="st0 x3-power x4-power x3 x4"
+         x1="812.5"
+         y1="542.5"
+         x2="804.5"
+         y2="542.5"
+         id="line72-9-0-4-7-5-4-1-1-9-0-4-3" />
+      <line
+         class="st0 x3-power x4-power x3 x4"
+         x1="804.5"
+         y1="531.5"
+         x2="812.5"
+         y2="531.5"
+         id="line74-4-5-5-2-9-0-5-0-2-1-7-8" />
+    </g>
+    <g
+       id="terminal-screw-x3-common"
+       inkscape:label="terminal-screw-x3-common"
+       class="terminal-screws  type-18  type-17"
+       transform="matrix(-0.67113506,-0.00805414,0.00281126,-1.9227716,-390.5438,688.48228)"
+       style="fill:#b8b8b8">
+      <circle
+         class="st0 terminal-screws"
+         cx="808.5"
+         cy="536.5"
+         r="3"
+         id="circle77-3-2-1-6-8-2-8-7-6-2-5-0" />
+      <line
+         class="st0"
+         x1="805.5"
+         y1="536.5"
+         x2="811.5"
+         y2="536.5"
+         id="line79-7-6-3-1-5-3-5-9-9-1-8-2" />
+    </g>
+    <g
+       id="terminal-x4"
+       transform="matrix(-0.67113506,-0.00805414,0.00281126,-1.9227716,-385.17472,688.54668)"
+       inkscape:label="terminal-x4"
+       class="type-18  type-17">
+      <rect
+         x="804.5"
+         y="524.5"
+         class="st0 x4"
+         width="8"
+         height="21"
+         id="terminal-x4-term" />
+      <line
+         class="st0 x4"
+         x1="812.5"
+         y1="542.5"
+         x2="804.5"
+         y2="542.5"
+         id="line72-9-0-4-7-5-4-1-1-9-0-4-3-0" />
+      <line
+         class="st0 x4"
+         x1="804.5"
+         y1="531.5"
+         x2="812.5"
+         y2="531.5"
+         id="line74-4-5-5-2-9-0-5-0-2-1-7-8-2" />
+    </g>
+    <g
+       id="terminal-screw-x4"
+       inkscape:label="terminal-screw-x4"
+       class="terminal-screws  type-18  type-17"
+       transform="matrix(-0.67113506,-0.00805414,0.00281126,-1.9227716,-385.17472,688.54668)"
+       style="fill:#b8b8b8">
+      <circle
+         class="st0 terminal-screws"
+         cx="808.5"
+         cy="536.5"
+         r="3"
+         id="circle77-3-2-1-6-8-2-8-7-6-2-5-0-2" />
+      <line
+         class="st0"
+         x1="805.5"
+         y1="536.5"
+         x2="811.5"
+         y2="536.5"
+         id="line79-7-6-3-1-5-3-5-9-9-1-8-2-1" />
+    </g>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:6.33606px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -294.10689,-436.49414 c 278.093948,-112.15729 438.84007,-61.57784 590.4783,1.63223 h 3.21864"
+       id="path539"
+       sodipodi:nodetypes="ccc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:6.33606px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -149.30257,-483.84028 v 0 159.99761 c 16.75902,206.83848 287.89343,200.18469 307.30872,-1.63223 v 0 -159.99743"
+       id="path1364"
+       sodipodi:nodetypes="cccccc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:6.33606px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -294.10689,-436.49414 v 0 0 l 1.70862,881.49366 c 76.02133,35.81559 156.24722,54.5715 238.505388,65.0669 11.23949,-1.3797 20.50651,-6.7638 23.45713,-17.45691 l -1.55548,-30.15288 c -0.32306,-47.09496 62.96792,-56.48249 69.59663,-0.79315 v 0 l 0.75919,30.15241 c 0.7215,5.76793 0.58629,13.04853 16.421,19.04413 C 218.17003,492.66665 244.22719,465.83404 297.98312,441.82554 l 1.57522,-876.68691 v 0"
+       id="path1366"
+       sodipodi:nodetypes="cccccccccccccc" />
+    <ellipse
+       id="path1368-7"
+       cx="4.6270986"
+       cy="-326.49646"
+       style="fill:#150909;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:6.25358;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       rx="96.740753"
+       ry="97.279076" />
+    <g
+       id="g7572">
+      <ellipse
+         id="path1368"
+         cx="-167.11885"
+         cy="327.33011"
+         style="fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:6.0445;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         rx="56.753948"
+         ry="57.589706" />
+      <ellipse
+         id="path1368-71"
+         cx="-167.97987"
+         cy="328.10684"
+         style="fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:6.33606;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         rx="40.325176"
+         ry="40.918999" />
+    </g>
+    <g
+       id="g7568">
+      <ellipse
+         id="path1368-8"
+         cx="-199.42059"
+         cy="191.62541"
+         style="fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:3.97666;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         rx="37.338127"
+         ry="37.887966" />
+      <ellipse
+         id="path1368-71-5"
+         cx="-199.98804"
+         cy="192.13573"
+         style="fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:4.16848;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         rx="26.529728"
+         ry="26.920389" />
+    </g>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:6.33606;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 172.47563,-159.51382 -1.74512,-38.99579 h 127.51465 -1.74692"
+       id="path3407" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:6.33606;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 172.47563,-30.118779 c -3.49383,381.095089 0,381.095089 0,381.095089 l 124.02142,-1.77159 v -1.77368"
+       id="path3409" />
+    <rect
+       style="fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:6.33606;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3411"
+       width="122.2768"
+       height="129.39505"
+       x="130.55353"
+       y="-161.286" />
+    <path
+       id="usb-inner-4-9"
+       class="st0 usb-grey"
+       d="m 131.28852,-41.357249 1.21446,-111.284491 c 0,-5.26967 4.29251,-9.47215 9.4836,-9.41382 l 109.66919,1.23464 c 5.19468,0.0611 9.33702,4.35513 9.27839,9.6248 l -1.21446,111.284431 c 0,5.26967 -4.29191,9.47221 -9.4854,9.41394 l -109.67218,-1.23464 c -5.13485,-0.0617 -9.33223,-4.35519 -9.2736,-9.62486 z"
+       style="fill:#b8b8b8;stroke:#000000;stroke-width:5.6253;stroke-miterlimit:10" />
+    <polygon
+       id="usb-outer-1-8"
+       class="st5 usb-black"
+       points="1051.5,407.01 1044,407.01 1039,411 1039,422.99 1056.5,422.99 1056.5,411 "
+       style="fill:#000000;stroke:#000000;stroke-linejoin:round;stroke-miterlimit:10"
+       transform="matrix(-0.06190559,5.6662221,-5.5839984,-0.06281726,2578.3297,-6006.9916)" />
+    <rect
+       id="usb-outer-2-7"
+       x="-121.14304"
+       y="-217.38573"
+       class="st0 usb-grey"
+       width="45.332481"
+       height="44.674809"
+       style="fill:#b8b8b8;stroke:#000000;stroke-width:5.62525;stroke-miterlimit:10"
+       transform="matrix(-0.01092477,0.99994032,-0.99993673,-0.01124883,0,0)" />
+    <g
+       id="damper-label"
+       style=""
+       class="damper-label"
+       inkscape:label="damper-label">
+      <path
+         style="fill:none;stroke:#000000;stroke-width:3.16802999999999990px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
+         d="m -162.33623,-332.05329 c 9.30052,79.52818 38.98851,125.46822 82.230048,148.80837 50.58217,27.30284 118.77289,20.60875 190.848102,21.42759 v -1.24212"
+         id="path5774"
+         sodipodi:nodetypes="cscc" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:3.16802999999999990px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
+         d="m 110.74192,-163.05987 v 0 l 2.45047,151.596911 33.05917,-1.24219 c 6.49889,-0.61917 11.40102,0.69949 9.79948,9.9407098 v 0"
+         id="path5776"
+         sodipodi:nodetypes="cccccc" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:3.16802999999999990px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
+         d="m 156.05104,386.16872 v -388.9335792 0"
+         id="path5778" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:3.16802999999999990px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
+         d="m 109.67283,461.90381 c 0.43673,-17.89459 0.41878,-36.02418 7.58533,-50.27397 6.11898,-12.17361 17.47034,-21.51562 38.79288,-25.46112 v 0"
+         id="path5780"
+         sodipodi:nodetypes="cscc" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:3.16802999999999990px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
+         d="m 56.265088,463.42303 53.407742,-1.5194 v 0"
+         id="path5782" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:3.16802999999999990px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
+         d="m -51.863592,462.2369 c 7.03313,-68.41601 95.70344,-82.396 108.12868,1.18685"
+         id="path5784"
+         sodipodi:nodetypes="cc" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:3.16802999999999990px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
+         d="m -120.83025,463.42303 68.966658,-1.18684"
+         id="path5786" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:3.16802999999999990px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
+         d="m -120.83025,463.42303 c -54.73408,-12.8341 -107.6722,-27.79224 -153.13447,-51.59831 l -0.59228,-744.91436 v 0 l 112.21299,1.03575"
+         id="path5788"
+         sodipodi:nodetypes="cc" />
+    </g>
+    <g
+       id="g7576">
+      <ellipse
+         id="path1368-8-3"
+         cx="156.79599"
+         cy="434.95523"
+         style="fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:3.97666;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         rx="37.338127"
+         ry="37.887966" />
+      <ellipse
+         id="path1368-71-5-7"
+         cx="156.22855"
+         cy="435.46622"
+         style="fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:4.16848;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         rx="26.529728"
+         ry="26.920389" />
+    </g>
+    <g
+       id="damper-screw-top"
+       inkscape:label="damper-screw-top"
+       class="damper-screw-top">
+      <ellipse
+         id="path1368-8-4"
+         cx="-194.47502"
+         cy="-374.60541"
+         style="fill:#40ff00;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:3.97666;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         rx="37.338127"
+         ry="37.887966" />
+      <ellipse
+         id="path1368-71-5-8"
+         cx="-195.04173"
+         cy="-374.09476"
+         style="fill:#40ff00;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:4.16848;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         rx="26.529728"
+         ry="26.920389" />
+    </g>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:3.16803px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 171.99164,200.09362 Z"
+       id="path5818" />
+    <g
+       id="g7584">
+      <path
+         style="fill:none;stroke:#000000;stroke-width:3.16803px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 171.99164,200.09362 21.04196,1.18679 0.58629,-13.04773 -0.58629,-5.338 20.45745,-1.18667 1.17618,5.93071 c 6.74237,-10.63205 23.37755,-9.55539 39.15962,-9.48946 h 18.70276 v -30.84027 l -18.11826,-0.59288 c -14.59572,-1.00527 -28.59437,-2.61606 -38.57752,-8.30327 v 6.52401 h -24.54655 v -20.75804 l -20.45865,-1.18685 1.17618,77.10124 v 0 m 43.2529,-55.15689 v 41.51586 0 l -0.58629,0.59289"
+         id="path5820"
+         sodipodi:nodetypes="ccccccccccccccccc" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:3.16803px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 253.81907,146.12274 v 31.43352 0"
+         id="path5822" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:3.16803px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 191.2795,144.93673 1.74632,37.95729"
+         id="path5824" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:3.16803px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 173.71463,313.81343 21.04135,1.18685 0.5863,-13.04785 -0.5863,-5.33776 20.45746,-1.18691 1.17558,5.93083 c 6.74357,-10.63199 23.37935,-9.55527 39.16201,-9.48934 h 18.70156 v -30.84039 l -18.11766,-0.59288 c -14.59751,-1.00527 -28.59497,-2.61594 -38.57811,-8.30309 v 6.52395 h -24.54596 v -20.75793 l -20.45925,-1.18678 1.17618,77.10088 v 0 m 43.25171,-55.15665 v 41.51592 0 l -0.5863,0.59288"
+         id="path5820-4"
+         sodipodi:nodetypes="ccccccccccccccccc" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:3.16803px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 255.54325,259.84279 v 31.43364 0"
+         id="path5822-0" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:3.16803px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 193.00309,258.65672 1.74631,37.95741"
+         id="path5824-5" />
+    </g>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -294.10689,-436.49414 144.80432,-47.34614 v 0"
+       id="path7592" />
+  </g>
+</svg>
