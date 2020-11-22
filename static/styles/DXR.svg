@@ -50,7 +50,45 @@
    inkscape:document-rotation="0" />
 <style
    type="text/css"
-   id="style12">.dxr-toprow-inputs {  }
+   id="style12">
+@font-face {
+    font-family: 'Siemens Sans Black';
+    src: url('Siemens//SiemensSans-Black.eot');
+    src: url('Siemens//SiemensSans-Black.eot?#iefix') format('embedded-opentype'),
+        url('Siemens//SiemensSans-Black.woff2') format('woff2'),
+        url('Siemens//SiemensSans-Black.woff') format('woff'),
+        url('Siemens//SiemensSans-Black.ttf') format('truetype'),
+        url('Siemens//SiemensSans-Black.svg#SiemensSans-Black') format('svg');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('Poppins//Poppins-Black.eot');
+    src: url('Poppins//Poppins-Black.eot?#iefix') format('embedded-opentype'),
+        url('Poppins//Poppins-Black.woff2') format('woff2'),
+        url('Poppins//Poppins-Black.woff') format('woff'),
+        url('Poppins//Poppins-Black.ttf') format('truetype'),
+        url('Poppins//Poppins-Light.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('Roboto//Roboto-Regular.eot');
+    src: url('Roboto//Roboto-Regular.eot?#iefix') format('embedded-opentype'),
+        url('Roboto//Roboto-Regular.woff2') format('woff2'),
+        url('Roboto//Roboto-Regular.woff') format('woff'),
+        url('Roboto//Roboto-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+.dxr-toprow-inputs {  }
 .dxr-voltage-out {  }
 .m10pl {  }
 .y1y2 {  }
@@ -71,7 +109,7 @@
 	.st1 { fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10; }
 	.st2 { font-family:'MyriadPro-Regular'; }
 	.st3 { font-size:7.7882px; }
-	.st4 { font-family:'SiemensSans-Black'; }
+	.st4 { font-family:'Siemens Sans Black'; }
 	.st5 { fill:none;stroke:#000000;stroke-linejoin:round;stroke-miterlimit:10; }
 .inner-square { fill:black; }
 .led { fill:#40ff00; }
