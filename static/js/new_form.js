@@ -3,6 +3,7 @@ $(document).ready(function(){
 
 	window.addEventListener("load", function() {
     var svgObject = document.getElementById('dxrsvg').contentDocument;
+    var knxsvgObject = document.getElementById('knxsvg').contentDocument;
     var dxr = svgObject.getElementById('dxr');
     // dxr types
     var type18 = svgObject.getElementsByClassName('type-18');
@@ -68,6 +69,28 @@ $(document).ready(function(){
     var m10x1 = svgObject.getElementById('terminal-m10-x1-term');
     var m10x2 = svgObject.getElementById('terminal-m10-x2-term');
     var m10x1common = svgObject.getElementById('terminal-m10-x1-common-term');
+    // knx-slots
+    var knx1_terminal = knxsvgObject.getElementById('knx-address-1');
+    var knx2_terminal = knxsvgObject.getElementById('knx-address-2');
+    var knx3_terminal = knxsvgObject.getElementById('knx-address-3');
+    var knx4_terminal = knxsvgObject.getElementById('knx-address-4');
+    var knx5_terminal = knxsvgObject.getElementById('knx-address-5');
+    var knx6_terminal = knxsvgObject.getElementById('knx-address-6');
+    var knx7_terminal = knxsvgObject.getElementById('knx-address-7');
+    var knx8_terminal = knxsvgObject.getElementById('knx-address-8');
+    var knx9_terminal = knxsvgObject.getElementById('knx-address-9');
+    var knx10_terminal = knxsvgObject.getElementById('knx-address-10');
+    var knx11_terminal = knxsvgObject.getElementById('knx-address-11');
+    var knx12_terminal = knxsvgObject.getElementById('knx-address-12');
+    var knx13_terminal = knxsvgObject.getElementById('knx-address-13');
+    var knx14_terminal = knxsvgObject.getElementById('knx-address-14');
+    var knx15_terminal = knxsvgObject.getElementById('knx-address-15');
+    var knx16_terminal = knxsvgObject.getElementById('knx-address-16');
+    var knx17_terminal = knxsvgObject.getElementById('knx-address-17');
+    var knx18_terminal = knxsvgObject.getElementById('knx-address-18');
+    var knx19_terminal = knxsvgObject.getElementById('knx-address-19');
+    var knx20_terminal = knxsvgObject.getElementById('knx-address-20');
+    var knxaddresses = knxsvgObject.getElementsByClassName('knx-addresses');
 
 	// Template selection: Set Starting Values based on selection.
 	$( "select#tempSelection" ).change(function() {
@@ -545,7 +568,6 @@ $(document).ready(function(){
 				y7y8_str += 'X';
 			}
 			if(type_str == 'F' || type_str == 'G'){
-				console.log("Checking y8 @ 524")
 				$(".y7y8-3pt").prop('selectedIndex',0);
 				$("#y7bo").prop('selectedIndex',0);
 				$("#y8bo").prop('selectedIndex',0);
@@ -557,8 +579,6 @@ $(document).ready(function(){
 			}
 			else{
 				if(y7y8_str != 'X'){
-					console.log("Checking y7y8")
-					console.log("Checking y8 @ 536")
 					$("#y7bo").prop('selectedIndex',0);
 					$("#y8bo").prop('selectedIndex',0);
 					$("#y7bo").hide();
@@ -581,181 +601,181 @@ $(document).ready(function(){
 		$( "select#knx-1 option:selected" ).each(function() {
 			knx1_str += $( this ).val();
 			if(knx1_str != 'X'){
-				$('#knx-term-1').css('background-color','green');
+				$(knx1_terminal).css({'fill':'green'});
 			}
 			else{
-				$('#knx-term-1').css('background','');
+				$(knx1_terminal).css({'fill':'yellow'});
 			}
 		});
 		$( "select#knx-2 option:selected" ).each(function() {
 			knx2_str += $( this ).val();
 			if(knx2_str != 'X'){
-				$('#knx-term-2').css('background-color','green');
+				$(knx2_terminal).css({'fill':'green'});
 			}
 			else{
-				$('#knx-term-2').css('background','');
+				$(knx2_terminal).css({'fill':'yellow'});
 			}
 		});
 		$( "select#knx-3 option:selected" ).each(function() {
 			knx3_str += $( this ).val();
 			if(knx3_str != 'X'){
-				$('#knx-term-3').css('background-color','green');
+				$(knx3_terminal).css({'fill':'green'});
 			}
 			else{
-				$('#knx-term-3').css('background','');
+				$(knx3_terminal).css({'fill':'yellow'});
 			}
 		});
 		$( "select#knx-4 option:selected" ).each(function() {
 			knx4_str += $( this ).val();
 			if(knx4_str != 'X'){
-				$('#knx-term-4').css('background-color','green');
+				$(knx4_terminal).css({'fill':'green'});
 			}
 			else{
-				$('#knx-term-4').css('background','');
+				$(knx4_terminal).css({'fill':'yellow'});
 			}
 		});
 		$( "select#knx-5 option:selected" ).each(function() {
 			knx5_str += $( this ).val();
 			if(knx5_str != 'X'){
-				$('#knx-term-5').css('background-color','green');
+				$(knx5_terminal).css({'fill':'green'});
 			}
 			else{
-				$('#knx-term-5').css('background','');
+				$(knx5_terminal).css({'fill':'yellow'});
 			}
 		});
 		$( "select#knx-6 option:selected" ).each(function() {
 			knx6_str += $( this ).val();
 			if(knx6_str != 'X'){
-				$('#knx-term-6').css('background-color','green');
+				$(knx6_terminal).css({'fill':'green'});
 			}
 			else{
-				$('#knx-term-6').css('background','');
+				$(knx6_terminal).css({'fill':'yellow'});
 			}
 		});
 		$( "select#knx-7 option:selected" ).each(function() {
 			knx7_str += $( this ).val();
 			if(knx7_str != 'X'){
-				$('#knx-term-7').css('background-color','green');
+				$(knx7_terminal).css({'fill':'green'});
 			}
 			else{
-				$('#knx-term-7').css('background','');
+				$(knx7_terminal).css({'fill':'yellow'});
 			}
 		});
 		$( "select#knx-8 option:selected" ).each(function() {
 			knx8_str += $( this ).val();
 			if(knx8_str != 'X'){
-				$('#knx-term-8').css('background-color','green');
+				$(knx8_terminal).css({'fill':'green'});
 			}
 			else{
-				$('#knx-term-8').css('background','');
+				$(knx8_terminal).css({'fill':'yellow'});
 			}
 		});
 		$( "select#knx-9 option:selected" ).each(function() {
 			knx9_str += $( this ).val();
 			if(knx9_str != 'X'){
-				$('#knx-term-9').css('background-color','green');
+				$(knx9_terminal).css({'fill':'green'});
 			}
 			else{
-				$('#knx-term-9').css('background','');
+				$(knx9_terminal).css({'fill':'yellow'});
 			}
 		});
 		$( "select#knx-10 option:selected" ).each(function() {
 			knx10_str += $( this ).val();
 			if(knx10_str != 'X'){
-				$('#knx-term-10').css('background-color','green');
+				$(knx10_terminal).css({'fill':'green'});
 			}
 			else{
-				$('#knx-term-10').css('background','');
+				$(knx10_terminal).css({'fill':'yellow'});
 			}
 		});
 		$( "select#knx-11 option:selected" ).each(function() {
 			knx11_str += $( this ).val();
 			if(knx11_str != 'X'){
-				$('#knx-term-11').css('background-color','green');
+				$(knx11_terminal).css({'fill':'green'});
 			}
 			else{
-				$('#knx-term-11').css('background','');
+				$(knx11_terminal).css({'fill':'yellow'});
 			}
 		});
 		$( "select#knx-12 option:selected" ).each(function() {
 			knx12_str += $( this ).val();
 			if(knx12_str != 'X'){
-				$('#knx-term-12').css('background-color','green');
+				$(knx12_terminal).css({'fill':'green'});
 			}
 			else{
-				$('#knx-term-12').css('background','');
+				$(knx12_terminal).css({'fill':'yellow'});
 			}
 		});
 		$( "select#knx-13 option:selected" ).each(function() {
 			knx13_str += $( this ).val();
 			if(knx13_str != 'X'){
-				$('#knx-term-13').css('background-color','green');
+				$(knx13_terminal).css({'fill':'green'});
 			}
 			else{
-				$('#knx-term-13').css('background','');
+				$(knx13_terminal).css({'fill':'yellow'});
 			}
 		});
 		$( "select#knx-14 option:selected" ).each(function() {
 			knx14_str += $( this ).val();
 			if(knx14_str != 'X'){
-				$('#knx-term-14').css('background-color','green');
+				$(knx14_terminal).css({'fill':'green'});
 			}
 			else{
-				$('#knx-term-14').css('background','');
+				$(knx14_terminal).css({'fill':'yellow'});
 			}
 		});
 		$( "select#knx-15 option:selected" ).each(function() {
 			knx15_str += $( this ).val();
 			if(knx15_str != 'X'){
-				$('#knx-term-15').css('background-color','green');
+				$(knx15_terminal).css({'fill':'green'});
 			}
 			else{
-				$('#knx-term-15').css('background','');
+				$(knx15_terminal).css({'fill':'yellow'});
 			}
 		});
 		$( "select#knx-16 option:selected" ).each(function() {
 			knx16_str += $( this ).val();
 			if(knx16_str != 'X'){
-				$('#knx-term-16').css('background-color','green');
+				$(knx16_terminal).css({'fill':'green'});
 			}
 			else{
-				$('#knx-term-16').css('background','');
+				$(knx16_terminal).css({'fill':'yellow'});
 			}
 		});
 		$( "select#knx-17 option:selected" ).each(function() {
 			knx17_str += $( this ).val();
 			if(knx17_str != 'X'){
-				$('#knx-term-17').css('background-color','green');
+				$(knx17_terminal).css({'fill':'green'});
 			}
 			else{
-				$('#knx-term-17').css('background','');
+				$(knx17_terminal).css({'fill':'yellow'});
 			}
 		});
 		$( "select#knx-18 option:selected" ).each(function() {
 			knx18_str += $( this ).val();
 			if(knx18_str != 'X'){
-				$('#knx-term-18').css('background-color','green');
+				$(knx18_terminal).css({'fill':'green'});
 			}
 			else{
-				$('#knx-term-18').css('background','');
+				$(knx18_terminal).css({'fill':'yellow'});
 			}
 		});
 		$( "select#knx-19 option:selected" ).each(function() {
 			knx19_str += $( this ).val();
 			if(knx19_str != 'X'){
-				$('#knx-term-19').css('background-color','green');
+				$(knx19_terminal).css({'fill':'green'});
 			}
 			else{
-				$('#knx-term-19').css('background','');
+				$(knx19_terminal).css({'fill':'yellow'});
 			}
 		});
 		$( "select#knx-20 option:selected" ).each(function() {
 			knx20_str += $( this ).val();
 			if(knx20_str != 'X'){
-				$('#knx-term-20').css('background-color','green');
+				$(knx20_terminal).css({'fill':'green'});
 			}
 			else{
-				$('#knx-term-20').css('background','');
+				$(knx20_terminal).css({'fill':'yellow'});
 			}
 		});
 		/*
@@ -1651,9 +1671,10 @@ $(document).ready(function(){
 		}
 		try {
 		  var knx_alert = KNX.match(/A/g).length;
+		  console.log("KNX-Alert is " + knx_alert);
 		  $('select.selection-knx option:selected').each(function(){
 		  	if($(this).val() == 'A' && knx_alert > 1){
-		  		$('.knx-terminal').css('background-color','#d534eb');
+		  		$(knxaddresses).css({'fill':'#d534eb'});
 		  	}
 		  });
 		}
