@@ -5,7 +5,14 @@
     - jsonify: converts arguments or keyword arguments into a dictionary
 """
 from flask import Flask, render_template, request, jsonify
+<<<<<<< HEAD
 from services.services import Services
+=======
+import pandas as pd
+
+product_dictionary = pd.read_excel('products.xlsx')
+
+>>>>>>> 5919e10725e0fb01c2cf45f48af53bf49d2f665f
 # Step 2: Create an Instance of Flask. This will be your application
 app = Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
@@ -27,6 +34,7 @@ def index():
     # Step 4: Create some data. We will pass this to our html file for rendering.
 
     dxrs = {'':'','Ethernet':'E','MSTP':'M','P1':'P'}
+    # etypes: dictionary of ethernet dxrs
     etypes = {
         '':'',
         '10PL':'A',
@@ -37,6 +45,7 @@ def index():
         '17C':'F',
         '17CX':'G',
         }
+    # mtypes: dictionary of mstp dxrs
     mtypes = {
         '':'',
         '10PL':'A',
@@ -45,26 +54,41 @@ def index():
         '12PX':'D',
         '18':'E',
         }
+    # ptypes: dictionary of P1 dxrs
     ptypes = {
         '':'',
         '10':'A',
         '18':'B',
         }
+    # locations: dictionary of units
     locations = {
         '':'',
         "US":"U",
         "SI":"S",
         "CA":"C",
         }
-    three_points = {
+    # function: dictionary of units
+    function = product_dictionary.set_index('Functionality Key')['Functionality Value'].to_dict()
+    three_points_VAV_y1y2 = product_dictionary.set_index('Y1Y2 VAV Key')['Y1Y2 VAV Value'].to_dict()
+    three_points_FPB_y1y2 = product_dictionary.set_index('Y1Y2 FPB Key')['Y1Y2 FPB Value'].to_dict()
+    three_points_VAV_y3y4 = product_dictionary.set_index('Y3Y4 VAV Key')['Y3Y4 VAV Value'].to_dict()
+    three_points_FPB_y3y4 = product_dictionary.set_index('Y3Y4 FPB Key')['Y3Y4 FPB Value'].to_dict()
+    three_points_VAV_y5y6 = product_dictionary.set_index('Y5Y6 VAV Key')['Y5Y6 VAV Value'].to_dict()
+    three_points_FPB_y5y6 = product_dictionary.set_index('Y5Y6 FPB Key')['Y5Y6 FPB Value'].to_dict()
+    three_points_VAV_y7y8 = product_dictionary.set_index('Y7Y8 VAV Key')['Y7Y8 VAV Value'].to_dict()
+    three_points_FPB_y7y8 = product_dictionary.set_index('Y7Y8 FPB Key')['Y7Y8 FPB Value'].to_dict()
+    # three_points: dictionary of three point floating actuators
+    three_points_FCU_y1y2 = {
         'None':'X',
-        'Supply Damper':'A',
-        'Exhaust Damper':'B',
+        'Supply Damper':'S',
+        'Exhaust Damper':'S',
         'Hot Water Reheat Coil':'C',
         'Radiator':'D',
-        'Chilled Water Coil':'E',
-        'Windows':'F'
+        'Chilled Water Coil':'S',
+        'Windows':'S'
         }
+    # three_points = product_dictionary.set_index('3pt Floating Actuator Key')['3pt Floating Actuator Value'].to_dict()
+    # zero_ten_1030: dictionary of 0-10 Volt actuators for Y10 & Y30
     zero_ten_1030 = {
         'None':'X',
         'Supply Damper':'A',
@@ -74,6 +98,7 @@ def index():
         'Windows':'F',
         '0-10V General':'Z'
         }
+    # zero_ten_2040: dictionary of 0-10 Volt actuators for Y20 & Y40
     zero_ten_2040 = {
         'None':'X',
         'Exhaust Damper':'B',
@@ -83,15 +108,45 @@ def index():
         'Windows':'F',
         '0-10V General':'Z'
         }
-    analog_in = {
+    #inputs: dictionary of analog inputs
+    x1x4_in = {
         "None":"X",
         "Sup Press":"A",
         "Sup Flow":"B",
         "Sup Temp":"C",
         "Exh Press":"D",
         "Exh Flow":"E",
-        "Exh Temp P1":"F"
+        "Exh Temp P1":"F",
+        'Fan Status':'G',
+        'Window Contact':'H',
+        'Presence Detector':'I',
+        'Condensation Sensor':'J',
+        'Condensation Alarm':'K',
+        'Door Contact':'L',
+        'Analog Input General':'M',
+        'Binary Input General':'N'
         }
+    d1d2_in = {
+        "None":"X",
+        'Fan Status':'G',
+        'Window Contact':'H',
+        'Presence Detector':'I',
+        'Condensation Sensor':'J',
+        'Condensation Alarm':'K',
+        'Door Contact':'L',
+        'Binary Input General':'N'
+        }
+    d1d2d3_in = {
+        "None":"X",
+        'Fan Status':'G',
+        'Window Contact':'H',
+        'Presence Detector':'I',
+        'Condensation Sensor':'J',
+        'Condensation Alarm':'K',
+        'Door Contact':'L',
+        'Binary Input General':'N'
+        }
+    #pressure: dictionary of pressure sensors
     pressure = {
         "None":"X",
         "Sup P1":"A",
@@ -102,29 +157,60 @@ def index():
         "Exh SCOM P4":"F",
         "FH SCOM P1":"G"
         }
-    binary_in = {
-        'None':'X',
-        'Fan Status':'A',
-        'Window Contact':'B',
-        'Presence Detector':'C',
-        'Condensation Sensor':'D',
-        'Condensation Alarm':'E',
-        'Door Contact':'F',
-        'Binary Input General':'G'
-        }
+    #binary_out: dictionary of binary outputs
     binary_out = {
         'None':'X',
         'Fan':'A',
         'Binary Output General':'B',
         }
+    #appfuncs: dictionary of application functions
     appfuncs = {
-        'None':'X',
-        'Room Stpt Determination':'A',
-        'Heat/Cool Determination':'B',
-        'Rapid Ventilation':'C',
-        'Ventilation/DCV':'D'
+        'Occupied Mode':'A',
+        'Unoccupied Mode':'B',
+        'Night-Cooling Mode':'C',
+        'Warm-up Mode':'D',
+        'Cool-down Mode':'E',
+        'Temporary Comfort Button':'F',
+        'Presence Detection':'G',
+        'Heat/Cool Determination':'H',
+        'VAV Cooling Sequence':'I',
+        'VAV Heating Sequence':'J',
+        'Occupied Ventilation/DCV':'K',
+        'Standby Ventilation/DCV':'L',
+        'Unoccupied Ventilation/DCV':'M',
+        'Rapid Ventilation':'N',
+        'Air Volume Tracking':'O',
+        'VAV Dehumidification':'P',
+        'Greenleaf':'Q',
+        'Natural Ventilation':'R',
         }
-    knx= {'None':'X','P30':'A','P40':'B','P70':'C','P34':'D','P37':'E','P74':'F'}
+    appfuncs2 = {
+        'Lighting':'A',
+        'Shading':'B',
+        }
+    cenfuncs = {
+        'Operating Mode':'A',
+        'Delayed Op Mode':'B',
+        'Static Reset':'C',
+        'Temp Reset':'D',
+        }
+    templates = {
+        'Blank':'',
+        '14023':'A',
+        '14050':'B'
+    }
+    #knx: dictionary of knx devices
+    knx = {
+        'None':'X',
+        'P30':'A',
+        'P40':'B',
+        'P70':'C',
+        'P34':'D',
+        'P37':'E',
+        'P74':'F',
+        'UP285':'G',
+        '5WG1-LGT':'H'
+        }
     pet = ""
     try:
         pet = request.form['pet'][:-1]
@@ -141,20 +227,33 @@ def index():
     """
     return render_template('new_form.html',
         appfuncs=appfuncs,
-        analogin=analog_in,
+        appfuncs2=appfuncs2,
+        cenfuncs=cenfuncs,
+        x1x4=x1x4_in,
+        d1d2=d1d2_in,
+        d1d2d3=d1d2d3_in,
         pressure=pressure,
-        threepts=three_points,
+        threeptsVAVy1y2=three_points_VAV_y1y2,
+        threeptsFPBy1y2=three_points_FPB_y1y2,
+        threeptsFCUy1y2=three_points_FCU_y1y2,
+        threeptsVAVy3y4=three_points_VAV_y3y4,
+        threeptsFPBy3y4=three_points_FPB_y3y4,
+        threeptsVAVy5y6=three_points_VAV_y5y6,
+        threeptsFPBy5y6=three_points_FPB_y5y6,
+        threeptsVAVy7y8=three_points_VAV_y7y8,
+        threeptsFPBy7y8=three_points_FPB_y7y8,
         zten1030=zero_ten_1030,
         zten2040=zero_ten_2040,
         binaryout=binary_out,
-        binaryin=binary_in,
         pet=pet,
         dxrs=dxrs,
         etypes=etypes,
         mtypes=mtypes,
         ptypes=ptypes,
         locations=locations,
-        knx=knx
+        function=function,
+        knx=knx,
+        templates=templates
         )
 
 """

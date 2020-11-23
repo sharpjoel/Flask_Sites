@@ -3,7 +3,7 @@
 <head>
 
 	<!-- Step 9: Create the title for your page. This is what shows up in the tab -->
-	<title>AJAX Example</title>
+	<title>PZTC Engineering Tool</title>
 
 	<!-- Step 10: Include the links to ajax and jquery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -15,28 +15,56 @@
 
 	<!-- Step 12: Include link to our javascript file. This is the file that will read objects
 	from this html page, and send AJAX requests to our python Flask server. -->
+	<script src="{{ url_for('static', filename='js/sequence.js') }}"></script>
 	<script src="{{ url_for('static', filename='js/new_form.js') }}"></script>
-	<script src="{{ url_for('static', filename='js/html2canvas.js') }}"></script>
 	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/new_form.css') }}">
 </head>
 <body>
-<div class="container">
-	<br>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Pacific Zone Technical Center</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">DXR Information</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Sharepoint</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Nothing</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="scaleable-wrapper" id="scaleable-wrapper">
+	<div class="container" id="very-specific-container">
+		<br>
 
-	<!-- Step 14: Create your alert banners. We will be displaying the data from our selected values, which
-	are collected and sent by AJAX to flask via a post request. Once we handle the data in Flask (our python
-	file) we will pass it back as a JSON value to be shown in the success alert banner. -->
-	<div class='row'>
+		<!-- Step 14: Create your alert banners. We will be displaying the data from our selected values, which
+		are collected and sent by AJAX to flask via a post request. Once we handle the data in Flask (our python
+		file) we will pass it back as a JSON value to be shown in the success alert banner. -->
 		<div id="successAlert" class="col-lg-10 alert alert-success" role="alert"></div>
-	</div>
-
-	<div class='row'>
-		<div class='col-md-6'>
+		<div>
 			<form>
-				<div class='container'>
+				<div class='type-container'>
+					<div id='fourth'>
+						<label><span class="badge badge-secondary">Template</span></label>
+						<select name='template-selection' class='select' id='tempSelection'>
+							{% for key, value in templates.items() %}
+								<option value="{{value}}">{{key}}</option>
+							{% endfor %}
+						</select>
+					</div>
+
 					<div id='first'>
 						<label><span class="badge badge-secondary">NAME</span></label>
-						<select name='dxr-selection' class='select' id='dxrSelection'>
+						<select name='dxr-selection' class='select select-reset' id='dxrSelection'>
 							{% for key, value in dxrs.items() %}
 								<option value="{{value}}">{{key}}</option>
 							{% endfor %}
@@ -45,24 +73,24 @@
 
 
 					<div id='second-1'>
-						<label><span class="badge badge-secondary">TYPE</span></label>
-						<select name='etype-selection' class='select' id='etypeSelection'>
+						<label><span class="badge badge-secondary">PLATFORM</span></label>
+						<select name='etype-selection' class='select select-reset' id='etypeSelection'>
 							{% for key, value in etypes.items() %}
 								<option value="{{value}}">{{key}}</option>
 							{% endfor %}
 						</select>
 					</div>
 					<div id='second-2'>
-						<label><span class="badge badge-secondary">TYPE</span></label>
-						<select name='mtype-selection' class='select' id='mtypeSelection'>
+						<label><span class="badge badge-secondary">PLATFORM</span></label>
+						<select name='mtype-selection' class='select select-reset' id='mtypeSelection'>
 							{% for key, value in mtypes.items() %}
 								<option value="{{value}}">{{key}}</option>
 							{% endfor %}
 						</select>
 					</div>
 					<div id='second-3'>
-						<label><span class="badge badge-secondary">TYPE</span></label>
-						<select name='ptype-selection' class='select' id='ptypeSelection'>
+						<label><span class="badge badge-secondary">PLATFORM</span></label>
+						<select name='ptype-selection' class='select select-reset' id='ptypeSelection'>
 							{% for key, value in ptypes.items() %}
 								<option value="{{value}}">{{key}}</option>
 							{% endfor %}
@@ -72,814 +100,727 @@
 
 					<div id='third'>
 						<label><span class="badge badge-secondary">UNITS</span></label>
-						<select name='loc-selection' class='select' id='locSelection'>
+						<select name='loc-selection' class='select select-reset' id='locSelection'>
 							{% for key, value in locations.items() %}
 								<option value="{{value}}">{{key}}</option>
 							{% endfor %}
 						</select>
+						<label><span class="badge badge-secondary">TYPE</span></label>
+						<select name='func-selection' class='select select-reset' id='funcSelection'>
+							{% for key, value in function.items() %}
+								<option value="{{value}}">{{key}}</option>
+							{% endfor %}
+						</select>
 					</div>
+				</div>
+			</form>
+		</div>
+		<!-- <div class='row'> -->
+		<div class="rectangle">
+			<object id="dxrsvg" data="static/styles/DXR.svg" type="image/svg+xml"></object>
+		</div>
+		<!-- </div> -->
+		<br>
+		<div>
+			<object id="knxsvg" data="static/styles/KNX-RAIL.svg" type="image/svg+xml"></object>
+		</div>
+		<div id='app-container'>
+			<form class='form-container' id='appForm'>
+				<!--
+					APPLICATION FUNCTION CHECKBOX SELECTION
+				-->
+				<div class='form-container' id="standard-seq-1">
+					<h3><span class="badge badge-secondary">HVAC Sequences</span></h3>
+					{% for item in appfuncs %}
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="" id="{{item}}">
+	  						<label class="form-check-label" for="{{item}}"><span class="badge badge-secondary">{{item}}</span></label>
+	  					</div>
+	  				{% endfor %}
+				</div>
+				<div class='form-container' id="standard-seq-2">
+					<h3><span class="badge badge-secondary">TRA Sequences</span></h3>
+					{% for item in appfuncs2 %}
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="" id="{{item}}">
+	  						<label class="form-check-label" for="{{item}}"><span class="badge badge-secondary">{{item}}</span></label>
+	  					</div>
+	  				{% endfor %}
+				</div>
+				<div class='form-container' id="standard-seq-3">
+					<h3><span class="badge badge-secondary">Central Functions</span></h3>
+					{% for item in cenfuncs %}
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="" id="{{item}}">
+	  						<label class="form-check-label" for="{{item}}"><span class="badge badge-secondary">{{item}}</span></label>
+	  					</div>
+	  				{% endfor %}
 				</div>
 			</form>
 		</div>
 	</div>
-	<div class='row'>
-		<div id="rectangle">
-			<div id='toprail'>
-				<div id='usb-container'>
-					<div class="outer-outer-square">
-				     <div class="outer-square">
-					     <div class="inner-square">&nbsp;</div>
-					 </div>
+		<div id='selection-container'>
+			<div id='io-container'>
+			<div id="output-container">
+				<form class='form-container' id='myForm'>
+					<!-- Step 16: Create a selection to choose items from the list that was passed from Flask to this rendered
+					template as arguments. 
+					- Note** All of the select tags are part of the 'select' class, but have their own unique IDs-->
+					<div class='form-container'>
+						<h3><span class="badge badge-secondary">AO:3ptFloating</span></h3>
+
+						<!-- Y1Y2 SELECTION -->
+
+						<div class="form-inline">
+							<label><span class="badge badge-secondary">Y1,Y2</span></label>
+
+							<!-- VAV -->
+
+							<select name='vav-y1y2-3pt' class='select select-reset y1y2-3pt' id='vav-y1y2-3pt'>
+								{% for key, value in threeptsVAVy1y2.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+
+							<!-- FPB -->
+
+							<select name='fpb-y1y2-3pt' class='select select-reset y1y2-3pt' id='fpb-y1y2-3pt' style="display:none">
+								{% for key, value in threeptsFPBy1y2.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+
+							<!-- FCU -->
+
+							<select name='fcu-y1y2-3pt' class='select select-reset y1y2-3pt' id='fcu-y1y2-3pt' style="display:none">
+								{% for key, value in threeptsFCUy1y2.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+						</div>
+
+						<!-- Y3Y4 SELECTION -->
+
+						<div class="form-inline">
+							<label><span class="badge badge-secondary">Y3,Y4</span></label>
+
+							<!-- VAV -->
+
+							<select name='vav-y3y4-3pt' class='select select-reset y3y4-3pt' id='vav-y3y4-3pt'>
+								{% for key, value in threeptsVAVy3y4.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+
+							<!-- FPB -->
+
+							<select name='fpb-y3Y4-3pt' class='select select-reset y3y4-3pt' id='fpb-y3y4-3pt' style="display:none">
+								{% for key, value in threeptsFPBy3y4.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+						</div>
+
+						<!-- Y5Y6 SELECTION -->
+
+						<div class="form-inline">
+							<label><span class="badge badge-secondary">Y5,Y6</span></label>
+
+							<!-- VAV -->
+
+							<select name='vav-y5y6-3pt' class='select select-reset y5y6-3pt' id='vav-y5y6-3pt'>
+								{% for key, value in threeptsVAVy5y6.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+
+							<!-- FPB -->
+
+							<select name='fpb-y5Y6-3pt' class='select select-reset y5y6-3pt' id='fpb-y5y6-3pt' style="display:none">
+								{% for key, value in threeptsFPBy5y6.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+						</div>
+
+						<!-- Y7Y8 SELECTION -->
+
+						<div class="form-inline">
+							<label><span class="badge badge-secondary">Y7,Y8</span></label>
+
+							<!-- VAV -->
+
+							<select name='vav-y7y8-3pt' class='select select-reset y7y8-3pt' id='vav-y7y8-3pt'>
+								{% for key, value in threeptsVAVy7y8.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+
+							<!-- FPB -->
+
+							<select name='fpb-y7Y8-3pt' class='select select-reset y7y8-3pt' id='fpb-y7y8-3pt' style="display:none">
+								{% for key, value in threeptsFPBy7y8.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+
+						</div>
 					</div>
-				 </div>
-			     <div class="blank">
-			     </div>
-			     <div class="blank">
-			     </div>
-			     <div class="blank">
-			     </div>
-			     <div class="terminal x3x4-container" id='x4'>
-			     	<div class="top-screwterminal">&nbsp;</div>
-			     	<p><span class="top-terminal-text">X4</span></p>
-			     </div>
-			     <div class="terminal x3x4-container" id='topground3'>
-			     	<div class="top-screwterminal">&nbsp;</div>
-			     	<p><span class="top-terminal-text">24-</span></p>
-			     </div>
-			     <div class="terminal x3x4-container" id='toppower2'>
-			     	<div class="top-screwterminal">&nbsp;</div>
-			     	<p><span class="top-terminal-text">24+</span></p>
-			     </div>
-			     <div class="terminal x3x4-container" id='x3'>
-			     	<div class="top-screwterminal">&nbsp;</div>
-			     	<p><span class="top-terminal-text">X3</span></p>
-			     </div>
-			     <div class="terminal" id='x2'>
-			     	<div class="top-screwterminal">&nbsp;</div>
-			     	<p><span class="top-terminal-text">X2</span></p>
-			     </div>
-			     <div class="terminal" id='topground2'>
-			     	<div class="top-screwterminal">&nbsp;</div>
-			     	<p><span class="top-terminal-text">24-</span></p>
-			     </div>
-			     <div class="terminal" id='toppower'>
-			     	<div class="top-screwterminal">&nbsp;</div>
-			     	<p><span class="top-terminal-text">24+</span></p>
-			     </div>
-			     <div class="terminal" id='x1'>
-			     	<div class="top-screwterminal">&nbsp;</div>
-			     	<p><span class="top-terminal-text">X1</span></p>
-			     </div>
-			     <div class="terminal" id='topground1'>
-			     	<div class="top-screwterminal">&nbsp;</div>
-			     	<p><span class="top-terminal-text">24-</span></p>
-			     </div>
-			     <div class="terminal" id='D2'>
-			     	<div class="top-screwterminal">&nbsp;</div>
-			     	<p><span class="top-terminal-text" id="d2text">D2</span></p>
-			     </div>
-			     <div class="terminal" id='D1'>
-			     	<div class="top-screwterminal">&nbsp;</div>
-			     	<p><span class="top-terminal-text">D1</span></p>
-			     </div>
-			     <div class="blank">
-			     </div>
-			     <div class="blank">
-			     </div>
-			     <div id='eth-container'>
-				     <div class='nic' id='nic2'>
-						<div class="nicpiece" id="nics1">&nbsp;</div>
-						<div class="nicpiece" id="nics2">&nbsp;</div>
+				</form>
+				<form class='' id='zeroTenForm'>
+					<!-- Step 16: Create a selection to choose items from the list that was passed from Flask to this rendered
+					template as arguments. 
+					- Note** All of the select tags are part of the 'select' class, but have their own unique IDs-->
+					<div class='form-container'>
+						<h3><span class="badge badge-secondary">AO:0-10V</span></h3>
+						<div class="form-inline">
+							<label><span class="badge badge-secondary">Y10</span></label>
+							<select name='y10' class='select select-reset' id='y10'>
+								{% for key, value in zten1030.items() %}
+									<option value="{{value}}">{{key}}</option>
+								{% endfor %}
+							</select>
+						</div>
+						<div class="form-inline">
+							<label><span class="badge badge-secondary">Y20</span></label>
+							<select name='y20' class='select select-reset' id='y20'>
+								{% for key, value in zten2040.items() %}
+									<option value="{{value}}">{{key}}</option>
+								{% endfor %}
+							</select>
+						</div>
+						<div class="form-inline">
+							<label><span class="badge badge-secondary">Y30</span></label>
+							<select name='y30' class='select select-reset' id='y30'>
+								{% for key, value in zten1030.items() %}
+									<option value="{{value}}">{{key}}</option>
+								{% endfor %}
+							</select>
+						</div>
+						<div class="form-inline">
+							<label><span class="badge badge-secondary">Y40</span></label>
+							<select name='y40' class='select select-reset' id='y40'>
+								{% for key, value in zten2040.items() %}
+									<option value="{{value}}">{{key}}</option>
+								{% endfor %}
+							</select>
+						</div>
 					</div>
-				     <div class='nic' id='nic1'>
-						<div class="nicpiece" id="nics1">&nbsp;</div>
-						<div class="nicpiece" id="nics2">&nbsp;</div>
+				</form>
+				<form class='form-container' id='boForm'>
+					<!-- Step 16: Create a selection to choose items from the list that was passed from Flask to this rendered
+					template as arguments. 
+					- Note** All of the select tags are part of the 'select' class, but have their own unique IDs-->
+					<div class='form-container'>
+						<h3><span class="badge badge-secondary">BO:24Volt</span></h3>
+						<div class="form-inline">
+							<label><span class="badge badge-secondary">Y1</span></label>
+							<select name='y1bo' class='select select-reset' id='y1bo'>
+								{% for key, value in binaryout.items() %}
+									<option value="{{value}}">{{key}}</option>
+								{% endfor %}
+							</select>
+						</div>
+						<div class="form-inline">
+							<label><span class="badge badge-secondary">Y2</span></label>
+							<select name='y2bo' class='select select-reset' id='y2bo'>
+								{% for key, value in binaryout.items() %}
+									<option value="{{value}}">{{key}}</option>
+								{% endfor %}
+							</select>
+						</div>
+						<div class="form-inline">
+							<label><span class="badge badge-secondary">Y3</span></label>
+							<select name='y3bo' class='select select-reset' id='y3bo'>
+								{% for key, value in binaryout.items() %}
+									<option value="{{value}}">{{key}}</option>
+								{% endfor %}
+							</select>
+						</div>
+						<div class="form-inline">
+							<label><span class="badge badge-secondary">Y4</span></label>
+							<select name='y4bo' class='select select-reset' id='y4bo'>
+								{% for key, value in binaryout.items() %}
+									<option value="{{value}}">{{key}}</option>
+								{% endfor %}
+							</select>
+						</div>
+						<div class="form-inline">
+							<label><span class="badge badge-secondary">Y5</span></label>
+							<select name='y5bo' class='select select-reset' id='y5bo'>
+								{% for key, value in binaryout.items() %}
+									<option value="{{value}}">{{key}}</option>
+								{% endfor %}
+							</select>
+						</div>
+						<div class="form-inline">
+							<label><span class="badge badge-secondary">Y6</span></label>
+							<select name='y6bo' class='select select-reset' id='y6bo'>
+								{% for key, value in binaryout.items() %}
+									<option value="{{value}}">{{key}}</option>
+								{% endfor %}
+							</select>
+						</div>
+						<div class="form-inline">
+							<label><span class="badge badge-secondary">Y7</span></label>
+							<select name='y7bo' class='select select-reset' id='y7bo'>
+								{% for key, value in binaryout.items() %}
+									<option value="{{value}}">{{key}}</option>
+								{% endfor %}
+							</select>
+						</div>
+						<div class="form-inline">
+							<label><span class="badge badge-secondary">Y8</span></label>
+							<select name='y8bo' class='select select-reset' id='y8bo'>
+								{% for key, value in binaryout.items() %}
+									<option value="{{value}}">{{key}}</option>
+								{% endfor %}
+							</select>
+						</div>
 					</div>
-				</div>
-				<div id='mstp-container'>
-					<div class="mstp-terminal" id='shield485'>
-			     		<div class="top-screwterminal">&nbsp;</div>
-			     		<p><span class="top-terminal-text">S</span></p>
-			     	</div>
-			     	<div class="mstp-terminal" id='rx485'>
-			     		<div class="top-screwterminal">&nbsp;</div>
-			     		<p><span class="top-terminal-text">-</span></p>
-			     	</div>
-			     	<div class="mstp-terminal" id='tx485'>
-			     		<div class="top-screwterminal">&nbsp;</div>
-			     		<p><span class="top-terminal-text">+</span></p>
-			     	</div>
-				</div>
-				<div class="pl" id='plrx'>
-			     	<div class="top-screwterminal">&nbsp;</div>
-			     	<p><span class="pl-terminal-text">KNX-</span></p>
-			     </div>
-			     <div class="pl" id='pltx'>
-			     	<div class="top-screwterminal">&nbsp;</div>
-			     	<p><span class="pl-terminal-text">KNX+</span></p>
-			     </div>
+				</form>
 			</div>
-			<div id='top-space'></div>
-			<div id='center-container'>
-				<div id='airhole1'></div>
-				<div id='airhole2'></div>
-				<div id='centerraised'>
-					<p><span id="siemens">SIEMENS</span></p>
-					<div id='run'><span id='r'>RUN</span></div>
-					<br>
-					<div id='service'><span id='svc'>SVC</span></div>
-				</div>
+			<div id="input-container">
+				<form class='form-container'>
+					<div class='form-container'>
+						<h3><span class="badge badge-secondary">Inputs:Binary+Analog</span></h3>
+						<div class="form-inline">
+							<label><span class="badge badge-secondary lab-d1d2d3">D1</span></label>
+							<select name='d1bi' class='select select-reset lab-d1d2d3' id='d1bi'>
+								{% for key, value in d1d2d3.items() %}
+									<option value="{{value}}">{{key}}</option>
+								{% endfor %}
+							</select>
+						</div>
+						<div class="form-inline">
+							<label><span class="badge badge-secondary lab-d1d2d3">D2</span></label>
+							<select name='d2bi' class='select select-reset lab-d1d2d3' id='d2bi'>
+								{% for key, value in d1d2d3.items() %}
+									<option value="{{value}}">{{key}}</option>
+								{% endfor %}
+							</select>
+						</div>
+						<div class="form-inline">
+							<label><span class="badge badge-secondary lab-d1d2d3">D3</span></label>
+							<select name='d3bi' class='select select-reset lab-d1d2d3' id='d3bi'>
+								{% for key, value in d1d2d3.items() %}
+									<option value="{{value}}">{{key}}</option>
+								{% endfor %}
+							</select>
+						</div>
+						<div class="form-inline">
+							<label><span class="badge badge-secondary" id='b1d1-badge'>D1</span></label>
+							<select name='b1d1bi' class='select select-reset' id='b1d1bi'>
+								{% for key, value in d1d2.items() %}
+									<option value="{{value}}">{{key}}</option>
+								{% endfor %}
+							</select>
+						</div>
+						<div class="form-inline">
+							<label><span class="badge badge-secondary" id='b2d2-badge'>D2</span></label>
+							<select name='b2d2bi' class='select select-reset' id='b2d2bi'>
+								{% for key, value in d1d2.items() %}
+									<option value="{{value}}">{{key}}</option>
+								{% endfor %}
+							</select>
+						</div>
+						<div class="form-inline">
+							<label><span class="badge badge-secondary">X1</span></label>
+							<select name='x1ai' class='select select-reset' id='x1ai'>
+								{% for key, value in x1x4.items() %}
+									<option value="{{value}}">{{key}}</option>
+								{% endfor %}
+							</select>
+						</div>
+						<div class="form-inline">
+							<label><span class="badge badge-secondary">X2</span></label>
+							<select name='x2ai' class='select select-reset' id='x2ai'>
+								{% for key, value in x1x4.items() %}
+									<option value="{{value}}">{{key}}</option>
+								{% endfor %}
+							</select>
+						</div>
+						<div class="form-inline">
+							<label><span class="badge badge-secondary x3x4-badge">X3</span></label>
+							<select name='x3ai' class='select select-reset' id='x3ai'>
+								{% for key, value in x1x4.items() %}
+									<option value="{{value}}">{{key}}</option>
+								{% endfor %}
+							</select>
+						</div>
+						<div class="form-inline">
+							<label><span class="badge badge-secondary x3x4-badge">X4</span></label>
+							<select name='x4ai' class='select select-reset' id='x4ai'>
+								{% for key, value in x1x4.items() %}
+									<option value="{{value}}">{{key}}</option>
+								{% endfor %}
+							</select>
+						</div>
+					</div>
+				</form>
+				<form class='' id='biForm'>
+					<!-- Step 16: Create a selection to choose items from the list that was passed from Flask to this rendered
+					template as arguments. 
+					- Note** All of the select tags are part of the 'select' class, but have their own unique IDs-->
+					<div class='form-container'>
+						<h3><span class="badge badge-secondary">Pressure</span></h3>
+						<div class="form-inline">
+							<label  class="p1-style"><span class="badge badge-secondary">P1</span></label>
+							<select name='p1pres' class="select select-reset" id='p1pres'>
+								{% for key, value in pressure.items() %}
+									<option value="{{value}}">{{key}}</option>
+								{% endfor %}
+							</select>
+						</div>
+						<div class="form-inline">
+							<label><span class="badge badge-secondary">SCOM</span></label>
+							<select name='scom1pres' class='select select-reset' id='scom1pres'>
+								{% for key, value in pressure.items() %}
+									<option value="{{value}}">{{key}}</option>
+								{% endfor %}
+							</select>
+						</div>
+						<div class="form-inline">
+							<label><span class="badge badge-secondary">SCOM</span></label>
+							<select name='scom2pres' class='select select-reset' id='scom2pres'>
+								{% for key, value in pressure.items() %}
+									<option value="{{value}}">{{key}}</option>
+								{% endfor %}
+							</select>
+						</div>
+						<div class="form-inline">
+							<label><span class="badge badge-secondary">SCOM</span></label>
+							<select name='scom3pres' class='select select-reset' id='scom3pres'>
+								{% for key, value in pressure.items() %}
+									<option value="{{value}}">{{key}}</option>
+								{% endfor %}
+							</select>
+						</div>
+						<div class="form-inline">
+							<label><span class="badge badge-secondary">SCOM</span></label>
+							<select name='scom4pres' class='select select-reset' id='scom4pres'>
+								{% for key, value in pressure.items() %}
+									<option value="{{value}}">{{key}}</option>
+								{% endfor %}
+							</select>
+						</div>
+					</div>
+				</form>
 			</div>
-			<div id='bottom-space'></div>
-			<div id="bottomrail">
-				<div class="terminal y30y40-container" id='y40'>
-			     	<div class="screwterminal">&nbsp;</div>
-			     	<p><span class="bottom-terminal-text">Y40</span></p>
-			     </div>
-			     <div class="terminal y30y40-container" id='bottomground2'>
-			     	<div class="screwterminal">&nbsp;</div>
-			     	<p><span class="bottom-terminal-text">24-</span></p>
-			     </div>
-			     <div class="terminal y30y40-container" id='bottompower2'>
-			     	<div class="screwterminal">&nbsp;</div>
-			     	<p><span class="bottom-terminal-text">24+</span></p>
-			     </div>
-			     <div class="terminal y30y40-container" id='y30'>
-			     	<div class="screwterminal">&nbsp;</div>
-			     	<p><span class="bottom-terminal-text">Y30</span></p>
-			     </div>
-			     <div class="terminal" id='y20'>
-			     	<div class="screwterminal">&nbsp;</div>
-			     	<p><span class="bottom-terminal-text">Y20</span></p>
-			     </div>
-			     <div class="terminal" id='bottomground'>
-			     	<div class="screwterminal">&nbsp;</div>
-			     	<p><span class="bottom-terminal-text">24-</span></p>
-			     </div>
-			     <div class="terminal" id='toppower'>
-			     	<div class="screwterminal">&nbsp;</div>
-			     	<p><span class="bottom-terminal-text">24+</span></p>
-			     </div>
-			     <div class="terminal" id='y10'>
-			     	<div class="screwterminal">&nbsp;</div>
-			     	<p><span class="bottom-terminal-text">Y10</span></p>
-			     </div>
-			     <div class="blank">
-			     </div>
-			     <div class="terminal" id='y8'>
-			     	<div class="screwterminal">&nbsp;</div>
-			     	<p><span class="bottom-terminal-text">Y8</span></p>
-			     </div>
-			     <div class="terminal" id='y7'>
-			     	<div class="screwterminal">&nbsp;</div>
-			     	<p><span class="bottom-terminal-text">Y7</span></p>
-			     </div>
-			     <div class="terminal" id='y6'>
-			     	<div class="screwterminal">&nbsp;</div>
-			     	<p><span class="bottom-terminal-text">Y6</span></p>
-			     </div>
-			     <div class="terminal" id='y5'>
-			     	<div class="screwterminal">&nbsp;</div>
-			     	<p><span class="bottom-terminal-text">Y5</span></p>
-			     </div>
-			     <div class="terminal" id='y4'>
-			     	<div class="screwterminal">&nbsp;</div>
-			     	<p><span class="bottom-terminal-text">Y4</span></p>
-			     </div>
-			     <div class="terminal" id='y3'>
-			     	<div class="screwterminal">&nbsp;</div>
-			     	<p><span class="bottom-terminal-text">Y3</span></p>
-			     </div>
-			     <div class="terminal" id='y2'>
-			     	<div class="screwterminal">&nbsp;</div>
-			     	<p><span class="bottom-terminal-text">Y2</span></p>
-			     </div>
-			     <div class="terminal" id='y1'>
-			     	<div class="screwterminal">&nbsp;</div>
-			     	<p><span class="bottom-terminal-text">Y1</span></p>
-			     </div>
-			     <div id='scom-container'>
-					<div class="mstp-terminal" id='shield485'>
-			     		<div class="screwterminal">&nbsp;</div>
-			     		<p><span class="top-terminal-text">S</span></p>
-			     	</div>
-			     	<div class="mstp-terminal" id='rx485'>
-			     		<div class="screwterminal">&nbsp;</div>
-			     		<p><span class="top-terminal-text">-</span></p>
-			     	</div>
-			     	<div class="mstp-terminal" id='tx485'>
-			     		<div class="screwterminal">&nbsp;</div>
-			     		<p><span class="top-terminal-text">+</span></p>
-			     	</div>
-				</div>
-			     <div id='P1-container'>
-					<div class="outer" id="p1hi">
-				         <div class="inner">&nbsp;</div>
-				     </div>
-					<div class="outer" id="p1lo">
-				         <div class="inner">&nbsp;</div>
-				     </div>
-			     </div>
-			     <div id='blank-container'></div>
-			     <div class="main-terminal" id='mainground'>
-			     	<div class="screwterminal">&nbsp;</div>
-			     	<p><span class="bottom-terminal-text">24-</span></p>
-			     </div>
-			     <div class="main-terminal" id='mainpower'>
-			     	<div class="screwterminal">&nbsp;</div>
-			     	<p><span class="bottom-terminal-text">24+</span></p>
-			     </div>
+		</div>
+			<div id='knx-container'>
+				<form class='knx-form-container' id='knxForm'>
+					<h3><span class="badge badge-secondary">KNX PL-Link</span></h3>
+					<!-- Step 16: Create a selection to choose items from the list that was passed from Flask to this rendered
+					template as arguments. 
+					- Note** All of the select tags are part of the 'select' class, but have their own unique IDs-->
+					<div class='knx-form-container'>
+						<div id='knx-list-1'>
+							{% for item in range(1,11) %}
+							<div class="form-inline">
+								<label><span class="badge badge-secondary select-badge">KNX-{{item}}</span></label>
+								<select name='knx-{{item}}' class='select selection-knx' id='knx-{{item}}'>
+									{% for key, value in knx.items() %}
+										<option value="{{value}}">{{key}}</option>
+									{% endfor %}
+								</select>
+							</div>
+							{% endfor %}
+						</div>
+						<div id='knx-list-2'>
+							{% for item in range(11,21) %}
+							<div class="form-inline">
+								<label><span class="badge badge-secondary select-badge">KNX-{{item}}</span></label>
+								<select name='knx-{{item}}' class='select selection-knx' id='knx-{{item}}'>
+									{% for key, value in knx.items() %}
+										<option value="{{value}}">{{key}}</option>
+									{% endfor %}
+								</select>
+							</div>
+							{% endfor %}
+						</div>
+					</div>
+				</form>
 			</div>
-	     </div>
-	     <br>
 	</div>
+	<div>
+	</div>	
 	<br>
-	<div class='row'>
-		<div class='col-lg-10 knx-rail clearfix'>
-			<div class='knx-slot' id="knx-slot-1"><span class='knx-add'>KNX-1</span>
-				<div class='knx-terminal' id='knx-term-1'></div>
-			</div>
-			<div class='knx-slot' id="knx-slot-2"><span class='knx-add'>KNX-2</span>
-				<div class='knx-terminal' id='knx-term-2'></div>
-			</div>
-			<div class='knx-slot' id="knx-slot-3"><span class='knx-add'>KNX-3</span>
-				<div class='knx-terminal' id='knx-term-3'></div>
-			</div>
-			<div class='knx-slot' id="knx-slot-4"><span class='knx-add'>KNX-4</span>
-				<div class='knx-terminal' id='knx-term-4'></div>
-			</div>
-			<div class='knx-slot' id="knx-slot-5"><span class='knx-add'>KNX-5</span>
-				<div class='knx-terminal' id='knx-term-5'></div>
-			</div>
-			<div class='knx-slot' id="knx-slot-6"><span class='knx-add'>KNX-6</span>
-				<div class='knx-terminal' id='knx-term-6'></div>
-			</div>
-			<div class='knx-slot' id="knx-slot-7"><span class='knx-add'>KNX-7</span>
-				<div class='knx-terminal' id='knx-term-7'></div>
-			</div>
-			<div class='knx-slot' id="knx-slot-8"><span class='knx-add'>KNX-8</span>
-				<div class='knx-terminal' id='knx-term-8'></div>
-			</div>
-			<div class='knx-slot' id="knx-slot-9"><span class='knx-add'>KNX-9</span>
-				<div class='knx-terminal' id='knx-term-9'></div>
-			</div>
-			<div class='knx-slot' id="knx-slot-10"><span class='knx-add'>KNX-10</span>
-				<div class='knx-terminal' id='knx-term-10'></div>
-			</div>
-			<div class='knx-slot' id="knx-slot-11"><span class='knx-add'>KNX-11</span>
-				<div class='knx-terminal' id='knx-term-11'></div>
-			</div>
-			<div class='knx-slot' id="knx-slot-12"><span class='knx-add'>KNX-12</span>
-				<div class='knx-terminal' id='knx-term-12'></div>
-			</div>
-			<div class='knx-slot' id="knx-slot-13"><span class='knx-add'>KNX-13</span>
-				<div class='knx-terminal' id='knx-term-13'></div>
-			</div>
-			<div class='knx-slot' id="knx-slot-14"><span class='knx-add'>KNX-14</span>
-				<div class='knx-terminal' id='knx-term-14'></div>
-			</div>
-			<div class='knx-slot' id="knx-slot-15"><span class='knx-add'>KNX-15</span>
-				<div class='knx-terminal' id='knx-term-15'></div>
-			</div>
-			<div class='knx-slot' id="knx-slot-16"><span class='knx-add'>KNX-16</span>
-				<div class='knx-terminal' id='knx-term-16'></div>
-			</div>
-			<div class='knx-slot' id="knx-slot-17"><span class='knx-add'>KNX-17</span>
-				<div class='knx-terminal' id='knx-term-17'></div>
-			</div>
-			<div class='knx-slot' id="knx-slot-18"><span class='knx-add'>KNX-18</span>
-				<div class='knx-terminal' id='knx-term-18'></div>
-			</div>
-			<div class='knx-slot' id="knx-slot-19"><span class='knx-add'>KNX-19</span>
-				<div class='knx-terminal' id='knx-term-19'></div>
-			</div>
-			<div class='knx-slot' id="knx-slot-20"><span class='knx-add'>KNX-20</span>
-				<div class='knx-terminal' id='knx-term-20'></div>
-		</div>
-		<!-- <div class='col-lg-2'></div> -->
+</div>
+<br><br>
+<div id='sequence-container'>
+	<h3><span class="badge badge-secondary sequence-start">Sequence Of Operation</span></h3>
+
+	<!-- General Functionality -->
+	<!-- General Functionality -->
+	<!-- General Functionality -->
+	<!-- General Functionality -->
+	<!-- General Functionality -->
+	<!-- General Functionality -->
+	<!-- General Functionality -->
+	<!-- General Functionality -->
+	<!-- General Functionality -->
+	<!-- General Functionality -->
+	<!-- General Functionality -->
+	<!-- General Functionality -->
+	<!-- General Functionality -->
+	<!-- General Functionality -->
+	<!-- General Functionality -->
+	<!-- General Functionality -->
+	<!-- General Functionality -->
+
+	<h5><span class="badge badge-secondary">General Functionality</span></h5>
+	<h6>Operation</h6>
+	<p class="seq-font">The Siemens DXR controller operation is broken down into two roles:</p>
+	<ol>
+		<li class="seq-font"><span style="font-weight: bold">Room Operating Mode:</span> Based on schedule and central commands.</li>
+		<li class="seq-font"><span style="font-weight: bold">Plant Operating Mode:</span> Based on Room Operating Mode and input conditions such as presence detectors and window contacts.</li>
+	</ol>
+
+	<!-- Heating/Cooling -->
+
+	<div class="htcl" style="display:none">
+		<h6>Temperature Control</h6>
+		<p class="seq-font">The terminal unit will have the following adjustable Heating/Cooling setpoints:</p>
+		<ul>
+			<li class="seq-font" id="occ-cool" style="display:none">Occupied Cooling: 74°F</li>
+			<li class="seq-font" id="occ-heat" style="display:none">Occupied Heating: 70°F</li>
+			<li class="seq-font" id="standby-cool" style="display:none">Standby Cooling: 76°F</li>
+			<li class="seq-font" id="standby-heat" style="display:none">Standby Heating: 68°F</li>
+			<li class="seq-font" id="unocc-cool" style="display:none">Unoccupied Cooling: 85°F</li>
+			<li class="seq-font" id="unocc-heat" style="display:none">Unoccupied Heating: 58°F</li>
+		</ul>
+		<p class="seq-font cool-mode heat-mode" style="display:none">The terminal unit will control temperature by executing the following sequence:</p>
+		<ul>
+			<li class="seq-font cool-mode" id="cool-mode" style="display:none">If the room temperature rises above the cooling setpoint by 2°F (adjustable) for 10 minutes(adjustable), the terminal unit will enter cooling mode and engage the cooling PID controller. Upon initialization, the airflow setpoint will be set to the minimum cooling cfm. The PID controller will engage the following actuators (if present) in the following order: 1. Radiant Floor/Ceiling 2. Chilled Water. If these actuators are fully open and fail to bring the room temperature down to setpoint, the airflow setpoint will be set to the maximum cooling cfm. As the temperature begins to fall, the airflow setpoint will revert to minimum cooling cfm and cooling actuators will close before finally disengaging the cooling PID controller.</li>
+			<li class="seq-font heat-mode" id="heat-mode" style="display:none">If the room temperature falls below the heating setpoint by 2°F (adjustable) for 10 minutes(adjustable), the terminal unit will enter heating mode and engage the heating PID controller. Upon initialization, the airflow setpoint will be set to the minimum heating cfm. The PID controller will engage the following actuators (if present) in the following order: 1. Radiator Fin-Tube 2. Radiant Floor/Ceiling 3. Heating Hot Water to maintain a discharge air temperature of 95°F. If these actuators fail to bring the room temperature up to setpoint, the airflow setpoint will be set to the maximum heating cfm. As the temperature begins to rise, the airflow setpoint will revert to minimum heating cfm and heating actuators will close before finally disengaging the heating PID controller.</li>
+		</ul>
 	</div>
-	<br>
-	<div class='row'>
-     	<!-- Step 15: Create a form container to hold our selection objects -->
-		<!-- <form>
-			<h4 id='show'>Click to show dropdowns</h4>
-			<h4 id='hide'>Click to hide dropdowns</h4>
-		</form> -->
-		<div id="output-container">
-			<form class='form-container' id='myForm'>
-				<!-- Step 16: Create a selection to choose items from the list that was passed from Flask to this rendered
-				template as arguments. 
-				- Note** All of the select tags are part of the 'select' class, but have their own unique IDs-->
-				<div class='form-container'>
-					<h3><span class="badge badge-secondary">AO:3ptFloating</span></h3>
-					<div class="form-inline">
-						<label><span class="badge badge-secondary">Y1,Y2</span></label>
-						<select name='y1y2-3pt' class='select' id='y1y2-3pt'>
-							{% for key, value in threepts.items() %}
-								<option value="{{value}}">{{key}}</option>
-							{% endfor %}
-						</select>
-					</div>
-					<div class="form-inline">
-						<label><span class="badge badge-secondary">Y3,Y4</span></label>
-						<select name='y3y4-3pt' class='select' id='y3y4-3pt'>
-							{% for key, value in threepts.items() %}
-								<option value="{{value}}">{{key}}</option>
-							{% endfor %}
-						</select>
-					</div>
-					<div class="form-inline">
-						<label><span class="badge badge-secondary">Y5,Y6</span></label>
-						<select name='y5y6-3pt' class='select' id='y5y6-3pt'>
-							{% for key, value in threepts.items() %}
-								<option value="{{value}}">{{key}}</option>
-							{% endfor %}
-						</select>
-					</div>
-					<div class="form-inline">
-						<label><span class="badge badge-secondary">Y7,Y8</span></label>
-						<select name='y7y8-3pt' class='select' id='y7y8-3pt'>
-							{% for key, value in threepts.items() %}
-								<option value="{{value}}">{{key}}</option>
-							{% endfor %}
-						</select>
-					</div>
-				</div>
-			</form>
-			<form class='' id='zeroTenForm'>
-				<!-- Step 16: Create a selection to choose items from the list that was passed from Flask to this rendered
-				template as arguments. 
-				- Note** All of the select tags are part of the 'select' class, but have their own unique IDs-->
-				<div class='form-container'>
-					<h3><span class="badge badge-secondary">AO:0-10V</span></h3>
-					<div class="form-inline">
-						<label><span class="badge badge-secondary">Y10</span></label>
-						<select name='y10' class='select' id='y10'>
-							{% for key, value in zten1030.items() %}
-								<option value="{{value}}">{{key}}</option>
-							{% endfor %}
-						</select>
-					</div>
-					<div class="form-inline">
-						<label><span class="badge badge-secondary">Y20</span></label>
-						<select name='y20' class='select' id='y20'>
-							{% for key, value in zten2040.items() %}
-								<option value="{{value}}">{{key}}</option>
-							{% endfor %}
-						</select>
-					</div>
-					<div class="form-inline">
-						<label><span class="badge badge-secondary">Y30</span></label>
-						<select name='y30' class='select' id='y30'>
-							{% for key, value in zten1030.items() %}
-								<option value="{{value}}">{{key}}</option>
-							{% endfor %}
-						</select>
-					</div>
-					<div class="form-inline">
-						<label><span class="badge badge-secondary">Y40</span></label>
-						<select name='y40' class='select' id='y40'>
-							{% for key, value in zten2040.items() %}
-								<option value="{{value}}">{{key}}</option>
-							{% endfor %}
-						</select>
-					</div>
-				</div>
-			</form>
-			<form class='form-container' id='boForm'>
-				<!-- Step 16: Create a selection to choose items from the list that was passed from Flask to this rendered
-				template as arguments. 
-				- Note** All of the select tags are part of the 'select' class, but have their own unique IDs-->
-				<div class='form-container'>
-					<h3><span class="badge badge-secondary">BO:24Volt</span></h3>
-					<div class="form-inline">
-						<label><span class="badge badge-secondary">Y1</span></label>
-						<select name='y1bo' class='select' id='y1bo'>
-							{% for key, value in binaryout.items() %}
-								<option value="{{value}}">{{key}}</option>
-							{% endfor %}
-						</select>
-					</div>
-					<div class="form-inline">
-						<label><span class="badge badge-secondary">Y2</span></label>
-						<select name='y2bo' class='select' id='y2bo'>
-							{% for key, value in binaryout.items() %}
-								<option value="{{value}}">{{key}}</option>
-							{% endfor %}
-						</select>
-					</div>
-					<div class="form-inline">
-						<label><span class="badge badge-secondary">Y3</span></label>
-						<select name='y3bo' class='select' id='y3bo'>
-							{% for key, value in binaryout.items() %}
-								<option value="{{value}}">{{key}}</option>
-							{% endfor %}
-						</select>
-					</div>
-					<div class="form-inline">
-						<label><span class="badge badge-secondary">Y4</span></label>
-						<select name='y4bo' class='select' id='y4bo'>
-							{% for key, value in binaryout.items() %}
-								<option value="{{value}}">{{key}}</option>
-							{% endfor %}
-						</select>
-					</div>
-					<div class="form-inline">
-						<label><span class="badge badge-secondary">Y5</span></label>
-						<select name='y5bo' class='select' id='y5bo'>
-							{% for key, value in binaryout.items() %}
-								<option value="{{value}}">{{key}}</option>
-							{% endfor %}
-						</select>
-					</div>
-					<div class="form-inline">
-						<label><span class="badge badge-secondary">Y6</span></label>
-						<select name='y6bo' class='select' id='y6bo'>
-							{% for key, value in binaryout.items() %}
-								<option value="{{value}}">{{key}}</option>
-							{% endfor %}
-						</select>
-					</div>
-					<div class="form-inline">
-						<label><span class="badge badge-secondary">Y7</span></label>
-						<select name='y7bo' class='select' id='y7bo'>
-							{% for key, value in binaryout.items() %}
-								<option value="{{value}}">{{key}}</option>
-							{% endfor %}
-						</select>
-					</div>
-					<div class="form-inline">
-						<label><span class="badge badge-secondary">Y8</span></label>
-						<select name='y8bo' class='select' id='y8bo'>
-							{% for key, value in binaryout.items() %}
-								<option value="{{value}}">{{key}}</option>
-							{% endfor %}
-						</select>
-					</div>
-				</div>
-			</form>
-		</div>
-		<div id="input-container">
-			<form class='form-container'>
-				<div class='form-container'>
-					<h3><span class="badge badge-secondary">AI:V+Ohm+mA</span></h3>
-					<div class="form-inline">
-						<label><span class="badge badge-secondary">X1</span></label>
-						<select name='x1ai' class='select' id='x1ai'>
-							{% for key, value in analogin.items() %}
-								<option value="{{value}}">{{key}}</option>
-							{% endfor %}
-						</select>
-					</div>
-					<div class="form-inline">
-						<label><span class="badge badge-secondary">X2</span></label>
-						<select name='x2ai' class='select' id='x2ai'>
-							{% for key, value in analogin.items() %}
-								<option value="{{value}}">{{key}}</option>
-							{% endfor %}
-						</select>
-					</div>
-					<div class="form-inline">
-						<label><span class="badge badge-secondary">X3</span></label>
-						<select name='x3ai' class='select' id='x3ai'>
-							{% for key, value in analogin.items() %}
-								<option value="{{value}}">{{key}}</option>
-							{% endfor %}
-						</select>
-					</div>
-					<div class="form-inline">
-						<label><span class="badge badge-secondary">X4</span></label>
-						<select name='x4ai' class='select' id='x4ai'>
-							{% for key, value in analogin.items() %}
-								<option value="{{value}}">{{key}}</option>
-							{% endfor %}
-						</select>
-					</div>
-				</div>
-			</form>
-			<form class='' id='biForm'>
-				<!-- Step 16: Create a selection to choose items from the list that was passed from Flask to this rendered
-				template as arguments. 
-				- Note** All of the select tags are part of the 'select' class, but have their own unique IDs-->
-				<div class='form-container'>
-					<h3><span class="badge badge-secondary">BI:Dry Contact</span></h3>
-					<div class="form-inline">
-						<label><span class="badge badge-secondary">D1</span></label>
-						<select name='d1bi' class='select' id='d1bi'>
-							{% for key, value in binaryin.items() %}
-								<option value="{{value}}">{{key}}</option>
-							{% endfor %}
-						</select>
-					</div>
-					<div class="form-inline">
-						<label><span class="badge badge-secondary">D2</span></label>
-						<select name='d2bi' class='select' id='d2bi'>
-							{% for key, value in binaryin.items() %}
-								<option value="{{value}}">{{key}}</option>
-							{% endfor %}
-						</select>
-					</div>
-					<div class="form-inline">
-						<label><span class="badge badge-secondary">X1</span></label>
-						<select name='x1bi' class='select' id='x1bi'>
-							{% for key, value in binaryin.items() %}
-								<option value="{{value}}">{{key}}</option>
-							{% endfor %}
-						</select>
-					</div>
-					<div class="form-inline">
-						<label><span class="badge badge-secondary">X2</span></label>
-						<select name='x2bi' class='select' id='x2bi'>
-							{% for key, value in binaryin.items() %}
-								<option value="{{value}}">{{key}}</option>
-							{% endfor %}
-						</select>
-					</div>
-					<div class="form-inline">
-						<label><span class="badge badge-secondary">X3</span></label>
-						<select name='x3bi' class='select' id='x3bi'>
-							{% for key, value in binaryin.items() %}
-								<option value="{{value}}">{{key}}</option>
-							{% endfor %}
-						</select>
-					</div>
-					<div class="form-inline">
-						<label><span class="badge badge-secondary">X4</span></label>
-						<select name='x4bi' class='select' id='x4bi'>
-							{% for key, value in binaryin.items() %}
-								<option value="{{value}}">{{key}}</option>
-							{% endfor %}
-						</select>
-					</div>
-				</div>
-			</form>
-			<form class='' id='biForm'>
-				<!-- Step 16: Create a selection to choose items from the list that was passed from Flask to this rendered
-				template as arguments. 
-				- Note** All of the select tags are part of the 'select' class, but have their own unique IDs-->
-				<div class='form-container'>
-					<h3><span class="badge badge-secondary">Pressure</span></h3>
-					<div class="form-inline">
-						<label><span class="badge badge-secondary">P1</span></label>
-						<select name='p1pres' class='select' id='p1pres'>
-							{% for key, value in pressure.items() %}
-								<option value="{{value}}">{{key}}</option>
-							{% endfor %}
-						</select>
-					</div>
-					<div class="form-inline">
-						<label><span class="badge badge-secondary">SCOM</span></label>
-						<select name='scom1pres' class='select' id='scom1pres'>
-							{% for key, value in pressure.items() %}
-								<option value="{{value}}">{{key}}</option>
-							{% endfor %}
-						</select>
-					</div>
-					<div class="form-inline">
-						<label><span class="badge badge-secondary">SCOM</span></label>
-						<select name='scom2pres' class='select' id='scom2pres'>
-							{% for key, value in pressure.items() %}
-								<option value="{{value}}">{{key}}</option>
-							{% endfor %}
-						</select>
-					</div>
-					<div class="form-inline">
-						<label><span class="badge badge-secondary">SCOM</span></label>
-						<select name='scom3pres' class='select' id='scom3pres'>
-							{% for key, value in pressure.items() %}
-								<option value="{{value}}">{{key}}</option>
-							{% endfor %}
-						</select>
-					</div>
-					<div class="form-inline">
-						<label><span class="badge badge-secondary">SCOM</span></label>
-						<select name='scom4pres' class='select' id='scom4pres'>
-							{% for key, value in pressure.items() %}
-								<option value="{{value}}">{{key}}</option>
-							{% endfor %}
-						</select>
-					</div>
-				</div>
-			</form>
-		</div>
-		<form class='form-container' id='knxForm'>
-			<!-- Step 16: Create a selection to choose items from the list that was passed from Flask to this rendered
-			template as arguments. 
-			- Note** All of the select tags are part of the 'select' class, but have their own unique IDs-->
-			<div class='form-container'>
-				<h3><span class="badge badge-secondary">KNX PL-Link</span></h3>
-				<div class="form-inline">
-					<label><span class="badge badge-secondary">KNX-1</span></label>
-					<select name='knx-1' class='select' id='knx-1'>
-						{% for key, value in knx.items() %}
-							<option value="{{value}}">{{key}}</option>
-						{% endfor %}
-					</select>
-				</div>
-				<div class="form-inline">
-					<label><span class="badge badge-secondary">KNX-2</span></label>
-					<select name='knx-2' class='select' id='knx-2'>
-						{% for key, value in knx.items() %}
-							<option value="{{value}}">{{key}}</option>
-						{% endfor %}
-					</select>
-				</div>
-				<div class="form-inline">
-					<label><span class="badge badge-secondary">KNX-3</span></label>
-					<select name='knx-3' class='select' id='knx-3'>
-						{% for key, value in knx.items() %}
-							<option value="{{value}}">{{key}}</option>
-						{% endfor %}
-					</select>
-				</div>
-				<div class="form-inline">
-					<label><span class="badge badge-secondary">KNX-4</span></label>
-					<select name='knx-4' class='select' id='knx-4'>
-						{% for key, value in knx.items() %}
-							<option value="{{value}}">{{key}}</option>
-						{% endfor %}
-					</select>
-				</div>
-				<div class="form-inline">
-					<label><span class="badge badge-secondary">KNX-5</span></label>
-					<select name='knx-5' class='select' id='knx-5'>
-						{% for key, value in knx.items() %}
-							<option value="{{value}}">{{key}}</option>
-						{% endfor %}
-					</select>
-				</div>
-				<div class="form-inline">
-					<label><span class="badge badge-secondary">KNX-6</span></label>
-					<select name='knx-6' class='select' id='knx-6'>
-						{% for key, value in knx.items() %}
-							<option value="{{value}}">{{key}}</option>
-						{% endfor %}
-					</select>
-				</div>
-				<div class="form-inline">
-					<label><span class="badge badge-secondary">KNX-7</span></label>
-					<select name='knx-7' class='select' id='knx-7'>
-						{% for key, value in knx.items() %}
-							<option value="{{value}}">{{key}}</option>
-						{% endfor %}
-					</select>
-				</div>
-				<div class="form-inline">
-					<label><span class="badge badge-secondary">KNX-8</span></label>
-					<select name='knx-8' class='select' id='knx-8'>
-						{% for key, value in knx.items() %}
-							<option value="{{value}}">{{key}}</option>
-						{% endfor %}
-					</select>
-				</div>
-				<div class="form-inline">
-					<label><span class="badge badge-secondary">KNX-9</span></label>
-					<select name='knx-9' class='select' id='knx-9'>
-						{% for key, value in knx.items() %}
-							<option value="{{value}}">{{key}}</option>
-						{% endfor %}
-					</select>
-				</div>
-				<div class="form-inline">
-					<label><span class="badge badge-secondary">KNX-10</span></label>
-					<select name='knx-10' class='select' id='knx-10'>
-						{% for key, value in knx.items() %}
-							<option value="{{value}}">{{key}}</option>
-						{% endfor %}
-					</select>
-				</div>
-				<div class="form-inline">
-					<label><span class="badge badge-secondary">KNX-11</span></label>
-					<select name='knx-11' class='select' id='knx-11'>
-						{% for key, value in knx.items() %}
-							<option value="{{value}}">{{key}}</option>
-						{% endfor %}
-					</select>
-				</div>
-				<div class="form-inline">
-					<label><span class="badge badge-secondary">KNX-12</span></label>
-					<select name='knx-12' class='select' id='knx-12'>
-						{% for key, value in knx.items() %}
-							<option value="{{value}}">{{key}}</option>
-						{% endfor %}
-					</select>
-				</div>
-				<div class="form-inline">
-					<label><span class="badge badge-secondary">KNX-13</span></label>
-					<select name='knx-13' class='select' id='knx-13'>
-						{% for key, value in knx.items() %}
-							<option value="{{value}}">{{key}}</option>
-						{% endfor %}
-					</select>
-				</div>
-				<div class="form-inline">
-					<label><span class="badge badge-secondary">KNX-14</span></label>
-					<select name='knx-14' class='select' id='knx-14'>
-						{% for key, value in knx.items() %}
-							<option value="{{value}}">{{key}}</option>
-						{% endfor %}
-					</select>
-				</div>
-				<div class="form-inline">
-					<label><span class="badge badge-secondary">KNX-15</span></label>
-					<select name='knx-15' class='select' id='knx-15'>
-						{% for key, value in knx.items() %}
-							<option value="{{value}}">{{key}}</option>
-						{% endfor %}
-					</select>
-				</div>
-				<div class="form-inline">
-					<label><span class="badge badge-secondary">KNX-16</span></label>
-					<select name='knx-16' class='select' id='knx-16'>
-						{% for key, value in knx.items() %}
-							<option value="{{value}}">{{key}}</option>
-						{% endfor %}
-					</select>
-				</div>
-				<div class="form-inline">
-					<label><span class="badge badge-secondary">KNX-17</span></label>
-					<select name='knx-17' class='select' id='knx-17'>
-						{% for key, value in knx.items() %}
-							<option value="{{value}}">{{key}}</option>
-						{% endfor %}
-					</select>
-				</div>
-				<div class="form-inline">
-					<label><span class="badge badge-secondary">KNX-18</span></label>
-					<select name='knx-18' class='select' id='knx-18'>
-						{% for key, value in knx.items() %}
-							<option value="{{value}}">{{key}}</option>
-						{% endfor %}
-					</select>
-				</div>
-				<div class="form-inline">
-					<label><span class="badge badge-secondary">KNX-19</span></label>
-					<select name='knx-19' class='select' id='knx-19'>
-						{% for key, value in knx.items() %}
-							<option value="{{value}}">{{key}}</option>
-						{% endfor %}
-					</select>
-				</div>
-				<div class="form-inline">
-					<label><span class="badge badge-secondary">KNX-20</span></label>
-					<select name='knx-20' class='select' id='knx-20'>
-						{% for key, value in knx.items() %}
-							<option value="{{value}}">{{key}}</option>
-						{% endfor %}
-					</select>
-				</div>
-			</div>
-		</form>
-		<form class='form-container' id='appForm'>
-			<!-- Step 16: Create a selection to choose items from the list that was passed from Flask to this rendered
-			template as arguments. 
-			- Note** All of the select tags are part of the 'select' class, but have their own unique IDs-->
-			<div class='form-container'>
-				<h3><span class="badge badge-secondary">App Functions</span></h3>
-				<div class="form-inline">
-					<label><span class="badge badge-secondary">Function 1</span></label>
-					<select name='func-1' class='select' id='func-1'>
-						{% for key, value in appfuncs.items() %}
-							<option value="{{value}}">{{key}}</option>
-						{% endfor %}
-					</select>
-				</div>
-				<div class="form-inline">
-					<label><span class="badge badge-secondary">Function 2</span></label>
-					<select name='func-2' class='select' id='func-2'>
-						{% for key, value in appfuncs.items() %}
-							<option value="{{value}}">{{key}}</option>
-						{% endfor %}
-					</select>
-				</div>
-				<div class="form-inline">
-					<label><span class="badge badge-secondary">Function 3</span></label>
-					<select name='func-3' class='select' id='func-3'>
-						{% for key, value in appfuncs.items() %}
-							<option value="{{value}}">{{key}}</option>
-						{% endfor %}
-					</select>
-				</div>
-				<div class="form-inline">
-					<label><span class="badge badge-secondary">Function 4</span></label>
-					<select name='func-4' class='select' id='func-4'>
-						{% for key, value in appfuncs.items() %}
-							<option value="{{value}}">{{key}}</option>
-						{% endfor %}
-					</select>
-				</div>
-				<div class="form-inline">
-					<label><span class="badge badge-secondary">Function 5</span></label>
-					<select name='func-5' class='select' id='func-5'>
-						{% for key, value in appfuncs.items() %}
-							<option value="{{value}}">{{key}}</option>
-						{% endfor %}
-					</select>
-				</div>
-			</div>
-		</form>
-     </div>
-	<br>
+
+	<!-- VAV Air Volume Flow Tracking -->
+
+	<div id="vav-tracking" style="display:none">
+		<h6>Air Volume Tracking</h6>
+		<p class="seq-font">When both supply and exhaust controls are present for the space, the equation for calculating volume differential offset (exhuast cfm setpoint - supply cfm setpoint) will be used. The terminal unit will maintain a differential cfm offset by executing the following sequence:</p>
+		<ul>
+			<li class="seq-font">In conditions were the room volume differential offset is negative, the supply airflow setpoint will track the exhuast airflow setpoint to prevent contaminates from exiting the space.</li>
+			<li class="seq-font">In conditions were the room volume differential offset is positive, the exhaust airflow setpoint will track the supply airflow setpoint to prevent contaminates from entering the space.</li>
+			<li class="seq-font">In conditions were the room volume differential offset is neutral, the exhaust airflow setpoint will track the supply airflow setpoint to prevent contaminates from entering or exiting the space.</li>
+		</ul>
+	</div>
+
+	<!-- Dehumidification -->
+
+	<div id="dehum" style="display:none">
+		<h6>Dehumidification</h6>
+		<p class="seq-font"=>The terminal unit will control humidity by executing the following sequence:</p>
+		<ul>
+			<li class="seq-font">If the room humidity rises above the humidity setpoint by 5% (adjustable) the terminal unit will enter dehumidification mode and engage the dehumidification PID controller. Upon initialization, the airflow setpoint will be set to the minimum cooling cfm. If this fails to bring the room humidity down to setpoint, the airflow setpoint will be set to the maximum cooling cfm. As the humidity begins to fall, the airflow setpoint will revert to minimum cooling cfm before finally disengaging the cooling PID controller.</li>
+			<li class="seq-font">A signal will be sent to the Air Handling Unit that dehumidification is needed in a particular zone.</li>
+			<li class="seq-font">In the event that the room temperature falls below the heating setpoint during dehumidification, heating-mode will be initiated simulataneously and executed according to the VAV Heating Sequence.</li>
+		</ul>
+	</div>
+
+	<!-- Rapid Ventilation -->
+
+	<div id="rapid-vent" style="display:none">
+		<h6>Rapid Ventilation</h6>
+		<p class="seq-font">The terminal unit will purge the space by executing the following sequence:</p>
+		<ul>
+			<li class="seq-font">Utilizing the room operator unit(thermostat) the occupant will be able to manually override the terminal unit to maintain the maximum ventilation air volume setpoint for a period of 15 minutes (adjustable).</li>
+		</ul>
+	</div>
+
+	<!-- Greenleaf -->
+
+	<div id="greenleaf" style="display:none">
+		<h6>Greenleaf</h6>
+		<p class="seq-font">The terminal unit will evaluate the energy efficiency of the room by analyzing the HVAC conditions of the space along with Lighting and Shading where applicable when utilizing Siemens Total Room Automation and execute the following sequence:</p>
+		<ul>
+			<li class="seq-font">Occupants will receive a notification on the room operator unit indicating whether the conditions in the room are energy conditions are energy efficient. If the conditions are not efficient, the occupant will have the option to revert the room back to an energy efficient state.</li>
+		</ul>
+	</div>
+
+	<!-- Central Functions -->
+	<!-- Central Functions -->
+	<!-- Central Functions -->
+	<!-- Central Functions -->
+	<!-- Central Functions -->
+	<!-- Central Functions -->
+	<!-- Central Functions -->
+	<!-- Central Functions -->
+	<!-- Central Functions -->
+	<!-- Central Functions -->
+	<!-- Central Functions -->
+	<!-- Central Functions -->
+	<!-- Central Functions -->
+	<!-- Central Functions -->
+
+	<!-- Static Reset -->
+
+	<div id="static-reset" style="display:none">
+		<h6>Static Pressure Reset</h6>
+		<p class="seq-font">Static Reset will be requested by the Central Controller by evaluating the following conditions from all terminal units served by a particular air handling unit every minute (adjustable):</p>
+		<ol>
+			<li class="seq-font">Damper Position is open more than 90% (adjustable).</li>
+			<li class="seq-font">Airflow deviation from setpoint exceeds 0% (adjustable).</li>
+			<li class="seq-font">The static pressure setpoint at the unit will increase by 0.1"wc (adjustable) every 5 minutes (adjustable) if 3 or more terminal units (adjustable) are requesting more pressure.</li>
+			<li class="seq-font">The static pressure setpoint at the unit will decrease by 0.1"wc (adjustable) every 5 minutes (adjustable) if all units (adjustable) are satisfied.</li>
+			<li class="seq-font">The terminal unit can be excluded from sending requests the the AHU through a manual command from the operator.</li>
+		</ol>
+	</div>
+
+	<!-- Temperature Reset -->
+
+	<div id="temp-reset" style="display:none">
+		<h6>Temperature Reset</h6>
+		<p class="seq-font">Temperature Reset will be requested by the Central Controller by evaluating the following conditions from all terminal units served by a particular air handling unit:</p>
+		<ol>
+			<li class="seq-font">The cooling demand percentage from all of the terminal units.</li>
+			<li class="seq-font">The heating demand percentage from all of the terminal units.</li>
+			<li class="seq-font">The highest 10 demands will be averaged by the Central Controller and will be used by the AHU to reset the discharge air temperature setpoint up and down.</li>
+			<li class="seq-font">The terminal unit can be excluded from sending requests the the AHU through a manual command from the operator.</li>
+		</ol>
+	</div>
+	
+
+	<!-- Operating Mode Specific Functionality -->
+	<!-- Operating Mode Specific Functionality -->
+	<!-- Operating Mode Specific Functionality -->
+	<!-- Operating Mode Specific Functionality -->
+	<!-- Operating Mode Specific Functionality -->
+	<!-- Operating Mode Specific Functionality -->
+	<!-- Operating Mode Specific Functionality -->
+	<!-- Operating Mode Specific Functionality -->
+	<!-- Operating Mode Specific Functionality -->
+	<!-- Operating Mode Specific Functionality -->
+	<!-- Operating Mode Specific Functionality -->
+	<!-- Operating Mode Specific Functionality -->
+	<!-- Operating Mode Specific Functionality -->
+	<!-- Operating Mode Specific Functionality -->
+	<!-- Operating Mode Specific Functionality -->
+	<!-- Operating Mode Specific Functionality -->
+	<!-- Operating Mode Specific Functionality -->
+	<!-- Operating Mode Specific Functionality -->
+	<!-- Operating Mode Specific Functionality -->
+	<!-- Operating Mode Specific Functionality -->
+
+	<h5><span class="badge badge-secondary">Operating Mode-Specific Functionality</span></h5>
+
+	<!-- Occupied -->
+
+	<div id="occupied-mode" style="display:none">
+		<h6>Comfort(Occupied) Mode</h6>
+		<ul>
+			<li class="seq-font">Triggers:</li>
+			<ol id="room-operation-list">
+				<li class="seq-font">User defined schedule.</li>
+				<li class="seq-font">Manual command from the central controller.</li>
+				<li class="seq-font temp-comfort-btn" style="display:none">Manual override via local room operator unit for 2 hours(adjustable).</li>
+				<li class="seq-font standby-mode" style="display:none">Automatic if a configured occupancy detector detects movement.</li>
+			</ol>
+			<li class="seq-font">Sequence</li>
+			<ol>
+				<li class="seq-font">Terminal unit will maintain the occupied temperature setpoints.</li>
+				<li class="seq-font" id="occ-ventilation-mode" style="display:none">If the room temperature is within the heating/cooling deadband and room CO2 levels are below the high-limit threshold, the terminal unit will maintain the occupied minimum ventilation airflow setpoint. If room CO2 levels rise above 1000ppm (adjustable), the terminal unit will engage the ventilation PID controller to increase airflow into the space to meet the occupied maximum ventilation airflow setpoint until room CO2 levels fall below 800ppm (adjustable), at which point, the ventilation PID controller will disengage. The ventilation PID controller takes precedence over both the heating and cooling PID controllers.</li>
+				<li class="seq-font" id="occ-ventilation-off" style="display:show">If the room temperature is within the heating/cooling deadband, the terminal unit will turn off.</li>
+			</ol>
+		</ul>
+	</div>
+
+	<!-- Pre-Comfort -->
+
+	<div class="standby-mode" id="standby-mode" style="display:none">
+		<h6>Pre-Comfort(Standby) Mode</h6>
+		<ul>
+			<li class="seq-font">Triggers:</li>
+			<ol>
+				<li class="seq-font">User defined schedule.</li>
+				<li class="seq-font">Manual command from the central controller.</li>
+				<li class="seq-font standby-mode" style="display:none">Automatic if a configured occupancy detector detects no movement for 10 minutes(adjustable).</li>
+			</ol>
+			<li class="seq-font">Sequence</li>
+			<ol>
+				<li class="seq-font">Terminal unit will maintain the standby temperature setpoints.</li>
+				<li class="seq-font" id="standby-ventilation-mode" style="display:none">If the room temperature is within the heating/cooling deadband and room CO2 levels are below the high-limit threshold, the terminal unit will maintain the standby minimum ventilation airflow setpoint. If room CO2 levels rise above 1100ppm (adjustable), the terminal unit will engage the ventilation PID controller to increase airflow into the space to meet the occupied maximum ventilation airflow setpoint until room CO2 levels fall below 800ppm (adjustable), at which point, the ventilation PID controller will disengage. The ventilation PID controller takes precedence over both the heating and cooling PID controllers.</li>
+				<li class="seq-font" id="standby-ventilation-off" style="display:show">If the room temperature is within the heating/cooling deadband, the terminal unit will turn off.</li>
+			</ol>
+		</ul>
+	</div>
+
+	<!-- Unoccupied -->
+
+	<div id="unoccupied-mode" style="display:none">
+		<h6>Economy(Unoccupied) Mode</h6>
+		<ul>
+			<li class="seq-font">Triggers:</li>
+			<ol>
+				<li class="seq-font">User defined schedule</li>
+				<li class="seq-font">Manual command from the central controller.</li>
+				<li class="seq-font temp-comfort-btn" style="display:none">Automatic upon expiration of manual override.</li>
+			</ol>
+			<li class="seq-font">Sequence</li>
+			<ol>
+				<li class="seq-font">Terminal unit will maintain the unoccupied temperature setpoints.</li>
+				<li class="seq-font unocc-ventilation-mode" style="display:none">If the room temperature is within the heating/cooling deadband and room CO2 levels are below the high-limit threshold, the terminal unit will maintain the unoccupied minimum ventilation airflow setpoint. If room CO2 levels rise above 1200ppm (adjustable), the terminal unit will engage the ventilation PID controller to increase airflow into the space to meet the occupied maximum ventilation airflow setpoint until room CO2 levels fall below 800ppm (adjustable), at which point, the ventilation PID controller will disengage. The ventilation PID controller takes precedence over both the heating and cooling PID controllers.</li>
+				<li class="seq-font unocc-ventilation-off" style="display:show">If the room temperature is within the heating/cooling deadband, the terminal unit will turn off.</li>
+			</ol>
+		</ul>
+	</div>
+
+	<!-- Warm-up -->
+
+	<div id="warmup-mode" style="display:none">
+		<h6>Morning Warm-Up Mode</h6>
+		<ul>
+			<li class="seq-font">Triggers:</li>
+			<ol>
+				<li class="seq-font">Manual command from the central controller during scheduled unoccupancy.</li>
+			</ol>
+			<li class="seq-font">Sequence</li>
+			<ol>
+				<li class="seq-font">Terminal unit will maintain the warmup temperature setpoints.</li>
+				<li class="seq-font unocc-ventilation-mode" style="display:none">If the room temperature is within the heating/cooling deadband and room CO2 levels are below the high-limit threshold, the terminal unit will maintain the occupied minimum ventilation airflow setpoint. If room CO2 levels rise above 1200ppm (adjustable), the terminal unit will engage the ventilation PID controller to increase airflow into the space to meet the occupied maximum ventilation airflow setpoint until room CO2 levels fall below 800ppm (adjustable), at which point, the ventilation PID controller will disengage. The ventilation PID controller takes precedence over both the heating and cooling PID controllers.</li>
+				<li class="seq-font unocc-ventilation-off" style="display:show">If the room temperature is within the heating/cooling deadband, the terminal unit will turn off.</li>
+			</ol>
+		</ul>
+	</div>
+
+	<!-- Cooldown -->
+
+	<div id="cooldown-mode" style="display:none">
+		<h6>Morning Cool-Down Mode</h6>
+		<ul>
+			<li class="seq-font">Triggers:</li>
+			<ol>
+				<li class="seq-font">Manual command from the central controller during scheduled unoccupancy.</li>
+			</ol>
+			<li class="seq-font">Sequence</li>
+			<ol>
+				<li class="seq-font">Terminal unit will maintain the cooldown temperature setpoints.</li>
+				<li class="seq-font unocc-ventilation-mode" style="display:none">If the room temperature is within the heating/cooling deadband and room CO2 levels are below the high-limit threshold, the terminal unit will maintain the occupied minimum ventilation airflow setpoint. If room CO2 levels rise above 1200ppm (adjustable), the terminal unit will engage the ventilation PID controller to increase airflow into the space to meet the occupied maximum ventilation airflow setpoint until room CO2 levels fall below 800ppm (adjustable), at which point, the ventilation PID controller will disengage. The ventilation PID controller takes precedence over both the heating and cooling PID controllers.</li>
+				<li class="seq-font unocc-ventilation-off" style="display:show">If the room temperature is within the heating/cooling deadband, the terminal unit will turn off.</li>
+			</ol>
+		</ul>
+	</div>
+
+	<!-- Night-Cooling -->
+
+	<div id="nightcool-mode" style="display:none">
+		<h6>Night Cooling Mode</h6>
+		<ul>
+			<li class="seq-font">Triggers:</li>
+			<ol>
+				<li class="seq-font">Manual command from the central controller during scheduled unoccupancy<span class="standby-mode" style="display:none"> and occupancy detector detects no movement for 10 minutes(adjustable)</span>.</li>
+			</ol>
+			<li class="seq-font">Sequence</li>
+			<ol>
+				<li class="seq-font">Terminal unit will maintain the occupied cooling setpoints.</li>
+				<li class="seq-font unocc-ventilation-mode" style="display:none">If the room temperature is within the heating/cooling deadband and room CO2 levels are below the high-limit threshold, the terminal unit will maintain the unoccupied minimum ventilation airflow setpoint. If room CO2 levels rise above 1200ppm (adjustable), the terminal unit will engage the ventilation PID controller to increase airflow into the space to meet the occupied maximum ventilation airflow setpoint until room CO2 levels fall below 800ppm (adjustable), at which point, the ventilation PID controller will disengage. The ventilation PID controller takes precedence over both the heating and cooling PID controllers.</li>
+				<li class="seq-font unocc-ventilation-off" style="display:show">If the room temperature is within the heating/cooling deadband, the terminal unit will turn off.</li>
+			</ol>
+		</ul>
+	</div>
 </div>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
