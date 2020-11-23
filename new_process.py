@@ -5,14 +5,11 @@
     - jsonify: converts arguments or keyword arguments into a dictionary
 """
 from flask import Flask, render_template, request, jsonify
-<<<<<<< HEAD
 from services.services import Services
-=======
 import pandas as pd
 
 product_dictionary = pd.read_excel('products.xlsx')
 
->>>>>>> 5919e10725e0fb01c2cf45f48af53bf49d2f665f
 # Step 2: Create an Instance of Flask. This will be your application
 app = Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
