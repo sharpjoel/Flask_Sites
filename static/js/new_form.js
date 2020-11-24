@@ -1470,8 +1470,7 @@ $(document).ready(function(){
 
 			var layout_show = [
 				type18,y1y2text,dxrrunsvc,usb,$('span#b2d2-badge'),$('select#b2d2bi'),$('span.x3x4-badge'),
-				$('select#x3ai'),$('select#x4ai'),$("select#y30"),$("select#y40"),
-				$("select#y1bo"),$("select#y2bo"),$("select#y20")]
+				$('select#x3ai'),$('select#x4ai'),$("select#y30"),$("select#y40"),$("select#y20")]
 				$('span#b1d1-badge').text('D1');
 				$('span#b2d2-badge').text('D2');
 			$(layout_hide).each(function(){
@@ -1538,8 +1537,7 @@ $(document).ready(function(){
 			var layout_show = [
 				type17,y1y2text,dxrrunsvc,usb,$('span.lab-d1d2d3'),$('select.lab-d1d2d3'),$('span#b2d2-badge'),$('select#b2d2bi'),
 				$('span.x3x4-badge'),$('select#x3ai'),$('select#x4ai'),$("select#scom1pres"),
-				$("select#scom2pres"),$("select#scom3pres"),$("select#scom4pres"),$("select#y30"),$("select#y40"),
-				$("select#y1bo"),$("select#y2bo"),$("select#y20")]
+				$("select#scom2pres"),$("select#scom3pres"),$("select#scom4pres"),$("select#y30"),$("select#y40"),$("select#y20")]
 
 			var layout_prop = [
 			$("select.y5y6-3pt"),$("select#y5bo"),$("select#y6bo"),$("select.y7y8-3pt"),
@@ -1606,8 +1604,7 @@ $(document).ready(function(){
 			type18,type17,$("select.y7y8-3pt"),$("select#y7bo"),$("select#y8bo"),$("select#y30"),$("select#y40"),
 			$("select#scom1pres"),$("select#scom2pres"),$("select#scom3pres"),$("select#scom4pres"),$('select.lab-d1d2d3'),
 			$('select#x3ai'),$('select#x4ai'),$('span.lab-d1d2d3'),$('span#b2d2-badge'),$('select#b2d2bi'),$('span.x3x4-badge')]
-			var layout_show = [$(type12),$(y1y2text),$("select#p1pres"),$(pressure),$(pressuretext),$(dxrrunsvc),$(usb),
-				$("select#y1bo"),$("select#y2bo"),$("select#y20")]
+			var layout_show = [$(type12),$(y1y2text),$("select#p1pres"),$(pressure),$(pressuretext),$(dxrrunsvc),$(usb),$("select#y20")]
 			var layout_prop = [$("select.y7y8-3pt"),$("select#y7bo"),$("select#y8bo"),$("select#y30"),$("select#y40")]
 			$('span#b1d1-badge').text('D1');
 			$('span#b2d2-badge').text('D2');
@@ -1696,7 +1693,7 @@ $(document).ready(function(){
 		$.ajax({
 	        type: 'POST',
 	        url: '/home',
-	        data: { pet:y1y2_str },
+	        data: { pet:str},
 	        dataType: 'json'
 	    });
 		$.ajax({
@@ -1713,11 +1710,12 @@ $(document).ready(function(){
 	    .done(function(data) {
 
 			if (data.error) {
-				$('#errorAlert').text(data.error).show();
-				$('#successAlert').hide();
+				// $('#errorAlert').text(data.error).show();
+				// $('#successAlert').hide();
 			}
 			else {
 				// $('#successAlert').text("Name: " + data.name).show();
+				console.log(data.name);
 				$('#errorAlert').hide();
 			}
 		});
