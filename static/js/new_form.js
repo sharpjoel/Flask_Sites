@@ -799,38 +799,64 @@ $(document).ready(function(){
 		*/
 		$( "select.y10 option:selected" ).each(function() {
 			y10_str += $( this ).val();
-			if(y10_str != 'X'){
-				$(y10).css({'fill':'green'});
-				$(m10y10).css({'fill':'green'});
-				$(m10y10common).css({'fill':'green'});
-			}else{
+			y10_str = y10_str.replace("X","");
+			if(y10_str.length == 0){
+				y10_str += 'X';
+			}
+			if(y10_str == 'X'){
 				$(y10).css({'fill':'#f5f5f5'});
 				$(m10y10).css({'fill':'#f5f5f5'});
 				$(m10y10common).css({'fill':'#f5f5f5'});
+			}else if(y10_str == 'S'){
+				$(y10).css({'fill':'#d534eb'});
+				$(m10y10).css({'fill':'#d534eb'});
+				$(m10y10common).css({'fill':'#d534eb'});
+			}else{
+				$(y10).css({'fill':'green'});
+				$(m10y10).css({'fill':'green'});
+				$(m10y10common).css({'fill':'green'});
 			};
 		});
 		$( "select.y20 option:selected" ).each(function() {
 			y20_str += $( this ).val();
-			if(y20_str != 'X'){
-				$(y20).css({'fill':'green'});
-			}else{
+			y20_str = y20_str.replace("X","");
+			if(y20_str.length == 0){
+				y20_str += 'X';
+			}
+			if(y20_str == 'X'){
 				$(y20).css({'fill':'#f5f5f5'});
+			}else if(y20_str == 'S'){
+				$(y20).css({'fill':'#d534eb'});
+			}else{
+				$(y20).css({'fill':'green'});
 			};
 		});
 		$( "select.y30 option:selected" ).each(function() {
 			y30_str += $( this ).val();
-			if(y30_str != 'X'){
-				$(y30).css({'fill':'green'});
-			}else{
+			y30_str = y30_str.replace("X","");
+			if(y30_str.length == 0){
+				y30_str += 'X';
+			}
+			if(y30_str == 'X'){
 				$(y30).css({'fill':'#f5f5f5'});
+			}else if(y30_str == 'S'){
+				$(y30).css({'fill':'#d534eb'});
+			}else{
+				$(y30).css({'fill':'green'});
 			};
 		});
 		$( "select.y40 option:selected" ).each(function() {
 			y40_str += $( this ).val();
-			if(y40_str != 'X'){
-				$(y40).css({'fill':'green'});
-			}else{
+			y40_str = y40_str.replace("X","");
+			if(y40_str.length == 0){
+				y40_str += 'X';
+			}
+			if(y40_str == 'X'){
 				$(y40).css({'fill':'#f5f5f5'});
+			}else if(y40_str == 'S'){
+				$(y40).css({'fill':'#d534eb'});
+			}else{
+				$(y40).css({'fill':'green'});
 			};
 		});
 
@@ -839,6 +865,9 @@ $(document).ready(function(){
 		if(y10_str == 'X' && y20_str == 'X'){
 			$(y10power).css({'fill':'#f5f5f5'});
 			$(y10common).css({'fill':'#f5f5f5'});
+		}else if(y10_str == 'S' || y20_str == 'S'){
+			$(y10power).css({'fill':'#d534eb'});
+			$(y10common).css({'fill':'#d534eb'});
 		}else{
 			$(y10power).css({'fill':'green'});
 			$(y10common).css({'fill':'green'});
@@ -846,6 +875,9 @@ $(document).ready(function(){
 		if(y30_str == 'X' && y40_str == 'X'){
 			$(y30power).css({'fill':'#f5f5f5'});
 			$(y30common).css({'fill':'#f5f5f5'});
+		}else if(y30_str == 'S' || y40_str == 'S'){
+			$(y30power).css({'fill':'#d534eb'});
+			$(y30common).css({'fill':'#d534eb'});
 		}else{
 			$(y30power).css({'fill':'green'});
 			$(y30common).css({'fill':'green'});
@@ -1574,6 +1606,8 @@ $(document).ready(function(){
 			}
 			$(m10pl).hide();
 		}
+
+
 		else if(type_str == 'A' || type_str == 'B'){
 			$(type18).hide()
 			$(type17).hide()
@@ -1599,17 +1633,30 @@ $(document).ready(function(){
 				$(this).show();
 			});
 		}
+
+
 		else{
 			$(dxrvoltageout).show();
 			$(dxrtopinputs).show();
+
 			var layout_hide = [
-			type18,type17,$("select.y7y8-3pt"),$("select#y7bo"),$("select#y8bo"),$("select.y30"),$("select.y40"),
-			$("select#scom1pres"),$("select#scom2pres"),$("select#scom3pres"),$("select#scom4pres"),$('select.lab-d1d2d3'),
-			$('select#x3ai'),$('select#x4ai'),$('span.lab-d1d2d3'),$('span#b2d2-badge'),$('select#b2d2bi'),$('span.x3x4-badge')]
-			var layout_show = [$(type12),$(y1y2text),$("select#p1pres"),$(pressure),$(pressuretext),$(dxrrunsvc),$(usb),$("select#vav-y20")]
-			var layout_prop = [$("select.y7y8-3pt"),$("select#y7bo"),$("select#y8bo"),$("select.y30"),$("select.y40")]
+			type18,type17,
+			$("select.y7y8-3pt"),$("select#y7bo"),$("select#y8bo"),
+			$("select.y30"),$("select.y40"),
+			$("select#scom1pres"),$("select#scom2pres"),$("select#scom3pres"),$("select#scom4pres"),
+			$('select.lab-d1d2d3'),$('span.lab-d1d2d3'),$('span#b2d2-badge'),$('select#b2d2bi'),
+			$('select#x3ai'),$('select#x4ai'),$('span.x3x4-badge')]
+			
+			var layout_show = [
+			$(type12),$(y1y2text),$(pressure),$(pressuretext),$(dxrrunsvc),$(usb),
+			$("select#p1pres"),$("select#vav-y20")]
+			
+			var layout_prop = [
+			$("select.y7y8-3pt"),$("select#y7bo"),$("select#y8bo"),
+			$("select.y30"),$("select.y40")]
 			$('span#b1d1-badge').text('D1');
 			$('span#b2d2-badge').text('D2');
+
 			$(layout_prop).each(function(){
 				$(this).prop('selectedIndex',0);
 			});
