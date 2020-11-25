@@ -275,33 +275,63 @@
 						<h3><span class="badge badge-secondary">AO:0-10V</span></h3>
 						<div class="form-inline">
 							<label><span class="badge badge-secondary">Y10</span></label>
-							<select name='y10' class='select select-reset' id='y10'>
+							<!-- Old Y10 Setup -->
+							<select name='lab-y10' class='select select-reset y10' id='lab-y10'>
 								{% for key, value in zten1030.items() %}
-									<option value="{{value}}">{{key}}</option>
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
 								{% endfor %}
 							</select>
+							<!-- VAV Y10 Setup -->
+							<select name='vav-y10' class='select select-reset y10' id='vav-y10'>
+								{% for key, value in ztensVAVy10.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+
 						</div>
 						<div class="form-inline">
 							<label><span class="badge badge-secondary">Y20</span></label>
-							<select name='y20' class='select select-reset' id='y20'>
+							<!-- Old Y20 Setup -->
+							<select name='lab-y20' class='select select-reset y20' id='lab-y20'>
 								{% for key, value in zten2040.items() %}
-									<option value="{{value}}">{{key}}</option>
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
 								{% endfor %}
 							</select>
+							<!-- VAV Y20 Setup -->
+							<select name='vav-y20' class='select select-reset y20' id='vav-y20'>
+								{% for key, value in ztensVAVy20.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+
 						</div>
 						<div class="form-inline">
 							<label><span class="badge badge-secondary">Y30</span></label>
-							<select name='y30' class='select select-reset' id='y30'>
+							<!-- Old Y30 Setup -->
+							<select name='lab-y30' class='select select-reset y30' id='lab-y30'>
 								{% for key, value in zten1030.items() %}
-									<option value="{{value}}">{{key}}</option>
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- VAV Y30 Setup -->
+							<select name='vav-y30' class='select select-reset y30' id='vav-y30'>
+								{% for key, value in ztensVAVy10.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
 								{% endfor %}
 							</select>
 						</div>
 						<div class="form-inline">
 							<label><span class="badge badge-secondary">Y40</span></label>
-							<select name='y40' class='select select-reset' id='y40'>
+							<!-- Old Y40 Setup-->
+							<select name='lab-y40' class='select select-reset y40' id='lab-y40'>
 								{% for key, value in zten2040.items() %}
-									<option value="{{value}}">{{key}}</option>
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- VAV Y40 Setup -->
+							<select name='vav-y40' class='select select-reset y40' id='vav-y40'>
+								{% for key, value in ztensVAVy20.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
 								{% endfor %}
 							</select>
 						</div>

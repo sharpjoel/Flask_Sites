@@ -200,8 +200,9 @@ $(document).ready(function(){
 			func_str += $(this).val();
 			if(func_str == "1"){
 
-				var triac_show = [$("#vav-y1y2-3pt"),$("#vav-y3y4-3pt"),$("#vav-y5y6-3pt"),$("#vav-y7y8-3pt")]
+				var triac_show = [$("#vav-y1y2-3pt"),$("#vav-y3y4-3pt"),$("#vav-y5y6-3pt"),$("#vav-y7y8-3pt"),$("#vav-y10"),$("#vav-y20"),$("#vav-y30"),$("#vav-y40")]
 				var triac_hide = [
+				$("#lab-y10"),$("#lab-y20"),$("#lab-y30"),$("#lab-y40"),
 				$("#fcu-y1y2-3pt"),$("#fcu-y3y4-3pt"),$("#fcu-y5y6-3pt"),$("#fcu-y7y8-3pt"),
 				$("#fpb-y1y2-3pt"),$("#fpb-y3y4-3pt"),$("#fpb-y5y6-3pt"),$("#fpb-y7y8-3pt"),
 				$("#wshp-y1y2-3pt"),$("#wshp-y3y4-3pt"),$("#wshp-y5y6-3pt"),$("#wshp-y7y8-3pt"),
@@ -281,8 +282,9 @@ $(document).ready(function(){
 			else if(func_str == "5"){
 				
 
-				var triac_show = [$("#lab-y1y2-3pt"),$("#lab-y3y4-3pt"),$("#lab-y5y6-3pt"),$("#lab-y7y8-3pt")]
+				var triac_show = [$("#lab-y1y2-3pt"),$("#lab-y3y4-3pt"),$("#lab-y5y6-3pt"),$("#lab-y7y8-3pt"),$("#lab-y10"),$("#lab-y20"),$("#lab-y30"),$("#lab-y40")]
 				var triac_hide = [
+				$("#vav-y10"),$("#vav-y20"),$("#vav-y30"),$("#vav-y40"),
 				$("#wshp-y1y2-3pt"),$("#wshp-y3y4-3pt"),$("#wshp-y5y6-3pt"),$("#wshp-y7y8-3pt"),
 				$("#vav-y1y2-3pt"),$("#vav-y3y4-3pt"),$("#vav-y5y6-3pt"),
 				$("#fpb-y1y2-3pt"),$("#fpb-y3y4-3pt"),$("#fpb-y5y6-3pt"),$("#fpb-y7y8-3pt"),
@@ -795,7 +797,7 @@ $(document).ready(function(){
 		*
 		*
 		*/
-		$( "select#y10 option:selected" ).each(function() {
+		$( "select.y10 option:selected" ).each(function() {
 			y10_str += $( this ).val();
 			if(y10_str != 'X'){
 				$(y10).css({'fill':'green'});
@@ -807,7 +809,7 @@ $(document).ready(function(){
 				$(m10y10common).css({'fill':'#f5f5f5'});
 			};
 		});
-		$( "select#y20 option:selected" ).each(function() {
+		$( "select.y20 option:selected" ).each(function() {
 			y20_str += $( this ).val();
 			if(y20_str != 'X'){
 				$(y20).css({'fill':'green'});
@@ -815,7 +817,7 @@ $(document).ready(function(){
 				$(y20).css({'fill':'#f5f5f5'});
 			};
 		});
-		$( "select#y30 option:selected" ).each(function() {
+		$( "select.y30 option:selected" ).each(function() {
 			y30_str += $( this ).val();
 			if(y30_str != 'X'){
 				$(y30).css({'fill':'green'});
@@ -823,7 +825,7 @@ $(document).ready(function(){
 				$(y30).css({'fill':'#f5f5f5'});
 			};
 		});
-		$( "select#y40 option:selected" ).each(function() {
+		$( "select.y40 option:selected" ).each(function() {
 			y40_str += $( this ).val();
 			if(y40_str != 'X'){
 				$(y40).css({'fill':'green'});
@@ -1532,12 +1534,12 @@ $(document).ready(function(){
 			$(dxrtopinputs).show();
 			var layout_hide = [
 				type12,type18,m10pl,$("select.y5y6-3pt"),$("select#y5bo"),$("select#y6bo"),$("select.y7y8-3pt")
-				,$("select#p1pres"),$("select#y7bo"),$("select#y8bo")]
+				,$("select#p1pres"),$("select#y7bo"),$("select#y8bo"),$("select#vav-y30"),$("select#vav-y40"),$("select#vav-y20")]
 
 			var layout_show = [
 				type17,y1y2text,dxrrunsvc,usb,$('span.lab-d1d2d3'),$('select.lab-d1d2d3'),$('span#b2d2-badge'),$('select#b2d2bi'),
 				$('span.x3x4-badge'),$('select#x3ai'),$('select#x4ai'),$("select#scom1pres"),
-				$("select#scom2pres"),$("select#scom3pres"),$("select#scom4pres"),$("select#y30"),$("select#y40"),$("select#y20")]
+				$("select#scom2pres"),$("select#scom3pres"),$("select#scom4pres"),$("select#lab-y30"),$("select#lab-y40"),$("select#lab-y20")]
 
 			var layout_prop = [
 			$("select.y5y6-3pt"),$("select#y5bo"),$("select#y6bo"),$("select.y7y8-3pt"),
@@ -1578,14 +1580,14 @@ $(document).ready(function(){
 			$(type12).show()
 			var layout_hide = [
 				usb,pressure,pressuretext,dxrrunsvc,y1y2text,y1y2terminals,dxrvoltageout,dxrtopinputs,
-				$("select.y7y8-3pt"),$("select#y7bo"),$("select#y8bo"),$("select#y30"),$("select#y40"),$("select#scom1pres"),
+				$("select.y7y8-3pt"),$("select#y7bo"),$("select#y8bo"),$("select.y30"),$("select.y40"),$("select#scom1pres"),
 				$("select#scom2pres"),$("select#scom3pres"),$("select#scom4pres"),$('select.lab-d1d2d3'),
 				$('select#x3ai'),$('select#x4ai'),$('span.lab-d1d2d3'),$('span#b2d2-badge'),$('select#b2d2bi'),
-				$('span.x3x4-badge'),$("select#y20"),$("select.y1y2-3pt"),$("select#y1bo"),$("select#y2bo")];
+				$('span.x3x4-badge'),$("select.y20"),$("select.y1y2-3pt"),$("select#y1bo"),$("select#y2bo")];
 			var layout_show = [m10pl,$("select#p1pres")];
 			var layout_prop = [
-				$("select.y1y2-3pt"),$("select.y7y8-3pt"),$("select#y7bo"),$("select#y8bo"),$("select#y20"),
-				$("select#y30"),$("select#y40"),$("select#y1bo"),$("select#y2bo")]
+				$("select.y1y2-3pt"),$("select.y7y8-3pt"),$("select#y7bo"),$("select#y8bo"),$("select.y20"),
+				$("select.y30"),$("select.y40"),$("select#y1bo"),$("select#y2bo")]
 
 			$(layout_prop).each(function(){
 				$(this).prop('selectedIndex',0);
@@ -1601,11 +1603,11 @@ $(document).ready(function(){
 			$(dxrvoltageout).show();
 			$(dxrtopinputs).show();
 			var layout_hide = [
-			type18,type17,$("select.y7y8-3pt"),$("select#y7bo"),$("select#y8bo"),$("select#y30"),$("select#y40"),
+			type18,type17,$("select.y7y8-3pt"),$("select#y7bo"),$("select#y8bo"),$("select.y30"),$("select.y40"),
 			$("select#scom1pres"),$("select#scom2pres"),$("select#scom3pres"),$("select#scom4pres"),$('select.lab-d1d2d3'),
 			$('select#x3ai'),$('select#x4ai'),$('span.lab-d1d2d3'),$('span#b2d2-badge'),$('select#b2d2bi'),$('span.x3x4-badge')]
-			var layout_show = [$(type12),$(y1y2text),$("select#p1pres"),$(pressure),$(pressuretext),$(dxrrunsvc),$(usb),$("select#y20")]
-			var layout_prop = [$("select.y7y8-3pt"),$("select#y7bo"),$("select#y8bo"),$("select#y30"),$("select#y40")]
+			var layout_show = [$(type12),$(y1y2text),$("select#p1pres"),$(pressure),$(pressuretext),$(dxrrunsvc),$(usb),$("select#vav-y20")]
+			var layout_prop = [$("select.y7y8-3pt"),$("select#y7bo"),$("select#y8bo"),$("select.y30"),$("select.y40")]
 			$('span#b1d1-badge').text('D1');
 			$('span#b2d2-badge').text('D2');
 			$(layout_prop).each(function(){

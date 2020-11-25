@@ -8,7 +8,9 @@ from flask import Flask, render_template, request, jsonify
 from services.services import Services
 import pandas as pd
 
-product_dictionary = pd.read_excel('products.xlsx')
+functionality_dictionary = pd.read_excel('Functionality.xlsx')
+threepts_dictionary = pd.read_excel('three_points.xlsx')
+ztens_dictionary = pd.read_excel('ztens.xlsx')
 
 # Step 2: Create an Instance of Flask. This will be your application
 app = Flask(__name__)
@@ -65,15 +67,15 @@ def index():
         "CA":"C",
         }
     # function: dictionary of units
-    function = product_dictionary.set_index('Functionality Key')['Functionality Value'].to_dict()
-    three_points_VAV_y1y2 = product_dictionary.set_index('Y1Y2 VAV Key')['Y1Y2 VAV Value'].to_dict()
-    three_points_FPB_y1y2 = product_dictionary.set_index('Y1Y2 FPB Key')['Y1Y2 FPB Value'].to_dict()
-    three_points_VAV_y3y4 = product_dictionary.set_index('Y3Y4 VAV Key')['Y3Y4 VAV Value'].to_dict()
-    three_points_FPB_y3y4 = product_dictionary.set_index('Y3Y4 FPB Key')['Y3Y4 FPB Value'].to_dict()
-    three_points_VAV_y5y6 = product_dictionary.set_index('Y5Y6 VAV Key')['Y5Y6 VAV Value'].to_dict()
-    three_points_FPB_y5y6 = product_dictionary.set_index('Y5Y6 FPB Key')['Y5Y6 FPB Value'].to_dict()
-    three_points_VAV_y7y8 = product_dictionary.set_index('Y7Y8 VAV Key')['Y7Y8 VAV Value'].to_dict()
-    three_points_FPB_y7y8 = product_dictionary.set_index('Y7Y8 FPB Key')['Y7Y8 FPB Value'].to_dict()
+    function = functionality_dictionary.set_index('Functionality Key')['Functionality Value'].to_dict()
+    three_points_VAV_y1y2 = threepts_dictionary.set_index('Y1Y2 VAV Key')['Y1Y2 VAV Value'].to_dict()
+    three_points_FPB_y1y2 = threepts_dictionary.set_index('Y1Y2 FPB Key')['Y1Y2 FPB Value'].to_dict()
+    three_points_VAV_y3y4 = threepts_dictionary.set_index('Y3Y4 VAV Key')['Y3Y4 VAV Value'].to_dict()
+    three_points_FPB_y3y4 = threepts_dictionary.set_index('Y3Y4 FPB Key')['Y3Y4 FPB Value'].to_dict()
+    three_points_VAV_y5y6 = threepts_dictionary.set_index('Y5Y6 VAV Key')['Y5Y6 VAV Value'].to_dict()
+    three_points_FPB_y5y6 = threepts_dictionary.set_index('Y5Y6 FPB Key')['Y5Y6 FPB Value'].to_dict()
+    three_points_VAV_y7y8 = threepts_dictionary.set_index('Y7Y8 VAV Key')['Y7Y8 VAV Value'].to_dict()
+    three_points_FPB_y7y8 = threepts_dictionary.set_index('Y7Y8 FPB Key')['Y7Y8 FPB Value'].to_dict()
     # three_points: dictionary of three point floating actuators
     three_points_FCU_y1y2 = {
         'None':'X',
@@ -85,6 +87,8 @@ def index():
         'Windows':'S'
         }
     # three_points = product_dictionary.set_index('3pt Floating Actuator Key')['3pt Floating Actuator Value'].to_dict()
+    ztens_VAV_y10 = ztens_dictionary.set_index('Y10 VAV Key')['Y10 VAV Value'].to_dict()
+    ztens_VAV_y20 = ztens_dictionary.set_index('Y20 VAV Key')['Y20 VAV Value'].to_dict()
     # zero_ten_1030: dictionary of 0-10 Volt actuators for Y10 & Y30
     zero_ten_1030 = {
         'None':'X',
@@ -239,6 +243,8 @@ def index():
         threeptsFPBy5y6=three_points_FPB_y5y6,
         threeptsVAVy7y8=three_points_VAV_y7y8,
         threeptsFPBy7y8=three_points_FPB_y7y8,
+        ztensVAVy10=ztens_VAV_y10,
+        ztensVAVy20=ztens_VAV_y20,
         zten1030=zero_ten_1030,
         zten2040=zero_ten_2040,
         binaryout=binary_out,
