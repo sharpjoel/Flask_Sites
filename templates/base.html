@@ -1,0 +1,14 @@
+<html>
+    <head>
+      {% if title %}
+      <title>{{ title }} - Base Test</title>
+      {% else %}
+      <title>Welcome to Base Test</title>
+      {% endif %}
+    </head>
+    <body>
+        <div>Base Test: <a href="/jcformtest">Home</a></div>
+        <hr>
+        {% block content %}{% endblock %}
+    </body>
+</html>

@@ -216,6 +216,7 @@ def index():
     try:
         pet = request.form['pet'][:-1]
         print(f"You chose {pet}")
+        print(request.form)
     except:
         pass
 
@@ -282,10 +283,12 @@ def process():
         If this happens, check out you AJAX data request and make sure it was set up correctly.
     """
     try:
-        results = services.setDXR(**request.json)
+        print(request.json) # should see the output at command line
+        # results = services.setDXR(**request.json)
     except Exception as e:
         return {"error": str(e)}
-    return results
+    #return results
+    return(request.json)
     #name = request.form['name'][:-1]
     #print(name)
     #return jsonify({'name': name})
@@ -301,6 +304,12 @@ def get_dxr_custom_name(custom_name=None):
         return {"error": str(e)}
     return results
 
+
+@app.route('/jcformtest', methods=['GET'])
+def jcformtest():
+    return render_template('form_test.html', title='jcformtest')
+
+
 """
 Step 8 - Run your application. debug=True makes it so you don't have to stop and restart your
     webserver.
@@ -308,6 +317,3 @@ Step 8 - Run your application. debug=True makes it so you don't have to stop and
 if __name__ == '__main__':
 #    app.run(debug=True, host="192.168.1.13", port=5000)
      app.run(debug=True, port="5000")
-
-
-
