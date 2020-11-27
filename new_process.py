@@ -11,6 +11,10 @@ import pandas as pd
 functionality_dictionary = pd.read_excel('Functionality.xlsx')
 threepts_dictionary = pd.read_excel('three_points.xlsx')
 ztens_dictionary = pd.read_excel('ztens.xlsx')
+x1x4inputs_dictionary = pd.read_excel('x1x4_inputs.xlsx')
+pressureinputs_dictionary = pd.read_excel('pressure_inputs.xlsx')
+digitalinputs_dictionary = pd.read_excel('digital_inputs.xlsx')
+knx_dictionary = pd.read_excel('knx.xlsx')
 
 # Step 2: Create an Instance of Flask. This will be your application
 app = Flask(__name__)
@@ -110,6 +114,10 @@ def index():
         '0-10V General':'Z'
         }
     #inputs: dictionary of analog inputs
+    inputs_VAV_p1 = pressureinputs_dictionary.set_index('P1 VAV Key')['P1 VAV Value'].to_dict()
+    inputs_VAV_d1 = digitalinputs_dictionary.set_index('D1 VAV Key')['D1 VAV Value'].to_dict()
+    inputs_VAV_x1 = x1x4inputs_dictionary.set_index('X1 VAV Key')['X1 VAV Value'].to_dict()
+    inputs_VAV_x2 = x1x4inputs_dictionary.set_index('X2 VAV Key')['X2 VAV Value'].to_dict()
     x1x4_in = {
         "None":"X",
         "Sup Press":"A",
@@ -150,8 +158,6 @@ def index():
     #pressure: dictionary of pressure sensors
     pressure = {
         "None":"X",
-        "Sup P1":"A",
-        "Exh P2":"B",
         "Sup SCOM P1":"C",
         "Sup SCOM P3":"D",
         "Exh SCOM P2":"E",
@@ -197,21 +203,11 @@ def index():
         }
     templates = {
         'Blank':'',
-        '14023':'A',
-        '14050':'B'
+        '14023 - VAV w Reheat':'A',
+        '14050 - FCU w Cooling':'B'
     }
     #knx: dictionary of knx devices
-    knx = {
-        'None':'X',
-        'P30':'A',
-        'P40':'B',
-        'P70':'C',
-        'P34':'D',
-        'P37':'E',
-        'P74':'F',
-        'UP285':'G',
-        '5WG1-LGT':'H'
-        }
+    knx_VAV = knx_dictionary.set_index('KNX VAV Key')['KNX VAV Value'].to_dict()
     pet = ""
     try:
         pet = request.form['pet'][:-1]
@@ -235,6 +231,10 @@ def index():
         d1d2=d1d2_in,
         d1d2d3=d1d2d3_in,
         pressure=pressure,
+        inputsVAVp1=inputs_VAV_p1,
+        inputsVAVd1=inputs_VAV_d1,
+        inputsVAVx1=inputs_VAV_x1,
+        inputsVAVx2=inputs_VAV_x2,
         threeptsVAVy1y2=three_points_VAV_y1y2,
         threeptsFPBy1y2=three_points_FPB_y1y2,
         threeptsFCUy1y2=three_points_FCU_y1y2,
@@ -256,7 +256,7 @@ def index():
         ptypes=ptypes,
         locations=locations,
         function=function,
-        knx=knx,
+        knx=knx_VAV,
         templates=templates
         )
 
@@ -282,16 +282,16 @@ def process():
         *** Note - 500 error implies that you're trying to read a JSON key that doesn't exist.
         If this happens, check out you AJAX data request and make sure it was set up correctly.
     """
-    try:
-        print(request.json) # should see the output at command line
-        # results = services.setDXR(**request.json)
-    except Exception as e:
-        return {"error": str(e)}
-    #return results
-    return(request.json)
-    #name = request.form['name'][:-1]
+                # try:
+                #     print(request.json) # should see the output at command line
+                #     # results = services.setDXR(**request.json)
+                # except Exception as e:
+                #     return {"error": str(e)}
+                # #return results
+                # return(request.json)
+    name = request.form['name'][:-1]
     #print(name)
-    #return jsonify({'name': name})
+    return jsonify({'name': name})
 
 
 @app.route('/custom_name/<string:custom_name>', methods=['GET'])

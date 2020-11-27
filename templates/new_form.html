@@ -16,6 +16,7 @@
 	<!-- Step 12: Include link to our javascript file. This is the file that will read objects
 	from this html page, and send AJAX requests to our python Flask server. -->
 	<script src="{{ url_for('static', filename='js/sequence.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/templates.js') }}"></script>
 	<script src="{{ url_for('static', filename='js/new_form.js') }}"></script>
 	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/new_form.css') }}">
 </head>
@@ -440,9 +441,16 @@
 						</div>
 						<div class="form-inline">
 							<label><span class="badge badge-secondary" id='b1d1-badge'>D1</span></label>
-							<select name='b1d1bi' class='select select-reset' id='b1d1bi'>
+							<!-- Original -->
+							<select name='b1d1bi' class='select select-reset' id='b1d1bi' style="display:none">
 								{% for key, value in d1d2.items() %}
 									<option value="{{value}}">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- VAV -->
+							<select name='vav-b1d1bi' class='select select-reset b1d1bi' id='vav-b1d1bi'>
+								{% for key, value in inputsVAVd1.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
 								{% endfor %}
 							</select>
 						</div>
@@ -456,17 +464,31 @@
 						</div>
 						<div class="form-inline">
 							<label><span class="badge badge-secondary">X1</span></label>
-							<select name='x1ai' class='select select-reset' id='x1ai'>
+							<!-- Original -->
+							<select name='x1ai' class='select select-reset x1ai' id='x1ai' style="display:none">
 								{% for key, value in x1x4.items() %}
 									<option value="{{value}}">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- VAV -->
+							<select name='vav-x1ai' class='select select-reset x1ai' id='vav-x1ai'>
+								{% for key, value in inputsVAVx1.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
 								{% endfor %}
 							</select>
 						</div>
 						<div class="form-inline">
 							<label><span class="badge badge-secondary">X2</span></label>
-							<select name='x2ai' class='select select-reset' id='x2ai'>
+							<!-- Original -->
+							<select name='x2ai' class='select select-reset x2ai' id='x2ai' style="display:none">
 								{% for key, value in x1x4.items() %}
 									<option value="{{value}}">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- VAV -->
+							<select name='vav-x2ai' class='select select-reset x2ai' id='vav-x2ai'>
+								{% for key, value in inputsVAVx2.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
 								{% endfor %}
 							</select>
 						</div>
@@ -497,8 +519,8 @@
 						<div class="form-inline">
 							<label  class="p1-style"><span class="badge badge-secondary">P1</span></label>
 							<select name='p1pres' class="select select-reset" id='p1pres'>
-								{% for key, value in pressure.items() %}
-									<option value="{{value}}">{{key}}</option>
+								{% for key, value in inputsVAVp1.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
 								{% endfor %}
 							</select>
 						</div>
@@ -551,7 +573,7 @@
 								<label><span class="badge badge-secondary select-badge">KNX-{{item}}</span></label>
 								<select name='knx-{{item}}' class='select selection-knx' id='knx-{{item}}'>
 									{% for key, value in knx.items() %}
-										<option value="{{value}}">{{key}}</option>
+										<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
 									{% endfor %}
 								</select>
 							</div>
@@ -563,7 +585,7 @@
 								<label><span class="badge badge-secondary select-badge">KNX-{{item}}</span></label>
 								<select name='knx-{{item}}' class='select selection-knx' id='knx-{{item}}'>
 									{% for key, value in knx.items() %}
-										<option value="{{value}}">{{key}}</option>
+										<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
 									{% endfor %}
 								</select>
 							</div>
