@@ -91,6 +91,12 @@ $(document).ready(function(){
     var knx19_terminal = knxsvgObject.getElementById('knx-address-19');
     var knx20_terminal = knxsvgObject.getElementById('knx-address-20');
     var knxaddresses = knxsvgObject.getElementsByClassName('knx-addresses');
+    var knx_terminals = [
+    knx1_terminal,knx2_terminal,knx3_terminal,knx4_terminal,knx5_terminal,
+    knx6_terminal,knx7_terminal,knx8_terminal,knx9_terminal,knx10_terminal,
+    knx11_terminal,knx12_terminal,knx13_terminal,knx14_terminal,knx15_terminal,
+    knx16_terminal,knx17_terminal,knx18_terminal,knx19_terminal,knx20_terminal,
+    ]
 
 	// Template selection: Set Starting Values based on selection.
 	// Templates being handled in templates.js
@@ -156,7 +162,11 @@ $(document).ready(function(){
 		var knx18_str = ""
 		var knx19_str = ""
 		var knx20_str = ""
+		var knx_arr = [];
 		var str = ""
+		var knx_last;
+		var knx_terminal_last;
+		var knx_last_value = "";
 
 		$("select#funcSelection").each(function(){
 			func_str += $(this).val();
@@ -567,10 +577,21 @@ $(document).ready(function(){
 				$(knx1_terminal).css({'fill':'yellow'});
 			}else if(knx1_str == 'S'){
 				$(knx1_terminal).css({'fill':'#d534eb'});
+				knx_last_value = knx1_str;
+				knx_last = knx1_terminal["id"];
+				knx_terminal_last = knx1_terminal;
 			}
 			else{
-				$(knx1_terminal).css({'fill':'green'});
+				if($(knx1_terminal).css("fill") == "rgb(213, 52, 235)"){
+					$(knx1_terminal).css({'fill':'#d534eb'});
+				}else{
+					$(knx1_terminal).css({'fill':'green'});
+				}
+				knx_last_value = knx1_str;
+				knx_last = knx1_terminal["id"];
+				knx_terminal_last = knx1_terminal;
 			}
+			knx_arr.push(knx1_str);
 		});
 		$( "select#knx-2 option:selected" ).each(function() {
 			knx2_str += $( this ).val();
@@ -578,10 +599,21 @@ $(document).ready(function(){
 				$(knx2_terminal).css({'fill':'yellow'});
 			}else if(knx2_str == 'S'){
 				$(knx2_terminal).css({'fill':'#d534eb'});
+				knx_last_value = knx2_str;
+				knx_last = knx2_terminal["id"];
+				knx_terminal_last = knx2_terminal;
 			}
 			else{
-				$(knx2_terminal).css({'fill':'green'});
+				if($(knx2_terminal).css("fill") == "rgb(213, 52, 235)"){
+					$(knx2_terminal).css({'fill':'#d534eb'});
+				}else{
+					$(knx2_terminal).css({'fill':'green'});
+				}
+				knx_last_value = knx2_str;
+				knx_last = knx2_terminal["id"];
+				knx_terminal_last = knx2_terminal;
 			}
+			knx_arr.push(knx2_str);
 		});
 		$( "select#knx-3 option:selected" ).each(function() {
 			knx3_str += $( this ).val();
@@ -589,10 +621,21 @@ $(document).ready(function(){
 				$(knx3_terminal).css({'fill':'yellow'});
 			}else if(knx3_str == 'S'){
 				$(knx3_terminal).css({'fill':'#d534eb'});
+				knx_last_value = knx3_str;
+				knx_last = knx3_terminal["id"];
+				knx_terminal_last = knx3_terminal;
 			}
 			else{
-				$(knx3_terminal).css({'fill':'green'});
+				if($(knx3_terminal).css("fill") == "rgb(213, 52, 235)"){
+					$(knx3_terminal).css({'fill':'#d534eb'});
+				}else{
+					$(knx3_terminal).css({'fill':'green'});
+				}
+				knx_last_value = knx3_str;
+				knx_last = knx3_terminal["id"];
+				knx_terminal_last = knx3_terminal;
 			}
+			knx_arr.push(knx3_str);
 		});
 		$( "select#knx-4 option:selected" ).each(function() {
 			knx4_str += $( this ).val();
@@ -600,10 +643,21 @@ $(document).ready(function(){
 				$(knx4_terminal).css({'fill':'yellow'});
 			}else if(knx4_str == 'S'){
 				$(knx4_terminal).css({'fill':'#d534eb'});
+				knx_last_value = knx4_str;
+				knx_last = knx4_terminal["id"];
+				knx_terminal_last = knx4_terminal;
 			}
 			else{
-				$(knx4_terminal).css({'fill':'green'});
+				if($(knx4_terminal).css("fill") == "rgb(213, 52, 235)"){
+					$(knx4_terminal).css({'fill':'#d534eb'});
+				}else{
+					$(knx4_terminal).css({'fill':'green'});
+				}
+				knx_last_value = knx4_str;
+				knx_last = knx4_terminal["id"];
+				knx_terminal_last = knx4_terminal;
 			}
+			knx_arr.push(knx4_str);
 		});
 		$( "select#knx-5 option:selected" ).each(function() {
 			knx5_str += $( this ).val();
@@ -611,10 +665,21 @@ $(document).ready(function(){
 				$(knx5_terminal).css({'fill':'yellow'});
 			}else if(knx5_str == 'S'){
 				$(knx5_terminal).css({'fill':'#d534eb'});
+				knx_last_value = knx5_str;
+				knx_last = knx5_terminal["id"];
+				knx_terminal_last = knx5_terminal;
 			}
 			else{
-				$(knx5_terminal).css({'fill':'green'});
+				if($(knx5_terminal).css("fill") == "rgb(213, 52, 235)"){
+					$(knx5_terminal).css({'fill':'#d534eb'});
+				}else{
+					$(knx5_terminal).css({'fill':'green'});
+				}
+				knx_last_value = knx5_str;
+				knx_last = knx5_terminal["id"];
+				knx_terminal_last = knx5_terminal;
 			}
+			knx_arr.push(knx5_str);
 		});
 		$( "select#knx-6 option:selected" ).each(function() {
 			knx6_str += $( this ).val();
@@ -622,10 +687,21 @@ $(document).ready(function(){
 				$(knx6_terminal).css({'fill':'yellow'});
 			}else if(knx6_str == 'S'){
 				$(knx6_terminal).css({'fill':'#d534eb'});
+				knx_last_value = knx6_str;
+				knx_last = knx6_terminal["id"];
+				knx_terminal_last = knx6_terminal;
 			}
 			else{
-				$(knx6_terminal).css({'fill':'green'});
+				if($(knx6_terminal).css("fill") == "rgb(213, 52, 235)"){
+					$(knx6_terminal).css({'fill':'#d534eb'});
+				}else{
+					$(knx6_terminal).css({'fill':'green'});
+				}
+				knx_last_value = knx6_str;
+				knx_last = knx6_terminal["id"];
+				knx_terminal_last = knx6_terminal;
 			}
+			knx_arr.push(knx6_str);
 		});
 		$( "select#knx-7 option:selected" ).each(function() {
 			knx7_str += $( this ).val();
@@ -633,10 +709,21 @@ $(document).ready(function(){
 				$(knx7_terminal).css({'fill':'yellow'});
 			}else if(knx7_str == 'S'){
 				$(knx7_terminal).css({'fill':'#d534eb'});
+				knx_last_value = knx7_str;
+				knx_last = knx7_terminal["id"];
+				knx_terminal_last = knx7_terminal;
 			}
 			else{
-				$(knx7_terminal).css({'fill':'green'});
+				if($(knx7_terminal).css("fill") == "rgb(213, 52, 235)"){
+					$(knx7_terminal).css({'fill':'#d534eb'});
+				}else{
+					$(knx7_terminal).css({'fill':'green'});
+				}
+				knx_last_value = knx7_str;
+				knx_last = knx7_terminal["id"];
+				knx_terminal_last = knx7_terminal;
 			}
+			knx_arr.push(knx7_str);
 		});
 		$( "select#knx-8 option:selected" ).each(function() {
 			knx8_str += $( this ).val();
@@ -644,10 +731,21 @@ $(document).ready(function(){
 				$(knx8_terminal).css({'fill':'yellow'});
 			}else if(knx8_str == 'S'){
 				$(knx8_terminal).css({'fill':'#d534eb'});
+				knx_last_value = knx8_str;
+				knx_last = knx8_terminal["id"];
+				knx_terminal_last = knx8_terminal;
 			}
 			else{
-				$(knx8_terminal).css({'fill':'green'});
+				if($(knx8_terminal).css("fill") == "rgb(213, 52, 235)"){
+					$(knx8_terminal).css({'fill':'#d534eb'});
+				}else{
+					$(knx8_terminal).css({'fill':'green'});
+				}
+				knx_last_value = knx8_str;
+				knx_last = knx8_terminal["id"];
+				knx_terminal_last = knx8_terminal;
 			}
+			knx_arr.push(knx8_str);
 		});
 		$( "select#knx-9 option:selected" ).each(function() {
 			knx9_str += $( this ).val();
@@ -659,6 +757,7 @@ $(document).ready(function(){
 			else{
 				$(knx9_terminal).css({'fill':'green'});
 			}
+			knx_arr.push(knx9_str);
 		});
 		$( "select#knx-10 option:selected" ).each(function() {
 			knx10_str += $( this ).val();
@@ -670,6 +769,7 @@ $(document).ready(function(){
 			else{
 				$(knx10_terminal).css({'fill':'green'});
 			}
+			knx_arr.push(knx10_str);
 		});
 		$( "select#knx-11 option:selected" ).each(function() {
 			knx11_str += $( this ).val();
@@ -681,6 +781,7 @@ $(document).ready(function(){
 			else{
 				$(knx11_terminal).css({'fill':'green'});
 			}
+			knx_arr.push(knx11_str);
 		});
 		$( "select#knx-12 option:selected" ).each(function() {
 			knx12_str += $( this ).val();
@@ -692,6 +793,7 @@ $(document).ready(function(){
 			else{
 				$(knx12_terminal).css({'fill':'green'});
 			}
+			knx_arr.push(knx12_str);
 		});
 		$( "select#knx-13 option:selected" ).each(function() {
 			knx13_str += $( this ).val();
@@ -703,6 +805,7 @@ $(document).ready(function(){
 			else{
 				$(knx13_terminal).css({'fill':'green'});
 			}
+			knx_arr.push(knx13_str);
 		});
 		$( "select#knx-14 option:selected" ).each(function() {
 			knx14_str += $( this ).val();
@@ -714,6 +817,7 @@ $(document).ready(function(){
 			else{
 				$(knx14_terminal).css({'fill':'green'});
 			}
+			knx_arr.push(knx14_str);
 		});
 		$( "select#knx-15 option:selected" ).each(function() {
 			knx15_str += $( this ).val();
@@ -725,6 +829,7 @@ $(document).ready(function(){
 			else{
 				$(knx15_terminal).css({'fill':'green'});
 			}
+			knx_arr.push(knx15_str);
 		});
 		$( "select#knx-16 option:selected" ).each(function() {
 			knx16_str += $( this ).val();
@@ -736,6 +841,7 @@ $(document).ready(function(){
 			else{
 				$(knx16_terminal).css({'fill':'green'});
 			}
+			knx_arr.push(knx16_str);
 		});
 		$( "select#knx-17 option:selected" ).each(function() {
 			knx17_str += $( this ).val();
@@ -747,6 +853,7 @@ $(document).ready(function(){
 			else{
 				$(knx17_terminal).css({'fill':'green'});
 			}
+			knx_arr.push(knx17_str);
 		});
 		$( "select#knx-18 option:selected" ).each(function() {
 			knx18_str += $( this ).val();
@@ -758,6 +865,7 @@ $(document).ready(function(){
 			else{
 				$(knx18_terminal).css({'fill':'green'});
 			}
+			knx_arr.push(knx18_str);
 		});
 		$( "select#knx-19 option:selected" ).each(function() {
 			knx19_str += $( this ).val();
@@ -769,6 +877,7 @@ $(document).ready(function(){
 			else{
 				$(knx19_terminal).css({'fill':'green'});
 			}
+			knx_arr.push(knx19_str);
 		});
 		$( "select#knx-20 option:selected" ).each(function() {
 			knx20_str += $( this ).val();
@@ -780,6 +889,7 @@ $(document).ready(function(){
 			else{
 				$(knx20_terminal).css({'fill':'green'});
 			}
+			knx_arr.push(knx20_str);
 		});
 		/*
 		*
@@ -1755,24 +1865,55 @@ $(document).ready(function(){
 		var PRES = p1_str + scom1_str + scom2_str + scom3_str + scom4_str + "_";
 		var KNX = knx1_str +  knx2_str +  knx3_str +  knx4_str +  knx5_str +  knx6_str +  knx7_str +  knx8_str +  knx9_str +  knx10_str;
 		KNX = KNX + knx11_str +  knx12_str +  knx13_str +  knx14_str +  knx15_str +  knx16_str +  knx17_str +  knx18_str +  knx19_str +  knx20_str;
-		if(KNX.length >= 1){
-			$(knx).css({'fill':'#40ff00'});
+		var sorted_knx = knx_arr.sort();
+		var double_knx = []; // 2 or more
+		var triple_knx = []; // 3 or more
+		var overload_knx = []; // 4 or more
+		for(var i=0;i<sorted_knx.length - 1;i++){
+			if(sorted_knx[i+1]==sorted_knx[i] && sorted_knx[i] != "X"){
+				double_knx.push(sorted_knx[i])
+			}
+			if(sorted_knx[i+1]==sorted_knx[i] && sorted_knx[i+2]==sorted_knx[i] && sorted_knx[i] != "X"){
+				triple_knx.push(sorted_knx[i])
+			}
+			if(sorted_knx[i+1]==sorted_knx[i] && sorted_knx[i+2]==sorted_knx[i] && sorted_knx[i+3]==sorted_knx[i] && sorted_knx[i] != "X"){
+				overload_knx.push(sorted_knx[i])
+			}
 		}
-		else{
-			$(knx).css({'fill':'#f5f5f5'});
+		// console.log($(knx1_terminal).css(["fill"]));
+		double_knx = [...new Set(double_knx)];
+		triple_knx = [...new Set(triple_knx)];
+		overload_knx = [...new Set(overload_knx)];
+		console.log(sorted_knx);
+		console.log("doubles are: " + double_knx);
+		console.log("triples are: " + triple_knx);
+		console.log("overloads are: " + overload_knx);
+		for(var i=0;i<knx_terminals.length-1;i++){
+			if($(knx_terminals[i]).css("fill") == "rgb(0, 128, 0)" && overload_knx.includes(knx_last_value) && knx_terminals[i]["id"] == knx_last){
+				$(knx_terminal_last).css({'fill':'#d534eb'});
+			}
+			if($(knx_terminals[i]).css("fill") == "rgb(213, 52, 235)" && knx_last_value != 'S' && !overload_knx.includes(knx_last_value) && knx_terminals[i]["id"] == knx_last){
+				$(knx_terminal_last).css({'fill':'green'});
+			}
 		}
-		try {
-		  var knx_alert = KNX.match(/A/g).length;
-		  console.log("KNX-Alert is " + knx_alert);
-		  $('select.selection-knx option:selected').each(function(){
-		  	if($(this).val() == 'A' && knx_alert > 1){
-		  		$(knxaddresses).css({'fill':'#d534eb'});
-		  	}
-		  });
-		}
-		catch(err) {
-		  console.log("No characters!");
-		}
+		// if(KNX.length >= 1){
+		// 	$(knx).css({'fill':'#40ff00'});
+		// }
+		// else{
+		// 	$(knx).css({'fill':'#f5f5f5'});
+		// }
+		// try {
+		//   var knx_alert = KNX.match(/A/g).length;
+		//   console.log("KNX-Alert is " + knx_alert);
+		//   $('select.selection-knx option:selected').each(function(){
+		//   	if($(this).val() == 'A' && knx_alert > 1){
+		//   		$(knxaddresses).css({'fill':'#d534eb'});
+		//   	}
+		//   });
+		// }
+		// catch(err) {
+		//   console.log("No characters!");
+		// }
 		str = DXR + AO3pt + AOten + BO + IN + PRES + KNX;
 		$('#successAlert').text(str).show();
 		// Step 22: Construct your AJAX requests. Without AJAX, the select tags would need
