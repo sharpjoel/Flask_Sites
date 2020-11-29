@@ -753,9 +753,19 @@ $(document).ready(function(){
 				$(knx9_terminal).css({'fill':'yellow'});
 			}else if(knx9_str == 'S'){
 				$(knx9_terminal).css({'fill':'#d534eb'});
+				knx_last_value = knx9_str;
+				knx_last = knx9_terminal["id"];
+				knx_terminal_last = knx9_terminal;
 			}
 			else{
-				$(knx9_terminal).css({'fill':'green'});
+				if($(knx9_terminal).css("fill") == "rgb(213, 52, 235)"){
+					$(knx9_terminal).css({'fill':'#d534eb'});
+				}else{
+					$(knx9_terminal).css({'fill':'green'});
+				}
+				knx_last_value = knx9_str;
+				knx_last = knx9_terminal["id"];
+				knx_terminal_last = knx9_terminal;
 			}
 			knx_arr.push(knx9_str);
 		});
@@ -765,9 +775,19 @@ $(document).ready(function(){
 				$(knx10_terminal).css({'fill':'yellow'});
 			}else if(knx10_str == 'S'){
 				$(knx10_terminal).css({'fill':'#d534eb'});
+				knx_last_value = knx10_str;
+				knx_last = knx10_terminal["id"];
+				knx_terminal_last = knx10_terminal;
 			}
 			else{
-				$(knx10_terminal).css({'fill':'green'});
+				if($(knx10_terminal).css("fill") == "rgb(213, 52, 235)"){
+					$(knx10_terminal).css({'fill':'#d534eb'});
+				}else{
+					$(knx10_terminal).css({'fill':'green'});
+				}
+				knx_last_value = knx10_str;
+				knx_last = knx10_terminal["id"];
+				knx_terminal_last = knx10_terminal;
 			}
 			knx_arr.push(knx10_str);
 		});
@@ -777,9 +797,19 @@ $(document).ready(function(){
 				$(knx11_terminal).css({'fill':'yellow'});
 			}else if(knx11_str == 'S'){
 				$(knx11_terminal).css({'fill':'#d534eb'});
+				knx_last_value = knx11_str;
+				knx_last = knx11_terminal["id"];
+				knx_terminal_last = knx11_terminal;
 			}
 			else{
-				$(knx11_terminal).css({'fill':'green'});
+				if($(knx11_terminal).css("fill") == "rgb(213, 52, 235)"){
+					$(knx11_terminal).css({'fill':'#d534eb'});
+				}else{
+					$(knx11_terminal).css({'fill':'green'});
+				}
+				knx_last_value = knx11_str;
+				knx_last = knx11_terminal["id"];
+				knx_terminal_last = knx11_terminal;
 			}
 			knx_arr.push(knx11_str);
 		});
@@ -789,9 +819,19 @@ $(document).ready(function(){
 				$(knx12_terminal).css({'fill':'yellow'});
 			}else if(knx12_str == 'S'){
 				$(knx12_terminal).css({'fill':'#d534eb'});
+				knx_last_value = knx12_str;
+				knx_last = knx12_terminal["id"];
+				knx_terminal_last = knx12_terminal;
 			}
 			else{
-				$(knx12_terminal).css({'fill':'green'});
+				if($(knx12_terminal).css("fill") == "rgb(213, 52, 235)"){
+					$(knx12_terminal).css({'fill':'#d534eb'});
+				}else{
+					$(knx12_terminal).css({'fill':'green'});
+				}
+				knx_last_value = knx12_str;
+				knx_last = knx12_terminal["id"];
+				knx_terminal_last = knx12_terminal;
 			}
 			knx_arr.push(knx12_str);
 		});
@@ -801,9 +841,19 @@ $(document).ready(function(){
 				$(knx13_terminal).css({'fill':'yellow'});
 			}else if(knx13_str == 'S'){
 				$(knx13_terminal).css({'fill':'#d534eb'});
+				knx_last_value = knx13_str;
+				knx_last = knx13_terminal["id"];
+				knx_terminal_last = knx13_terminal;
 			}
 			else{
-				$(knx13_terminal).css({'fill':'green'});
+				if($(knx13_terminal).css("fill") == "rgb(213, 52, 235)"){
+					$(knx13_terminal).css({'fill':'#d534eb'});
+				}else{
+					$(knx13_terminal).css({'fill':'green'});
+				}
+				knx_last_value = knx13_str;
+				knx_last = knx13_terminal["id"];
+				knx_terminal_last = knx13_terminal;
 			}
 			knx_arr.push(knx13_str);
 		});
@@ -813,9 +863,19 @@ $(document).ready(function(){
 				$(knx14_terminal).css({'fill':'yellow'});
 			}else if(knx14_str == 'S'){
 				$(knx14_terminal).css({'fill':'#d534eb'});
+				knx_last_value = knx14_str;
+				knx_last = knx14_terminal["id"];
+				knx_terminal_last = knx14_terminal;
 			}
 			else{
-				$(knx14_terminal).css({'fill':'green'});
+				if($(knx14_terminal).css("fill") == "rgb(213, 52, 235)"){
+					$(knx14_terminal).css({'fill':'#d534eb'});
+				}else{
+					$(knx14_terminal).css({'fill':'green'});
+				}
+				knx_last_value = knx14_str;
+				knx_last = knx14_terminal["id"];
+				knx_terminal_last = knx14_terminal;
 			}
 			knx_arr.push(knx14_str);
 		});
@@ -825,9 +885,19 @@ $(document).ready(function(){
 				$(knx15_terminal).css({'fill':'yellow'});
 			}else if(knx15_str == 'S'){
 				$(knx15_terminal).css({'fill':'#d534eb'});
+				knx_last_value = knx15_str;
+				knx_last = knx15_terminal["id"];
+				knx_terminal_last = knx15_terminal;
 			}
 			else{
-				$(knx15_terminal).css({'fill':'green'});
+				if($(knx15_terminal).css("fill") == "rgb(213, 52, 235)"){
+					$(knx15_terminal).css({'fill':'#d534eb'});
+				}else{
+					$(knx15_terminal).css({'fill':'green'});
+				}
+				knx_last_value = knx15_str;
+				knx_last = knx15_terminal["id"];
+				knx_terminal_last = knx15_terminal;
 			}
 			knx_arr.push(knx15_str);
 		});
@@ -837,9 +907,19 @@ $(document).ready(function(){
 				$(knx16_terminal).css({'fill':'yellow'});
 			}else if(knx16_str == 'S'){
 				$(knx16_terminal).css({'fill':'#d534eb'});
+				knx_last_value = knx16_str;
+				knx_last = knx16_terminal["id"];
+				knx_terminal_last = knx16_terminal;
 			}
 			else{
-				$(knx16_terminal).css({'fill':'green'});
+				if($(knx16_terminal).css("fill") == "rgb(213, 52, 235)"){
+					$(knx16_terminal).css({'fill':'#d534eb'});
+				}else{
+					$(knx16_terminal).css({'fill':'green'});
+				}
+				knx_last_value = knx16_str;
+				knx_last = knx16_terminal["id"];
+				knx_terminal_last = knx16_terminal;
 			}
 			knx_arr.push(knx16_str);
 		});
@@ -849,9 +929,19 @@ $(document).ready(function(){
 				$(knx17_terminal).css({'fill':'yellow'});
 			}else if(knx17_str == 'S'){
 				$(knx17_terminal).css({'fill':'#d534eb'});
+				knx_last_value = knx17_str;
+				knx_last = knx17_terminal["id"];
+				knx_terminal_last = knx17_terminal;
 			}
 			else{
-				$(knx17_terminal).css({'fill':'green'});
+				if($(knx17_terminal).css("fill") == "rgb(213, 52, 235)"){
+					$(knx17_terminal).css({'fill':'#d534eb'});
+				}else{
+					$(knx17_terminal).css({'fill':'green'});
+				}
+				knx_last_value = knx17_str;
+				knx_last = knx17_terminal["id"];
+				knx_terminal_last = knx17_terminal;
 			}
 			knx_arr.push(knx17_str);
 		});
@@ -861,9 +951,19 @@ $(document).ready(function(){
 				$(knx18_terminal).css({'fill':'yellow'});
 			}else if(knx18_str == 'S'){
 				$(knx18_terminal).css({'fill':'#d534eb'});
+				knx_last_value = knx18_str;
+				knx_last = knx18_terminal["id"];
+				knx_terminal_last = knx18_terminal;
 			}
 			else{
-				$(knx18_terminal).css({'fill':'green'});
+				if($(knx18_terminal).css("fill") == "rgb(213, 52, 235)"){
+					$(knx18_terminal).css({'fill':'#d534eb'});
+				}else{
+					$(knx18_terminal).css({'fill':'green'});
+				}
+				knx_last_value = knx18_str;
+				knx_last = knx18_terminal["id"];
+				knx_terminal_last = knx18_terminal;
 			}
 			knx_arr.push(knx18_str);
 		});
@@ -873,9 +973,19 @@ $(document).ready(function(){
 				$(knx19_terminal).css({'fill':'yellow'});
 			}else if(knx19_str == 'S'){
 				$(knx19_terminal).css({'fill':'#d534eb'});
+				knx_last_value = knx19_str;
+				knx_last = knx19_terminal["id"];
+				knx_terminal_last = knx19_terminal;
 			}
 			else{
-				$(knx19_terminal).css({'fill':'green'});
+				if($(knx19_terminal).css("fill") == "rgb(213, 52, 235)"){
+					$(knx19_terminal).css({'fill':'#d534eb'});
+				}else{
+					$(knx19_terminal).css({'fill':'green'});
+				}
+				knx_last_value = knx19_str;
+				knx_last = knx19_terminal["id"];
+				knx_terminal_last = knx19_terminal;
 			}
 			knx_arr.push(knx19_str);
 		});
@@ -885,9 +995,19 @@ $(document).ready(function(){
 				$(knx20_terminal).css({'fill':'yellow'});
 			}else if(knx20_str == 'S'){
 				$(knx20_terminal).css({'fill':'#d534eb'});
+				knx_last_value = knx20_str;
+				knx_last = knx20_terminal["id"];
+				knx_terminal_last = knx20_terminal;
 			}
 			else{
-				$(knx20_terminal).css({'fill':'green'});
+				if($(knx20_terminal).css("fill") == "rgb(213, 52, 235)"){
+					$(knx20_terminal).css({'fill':'#d534eb'});
+				}else{
+					$(knx20_terminal).css({'fill':'green'});
+				}
+				knx_last_value = knx20_str;
+				knx_last = knx20_terminal["id"];
+				knx_terminal_last = knx20_terminal;
 			}
 			knx_arr.push(knx20_str);
 		});
@@ -1880,40 +2000,40 @@ $(document).ready(function(){
 				overload_knx.push(sorted_knx[i])
 			}
 		}
-		// console.log($(knx1_terminal).css(["fill"]));
 		double_knx = [...new Set(double_knx)];
 		triple_knx = [...new Set(triple_knx)];
 		overload_knx = [...new Set(overload_knx)];
-		console.log(sorted_knx);
+		var doubles = ["n","o"];
+		var triples = ["A","B","C","D"];
+		var overloads = ["p"];
+		var knx_purp = []
+		for(var i=0;i<doubles.length;i++){
+			if(double_knx.includes(doubles[i])){
+				knx_purp.push(doubles[i]);
+			}
+		}
+		for(var i=0;i<triples.length;i++){
+			if(triple_knx.includes(triples[i])){
+				knx_purp.push(triples[i]);
+			}
+		}
+		for(var i=0;i<overloads.length;i++){
+			if(overload_knx.includes(overloads[i])){
+				knx_purp.push(overloads[i]);
+			}
+		}
+		console.log("knx_purp is: " + knx_purp);
 		console.log("doubles are: " + double_knx);
 		console.log("triples are: " + triple_knx);
 		console.log("overloads are: " + overload_knx);
 		for(var i=0;i<knx_terminals.length-1;i++){
-			if($(knx_terminals[i]).css("fill") == "rgb(0, 128, 0)" && overload_knx.includes(knx_last_value) && knx_terminals[i]["id"] == knx_last){
+			if($(knx_terminals[i]).css("fill") == "rgb(0, 128, 0)" && knx_purp.includes(knx_last_value) && knx_terminals[i]["id"] == knx_last){
 				$(knx_terminal_last).css({'fill':'#d534eb'});
 			}
-			if($(knx_terminals[i]).css("fill") == "rgb(213, 52, 235)" && knx_last_value != 'S' && !overload_knx.includes(knx_last_value) && knx_terminals[i]["id"] == knx_last){
+			if($(knx_terminals[i]).css("fill") == "rgb(213, 52, 235)" && knx_last_value != 'S' && !knx_purp.includes(knx_last_value) && knx_terminals[i]["id"] == knx_last){
 				$(knx_terminal_last).css({'fill':'green'});
 			}
 		}
-		// if(KNX.length >= 1){
-		// 	$(knx).css({'fill':'#40ff00'});
-		// }
-		// else{
-		// 	$(knx).css({'fill':'#f5f5f5'});
-		// }
-		// try {
-		//   var knx_alert = KNX.match(/A/g).length;
-		//   console.log("KNX-Alert is " + knx_alert);
-		//   $('select.selection-knx option:selected').each(function(){
-		//   	if($(this).val() == 'A' && knx_alert > 1){
-		//   		$(knxaddresses).css({'fill':'#d534eb'});
-		//   	}
-		//   });
-		// }
-		// catch(err) {
-		//   console.log("No characters!");
-		// }
 		str = DXR + AO3pt + AOten + BO + IN + PRES + KNX;
 		$('#successAlert').text(str).show();
 		// Step 22: Construct your AJAX requests. Without AJAX, the select tags would need
