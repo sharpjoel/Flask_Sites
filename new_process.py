@@ -10,7 +10,7 @@ from werkzeug.utils import secure_filename
 from services.services import Services
 import pandas as pd
 # change below depending on serer storage location
-UPLOAD_FOLDER = '/home/jcopeland/Documents/Flask_Sites/uploads'
+UPLOAD_FOLDER = '/home/dxr/dxr_template_generator/Flask_Sites/uploads'
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
 
 functionality_dictionary = pd.read_excel('Functionality.xlsx')
