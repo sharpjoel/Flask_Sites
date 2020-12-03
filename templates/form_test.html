@@ -3,40 +3,62 @@
 {% block content %}
 <form  id="postData">
     <div>
-        <input type="text" name="" id="field0">
+        <input type="text" name="" id="template_name">
     </div>
     <div>
-        <input type="text" name="" id="field1">
+      <input type="file" name="" id="file">
     </div>
     <div>
-        <textarea name="" id="field2" cols="20" rows="5"></textarea>
+        <input type="text" name="" id="location">
     </div>
     <div>
-      <select name="" id="field3">
-        <option value="one">One</option>
-        <option value="two">Two</option>
-        <option value="three">Three</option>
-        <option value="four">Four</option>
+        <input type="text" name="" id="comType">
+    </div>
+    <div>
+      <select name="" id="model">
+        <option value="a">One</option>
+        <option value="b">Two</option>
+        <option value="c">Three</option>
+        <option value="c">Four</option>
       </select>
     </div>
         <input type="submit" value="SAVE">
 </form>
 <script type="text/javascript">
   document.getElementById('postData').addEventListener('submit', postData);
-  function postData(event){
+  // changes file to base64 for sending to back end.
+  function getBase64(file) {
+      var result = new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = error => reject(error);
+    });
+    return result;
+  }
+  // have to make this an async in order to get return from getBase64 function
+  async function postData(event){
              event.preventDefault(); //prevents page refresh
              var postJSON = {}; //create json object
              var allElements = document.getElementsByTagName("*"); //get all form elements
+             // get the file data
+             const file = document.querySelector('input[type=file]').files[0]
+             // convert the file to base64
+             const b64File = await getBase64(file);
              for(var i=0; i < allElements.length; i++){  //build out json object
-               //console.log(postJSON[allElements[i].id])
-               //console.log(allElements[i].value)
-               postJSON[allElements[i].id] = allElements[i].value; //creates member of json object
+               if(allElements[i].id == 'file'){
+                 // console.log(b64File);
+                 postJSON[allElements[i].id] = b64File;
+               }
+               else {
+                 postJSON[allElements[i].id] = allElements[i].value; //creates member of json object
+               }
              }
              fetch('http://localhost:5000/process', {  //post object to backend for saving to db
                  method: 'POST',
                  headers : {'content-type': 'application/json'},
                  body:JSON.stringify(postJSON)
              }).catch((err)=>console.log(err))
-  }
+    }
 </script>
 {% endblock %}

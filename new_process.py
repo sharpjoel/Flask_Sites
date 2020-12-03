@@ -4,9 +4,14 @@
     - request:Used to retrieve POST and GET requests
     - jsonify: converts arguments or keyword arguments into a dictionary
 """
-from flask import Flask, render_template, request, jsonify
+import os
+from flask import Flask, render_template, request, jsonify, flash, redirect, url_for
+from werkzeug.utils import secure_filename
 from services.services import Services
 import pandas as pd
+# change below depending on serer storage location
+UPLOAD_FOLDER = '/home/jcopeland/Documents/Flask_Sites/uploads'
+ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
 
 functionality_dictionary = pd.read_excel('Functionality.xlsx')
 threepts_dictionary = pd.read_excel('three_points.xlsx')
@@ -18,6 +23,8 @@ knx_dictionary = pd.read_excel('knx.xlsx')
 
 # Step 2: Create an Instance of Flask. This will be your application
 app = Flask(__name__)
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.config['ALLOWED_EXTENSIONS'] = ALLOWED_EXTENSIONS
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 services = Services()
 """
@@ -282,16 +289,14 @@ def process():
         *** Note - 500 error implies that you're trying to read a JSON key that doesn't exist.
         If this happens, check out you AJAX data request and make sure it was set up correctly.
     """
-                # try:
-                #     print(request.json) # should see the output at command line
-                #     # results = services.setDXR(**request.json)
-                # except Exception as e:
-                #     return {"error": str(e)}
-                # #return results
-                # return(request.json)
-    name = request.form['name'][:-1]
-    #print(name)
-    return jsonify({'name': name})
+    try:
+        # print(request.json) # should see the output at command line
+        results = services.setDXR(**request.json)
+    except Exception as e:
+        return {"error": str(e)}
+                #return results
+    return(request.json)
+    # name = request.form['name'][:-1]
 
 
 @app.route('/custom_name/<string:custom_name>', methods=['GET'])
