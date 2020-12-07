@@ -21,7 +21,7 @@ x1x4inputs_dictionary = pd.read_excel('x1x4_inputs.xlsx')
 labsx1x4inputs_dictionary = pd.read_excel('x1x4labs.xlsx')
 pressureinputs_dictionary = pd.read_excel('pressure_inputs.xlsx')
 digitalinputs_dictionary = pd.read_excel('digital_inputs.xlsx')
-knx_dictionary = pd.read_excel('knx.xlsx')
+knx_dictionary = pd.read_excel('KNX.xlsx')
 
 # Step 2: Create an Instance of Flask. This will be your application
 app = Flask(__name__)
