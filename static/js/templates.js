@@ -16,12 +16,12 @@ $(document).ready(function(){
 				$( "#etypeSelection" ).val("C");
 				$( "#locSelection" ).val("U");
 				$( "#funcSelection" ).val("1");
-				$( "#vav-y1y2-3pt" ).val("A");
+				$( "#vav-12-y1y2" ).val("A");
 				$( "#vav-y5y6-3pt" ).val("G");
 				$( "#p1pres" ).val("W");
 				$( "#vav-b1d1bi" ).val("h");
-				$( "#vav-x2ai" ).val("K");
-				$( "#knx-1" ).val("D");
+				$( "#vav-12x2ai" ).val("D");
+				$( "#vav-knx-1" ).val("D");
 			}
 			else if(template == 'B'){
 				$( ".select-reset" ).prop('selectedIndex',0);

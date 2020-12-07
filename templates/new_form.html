@@ -75,7 +75,7 @@
 
 					<div id='second-1'>
 						<label><span class="badge badge-secondary">PLATFORM</span></label>
-						<select name='etype-selection' class='select select-reset' id='etypeSelection'>
+						<select name='etype-selection' class='select select-reset type-selection' id='etypeSelection'>
 							{% for key, value in etypes.items() %}
 								<option value="{{value}}">{{key}}</option>
 							{% endfor %}
@@ -83,7 +83,7 @@
 					</div>
 					<div id='second-2'>
 						<label><span class="badge badge-secondary">PLATFORM</span></label>
-						<select name='mtype-selection' class='select select-reset' id='mtypeSelection'>
+						<select name='mtype-selection' class='select select-reset type-selection' id='mtypeSelection'>
 							{% for key, value in mtypes.items() %}
 								<option value="{{value}}">{{key}}</option>
 							{% endfor %}
@@ -91,7 +91,7 @@
 					</div>
 					<div id='second-3'>
 						<label><span class="badge badge-secondary">PLATFORM</span></label>
-						<select name='ptype-selection' class='select select-reset' id='ptypeSelection'>
+						<select name='ptype-selection' class='select select-reset type-selection' id='ptypeSelection'>
 							{% for key, value in ptypes.items() %}
 								<option value="{{value}}">{{key}}</option>
 							{% endfor %}
@@ -175,26 +175,74 @@
 						<div class="form-inline">
 							<label><span class="badge badge-secondary">Y1,Y2</span></label>
 
-							<!-- VAV -->
+							<!-- VAV T12 -->
 
-							<select name='vav-y1y2-3pt' class='select select-reset y1y2-3pt' id='vav-y1y2-3pt'>
-								{% for key, value in threeptsVAVy1y2.items() %}
+							<select name='vav-12-y1y2' class='select select-reset y1y2-3pt vav-3pt func_str_1' id='vav-12-y1y2'>
+								{% for key, value in threepts12VAVy1y2.items() %}
 									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
 								{% endfor %}
 							</select>
 
-							<!-- FPB -->
+							<!-- FPB T12 -->
 
-							<select name='fpb-y1y2-3pt' class='select select-reset y1y2-3pt' id='fpb-y1y2-3pt' style="display:none">
-								{% for key, value in threeptsFPBy1y2.items() %}
+							<select name='fpb-12-y1y2' class='select select-reset y1y2-3pt fpb-3pt func_str_2' id='fpb-12-y1y2' style="display:none">
+								{% for key, value in threepts12FPBy1y2.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+
+							<!-- VAV T18 -->
+
+							<select name='vav-18-y1y2' class='select select-reset y1y2-3pt vav-3pt func_str_1' id='vav-18-y1y2' style="display:none">
+								{% for key, value in threepts18VAVy1y2.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+
+							<!-- FPB T18 -->
+
+							<select name='fpb-18-y1y2' class='select select-reset y1y2-3pt fpb-3pt func_str_2' id='fpb-18-y1y2' style="display:none">
+								{% for key, value in threepts18FPBy1y2.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+
+							<!-- WSHP -->
+
+							<select name='wshp-y1y2-3pt' class='select select-reset y1y2-3pt wshp-3pt func_str_3' id='wshp-y1y2-3pt' style="display:none">
+								{% for key, value in threeptsWSHPy1y2.items() %}
 									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
 								{% endfor %}
 							</select>
 
 							<!-- FCU -->
 
-							<select name='fcu-y1y2-3pt' class='select select-reset y1y2-3pt' id='fcu-y1y2-3pt' style="display:none">
+							<select name='fcu-y1y2-3pt' class='select select-reset y1y2-3pt fcu-3pt func_str_4' id='fcu-y1y2-3pt' style="display:none">
 								{% for key, value in threeptsFCUy1y2.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+
+							<!-- LAB -->
+
+							<select name='lab-y1y2-3pt' class='select select-reset y1y2-3pt lab-3pt func_str_5' id='lab-y1y2-3pt' style="display:none">
+								{% for key, value in threeptsLABy1y2.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+
+							<!-- FH -->
+
+							<select name='fh-y1y2-3pt' class='select select-reset y1y2-3pt fh-3pt func_str_6' id='fh-y1y2-3pt' style="display:none">
+								{% for key, value in threeptsFHy1y2.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+
+							<!-- CENFUNC -->
+
+							<select name='cenfunc-y1y2-3pt' class='select select-reset y1y2-3pt cenfunc-3pt func_str_7' id='cenfunc-y1y2-3pt' style="display:none">
+								{% for key, value in threeptsCENFUNCy1y2.items() %}
 									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
 								{% endfor %}
 							</select>
@@ -205,18 +253,74 @@
 						<div class="form-inline">
 							<label><span class="badge badge-secondary">Y3,Y4</span></label>
 
-							<!-- VAV -->
+							<!-- VAV T12-->
 
-							<select name='vav-y3y4-3pt' class='select select-reset y3y4-3pt' id='vav-y3y4-3pt'>
-								{% for key, value in threeptsVAVy3y4.items() %}
+							<select name='vav-12-y3y4' class='select select-reset y3y4-3pt vav-3pt func_str_1' id='vav-12-y3y4'>
+								{% for key, value in threepts12VAVy3y4.items() %}
 									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
 								{% endfor %}
 							</select>
 
-							<!-- FPB -->
+							<!-- FPB T12-->
 
-							<select name='fpb-y3Y4-3pt' class='select select-reset y3y4-3pt' id='fpb-y3y4-3pt' style="display:none">
-								{% for key, value in threeptsFPBy3y4.items() %}
+							<select name='fpb-12-y3Y4' class='select select-reset y3y4-3pt fpb-3pt func_str_2' id='fpb-12-y3y4' style="display:none">
+								{% for key, value in threepts12FPBy3y4.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+
+							<!-- VAV T18-->
+
+							<select name='vav-18-y3y4' class='select select-reset y3y4-3pt vav-3pt func_str_1' id='vav-18-y3y4' style="display:none">
+								{% for key, value in threepts18VAVy3y4.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+
+							<!-- FPB T18-->
+
+							<select name='fpb-18-y3Y4' class='select select-reset y3y4-3pt fpb-3pt func_str_2' id='fpb-18-y3y4' style="display:none">
+								{% for key, value in threepts18FPBy3y4.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+
+							<!-- WSHP -->
+
+							<select name='wshp-y3y4-3pt' class='select select-reset y3y4-3pt wshp-3pt func_str_3' id='wshp-y3y4-3pt' style="display:none">
+								{% for key, value in threeptsWSHPy3y4.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+
+							<!-- FCU -->
+
+							<select name='fcu-y3y4-3pt' class='select select-reset y3y4-3pt fcu-3pt func_str_4' id='fcu-y3y4-3pt' style="display:none">
+								{% for key, value in threeptsFCUy3y4.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+
+							<!-- LAB -->
+
+							<select name='lab-y3y4-3pt' class='select select-reset y3y4-3pt lab-3pt func_str_5' id='lab-y3y4-3pt' style="display:none">
+								{% for key, value in threeptsLABy3y4.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+
+							<!-- FH -->
+
+							<select name='fh-y3y4-3pt' class='select select-reset y3y4-3pt fh-3pt func_str_6' id='fh-y3y4-3pt' style="display:none">
+								{% for key, value in threeptsFHy3y4.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+
+							<!-- CENFUNC -->
+
+							<select name='cenfunc-y3y4-3pt' class='select select-reset y3y4-3pt cenfunc-3pt func_str_7' id='cenfunc-y3y4-3pt' style="display:none">
+								{% for key, value in threeptsCENFUNCy3y4.items() %}
 									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
 								{% endfor %}
 							</select>
@@ -229,7 +333,7 @@
 
 							<!-- VAV -->
 
-							<select name='vav-y5y6-3pt' class='select select-reset y5y6-3pt' id='vav-y5y6-3pt'>
+							<select name='vav-y5y6-3pt' class='select select-reset y5y6-3pt vav-3pt func_str_1' id='vav-y5y6-3pt'>
 								{% for key, value in threeptsVAVy5y6.items() %}
 									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
 								{% endfor %}
@@ -237,8 +341,32 @@
 
 							<!-- FPB -->
 
-							<select name='fpb-y5Y6-3pt' class='select select-reset y5y6-3pt' id='fpb-y5y6-3pt' style="display:none">
+							<select name='fpb-y5Y6-3pt' class='select select-reset y5y6-3pt fpb-3pt func_str_2' id='fpb-y5y6-3pt' style="display:none">
 								{% for key, value in threeptsFPBy5y6.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+
+							<!-- WSHP -->
+
+							<select name='wshp-y5y6-3pt' class='select select-reset y5y6-3pt wshp-3pt func_str_3' id='wshp-y5y6-3pt' style="display:none">
+								{% for key, value in threeptsWSHPy5y6.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+
+							<!-- FCU -->
+
+							<select name='fcu-y5y6-3pt' class='select select-reset y5y6-3pt fcu-3pt func_str_4' id='fcu-y5y6-3pt' style="display:none">
+								{% for key, value in threeptsFCUy5y6.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+
+							<!-- CENFUNC -->
+
+							<select name='cenfunc-y5y6-3pt' class='select select-reset y5y6-3pt cenfunc-3pt func_str_7' id='cenfunc-y5y6-3pt' style="display:none">
+								{% for key, value in threeptsCENFUNCy5y6.items() %}
 									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
 								{% endfor %}
 							</select>
@@ -251,7 +379,7 @@
 
 							<!-- VAV -->
 
-							<select name='vav-y7y8-3pt' class='select select-reset y7y8-3pt' id='vav-y7y8-3pt'>
+							<select name='vav-y7y8-3pt' class='select select-reset y7y8-3pt vav-3pt func_str_1' id='vav-y7y8-3pt'>
 								{% for key, value in threeptsVAVy7y8.items() %}
 									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
 								{% endfor %}
@@ -259,8 +387,32 @@
 
 							<!-- FPB -->
 
-							<select name='fpb-y7Y8-3pt' class='select select-reset y7y8-3pt' id='fpb-y7y8-3pt' style="display:none">
+							<select name='fpb-y7Y8-3pt' class='select select-reset y7y8-3pt fpb-3pt func_str_2' id='fpb-y7y8-3pt' style="display:none">
 								{% for key, value in threeptsFPBy7y8.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+
+							<!-- WSHP -->
+
+							<select name='wshp-y7Y8-3pt' class='select select-reset y7y8-3pt wshp-3pt func_str_3' id='wshp-y7y8-3pt' style="display:none">
+								{% for key, value in threeptsWSHPy7y8.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+
+							<!-- FCU -->
+
+							<select name='fcu-y7Y8-3pt' class='select select-reset y7y8-3pt fcu-3pt func_str_4' id='fcu-y7y8-3pt' style="display:none">
+								{% for key, value in threeptsFCUy7y8.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+
+							<!-- CENFUNC -->
+
+							<select name='cenfunc-y7Y8-3pt' class='select select-reset y7y8-3pt cenfunc-3pt func_str_7' id='cenfunc-y7y8-3pt' style="display:none">
+								{% for key, value in threeptsCENFUNCy7y8.items() %}
 									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
 								{% endfor %}
 							</select>
@@ -276,62 +428,216 @@
 						<h3><span class="badge badge-secondary">AO:0-10V</span></h3>
 						<div class="form-inline">
 							<label><span class="badge badge-secondary">Y10</span></label>
-							<!-- Old Y10 Setup -->
-							<select name='lab-y10' class='select select-reset y10' id='lab-y10' style="display:none">
-								{% for key, value in zten1030.items() %}
+							<!-- VAV Y10 Type12 Setup -->
+							<select name='vav-12-y10' class='select select-reset y10 vav-y10 func_str_1' id='vav-12-y10'>
+								{% for key, value in ztens12VAVy10.items() %}
 									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
 								{% endfor %}
 							</select>
-							<!-- VAV Y10 Setup -->
-							<select name='vav-y10' class='select select-reset y10' id='vav-y10'>
-								{% for key, value in ztensVAVy10.items() %}
+							<!-- VAV Y10 Type18 Setup -->
+							<select name='vav-18-y10' class='select select-reset y10 vav-y10 func_str_1' id='vav-18-y10' style="display:none">
+								{% for key, value in ztens18VAVy10.items() %}
 									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
 								{% endfor %}
 							</select>
-
+							<!-- FPB Y10 Type12 Setup -->
+							<select name='fpb-12-y10' class='select select-reset y10 fpb-y10 func_str_2' id='fpb-12-y10' style="display:none">
+								{% for key, value in ztens12FPBy10.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- FPB Y10 Type18 Setup -->
+							<select name='fpb-18-y10' class='select select-reset y10 fpb-y10 func_str_2' id='fpb-18-y10' style="display:none">
+								{% for key, value in ztens18FPBy10.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- WSHP Y10 Setup -->
+							<select name='wshp-y10' class='select select-reset wshp-y10 func_str_3' id='wshp-y10' style="display:none">
+								{% for key, value in ztensWSHPy10.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- FCU Y10 Setup -->
+							<select name='fcu-y10' class='select select-reset fcu-y10 func_str_4' id='fcu-y10' style="display:none">
+								{% for key, value in ztensFCUy10.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- LAB Y10 Setup -->
+							<select name='lab-y10' class='select select-reset lab-y10 func_str_5' id='lab-y10' style="display:none">
+								{% for key, value in ztensLABy10.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- FH Y10 Setup -->
+							<select name='fh-y10' class='select select-reset fh-y10 func_str_6' id='fh-y10' style="display:none">
+								{% for key, value in ztensFHy10.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- CENFUNC Y10 Setup -->
+							<select name='cenfunc-y10' class='select select-reset cenfunc-y10 func_str_7' id='cenfunc-y10' style="display:none">
+								{% for key, value in ztensCENFUNCy10.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
 						</div>
 						<div class="form-inline">
 							<label><span class="badge badge-secondary">Y20</span></label>
-							<!-- Old Y20 Setup -->
-							<select name='lab-y20' class='select select-reset y20' id='lab-y20' style="display:none">
-								{% for key, value in zten2040.items() %}
+							<!-- VAV Y20 Type12 Setup -->
+							<select name='vav-12-y20' class='select select-reset y20 vav-y20 func_str_1' id='vav-12-y20'>
+								{% for key, value in ztens12VAVy20.items() %}
 									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
 								{% endfor %}
 							</select>
-							<!-- VAV Y20 Setup -->
-							<select name='vav-y20' class='select select-reset y20' id='vav-y20'>
-								{% for key, value in ztensVAVy20.items() %}
+							<!-- VAV Y20 Type18 Setup -->
+							<select name='vav-18-y20' class='select select-reset y20 vav-y20 func_str_1' id='vav-18-y20' style="display:none">
+								{% for key, value in ztens18VAVy20.items() %}
 									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
 								{% endfor %}
 							</select>
-
+							<!-- FPB Y20 Type12 Setup -->
+							<select name='fpb-12-y20' class='select select-reset y20 fpb-y20 func_str_2' id='fpb-12-y20' style="display:none">
+								{% for key, value in ztens12FPBy20.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- FPB Y20 Type18 Setup -->
+							<select name='fpb-18-y20' class='select select-reset y20 fpb-y20 func_str_2' id='fpb-18-y20' style="display:none">
+								{% for key, value in ztens18FPBy20.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- WSHP Y20 Setup -->
+							<select name='wshp-y20' class='select select-reset wshp-y20 func_str_3' id='wshp-y20' style="display:none">
+								{% for key, value in ztensWSHPy20.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- FCU Y20 Setup -->
+							<select name='fcu-y20' class='select select-reset fcu-y20 func_str_4' id='fcu-y20' style="display:none">
+								{% for key, value in ztensFCUy20.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- LAB Y20 Setup -->
+							<select name='lab-y20' class='select select-reset lab-y20 func_str_5' id='lab-y20' style="display:none">
+								{% for key, value in ztensLABy20.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- FH Y20 Setup -->
+							<select name='fh-y20' class='select select-reset fh-y20 func_str_6' id='fh-y20' style="display:none">
+								{% for key, value in ztensFHy20.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- CENFUNC Y20 Setup -->
+							<select name='cenfunc-y20' class='select select-reset cenfunc-y20 func_str_7' id='cenfunc-y20' style="display:none">
+								{% for key, value in ztensCENFUNCy20.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
 						</div>
 						<div class="form-inline">
 							<label><span class="badge badge-secondary">Y30</span></label>
-							<!-- Old Y30 Setup -->
-							<select name='lab-y30' class='select select-reset y30' id='lab-y30' style="display:none">
-								{% for key, value in zten1030.items() %}
+							<!-- VAV Y30 Setup -->
+							<select name='vav-y30' class='select select-reset y30 vav-y30 func_str_1' id='vav-y30'>
+								{% for key, value in ztensVAVy30.items() %}
 									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
 								{% endfor %}
 							</select>
-							<!-- VAV Y30 Setup -->
-							<select name='vav-y30' class='select select-reset y30' id='vav-y30'>
-								{% for key, value in ztensVAVy10.items() %}
+							<!-- FPB Y30 Setup -->
+							<select name='fpb-y30' class='select select-reset y30 fpb-y30 func_str_2' id='fpb-y30' style="display:none">
+								{% for key, value in ztensFPBy30.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- WSHP Y30 Setup -->
+							<select name='wshp-y30' class='select select-reset y30 wshp-y30 func_str_3' id='wshp-y30' style="display:none">
+								{% for key, value in ztensWSHPy30.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- FCU Y30 Setup -->
+							<select name='fcu-y30' class='select select-reset y30 fcu-y30 func_str_4' id='fcu-y30' style="display:none">
+								{% for key, value in ztensFCUy30.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- LAB Y30 Type17C Setup -->
+							<select name='lab-17C-y30' class='select select-reset y30 lab-y30 func_str_5' id='lab-17C-y30' style="display:none">
+								{% for key, value in ztens17CLABy30.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- LAB Y30 Type17CX Setup -->
+							<select name='lab-17CX-y30' class='select select-reset y30 lab-y30 func_str_5' id='lab-17CX-y30' style="display:none">
+								{% for key, value in ztens17CXLABy30.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- FH Y30 Setup -->
+							<select name='fh-y30' class='select select-reset y30 fh-y30 func_str_6' id='fh-y30' style="display:none">
+								{% for key, value in ztensFHy30.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- CENFUNC Y30 Setup -->
+							<select name='cenfunc-y30' class='select select-reset y30 cenfunc-y30 func_str_7' id='cenfunc-y30' style="display:none">
+								{% for key, value in ztensCENFUNCy30.items() %}
 									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
 								{% endfor %}
 							</select>
 						</div>
 						<div class="form-inline">
 							<label><span class="badge badge-secondary">Y40</span></label>
-							<!-- Old Y40 Setup-->
-							<select name='lab-y40' class='select select-reset y40' id='lab-y40' style="display:none">
-								{% for key, value in zten2040.items() %}
+							<!-- VAV Y40 Setup -->
+							<select name='vav-y40' class='select select-reset y40 vav-y40 func_str_1' id='vav-y40'>
+								{% for key, value in ztensVAVy40.items() %}
 									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
 								{% endfor %}
 							</select>
-							<!-- VAV Y40 Setup -->
-							<select name='vav-y40' class='select select-reset y40' id='vav-y40'>
-								{% for key, value in ztensVAVy20.items() %}
+							<!-- FPB Y40 Setup -->
+							<select name='fpb-y40' class='select select-reset y40 fpb-y40 func_str_2' id='fpb-y40' style="display:none">
+								{% for key, value in ztensFPBy40.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- WSHP Y40 Setup -->
+							<select name='wshp-y40' class='select select-reset y40 wshp-y40 func_str_3' id='wshp-y40' style="display:none">
+								{% for key, value in ztensWSHPy40.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- FCU Y40 Setup -->
+							<select name='fcu-y40' class='select select-reset y40 fcu-y40 func_str_4' id='fcu-y40' style="display:none">
+								{% for key, value in ztensFCUy40.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- LAB Y40 Type17C Setup -->
+							<select name='lab-17C-y40' class='select select-reset y40 lab-y40 func_str_5' id='lab-17C-y40' style="display:none">
+								{% for key, value in ztens17CLABy40.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- LAB Y40 Type17CX Setup -->
+							<select name='lab-17CX-y40' class='select select-reset y40 lab-y40 func_str_5' id='lab-17CX-y40' style="display:none">
+								{% for key, value in ztens17CXLABy40.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- FH Y40 Setup -->
+							<select name='fh-y40' class='select select-reset y40 fh-y40 func_str_6' id='fh-y40' style="display:none">
+								{% for key, value in ztensFHy40.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- CENFUNC Y40 Setup -->
+							<select name='cenfunc-y40' class='select select-reset y40 cenfunc-y40 func_str_7' id='cenfunc-y40' style="display:none">
+								{% for key, value in ztensCENFUNCy40.items() %}
 									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
 								{% endfor %}
 							</select>
@@ -417,94 +723,340 @@
 						<h3><span class="badge badge-secondary">Inputs:Binary+Analog</span></h3>
 						<div class="form-inline">
 							<label><span class="badge badge-secondary lab-d1d2d3">D1</span></label>
-							<select name='d1bi' class='select select-reset lab-d1d2d3' id='d1bi'>
-								{% for key, value in d1d2d3.items() %}
-									<option value="{{value}}">{{key}}</option>
+							<!-- LAB -->
+							<select name='lab-d1bi' class='select select-reset d1d2d3 lab-d1d2d3 func_str_5' id='lab-d1bi' style="display:none">
+								{% for key, value in inputsLABd1.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- FH -->
+							<select name='fh-d1bi' class='select select-reset d1d2d3 fh-d1d2d3 func_str_6' id='fh-d1bi' style="display:none">
+								{% for key, value in inputsFHd1.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
 								{% endfor %}
 							</select>
 						</div>
 						<div class="form-inline">
 							<label><span class="badge badge-secondary lab-d1d2d3">D2</span></label>
-							<select name='d2bi' class='select select-reset lab-d1d2d3' id='d2bi'>
-								{% for key, value in d1d2d3.items() %}
-									<option value="{{value}}">{{key}}</option>
+							<!-- LAB -->
+							<select name='lab-d2bi' class='select select-reset d1d2d3 lab-d1d2d3 func_str_5' id='lab-d2bi' style="display:none">
+								{% for key, value in inputsLABd2.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- FH -->
+							<select name='fh-d2bi' class='select select-reset d1d2d3 fh-d1d2d3 func_str_6' id='fh-d2bi' style="display:none">
+								{% for key, value in inputsFHd2.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
 								{% endfor %}
 							</select>
 						</div>
 						<div class="form-inline">
 							<label><span class="badge badge-secondary lab-d1d2d3">D3</span></label>
-							<select name='d3bi' class='select select-reset lab-d1d2d3' id='d3bi'>
-								{% for key, value in d1d2d3.items() %}
-									<option value="{{value}}">{{key}}</option>
+							<!-- LAB -->
+							<select name='lab-d3bi' class='select select-reset d1d2d3 lab-d1d2d3 func_str_5' id='lab-d3bi' style="display:none">
+								{% for key, value in inputsLABd3.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- FH -->
+							<select name='fh-d3bi' class='select select-reset d1d2d3 fh-d1d2d3 func_str_6' id='fh-d3bi' style="display:none">
+								{% for key, value in inputsFHd3.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
 								{% endfor %}
 							</select>
 						</div>
 						<div class="form-inline">
 							<label><span class="badge badge-secondary" id='b1d1-badge'>D1</span></label>
-							<!-- Original -->
-							<select name='b1d1bi' class='select select-reset' id='b1d1bi' style="display:none">
-								{% for key, value in d1d2.items() %}
-									<option value="{{value}}">{{key}}</option>
+							<!-- VAV -->
+							<select name='vav-b1d1bi' class='select select-reset b1d1bi vav-b1d1bi func_str_1' id='vav-b1d1bi'>
+								{% for key, value in inputsVAVd1.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
 								{% endfor %}
 							</select>
-							<!-- VAV -->
-							<select name='vav-b1d1bi' class='select select-reset b1d1bi' id='vav-b1d1bi'>
-								{% for key, value in inputsVAVd1.items() %}
+							<!-- FPB -->
+							<select name='fpb-b1d1bi' class='select select-reset b1d1bi fpb-b1d1bi func_str_2' id='fpb-b1d1bi' style="display:none">
+								{% for key, value in inputsFPBd1.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- WSHP -->
+							<select name='wshp-b1d1bi' class='select select-reset b1d1bi wshp-b1d1bi func_str_3' id='wshp-b1d1bi' style="display:none">
+								{% for key, value in inputsWSHPd1.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- FCU -->
+							<select name='fcu-b1d1bi' class='select select-reset b1d1bi fcu-b1d1bi func_str_4' id='fcu-b1d1bi' style="display:none">
+								{% for key, value in inputsFCUd1.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- LAB -->
+							<select name='lab-b1d1bi' class='select select-reset b1d1bi lab-b1d1bi func_str_5' id='lab-b1d1bi' style="display:none">
+								{% for key, value in inputsLABb1.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- FH -->
+							<select name='fh-b1d1bi' class='select select-reset b1d1bi fh-b1d1bi func_str_6' id='fh-b1d1bi' style="display:none">
+								{% for key, value in inputsFHb1.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- CENFUNC -->
+							<select name='cenfunc-b1d1bi' class='select select-reset b1d1bi cenfunc-b1d1bi func_str_7' id='cenfunc-b1d1bi' style="display:none">
+								{% for key, value in inputsCENFUNCd1.items() %}
 									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
 								{% endfor %}
 							</select>
 						</div>
 						<div class="form-inline">
 							<label><span class="badge badge-secondary" id='b2d2-badge'>D2</span></label>
-							<select name='b2d2bi' class='select select-reset' id='b2d2bi'>
-								{% for key, value in d1d2.items() %}
-									<option value="{{value}}">{{key}}</option>
+							<!-- VAV -->
+							<select name='vav-b2d2bi' class='select select-reset b2d2bi vav-b2d2bi func_str_1' id='vav-b2d2bi'>
+								{% for key, value in inputsVAVd2.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- FPB -->
+							<select name='fpb-b2d2bi' class='select select-reset b2d2bi fpb-b2d2bi func_str_2' id='fpb-b2d2bi' style="display:none">
+								{% for key, value in inputsFPBd2.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- WSHP -->
+							<select name='wshp-b2d2bi' class='select select-reset b2d2bi wshp-b2d2bi func_str_3' id='wshp-b2d2bi' style="display:none">
+								{% for key, value in inputsWSHPd2.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- FCU -->
+							<select name='fcu-b2d2bi' class='select select-reset b2d2bi fcu-b2d2bi func_str_4' id='fcu-b2d2bi' style="display:none">
+								{% for key, value in inputsFCUd2.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- LAB -->
+							<select name='lab-b2d2bi' class='select select-reset b2d2bi lab-b2d2bi func_str_5' id='lab-b2d2bi' style="display:none">
+								{% for key, value in inputsLABb2.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- FH -->
+							<select name='fh-b2d2bi' class='select select-reset b2d2bi fh-b2d2bi func_str_6' id='fh-b2d2bi' style="display:none">
+								{% for key, value in inputsFHb2.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- CENFUNC -->
+							<select name='cenfunc-b2d2bi' class='select select-reset b2d2bi cenfunc-b2d2bi func_str_7' id='cenfunc-b2d2bi' style="display:none">
+								{% for key, value in inputsCENFUNCd2.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
 								{% endfor %}
 							</select>
 						</div>
 						<div class="form-inline">
 							<label><span class="badge badge-secondary">X1</span></label>
-							<!-- Original -->
-							<select name='x1ai' class='select select-reset x1ai' id='x1ai' style="display:none">
-								{% for key, value in x1x4.items() %}
-									<option value="{{value}}">{{key}}</option>
+							<!-- VAV -->
+							<select name='vav-12x1ai' class='select select-reset x1ai vav-x1ai func_str_1' id='vav-12x1ai'>
+								{% for key, value in inputs12VAVx1.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
 								{% endfor %}
 							</select>
 							<!-- VAV -->
-							<select name='vav-x1ai' class='select select-reset x1ai' id='vav-x1ai'>
-								{% for key, value in inputsVAVx1.items() %}
+							<select name='vav-18x1ai' class='select select-reset x1ai vav-x1ai func_str_1' id='vav-18x1ai' style="display:none">
+								{% for key, value in inputs18VAVx1.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- FPB -->
+							<select name='fpb-12x1ai' class='select select-reset x1ai fpb-x1ai func_str_2' id='fpb-12x1ai' style="display:none">
+								{% for key, value in inputs12FPBx1.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- FPB -->
+							<select name='fpb-18x1ai' class='select select-reset x1ai fpb-x1ai func_str_2' id='fpb-18x1ai' style="display:none">
+								{% for key, value in inputs18FPBx1.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- WSHP -->
+							<select name='wshp-x1ai' class='select select-reset x1ai wshp-x1ai func_str_3' id='wshp-x1ai' style="display:none">
+								{% for key, value in inputsWSHPx1.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- FCU -->
+							<select name='fcu-x1ai' class='select select-reset x1ai fcu-x1ai func_str_4' id='fcu-x1ai' style="display:none">
+								{% for key, value in inputsFCUx1.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- LAB -->
+							<select name='lab-x1ai' class='select select-reset x1ai lab-x1ai func_str_5' id='lab-x1ai' style="display:none">
+								{% for key, value in inputsLABx1.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- FH -->
+							<select name='fh-x1ai' class='select select-reset x1ai fh-x1ai func_str_6' id='fh-x1ai' style="display:none">
+								{% for key, value in inputsFHx1.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- CENFUNC -->
+							<select name='cenfunc-x1ai' class='select select-reset x1ai cenfunc-x1ai func_str_7' id='cenfunc-x1ai' style="display:none">
+								{% for key, value in inputsCENFUNCx1.items() %}
 									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
 								{% endfor %}
 							</select>
 						</div>
 						<div class="form-inline">
 							<label><span class="badge badge-secondary">X2</span></label>
-							<!-- Original -->
-							<select name='x2ai' class='select select-reset x2ai' id='x2ai' style="display:none">
-								{% for key, value in x1x4.items() %}
-									<option value="{{value}}">{{key}}</option>
+							<!-- VAV -->
+							<select name='vav-12x2ai' class='select select-reset x2ai vav-x2ai func_str_1' id='vav-12x2ai'>
+								{% for key, value in inputs12VAVx2.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
 								{% endfor %}
 							</select>
 							<!-- VAV -->
-							<select name='vav-x2ai' class='select select-reset x2ai' id='vav-x2ai'>
-								{% for key, value in inputsVAVx2.items() %}
+							<select name='vav-18x2ai' class='select select-reset x2ai vav-x2ai func_str_1' id='vav-18x2ai' style="display:none">
+								{% for key, value in inputs18VAVx2.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- FPB -->
+							<select name='fpb-12x2ai' class='select select-reset x2ai fpb-x2ai func_str_2' id='fpb-12x2ai' style="display:none">
+								{% for key, value in inputs12FPBx2.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- FPB -->
+							<select name='fpb-18x2ai' class='select select-reset x2ai fpb-x2ai func_str_2' id='fpb-18x2ai' style="display:none">
+								{% for key, value in inputs18FPBx2.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- WSHP -->
+							<select name='wshp-x2ai' class='select select-reset x2ai wshp-x2ai func_str_3' id='wshp-x2ai' style="display:none">
+								{% for key, value in inputsWSHPx2.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- FCU -->
+							<select name='fcu-x2ai' class='select select-reset x2ai fcu-x2ai func_str_4' id='fcu-x2ai' style="display:none">
+								{% for key, value in inputsFCUx2.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- LAB -->
+							<select name='lab-x2ai' class='select select-reset x2ai lab-x2ai func_str_5' id='lab-x2ai' style="display:none">
+								{% for key, value in inputsLABx2.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- FH -->
+							<select name='fh-x2ai' class='select select-reset x2ai fh-x2ai func_str_6' id='fh-x2ai' style="display:none">
+								{% for key, value in inputsFHx2.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- CENFUNC -->
+							<select name='cenfunc-x2ai' class='select select-reset x2ai cenfunc-x2ai func_str_7' id='cenfunc-x2ai' style="display:none">
+								{% for key, value in inputsCENFUNCx2.items() %}
 									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
 								{% endfor %}
 							</select>
 						</div>
 						<div class="form-inline">
 							<label><span class="badge badge-secondary x3x4-badge">X3</span></label>
-							<select name='x3ai' class='select select-reset' id='x3ai'>
-								{% for key, value in x1x4.items() %}
-									<option value="{{value}}">{{key}}</option>
+							<!-- VAV -->
+							<select name='vav-x3ai' class='select select-reset x3ai vav-x3ai func_str_1' id='vav-x3ai'>
+								{% for key, value in inputsVAVx3.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- FPB -->
+							<select name='fpb-x3ai' class='select select-reset x3ai fpb-x3ai func_str_2' id='fpb-x3ai' style="display:none">
+								{% for key, value in inputsFPBx3.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- WSHP -->
+							<select name='wshp-x2ai' class='select select-reset x2ai wshp-x2ai func_str_3' id='wshp-x3ai' style="display:none">
+								{% for key, value in inputsWSHPx2.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- FCU -->
+							<select name='fcu-x3ai' class='select select-reset x3ai fcu-x3ai func_str_4' id='fcu-x3ai' style="display:none">
+								{% for key, value in inputsFCUx3.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- LAB -->
+							<select name='lab-x3ai' class='select select-reset x3ai lab-x3ai func_str_5' id='lab-x3ai' style="display:none">
+								{% for key, value in inputsLABx3.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- FH -->
+							<select name='fh-x3ai' class='select select-reset x3ai fh-x3ai func_str_6' id='fh-x3ai' style="display:none">
+								{% for key, value in inputsFHx3.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- CENFUNC -->
+							<select name='cenfunc-x3ai' class='select select-reset x3ai cenfunc-x3ai func_str_7' id='cenfunc-x3ai' style="display:none">
+								{% for key, value in inputsCENFUNCx3.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
 								{% endfor %}
 							</select>
 						</div>
 						<div class="form-inline">
 							<label><span class="badge badge-secondary x3x4-badge">X4</span></label>
-							<select name='x4ai' class='select select-reset' id='x4ai'>
-								{% for key, value in x1x4.items() %}
-									<option value="{{value}}">{{key}}</option>
+							<!-- VAV -->
+							<select name='vav-x4ai' class='select select-reset x4ai vav-x4ai func_str_1' id='vav-x4ai'>
+								{% for key, value in inputsVAVx4.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- FPB -->
+							<select name='fpb-x4ai' class='select select-reset x4ai fpb-x4ai func_str_2' id='fpb-x4ai' style="display:none">
+								{% for key, value in inputsFPBx4.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- WSHP -->
+							<select name='wshp-x4ai' class='select select-reset x4ai wshp-x4ai func_str_3' id='wshp-x4ai' style="display:none">
+								{% for key, value in inputsWSHPx4.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- FCU -->
+							<select name='fcu-x4ai' class='select select-reset x4ai fcu-x4ai func_str_4' id='fcu-x4ai' style="display:none">
+								{% for key, value in inputsFCUx4.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- LAB -->
+							<select name='lab-x4ai' class='select select-reset x4ai lab-x4ai func_str_5' id='lab-x4ai' style="display:none">
+								{% for key, value in inputsLABx4.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- FH -->
+							<select name='fh-x4ai' class='select select-reset x4ai fh-x4ai func_str_6' id='fh-x4ai' style="display:none">
+								{% for key, value in inputsFHx4.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+								{% endfor %}
+							</select>
+							<!-- CENFUNC -->
+							<select name='cenfunc-x4ai' class='select select-reset x4ai cenfunc-x4ai func_str_7' id='cenfunc-x4ai' style="display:none">
+								{% for key, value in inputsCENFUNCx4.items() %}
+									<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
 								{% endfor %}
 							</select>
 						</div>
@@ -571,8 +1123,38 @@
 							{% for item in range(1,11) %}
 							<div class="form-inline">
 								<label><span class="badge badge-secondary select-badge">KNX-{{item}}</span></label>
-								<select name='knx-{{item}}' class='select selection-knx' id='knx-{{item}}'>
-									{% for key, value in knx.items() %}
+								<select name='vav-knx-{{item}}' class='select selection-knx vav-knx func_str_1' id='vav-knx-{{item}}'>
+									{% for key, value in knxVAV.items() %}
+										<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+									{% endfor %}
+								</select>
+								<select name='fpb-knx-{{item}}' class='select selection-knx fpb-knx func_str_2' id='fpb-knx-{{item}}' style="display:none">
+									{% for key, value in knxFPB.items() %}
+										<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+									{% endfor %}
+								</select>
+								<select name='wshp-knx-{{item}}' class='select selection-knx wshp-knx func_str_3' id='wshp-knx-{{item}}' style="display:none">
+									{% for key, value in knxWSHP.items() %}
+										<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+									{% endfor %}
+								</select>
+								<select name='fcu-knx-{{item}}' class='select selection-knx fcu-knx func_str_4' id='fcu-knx-{{item}}' style="display:none">
+									{% for key, value in knxFCU.items() %}
+										<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+									{% endfor %}
+								</select>
+								<select name='lab-knx-{{item}}' class='select selection-knx lab-knx func_str_5' id='lab-knx-{{item}}' style="display:none">
+									{% for key, value in knxLAB.items() %}
+										<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+									{% endfor %}
+								</select>
+								<select name='fh-knx-{{item}}' class='select selection-knx fh-knx func_str_6' id='fh-knx-{{item}}' style="display:none">
+									{% for key, value in knxFH.items() %}
+										<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+									{% endfor %}
+								</select>
+								<select name='cenfunc-knx-{{item}}' class='select selection-knx cenfunc-knx func_str_7' id='cenfunc-knx-{{item}}' style="display:none">
+									{% for key, value in knxCENFUNC.items() %}
 										<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
 									{% endfor %}
 								</select>
@@ -583,8 +1165,38 @@
 							{% for item in range(11,21) %}
 							<div class="form-inline">
 								<label><span class="badge badge-secondary select-badge">KNX-{{item}}</span></label>
-								<select name='knx-{{item}}' class='select selection-knx' id='knx-{{item}}'>
-									{% for key, value in knx.items() %}
+								<select name='vav-knx-{{item}}' class='select selection-knx vav-knx func_str_1' id='vav-knx-{{item}}'>
+									{% for key, value in knxVAV.items() %}
+										<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+									{% endfor %}
+								</select>
+								<select name='fpb-knx-{{item}}' class='select selection-knx fpb-knx func_str_2' id='fpb-knx-{{item}}' style="display:none">
+									{% for key, value in knxFPB.items() %}
+										<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+									{% endfor %}
+								</select>
+								<select name='wshp-knx-{{item}}' class='select selection-knx wshp-knx func_str_3' id='wshp-knx-{{item}}' style="display:none">
+									{% for key, value in knxWSHP.items() %}
+										<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+									{% endfor %}
+								</select>
+								<select name='fcu-knx-{{item}}' class='select selection-knx fcu-knx func_str_4' id='fcu-knx-{{item}}' style="display:none">
+									{% for key, value in knxFCU.items() %}
+										<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+									{% endfor %}
+								</select>
+								<select name='lab-knx-{{item}}' class='select selection-knx lab-knx func_str_5' id='lab-knx-{{item}}' style="display:none">
+									{% for key, value in knxLAB.items() %}
+										<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+									{% endfor %}
+								</select>
+								<select name='fh-knx-{{item}}' class='select selection-knx fh-knx func_str_6' id='fh-knx-{{item}}' style="display:none">
+									{% for key, value in knxFH.items() %}
+										<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
+									{% endfor %}
+								</select>
+								<select name='cenfunc-knx-{{item}}' class='select selection-knx cenfunc-knx func_str_7' id='cenfunc-knx-{{item}}' style="display:none">
+									{% for key, value in knxCENFUNC.items() %}
 										<option value="{{value}}" class="{{value}} option-style">{{key}}</option>
 									{% endfor %}
 								</select>
