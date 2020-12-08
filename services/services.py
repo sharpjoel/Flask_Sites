@@ -13,12 +13,14 @@ class Services(object):
     def __init__(self):  # setup db connection
         client = connect(db='pztcetool', host='localhost', port=27017)
         self.db = client['pztcetool']
+
     def saveTemplate(self, **kwargs):  # save dxr to db
         dxr = DXR()
         # template name is all fields combined with underscores between
         dxr.template_name = kwargs.get('template_name', None)
         template_name_chunks = dxr.template_name.split('_')
         # template_name_chunks should always equal 7
+        # and will always be in same order
         if len(template_name_chunks) < 7:
             raise ValueError('There is an issue with template_name')
         dxr.one = template_name_chunks[0]
@@ -90,4 +92,29 @@ class Services(object):
         return {"dxr": dxr.location, "id": str(dxr.id), "template_name": dxr.template_name}
 
     def templateSearch(self, **kwargs):
-        pass
+        # template name is all fields combined with underscores between
+        template_name = kwargs.get('template_name',
+            'XXX_XXXX_XXXX_XXXXXXXX_XXXXXX_XXXXX_XXXXXXXXXXXXXXXXXXXX')
+        template_name_chunks = template_name.split('_')
+        search_dict = {}
+        # these if statement len(set()) statemens return 1 if all letters
+        # in string are same character. if not one then we have valid search
+        if len(set(template_name_chunks[0])) != 1:
+            search_dict['one__icontains'] = template_name_chunks[0]
+        if len(set(template_name_chunks[1])) != 1:
+            search_dict['two__icontains'] = template_name_chunks[1]
+        if len(set(template_name_chunks[2])) != 1:
+            search_dict['three__icontains'] = template_name_chunks[2]
+        if len(set(template_name_chunks[3])) != 1:
+            search_dict['four__icontains'] = template_name_chunks[3]
+        if len(set(template_name_chunks[4])) != 1:
+            search_dict['five__icontains'] = template_name_chunks[4]
+        if len(set(template_name_chunks[5])) != 1:
+            search_dict['six__icontains'] = template_name_chunks[5]
+        if len(set(template_name_chunks[6])) != 1:
+            search_dict['seven__icontains'] = template_name_chunks[6]
+        results = DXR.objects(**search_dict)
+        result_list = []
+        for result in results:
+            result_list.append(result.to_json())
+        return result_list

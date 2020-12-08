@@ -440,7 +440,6 @@ def process():
         If this happens, check out you AJAX data request and make sure it was set up correctly.
     """
     try:
-        print(request.json) # should see the output at command line
         results = services.saveTemplate(**request.json)
     except Exception as e:
         return {"error": str(e)}
@@ -464,6 +463,11 @@ def get_dxr_custom_name(custom_name=None):
 def create_new_template():
     return render_template('form_test.html', title='Add New Template')
 
+
+@app.route('/search/<string:template_name>', methods=['GET'])
+def templateSearch(template_name=None):
+    results = services.templateSearch(template_name=template_name)
+    return {'results': results}
 
 """
 Step 8 - Run your application. debug=True makes it so you don't have to stop and restart your
