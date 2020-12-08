@@ -2,7 +2,7 @@ import datetime
 from mongoengine import *
 
 
-class DXR(Document):  # DXR table schema
+class DXR(Document):  # DXR table schema one-seven are chunks of template_name
     template_name = StringField(required=False, max_lenght=200)
     one = StringField(required=True, max_length=200)
     two = StringField(required=True, max_length=200)
@@ -15,6 +15,6 @@ class DXR(Document):  # DXR table schema
     meta = {'indexes': [
          {'fields': ['$one', '$two', '$three', '$four', '$five', '$six', '$seven'],
              'default_language': 'english',
-             'weights': {'one': 10, 'two': 10, 'three': 10, 'four': 10,
-                         'five': 10, 'six': 10, 'seven': 10}}
+             'weights': {'one': 10, 'two': 9, 'three': 8, 'four': 7,
+                         'five': 6, 'six': 5, 'seven': 4}}
      ]}

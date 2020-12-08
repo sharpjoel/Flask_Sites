@@ -13,18 +13,21 @@ class Services(object):
     def __init__(self):  # setup db connection
         client = connect(db='pztcetool', host='localhost', port=27017)
         self.db = client['pztcetool']
-
     def saveTemplate(self, **kwargs):  # save dxr to db
         dxr = DXR()
-        dxr.one = kwargs.get('one', None)
-        dxr.two = kwargs.get('two', None)
-        dxr.three = kwargs.get('three', None)
-        dxr.four = kwargs.get('four', None)
-        dxr.five = kwargs.get('five', None)
-        dxr.six = kwargs.get('six', None)
-        dxr.seven = kwargs.get('seven', None)
         # template name is all fields combined with underscores between
         dxr.template_name = kwargs.get('template_name', None)
+        template_name_chunks = dxr.template_name.split('_')
+        # template_name_chunks should always equal 7
+        if len(template_name_chunks) < 7:
+            raise ValueError('There is an issue with template_name')
+        dxr.one = template_name_chunks[0]
+        dxr.two = template_name_chunks[1]
+        dxr.three = template_name_chunks[2]
+        dxr.four = template_name_chunks[3]
+        dxr.five = template_name_chunks[4]
+        dxr.six = template_name_chunks[5]
+        dxr.seven = template_name_chunks[6]
         # file is a base64 string
         file = kwargs.get('file', None)
         if file:

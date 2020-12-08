@@ -9,7 +9,7 @@ from flask import Flask, render_template, request, jsonify
 from services.services import Services
 import pandas as pd
 # change below depending on serer storage location
-UPLOAD_FOLDER = '/home/dxr/dxr_template_generator/Flask_Sites/uploads'
+UPLOAD_FOLDER = '/home/jcopeland/Documents/Flask_Sites/uploads'
 ALLOWED_EXTENSIONS = {'txt', 'pdf'}
 
 functionality_dictionary = pd.read_excel('Functionality.xlsx')
@@ -440,7 +440,7 @@ def process():
         If this happens, check out you AJAX data request and make sure it was set up correctly.
     """
     try:
-        # print(request.json) # should see the output at command line
+        print(request.json) # should see the output at command line
         results = services.saveTemplate(**request.json)
     except Exception as e:
         return {"error": str(e)}
@@ -462,7 +462,7 @@ def get_dxr_custom_name(custom_name=None):
 
 @app.route('/new', methods=['GET'])
 def create_new_template():
-    return render_template('form_test.html', title='jcformtest')
+    return render_template('form_test.html', title='Add New Template')
 
 
 """
