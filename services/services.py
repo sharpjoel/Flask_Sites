@@ -10,23 +10,28 @@ import base64
 
 class Services(object):
 
-    def __init__(self): # setup db connection
-        client = connect(db='testing', host='localhost', port=27017)
-        self.db = client['testing']
+    def __init__(self):  # setup db connection
+        client = connect(db='pztcetool', host='localhost', port=27017)
+        self.db = client['pztcetool']
 
-    def setDXR(self, **kwargs):  # save dxr to db
+    def saveTemplate(self, **kwargs):  # save dxr to db
         dxr = DXR()
-        dxr.comType = kwargs.get('comType', None)
-        dxr.model = kwargs.get('model', None)
-        dxr.location = kwargs.get('location', None)
+        dxr.one = kwargs.get('one', None)
+        dxr.two = kwargs.get('two', None)
+        dxr.three = kwargs.get('three', None)
+        dxr.four = kwargs.get('four', None)
+        dxr.five = kwargs.get('five', None)
+        dxr.six = kwargs.get('six', None)
+        dxr.seven = kwargs.get('seven', None)
+        # template name is all fields combined with underscores between
         dxr.template_name = kwargs.get('template_name', None)
+        # file is a base64 string
         file = kwargs.get('file', None)
-        # print(file)
         if file:
             try:
                 file = file.split(',')[1]  # remove up to comma
-                convertedFile = Services.convertBase64(file)  # convert back to a file
-                Services.saveFile(convertedFile, dxr.template_name)  # save the file
+                convertedFile = Services.convertBase64(file)  # convert back
+                Services.saveFile(convertedFile, dxr.template_name)  # save
             except Exception as e:
                 raise ValueError(str(e))
         try:
@@ -41,9 +46,9 @@ class Services(object):
 
     def saveFile(file=None, filename=None):
         if file is None:
-            return {"error": "No file provided"}
+            raise ValueError("No file provided")
         if filename == '':
-            return {"error": "No filename provided"}
+            raise ValueError("No filename provided")
         if file and Services.allowed_file(filename+'.txt'):
             filename = secure_filename(filename)
             filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
@@ -51,7 +56,7 @@ class Services(object):
                 with open(filepath, 'wb') as saveFile:
                     saveFile.write(file)
             except Exception as e:
-                return {"error": str(e)}
+                raise ValueError(str(e))
             return 1
             # return redirect(url_for('upload_file', filename=filename))
         else:
@@ -78,18 +83,8 @@ class Services(object):
         try:
             dxr = DXR.objects.get(template_name=template_name)
         except Exception as e:
-            return {"error": str(e)}
+            raise ValueError(str(e))
         return {"dxr": dxr.location, "id": str(dxr.id), "template_name": dxr.template_name}
 
-    def getAllTemplates(self, **kwargs):
-        # not using any kwargs
-        try:
-            pass
-        except:
-            pass
-
-    def saveBinaryObject(self, **kwargs):
-        try:
-            pass
-        except Exception as e:
-            return {"error": str(e)}
+    def templateSearch(self, **kwargs):
+        pass
