@@ -5,13 +5,12 @@
     - jsonify: converts arguments or keyword arguments into a dictionary
 """
 import os
-from flask import Flask, render_template, request, jsonify, flash, redirect, url_for
-from werkzeug.utils import secure_filename
+from flask import Flask, render_template, request, jsonify
 from services.services import Services
 import pandas as pd
 # change below depending on serer storage location
-UPLOAD_FOLDER = '/home/dxr/dxr_template_generator/Flask_Sites/uploads'
-ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
+UPLOAD_FOLDER = '/home/jcopeland/Documents/Flask_Sites/uploads'
+ALLOWED_EXTENSIONS = {'txt', 'pdf'}
 
 functionality_dictionary = pd.read_excel('Functionality.xlsx')
 threepts_dictionary = pd.read_excel('three_points.xlsx')
@@ -441,8 +440,7 @@ def process():
         If this happens, check out you AJAX data request and make sure it was set up correctly.
     """
     try:
-        # print(request.json) # should see the output at command line
-        results = services.setDXR(**request.json)
+        results = services.saveTemplate(**request.json)
     except Exception as e:
         return {"error": str(e)}
                 #return results
@@ -461,10 +459,15 @@ def get_dxr_custom_name(custom_name=None):
     return results
 
 
-@app.route('/jcformtest', methods=['GET'])
-def jcformtest():
-    return render_template('form_test.html', title='jcformtest')
+@app.route('/new', methods=['GET'])
+def create_new_template():
+    return render_template('form_test.html', title='Add New Template')
 
+
+@app.route('/search/<string:template_name>', methods=['GET'])
+def templateSearch(template_name=None):
+    results = services.templateSearch(template_name=template_name)
+    return {'results': results}
 
 """
 Step 8 - Run your application. debug=True makes it so you don't have to stop and restart your
