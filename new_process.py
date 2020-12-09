@@ -442,7 +442,7 @@ def process():
     """
     try:
         results = services.templateSearch(template_name=request.form['name_encoded'])
-        return(results)
+        return({'results': results})
     except Exception as e:
         return {"error": str(e)}
     # name = request.form['name'][:-1]

@@ -1612,9 +1612,15 @@ $(document).ready(function(){
 				// $('#errorAlert').text(data.error).show();
 				// $('#successAlert').hide();
 			}
-			else {
-				// $('#successAlert').text("Name: " + data.name).show();
-				// console.log(data.name);
+			else {  
+				// var template_list = JSON.parse(data.results);
+				for(var i=0;i<data.results.length;i++){
+				    var templateObj = JSON.parse(data.results[i]);
+				    $('#pageDisplay').text(templateObj.template_name);
+			            console.log(i);
+				    console.log(templateObj.template_name);
+				}
+				// console.log(data.results);
 				$('#errorAlert').hide();
 			}
 		});
