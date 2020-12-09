@@ -54,7 +54,7 @@
          postJSON[allElements[i].id] = allElements[i].value; //creates member of json object
        }
      }
-     fetch('http://localhost:5000/process', {  //post object to backend for saving to db
+     fetch('/save', {  //post object to backend for saving to db
          method: 'POST',
          headers : {'content-type': 'application/json'},
          body:JSON.stringify(postJSON)

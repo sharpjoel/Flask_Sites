@@ -10,7 +10,7 @@ from services.services import Services
 import pandas as pd
 # change below depending on serer storage location
 #UPLOAD_FOLDER = '/home/jcopeland/Documents/Flask_Sites/uploads'
-UPLOAD_FOLDER = '/home/dxr/dxr_template_generator/Flask_Sites'
+UPLOAD_FOLDER = '/home/dxr/dxr_template_generator/Flask_Sites/uploads'
 ALLOWED_EXTENSIONS = {'txt', 'pdf'}
 
 functionality_dictionary = pd.read_excel('Functionality.xlsx')
@@ -441,11 +441,10 @@ def process():
         If this happens, check out you AJAX data request and make sure it was set up correctly.
     """
     try:
-        results = services.saveTemplate(**request.json)
+        results = services.templateSearch(template_name=request.form['name_encoded'])
+        return(results)
     except Exception as e:
         return {"error": str(e)}
-                #return results
-    return(request.json)
     # name = request.form['name'][:-1]
 
 
@@ -463,6 +462,14 @@ def get_dxr_custom_name(custom_name=None):
 @app.route('/new', methods=['GET'])
 def create_new_template():
     return render_template('form_test.html', title='Add New Template')
+
+
+
+@app.route('/save', methods=['POST'])
+def save_new_template():
+    results = services.saveTemplate(**request.json)
+    return {'results': results}
+
 
 
 @app.route('/search/<string:template_name>', methods=['GET'])

@@ -81,7 +81,7 @@ class Services(object):
     def getDXRMID(self, **kwargs):  # Get DXR via mongo _id
         id = kwargs.get('id')
         dxrs = DXR.objects.get(id=id)
-        return {"dxr": dxrs.location, "id": str(id)}
+        return {"id": str(id)}
 
     def getDXRTN(self, **kwargs):  # Get DXR via custom template name.
         template_name = kwargs.get('template_name')
