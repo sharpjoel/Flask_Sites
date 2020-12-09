@@ -1468,7 +1468,7 @@ $(document).ready(function(){
 		for(var i=0;i<knx_str_arr.length;i++){
 			KNX += knx_str_arr[i];
 		}
-		var sorted_knx = knx_arr.sort();
+		var sorted_knx = knx_str_arr.sort();
 		var double_knx = []; // 1 or more
 		var triple_knx = []; // 2 or more
 		var quad_knx = []; // 3 or more
@@ -1491,6 +1491,10 @@ $(document).ready(function(){
 		triple_knx = [...new Set(triple_knx)];
 		quad_knx = [...new Set(quad_knx)];
 		overload_knx = [...new Set(overload_knx)];
+		// doubles
+		// triples
+		// quads
+		var stats = ["A","B","C","D","E","F","G"]
 		var doubles = ["Z","f","g","l","m","U"];
 		var triples = ["A","B","C","D","E","F","G","H","K","L","M","R","T","V","W","Y","a","b","c","d","e","j","k","y"];
 		var quads = ["I","h","i"];
@@ -1516,6 +1520,22 @@ $(document).ready(function(){
 				knx_purp.push(overloads[i]);
 			}
 		}
+		var knx_stat = [];
+		for(var i=0;i<KNX.length;i++){
+			if(KNX[i] != 'X'){
+				knx_stat.push(KNX[i]);
+			}
+		}
+		for(var i=0;i<knx_stat.length;i++){
+			if(stats.includes(knx_stat[i])){
+				stats = arrayRemove(stats,knx_stat[i]);
+				i+=20;
+			}
+			for(var x=0;x<stats.length;x++){
+				knx_purp.push(stats[x]);
+			}
+		}
+		console.log(knx_purp);
 		for(var i=0;i<knx_terminals.length-1;i++){
 			if($(knx_terminals[i]).css("fill") == "rgb(0, 128, 0)" && knx_purp.includes(knx_last_value) && knx_terminals[i]["id"] == knx_last){
 				$(knx_terminal_last).css({'fill':'#d534eb'});
