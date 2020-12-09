@@ -1520,6 +1520,12 @@ $(document).ready(function(){
 				knx_purp.push(overloads[i]);
 			}
 		}
+		/*
+		*
+		*
+		*
+		*
+		*/
 		var knx_stat = [];
 		for(var i=0;i<KNX.length;i++){
 			if(KNX[i] != 'X'){
@@ -1533,6 +1539,18 @@ $(document).ready(function(){
 			}
 			for(var x=0;x<stats.length;x++){
 				knx_purp.push(stats[x]);
+			}
+		}
+		/*
+		*
+		*
+		*
+		*
+		*/
+		var knx_sensor = [];
+		for(var i=0;i<KNX.length;i++){
+			if(KNX[i] != 'X'){
+				knx_sensor.push(KNX[i]);
 			}
 		}
 		console.log(knx_purp);
