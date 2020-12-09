@@ -1612,11 +1612,13 @@ $(document).ready(function(){
 				// $('#errorAlert').text(data.error).show();
 				// $('#successAlert').hide();
 			}
-			else {  
-				// var template_list = JSON.parse(data.results);
+			else { 
+				$("a").remove();
 				for(var i=0;i<data.results.length;i++){
 				    var templateObj = JSON.parse(data.results[i]);
-				    $('#pageDisplay').text(templateObj.template_name);
+				    var url = 'http://google.com';
+				    var text = templateObj.template_name;
+				    $('#pageDisplay').append(`<a href="${url}" target="_blank">${text}</a>\n`);
 			            console.log(i);
 				    console.log(templateObj.template_name);
 				}
