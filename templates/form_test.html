@@ -32,7 +32,7 @@
     </div>
     <br>
     <div>
-        KNX PL-Link: <input type="text" name="" id="pressure_names">
+        KNX PL-Link: <input type="text" name="" id="knx_names">
     </div>
     <br>
         <input type="submit" value="SAVE">
@@ -54,14 +54,15 @@
      event.preventDefault(); //prevents page refresh
      var postJSON = {}; //create json object
      var allElements = document.getElementsByTagName("*"); //get all form elements
+     var file_name = document.getElementById('file').value // get name so we can get extenstion on back end
      // get the file data
      const file = document.querySelector('input[type=file]').files[0]
      // convert the file to base64
      const b64File = await getBase64(file);
      for(var i=0; i < allElements.length; i++){  //build out json object
        if(allElements[i].id == 'file'){
-         // console.log(b64File);
          postJSON[allElements[i].id] = b64File;
+         postJSON['file_name'] = file_name;
        }
        else {
          postJSON[allElements[i].id] = allElements[i].value; //creates member of json object

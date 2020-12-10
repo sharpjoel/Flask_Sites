@@ -14,14 +14,6 @@ class Services(object):
         client = connect(db='pztcetool', host='localhost', port=27017)
         self.db = client['pztcetool']
 
-    # threept_names = StringField(required=False, max_length=200)
-    # tenvolt_names = StringField(required=False, max_length=200)
-    # binary_names = StringField(required=False, max_length=200)
-    # x1x4_names = StringField(required=False, max_length=200)
-    # pressure_names = StringField(required=False, max_length=200)
-    # knx_names = StringField(required=False, max_length=200)
-
-
     def saveTemplate(self, **kwargs):  # save dxr to db
         dxr = DXR()
         # template name is all fields combined with underscores between
@@ -46,11 +38,13 @@ class Services(object):
         dxr.knx_names = kwargs.get('knx_names', None)
         # file is a base64 string
         file = kwargs.get('file', None)
+        file_extension = kwargs.get('file_name', None)  # get file name
+        file_extension = file_extension.split('.')[1]  # get file extension
         if file:
             try:
                 file = file.split(',')[1]  # remove up to comma
                 convertedFile = Services.convertBase64(file)  # convert back
-                Services.saveFile(convertedFile, dxr.template_name)  # save
+                Services.saveFile(convertedFile, dxr.template_name + "." + file_extension)  # save
             except Exception as e:
                 raise ValueError(str(e))
         try:
