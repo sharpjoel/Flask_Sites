@@ -1616,7 +1616,7 @@ $(document).ready(function(){
 				$("a").remove();
 				for(var i=0;i<data.results.length;i++){
 				    var templateObj = JSON.parse(data.results[i]);
-				    var url = 'get/'+templateObj.templateName;
+				    var url = 'get/'+templateObj.template_name;
 				    var text = templateObj.template_name;
 				    $('#pageDisplay').append(`<a href="${url}" target="_blank">${text}</a>\n`);
 			            console.log(i);
