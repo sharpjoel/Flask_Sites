@@ -8,11 +8,9 @@ import os
 from flask import Flask, render_template, request, jsonify, send_file
 from services.services import Services
 import pandas as pd
-# change below depending on serer storage location
+# change below depending on storage location
 UPLOAD_FOLDER = 'uploads/'
-#UPLOAD_FOLDER = '/home/jcopeland/Documents/Flask_Sites/uploads'
-#UPLOAD_FOLDER = '/home/dxr/dxr_template_generator/Flask_Sites/uploads'
-ALLOWED_EXTENSIONS = {'txt', 'pdf'}
+ALLOWED_EXTENSIONS = {'txt', 'pdf', 'dwg', 's1ct', 's1ca'}
 
 functionality_dictionary = pd.read_excel('Functionality.xlsx')
 threepts_dictionary = pd.read_excel('three_points.xlsx')
