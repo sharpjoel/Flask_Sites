@@ -5,12 +5,13 @@
     - jsonify: converts arguments or keyword arguments into a dictionary
 """
 import os
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, send_file
 from services.services import Services
 import pandas as pd
 # change below depending on serer storage location
+UPLOAD_FOLDER = 'uploads/'
 #UPLOAD_FOLDER = '/home/jcopeland/Documents/Flask_Sites/uploads'
-UPLOAD_FOLDER = '/home/dxr/dxr_template_generator/Flask_Sites/uploads'
+#UPLOAD_FOLDER = '/home/dxr/dxr_template_generator/Flask_Sites/uploads'
 ALLOWED_EXTENSIONS = {'txt', 'pdf'}
 
 functionality_dictionary = pd.read_excel('Functionality.xlsx')
@@ -476,6 +477,15 @@ def save_new_template():
 def templateSearch(template_name=None):
     results = services.templateSearch(template_name=template_name)
     return {'results': results}
+
+
+@app.route('/get/<string:template_name>', methods=['GET'])
+def download_template(template_name=None):
+    try:
+        return send_file(
+            app.config['UPLOAD_FOLDER'] + template_name, as_attachment=True)
+    except Exception as e:
+        raise ValueError(str(e))
 
 """
 Step 8 - Run your application. debug=True makes it so you don't have to stop and restart your

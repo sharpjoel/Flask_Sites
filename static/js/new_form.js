@@ -124,9 +124,9 @@ $(document).ready(function(){
 		var y5y6_str = ""
 		var y7y8_str = ""
 		var y10_12_str = ""
-		var y20_12_str = "" 
+		var y20_12_str = ""
 		var y10_18_str = ""
-		var y20_18_str = "" 
+		var y20_18_str = ""
 		var y30_str = ""
 		var y40_str = ""
 		var d1bi_str = ""
@@ -243,7 +243,7 @@ $(document).ready(function(){
 				b2d2bi_str = "select#fpb-b2d2bi option:selected";
 			}
 			else if(func_str == "3"){
-				
+
 				var triac_show = [$("select.func_str_3")]
 				var triac_hide = [$("select.func_str_2"),$("select.func_str_1"),$("select.func_str_4"),$("select.func_str_5"),$("select.func_str_6"),$("select.func_str_7")]
 				$(triac_show).each(function(){
@@ -273,7 +273,7 @@ $(document).ready(function(){
 				b2d2bi_str = "select#wshp-b2d2bi option:selected";
 			}
 			else if(func_str == "4"){
-				
+
 				var triac_show = [$("select.func_str_4")]
 				var triac_hide = [$("select.func_str_2"),$("select.func_str_3"),$("select.func_str_1"),$("select.func_str_5"),$("select.func_str_6"),$("select.func_str_7")]
 				$(triac_show).each(function(){
@@ -303,7 +303,7 @@ $(document).ready(function(){
 				b2d2bi_str = "select#fcu-b2d2bi option:selected";
 			}
 			else if(func_str == "5"){
-				
+
 
 				var triac_show = [$("select.func_str_5")]
 				var triac_hide = [$("select.func_str_2"),$("select.func_str_3"),$("select.func_str_4"),$("select.func_str_1"),$("select.func_str_6"),$("select.func_str_7")]
@@ -337,7 +337,7 @@ $(document).ready(function(){
 				d3bi_str = "select#lab-d3bi option:selected";
 			}
 			else if(func_str == "6"){
-				
+
 				var triac_show = [$("select.func_str_6")]
 				var triac_hide = [$("select.func_str_2"),$("select.func_str_3"),$("select.func_str_4"),$("select.func_str_5"),$("select.func_str_1"),$("select.func_str_7")]
 				$(triac_show).each(function(){
@@ -370,7 +370,7 @@ $(document).ready(function(){
 				d3bi_str = "select#fh-d3bi option:selected";
 			}
 			else if(func_str == "7"){
-				
+
 				var triac_show = [$("select.func_str_7")]
 				var triac_hide = [$("select.func_str_2"),$("select.func_str_3"),$("select.func_str_4"),$("select.func_str_5"),$("select.func_str_6"),$("select.func_str_1")]
 				$(triac_show).each(function(){
@@ -570,7 +570,7 @@ $(document).ready(function(){
 				y1y2_str = "select#fpb-18-y1y2 option:selected";
 				y3y4_str = "select#fpb-18-y3y4 option:selected";
 			}
-			
+
 		}else if(type_str !='E' && type_str != 'F' && type_str != 'G'){
 			$("#vav-18-y1y2").prop('selectedIndex',0);
 			$("#vav-18-y3y4").prop('selectedIndex',0);
@@ -827,9 +827,9 @@ $(document).ready(function(){
 			$(func_show).show();
 		}
 
-		function arrayRemove(arr, value) { 
-	        return arr.filter(function(ele){ 
-	            return ele != value; 
+		function arrayRemove(arr, value) {
+	        return arr.filter(function(ele){
+	            return ele != value;
 	        });
 	    }
 		/*
@@ -952,7 +952,7 @@ $(document).ready(function(){
 		pressure_txt_arr.push(pressure_function("select#scom2pres option:selected")[1]);
 		pressure_txt_arr.push(pressure_function("select#scom3pres option:selected")[1]);
 		pressure_txt_arr.push(pressure_function("select#scom4pres option:selected")[1]);
-		
+
 		// SCOM Terminal Illumination
 
 		if(scom1_str == 'X' && scom2_str == 'X' && scom3_str == 'X' && scom4_str == 'X'){
@@ -1095,7 +1095,7 @@ $(document).ready(function(){
 		G = Type-17CX
 		E = Type-18
 		*
-		* 
+		*
 		*
 		*
 		*
@@ -1342,11 +1342,11 @@ $(document).ready(function(){
 			$("select#scom1pres"),$("select#scom2pres"),$("select#scom3pres"),$("select#scom4pres"),
 			$('select.lab-d1d2d3'),$('span.lab-d1d2d3'),$('span#b2d2-badge'),$('select.b2d2bi'),
 			$('select.x3ai'),$('select.x4ai'),$('span.x3x4-badge'),$("#vav-18-y1y2"),$("#vav-18-y3y4"),$("#fpb-18-y1y2"),$("#fpb-18-y3y4")];
-			
+
 			var layout_show = [
 			$(type12),$(y1y2text),$(pressure),$(pressuretext),$(dxrrunsvc),$(usb),
 			$("select#p1pres"),$("select#vav-y20")]
-			
+
 			var layout_prop = [
 			$("#vav-18-y1y2"),$("#vav-18-y3y4"),$("#fpb-18-y1y2"),$("#fpb-18-y3y4"),
 			$("select.y7y8-3pt"),$("select#y7bo"),$("select#y8bo"),
@@ -1424,7 +1424,7 @@ $(document).ready(function(){
 		Standard Name Construction:
 		Collect string variables from dropdown selections
 		*
-		* 
+		*
 		*
 		*
 		*
@@ -1583,7 +1583,7 @@ $(document).ready(function(){
 		$.ajax({
 	        type: 'POST',
 	        url: '/process',
-	        data: { 
+	        data: {
 	        	name_encoded:str,
 	        	hardware_encoded:DXR,
 	        	threept_encoded:AO3pt,
@@ -1612,11 +1612,11 @@ $(document).ready(function(){
 				// $('#errorAlert').text(data.error).show();
 				// $('#successAlert').hide();
 			}
-			else { 
+			else {
 				$("a").remove();
 				for(var i=0;i<data.results.length;i++){
 				    var templateObj = JSON.parse(data.results[i]);
-				    var url = 'http://google.com';
+				    var url = 'get/'+templateObj.templateName;
 				    var text = templateObj.template_name;
 				    $('#pageDisplay').append(`<a href="${url}" target="_blank">${text}</a>\n`);
 			            console.log(i);
@@ -1629,4 +1629,3 @@ $(document).ready(function(){
 		});
 	});
 });
-
