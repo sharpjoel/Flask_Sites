@@ -1,13 +1,40 @@
 {% extends "base.html" %}
 
 {% block content %}
+
 <form  id="postData">
     <div>
-        template_name (Example: XXX_XXXX_XXXX_XXXXXXXX_XXXXXX_XXXXX_XXXXXXXXXXXXXXXXXXXX): <br><input type="text" name="" id="template_name" size="150">
+        Template Name (Example: XXX_XXXX_XXXX_XXXXXXXX_XXXXXX_XXXXX_XXXXXXXXXXXXXXXXXXXX): <br><input type="text" name="" id="template_name" size="150">
     </div>
+    <br>
     <div>
-    Template File:  <input type="file" name="" id="file">
+        Template File:  <input type="file" name="" id="file">
     </div>
+    <br>
+    <div>
+        AO:3ptFloating: <input type="text" name="" id="threept_names">
+    </div>
+    <br>
+    <div>
+        AO:0-10V: <input type="text" name="" id="tenvolt_names">
+    </div>
+    <br>
+    <div>
+        BO:24Volt: <input type="text" name="" id="binary_names">
+    </div>
+    <br>
+    <div>
+        BO:Binar+Analog: <input type="text" name="" id="x1x4_names">
+    </div>
+    <br>
+    <div>
+        Pressure: <input type="text" name="" id="pressure_names">
+    </div>
+    <br>
+    <div>
+        KNX PL-Link: <input type="text" name="" id="pressure_names">
+    </div>
+    <br>
         <input type="submit" value="SAVE">
 </form>
 <script type="text/javascript">

@@ -14,6 +14,14 @@ class Services(object):
         client = connect(db='pztcetool', host='localhost', port=27017)
         self.db = client['pztcetool']
 
+    # threept_names = StringField(required=False, max_length=200)
+    # tenvolt_names = StringField(required=False, max_length=200)
+    # binary_names = StringField(required=False, max_length=200)
+    # x1x4_names = StringField(required=False, max_length=200)
+    # pressure_names = StringField(required=False, max_length=200)
+    # knx_names = StringField(required=False, max_length=200)
+
+
     def saveTemplate(self, **kwargs):  # save dxr to db
         dxr = DXR()
         # template name is all fields combined with underscores between
@@ -23,13 +31,19 @@ class Services(object):
         # and will always be in same order
         if len(template_name_chunks) < 7:
             raise ValueError('There is an issue with template_name')
-        dxr.one = template_name_chunks[0]
-        dxr.two = template_name_chunks[1]
-        dxr.three = template_name_chunks[2]
-        dxr.four = template_name_chunks[3]
-        dxr.five = template_name_chunks[4]
-        dxr.six = template_name_chunks[5]
-        dxr.seven = template_name_chunks[6]
+        dxr.hardware_encoded = template_name_chunks[0]
+        dxr.threept_encoded = template_name_chunks[1]
+        dxr.zten_encoded = template_name_chunks[2]
+        dxr.bo_encoded = template_name_chunks[3]
+        dxr.inputs_encoded = template_name_chunks[4]
+        dxr.pres_encoded = template_name_chunks[5]
+        dxr.knx_encoded = template_name_chunks[6]
+        dxr.threept_names = kwargs.get('threept_names', None)
+        dxr.tenvolt_names = kwargs.get('tenvolt_names', None)
+        dxr.binary_names = kwargs.get('binary_names', None)
+        dxr.x1x4_names = kwargs.get('x1x4_names', None)
+        dxr.pressure_names = kwargs.get('pressure_names', None)
+        dxr.knx_names = kwargs.get('knx_names', None)
         # file is a base64 string
         file = kwargs.get('file', None)
         if file:
@@ -100,19 +114,20 @@ class Services(object):
         # these if statement len(set()) statemens return 1 if all letters
         # in string are same character. if not one then we have valid search
         if len(set(template_name_chunks[0])) != 1:
-            search_dict['one__icontains'] = template_name_chunks[0]
+            search_dict['hardware_encoded__icontains'] = template_name_chunks[0]
         if len(set(template_name_chunks[1])) != 1:
-            search_dict['two__icontains'] = template_name_chunks[1]
+            search_dict['threept_encoded__icontains'] = template_name_chunks[1]
         if len(set(template_name_chunks[2])) != 1:
-            search_dict['three__icontains'] = template_name_chunks[2]
+            search_dict['zten_encoded__icontains'] = template_name_chunks[2]
         if len(set(template_name_chunks[3])) != 1:
-            search_dict['four__icontains'] = template_name_chunks[3]
+            search_dict['bo_encoded__icontains'] = template_name_chunks[3]
         if len(set(template_name_chunks[4])) != 1:
-            search_dict['five__icontains'] = template_name_chunks[4]
+            search_dict['inputs_encoded__icontains'] = template_name_chunks[4]
         if len(set(template_name_chunks[5])) != 1:
-            search_dict['six__icontains'] = template_name_chunks[5]
+            search_dict['pres_encoded__icontains'] = template_name_chunks[5]
         if len(set(template_name_chunks[6])) != 1:
-            search_dict['seven__icontains'] = template_name_chunks[6]
+            search_dict['knx_encoded__icontains'] = template_name_chunks[6]
+        print(len(search_dict))
         results = DXR.objects(**search_dict)
         result_list = []
         for result in results:
