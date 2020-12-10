@@ -17,6 +17,7 @@ class DXR(Document):  # DXR table schema one-seven are chunks of template_name
     x1x4_names = StringField(required=False, max_length=200)
     pressure_names = StringField(required=False, max_length=200)
     knx_names = StringField(required=False, max_length=200)
+    file_name = StringField(required=False, max_length=200)
 
     # meta = {'indexes': [
     #      {'fields': ['$hardware_encoded', '$threept_encoded', '$zten_encoded',

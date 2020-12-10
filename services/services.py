@@ -40,11 +40,12 @@ class Services(object):
         file = kwargs.get('file', None)
         file_extension = kwargs.get('file_name', None)  # get file name
         file_extension = file_extension.split('.')[1]  # get file extension
+        dxr.file_name = dxr.template_name + "." + file_extension
         if file:
             try:
                 file = file.split(',')[1]  # remove up to comma
                 convertedFile = Services.convertBase64(file)  # convert back
-                Services.saveFile(convertedFile, dxr.template_name + "." + file_extension)  # save
+                Services.saveFile(convertedFile, dxr.file_name)  # save
             except Exception as e:
                 raise ValueError(str(e))
         try:

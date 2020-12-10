@@ -1616,8 +1616,8 @@ $(document).ready(function(){
 				$("a").remove();
 				for(var i=0;i<data.results.length;i++){
 				    var templateObj = JSON.parse(data.results[i]);
-				    var url = 'get/'+templateObj.template_name;
-				    var text = templateObj.template_name;
+				    var url = 'get/'+templateObj.file_name;
+				    var text = 'Hardware: ' + templateObj.hardware_encoded + " $ Triac: " + templateObj.threept_names + " $ 0-10V: " + templateObj.tenvolt_names + " $ BO: " + templateObj.binary_names + " $ Inputs: " + templateObj.x1x4_names + " $ Pressure: " + templateObj.pressure_names + " $ KNX: " + templateObj.knx_names;
 				    $('#pageDisplay').append(`<a href="${url}" target="_blank">${text}</a>\n`);
 			            console.log(i);
 				    console.log(templateObj.template_name);
