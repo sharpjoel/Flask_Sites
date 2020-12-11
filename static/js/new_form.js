@@ -1614,11 +1614,13 @@ $(document).ready(function(){
 			}
 			else {
 				$("a").remove();
+				$(".display-break").remove();
 				for(var i=0;i<data.results.length;i++){
 				    var templateObj = JSON.parse(data.results[i]);
 				    var url = 'get/'+templateObj.file_name;
 				    var text = 'Hardware: ' + templateObj.hardware_encoded + " $ Triac: " + templateObj.threept_names + " $ 0-10V: " + templateObj.tenvolt_names + " $ BO: " + templateObj.binary_names + " $ Inputs: " + templateObj.x1x4_names + " $ Pressure: " + templateObj.pressure_names + " $ KNX: " + templateObj.knx_names;
-				    $('#pageDisplay').append(`<a href="${url}" target="_blank">${text}</a>\n`);
+				    $('#pageDisplay').append(`<a href="${url}" target="_blank"><span style="font-size: 10px">${text}</span></a>\n`);
+				    $('#pageDisplay').append('<br class="display-break">');
 			            console.log(i);
 				    console.log(templateObj.template_name);
 				}
