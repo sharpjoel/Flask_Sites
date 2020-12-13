@@ -296,3 +296,8 @@ h4{
 .option-style{
 	font-family: 'Roboto';
 }
+
+#file-info{
+	color:white;
+	margin-left: 2%;
+}
