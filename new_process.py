@@ -16,6 +16,7 @@ functionality_dictionary = pd.read_excel('Functionality.xlsx')
 threepts_dictionary = pd.read_excel('three_points.xlsx')
 ztens_dictionary = pd.read_excel('ztens.xlsx')
 labztens_dictionary = pd.read_excel('lab-ztens.xlsx')
+bo_dictionary = pd.read_excel('binary_outs.xlsx')
 x1x4inputs_dictionary = pd.read_excel('x1x4_inputs.xlsx')
 labsx1x4inputs_dictionary = pd.read_excel('x1x4labs.xlsx')
 pressureinputs_dictionary = pd.read_excel('pressure_inputs.xlsx')
@@ -177,6 +178,10 @@ def index():
     # Pressure
     #
     inputs_VAV_p1 = pressureinputs_dictionary.set_index('P1 VAV Key')['P1 VAV Value'].to_dict()
+    scom_sup = {'None':'X','Disch Pres':'A','Exh Pres':'S','FH Pres':'S'}
+    scom_exh = {'None':'X','Disch Pres':'S','Exh Pres':'B','FH Pres':'S'}
+    scom_fh = {'None':'X','Disch Pres':'S','Exh Pres':'S','FH Pres':'C'}
+    scom_spec = {'None':'X','Disch Pres':'S','Exh Pres':'S','FH Pres':'S'}
     #
     # X1-X4 Inputs
     #
@@ -215,11 +220,69 @@ def index():
     #
     # binary_out: dictionary of binary outputs
     #
-    binary_out = {
-        'None':'X',
-        'Fan':'A',
-        'Binary Output General':'B',
-        }
+    bin_10VAV_y1 = bo_dictionary.set_index('BO Keys')['VAV T10 Y1'].to_dict()
+    bin_12VAV_y1 = bo_dictionary.set_index('BO Keys')['VAV T12 Y1'].to_dict()
+    bin_18VAV_y1 = bo_dictionary.set_index('BO Keys')['VAV T18 Y1'].to_dict()
+    bin_VAV_y2 = bo_dictionary.set_index('BO Keys')['VAV Y2'].to_dict()
+    bin_VAV_y3 = bo_dictionary.set_index('BO Keys')['VAV Y3'].to_dict()
+    bin_VAV_y4 = bo_dictionary.set_index('BO Keys')['VAV Y4'].to_dict()
+    bin_10VAV_y5 = bo_dictionary.set_index('BO Keys')['VAV T10 Y5'].to_dict()
+    bin_18VAV_y5 = bo_dictionary.set_index('BO Keys')['VAV T18 Y5'].to_dict()
+    bin_10VAV_y6 = bo_dictionary.set_index('BO Keys')['VAV T10 Y6'].to_dict()
+    bin_18VAV_y6 = bo_dictionary.set_index('BO Keys')['VAV T18 Y6'].to_dict()
+    bin_VAV_y7 = bo_dictionary.set_index('BO Keys')['VAV Y7'].to_dict()
+    bin_VAV_y8 = bo_dictionary.set_index('BO Keys')['VAV Y8'].to_dict()
+
+    bin_10FPB_y1 = bo_dictionary.set_index('BO Keys')['FPB Y1'].to_dict()
+    bin_18FPB_y1 = bo_dictionary.set_index('BO Keys')['FPB T18 Y1'].to_dict()
+    bin_FPB_y2 = bo_dictionary.set_index('BO Keys')['FPB Y2'].to_dict()
+    bin_10FPB_y3 = bo_dictionary.set_index('BO Keys')['FPB T10 Y3'].to_dict()
+    bin_12FPB_y3 = bo_dictionary.set_index('BO Keys')['FPB T12 Y3'].to_dict()
+    bin_18FPB_y3 = bo_dictionary.set_index('BO Keys')['FPB T18 Y3'].to_dict()
+    bin_FPB_y4 = bo_dictionary.set_index('BO Keys')['FPB Y4'].to_dict()
+    bin_10FPB_y5 = bo_dictionary.set_index('BO Keys')['FPB T10 Y5'].to_dict()
+    bin_18FPB_y5 = bo_dictionary.set_index('BO Keys')['FPB T18 Y5'].to_dict()
+    bin_10FPB_y6 = bo_dictionary.set_index('BO Keys')['FPB T10 Y6'].to_dict()
+    bin_18FPB_y6 = bo_dictionary.set_index('BO Keys')['FPB T18 Y6'].to_dict()
+    bin_FPB_y7 = bo_dictionary.set_index('BO Keys')['FPB Y7'].to_dict()
+    bin_FPB_y8 = bo_dictionary.set_index('BO Keys')['FPB Y8'].to_dict()
+
+    bin_WSHP_y1 = bo_dictionary.set_index('BO Keys')['WSHP Y1'].to_dict()
+    bin_WSHP_y2 = bo_dictionary.set_index('BO Keys')['WSHP Y2'].to_dict()
+    bin_WSHP_y3 = bo_dictionary.set_index('BO Keys')['WSHP Y3'].to_dict()
+    bin_WSHP_y4 = bo_dictionary.set_index('BO Keys')['WSHP Y4'].to_dict()
+    bin_WSHP_y5 = bo_dictionary.set_index('BO Keys')['WSHP Y5'].to_dict()
+    bin_WSHP_y6 = bo_dictionary.set_index('BO Keys')['WSHP Y6'].to_dict()
+    bin_WSHP_y7 = bo_dictionary.set_index('BO Keys')['WSHP Y7'].to_dict()
+    bin_WSHP_y8 = bo_dictionary.set_index('BO Keys')['WSHP Y8'].to_dict()
+
+    bin_FCU_y1 = bo_dictionary.set_index('BO Keys')['FCU Y1'].to_dict()
+    bin_FCU_y2 = bo_dictionary.set_index('BO Keys')['FCU Y2'].to_dict()
+    bin_FCU_y3 = bo_dictionary.set_index('BO Keys')['FCU Y3'].to_dict()
+    bin_FCU_y4 = bo_dictionary.set_index('BO Keys')['FCU Y4'].to_dict()
+    bin_FCU_y5 = bo_dictionary.set_index('BO Keys')['FCU Y5'].to_dict()
+    bin_FCU_y6 = bo_dictionary.set_index('BO Keys')['FCU Y6'].to_dict()
+    bin_FCU_y7 = bo_dictionary.set_index('BO Keys')['FCU Y7'].to_dict()
+    bin_FCU_y8 = bo_dictionary.set_index('BO Keys')['FCU Y8'].to_dict()
+
+    bin_LAB_y1 = bo_dictionary.set_index('BO Keys')['LAB Y1'].to_dict()
+    bin_LAB_y2 = bo_dictionary.set_index('BO Keys')['LAB Y2'].to_dict()
+    bin_LAB_y3 = bo_dictionary.set_index('BO Keys')['LAB Y3'].to_dict()
+    bin_LAB_y4 = bo_dictionary.set_index('BO Keys')['LAB Y4'].to_dict()
+
+    bin_FH_y1 = bo_dictionary.set_index('BO Keys')['FH Y1'].to_dict()
+    bin_FH_y2 = bo_dictionary.set_index('BO Keys')['FH Y2'].to_dict()
+    bin_FH_y3 = bo_dictionary.set_index('BO Keys')['FH Y3'].to_dict()
+    bin_FH_y4 = bo_dictionary.set_index('BO Keys')['FH Y4'].to_dict()
+
+    bin_CENFUNC_y1 = bo_dictionary.set_index('BO Keys')['CENFUNC Y1'].to_dict()
+    bin_CENFUNC_y2 = bo_dictionary.set_index('BO Keys')['CENFUNC Y2'].to_dict()
+    bin_CENFUNC_y3 = bo_dictionary.set_index('BO Keys')['CENFUNC Y3'].to_dict()
+    bin_CENFUNC_y4 = bo_dictionary.set_index('BO Keys')['CENFUNC Y4'].to_dict()
+    bin_CENFUNC_y5 = bo_dictionary.set_index('BO Keys')['CENFUNC Y5'].to_dict()
+    bin_CENFUNC_y6 = bo_dictionary.set_index('BO Keys')['CENFUNC Y6'].to_dict()
+    bin_CENFUNC_y7 = bo_dictionary.set_index('BO Keys')['CENFUNC Y7'].to_dict()
+    bin_CENFUNC_y8 = bo_dictionary.set_index('BO Keys')['CENFUNC Y8'].to_dict()
     #appfuncs: dictionary of application functions
     appfuncs = {
         'Occupied Mode':'A',
@@ -280,10 +343,71 @@ def index():
             For ease, the key:value pairs in the arguments should match.
     """
     return render_template('new_form.html',
+        bin10VAVy1 = bin_10VAV_y1,
+        bin12VAVy1 = bin_12VAV_y1,
+        bin18VAVy1 = bin_18VAV_y1,
+        binVAVy2 = bin_VAV_y2,
+        binVAVy3 = bin_VAV_y3,
+        binVAVy4 = bin_VAV_y4,
+        bin10VAVy5 = bin_10VAV_y5,
+        bin18VAVy5 = bin_18VAV_y5,
+        bin10VAVy6 = bin_10VAV_y6,
+        bin18VAVy6 = bin_18VAV_y6,
+        binVAVy7 = bin_VAV_y7,
+        binVAVy8 = bin_VAV_y8,
+        bin10FPBy1 = bin_10FPB_y1,
+        bin18FPBy1 = bin_18FPB_y1,
+        binFPBy2 = bin_FPB_y2,
+        bin10FPBy3 = bin_10FPB_y3,
+        bin12FPBy3 = bin_12FPB_y3,
+        bin18FPBy3 = bin_18FPB_y3,
+        binFPBy4 = bin_FPB_y4,
+        bin10FPBy5 = bin_10FPB_y5,
+        bin18FPBy5 = bin_18FPB_y5,
+        bin10FPBy6 = bin_10FPB_y6,
+        bin18FPBy6 = bin_18FPB_y6,
+        binFPBy7 = bin_FPB_y7,
+        binFPBy8 = bin_FPB_y8,
+        binWSHPy1 = bin_WSHP_y1,
+        binWSHPy2 = bin_WSHP_y2,
+        binWSHPy3 = bin_WSHP_y3,
+        binWSHPy4 = bin_WSHP_y4,
+        binWSHPy5 = bin_WSHP_y5,
+        binWSHPy6 = bin_WSHP_y6,
+        binWSHPy7 = bin_WSHP_y7,
+        binWSHPy8 = bin_WSHP_y8,
+        binFCUy1 = bin_FCU_y1,
+        binFCUy2 = bin_FCU_y2,
+        binFCUy3 = bin_FCU_y3,
+        binFCUy4 = bin_FCU_y4,
+        binFCUy5 = bin_FCU_y5,
+        binFCUy6 = bin_FCU_y6,
+        binFCUy7 = bin_FCU_y7,
+        binFCUy8 = bin_FCU_y8,
+        binLABy1 = bin_LAB_y1,
+        binLABy2 = bin_LAB_y2,
+        binLABy3 = bin_LAB_y3,
+        binLABy4 = bin_LAB_y4,
+        binFHy1 = bin_FH_y1,
+        binFHy2 = bin_FH_y2,
+        binFHy3 = bin_FH_y3,
+        binFHy4 = bin_FH_y4,
+        binCENFUNCy1 = bin_CENFUNC_y1,
+        binCENFUNCy2 = bin_CENFUNC_y2,
+        binCENFUNCy3 = bin_CENFUNC_y3,
+        binCENFUNCy4 = bin_CENFUNC_y4,
+        binCENFUNCy5 = bin_CENFUNC_y5,
+        binCENFUNCy6 = bin_CENFUNC_y6,
+        binCENFUNCy7 = bin_CENFUNC_y7,
+        binCENFUNCy8 = bin_CENFUNC_y8,
         appfuncs=appfuncs,
         appfuncs2=appfuncs2,
         cenfuncs=cenfuncs,
         pressure=inputs_VAV_p1,
+        scomsup=scom_sup,
+        scomexh=scom_exh,
+        scomfh=scom_fh,
+        scomspec=scom_spec,
         inputsVAVp1=inputs_VAV_p1,
         inputsVAVd1=inputs_VAV_d1,
         inputsVAVd2=inputs_VAV_d2,
@@ -399,7 +523,6 @@ def index():
         ztens17CLABy40=ztens_17CLAB_y40,
         ztens17CXLABy30=ztens_17CLAB_y30,
         ztens17CXLABy40=ztens_17CLAB_y40,
-        binaryout=binary_out,
         pet=pet,
         dxrs=dxrs,
         etypes=etypes,

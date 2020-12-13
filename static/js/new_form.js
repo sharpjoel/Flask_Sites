@@ -119,6 +119,14 @@ $(document).ready(function(){
 		var y6_str = "X"
 		var y7_str = "X"
 		var y8_str = "X"
+		var y1_id = ""
+		var y2_id = ""
+		var y3_id = ""
+		var y4_id = ""
+		var y5_id = ""
+		var y6_id = ""
+		var y7_id = ""
+		var y8_id = ""
 		var y1y2_str = ""
 		var y3y4_str = ""
 		var y5y6_str = ""
@@ -211,6 +219,22 @@ $(document).ready(function(){
 				x4_str = "select#vav-x4ai option:selected";
 				b1d1bi_str = "select#vav-b1d1bi option:selected";
 				b2d2bi_str = "select#vav-b2d2bi option:selected";
+				y1_str = "select#vav-12y1bo option:selected";
+				y2_str = "select#vav-y2bo option:selected";
+				y3_str = "select#vav-y3bo option:selected";
+				y4_str = "select#vav-y4bo option:selected";
+				y5_str = "select#vav-10y5bo option:selected";
+				y6_str = "select#vav-10y6bo option:selected";
+				y7_str = "select#vav-y7bo option:selected";
+				y8_str = "select#vav-y8bo option:selected";
+				y1_id = "select#vav-12y1bo";
+				y2_id = "select#vav-y2bo";
+				y3_id = "select#vav-y3bo";
+				y4_id = "select#vav-y4bo";
+				y5_id = "select#vav-10y5bo";
+				y6_id = "select#vav-10y6bo";
+				y7_id = "select#vav-y7bo";
+				y8_id = "select#vav-y8bo";
 			}
 			else if(func_str == "2"){
 
@@ -241,6 +265,22 @@ $(document).ready(function(){
 				x4_str = "select#fpb-x4ai option:selected";
 				b1d1bi_str = "select#fpb-b1d1bi option:selected";
 				b2d2bi_str = "select#fpb-b2d2bi option:selected";
+				y1_str = "select#fpb-10y1bo option:selected";
+				y2_str = "select#fpb-y2bo option:selected";
+				y3_str = "select#fpb-12y3bo option:selected";
+				y4_str = "select#fpb-y4bo option:selected";
+				y5_str = "select#fpb-10y5bo option:selected";
+				y6_str = "select#fpb-10y6bo option:selected";
+				y7_str = "select#fpb-y7bo option:selected";
+				y8_str = "select#fpb-y8bo option:selected";
+				y1_id = "select#fpb-10y1bo";
+				y2_id = "select#fpb-y2bo";
+				y3_id = "select#fpb-12y3bo";
+				y4_id = "select#fpb-y4bo";
+				y5_id = "select#fpb-10y5bo";
+				y6_id = "select#fpb-10y6bo";
+				y7_id = "select#fpb-y7bo";
+				y8_id = "select#fpb-y8bo";
 			}
 			else if(func_str == "3"){
 
@@ -271,6 +311,22 @@ $(document).ready(function(){
 				x4_str = "select#wshp-x4ai option:selected";
 				b1d1bi_str = "select#wshp-b1d1bi option:selected";
 				b2d2bi_str = "select#wshp-b2d2bi option:selected";
+				y1_str = "select#wshp-y1bo option:selected";
+				y2_str = "select#wshp-y2bo option:selected";
+				y3_str = "select#wshp-y3bo option:selected";
+				y4_str = "select#wshp-y4bo option:selected";
+				y5_str = "select#wshp-y5bo option:selected";
+				y6_str = "select#wshp-y6bo option:selected";
+				y7_str = "select#wshp-y7bo option:selected";
+				y8_str = "select#wshp-y8bo option:selected";
+				y1_id = "select#wshp-y1bo";
+				y2_id = "select#wshp-y2bo";
+				y3_id = "select#wshp-y3bo";
+				y4_id = "select#wshp-y4bo";
+				y5_id = "select#wshp-y5bo";
+				y6_id = "select#wshp-y6bo";
+				y7_id = "select#wshp-y7bo";
+				y8_id = "select#wshp-y8bo";
 			}
 			else if(func_str == "4"){
 
@@ -301,6 +357,22 @@ $(document).ready(function(){
 				x4_str = "select#fcu-x4ai option:selected";
 				b1d1bi_str = "select#fcu-b1d1bi option:selected";
 				b2d2bi_str = "select#fcu-b2d2bi option:selected";
+				y1_str = "select#fcu-y1bo option:selected";
+				y2_str = "select#fcu-y2bo option:selected";
+				y3_str = "select#fcu-y3bo option:selected";
+				y4_str = "select#fcu-y4bo option:selected";
+				y5_str = "select#fcu-y5bo option:selected";
+				y6_str = "select#fcu-y6bo option:selected";
+				y7_str = "select#fcu-y7bo option:selected";
+				y8_str = "select#fcu-y8bo option:selected";
+				y1_id = "select#fcu-y1bo";
+				y2_id = "select#fcu-y2bo";
+				y3_id = "select#fcu-y3bo";
+				y4_id = "select#fcu-y4bo";
+				y5_id = "select#fcu-y5bo";
+				y6_id = "select#fcu-y6bo";
+				y7_id = "select#fcu-y7bo";
+				y8_id = "select#fcu-y8bo";
 			}
 			else if(func_str == "5"){
 
@@ -335,6 +407,18 @@ $(document).ready(function(){
 				d1bi_str = "select#lab-d1bi option:selected";
 				d2bi_str = "select#lab-d2bi option:selected";
 				d3bi_str = "select#lab-d3bi option:selected";
+				scom1_str = "select#scom1sup option:selected";
+				scom2_str = "select#scom2exh option:selected";
+				scom3_str = "select#scom3sup option:selected";
+				scom4_str = "select#scom4exh option:selected";
+				y1_str = "select#lab-y1bo option:selected";
+				y2_str = "select#lab-y2bo option:selected";
+				y3_str = "select#lab-y3bo option:selected";
+				y4_str = "select#lab-y4bo option:selected";
+				y1_id = "select#lab-y1bo";
+				y2_id = "select#lab-y2bo";
+				y3_id = "select#lab-y3bo";
+				y4_id = "select#lab-y4bo";
 			}
 			else if(func_str == "6"){
 
@@ -368,6 +452,18 @@ $(document).ready(function(){
 				d1bi_str = "select#fh-d1bi option:selected";
 				d2bi_str = "select#fh-d2bi option:selected";
 				d3bi_str = "select#fh-d3bi option:selected";
+				scom1_str = "select#scom1fh option:selected";
+				scom2_str = "select#scom2spec option:selected";
+				scom3_str = "select#scom3spec option:selected";
+				scom4_str = "select#scom4spec option:selected";
+				y1_str = "select#fh-y1bo option:selected";
+				y2_str = "select#fh-y2bo option:selected";
+				y3_str = "select#fh-y3bo option:selected";
+				y4_str = "select#fh-y4bo option:selected";
+				y1_id = "select#fh-y1bo";
+				y2_id = "select#fh-y2bo";
+				y3_id = "select#fh-y3bo";
+				y4_id = "select#fh-y4bo";
 			}
 			else if(func_str == "7"){
 
@@ -398,6 +494,22 @@ $(document).ready(function(){
 				x4_str = "select#cenfunc-x4ai option:selected";
 				b1d1bi_str = "select#cenfunc-b1d1bi option:selected";
 				b2d2bi_str = "select#cenfunc-b2d2bi option:selected";
+				y1_str = "select#cenfunc-y1bo option:selected";
+				y2_str = "select#cenfunc-y2bo option:selected";
+				y3_str = "select#cenfunc-y3bo option:selected";
+				y4_str = "select#cenfunc-y4bo option:selected";
+				y5_str = "select#cenfunc-y5bo option:selected";
+				y6_str = "select#cenfunc-y6bo option:selected";
+				y7_str = "select#cenfunc-y7bo option:selected";
+				y8_str = "select#cenfunc-y8bo option:selected";
+				y1_id = "select#cenfunc-y1bo";
+				y2_id = "select#cenfunc-y2bo";
+				y3_id = "select#cenfunc-y3bo";
+				y4_id = "select#cenfunc-y4bo";
+				y5_id = "select#cenfunc-y5bo";
+				y6_id = "select#cenfunc-y6bo";
+				y7_id = "select#cenfunc-y7bo";
+				y8_id = "select#cenfunc-y8bo";
 			}
 			else{
 
@@ -461,10 +573,10 @@ $(document).ready(function(){
 				$("#funcSelection option[value='7']").hide();
 				$(".y5y6-3pt").prop('selectedIndex',0);
 				$(".y7y8-3pt").prop('selectedIndex',0);
-				$("#y5bo").prop('selectedIndex',0);
-				$("#y6bo").prop('selectedIndex',0);
-				$("#y7bo").prop('selectedIndex',0);
-				$("#y8bo").prop('selectedIndex',0);
+				$(".y5bo").prop('selectedIndex',0);
+				$(".y6bo").prop('selectedIndex',0);
+				$(".y7bo").prop('selectedIndex',0);
+				$(".y8bo").prop('selectedIndex',0);
 				$("select#p1pres").prop('selectedIndex',0);
 			}else if(dxr_str == 'E' && etype_str == 'G'){
 				$("#funcSelection option[value='1']").hide();
@@ -476,10 +588,10 @@ $(document).ready(function(){
 				$("#funcSelection option[value='7']").hide();
 				$(".y5y6-3pt").prop('selectedIndex',0);
 				$(".y7y8-3pt").prop('selectedIndex',0);
-				$("#y5bo").prop('selectedIndex',0);
-				$("#y6bo").prop('selectedIndex',0);
-				$("#y7bo").prop('selectedIndex',0);
-				$("#y8bo").prop('selectedIndex',0);
+				$(".y5bo").prop('selectedIndex',0);
+				$(".y6bo").prop('selectedIndex',0);
+				$(".y7bo").prop('selectedIndex',0);
+				$(".y8bo").prop('selectedIndex',0);
 				$("select#p1pres").prop('selectedIndex',0);
 			}
 			else{
@@ -490,10 +602,10 @@ $(document).ready(function(){
 				$("#funcSelection option[value='5']").hide();
 				$("#funcSelection option[value='6']").hide();
 				$("#funcSelection option[value='7']").show();
-				$("select#scom1pres").prop('selectedIndex',0);
-				$("select#scom2pres").prop('selectedIndex',0);
-				$("select#scom3pres").prop('selectedIndex',0);
-				$("select#scom4pres").prop('selectedIndex',0);
+				$("select.scom1pres").prop('selectedIndex',0);
+				$("select.scom2pres").prop('selectedIndex',0);
+				$("select.scom3pres").prop('selectedIndex',0);
+				$("select.scom4pres").prop('selectedIndex',0);
 				$("select#d1bi").prop('selectedIndex',0);
 				$("select#d2bi").prop('selectedIndex',0);
 				$("select#d3bi").prop('selectedIndex',0);
@@ -507,14 +619,14 @@ $(document).ready(function(){
 				$("#funcSelection option[value='6']").hide();
 				$("#funcSelection option[value='7']").hide();
 				$(".y7y8-3pt").prop('selectedIndex',0);
-				$("#y7bo").prop('selectedIndex',0);
-				$("#y8bo").prop('selectedIndex',0);
+				$(".y7bo").prop('selectedIndex',0);
+				$(".y8bo").prop('selectedIndex',0);
 				$("select.y30").prop('selectedIndex',0);
 				$("select.y40").prop('selectedIndex',0);
-				$("select#scom1pres").prop('selectedIndex',0);
-				$("select#scom2pres").prop('selectedIndex',0);
-				$("select#scom3pres").prop('selectedIndex',0);
-				$("select#scom4pres").prop('selectedIndex',0);
+				$("select.scom1pres").prop('selectedIndex',0);
+				$("select.scom2pres").prop('selectedIndex',0);
+				$("select.scom3pres").prop('selectedIndex',0);
+				$("select.scom4pres").prop('selectedIndex',0);
 				$("select#d1bi").prop('selectedIndex',0);
 				$("select#d2bi").prop('selectedIndex',0);
 				$("select#d3bi").prop('selectedIndex',0);
@@ -532,14 +644,14 @@ $(document).ready(function(){
 			};
 			if(dxr_str == 'M' && mtype_str != 'E'){
 				$("select.y7y8-3pt").prop('selectedIndex',0);
-				$("select#y7bo").prop('selectedIndex',0);
-				$("select#y8bo").prop('selectedIndex',0);
-				$("select#y30").prop('selectedIndex',0);
-				$("select#y40").prop('selectedIndex',0);
-				$("select#scom1pres").prop('selectedIndex',0);
-				$("select#scom2pres").prop('selectedIndex',0);
-				$("select#scom3pres").prop('selectedIndex',0);
-				$("select#scom4pres").prop('selectedIndex',0);
+				$("select.y7bo").prop('selectedIndex',0);
+				$("select.y8bo").prop('selectedIndex',0);
+				$("select.y30").prop('selectedIndex',0);
+				$("select.y40").prop('selectedIndex',0);
+				$("select.scom1pres").prop('selectedIndex',0);
+				$("select.scom2pres").prop('selectedIndex',0);
+				$("select.scom3pres").prop('selectedIndex',0);
+				$("select.scom4pres").prop('selectedIndex',0);
 				$("select#d1bi").prop('selectedIndex',0);
 				$("select#d2bi").prop('selectedIndex',0);
 				$("select#d3bi").prop('selectedIndex',0);
@@ -566,9 +678,27 @@ $(document).ready(function(){
 			if(func_str == "1"){
 				y1y2_str = "select#vav-18-y1y2 option:selected";
 				y3y4_str = "select#vav-18-y3y4 option:selected";
+				y1_str = "select#vav-18y1bo option:selected";
+				y5_str = "select#vav-18y5bo option:selected";
+				y6_str = "select#vav-18y6bo option:selected";
+				y1_id = "select#vav-18y1bo";
+				y5_id = "select#vav-18y5bo";
+				y6_id = "select#vav-18y6bo";
 			}else if(func_str == "2"){
+				$("#vav-10y3bo").prop('selectedIndex',0);
+				$("#vav-12y3bo").prop('selectedIndex',0);
+				$("#vav-10y3bo").hide();
+				$("#vav-12y3bo").hide();
 				y1y2_str = "select#fpb-18-y1y2 option:selected";
 				y3y4_str = "select#fpb-18-y3y4 option:selected";
+				y1_str = "select#fpb-18y1bo option:selected";
+				y3_str = "select#fpb-18y3bo option:selected";
+				y5_str = "select#fpb-18y5bo option:selected";
+				y6_str = "select#fpb-18y6bo option:selected";
+				y1_id = "select#fpb-18y1bo";
+				y3_id = "select#fpb-18y3bo";
+				y5_id = "select#fpb-18y5bo";
+				y6_id = "select#fpb-18y6bo";
 			}
 
 		}else if(type_str !='E' && type_str != 'F' && type_str != 'G'){
@@ -576,10 +706,57 @@ $(document).ready(function(){
 			$("#vav-18-y3y4").prop('selectedIndex',0);
 			$("#fpb-18-y1y2").prop('selectedIndex',0);
 			$("#fpb-18-y3y4").prop('selectedIndex',0);
+			$("#vav-18y1bo").prop('selectedIndex',0);
+			$("#vav-18y5bo").prop('selectedIndex',0);
+			$("#vav-18y6bo").prop('selectedIndex',0);
+			$("#fpb-18y1bo").prop('selectedIndex',0);
+			$("#fpb-18y3bo").prop('selectedIndex',0);
+			$("#fpb-18y5bo").prop('selectedIndex',0);
+			$("#fpb-18y6bo").prop('selectedIndex',0);
+		}
+		if(type_str == 'A' || type_str == 'B'){
+			if(func_str == "1"){
+				$("#vav-12y1bo").prop('selectedIndex',0);
+				$("#vav-18y5bo").prop('selectedIndex',0);
+				$("#vav-18y6bo").prop('selectedIndex',0);
+				$("#vav-18y5bo").hide();
+				$("#vav-18y6bo").hide();
+			}else if(func_str == "2"){
+				$("#fpb-12y3bo").prop('selectedIndex',0);
+				$("#fpb-18y3bo").prop('selectedIndex',0);
+				$("#fpb-18y5bo").prop('selectedIndex',0);
+				$("#fpb-18y6bo").prop('selectedIndex',0);
+				$("#fpb-12y3bo").hide();
+				$("#fpb-18y3bo").hide();
+				$("#fpb-18y5bo").hide();
+				$("#fpb-18y6bo").hide();
+				y3_str = "select#fpb-10y3bo option:selected";
+				y3_id = "select#fpb-10y3bo";
+			}
+		}else{
+			$("#vav-10y1bo").hide();
+			$("#vav-18y1bo").hide();
+			$("#fpb-18y1bo").hide();
+			$("#fpb-10y3bo").hide();
+			$("#fpb-18y3bo").hide();
+			$("#vav-18y5bo").hide();
+			$("#vav-18y6bo").hide();
+			$("#fpb-18y5bo").hide();
+			$("#fpb-18y6bo").hide();
 		}
 		if(func_str == '5' && type_str == 'G'){
 			y30_str = "select#lab-17CX-y30 option:selected";
 			y40_str = "select#lab-17CX-y40 option:selected";
+			$("#scom3spec").hide()
+			$("#scom4spec").hide()
+		}
+		if(func_str == '5' && type_str == 'F'){
+			$("#scom3sup").hide()
+			$("#scom4exh").hide()
+			$("#scom3spec").show()
+			$("#scom4spec").show()
+			scom3_str = "select#scom3spec option:selected";
+			scom4_str = "select#scom4spec option:selected";
 		}
 		//
 		$( "select#locSelection" ).each(function() {
@@ -700,7 +877,12 @@ $(document).ready(function(){
 				if(binary_str != 'X'){
 					$(threept).prop('selectedIndex',0);
 					$(threept).hide()
-					$(binary_terminal).css({'fill':'green'});
+					if(binary_str == 'S'){
+						$(binary_terminal).css({'fill':'#d534eb'});
+					}
+					else{
+						$(binary_terminal).css({'fill':'green'});
+					}
 				}
 				else{
 					if(y_str == 'X' && binary_str == 'X'){
@@ -838,14 +1020,14 @@ $(document).ready(function(){
 		*
 		*/
 		var threepts_txt_arr = [];
-		threepts_str_arr.push(threepts_function(y1y2_str,"#y1bo","#y2bo")[0]);
-		threepts_str_arr.push(threepts_function(y3y4_str,"#y3bo","#y4bo")[0]);
-		threepts_str_arr.push(threepts_function(y5y6_str,"#y5bo","#y6bo")[0]);
-		threepts_str_arr.push(threepts_function(y7y8_str,"#y7bo","#y8bo")[0]);
-		threepts_txt_arr.push(threepts_function(y1y2_str,"#y1bo","#y2bo")[1]);
-		threepts_txt_arr.push(threepts_function(y3y4_str,"#y3bo","#y4bo")[1]);
-		threepts_txt_arr.push(threepts_function(y5y6_str,"#y5bo","#y6bo")[1]);
-		threepts_txt_arr.push(threepts_function(y7y8_str,"#y7bo","#y8bo")[1]);
+		threepts_str_arr.push(threepts_function(y1y2_str,y1_id,y2_id)[0]);
+		threepts_str_arr.push(threepts_function(y3y4_str,y3_id,y4_id)[0]);
+		threepts_str_arr.push(threepts_function(y5y6_str,y5_id,y6_id)[0]);
+		threepts_str_arr.push(threepts_function(y7y8_str,y7_id,y8_id)[0]);
+		threepts_txt_arr.push(threepts_function(y1y2_str,y1_id,y2_id)[1]);
+		threepts_txt_arr.push(threepts_function(y3y4_str,y3_id,y4_id)[1]);
+		threepts_txt_arr.push(threepts_function(y5y6_str,y5_id,y6_id)[1]);
+		threepts_txt_arr.push(threepts_function(y7y8_str,y7_id,y8_id)[1]);
 		/*
 		*
 		// **** KNX SELECTION ***
@@ -905,33 +1087,33 @@ $(document).ready(function(){
 		*/
 		var binary_txt_arr = [];
 		if(type_str == 'E'){
-			binary_str_arr.push(binary_outs_function("select#y1bo option:selected",threepts_str_arr[0],binary_str_arr[1],y1,".y1y2-3pt","#vav-18-y1y2","#fpb-18-y1y2","wshp-y1y2-3pt","fcu-y1y2-3pt","lab-y1y2-3pt","fh-y1y2-3pt","cenfunc-y1y2-3pt")[0]);
-			binary_str_arr.push(binary_outs_function("select#y2bo option:selected",threepts_str_arr[0],binary_str_arr[0],y2,".y1y2-3pt","#vav-18-y1y2","#fpb-18-y1y2","wshp-y1y2-3pt","fcu-y1y2-3pt","lab-y1y2-3pt","fh-y1y2-3pt","cenfunc-y1y2-3pt")[0]);
-			binary_str_arr.push(binary_outs_function("select#y3bo option:selected",threepts_str_arr[1],binary_str_arr[3],y3,".y3y4-3pt","#vav-18-y3y4","#fpb-18-y3y4","wshp-y3y4-3pt","fcu-y3y4-3pt","lab-y3y4-3pt","fh-y3y4-3pt","cenfunc-y3y4-3pt")[0]);
-			binary_str_arr.push(binary_outs_function("select#y4bo option:selected",threepts_str_arr[1],binary_str_arr[2],y4,".y3y4-3pt","#vav-18-y3y4","#fpb-18-y3y4","wshp-y3y4-3pt","fcu-y3y4-3pt","lab-y3y4-3pt","fh-y3y4-3pt","cenfunc-y3y4-3pt")[0]);
-			binary_txt_arr.push(binary_outs_function("select#y1bo option:selected",threepts_str_arr[0],binary_str_arr[1],y1,".y1y2-3pt","#vav-18-y1y2","#fpb-18-y1y2","wshp-y1y2-3pt","fcu-y1y2-3pt","lab-y1y2-3pt","fh-y1y2-3pt","cenfunc-y1y2-3pt")[1]);
-			binary_txt_arr.push(binary_outs_function("select#y2bo option:selected",threepts_str_arr[0],binary_str_arr[0],y2,".y1y2-3pt","#vav-18-y1y2","#fpb-18-y1y2","wshp-y1y2-3pt","fcu-y1y2-3pt","lab-y1y2-3pt","fh-y1y2-3pt","cenfunc-y1y2-3pt")[1]);
-			binary_txt_arr.push(binary_outs_function("select#y3bo option:selected",threepts_str_arr[1],binary_str_arr[3],y3,".y3y4-3pt","#vav-18-y3y4","#fpb-18-y3y4","wshp-y3y4-3pt","fcu-y3y4-3pt","lab-y3y4-3pt","fh-y3y4-3pt","cenfunc-y3y4-3pt")[1]);
-			binary_txt_arr.push(binary_outs_function("select#y4bo option:selected",threepts_str_arr[1],binary_str_arr[2],y4,".y3y4-3pt","#vav-18-y3y4","#fpb-18-y3y4","wshp-y3y4-3pt","fcu-y3y4-3pt","lab-y3y4-3pt","fh-y3y4-3pt","cenfunc-y3y4-3pt")[1]);
+			binary_str_arr.push(binary_outs_function(y1_str,threepts_str_arr[0],binary_str_arr[1],y1,".y1y2-3pt","#vav-18-y1y2","#fpb-18-y1y2","wshp-y1y2-3pt","fcu-y1y2-3pt","lab-y1y2-3pt","fh-y1y2-3pt","cenfunc-y1y2-3pt")[0]);
+			binary_str_arr.push(binary_outs_function(y2_str,threepts_str_arr[0],binary_str_arr[0],y2,".y1y2-3pt","#vav-18-y1y2","#fpb-18-y1y2","wshp-y1y2-3pt","fcu-y1y2-3pt","lab-y1y2-3pt","fh-y1y2-3pt","cenfunc-y1y2-3pt")[0]);
+			binary_str_arr.push(binary_outs_function(y3_str,threepts_str_arr[1],binary_str_arr[3],y3,".y3y4-3pt","#vav-18-y3y4","#fpb-18-y3y4","wshp-y3y4-3pt","fcu-y3y4-3pt","lab-y3y4-3pt","fh-y3y4-3pt","cenfunc-y3y4-3pt")[0]);
+			binary_str_arr.push(binary_outs_function(y4_str,threepts_str_arr[1],binary_str_arr[2],y4,".y3y4-3pt","#vav-18-y3y4","#fpb-18-y3y4","wshp-y3y4-3pt","fcu-y3y4-3pt","lab-y3y4-3pt","fh-y3y4-3pt","cenfunc-y3y4-3pt")[0]);
+			binary_txt_arr.push(binary_outs_function(y1_str,threepts_str_arr[0],binary_str_arr[1],y1,".y1y2-3pt","#vav-18-y1y2","#fpb-18-y1y2","wshp-y1y2-3pt","fcu-y1y2-3pt","lab-y1y2-3pt","fh-y1y2-3pt","cenfunc-y1y2-3pt")[1]);
+			binary_txt_arr.push(binary_outs_function(y2_str,threepts_str_arr[0],binary_str_arr[0],y2,".y1y2-3pt","#vav-18-y1y2","#fpb-18-y1y2","wshp-y1y2-3pt","fcu-y1y2-3pt","lab-y1y2-3pt","fh-y1y2-3pt","cenfunc-y1y2-3pt")[1]);
+			binary_txt_arr.push(binary_outs_function(y3_str,threepts_str_arr[1],binary_str_arr[3],y3,".y3y4-3pt","#vav-18-y3y4","#fpb-18-y3y4","wshp-y3y4-3pt","fcu-y3y4-3pt","lab-y3y4-3pt","fh-y3y4-3pt","cenfunc-y3y4-3pt")[1]);
+			binary_txt_arr.push(binary_outs_function(y4_str,threepts_str_arr[1],binary_str_arr[2],y4,".y3y4-3pt","#vav-18-y3y4","#fpb-18-y3y4","wshp-y3y4-3pt","fcu-y3y4-3pt","lab-y3y4-3pt","fh-y3y4-3pt","cenfunc-y3y4-3pt")[1]);
 		}
 		else{
-			binary_str_arr.push(binary_outs_function("select#y1bo option:selected",threepts_str_arr[0],binary_str_arr[1],y1,".y1y2-3pt","#vav-12-y1y2","#fpb-12-y1y2","wshp-y1y2-3pt","fcu-y1y2-3pt","lab-y1y2-3pt","fh-y1y2-3pt","cenfunc-y1y2-3pt")[0]);
-			binary_str_arr.push(binary_outs_function("select#y2bo option:selected",threepts_str_arr[0],binary_str_arr[0],y2,".y1y2-3pt","#vav-12-y1y2","#fpb-12-y1y2","wshp-y1y2-3pt","fcu-y1y2-3pt","lab-y1y2-3pt","fh-y1y2-3pt","cenfunc-y1y2-3pt")[0]);
-			binary_str_arr.push(binary_outs_function("select#y3bo option:selected",threepts_str_arr[1],binary_str_arr[3],y3,".y3y4-3pt","#vav-12-y3y4","#fpb-12-y3y4","wshp-y3y4-3pt","fcu-y3y4-3pt","lab-y3y4-3pt","fh-y3y4-3pt","cenfunc-y3y4-3pt")[0]);
-			binary_str_arr.push(binary_outs_function("select#y4bo option:selected",threepts_str_arr[1],binary_str_arr[2],y4,".y3y4-3pt","#vav-12-y3y4","#fpb-12-y3y4","wshp-y3y4-3pt","fcu-y3y4-3pt","lab-y3y4-3pt","fh-y3y4-3pt","cenfunc-y3y4-3pt")[0]);
-			binary_txt_arr.push(binary_outs_function("select#y1bo option:selected",threepts_str_arr[0],binary_str_arr[1],y1,".y1y2-3pt","#vav-12-y1y2","#fpb-12-y1y2","wshp-y1y2-3pt","fcu-y1y2-3pt","lab-y1y2-3pt","fh-y1y2-3pt","cenfunc-y1y2-3pt")[1]);
-			binary_txt_arr.push(binary_outs_function("select#y2bo option:selected",threepts_str_arr[0],binary_str_arr[0],y2,".y1y2-3pt","#vav-12-y1y2","#fpb-12-y1y2","wshp-y1y2-3pt","fcu-y1y2-3pt","lab-y1y2-3pt","fh-y1y2-3pt","cenfunc-y1y2-3pt")[1]);
-			binary_txt_arr.push(binary_outs_function("select#y3bo option:selected",threepts_str_arr[1],binary_str_arr[3],y3,".y3y4-3pt","#vav-12-y3y4","#fpb-12-y3y4","wshp-y3y4-3pt","fcu-y3y4-3pt","lab-y3y4-3pt","fh-y3y4-3pt","cenfunc-y3y4-3pt")[1]);
-			binary_txt_arr.push(binary_outs_function("select#y4bo option:selected",threepts_str_arr[1],binary_str_arr[2],y4,".y3y4-3pt","#vav-12-y3y4","#fpb-12-y3y4","wshp-y3y4-3pt","fcu-y3y4-3pt","lab-y3y4-3pt","fh-y3y4-3pt","cenfunc-y3y4-3pt")[1]);
+			binary_str_arr.push(binary_outs_function(y1_str,threepts_str_arr[0],binary_str_arr[1],y1,".y1y2-3pt","#vav-12-y1y2","#fpb-12-y1y2","wshp-y1y2-3pt","fcu-y1y2-3pt","lab-y1y2-3pt","fh-y1y2-3pt","cenfunc-y1y2-3pt")[0]);
+			binary_str_arr.push(binary_outs_function(y2_str,threepts_str_arr[0],binary_str_arr[0],y2,".y1y2-3pt","#vav-12-y1y2","#fpb-12-y1y2","wshp-y1y2-3pt","fcu-y1y2-3pt","lab-y1y2-3pt","fh-y1y2-3pt","cenfunc-y1y2-3pt")[0]);
+			binary_str_arr.push(binary_outs_function(y3_str,threepts_str_arr[1],binary_str_arr[3],y3,".y3y4-3pt","#vav-12-y3y4","#fpb-12-y3y4","wshp-y3y4-3pt","fcu-y3y4-3pt","lab-y3y4-3pt","fh-y3y4-3pt","cenfunc-y3y4-3pt")[0]);
+			binary_str_arr.push(binary_outs_function(y4_str,threepts_str_arr[1],binary_str_arr[2],y4,".y3y4-3pt","#vav-12-y3y4","#fpb-12-y3y4","wshp-y3y4-3pt","fcu-y3y4-3pt","lab-y3y4-3pt","fh-y3y4-3pt","cenfunc-y3y4-3pt")[0]);
+			binary_txt_arr.push(binary_outs_function(y1_str,threepts_str_arr[0],binary_str_arr[1],y1,".y1y2-3pt","#vav-12-y1y2","#fpb-12-y1y2","wshp-y1y2-3pt","fcu-y1y2-3pt","lab-y1y2-3pt","fh-y1y2-3pt","cenfunc-y1y2-3pt")[1]);
+			binary_txt_arr.push(binary_outs_function(y2_str,threepts_str_arr[0],binary_str_arr[0],y2,".y1y2-3pt","#vav-12-y1y2","#fpb-12-y1y2","wshp-y1y2-3pt","fcu-y1y2-3pt","lab-y1y2-3pt","fh-y1y2-3pt","cenfunc-y1y2-3pt")[1]);
+			binary_txt_arr.push(binary_outs_function(y3_str,threepts_str_arr[1],binary_str_arr[3],y3,".y3y4-3pt","#vav-12-y3y4","#fpb-12-y3y4","wshp-y3y4-3pt","fcu-y3y4-3pt","lab-y3y4-3pt","fh-y3y4-3pt","cenfunc-y3y4-3pt")[1]);
+			binary_txt_arr.push(binary_outs_function(y4_str,threepts_str_arr[1],binary_str_arr[2],y4,".y3y4-3pt","#vav-12-y3y4","#fpb-12-y3y4","wshp-y3y4-3pt","fcu-y3y4-3pt","lab-y3y4-3pt","fh-y3y4-3pt","cenfunc-y3y4-3pt")[1]);
 		}
-		binary_str_arr.push(binary_outs_function("select#y5bo option:selected",threepts_str_arr[2],binary_str_arr[5],y5,".y5y6-3pt","#vav-y5y6-3pt","#fpb-y5y6-3pt","wshp-y5y6-3pt","fcu-y5y6-3pt",undefined,undefined,"cenfunc-y5y6-3pt")[0]);
-		binary_str_arr.push(binary_outs_function("select#y6bo option:selected",threepts_str_arr[2],binary_str_arr[4],y6,".y5y6-3pt","#vav-y5y6-3pt","#fpb-y5y6-3pt","wshp-y5y6-3pt","fcu-y5y6-3pt",undefined,undefined,"cenfunc-y5y6-3pt")[0]);
-		binary_str_arr.push(binary_outs_function("select#y7bo option:selected",threepts_str_arr[3],binary_str_arr[7],y7,".y7y8-3pt","#vav-y7y8-3pt","#fpb-y7y8-3pt","wshp-y7y8-3pt","fcu-y7y8-3pt",undefined,undefined,"cenfunc-y7y8-3pt")[0]);
-		binary_str_arr.push(binary_outs_function("select#y8bo option:selected",threepts_str_arr[3],binary_str_arr[6],y8,".y7y8-3pt","#vav-y7y8-3pt","#fpb-y7y8-3pt","wshp-y7y8-3pt","fcu-y7y8-3pt",undefined,undefined,"cenfunc-y7y8-3pt")[0]);
-		binary_txt_arr.push(binary_outs_function("select#y5bo option:selected",threepts_str_arr[2],binary_str_arr[5],y5,".y5y6-3pt","#vav-y5y6-3pt","#fpb-y5y6-3pt","wshp-y5y6-3pt","fcu-y5y6-3pt",undefined,undefined,"cenfunc-y5y6-3pt")[1]);
-		binary_txt_arr.push(binary_outs_function("select#y6bo option:selected",threepts_str_arr[2],binary_str_arr[4],y6,".y5y6-3pt","#vav-y5y6-3pt","#fpb-y5y6-3pt","wshp-y5y6-3pt","fcu-y5y6-3pt",undefined,undefined,"cenfunc-y5y6-3pt")[1]);
-		binary_txt_arr.push(binary_outs_function("select#y7bo option:selected",threepts_str_arr[3],binary_str_arr[7],y7,".y7y8-3pt","#vav-y7y8-3pt","#fpb-y7y8-3pt","wshp-y7y8-3pt","fcu-y7y8-3pt",undefined,undefined,"cenfunc-y7y8-3pt")[1]);
-		binary_txt_arr.push(binary_outs_function("select#y8bo option:selected",threepts_str_arr[3],binary_str_arr[6],y8,".y7y8-3pt","#vav-y7y8-3pt","#fpb-y7y8-3pt","wshp-y7y8-3pt","fcu-y7y8-3pt",undefined,undefined,"cenfunc-y7y8-3pt")[1]);
+		binary_str_arr.push(binary_outs_function(y5_str,threepts_str_arr[2],binary_str_arr[5],y5,".y5y6-3pt","#vav-y5y6-3pt","#fpb-y5y6-3pt","wshp-y5y6-3pt","fcu-y5y6-3pt",undefined,undefined,"cenfunc-y5y6-3pt")[0]);
+		binary_str_arr.push(binary_outs_function(y6_str,threepts_str_arr[2],binary_str_arr[4],y6,".y5y6-3pt","#vav-y5y6-3pt","#fpb-y5y6-3pt","wshp-y5y6-3pt","fcu-y5y6-3pt",undefined,undefined,"cenfunc-y5y6-3pt")[0]);
+		binary_str_arr.push(binary_outs_function(y7_str,threepts_str_arr[3],binary_str_arr[7],y7,".y7y8-3pt","#vav-y7y8-3pt","#fpb-y7y8-3pt","wshp-y7y8-3pt","fcu-y7y8-3pt",undefined,undefined,"cenfunc-y7y8-3pt")[0]);
+		binary_str_arr.push(binary_outs_function(y8_str,threepts_str_arr[3],binary_str_arr[6],y8,".y7y8-3pt","#vav-y7y8-3pt","#fpb-y7y8-3pt","wshp-y7y8-3pt","fcu-y7y8-3pt",undefined,undefined,"cenfunc-y7y8-3pt")[0]);
+		binary_txt_arr.push(binary_outs_function(y5_str,threepts_str_arr[2],binary_str_arr[5],y5,".y5y6-3pt","#vav-y5y6-3pt","#fpb-y5y6-3pt","wshp-y5y6-3pt","fcu-y5y6-3pt",undefined,undefined,"cenfunc-y5y6-3pt")[1]);
+		binary_txt_arr.push(binary_outs_function(y6_str,threepts_str_arr[2],binary_str_arr[4],y6,".y5y6-3pt","#vav-y5y6-3pt","#fpb-y5y6-3pt","wshp-y5y6-3pt","fcu-y5y6-3pt",undefined,undefined,"cenfunc-y5y6-3pt")[1]);
+		binary_txt_arr.push(binary_outs_function(y7_str,threepts_str_arr[3],binary_str_arr[7],y7,".y7y8-3pt","#vav-y7y8-3pt","#fpb-y7y8-3pt","wshp-y7y8-3pt","fcu-y7y8-3pt",undefined,undefined,"cenfunc-y7y8-3pt")[1]);
+		binary_txt_arr.push(binary_outs_function(y8_str,threepts_str_arr[3],binary_str_arr[6],y8,".y7y8-3pt","#vav-y7y8-3pt","#fpb-y7y8-3pt","wshp-y7y8-3pt","fcu-y7y8-3pt",undefined,undefined,"cenfunc-y7y8-3pt")[1]);
 		three_pts_common_function(threepts_str_arr[0],binary_str_arr[0],binary_str_arr[1],y1y2common);
 		three_pts_common_function(threepts_str_arr[1],binary_str_arr[2],binary_str_arr[3],y3y4common);
 		three_pts_common_function(threepts_str_arr[2],binary_str_arr[4],binary_str_arr[5],y5y6common);
@@ -943,15 +1125,15 @@ $(document).ready(function(){
 		*/
 		var pressure_txt_arr = []
 		pressure_str_arr.push(pressure_function("select#p1pres option:selected",pressure,m10press)[0]);
-		pressure_str_arr.push(pressure_function("select#scom1pres option:selected")[0]);
-		pressure_str_arr.push(pressure_function("select#scom2pres option:selected")[0]);
-		pressure_str_arr.push(pressure_function("select#scom3pres option:selected")[0]);
-		pressure_str_arr.push(pressure_function("select#scom4pres option:selected")[0]);
+		pressure_str_arr.push(pressure_function(scom1_str)[0]);
+		pressure_str_arr.push(pressure_function(scom2_str)[0]);
+		pressure_str_arr.push(pressure_function(scom3_str)[0]);
+		pressure_str_arr.push(pressure_function(scom4_str)[0]);
 		pressure_txt_arr.push(pressure_function("select#p1pres option:selected",pressure,m10press)[1]);
-		pressure_txt_arr.push(pressure_function("select#scom1pres option:selected")[1]);
-		pressure_txt_arr.push(pressure_function("select#scom2pres option:selected")[1]);
-		pressure_txt_arr.push(pressure_function("select#scom3pres option:selected")[1]);
-		pressure_txt_arr.push(pressure_function("select#scom4pres option:selected")[1]);
+		pressure_txt_arr.push(pressure_function(scom1_str)[1]);
+		pressure_txt_arr.push(pressure_function(scom2_str)[1]);
+		pressure_txt_arr.push(pressure_function(scom3_str)[1]);
+		pressure_txt_arr.push(pressure_function(scom4_str)[1]);
 
 		// SCOM Terminal Illumination
 
@@ -1105,8 +1287,8 @@ $(document).ready(function(){
 		if(type_str == 'E'){
 			$(dxrvoltageout).show();
 			$(dxrtopinputs).show();
-			var layout_hide = [type12,type17,m10pl,$('span.lab-d1d2d3'),$('select.lab-d1d2d3'),$("select#scom1pres"),
-				$("select#scom2pres"),$("select#scom3pres"),$("select#scom4pres"),$("select#p1pres"),$("#vav-12-y1y2"),$("#vav-12-y3y4"),$("#fpb-12-y1y2"),$("#fpb-12-y3y4")];
+			var layout_hide = [type12,type17,m10pl,$('span.lab-d1d2d3'),$('select.lab-d1d2d3'),$("select.scom1pres"),
+				$("select.scom2pres"),$("select.scom3pres"),$("select.scom4pres"),$("select#p1pres"),$("#vav-12-y1y2"),$("#vav-12-y3y4"),$("#fpb-12-y1y2"),$("#fpb-12-y3y4")];
 			var layout_show = [type18,y1y2text,dxrrunsvc,usb,$('span#b2d2-badge'),$('span.x3x4-badge')];
 			var layout_prop = [$(pressure)];
 			$('span#b1d1-badge').text('D1');
@@ -1121,28 +1303,39 @@ $(document).ready(function(){
 				$(this).show();
 			});
 			if(func_str == "1"){
-				hide_n_show(".func_str_1",".func_str_2",".func_str_3",".func_str_4",".func_str_5",".func_str_6",".func_str_7")
+				// hide_n_show(".func_str_1",".func_str_2",".func_str_3",".func_str_4",".func_str_5",".func_str_6",".func_str_7")
 				$("#vav-12-y1y2").hide();
 				$("#vav-12-y3y4").hide();
 				$("#vav-12x1ai").hide();
 				$("#vav-12x2ai").hide();
 				$("#vav-12-y10").hide();
 				$("#vav-12-y20").hide();
+				$("#vav-10y1bo").hide();
+				$("#vav-12y1bo").hide();
+				$("#vav-10y5bo").hide();
+				$("#vav-10y6bo").hide();
 			}else if(func_str =="2"){
-				hide_n_show(".func_str_2",".func_str_1",".func_str_3",".func_str_4",".func_str_5",".func_str_6",".func_str_7")
+				// hide_n_show(".func_str_2",".func_str_1",".func_str_3",".func_str_4",".func_str_5",".func_str_6",".func_str_7")
 				$("#fpb-12-y1y2").hide();
 				$("#fpb-12-y3y4").hide();
 				$("#fpb-12x1ai").hide();
 				$("#fpb-12x2ai").hide();
 				$("#fpb-12-y10").hide();
 				$("#fpb-12-y20").hide();
+				$("#fpb-10y1bo").hide();
+				$("#fpb-12y1bo").hide();
+				$("#fpb-10y1bo").hide();
+				$("#fpb-10y3bo").hide();
+				$("#fpb-12y3bo").hide();
+				$("#fpb-10y5bo").hide();
+				$("#fpb-10y6bo").hide();
 			}
 			else if(func_str =="3"){
-				hide_n_show(".func_str_3",".func_str_1",".func_str_2",".func_str_4",".func_str_5",".func_str_6",".func_str_7")
+				// hide_n_show(".func_str_3",".func_str_1",".func_str_2",".func_str_4",".func_str_5",".func_str_6",".func_str_7")
 			}else if(func_str =="4"){
-				hide_n_show(".func_str_4",".func_str_1",".func_str_2",".func_str_3",".func_str_5",".func_str_6",".func_str_7")
+				// hide_n_show(".func_str_4",".func_str_1",".func_str_2",".func_str_3",".func_str_5",".func_str_6",".func_str_7")
 			}else if(func_str =="7"){
-				hide_n_show(".func_str_7",".func_str_1",".func_str_2",".func_str_3",".func_str_4",".func_str_5",".func_str_6")
+				// hide_n_show(".func_str_7",".func_str_1",".func_str_2",".func_str_3",".func_str_4",".func_str_5",".func_str_6")
 			}
 			if(binary_str_arr[0] == 'X' && binary_str_arr[1] == 'X'){
 				if(func_str == "1"){
@@ -1211,14 +1404,13 @@ $(document).ready(function(){
 			$(dxrvoltageout).show();
 			$(dxrtopinputs).show();
 			var layout_hide = [
-				type12,type18,m10pl,$("select.y5y6-3pt"),$("select#y5bo"),$("select#y6bo"),$("select.y7y8-3pt")
-				,$("select#p1pres"),$("select#y7bo"),$("select#y8bo"),$("select#vav-y30"),$("select#vav-y40"),$("select#vav-y20")]
+				type12,type18,m10pl,$("select.y5y6-3pt"),$("select.y5bo"),$("select.y6bo"),$("select.y7y8-3pt")
+				,$("select#p1pres"),$("select.y7bo"),$("select.y8bo"),$("select#vav-y30"),$("select#vav-y40"),$("select#vav-y20")]
 
 			var layout_show = [
-				type17,y1y2text,dxrrunsvc,usb,$('span.lab-d1d2d3'),$('span#b2d2-badge'),
-				$('span.x3x4-badge'),$("select#scom1pres"),$("select#scom2pres"),$("select#scom3pres"),$("select#scom4pres")]
+				type17,y1y2text,dxrrunsvc,usb,$('span.lab-d1d2d3'),$('span#b2d2-badge'),$('span.x3x4-badge')]
 
-			var layout_prop = [$("select.y5y6-3pt"),$("select#y5bo"),$("select#y6bo"),$("select.y7y8-3pt"),$("select#y7bo"),$("select#y8bo")]
+			var layout_prop = [$("select.y5y6-3pt"),$("select.y5bo"),$("select.y6bo"),$("select.y7y8-3pt"),$("select.y7bo"),$("select.y8bo")]
 
 			$('span#b1d1-badge').text('B1');
 			$('span#b2d2-badge').text('B2');
@@ -1227,9 +1419,15 @@ $(document).ready(function(){
 				$(this).prop('selectedIndex',0);
 			});
 			if(func_str == '5'){
-				hide_n_show(".func_str_5",".func_str_1",".func_str_2",".func_str_3",".func_str_4",".func_str_6",".func_str_7")
+				// hide_n_show(".func_str_5",".func_str_1",".func_str_2",".func_str_3",".func_str_4",".func_str_6",".func_str_7")
 			}else{
-				hide_n_show(".func_str_6",".func_str_1",".func_str_2",".func_str_3",".func_str_4",".func_str_5",".func_str_7")
+				// hide_n_show(".func_str_6",".func_str_1",".func_str_2",".func_str_3",".func_str_4",".func_str_5",".func_str_7")
+			}
+			if(func_str == '5' && type_str == 'F'){
+				$("#scom3sup").hide()
+				$("#scom4exh").hide()
+				$("#scom3spec").show()
+				$("#scom4spec").show()
 			}
 			if(type_str == 'F'){
 				$("select#lab-17CX-y30").prop('selectedIndex',0);
@@ -1288,15 +1486,15 @@ $(document).ready(function(){
 			$(type12).show()
 			var layout_hide = [
 				usb,pressure,pressuretext,dxrrunsvc,y1y2text,y1y2terminals,dxrvoltageout,dxrtopinputs,
-				$("select.y7y8-3pt"),$("select#y7bo"),$("select#y8bo"),$("select.y30"),$("select.y40"),$("select#scom1pres"),
-				$("select#scom2pres"),$("select#scom3pres"),$("select#scom4pres"),$('select.lab-d1d2d3'),
+				$("select.y7y8-3pt"),$("select.y7bo"),$("select.y8bo"),$("select.y30"),$("select.y40"),$("select.scom1pres"),
+				$("select.scom2pres"),$("select.scom3pres"),$("select.scom4pres"),$('select.lab-d1d2d3'),
 				$('select.x3ai'),$('select.x4ai'),$('span.lab-d1d2d3'),$('span#b2d2-badge'),$('select.b2d2bi'),
-				$('span.x3x4-badge'),$("select.y20"),$("select.y1y2-3pt"),$("select#y1bo"),$("select#y2bo"),$("#vav-18-y1y2"),$("#vav-18-y3y4"),$("#fpb-18-y1y2"),$("#fpb-18-y3y4")];
+				$('span.x3x4-badge'),$("select.y20"),$("select.y1y2-3pt"),$("select.y1bo"),$("select.y2bo"),$("#vav-18-y1y2"),$("#vav-18-y3y4"),$("#fpb-18-y1y2"),$("#fpb-18-y3y4")];
 			var layout_show = [m10pl,$("select#p1pres")];
 			var layout_prop = [
 				$("#vav-18-y1y2"),$("#vav-18-y3y4"),$("#fpb-18-y1y2"),$("#fpb-18-y3y4"),
-				$("select.y1y2-3pt"),$("select.y7y8-3pt"),$("select#y7bo"),$("select#y8bo"),$("select.y20"),
-				$("select.y30"),$("select.y40"),$("select#y1bo"),$("select#y2bo",$('select.x3ai'),$('select.x4ai'))]
+				$("select.y1y2-3pt"),$("select.y7y8-3pt"),$("select.y7bo"),$("select.y8bo"),$("select.y20"),
+				$("select.y30"),$("select.y40"),$("select.y1bo"),$("select.y2bo",$('select.x3ai'),$('select.x4ai'))]
 			if(func_str == "1"){
 				$("#vav-12x1ai").show();
 				$("#vav-12x2ai").show();
@@ -1306,6 +1504,20 @@ $(document).ready(function(){
 				$("#vav-12-y20").show();
 				$("#vav-18-y10").hide();
 				$("#vav-18-y20").hide();
+			}
+			if(func_str == "2"){
+				$("#fpb-12x1ai").show();
+				$("#fpb-12x2ai").show();
+				$("#fpb-18x1ai").hide();
+				$("#fpb-18x2ai").hide();
+				$("#fpb-12-y10").show();
+				$("#fpb-12-y20").show();
+				$("#fpb-18-y10").hide();
+				$("#fpb-18-y20").hide();
+				$("#fpb-12y3bo").hide();
+				$("#fpb-18y3bo").hide();
+				$("#fpb-18y5bo").hide();
+				$("#fpb-18y6bo").hide();
 			}
 			$(layout_prop).each(function(){
 				$(this).prop('selectedIndex',0);
@@ -1337,9 +1549,9 @@ $(document).ready(function(){
 
 			var layout_hide = [
 			type18,type17,
-			$("select.y7y8-3pt"),$("select#y7bo"),$("select#y8bo"),
+			$("select.y7y8-3pt"),$("select.y7bo"),$("select.y8bo"),
 			$("select.y30"),$("select.y40"),
-			$("select#scom1pres"),$("select#scom2pres"),$("select#scom3pres"),$("select#scom4pres"),
+			$("select.scom1pres"),$("select.scom2pres"),$("select.scom3pres"),$("select.scom4pres"),
 			$('select.lab-d1d2d3'),$('span.lab-d1d2d3'),$('span#b2d2-badge'),$('select.b2d2bi'),
 			$('select.x3ai'),$('select.x4ai'),$('span.x3x4-badge'),$("#vav-18-y1y2"),$("#vav-18-y3y4"),$("#fpb-18-y1y2"),$("#fpb-18-y3y4")];
 
@@ -1349,7 +1561,7 @@ $(document).ready(function(){
 
 			var layout_prop = [
 			$("#vav-18-y1y2"),$("#vav-18-y3y4"),$("#fpb-18-y1y2"),$("#fpb-18-y3y4"),
-			$("select.y7y8-3pt"),$("select#y7bo"),$("select#y8bo"),
+			$("select.y7y8-3pt"),$("select.y7bo"),$("select.y8bo"),
 			$("select.y30"),$("select.y40",$('select.x3ai'),$('select.x4ai'))]
 			$('span#b1d1-badge').text('D1');
 			$('span#b2d2-badge').text('D2');
@@ -1407,9 +1619,6 @@ $(document).ready(function(){
 					$("#vav-12-y3y4").hide();
 					$("#fpb-12-y3y4").show();
 				}
-			}
-			else{
-				$("select.y1y2-3pt").hide();
 			}
 			$(m10pl).hide();
 		};
