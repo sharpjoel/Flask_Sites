@@ -1,4 +1,6 @@
-document.getElementById('postData').addEventListener('submit', postData);
+window.onload=function(){
+    document.getElementById('postData').addEventListener('submit', postData);
+}
 // changes file to base64 for sending to back end.
 function getBase64(file) {
     var result = new Promise((resolve, reject) => {
@@ -15,6 +17,7 @@ async function postData(event){
    var postJSON = {}; //create json object
    var allElements = document.getElementsByTagName("*"); //get all form elements
    var file_name = document.getElementById('file').value // get name so we can get extenstion on back end
+   postJSON['template_name'] = document.getElementById('successAlert').innerHTML;
    // get the file data
    const file = document.querySelector('input[type=file]').files[0]
    // convert the file to base64
