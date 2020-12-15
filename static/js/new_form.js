@@ -1789,6 +1789,13 @@ $(document).ready(function(){
 	        data: { pet:str},
 	        dataType: 'json'
 	    });
+		localStorage.setItem('threept_names', threepts_txt_arr);
+		localStorage.setItem('tenvolt_names', tenvolt_txt_arr);
+		localStorage.setItem('binary_names', binary_txt_arr);
+		localStorage.setItem('x1x4_names', analog_txt_arr);
+		localStorage.setItem('pressure_names', pressure_txt_arr);
+		localStorage.setItem('knx_names', knx_txt_arr);
+
 		$.ajax({
 	        type: 'POST',
 	        url: '/process',
@@ -1810,7 +1817,6 @@ $(document).ready(function(){
 	        },
 	        dataType: 'json'
 	    })
-
 	    // Step 23: We must tell the script what to do at the conclusion of the AJAX request.
 	    // 		- This function will take the JSON object received from Step 7 in process.py
 	    //		- and update the success banner from Step 14.

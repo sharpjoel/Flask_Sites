@@ -18,6 +18,12 @@ async function postData(event){
    var allElements = document.getElementsByTagName("*"); //get all form elements
    var file_name = document.getElementById('file').value // get name so we can get extenstion on back end
    postJSON['template_name'] = document.getElementById('successAlert').innerHTML;
+   postJSON['threept_names'] = localStorage.getItem('threept_names');
+   postJSON['tenvolt_names'] = localStorage.getItem('tenvolt_names');
+   postJSON['binary_names'] = localStorage.getItem('binary_names');
+   postJSON['x1x4_names'] = localStorage.getItem('x1x4_names');
+   postJSON['pressure_names'] = localStorage.getItem('pressure_names');
+   postJSON['knx_names'] = localStorage.getItem('knx_names');
    // get the file data
    const file = document.querySelector('input[type=file]').files[0]
    // convert the file to base64
