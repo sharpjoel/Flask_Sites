@@ -34,6 +34,21 @@ $(document).ready(function(){
 				$( "#y1b0" ).val("A");
 				$( "#b1d1bi" ).val("A");
 			}
+			else if(template == 'C'){ 
+				// Reset values to default before setting template.
+				$( ".select-reset" ).prop('selectedIndex',0);
+				$( "#dxrSelection" ).val("E");
+				$( "#etypeSelection" ).val("C");
+				$( "#locSelection" ).val("U");
+				$( "#funcSelection" ).val("1");
+				$( "#vav-12-y1y2" ).val("E");
+				$( "#vav-y3y4-3pt" ).val("E");
+				$( "#vav-y5y6-3pt" ).val("G");
+				$( "#p1pres" ).val("W");
+				$( "#vav-12x1ai" ).val("G");
+				$( "#vav-12x2ai" ).val("D");
+				$( "#vav-knx-1" ).val("D");
+			}
 			else{
 				$( ".select-reset" ).prop('selectedIndex',0);
 			}
