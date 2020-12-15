@@ -5,7 +5,7 @@
     - jsonify: converts arguments or keyword arguments into a dictionary
 """
 import os
-from flask import Flask, render_template, request, jsonify, send_file
+from flask import Flask, render_template, request, jsonify, send_file, send_from_directory
 from services.services import Services
 import pandas as pd
 # change below depending on storage location
@@ -607,6 +607,12 @@ def download_template(template_name=None):
             app.config['UPLOAD_FOLDER'] + template_name, as_attachment=True)
     except Exception as e:
         raise ValueError(str(e))
+
+
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static'),
+                               'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 """
 Step 8 - Run your application. debug=True makes it so you don't have to stop and restart your
