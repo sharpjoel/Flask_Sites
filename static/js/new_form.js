@@ -1646,7 +1646,7 @@ $(document).ready(function(){
 	    analog_txt_arr = arrayRemove(analog_txt_arr, "None");
 	    pressure_txt_arr = arrayRemove(pressure_txt_arr, "None");
 	    knx_txt_arr = arrayRemove(knx_txt_arr, "None");
-		var DXR = dxr_str + type_str + func_str + "_";
+		var DXR = dxr_str + type_str + loc_str + func_str + "_";
 		var AO3pt = "";
 		for(var i=0;i<threepts_str_arr.length;i++){
 			AO3pt += threepts_str_arr[i];

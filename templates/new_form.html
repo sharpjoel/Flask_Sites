@@ -3,7 +3,7 @@
 <head>
 
 	<!-- Step 9: Create the title for your page. This is what shows up in the tab -->
-	<title>PZTC Engineering Tool</title>
+	<title>RSS-NA DXR Engineering Tool</title>
 
 	<!-- Step 10: Include the links to ajax and jquery -->
 	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
@@ -22,8 +22,8 @@
 	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/new_form.css') }}">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="height:5%">
-  <a class="navbar-brand" href="#">Pacific Zone Technical Center</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">RSS-NA DXR Engineering Tool</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -33,18 +33,18 @@
         <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">DXR Information</a>
+        <a class="nav-link" href="https://hit.sbt.siemens.com/RWD/app.aspx?RC=US&lang=en&MODULE=Catalog&ACTION=ShowGroup&KEY=OPC_426313">DXR Information</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Sharepoint</a>
+        <a class="nav-link" href="https://siemensnam.sharepoint.com/:f:/t/PacificZoneZTC-ProgrammingCommunity/Ei-1ZH07BHJKrAVWQgFf-7MBiz1HPFp9ZrJ4Pv1yx3A_pw?e=6h62aM">Videos & Guides</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled" href="#">Nothing</a>
+        <a class="nav-link disabled" href="https://siemensnam.sharepoint.com/teams/PacificZoneZTC-ProgrammingCommunity/Shared%20Documents/Forms/AllItems.aspx?viewid=7d315af4%2D1dd7%2D4399%2Da844%2Da30bb57f73b5&id=%2Fteams%2FPacificZoneZTC%2DProgrammingCommunity%2FShared%20Documents%2FOrder%20Forms">License & Equipment Ordering</a>
       </li>
     </ul>
   </div>
 </nav>
-<br>
+<br><br>
 <div class="scaleable-wrapper" id="scaleable-wrapper">
 	<div>
 		<!--<div id="successAlert" class="col-lg-11 alert alert-success" role="alert" style="margin-left:2%"></div>
@@ -69,7 +69,7 @@
 			<form>
 				<div class='type-container'>
 					<div id='fourth'>
-						<label><span class="badge badge-secondary">Template</span></label>
+						<label><span class="badge badge-secondary">TEMPLATE</span></label>
 						<select name='template-selection' class='select' id='tempSelection'>
 							{% for key, value in templates.items() %}
 								<option value="{{value}}">{{key}}</option>

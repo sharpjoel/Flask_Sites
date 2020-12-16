@@ -316,8 +316,13 @@ def index():
         }
     templates = {
         'Blank':'',
-        '14023 - VAV w Reheat':'A',
-        '14050 - FCU w Cooling':'B'
+        '14023 - Ethernet VAV w Reheat':'A',
+        '14050 - MSTP FCU w Cooling':'B',
+        '14064 - Ethernet DualDuct VAV':'C',
+        '14070 - Ethernet WSHP w 2Stg Reheat & Radiator':'D',
+        '14125 - Ethernet FPB w Reheat':'E',
+        '16742 - Ethernet Fumehood Venturi':'F',
+        '16850 - Ethernet Lab Dual Supply & Exhuast Venturi':'G'
     }
     #knx: dictionary of knx devices
     knx_VAV = knx_dictionary.set_index('KNX VAV Key')['KNX VAV Value'].to_dict();
@@ -521,8 +526,8 @@ def index():
         ztensLABy20=ztens_LAB_y20,
         ztens17CLABy30=ztens_17CLAB_y30,
         ztens17CLABy40=ztens_17CLAB_y40,
-        ztens17CXLABy30=ztens_17CLAB_y30,
-        ztens17CXLABy40=ztens_17CLAB_y40,
+        ztens17CXLABy30=ztens_17CXLAB_y30,
+        ztens17CXLABy40=ztens_17CXLAB_y40,
         pet=pet,
         dxrs=dxrs,
         etypes=etypes,
