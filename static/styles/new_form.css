@@ -253,6 +253,7 @@ h4{
 	height:1500px;
 	font-size: 12px;
 	color: white;
+	font-family: 'Roboto';
 }
 
 #appForm{
@@ -319,5 +320,25 @@ h4{
 
 .passfail{
 	margin-right:5px;
+	width: 10%;
+	text-align:center;
+	background:#1aff1a;
+	border-top-right-radius: 2px 2px;
+	border-bottom-right-radius: 2px 2px;
+	border-top-left-radius: 2px 2px;
+	border-bottom-left-radius: 2px 2px;
+	font-weight:thick;
+}
+
+.fail{
+	background:#ff3333;
+}
+
+.na{
+	background:#66ffff;
+}
+
+.row{
+	border:solid 2px white;
 }
 

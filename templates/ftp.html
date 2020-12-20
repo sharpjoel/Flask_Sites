@@ -93,40 +93,55 @@
 	<!-- General Functionality -->
 
 	<h5><span class="badge badge-secondary">General Functionality</span></h5>
-
-	<!-- Basic Hardware Check -->
-	<div class='airsys hardware'>
-		<h5>Air System Basic Hardware Check</h5>
+	<!-- Basic Relinquish Default Check -->
+	<div class='airsys relinquish'>
+		<h5>Air System Basic Relinquish Default Check</h5>
 		<div class="fpt-container">
 			<div class='row'>
 				<div class="col-xl-8">
 					<ul>
-						<li>Using a magnehelic pressure guage and hand pump, ensure that all low and high static cutouts are tuned appropriately where low-static cutouts are typically tuned to -4"wc and high static cutouts at 4"wc</li>
+						<li>Confirm via HMI the panel back-up and auto-restore configuration (On-site task)</li>
 					</ul>
 			    </div>
 			    <div class="col-xl-4">
 			      <input type="checkbox" name="pass">
 			      <label class="passfail">Pass</label>
 			      <input type="checkbox" name="fail">
-			      <label class="passfail">Fail</label>
+			      <label class="passfail fail">Fail</label>
 			      <input type="checkbox" name="NA">
-			      <label class="passfail">NA</label>
+			      <label class="passfail na">NA</label>
 			      <input type="input" name="text" placeholder="Comment">
 			    </div>
 		    </div>
 		    <div class='row'>
 				<div class="col-xl-8">
 					<ul>
-						<li>If the unit is equipped with a high-humidity cutout sensor, ensure the humidifier is not hitting it directly</li>
+						<li>Confirm all bacnet notification classes have been set up via System Profile (On-site task)</li>
 					</ul>
 			    </div>
 			    <div class="col-xl-4">
 			      <input type="checkbox" name="pass">
 			      <label class="passfail">Pass</label>
 			      <input type="checkbox" name="fail">
-			      <label class="passfail">Fail</label>
+			      <label class="passfail fail">Fail</label>
 			      <input type="checkbox" name="NA">
-			      <label class="passfail">NA</label>
+			      <label class="passfail na">NA</label>
+			      <input type="input" name="text" placeholder="Comment">
+			    </div>
+		    </div>
+			<div class='row'>
+				<div class="col-xl-8">
+					<ul>
+						<li>Confirm all engineering units are correct where inwc is used for pressure, pct is used for actuators, hz or pct is used for fan speed, %rh is used for humidity, ppm is used for CO2, ft3/m is used for cfm, s is used for seconds, m is used for minutes, and degF is used for temperature</li>
+					</ul>
+			    </div>
+			    <div class="col-xl-4">
+			      <input type="checkbox" name="pass">
+			      <label class="passfail">Pass</label>
+			      <input type="checkbox" name="fail">
+			      <label class="passfail fail">Fail</label>
+			      <input type="checkbox" name="NA">
+			      <label class="passfail na">NA</label>
 			      <input type="input" name="text" placeholder="Comment">
 			    </div>
 		    </div>
@@ -140,127 +155,41 @@
 			      <input type="checkbox" name="pass">
 			      <label class="passfail">Pass</label>
 			      <input type="checkbox" name="fail">
-			      <label class="passfail">Fail</label>
+			      <label class="passfail fail">Fail</label>
 			      <input type="checkbox" name="NA">
-			      <label class="passfail">NA</label>
+			      <label class="passfail na">NA</label>
+			      <input type="input" name="text" placeholder="Comment">
+			    </div>
+		    </div>
+		    <div class='row'>
+				<div class="col-xl-8">
+					<ul>
+						<li>Confirm relinquish defaults for all actuators and valves are set to 0%</li>
+					</ul>
+			    </div>
+			    <div class="col-xl-4">
+			      <input type="checkbox" name="pass">
+			      <label class="passfail">Pass</label>
+			      <input type="checkbox" name="fail">
+			      <label class="passfail fail">Fail</label>
+			      <input type="checkbox" name="NA">
+			      <label class="passfail na">NA</label>
 			      <input type="input" name="text" placeholder="Comment">
 			    </div>
 		    </div>
 			<div class='row'>
 				<div class="col-xl-8">
 					<ul>
-						<li>Confirm all Fans go to minimum speed when started, accept half & full speed commands from the BMS as Hz or %</li>
+						<li>Confirm relinquish defaults for all fans are set to 0% or 0 Hz</li>
 					</ul>
 			    </div>
 			    <div class="col-xl-4">
 			      <input type="checkbox" name="pass">
 			      <label class="passfail">Pass</label>
 			      <input type="checkbox" name="fail">
-			      <label class="passfail">Fail</label>
+			      <label class="passfail fail">Fail</label>
 			      <input type="checkbox" name="NA">
-			      <label class="passfail">NA</label>
-			      <input type="input" name="text" placeholder="Comment">
-			    </div>
-		    </div>
-		    <div class='row'>
-				<div class="col-xl-8">
-					<ul>
-						<li>Confirm all Fans go to 0% or 0Hz when commanded to stop</li>
-					</ul>
-			    </div>
-			    <div class="col-xl-4">
-			      <input type="checkbox" name="pass">
-			      <label class="passfail">Pass</label>
-			      <input type="checkbox" name="fail">
-			      <label class="passfail">Fail</label>
-			      <input type="checkbox" name="NA">
-			      <label class="passfail">NA</label>
-			      <input type="input" name="text" placeholder="Comment">
-			    </div>
-		    </div>
-		    <div class='row'>
-				<div class="col-xl-8">
-					<ul>
-						<li>Confirm all Dampers and Actuators accept 0%, 50%, 100% commands where 0% is fully closed and 100% is fully open</li>
-					</ul>
-			    </div>
-			    <div class="col-xl-4">
-			      <input type="checkbox" name="pass">
-			      <label class="passfail">Pass</label>
-			      <input type="checkbox" name="fail">
-			      <label class="passfail">Fail</label>
-			      <input type="checkbox" name="NA">
-			      <label class="passfail">NA</label>
-			      <input type="input" name="text" placeholder="Comment">
-			    </div>
-		    </div>
-		    <div class='row'>
-				<div class="col-xl-8">
-					<ul>
-						<li>If the unit is equipped with mixing dampers, confirm that economizer, exhaust and return dampers all modulate based on the 'MAD' or 'RAD' command where the mixing (return) damper actuates the opposite of the others</li>
-					</ul>
-			    </div>
-			    <div class="col-xl-4">
-			      <input type="checkbox" name="pass">
-			      <label class="passfail">Pass</label>
-			      <input type="checkbox" name="fail">
-			      <label class="passfail">Fail</label>
-			      <input type="checkbox" name="NA">
-			      <label class="passfail">NA</label>
-			      <input type="input" name="text" placeholder="Comment">
-			    </div>
-		    </div>
-		</div>
-	</div>
-	<!-- Basic Relinquish Default Check -->
-	<div class='airsys relinquish'>
-		<h5>Air System Basic Relinquish Default Check</h5>
-		<div class="fpt-container">
-			<div class='row'>
-				<div class="col-xl-8">
-					<ul>
-						<li>Confirm all engineering units are correct where inwc is used for pressure, pct is used for actuators, hz or pct is used for fan speed, %rh is used for humidity, ppm is used for CO2, ft3/m is used for cfm, and degF is used for temperature</li>
-					</ul>
-			    </div>
-			    <div class="col-xl-4">
-			      <input type="checkbox" name="pass">
-			      <label class="passfail">Pass</label>
-			      <input type="checkbox" name="fail">
-			      <label class="passfail">Fail</label>
-			      <input type="checkbox" name="NA">
-			      <label class="passfail">NA</label>
-			      <input type="input" name="text" placeholder="Comment">
-			    </div>
-		    </div>
-		    <div class='row'>
-				<div class="col-xl-8">
-					<ul>
-						<li>Confirm Relinquish Defaults for all actuators and valves are set to 0%</li>
-					</ul>
-			    </div>
-			    <div class="col-xl-4">
-			      <input type="checkbox" name="pass">
-			      <label class="passfail">Pass</label>
-			      <input type="checkbox" name="fail">
-			      <label class="passfail">Fail</label>
-			      <input type="checkbox" name="NA">
-			      <label class="passfail">NA</label>
-			      <input type="input" name="text" placeholder="Comment">
-			    </div>
-		    </div>
-			<div class='row'>
-				<div class="col-xl-8">
-					<ul>
-						<li>Confirm Relinquish Defaults for all fans are set to 0% or 0 Hz</li>
-					</ul>
-			    </div>
-			    <div class="col-xl-4">
-			      <input type="checkbox" name="pass">
-			      <label class="passfail">Pass</label>
-			      <input type="checkbox" name="fail">
-			      <label class="passfail">Fail</label>
-			      <input type="checkbox" name="NA">
-			      <label class="passfail">NA</label>
+			      <label class="passfail na">NA</label>
 			      <input type="input" name="text" placeholder="Comment">
 			    </div>
 		    </div>
@@ -268,8 +197,12 @@
 				<div class="col-xl-8">
 					<ul>
 						<li>
-							Confirm the following defaults for Static Control Loops:
+							Confirm the following relinquish defaults for Static Control Loops:
 							<ul>
+								<li>Ramp Time: 300</li>
+								<li>Setpoint: 1.0</li>
+								<li>Reset High: 2.0</li>
+								<li>Reset Low: 1.0</li>
 								<li>P-Gain: 2000</li>
 								<li>I-Gain: 200</li>
 								<li>D-Gain: 0</li>
@@ -284,9 +217,9 @@
 			      <input type="checkbox" name="pass">
 			      <label class="passfail">Pass</label>
 			      <input type="checkbox" name="fail">
-			      <label class="passfail">Fail</label>
+			      <label class="passfail fail">Fail</label>
 			      <input type="checkbox" name="NA">
-			      <label class="passfail">NA</label>
+			      <label class="passfail na">NA</label>
 			      <input type="input" name="text" placeholder="Comment">
 			    </div>
 		    </div>
@@ -294,8 +227,12 @@
 				<div class="col-xl-8">
 					<ul>
 						<li>
-							Confirm the following defaults for Airflow Control Loops:
+							Confirm the following relinquish defaults for Airflow Control Loops:
 							<ul>
+								<li>Ramp Time: 300</li>
+								<li>Setpoint: 1500</li>
+								<li>Reset High: 3000</li>
+								<li>Reset Low: 1500</li>
 								<li>P-Gain: 0</li>
 								<li>I-Gain: 4</li>
 								<li>D-Gain: 2</li>
@@ -310,9 +247,9 @@
 			      <input type="checkbox" name="pass">
 			      <label class="passfail">Pass</label>
 			      <input type="checkbox" name="fail">
-			      <label class="passfail">Fail</label>
+			      <label class="passfail fail">Fail</label>
 			      <input type="checkbox" name="NA">
-			      <label class="passfail">NA</label>
+			      <label class="passfail na">NA</label>
 			      <input type="input" name="text" placeholder="Comment">
 			    </div>
 		    </div>
@@ -320,8 +257,11 @@
 				<div class="col-xl-8">
 					<ul>
 						<li>
-							Confirm the following defaults for Temperature Control Loops:
+							Confirm the following relinquish defaults for Temperature Control Loops:
 							<ul>
+								<li>Setpoint: 55</li>
+								<li>Reset High: 65</li>
+								<li>Reset Low: 55</li>
 								<li>P-Gain: 500</li>
 								<li>I-Gain: 50</li>
 								<li>D-Gain: 0</li>
@@ -336,9 +276,9 @@
 			      <input type="checkbox" name="pass">
 			      <label class="passfail">Pass</label>
 			      <input type="checkbox" name="fail">
-			      <label class="passfail">Fail</label>
+			      <label class="passfail fail">Fail</label>
 			      <input type="checkbox" name="NA">
-			      <label class="passfail">NA</label>
+			      <label class="passfail na">NA</label>
 			      <input type="input" name="text" placeholder="Comment">
 			    </div>
 		    </div>
@@ -346,8 +286,12 @@
 				<div class="col-xl-8">
 					<ul>
 						<li>
-							Confirm the following defaults for Humidity Control Loops:
+							Confirm the following relinquish defaults for Humidity Control Loops:
 							<ul>
+								<li>Ramp Time: 300</li>
+								<li>Setpoint: 30</li>
+								<li>Reset High: 80</li>
+								<li>Reset Low: 30</li>
 								<li>P-Gain: 50</li>
 								<li>I-Gain: 5</li>
 								<li>D-Gain: 0</li>
@@ -362,57 +306,25 @@
 			      <input type="checkbox" name="pass">
 			      <label class="passfail">Pass</label>
 			      <input type="checkbox" name="fail">
-			      <label class="passfail">Fail</label>
+			      <label class="passfail fail">Fail</label>
 			      <input type="checkbox" name="NA">
-			      <label class="passfail">NA</label>
+			      <label class="passfail na">NA</label>
 			      <input type="input" name="text" placeholder="Comment">
 			    </div>
 		    </div>
 		    <div class='row'>
 				<div class="col-xl-8">
 					<ul>
-						<li>Confirm via HMI the panel back-up and auto-restore configuration (On-site task)</li>
+						<li>Confirm all event enrollments for points have been set up with the correct triggers and times and that the appropriate notification classes have been assigned to alarmable points (On-site task)</li>
 					</ul>
 			    </div>
 			    <div class="col-xl-4">
 			      <input type="checkbox" name="pass">
 			      <label class="passfail">Pass</label>
 			      <input type="checkbox" name="fail">
-			      <label class="passfail">Fail</label>
+			      <label class="passfail fail">Fail</label>
 			      <input type="checkbox" name="NA">
-			      <label class="passfail">NA</label>
-			      <input type="input" name="text" placeholder="Comment">
-			    </div>
-		    </div>
-		    <div class='row'>
-				<div class="col-xl-8">
-					<ul>
-						<li>Confirm all bacnet notification classes have been set up via System Profile (On-site task)</li>
-					</ul>
-			    </div>
-			    <div class="col-xl-4">
-			      <input type="checkbox" name="pass">
-			      <label class="passfail">Pass</label>
-			      <input type="checkbox" name="fail">
-			      <label class="passfail">Fail</label>
-			      <input type="checkbox" name="NA">
-			      <label class="passfail">NA</label>
-			      <input type="input" name="text" placeholder="Comment">
-			    </div>
-		    </div>
-		    <div class='row'>
-				<div class="col-xl-8">
-					<ul>
-						<li>Confirm all event enrollments for points have been set up with the correct triggers and times and that the appropriate notification classes have been assigned (On-site task)</li>
-					</ul>
-			    </div>
-			    <div class="col-xl-4">
-			      <input type="checkbox" name="pass">
-			      <label class="passfail">Pass</label>
-			      <input type="checkbox" name="fail">
-			      <label class="passfail">Fail</label>
-			      <input type="checkbox" name="NA">
-			      <label class="passfail">NA</label>
+			      <label class="passfail na">NA</label>
 			      <input type="input" name="text" placeholder="Comment">
 			    </div>
 		    </div>
@@ -426,9 +338,9 @@
 			      <input type="checkbox" name="pass">
 			      <label class="passfail">Pass</label>
 			      <input type="checkbox" name="fail">
-			      <label class="passfail">Fail</label>
+			      <label class="passfail fail">Fail</label>
 			      <input type="checkbox" name="NA">
-			      <label class="passfail">NA</label>
+			      <label class="passfail na">NA</label>
 			      <input type="input" name="text" placeholder="Comment">
 			    </div>
 		    </div>
@@ -442,14 +354,106 @@
 			      <input type="checkbox" name="pass">
 			      <label class="passfail">Pass</label>
 			      <input type="checkbox" name="fail">
-			      <label class="passfail">Fail</label>
+			      <label class="passfail fail">Fail</label>
 			      <input type="checkbox" name="NA">
-			      <label class="passfail">NA</label>
+			      <label class="passfail na">NA</label>
 			      <input type="input" name="text" placeholder="Comment">
 			    </div>
 		    </div>
 		</div>
 	</div>
+
+	<!-- Basic Hardware Check -->
+
+	<div class='airsys hardware'>
+		<h5>Air System Basic Hardware Check</h5>
+		<div class="fpt-container">
+			<div class='row'>
+				<div class="col-xl-8">
+					<ul>
+						<li>Using a magnehelic pressure guage and hand pump, ensure that all low and high static cutouts are tuned appropriately where low-static cutouts are typically tuned to -4"wc and high static cutouts at 4"wc</li>
+					</ul>
+			    </div>
+			    <div class="col-xl-4">
+			      <input type="checkbox" name="pass">
+			      <label class="passfail">Pass</label>
+			      <input type="checkbox" name="fail">
+			      <label class="passfail fail">Fail</label>
+			      <input type="checkbox" name="NA">
+			      <label class="passfail na">NA</label>
+			      <input type="input" name="text" placeholder="Comment">
+			    </div>
+		    </div>
+		    <div class='row'>
+				<div class="col-xl-8">
+					<ul>
+						<li>If the unit is equipped with a high-humidity cutout sensor, ensure the humidity sensor and cutout are an adequate distance from the humidifier to ensure they are not being sprayed directly</li>
+					</ul>
+			    </div>
+			    <div class="col-xl-4">
+			      <input type="checkbox" name="pass">
+			      <label class="passfail">Pass</label>
+			      <input type="checkbox" name="fail">
+			      <label class="passfail fail">Fail</label>
+			      <input type="checkbox" name="NA">
+			      <label class="passfail na">NA</label>
+			      <input type="input" name="text" placeholder="Comment">
+			    </div>
+		    </div>
+		    <div class='row'>
+				<div class="col-xl-8">
+					<ul>
+						<li>Confirm all Dampers and Actuators accept 0%, 50%, 100% commands where 0% is fully closed and 100% is fully open</li>
+					</ul>
+			    </div>
+			    <div class="col-xl-4">
+			      <input type="checkbox" name="pass">
+			      <label class="passfail">Pass</label>
+			      <input type="checkbox" name="fail">
+			      <label class="passfail fail">Fail</label>
+			      <input type="checkbox" name="NA">
+			      <label class="passfail na">NA</label>
+			      <input type="input" name="text" placeholder="Comment">
+			    </div>
+		    </div>
+		    <div class='row'>
+				<div class="col-xl-8">
+					<ul>
+						<li>If the unit is equipped with mixing dampers, confirm that economizer, exhaust and return dampers all modulate based on the 'MAD' or 'RAD' command where the mixing (return) damper actuates the opposite of the others</li>
+					</ul>
+			    </div>
+			    <div class="col-xl-4">
+			      <input type="checkbox" name="pass">
+			      <label class="passfail">Pass</label>
+			      <input type="checkbox" name="fail">
+			      <label class="passfail fail">Fail</label>
+			      <input type="checkbox" name="NA">
+			      <label class="passfail na">NA</label>
+			      <input type="input" name="text" placeholder="Comment">
+			    </div>
+		    </div>
+			<div class='row'>
+				<div class="col-xl-8">
+					<ul>
+						<li>Command open the dampers to allow airflow to be drawn</li>
+						<li>Confirm all Fans go to minimum speed when started, accept half & full speed commands from the BMS as Hz or %</li>
+						<li>Confirm all Fans go to 0% or 0Hz when commanded to stop</li>
+						<li>Release all dampers and fan commands from Operator priority</li>
+					</ul>
+			    </div>
+			    <div class="col-xl-4">
+			      <input type="checkbox" name="pass">
+			      <label class="passfail">Pass</label>
+			      <input type="checkbox" name="fail">
+			      <label class="passfail fail">Fail</label>
+			      <input type="checkbox" name="NA">
+			      <label class="passfail na">NA</label>
+			      <input type="input" name="text" placeholder="Comment">
+			    </div>
+		    </div>
+		</div>
+	</div>
+
 
 	<!-- Basic I/O Check -->
 
