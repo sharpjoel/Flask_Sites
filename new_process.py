@@ -619,6 +619,77 @@ def favicon():
     return send_from_directory(os.path.join(app.root_path, 'static'),
                                'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
+@app.route('/ftp',methods=['GET','POST'])
+def ftp():
+    ftpterminalbox = {
+    'Basic Hardware Check':'0',
+    'Relinquish Default Check':'1',
+    'Occupancy - Scheduled':'A',
+    'Vacancy - Scheduled':'2',
+    'Presence Detection':'3',
+    'Heating':'B',
+    'Cooling':'C',
+    'Deadband ventilation':'4',
+    'DCV':'D',
+    'Rapid Ventilation':'E',
+    'Air Volume Tracking':'F',
+    'Green Leaf':'G',
+    'Window Control':'5',
+    'Temperature Alarms':'H',
+    'Actuator Alarms':'I'
+    }
+    ftptra = {
+    'Basic Hardware Check':'0',
+    'Relinquish Default Check':'1',
+    'Lighting Solo':'A',
+    'Lighting + HVAC':'B',
+    'Shading Solo':'C',
+    'Shading + HVAC':'D'
+    }
+    ftpairsystems = {
+    'Basic Hardware Check':'0',
+    'Relinquish Default Check':'1',
+    'Return from Power Loss Reset':'A',
+    'Occupied Mode':'B',
+    'Unoccupied Mode':'C',
+    'Optimum Start (Morning Warm-up)':'D',
+    'Optimum Start (Morning Cool-down)':'E',
+    'Optimum Stop when Heating':'F',
+    'Optimum Stop when Cooling':'G',
+    'Night Setback Heating':'H',
+    'Night Setback Cooling':'I',
+    'Night Setback Cooling':'J',
+    'Discharge Static Control':'K',
+    'Discharge Static Reset':'L',
+    'Discharge Flow Control':'M',
+    'Discharge Flow Reset':'N',
+    'Discharge Temperature Control':'O',
+    'Discharge Temperature Reset':'P',
+    'Discharge Humidity Control':'Q',
+    'Minimum Outside Air Control':'R',
+    'Economizer Control':'S',
+    'Demand Control Ventilation':'T',
+    'Exhaust Static Control':'U',
+    'Exhaust Static Reset':'V',
+    'Building Static Control - Exhaust Damper':'W',
+    'Building Static Control - Return Fan':'X',
+    'Return Static Control - Exhaust Damper':'Y',
+    'Return Static Control - Return Fan':'Z',
+    'Return Flow Control - CFM Offset':'a',
+    'Dehumidification Control':'b',
+    'Fan Wall Lead/Lag + Weekly turnover':'c',
+    'Fan Proof Alarm':'d',
+    'HOA Alarm':'e',
+    'High/Low Static Alarm':'f',
+    'High/Low Temp Cutout Alarm':'g',
+    }
+    return render_template(
+        'ftp.html',
+        ftpterminalbox = ftpterminalbox,
+        ftptra = ftptra,
+        ftpairsystems = ftpairsystems,
+        )
+
 """
 Step 8 - Run your application. debug=True makes it so you don't have to stop and restart your
     webserver.
