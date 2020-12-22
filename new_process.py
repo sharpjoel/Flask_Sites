@@ -4,6 +4,7 @@
     - request:Used to retrieve POST and GET requests
     - jsonify: converts arguments or keyword arguments into a dictionary
 """
+import time
 import os
 from flask import Flask, render_template, request, jsonify, send_file, send_from_directory, make_response
 from services.services import Services
@@ -694,13 +695,13 @@ def fpt():
     # response.headers['Content-Disposition'] = 'inline; filename=fpt.pdf'
     return rendered
 
-@app.route('/custom_fpt', methods=['GET','POST'])
-def custom_fpt(fpt_name=None):
+@app.route('/custom_fpt', methods=['POST'])
+def custom_fpt():
     # Single CSS file
     # css = 'static/styles/new_form.css'
     if request.method == "POST":
         html = request.form['stuff']
-        with open("custom_fpt.html", "w") as file:
+        with open("templates/custom_fpt.html", "w") as file:
             file.write(html)
     # options = {"enable-local-file-access": None}
     # config = pdfkit.configuration(wkhtmltopdf='/usr/local/bin/wkhtmltopdf')
@@ -709,9 +710,18 @@ def custom_fpt(fpt_name=None):
     # response.headers['Content-Type'] = 'application/pdf'
     # response.headers['Content-Disposition'] = 'inline; filename=fpt.pdf'
     try:
-        return send_file("fpt/"+ fpt_name ,mimetype='text/html',as_attachment=True)
+       # return send_file("templates/custom_fpt.html" ,mimetype='text/html',as_attachment=True)
+       return redirect(url_for('fpt'))
+       # return render_template('templates/custom_fpt.html')
     except Exception as e:
         return str(e)
+
+@app.route('/custom_fpt', methods=['GET'])
+def get_custom_pft():
+    time.sleep(2)
+    return send_file("templates/custom_fpt.html" ,mimetype='text/html',as_attachment=True)
+    # return render_template('custom_fpt.html')
+
 """
 Step 8 - Run your application. debug=True makes it so you don't have to stop and restart your
     webserver.

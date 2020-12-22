@@ -16,13 +16,13 @@ $(document).ready(function(){
 	        cache: false,
 	        dataType: 'json'
 		});
-		$.get("custom_fpt.html")
-		$("a").click(function(event){
-		  event.preventDefault();
-		});
-		$('#ftp-container').css('font-family','Roboto');
-		$('nav').show();
-		$('#app-container').show();
-		$('#cmd').show();
+		//$.get("custom_fpt.html")
+		//$("a").click(function(event){
+		//  event.preventDefault();
+		//});
+		//$('#ftp-container').css('font-family','Roboto');
+		//$('nav').show();
+		//$('#app-container').show();
+		//$('#cmd').show();
 	});
 });
