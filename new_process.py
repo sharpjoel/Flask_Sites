@@ -622,9 +622,9 @@ def favicon():
     return send_from_directory(os.path.join(app.root_path, 'static'),
                                'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
-@app.route('/ftp',methods=['GET','POST'])
-def ftp():
-    ftpterminalbox = {
+@app.route('/fpt',methods=['GET','POST'])
+def fpt():
+    fptterminalbox = {
     'Terminal Basic Hardware Check':'0',
     'Terminal Relinquish Default Check':'1',
     'Occupancy - Scheduled':'A',
@@ -641,7 +641,7 @@ def ftp():
     'Temperature Alarms':'H',
     'Actuator Alarms':'I'
     }
-    ftptra = {
+    fpttra = {
     'TRA Basic Hardware Check':'0',
     'TRA Relinquish Default Check':'1',
     'Lighting Solo':'A',
@@ -649,7 +649,7 @@ def ftp():
     'Shading Solo':'C',
     'Shading + HVAC':'D'
     }
-    ftpairsystems = {
+    fptairsystems = {
     'Air System Basic Hardware Check':'0',
     'Air System Relinquish Default Check':'1',
     'Return from Power Loss Reset':'A',
@@ -686,12 +686,12 @@ def ftp():
     'High/Low Static Alarm':'f',
     'High/Low Temp Cutout Alarm':'g',
     }
-    rendered = render_template('ftp.html',ftpterminalbox = ftpterminalbox,ftptra = ftptra,ftpairsystems = ftpairsystems)
+    rendered = render_template('fpt.html',fptterminalbox = fptterminalbox,fpttra = fpttra,fptairsystems = fptairsystems)
     # pdf = pdfkit.from_string(rendered, False)
 
     # response = make_response(pdf)
     # response.headers['Content-Type'] = 'application/pdf'
-    # response.headers['Content-Disposition'] = 'inline; filename=ftp.pdf'
+    # response.headers['Content-Disposition'] = 'inline; filename=fpt.pdf'
     return rendered
 
 @app.route('/custom_fpt/<string:fpt_name>', methods=['GET','POST'])
@@ -704,10 +704,10 @@ def custom_fpt(fpt_name=None):
             file.write(html)
     # options = {"enable-local-file-access": None}
     # config = pdfkit.configuration(wkhtmltopdf='/usr/local/bin/wkhtmltopdf')
-    # pdf = pdfkit.from_string(html,'ftp.pdf',options=options,configuration=config,css=css)
+    # pdf = pdfkit.from_string(html,'fpt.pdf',options=options,configuration=config,css=css)
     # response = make_response(pdf)
     # response.headers['Content-Type'] = 'application/pdf'
-    # response.headers['Content-Disposition'] = 'inline; filename=ftp.pdf'
+    # response.headers['Content-Disposition'] = 'inline; filename=fpt.pdf'
     try:
         return send_file("fpt/"+ fpt_name ,mimetype='text/html',as_attachment=True)
     except Exception as e:

@@ -5,7 +5,7 @@
 	<script src="{{ url_for('static', filename='js/toPDF.js') }}"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/new_form.css') }}">
-	<!-- Adding secondary link for ftp export -->
+	<!-- Adding secondary link for fpt export -->
 	<link rel= "stylesheet" type= "text/css" href= "static/styles/new_form.css">
 	<title>RSS-NA DXR Engineering Tool</title>
 </head>
@@ -37,7 +37,7 @@
 	<form class='form-container' id='appForm'>
 		<div class='form-container' id="standard-seq-1">
 			<h3><span class="badge badge-secondary">Terminal Equipment</span></h3>
-			{% for item in ftpterminalbox %}
+			{% for item in fptterminalbox %}
 				<div class="form-check">
 					<input class="form-check-input" type="checkbox" value="" id="{{item}}">
 						<label class="form-check-label" for="{{item}}"><span class="badge badge-secondary">{{item}}</span></label>
@@ -46,7 +46,7 @@
 		</div>
 		<div class='form-container' id="standard-seq-2">
 			<h3><span class="badge badge-secondary">TRA</span></h3>
-			{% for item in ftptra %}
+			{% for item in fpttra %}
 				<div class="form-check">
 					<input class="form-check-input" type="checkbox" value="" id="{{item}}">
 						<label class="form-check-label" for="{{item}}"><span class="badge badge-secondary">{{item}}</span></label>
@@ -55,7 +55,7 @@
 		</div>
 		<div class='form-container' id="standard-seq-3">
 			<h3><span class="badge badge-secondary">Air Systems</span></h3>
-			{% for item in ftpairsystems %}
+			{% for item in fptairsystems %}
 				<div class="form-check">
 					<input class="form-check-input" type="checkbox" value="" id="{{item}}">
 						<label class="form-check-label" for="{{item}}"><span class="badge badge-secondary">{{item}}</span></label>
