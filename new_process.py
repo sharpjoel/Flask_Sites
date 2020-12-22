@@ -5,9 +5,12 @@
     - jsonify: converts arguments or keyword arguments into a dictionary
 """
 import os
-from flask import Flask, render_template, request, jsonify, send_file, send_from_directory
+from flask import Flask, render_template, request, jsonify, send_file, send_from_directory, make_response
 from services.services import Services
+from pathlib import Path
+import os
 import pandas as pd
+import pdfkit
 # change below depending on storage location
 UPLOAD_FOLDER = 'uploads/'
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'dwg', 's1ct', 's1ca'}
@@ -622,8 +625,8 @@ def favicon():
 @app.route('/ftp',methods=['GET','POST'])
 def ftp():
     ftpterminalbox = {
-    'Basic Hardware Check':'0',
-    'Relinquish Default Check':'1',
+    'Terminal Basic Hardware Check':'0',
+    'Terminal Relinquish Default Check':'1',
     'Occupancy - Scheduled':'A',
     'Vacancy - Scheduled':'2',
     'Presence Detection':'3',
@@ -639,16 +642,16 @@ def ftp():
     'Actuator Alarms':'I'
     }
     ftptra = {
-    'Basic Hardware Check':'0',
-    'Relinquish Default Check':'1',
+    'TRA Basic Hardware Check':'0',
+    'TRA Relinquish Default Check':'1',
     'Lighting Solo':'A',
     'Lighting + HVAC':'B',
     'Shading Solo':'C',
     'Shading + HVAC':'D'
     }
     ftpairsystems = {
-    'Basic Hardware Check':'0',
-    'Relinquish Default Check':'1',
+    'Air System Basic Hardware Check':'0',
+    'Air System Relinquish Default Check':'1',
     'Return from Power Loss Reset':'A',
     'Occupied Mode':'B',
     'Unoccupied Mode':'C',
@@ -683,13 +686,32 @@ def ftp():
     'High/Low Static Alarm':'f',
     'High/Low Temp Cutout Alarm':'g',
     }
-    return render_template(
-        'ftp.html',
-        ftpterminalbox = ftpterminalbox,
-        ftptra = ftptra,
-        ftpairsystems = ftpairsystems,
-        )
+    rendered = render_template('ftp.html',ftpterminalbox = ftpterminalbox,ftptra = ftptra,ftpairsystems = ftpairsystems)
+    # pdf = pdfkit.from_string(rendered, False)
 
+    # response = make_response(pdf)
+    # response.headers['Content-Type'] = 'application/pdf'
+    # response.headers['Content-Disposition'] = 'inline; filename=ftp.pdf'
+    return rendered
+
+@app.route('/custom_fpt', methods=['GET','POST'])
+def custom_fpt():
+    # Single CSS file
+    # css = 'static/styles/new_form.css'
+    if request.method == "POST":
+        html = request.form['stuff']
+        with open("custom_fpt.html", "w") as file:
+            file.write(html)
+    # options = {"enable-local-file-access": None}
+    # config = pdfkit.configuration(wkhtmltopdf='/usr/local/bin/wkhtmltopdf')
+    # pdf = pdfkit.from_string(html,'ftp.pdf',options=options,configuration=config,css=css)
+    # response = make_response(pdf)
+    # response.headers['Content-Type'] = 'application/pdf'
+    # response.headers['Content-Disposition'] = 'inline; filename=ftp.pdf'
+    try:
+        return send_file("custom_fpt.html",mimetype='text/html',as_attachment=True,attachment_filename="custom_fpt.html")
+    except Exception as e:
+        return str(e)
 """
 Step 8 - Run your application. debug=True makes it so you don't have to stop and restart your
     webserver.

@@ -1,16 +1,14 @@
-<!DOCTYPE html>
-<html>
 <head>
 	<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-	<script src="{{ url_for('static', filename='js/toPDF.js') }}"></script>
+	<script src="/static/js/toPDF.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/new_form.css') }}">
+	<link rel="stylesheet" type="text/css" href="/static/styles/new_form.css">
 	<!-- Adding secondary link for ftp export -->
-	<link rel= "stylesheet" type= "text/css" href= "static/styles/new_form.css">
+	<link rel="stylesheet" type="text/css" href="static/styles/new_form.css">
 	<title>RSS-NA DXR Engineering Tool</title>
 </head>
-<body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<body data-new-gr-c-s-check-loaded="14.989.0" data-gr-ext-installed="">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="display: none;">
   <a class="navbar-brand" href="#">RSS-NA DXR Engineering Tool</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -21,67 +19,322 @@
         <a class="nav-link" href="/">DXR Engineering <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="https://hit.sbt.siemens.com/RWD/app.aspx?RC=US&lang=en&MODULE=Catalog&ACTION=ShowGroup&KEY=OPC_426313">DXR Information</a>
+        <a class="nav-link" href="https://hit.sbt.siemens.com/RWD/app.aspx?RC=US&amp;lang=en&amp;MODULE=Catalog&amp;ACTION=ShowGroup&amp;KEY=OPC_426313">DXR Information</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="https://siemensnam.sharepoint.com/:f:/t/PacificZoneZTC-ProgrammingCommunity/Ei-1ZH07BHJKrAVWQgFf-7MBiz1HPFp9ZrJ4Pv1yx3A_pw?e=6h62aM">Videos & Guides</a>
+        <a class="nav-link" href="https://siemensnam.sharepoint.com/:f:/t/PacificZoneZTC-ProgrammingCommunity/Ei-1ZH07BHJKrAVWQgFf-7MBiz1HPFp9ZrJ4Pv1yx3A_pw?e=6h62aM">Videos &amp; Guides</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled" href="https://siemensnam.sharepoint.com/teams/PacificZoneZTC-ProgrammingCommunity/Shared%20Documents/Forms/AllItems.aspx?viewid=7d315af4%2D1dd7%2D4399%2Da844%2Da30bb57f73b5&id=%2Fteams%2FPacificZoneZTC%2DProgrammingCommunity%2FShared%20Documents%2FOrder%20Forms">License & Equipment Ordering</a>
+        <a class="nav-link disabled" href="https://siemensnam.sharepoint.com/teams/PacificZoneZTC-ProgrammingCommunity/Shared%20Documents/Forms/AllItems.aspx?viewid=7d315af4%2D1dd7%2D4399%2Da844%2Da30bb57f73b5&amp;id=%2Fteams%2FPacificZoneZTC%2DProgrammingCommunity%2FShared%20Documents%2FOrder%20Forms">License &amp; Equipment Ordering</a>
       </li>
     </ul>
   </div>
 </nav>
 <br>
-<div id='app-container'>
-	<form class='form-container' id='appForm'>
-		<div class='form-container' id="standard-seq-1">
+<div id="app-container" style="display: none;">
+	<form class="form-container" id="appForm">
+		<div class="form-container" id="standard-seq-1">
 			<h3><span class="badge badge-secondary">Terminal Equipment</span></h3>
-			{% for item in ftpterminalbox %}
+			
 				<div class="form-check">
-					<input class="form-check-input" type="checkbox" value="" id="{{item}}">
-						<label class="form-check-label" for="{{item}}"><span class="badge badge-secondary">{{item}}</span></label>
+					<input class="form-check-input" type="checkbox" value="" id="Terminal Basic Hardware Check">
+						<label class="form-check-label" for="Terminal Basic Hardware Check"><span class="badge badge-secondary">Terminal Basic Hardware Check</span></label>
 				</div>
-			{% endfor %}
+			
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="" id="Terminal Relinquish Default Check">
+						<label class="form-check-label" for="Terminal Relinquish Default Check"><span class="badge badge-secondary">Terminal Relinquish Default Check</span></label>
+				</div>
+			
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="" id="Occupancy - Scheduled">
+						<label class="form-check-label" for="Occupancy - Scheduled"><span class="badge badge-secondary">Occupancy - Scheduled</span></label>
+				</div>
+			
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="" id="Vacancy - Scheduled">
+						<label class="form-check-label" for="Vacancy - Scheduled"><span class="badge badge-secondary">Vacancy - Scheduled</span></label>
+				</div>
+			
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="" id="Presence Detection">
+						<label class="form-check-label" for="Presence Detection"><span class="badge badge-secondary">Presence Detection</span></label>
+				</div>
+			
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="" id="Heating">
+						<label class="form-check-label" for="Heating"><span class="badge badge-secondary">Heating</span></label>
+				</div>
+			
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="" id="Cooling">
+						<label class="form-check-label" for="Cooling"><span class="badge badge-secondary">Cooling</span></label>
+				</div>
+			
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="" id="Deadband ventilation">
+						<label class="form-check-label" for="Deadband ventilation"><span class="badge badge-secondary">Deadband ventilation</span></label>
+				</div>
+			
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="" id="DCV">
+						<label class="form-check-label" for="DCV"><span class="badge badge-secondary">DCV</span></label>
+				</div>
+			
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="" id="Rapid Ventilation">
+						<label class="form-check-label" for="Rapid Ventilation"><span class="badge badge-secondary">Rapid Ventilation</span></label>
+				</div>
+			
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="" id="Air Volume Tracking">
+						<label class="form-check-label" for="Air Volume Tracking"><span class="badge badge-secondary">Air Volume Tracking</span></label>
+				</div>
+			
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="" id="Green Leaf">
+						<label class="form-check-label" for="Green Leaf"><span class="badge badge-secondary">Green Leaf</span></label>
+				</div>
+			
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="" id="Window Control">
+						<label class="form-check-label" for="Window Control"><span class="badge badge-secondary">Window Control</span></label>
+				</div>
+			
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="" id="Temperature Alarms">
+						<label class="form-check-label" for="Temperature Alarms"><span class="badge badge-secondary">Temperature Alarms</span></label>
+				</div>
+			
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="" id="Actuator Alarms">
+						<label class="form-check-label" for="Actuator Alarms"><span class="badge badge-secondary">Actuator Alarms</span></label>
+				</div>
+			
 		</div>
-		<div class='form-container' id="standard-seq-2">
+		<div class="form-container" id="standard-seq-2">
 			<h3><span class="badge badge-secondary">TRA</span></h3>
-			{% for item in ftptra %}
+			
 				<div class="form-check">
-					<input class="form-check-input" type="checkbox" value="" id="{{item}}">
-						<label class="form-check-label" for="{{item}}"><span class="badge badge-secondary">{{item}}</span></label>
+					<input class="form-check-input" type="checkbox" value="" id="TRA Basic Hardware Check">
+						<label class="form-check-label" for="TRA Basic Hardware Check"><span class="badge badge-secondary">TRA Basic Hardware Check</span></label>
 				</div>
-			{% endfor %}
+			
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="" id="TRA Relinquish Default Check">
+						<label class="form-check-label" for="TRA Relinquish Default Check"><span class="badge badge-secondary">TRA Relinquish Default Check</span></label>
+				</div>
+			
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="" id="Lighting Solo">
+						<label class="form-check-label" for="Lighting Solo"><span class="badge badge-secondary">Lighting Solo</span></label>
+				</div>
+			
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="" id="Lighting + HVAC">
+						<label class="form-check-label" for="Lighting + HVAC"><span class="badge badge-secondary">Lighting + HVAC</span></label>
+				</div>
+			
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="" id="Shading Solo">
+						<label class="form-check-label" for="Shading Solo"><span class="badge badge-secondary">Shading Solo</span></label>
+				</div>
+			
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="" id="Shading + HVAC">
+						<label class="form-check-label" for="Shading + HVAC"><span class="badge badge-secondary">Shading + HVAC</span></label>
+				</div>
+			
 		</div>
-		<div class='form-container' id="standard-seq-3">
+		<div class="form-container" id="standard-seq-3">
 			<h3><span class="badge badge-secondary">Air Systems</span></h3>
-			{% for item in ftpairsystems %}
+			
 				<div class="form-check">
-					<input class="form-check-input" type="checkbox" value="" id="{{item}}">
-						<label class="form-check-label" for="{{item}}"><span class="badge badge-secondary">{{item}}</span></label>
+					<input class="form-check-input" type="checkbox" value="" id="Air System Basic Hardware Check">
+						<label class="form-check-label" for="Air System Basic Hardware Check"><span class="badge badge-secondary">Air System Basic Hardware Check</span></label>
 				</div>
-			{% endfor %}
+			
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="" id="Air System Relinquish Default Check">
+						<label class="form-check-label" for="Air System Relinquish Default Check"><span class="badge badge-secondary">Air System Relinquish Default Check</span></label>
+				</div>
+			
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="" id="Return from Power Loss Reset">
+						<label class="form-check-label" for="Return from Power Loss Reset"><span class="badge badge-secondary">Return from Power Loss Reset</span></label>
+				</div>
+			
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="" id="Occupied Mode">
+						<label class="form-check-label" for="Occupied Mode"><span class="badge badge-secondary">Occupied Mode</span></label>
+				</div>
+			
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="" id="Unoccupied Mode">
+						<label class="form-check-label" for="Unoccupied Mode"><span class="badge badge-secondary">Unoccupied Mode</span></label>
+				</div>
+			
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="" id="Optimum Start (Morning Warm-up)">
+						<label class="form-check-label" for="Optimum Start (Morning Warm-up)"><span class="badge badge-secondary">Optimum Start (Morning Warm-up)</span></label>
+				</div>
+			
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="" id="Optimum Start (Morning Cool-down)">
+						<label class="form-check-label" for="Optimum Start (Morning Cool-down)"><span class="badge badge-secondary">Optimum Start (Morning Cool-down)</span></label>
+				</div>
+			
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="" id="Optimum Stop when Heating">
+						<label class="form-check-label" for="Optimum Stop when Heating"><span class="badge badge-secondary">Optimum Stop when Heating</span></label>
+				</div>
+			
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="" id="Optimum Stop when Cooling">
+						<label class="form-check-label" for="Optimum Stop when Cooling"><span class="badge badge-secondary">Optimum Stop when Cooling</span></label>
+				</div>
+			
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="" id="Night Setback Heating">
+						<label class="form-check-label" for="Night Setback Heating"><span class="badge badge-secondary">Night Setback Heating</span></label>
+				</div>
+			
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="" id="Night Setback Cooling">
+						<label class="form-check-label" for="Night Setback Cooling"><span class="badge badge-secondary">Night Setback Cooling</span></label>
+				</div>
+			
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="" id="Discharge Static Control">
+						<label class="form-check-label" for="Discharge Static Control"><span class="badge badge-secondary">Discharge Static Control</span></label>
+				</div>
+			
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="" id="Discharge Static Reset">
+						<label class="form-check-label" for="Discharge Static Reset"><span class="badge badge-secondary">Discharge Static Reset</span></label>
+				</div>
+			
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="" id="Discharge Flow Control">
+						<label class="form-check-label" for="Discharge Flow Control"><span class="badge badge-secondary">Discharge Flow Control</span></label>
+				</div>
+			
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="" id="Discharge Flow Reset">
+						<label class="form-check-label" for="Discharge Flow Reset"><span class="badge badge-secondary">Discharge Flow Reset</span></label>
+				</div>
+			
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="" id="Discharge Temperature Control">
+						<label class="form-check-label" for="Discharge Temperature Control"><span class="badge badge-secondary">Discharge Temperature Control</span></label>
+				</div>
+			
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="" id="Discharge Temperature Reset">
+						<label class="form-check-label" for="Discharge Temperature Reset"><span class="badge badge-secondary">Discharge Temperature Reset</span></label>
+				</div>
+			
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="" id="Discharge Humidity Control">
+						<label class="form-check-label" for="Discharge Humidity Control"><span class="badge badge-secondary">Discharge Humidity Control</span></label>
+				</div>
+			
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="" id="Minimum Outside Air Control">
+						<label class="form-check-label" for="Minimum Outside Air Control"><span class="badge badge-secondary">Minimum Outside Air Control</span></label>
+				</div>
+			
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="" id="Economizer Control">
+						<label class="form-check-label" for="Economizer Control"><span class="badge badge-secondary">Economizer Control</span></label>
+				</div>
+			
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="" id="Demand Control Ventilation">
+						<label class="form-check-label" for="Demand Control Ventilation"><span class="badge badge-secondary">Demand Control Ventilation</span></label>
+				</div>
+			
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="" id="Exhaust Static Control">
+						<label class="form-check-label" for="Exhaust Static Control"><span class="badge badge-secondary">Exhaust Static Control</span></label>
+				</div>
+			
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="" id="Exhaust Static Reset">
+						<label class="form-check-label" for="Exhaust Static Reset"><span class="badge badge-secondary">Exhaust Static Reset</span></label>
+				</div>
+			
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="" id="Building Static Control - Exhaust Damper">
+						<label class="form-check-label" for="Building Static Control - Exhaust Damper"><span class="badge badge-secondary">Building Static Control - Exhaust Damper</span></label>
+				</div>
+			
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="" id="Building Static Control - Return Fan">
+						<label class="form-check-label" for="Building Static Control - Return Fan"><span class="badge badge-secondary">Building Static Control - Return Fan</span></label>
+				</div>
+			
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="" id="Return Static Control - Exhaust Damper">
+						<label class="form-check-label" for="Return Static Control - Exhaust Damper"><span class="badge badge-secondary">Return Static Control - Exhaust Damper</span></label>
+				</div>
+			
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="" id="Return Static Control - Return Fan">
+						<label class="form-check-label" for="Return Static Control - Return Fan"><span class="badge badge-secondary">Return Static Control - Return Fan</span></label>
+				</div>
+			
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="" id="Return Flow Control - CFM Offset">
+						<label class="form-check-label" for="Return Flow Control - CFM Offset"><span class="badge badge-secondary">Return Flow Control - CFM Offset</span></label>
+				</div>
+			
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="" id="Dehumidification Control">
+						<label class="form-check-label" for="Dehumidification Control"><span class="badge badge-secondary">Dehumidification Control</span></label>
+				</div>
+			
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="" id="Fan Wall Lead/Lag + Weekly turnover">
+						<label class="form-check-label" for="Fan Wall Lead/Lag + Weekly turnover"><span class="badge badge-secondary">Fan Wall Lead/Lag + Weekly turnover</span></label>
+				</div>
+			
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="" id="Fan Proof Alarm">
+						<label class="form-check-label" for="Fan Proof Alarm"><span class="badge badge-secondary">Fan Proof Alarm</span></label>
+				</div>
+			
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="" id="HOA Alarm">
+						<label class="form-check-label" for="HOA Alarm"><span class="badge badge-secondary">HOA Alarm</span></label>
+				</div>
+			
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="" id="High/Low Static Alarm">
+						<label class="form-check-label" for="High/Low Static Alarm"><span class="badge badge-secondary">High/Low Static Alarm</span></label>
+				</div>
+			
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="" id="High/Low Temp Cutout Alarm">
+						<label class="form-check-label" for="High/Low Temp Cutout Alarm"><span class="badge badge-secondary">High/Low Temp Cutout Alarm</span></label>
+				</div>
+			
 		</div>
-		<div class='form-container' id="standard-seq-4">
+		<div class="form-container" id="standard-seq-4">
 			<h3><span class="badge badge-secondary">Water Systems</span></h3>
-			{% for item in cenfuncs %}
-				<div class="form-check">
-					<input class="form-check-input" type="checkbox" value="" id="{{item}}">
-						<label class="form-check-label" for="{{item}}"><span class="badge badge-secondary">{{item}}</span></label>
-				</div>
-			{% endfor %}
+			
 		</div>
 	</form>
 </div>
 <br><br>
 <form id="download"></form>
-<a href="{{url_for('.custom_fpt')}}" target="blank"><button class='btn btn-default' id="cmd">Download!</button></a>
-<div id='fpt-container'>
+<a href="/custom_fpt" target="blank"><button class="btn btn-default" id="cmd" style="display: none;">Download!</button></a>
+<div id="fpt-container">
 	<h2><span class="badge badge-secondary sequence-start">Resources</span></h2>
 	<h2><span class="badge badge-secondary sequence-start">Preparation</span></h2>
 	<h4><span class="badge badge-secondary sequence-start">Field Panel Connection Check</span></h4>
 		<div class="fpt-container">
-			<div class='row'>
+			<div class="row">
 				<div class="col-xl-8">
 					<ul>
 						<li>Turn off and close ZScaler</li>
@@ -97,7 +350,7 @@
 			      <input type="input" name="text" placeholder="Comment">
 			    </div>
 		    </div>
-		    <div class='row'>
+		    <div class="row">
 				<div class="col-xl-8">
 					<ul>
 						<li>Disconnect from ABT Site</li>
@@ -113,7 +366,7 @@
 			      <input type="input" name="text" placeholder="Comment">
 			    </div>
 		    </div>
-		    <div class='row'>
+		    <div class="row">
 				<div class="col-xl-8">
 					<ul>
 						<li>Confirm the computer IP address and subnet mask are on the same subnet intended for the field panel</li>
@@ -129,7 +382,7 @@
 			      <input type="input" name="text" placeholder="Comment">
 			    </div>
 		    </div>
-		    <div class='row'>
+		    <div class="row">
 				<div class="col-xl-8">
 					<ul>
 						<li>Set up BacStac by going to C:\ProgramFiles(x86)\Cimetrics and running bacstac.bat</li>
@@ -149,7 +402,7 @@
 			      <input type="input" name="text" placeholder="Comment">
 			    </div>
 		    </div>
-		    <div class='row'>
+		    <div class="row">
 				<div class="col-xl-8">
 					<ul>
 						<li>unzip the CT database in your Job Folder</li>
@@ -171,7 +424,7 @@
 			      <input type="input" name="text" placeholder="Comment">
 			    </div>
 		    </div>
-		    <div class='row'>
+		    <div class="row">
 				<div class="col-xl-8">
 					<ul>
 						<li>Open System Profile
@@ -193,7 +446,7 @@
 			      <label class="passfail na">NA</label>
 			      <input type="input" name="text" placeholder="Comment">
 			    </div>
-		    </div><div class='row'>
+		    </div><div class="row">
 				<div class="col-xl-8">
 					<ul>
 						<li>Open MMI database transfer
@@ -246,10 +499,10 @@
 	<!-- General Functionality -->
 	<!-- General Functionality -->
 	<!-- Basic Relinquish Default Check -->
-	<div class='airsys relinquish'>
+	<div class="airsys relinquish">
 		<h4><span class="badge badge-secondary sequence-start">Air System Basic Relinquish Default Check</span></h4>
 		<div class="fpt-container">
-			<div class='row'>
+			<div class="row">
 				<div class="col-xl-8">
 					<ul>
 						<li>Confirm via HMI the panel back-up and auto-restore configuration (On-site task)</li>
@@ -265,7 +518,7 @@
 			      <input type="input" name="text" placeholder="Comment">
 			    </div>
 		    </div>
-		    <div class='row'>
+		    <div class="row">
 				<div class="col-xl-8">
 					<ul>
 						<li>Confirm all bacnet notification classes have been set up via System Profile (On-site task)</li>
@@ -281,7 +534,7 @@
 			      <input type="input" name="text" placeholder="Comment">
 			    </div>
 		    </div>
-			<div class='row'>
+			<div class="row">
 				<div class="col-xl-8">
 					<ul>
 						<li>Confirm all engineering units are correct where inwc is used for pressure, pct is used for actuators, hz or pct is used for fan speed, %rh is used for humidity, ppm is used for CO2, ft3/m is used for cfm, s is used for seconds, m is used for minutes, and degF is used for temperature</li>
@@ -297,10 +550,10 @@
 			      <input type="input" name="text" placeholder="Comment">
 			    </div>
 		    </div>
-		    <div class='row'>
+		    <div class="row">
 				<div class="col-xl-8">
 					<ul>
-						<li>Confirm all sensor slope & intercept values are correct keeping in mind that some 4-20ma sensors may require an isolated DC power supply such as the Kele DCP-1.5-W</li>
+						<li>Confirm all sensor slope &amp; intercept values are correct keeping in mind that some 4-20ma sensors may require an isolated DC power supply such as the Kele DCP-1.5-W</li>
 					</ul>
 			    </div>
 			    <div class="col-xl-4">
@@ -313,7 +566,7 @@
 			      <input type="input" name="text" placeholder="Comment">
 			    </div>
 		    </div>
-		    <div class='row'>
+		    <div class="row">
 				<div class="col-xl-8">
 					<ul>
 						<li>Confirm relinquish defaults for all actuators and valves are set to 0%</li>
@@ -329,7 +582,7 @@
 			      <input type="input" name="text" placeholder="Comment">
 			    </div>
 		    </div>
-			<div class='row'>
+			<div class="row">
 				<div class="col-xl-8">
 					<ul>
 						<li>Confirm relinquish defaults for all fans are set to 0% or 0 Hz</li>
@@ -345,7 +598,7 @@
 			      <input type="input" name="text" placeholder="Comment">
 			    </div>
 		    </div>
-		    <div class='row'>
+		    <div class="row">
 				<div class="col-xl-8">
 					<ul>
 						<li>
@@ -375,7 +628,7 @@
 			      <input type="input" name="text" placeholder="Comment">
 			    </div>
 		    </div>
-		    <div class='row'>
+		    <div class="row">
 				<div class="col-xl-8">
 					<ul>
 						<li>
@@ -405,7 +658,7 @@
 			      <input type="input" name="text" placeholder="Comment">
 			    </div>
 		    </div>
-		    <div class='row'>
+		    <div class="row">
 				<div class="col-xl-8">
 					<ul>
 						<li>
@@ -434,7 +687,7 @@
 			      <input type="input" name="text" placeholder="Comment">
 			    </div>
 		    </div>
-		    <div class='row'>
+		    <div class="row">
 				<div class="col-xl-8">
 					<ul>
 						<li>
@@ -464,7 +717,7 @@
 			      <input type="input" name="text" placeholder="Comment">
 			    </div>
 		    </div>
-		    <div class='row'>
+		    <div class="row">
 				<div class="col-xl-8">
 					<ul>
 						<li>Confirm all event enrollments for points have been set up with the correct triggers and times and that the appropriate notification classes have been assigned to alarmable points (On-site task)</li>
@@ -480,7 +733,7 @@
 			      <input type="input" name="text" placeholder="Comment">
 			    </div>
 		    </div>
-		    <div class='row'>
+		    <div class="row">
 				<div class="col-xl-8">
 					<ul>
 						<li>Confirm all trends have been created using trend grid (found in trend wizard) and that notification class 7 has been assigned to all trended points (On-site task)</li>
@@ -496,7 +749,7 @@
 			      <input type="input" name="text" placeholder="Comment">
 			    </div>
 		    </div>
-		    <div class='row'>
+		    <div class="row">
 				<div class="col-xl-8">
 					<ul>
 						<li>Confirm bacnet schedule (and corresponding command) has been set up. Occupancy times are correct and that all SSTO parameters have been set up if appropriate (On-site task)</li>
@@ -517,10 +770,10 @@
 
 	<!-- Basic Hardware Check -->
 	<br>
-	<div class='airsys hardware'>
+	<div class="airsys hardware">
 		<h4><span class="badge badge-secondary sequence-start">Air System Basic Hardware Check</span></h4>
 		<div class="fpt-container">
-			<div class='row'>
+			<div class="row">
 				<div class="col-xl-8">
 					<ul>
 						<li>Using a magnehelic pressure guage and hand pump, ensure that all low and high static cutouts are tuned appropriately where low-static cutouts are typically tuned to -4"wc and high static cutouts at 4"wc</li>
@@ -536,7 +789,7 @@
 			      <input type="input" name="text" placeholder="Comment">
 			    </div>
 		    </div>
-		    <div class='row'>
+		    <div class="row">
 				<div class="col-xl-8">
 					<ul>
 						<li>If the unit is equipped with a high-humidity cutout sensor, ensure the humidity sensor and cutout are an adequate distance from the humidifier to ensure they are not being sprayed directly</li>
@@ -552,7 +805,7 @@
 			      <input type="input" name="text" placeholder="Comment">
 			    </div>
 		    </div>
-		    <div class='row'>
+		    <div class="row">
 				<div class="col-xl-8">
 					<ul>
 						<li>Confirm all Dampers and Actuators accept 0%, 50%, 100% commands where 0% is fully closed and 100% is fully open</li>
@@ -568,7 +821,7 @@
 			      <input type="input" name="text" placeholder="Comment">
 			    </div>
 		    </div>
-		    <div class='row'>
+		    <div class="row">
 				<div class="col-xl-8">
 					<ul>
 						<li>If the unit is equipped with mixing dampers, confirm that economizer, exhaust and return dampers all modulate based on the 'MAD' or 'RAD' command where the mixing (return) damper actuates the opposite of the others</li>
@@ -584,11 +837,11 @@
 			      <input type="input" name="text" placeholder="Comment">
 			    </div>
 		    </div>
-			<div class='row'>
+			<div class="row">
 				<div class="col-xl-8">
 					<ul>
 						<li>Command open the dampers to allow airflow to be drawn</li>
-						<li>Confirm all Fans go to minimum speed when started, accept half & full speed commands from the BMS as Hz or %</li>
+						<li>Confirm all Fans go to minimum speed when started, accept half &amp; full speed commands from the BMS as Hz or %</li>
 						<li>Confirm all Fans go to 0% or 0Hz when commanded to stop</li>
 						<li>Release all dampers and fan commands from Operator priority</li>
 					</ul>
@@ -623,7 +876,7 @@
 
 	<div id="dehum" style="display:none">
 		<h6>Dehumidification</h6>
-		<p class="seq-font"=>The terminal unit will control humidity by executing the following sequence:</p>
+		<p class="seq-font" =="">The terminal unit will control humidity by executing the following sequence:</p>
 		<ul>
 			<li class="seq-font">If the room humidity rises above the humidity setpoint by 5% (adjustable) the terminal unit will enter dehumidification mode and engage the dehumidification PID controller. Upon initialization, the airflow setpoint will be set to the minimum cooling cfm. If this fails to bring the room humidity down to setpoint, the airflow setpoint will be set to the maximum cooling cfm. As the humidity begins to fall, the airflow setpoint will revert to minimum cooling cfm before finally disengaging the cooling PID controller.</li>
 			<li class="seq-font">A signal will be sent to the Air Handling Unit that dehumidification is needed in a particular zone.</li>
@@ -835,5 +1088,5 @@
 <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-</body>
-</html>
+
+</body>	<xpather id="xpather">		<form id="xpather-form">			<input id="xpather-xpath" type="text" placeholder="enter XPath…" autocomplete="off" spellcheck="false">		</form> 		<xpather id="xpather-result"></xpather>		<xpather id="xpather-sidebar-toggler"></xpather>	</xpather>	<xpather id="xpather-sidebar">		<xpather id="xpather-sidebar-spacer"></xpather>		<xpather id="xpather-sidebar-entries"></xpather>	</xpather>
