@@ -694,8 +694,8 @@ def ftp():
     # response.headers['Content-Disposition'] = 'inline; filename=ftp.pdf'
     return rendered
 
-@app.route('/custom_fpt', methods=['GET','POST'])
-def custom_fpt():
+@app.route('/custom_fpt/<string:fpt_name>', methods=['GET','POST'])
+def custom_fpt(fpt_name=None):
     # Single CSS file
     # css = 'static/styles/new_form.css'
     if request.method == "POST":
@@ -709,7 +709,7 @@ def custom_fpt():
     # response.headers['Content-Type'] = 'application/pdf'
     # response.headers['Content-Disposition'] = 'inline; filename=ftp.pdf'
     try:
-        return send_file("custom_fpt.html",mimetype='text/html',as_attachment=True,attachment_filename="custom_fpt.html")
+        return send_file("fpt/"+ fpt_name ,mimetype='text/html',as_attachment=True)
     except Exception as e:
         return str(e)
 """
