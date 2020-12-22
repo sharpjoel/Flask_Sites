@@ -686,7 +686,7 @@ def fpt():
     'High/Low Static Alarm':'f',
     'High/Low Temp Cutout Alarm':'g',
     }
-    rendered = render_template('fpt.html',fptterminalbox = fptterminalbox,fpttra = fpttra,fptairsystems = fptairsystems)
+    rendered = render_template('ftp.html',fptterminalbox = fptterminalbox,fpttra = fpttra,fptairsystems = fptairsystems)
     # pdf = pdfkit.from_string(rendered, False)
 
     # response = make_response(pdf)
@@ -694,7 +694,7 @@ def fpt():
     # response.headers['Content-Disposition'] = 'inline; filename=fpt.pdf'
     return rendered
 
-@app.route('/custom_fpt/<string:fpt_name>', methods=['GET','POST'])
+@app.route('/custom_fpt', methods=['GET','POST'])
 def custom_fpt(fpt_name=None):
     # Single CSS file
     # css = 'static/styles/new_form.css'
