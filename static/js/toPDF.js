@@ -15,7 +15,11 @@ $(document).ready(function(){
 	        data: { stuff:html },
 	        cache: false,
 	        dataType: 'json'
+		})
+		.done(function(data) {
+			// $.get("custom_fpt.html");
 		});
+<<<<<<< Updated upstream
 		//$.get("custom_fpt.html")
 		//$("a").click(function(event){
 		//  event.preventDefault();
@@ -24,5 +28,14 @@ $(document).ready(function(){
 		//$('nav').show();
 		//$('#app-container').show();
 		//$('#cmd').show();
+=======
+		$("a").click(function(event){
+		  event.preventDefault();
+		});
+		$('#ftp-container').css('font-family','Roboto');
+		$('nav').show();
+		$('#app-container').show();
+		$('#cmd').show();
+>>>>>>> Stashed changes
 	});
 });
