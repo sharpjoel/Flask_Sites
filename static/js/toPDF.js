@@ -32,10 +32,10 @@ $(document).ready(function(){
 // 		$("a").click(function(event){
 // 		  event.preventDefault();
 // 		});
-// 		$('#ftp-container').css('font-family','Roboto');
-// 		$('nav').show();
-// 		$('#app-container').show();
-// 		$('#cmd').show();
+		$('#ftp-container').css('font-family','Roboto');
+		$('nav').show();
+		$('#app-container').show();
+		$('#cmd').show();
 // >>>>>>> Stashed changes
 	});
 });
