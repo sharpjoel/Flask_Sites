@@ -344,12 +344,12 @@
 		}
 
 		.row{
-			border:solid 2px white;
+			border:solid 2px #FF00FF;
 		}
 	</style>
 	<title>RSS-NA DXR Engineering Tool</title>
 </head>
-<body data-new-gr-c-s-check-loaded="14.989.0" data-gr-ext-installed="">
+<body data-new-gr-c-s-check-loaded="14.990.0" data-gr-ext-installed="">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="display: none;">
   <a class="navbar-brand" href="#">RSS-NA DXR Engineering Tool</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -676,149 +676,158 @@
 	<h2><span class="badge badge-secondary sequence-start">Preparation</span></h2>
 	<h4><span class="badge badge-secondary sequence-start">Field Panel Connection Check</span></h4>
 		<div class="fpt-container">
-			<div class="row" id="connection-check-div-1">
+			<div class="row" id="connection-check-div-1000">
 				<div class="col-xl-7">
 					<ul>
-						<li id="connection-check-1">Turn off and close ZScaler</li>
+						<li id="connection-check-div-1000-connection-check-1000">Turn off and close ZScaler</li>
 					</ul>
 			    </div>
 			    <div class="col-xl-5">
-			      <input type="radio" name="connection-check-1">
+			      <input type="radio" name="connection-check-1000">
 			      <label class="passfail">Pass</label>
-			      <input type="radio" name="connection-check-1">
+			      <input type="radio" name="connection-check-1000">
 			      <label class="passfail fail">Fail</label>
-			      <input type="radio" name="connection-check-1">
+			      <input type="radio" name="connection-check-1000">
 			      <label class="passfail na">NA</label>
-			      <button class="custom-buttons" id="connection-check-1-remove" style="display: none;">Remove</button>
-			      <button class="custom-buttons" id="connection-check-1-to" style="display: none;">Add To</button>
-			      <button class="custom-buttons" id="connection-check-1-before" style="display: none;">Add Before</button>
-			      <button class="custom-buttons" id="connection-check-1-after" style="display: none;">Add After</button>
+			      <button onclick="remove_elem(this)" class="custom-buttons" id="connection-check-remove-1000" name="remove" style="display: none;">Remove</button>
+			      <button onclick="append_elem(this)" class="custom-buttons" id="connection-check-to-1000" name="to" style="display: none;">Add To</button>
+			      <button onclick="before_elem(this)" class="custom-buttons" id="connection-check-before-1000" name="before" style="display: none;">Add Before</button>
+			      <button onclick="after_elem(this)" class="custom-buttons" id="connection-check-after-1000" name="after" style="display: none;">Add After</button>
 			    </div>
 		    </div>
-		    <div class="row">
-				<div class="col-xl-8">
+		    <div class="row" id="connection-check-div-2000">
+				<div class="col-xl-7">
 					<ul>
-						<li>Disconnect from ABT Site</li>
+						<li id="connection-check-div-2000-connection-check-2000">Disconnect from ABT Site</li>
 					</ul>
 			    </div>
-			    <div class="col-xl-4">
-			      <input type="radio" name="connection-check-2">
+			    <div class="col-xl-5">
+			      <input type="radio" name="connection-check-2000">
 			      <label class="passfail">Pass</label>
-			      <input type="radio" name="connection-check-2">
+			      <input type="radio" name="connection-check-2000">
 			      <label class="passfail fail">Fail</label>
-			      <input type="radio" name="connection-check-2">
+			      <input type="radio" name="connection-check-2000">
 			      <label class="passfail na">NA</label>
-			      <input type="input" name="text" placeholder="Comment">
+			      <button onclick="remove_elem(this)" class="custom-buttons" id="connection-check-remove-2000" name="remove" style="display: none;">Remove</button>
+			      <button onclick="append_elem(this)" class="custom-buttons" id="connection-check-to-2000" name="to" style="display: none;">Add To</button>
+			      <button onclick="before_elem(this)" class="custom-buttons" id="connection-check-before-2000" name="before" style="display: none;">Add Before</button>
+			      <button onclick="after_elem(this)" class="custom-buttons" id="connection-check-after-2000" name="after" style="display: none;">Add After</button>
 			    </div>
 		    </div>
-		    <div class="row">
-				<div class="col-xl-8">
+		    <div class="row" id="connection-check-div-3000">
+				<div class="col-xl-7">
 					<ul>
-						<li>Confirm the computer IP address and subnet mask are on the same subnet intended for the field panel</li>
+						<li id="connection-check-div-3000-connection-check-3000">Confirm the computer IP address and subnet mask are on the same subnet intended for the field panel</li>
 					</ul>
 			    </div>
-			    <div class="col-xl-4">
-			      <input type="radio" name="connection-check-3">
+			    <div class="col-xl-5">
+			      <input type="radio" name="connection-check-3000">
 			      <label class="passfail">Pass</label>
-			      <input type="radio" name="connection-check-3">
+			      <input type="radio" name="connection-check-3000">
 			      <label class="passfail fail">Fail</label>
-			      <input type="radio" name="connection-check-3">
+			      <input type="radio" name="connection-check-3000">
 			      <label class="passfail na">NA</label>
-			      <input type="input" name="text" placeholder="Comment">
+			      <button onclick="remove_elem(this)" class="custom-buttons" id="connection-check-remove-3000" name="remove" style="display: none;">Remove</button>
+			      <button onclick="append_elem(this)" class="custom-buttons" id="connection-check-to-3000" name="to" style="display: none;">Add To</button>
+			      <button onclick="before_elem(this)" class="custom-buttons" id="connection-check-before-3000" name="before" style="display: none;">Add Before</button>
+			      <button onclick="after_elem(this)" class="custom-buttons" id="connection-check-after-3000" name="after" style="display: none;">Add After</button>
 			    </div>
 		    </div>
-		    <div class="row">
-				<div class="col-xl-8">
+		    <div class="row" id="connection-check-div-4000">
+				<div class="col-xl-7">
 					<ul>
-						<li>Set up BacStac by going to C:\ProgramFiles(x86)\Cimetrics and running bacstac.bat</li>
-						<li>Set up a physical connection if one does not exist</li>
-						<li>Select the ethernet adaptor used to connect to the panel (the computer IP should autopopulate in the dropdown</li>
-						<li>Select "Attached"</li>
-						<li>Bacstac will be restarted automatically</li>
+						<li id="connection-check-div-4000-connection-check-4000">Set up BacStac by going to C:\ProgramFiles(x86)\Cimetrics and running bacstac.bat</li>
+						<li id="connection-check-div-4000-connection-check-4001">Set up a physical connection if one does not exist</li>
+						<li id="connection-check-div-4000-connection-check-4002">Select the ethernet adaptor used to connect to the panel (the computer IP should autopopulate in the dropdown</li>
+						<li id="connection-check-div-4000-connection-check-4003">Select "Attached"</li>
+						<li id="connection-check-div-4000-connection-check-4004">Bacstac will be restarted automatically</li>
 					</ul>
 			    </div>
-			    <div class="col-xl-4">
-			      <input type="radio" name="connection-check-4">
+			    <div class="col-xl-5">
+			      <input type="radio" name="connection-check-4000">
 			      <label class="passfail">Pass</label>
-			      <input type="radio" name="connection-check-4">
+			      <input type="radio" name="connection-check-4000">
 			      <label class="passfail fail">Fail</label>
-			      <input type="radio" name="connection-check-4">
+			      <input type="radio" name="connection-check-4000">
 			      <label class="passfail na">NA</label>
-			      <input type="input" name="text" placeholder="Comment">
+			      <button onclick="remove_elem(this)" class="custom-buttons" id="connection-check-remove-4000" name="remove" style="display: none;">Remove</button>
+			      <button onclick="append_elem(this)" class="custom-buttons" id="connection-check-to-4000" name="to" style="display: none;">Add To</button>
+			      <button onclick="before_elem(this)" class="custom-buttons" id="connection-check-before-4000" name="before" style="display: none;">Add Before</button>
+			      <button onclick="after_elem(this)" class="custom-buttons" id="connection-check-after-4000" name="after" style="display: none;">Add After</button>
 			    </div>
 		    </div>
-		    <div class="row">
-				<div class="col-xl-8">
+		    <div class="row" id="connection-check-div-5000">
+				<div class="col-xl-7">
 					<ul>
-						<li>unzip the CT database in your Job Folder</li>
-						<li>Open Job Editor
-							<ul>
-								<li>Open Online</li>
-								<li>Select the appropriate atom.fdb file for your job</li>
-							</ul>
-						</li>
+						<li id="connection-check-div-5000-connection-check-5000">unzip the CT database in your Job Folder</li>
+						<li id="connection-check-div-5000-connection-check-5001">Open Job Editor</li>
+						<li id="connection-check-div-5000-connection-check-5002">Open Online</li>
+						<li id="connection-check-div-5000-connection-check-5003">Select the appropriate atom.fdb file for your job</li>
 					</ul>
 			    </div>
-			    <div class="col-xl-4">
-			      <input type="radio" name="connection-check-5">
+			    <div class="col-xl-5">
+			      <input type="radio" name="connection-check-5000">
 			      <label class="passfail">Pass</label>
-			      <input type="radio" name="connection-check-5">
+			      <input type="radio" name="connection-check-5001">
 			      <label class="passfail fail">Fail</label>
-			      <input type="radio" name="connection-check-5">
+			      <input type="radio" name="connection-check-5002">
 			      <label class="passfail na">NA</label>
-			      <input type="input" name="text" placeholder="Comment">
+			      <button onclick="remove_elem(this)" class="custom-buttons" id="connection-check-remove-5000" name="remove" style="display: none;">Remove</button>
+			      <button onclick="append_elem(this)" class="custom-buttons" id="connection-check-to-5000" name="to" style="display: none;">Add To</button>
+			      <button onclick="before_elem(this)" class="custom-buttons" id="connection-check-before-5000" name="before" style="display: none;">Add Before</button>
+			      <button onclick="after_elem(this)" class="custom-buttons" id="connection-check-after-5000" name="after" style="display: none;">Add After</button>
 			    </div>
 		    </div>
-		    <div class="row">
-				<div class="col-xl-8">
+		    <div class="row" id="connection-check-div-6000">
+				<div class="col-xl-7">
 					<ul>
-						<li>Open System Profile
-							<ul>
-								<li>Insert new Insight</li>
-								<li>Name must match Computer name. Computer name can be found by opening command prompt (CMD) and typing "whoami" and pressing enter</li>
-								<li>Move the BLNs from the existing Insight into your Insight</li>
-								<li>Confirm the three names of the field panel (Name, System Name, Object Name), the panel instance ID, and the field panel IP Address ensuring that it is on the same subnet as your computer</li>
-							</ul>
-						</li>
+						<li id="connection-check-div-6000-connection-check-6000">Open System Profile</li>
+						<li id="connection-check-div-6000-connection-check-6001">Insert new Insight</li>
+						<li id="connection-check-div-6000-connection-check-6002">Name must match Computer name. Computer name can be found by opening command prompt (CMD) and typing "whoami" and pressing enter</li>
+						<li id="connection-check-div-6000-connection-check-6003">Move the BLNs from the existing Insight into your Insight</li>
+						<li id="connection-check-div-6000-connection-check-6004">Confirm the three names of the field panel (Name, System Name, Object Name), the panel instance ID, and the field panel IP Address ensuring that it is on the same subnet as your computer</li>
 					</ul>
 			    </div>
-			    <div class="col-xl-4">
-			      <input type="radio" name="connection-check-6">
+			    <div class="col-xl-5">
+			      <input type="radio" name="connection-check-6000">
 			      <label class="passfail">Pass</label>
-			      <input type="radio" name="connection-check-6">
+			      <input type="radio" name="connection-check-6000">
 			      <label class="passfail fail">Fail</label>
-			      <input type="radio" name="connection-check-6">
+			      <input type="radio" name="connection-check-6000">
 			      <label class="passfail na">NA</label>
-			      <input type="input" name="text" placeholder="Comment">
+			      <button onclick="remove_elem(this)" class="custom-buttons" id="connection-check-remove-6000" name="remove" style="display: none;">Remove</button>
+			      <button onclick="append_elem(this)" class="custom-buttons" id="connection-check-to-6000" name="to" style="display: none;">Add To</button>
+			      <button onclick="before_elem(this)" class="custom-buttons" id="connection-check-before-6000" name="before" style="display: none;">Add Before</button>
+			      <button onclick="after_elem(this)" class="custom-buttons" id="connection-check-after-6000" name="after" style="display: none;">Add After</button>
 			    </div>
-		    </div><div class="row">
-				<div class="col-xl-8">
+		    </div><div class="row" id="connection-check-div-7000">
+				<div class="col-xl-7">
 					<ul>
-						<li>Open MMI database transfer
-							<ul>
-								<li>Open your BLN on the left</li>
-								<li>Click the panel on the right</li>
-								<li>Direct Connect</li>
-								<li>Open Terminal Emulation via the "Tools" Menu</li>
-								<li>Enter the initial login and password ("high" for both) and change the password</li>
-								<li>Enter the characters 'S','H','E','S','M'</li>
-								<li>Enter the correct field panel name and IP address of the panel being mindful that the IP address of the field panel should be on the same subnet as the computer</li>
-							</ul>
-						</li>
-						<li>Close CommTool completely</li>
-						<li>Open the job Online via Job Editor</li>
-						<li>Open System Profile</li>
-						<li>Panel should be connected</li>
+						<li id="connection-check-div-7000-connection-check-7000">Open MMI database transfer</li>
+						<li id="connection-check-div-7000-connection-check-7001">Open your BLN on the left</li>
+						<li id="connection-check-div-7000-connection-check-7002">Click the panel on the right</li>
+						<li id="connection-check-div-7000-connection-check-7003">Direct Connect</li>
+						<li id="connection-check-div-7000-connection-check-7004">Open Terminal Emulation via the "Tools" Menu</li>
+						<li id="connection-check-div-7000-connection-check-7005">Enter the initial login and password ("high" for both) and change the password</li>
+						<li id="connection-check-div-7000-connection-check-7006">Enter the characters 'S','H','E','S','M'</li>
+						<li id="connection-check-div-7000-connection-check-7007">Enter the correct field panel name and IP address of the panel being mindful that the IP address of the field panel should be on the same subnet as the computer</li>
+						<li id="connection-check-div-7000-connection-check-7008">Close CommTool completely</li>
+						<li id="connection-check-div-7000-connection-check-7009">Open the job Online via Job Editor</li>
+						<li id="connection-check-div-7000-connection-check-7010">Open System Profile</li>
+						<li id="connection-check-div-7000-connection-check-7011">Panel should be connected</li>
 					</ul>
 			    </div>
-			    <div class="col-xl-4">
-			      <input type="radio" name="connection-check-7">
+			    <div class="col-xl-5">
+			      <input type="radio" name="connection-check-7000">
 			      <label class="passfail">Pass</label>
-			      <input type="radio" name="connection-check-7">
+			      <input type="radio" name="connection-check-7000">
 			      <label class="passfail fail">Fail</label>
-			      <input type="radio" name="connection-check-7">
+			      <input type="radio" name="connection-check-7000">
 			      <label class="passfail na">NA</label>
-			      <input type="input" name="text" placeholder="Comment">
+			      <button onclick="remove_elem(this)" class="custom-buttons" id="connection-check-remove-7000" name="remove" style="display: none;">Remove</button>
+			      <button onclick="append_elem(this)" class="custom-buttons" id="connection-check-to-7000" name="to" style="display: none;">Add To</button>
+			      <button onclick="before_elem(this)" class="custom-buttons" id="connection-check-before-7000" name="before" style="display: none;">Add Before</button>
+			      <button onclick="after_elem(this)" class="custom-buttons" id="connection-check-after-7000" name="after" style="display: none;">Add After</button>
 			    </div>
 		    </div>
 		    
@@ -1433,5 +1442,112 @@
 <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script>
+	var button_element = ""
+	var count = 0
+	function remove_elem(elem) {
+	  let for_removal = document.getElementById(elem.parentNode.parentNode.id);
+	  for_removal.remove();
+	}
+	function append_elem(elem) {
+		console.log(elem.parentNode.parentNode.id);
+		let origin = document.getElementById(elem.parentNode.parentNode.id);
+		let input = document.createElement("input");
+		let before_button = document.createElement("button");
+		let after_button = document.createElement("button");
+		input.style.width = "70%";
+		input.style.height = "30%";
+		before_button.style.width = "15%";
+		before_button.style.height = "37%";
+		before_button.textContent = "Append Top";
+		after_button.style.width = "15%";
+		after_button.style.height = "37%";
+		after_button.textContent = "Append Next";
+		input.setAttribute("id", elem.parentNode.parentNode.id + "-appendinput-" + count);
+		input.setAttribute("class", "append");
+		before_button.setAttribute("id", elem.parentNode.parentNode.id + "-appendbefore-" + count);
+		before_button.setAttribute("class", "append");
+		after_button.setAttribute("id", elem.parentNode.parentNode.id + "-appendafter-" + count);
+		after_button.setAttribute("class", "append");
+		let li_elements = origin.getElementsByTagName('li');
+		document.getElementById(li_elements[0].id).after(after_button);
+		document.getElementById(li_elements[0].id).after(before_button);
+		document.getElementById(li_elements[0].id).after(input); 
+		before_button_element = document.getElementById(before_button.id);
+		after_button_element = document.getElementById(after_button.id);
+		if(before_button_element){
+			before_button_element.addEventListener("click", function() {
+				let append_elements = origin.getElementsByTagName('li');
+				for(var i=0;i<append_elements.length;i++){
+					append_elements[i].addEventListener("click",function(){
+						append_elements[i].remove();
+					})
+				}
+				var ul = document.getElementById(li_elements[0].id);
+			    var candidate = document.getElementById(input.id);
+			    var li = document.createElement("li");
+			    li.setAttribute("id", elem.parentNode.parentNode.id + "-connection-check-" + count)
+			    li.appendChild(document.createTextNode(candidate.value));
+			    ul.before(li);
+			    count+=1;
+			});
+		}
+		if(after_button_element){
+			after_button_element.addEventListener("click", function() {
+				let append_elements = origin.getElementsByTagName('li');
+				for(var i=0;i<append_elements.length;i++){
+					append_elements[i].addEventListener("click",function(){
+						append_elements[i].remove();
+					})
+				}
+				var ul = document.getElementById(li_elements[0].id);
+			    var candidate = document.getElementById(input.id);
+			    var li = document.createElement("li");
+			    li.setAttribute("id",elem.parentNode.parentNode.id + "-connection-check-" + count)
+			    li.appendChild(document.createTextNode(candidate.value));
+			    ul.appendChild(li);
+			    count+=1
+			});
+		}
+	}
+	function before_elem(elem) {
+		let origin = document.getElementById(elem.parentNode.parentNode.id);
+		let newClone = origin.cloneNode(true);
+		newClone.setAttribute("id", origin.id + count);
+		let li_elements = newClone.getElementsByTagName('li');
+		for(var i=0;i<li_elements.length;i++){
+			li_elements[i].setAttribute("id", li_elements[i].id + count);
+		}
+		let input_elements = newClone.getElementsByTagName('input');
+		for(var i=0;i<input_elements.length;i++){
+			input_elements[i].setAttribute("name", input_elements[i].name + count);
+		}
+		let button_elements = newClone.getElementsByTagName("button");
+		for(var i=0;i<button_elements.length;i++){
+			button_elements[i].setAttribute("id", button_elements[i].id + count);
+		}
+		origin.before(newClone);
+		count+=1;
+	}
+	function after_elem(elem){
+		let origin = document.getElementById(elem.parentNode.parentNode.id);
+		let newClone = origin.cloneNode(true);
+		newClone.setAttribute("id", origin.id + count);
+		let li_elements = newClone.getElementsByTagName('li');
+		for(var i=0;i<li_elements.length;i++){
+			li_elements[i].setAttribute("id", li_elements[i].id + count);
+		}
+		let input_elements = newClone.getElementsByTagName('input');
+		for(var i=0;i<input_elements.length;i++){
+			input_elements[i].setAttribute("name", input_elements[i].name + count);
+		}
+		let button_elements = newClone.getElementsByTagName("button");
+		for(var i=0;i<button_elements.length;i++){
+			button_elements[i].setAttribute("id", button_elements[i].id + count);
+		}
+		origin.after(newClone);
+		count+=1;
+	}
+</script>
 
 </body>	<xpather id="xpather">		<form id="xpather-form">			<input id="xpather-xpath" type="text" placeholder="enter XPath…" autocomplete="off" spellcheck="false">		</form> 		<xpather id="xpather-result"></xpather>		<xpather id="xpather-sidebar-toggler"></xpather>	</xpather>	<xpather id="xpather-sidebar">		<xpather id="xpather-sidebar-spacer"></xpather>		<xpather id="xpather-sidebar-entries"></xpather>	</xpather>
