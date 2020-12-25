@@ -420,13 +420,32 @@
 <a href="{{url_for('.custom_fpt')}}" target="blank" style="margin-left: 2%"><button class='btn btn-default' id="cmd">Download!</button></a>
 <div id='fpt-container'>
 	<h2><span class="badge badge-secondary sequence-start">Resources</span></h2>
+		<div class="fpt-container">
+			<div class='row' id="resources-div-1000">
+				<div class="col-xl-7">
+						<li id="resources-div-1000-resources-1000" onclick="remove_li(this)"><a href="https://www.google.com">Test1</a></li>
+						<li id="resources-div-1000-resources-1001" onclick="remove_li(this)"><a href="https://www.google.com">Test2</a></li>
+						<li id="resources-div-1000-resources-1002"><a href="https://www.google.com">Test3</a></li>
+			    </div>
+			    <div class="col-xl-5">
+			      <input type="radio" name="resources-1000">
+			      <label class="passfail">Pass</label>
+			      <input type="radio" name="resources-1000">
+			      <label class="passfail fail">Fail</label>
+			      <input type="radio" name="resources-1000">
+			      <label class="passfail na">NA</label>
+			      <button onclick="remove_elem(this)" class="custom-buttons" id="resources-remove-1000" name="remove">Remove</button>
+			      <button onclick="append_elem(this)" class="custom-buttons" id="resources-to-1000" name="to">Add To</button>
+			    </div>
+			</div>
+		</div>
 	<h2><span class="badge badge-secondary sequence-start">Preparation</span></h2>
 	<h4><span class="badge badge-secondary sequence-start">Field Panel Connection Check</span></h4>
 		<div class="fpt-container">
 			<div class='row' id="connection-check-div-1000">
 				<div class="col-xl-7">
 					<ul id="connection-check-div-1000-connection-check-ul-1000">
-						<li id="connection-check-div-1000-connection-check-1000">Turn off and close ZScaler</li>
+						<li id="connection-check-div-1000-connection-check-1000" onclick="remove_li(this)">Turn off and close ZScaler</li>
 					</ul>
 			    </div>
 			    <div class="col-xl-5">
@@ -445,7 +464,7 @@
 		    <div class='row' id="connection-check-div-2000">
 				<div class="col-xl-7">
 					<ul id="connection-check-div-2000-connection-check-ul-2000">
-						<li id="connection-check-div-2000-connection-check-2000">Disconnect from ABT Site</li>
+						<li id="connection-check-div-2000-connection-check-2000" onclick="remove_li(this)">Disconnect from ABT Site</li>
 					</ul>
 			    </div>
 			    <div class="col-xl-5">
@@ -464,7 +483,7 @@
 		    <div class='row' id="connection-check-div-3000">
 				<div class="col-xl-7">
 					<ul id="connection-check-div-3000-connection-check-ul-3000">
-						<li id="connection-check-div-3000-connection-check-3000">Confirm the computer IP address and subnet mask are on the same subnet intended for the field panel</li>
+						<li id="connection-check-div-3000-connection-check-3000" onclick="remove_li(this)">Confirm the computer IP address and subnet mask are on the same subnet intended for the field panel</li>
 					</ul>
 			    </div>
 			    <div class="col-xl-5">
@@ -483,11 +502,11 @@
 		    <div class='row' id="connection-check-div-4000">
 				<div class="col-xl-7">
 					<ul id="connection-check-div-4000-connection-check-ul-4000">
-						<li id="connection-check-div-4000-connection-check-4000">Set up BacStac by going to C:\ProgramFiles(x86)\Cimetrics and running bacstac.bat</li>
-						<li id="connection-check-div-4000-connection-check-4001">Set up a physical connection if one does not exist</li>
-						<li id="connection-check-div-4000-connection-check-4002">Select the ethernet adaptor used to connect to the panel (the computer IP should autopopulate in the dropdown</li>
-						<li id="connection-check-div-4000-connection-check-4003">Select "Attached"</li>
-						<li id="connection-check-div-4000-connection-check-4004">Bacstac will be restarted automatically</li>
+						<li id="connection-check-div-4000-connection-check-4000" onclick="remove_li(this)">Set up BacStac by going to C:\ProgramFiles(x86)\Cimetrics and running bacstac.bat</li>
+						<li id="connection-check-div-4000-connection-check-4001" onclick="remove_li(this)">Set up a physical connection if one does not exist</li>
+						<li id="connection-check-div-4000-connection-check-4002" onclick="remove_li(this)">Select the ethernet adaptor used to connect to the panel (the computer IP should autopopulate in the dropdown</li>
+						<li id="connection-check-div-4000-connection-check-4003" onclick="remove_li(this)">Select "Attached"</li>
+						<li id="connection-check-div-4000-connection-check-4004" onclick="remove_li(this)">Bacstac will be restarted automatically</li>
 					</ul>
 			    </div>
 			    <div class="col-xl-5">
@@ -506,10 +525,10 @@
 		    <div class='row' id="connection-check-div-5000">
 				<div class="col-xl-7">
 					<ul id="connection-check-div-5000-connection-check-ul-5000">
-						<li id="connection-check-div-5000-connection-check-5000">unzip the CT database in your Job Folder</li>
-						<li id="connection-check-div-5000-connection-check-5001">Open Job Editor</li>
-						<li id="connection-check-div-5000-connection-check-5002">Open Online</li>
-						<li id="connection-check-div-5000-connection-check-5003">Select the appropriate atom.fdb file for your job</li>
+						<li id="connection-check-div-5000-connection-check-5000" onclick="remove_li(this)">unzip the CT database in your Job Folder</li>
+						<li id="connection-check-div-5000-connection-check-5001" onclick="remove_li(this)">Open Job Editor</li>
+						<li id="connection-check-div-5000-connection-check-5002" onclick="remove_li(this)">Open Online</li>
+						<li id="connection-check-div-5000-connection-check-5003" onclick="remove_li(this)">Select the appropriate atom.fdb file for your job</li>
 					</ul>
 			    </div>
 			    <div class="col-xl-5">
@@ -528,11 +547,11 @@
 		    <div class='row' id="connection-check-div-6000">
 				<div class="col-xl-7">
 					<ul id="connection-check-div-6000-connection-check-ul-6000">
-						<li id="connection-check-div-6000-connection-check-6000">Open System Profile</li>
-						<li id="connection-check-div-6000-connection-check-6001">Insert new Insight</li>
-						<li id="connection-check-div-6000-connection-check-6002">Name must match Computer name. Computer name can be found by opening command prompt (CMD) and typing "whoami" and pressing enter</li>
-						<li id="connection-check-div-6000-connection-check-6003">Move the BLNs from the existing Insight into your Insight</li>
-						<li id="connection-check-div-6000-connection-check-6004">Confirm the three names of the field panel (Name, System Name, Object Name), the panel instance ID, and the field panel IP Address ensuring that it is on the same subnet as your computer</li>
+						<li id="connection-check-div-6000-connection-check-6000" onclick="remove_li(this)">Open System Profile</li>
+						<li id="connection-check-div-6000-connection-check-6001" onclick="remove_li(this)">Insert new Insight</li>
+						<li id="connection-check-div-6000-connection-check-6002" onclick="remove_li(this)">Name must match Computer name. Computer name can be found by opening command prompt (CMD) and typing "whoami" and pressing enter</li>
+						<li id="connection-check-div-6000-connection-check-6003" onclick="remove_li(this)">Move the BLNs from the existing Insight into your Insight</li>
+						<li id="connection-check-div-6000-connection-check-6004" onclick="remove_li(this)">Confirm the three names of the field panel (Name, System Name, Object Name), the panel instance ID, and the field panel IP Address ensuring that it is on the same subnet as your computer</li>
 					</ul>
 			    </div>
 			    <div class="col-xl-5">
@@ -550,18 +569,18 @@
 		    </div><div class='row' id="connection-check-div-7000">
 				<div class="col-xl-7">
 					<ul id="connection-check-div-7000-connection-check-ul-7000">
-						<li id="connection-check-div-7000-connection-check-7000">Open MMI database transfer</li>
-						<li id="connection-check-div-7000-connection-check-7001">Open your BLN on the left</li>
-						<li id="connection-check-div-7000-connection-check-7002">Click the panel on the right</li>
-						<li id="connection-check-div-7000-connection-check-7003">Direct Connect</li>
-						<li id="connection-check-div-7000-connection-check-7004">Open Terminal Emulation via the "Tools" Menu</li>
-						<li id="connection-check-div-7000-connection-check-7005">Enter the initial login and password ("high" for both) and change the password</li>
-						<li id="connection-check-div-7000-connection-check-7006">Enter the characters 'S','H','E','S','M'</li>
-						<li id="connection-check-div-7000-connection-check-7007">Enter the correct field panel name and IP address of the panel being mindful that the IP address of the field panel should be on the same subnet as the computer</li>
-						<li id="connection-check-div-7000-connection-check-7008">Close CommTool completely</li>
-						<li id="connection-check-div-7000-connection-check-7009">Open the job Online via Job Editor</li>
-						<li id="connection-check-div-7000-connection-check-7010">Open System Profile</li>
-						<li id="connection-check-div-7000-connection-check-7011">Panel should be connected</li>
+						<li id="connection-check-div-7000-connection-check-7000" onclick="remove_li(this)">Open MMI database transfer</li>
+						<li id="connection-check-div-7000-connection-check-7001" onclick="remove_li(this)">Open your BLN on the left</li>
+						<li id="connection-check-div-7000-connection-check-7002" onclick="remove_li(this)">Click the panel on the right</li>
+						<li id="connection-check-div-7000-connection-check-7003" onclick="remove_li(this)">Direct Connect</li>
+						<li id="connection-check-div-7000-connection-check-7004" onclick="remove_li(this)">Open Terminal Emulation via the "Tools" Menu</li>
+						<li id="connection-check-div-7000-connection-check-7005" onclick="remove_li(this)">Enter the initial login and password ("high" for both) and change the password</li>
+						<li id="connection-check-div-7000-connection-check-7006" onclick="remove_li(this)">Enter the characters 'S','H','E','S','M'</li>
+						<li id="connection-check-div-7000-connection-check-7007" onclick="remove_li(this)">Enter the correct field panel name and IP address of the panel being mindful that the IP address of the field panel should be on the same subnet as the computer</li>
+						<li id="connection-check-div-7000-connection-check-7008" onclick="remove_li(this)">Close CommTool completely</li>
+						<li id="connection-check-div-7000-connection-check-7009" onclick="remove_li(this)">Open the job Online via Job Editor</li>
+						<li id="connection-check-div-7000-connection-check-7010" onclick="remove_li(this)">Open System Profile</li>
+						<li id="connection-check-div-7000-connection-check-7011" onclick="remove_li(this)">Panel should be connected</li>
 					</ul>
 			    </div>
 			    <div class="col-xl-5">
@@ -606,7 +625,7 @@
 			<div class='row'  id="airsys-relinquish-div-1000">
 				<div class="col-xl-7">
 					<ul id="airsys-relinquish-div-1000-airsys-relinquish-ul-1000">
-						<li id="airsys-relinquish-div-1000-airsys-relinquish-1000">Confirm via HMI the panel back-up and auto-restore configuration (On-site task)</li>
+						<li id="airsys-relinquish-div-1000-airsys-relinquish-1000" onclick="remove_li(this)">Confirm via HMI the panel back-up and auto-restore configuration (On-site task)</li>
 					</ul>
 			    </div>
 			    <div class="col-xl-5">
@@ -622,251 +641,271 @@
 			      <button onclick="after_elem(this)" class="custom-buttons" id="airsys-relinquish-after-1000" name="after">Add After</button>
 			    </div>
 		    </div>
-		    <div class='row'>
+		    <div class='row' id="airsys-relinquish-div-2000">
 				<div class="col-xl-7">
 					<ul id="airsys-relinquish-div-2000-airsys-relinquish-ul-2000">
-						<li>Confirm all bacnet notification classes have been set up via System Profile (On-site task)</li>
+						<li id="airsys-relinquish-div-2000-airsys-relinquish-2000" onclick="remove_li(this)">Confirm all bacnet notification classes have been set up via System Profile (On-site task)</li>
 					</ul>
 			    </div>
 			    <div class="col-xl-5">
-			      <input type="radio" name="airsys-relinquish-2">
+			      <input type="radio" name="airsys-relinquish-2000">
 			      <label class="passfail">Pass</label>
-			      <input type="radio" name="airsys-relinquish-2">
+			      <input type="radio" name="airsys-relinquish-2000">
 			      <label class="passfail fail">Fail</label>
-			      <input type="radio" name="airsys-relinquish-2">
+			      <input type="radio" name="airsys-relinquish-2000">
 			      <label class="passfail na">NA</label>
-			      <input type="input" name="text" placeholder="Comment">
+			      <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-relinquish-remove-2000" name="remove">Remove</button>
+			      <button onclick="append_elem(this)" class="custom-buttons" id="airsys-relinquish-to-2000" name="to">Add To</button>
+			      <button onclick="before_elem(this)" class="custom-buttons" id="airsys-relinquish-before-2000" name="before">Add Before</button>
+			      <button onclick="after_elem(this)" class="custom-buttons" id="airsys-relinquish-after-2000" name="after">Add After</button>
 			    </div>
 		    </div>
-			<div class='row'>
+			<div class='row' id="airsys-relinquish-div-3000">
 				<div class="col-xl-7">
-					<ul>
-						<li>Confirm all engineering units are correct where inwc is used for pressure, pct is used for actuators, hz or pct is used for fan speed, %rh is used for humidity, ppm is used for CO2, ft3/m is used for cfm, s is used for seconds, m is used for minutes, and degF is used for temperature</li>
+					<ul id="airsys-relinquish-div-3000-airsys-relinquish-ul-3000">
+						<li id="airsys-relinquish-div-3000-airsys-relinquish-3000" onclick="remove_li(this)">Confirm all engineering units are correct where inwc is used for pressure, pct is used for actuators, hz or pct is used for fan speed, %rh is used for humidity, ppm is used for CO2, ft3/m is used for cfm, s is used for seconds, m is used for minutes, and degF is used for temperature</li>
 					</ul>
 			    </div>
 			    <div class="col-xl-5">
-			      <input type="radio" name="airsys-relinquish-3">
+			      <input type="radio" name="airsys-relinquish-3000">
 			      <label class="passfail">Pass</label>
-			      <input type="radio" name="airsys-relinquish-3">
+			      <input type="radio" name="airsys-relinquish-3000">
 			      <label class="passfail fail">Fail</label>
-			      <input type="radio" name="airsys-relinquish-3">
+			      <input type="radio" name="airsys-relinquish-3000">
 			      <label class="passfail na">NA</label>
-			      <input type="input" name="text" placeholder="Comment">
+			      <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-relinquish-remove-3000" name="remove">Remove</button>
+			      <button onclick="append_elem(this)" class="custom-buttons" id="airsys-relinquish-to-3000" name="to">Add To</button>
+			      <button onclick="before_elem(this)" class="custom-buttons" id="airsys-relinquish-before-3000" name="before">Add Before</button>
+			      <button onclick="after_elem(this)" class="custom-buttons" id="airsys-relinquish-after-3000" name="after">Add After</button>
 			    </div>
 		    </div>
-		    <div class='row'>
+		    <div class='row' id="airsys-relinquish-div-4000">
 				<div class="col-xl-7">
-					<ul>
-						<li>Confirm all sensor slope & intercept values are correct keeping in mind that some 4-20ma sensors may require an isolated DC power supply such as the Kele DCP-1.5-W</li>
+					<ul id="airsys-relinquish-div-4000-airsys-relinquish-ul-4000">
+						<li id="airsys-relinquish-div-4000-airsys-relinquish-4000" onclick="remove_li(this)">Confirm all sensor slope & intercept values are correct keeping in mind that some 4-20ma sensors may require an isolated DC power supply such as the Kele DCP-1.5-W</li>
 					</ul>
 			    </div>
 			    <div class="col-xl-5">
-			      <input type="radio" name="airsys-relinquish-4">
+			      <input type="radio" name="airsys-relinquish-4000">
 			      <label class="passfail">Pass</label>
-			      <input type="radio" name="airsys-relinquish-4">
+			      <input type="radio" name="airsys-relinquish-4000">
 			      <label class="passfail fail">Fail</label>
-			      <input type="radio" name="airsys-relinquish-4">
+			      <input type="radio" name="airsys-relinquish-4000">
 			      <label class="passfail na">NA</label>
-			      <input type="input" name="text" placeholder="Comment">
+			      <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-relinquish-remove-4000" name="remove">Remove</button>
+			      <button onclick="append_elem(this)" class="custom-buttons" id="airsys-relinquish-to-4000" name="to">Add To</button>
+			      <button onclick="before_elem(this)" class="custom-buttons" id="airsys-relinquish-before-4000" name="before">Add Before</button>
+			      <button onclick="after_elem(this)" class="custom-buttons" id="airsys-relinquish-after-4000" name="after">Add After</button>
 			    </div>
 		    </div>
-		    <div class='row'>
+		    <div class='row' id="airsys-relinquish-div-5000">
 				<div class="col-xl-7">
-					<ul>
-						<li>Confirm relinquish defaults for all actuators and valves are set to 0%</li>
+					<ul id="airsys-relinquish-div-5000-airsys-relinquish-ul-5000">
+						<li id="airsys-relinquish-div-5000-airsys-relinquish-5000" onclick="remove_li(this)">Confirm relinquish defaults for all actuators and valves are set to 0%</li>
 					</ul>
 			    </div>
 			    <div class="col-xl-5">
-			      <input type="radio" name="airsys-relinquish-5">
+			      <input type="radio" name="airsys-relinquish-5000">
 			      <label class="passfail">Pass</label>
-			      <input type="radio" name="airsys-relinquish-5">
+			      <input type="radio" name="airsys-relinquish-5000">
 			      <label class="passfail fail">Fail</label>
-			      <input type="radio" name="airsys-relinquish-5">
+			      <input type="radio" name="airsys-relinquish-5000">
 			      <label class="passfail na">NA</label>
-			      <input type="input" name="text" placeholder="Comment">
+			      <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-relinquish-remove-5000" name="remove">Remove</button>
+			      <button onclick="append_elem(this)" class="custom-buttons" id="airsys-relinquish-to-5000" name="to">Add To</button>
+			      <button onclick="before_elem(this)" class="custom-buttons" id="airsys-relinquish-before-5000" name="before">Add Before</button>
+			      <button onclick="after_elem(this)" class="custom-buttons" id="airsys-relinquish-after-5000" name="after">Add After</button>
 			    </div>
 		    </div>
-			<div class='row'>
+			<div class='row' id="airsys-relinquish-div-6000">
 				<div class="col-xl-7">
-					<ul>
-						<li>Confirm relinquish defaults for all fans are set to 0% or 0 Hz</li>
+					<ul id="airsys-relinquish-div-6000-airsys-relinquish-ul-6000">
+						<li id="airsys-relinquish-div-6000-airsys-relinquish-6000" onclick="remove_li(this)">Confirm relinquish defaults for all fans are set to 0% or 0 Hz</li>
 					</ul>
 			    </div>
 			    <div class="col-xl-5">
-			      <input type="radio" name="airsys-relinquish-6">
+			      <input type="radio" name="airsys-relinquish-6000">
 			      <label class="passfail">Pass</label>
-			      <input type="radio" name="airsys-relinquish-6">
+			      <input type="radio" name="airsys-relinquish-6000">
 			      <label class="passfail fail">Fail</label>
-			      <input type="radio" name="airsys-relinquish-6">
+			      <input type="radio" name="airsys-relinquish-6000">
 			      <label class="passfail na">NA</label>
-			      <input type="input" name="text" placeholder="Comment">
+			      <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-relinquish-remove-6000" name="remove">Remove</button>
+			      <button onclick="append_elem(this)" class="custom-buttons" id="airsys-relinquish-to-6000" name="to">Add To</button>
+			      <button onclick="before_elem(this)" class="custom-buttons" id="airsys-relinquish-before-6000" name="before">Add Before</button>
+			      <button onclick="after_elem(this)" class="custom-buttons" id="airsys-relinquish-after-6000" name="after">Add After</button>
 			    </div>
 		    </div>
-		    <div class='row'>
+		    <div class='row' id="airsys-relinquish-div-7000">
 				<div class="col-xl-7">
-					<ul>
-						<li>
-							Confirm the following relinquish defaults for Static Control Loops:
-							<ul>
-								<li>Ramp Time: 300</li>
-								<li>Setpoint: 1.0</li>
-								<li>Reset High: 2.0</li>
-								<li>Reset Low: 1.0</li>
-								<li>P-Gain: 2000</li>
-								<li>I-Gain: 200</li>
-								<li>D-Gain: 0</li>
-								<li>Sample Time: 1</li>
-								<li>Bias: 0</li>
-								<li>Start: 0</li>
-							</ul>
-						</li>
+					<ul id="airsys-relinquish-div-7000-airsys-relinquish-ul-7000">
+						<li id="airsys-relinquish-div-7000-airsys-relinquish-7000" onclick="remove_li(this)">Confirm the following relinquish defaults for Static Control Loops:</li>
+						<li id="airsys-relinquish-div-7000-airsys-relinquish-7001" onclick="remove_li(this)">Ramp Time: 300</li>
+						<li id="airsys-relinquish-div-7000-airsys-relinquish-7002" onclick="remove_li(this)">Setpoint: 1.0</li>
+						<li id="airsys-relinquish-div-7000-airsys-relinquish-7003" onclick="remove_li(this)">Reset High: 2.0</li>
+						<li id="airsys-relinquish-div-7000-airsys-relinquish-7004" onclick="remove_li(this)">Reset Low: 1.0</li>
+						<li id="airsys-relinquish-div-7000-airsys-relinquish-7005" onclick="remove_li(this)">P-Gain: 2000</li>
+						<li id="airsys-relinquish-div-7000-airsys-relinquish-7006" onclick="remove_li(this)">I-Gain: 200</li>
+						<li id="airsys-relinquish-div-7000-airsys-relinquish-7007" onclick="remove_li(this)">D-Gain: 0</li>
+						<li id="airsys-relinquish-div-7000-airsys-relinquish-7008" onclick="remove_li(this)">Sample Time: 1</li>
+						<li id="airsys-relinquish-div-7000-airsys-relinquish-7009" onclick="remove_li(this)">Bias: 0</li>
+						<li id="airsys-relinquish-div-7000-airsys-relinquish-7010" onclick="remove_li(this)">Start: 0</li>
 					</ul>
 			    </div>
 			    <div class="col-xl-5">
-			      <input type="radio" name="airsys-relinquish-7">
+			      <input type="radio" name="airsys-relinquish-7000">
 			      <label class="passfail">Pass</label>
-			      <input type="radio" name="airsys-relinquish-7">
+			      <input type="radio" name="airsys-relinquish-7000">
 			      <label class="passfail fail">Fail</label>
-			      <input type="radio" name="airsys-relinquish-7">
+			      <input type="radio" name="airsys-relinquish-7000">
 			      <label class="passfail na">NA</label>
-			      <input type="input" name="text" placeholder="Comment">
+			      <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-relinquish-remove-7000" name="remove">Remove</button>
+			      <button onclick="append_elem(this)" class="custom-buttons" id="airsys-relinquish-to-7000" name="to">Add To</button>
+			      <button onclick="before_elem(this)" class="custom-buttons" id="airsys-relinquish-before-7000" name="before">Add Before</button>
+			      <button onclick="after_elem(this)" class="custom-buttons" id="airsys-relinquish-after-7000" name="after">Add After</button>
 			    </div>
 		    </div>
-		    <div class='row'>
+		    <div class='row' id="airsys-relinquish-div-8000">
 				<div class="col-xl-7">
-					<ul>
-						<li>
-							Confirm the following relinquish defaults for Airflow Control Loops:
-							<ul>
-								<li>Ramp Time: 300</li>
-								<li>Setpoint: 1500</li>
-								<li>Reset High: 3000</li>
-								<li>Reset Low: 1500</li>
-								<li>P-Gain: 0</li>
-								<li>I-Gain: 4</li>
-								<li>D-Gain: 2</li>
-								<li>Sample Time: 1</li>
-								<li>Bias: 0</li>
-								<li>Start: 0</li>
-							</ul>
-						</li>
+					<ul id="airsys-relinquish-div-8000-airsys-relinquish-ul-8000">
+						<li id="airsys-relinquish-div-8000-airsys-relinquish-8000" onclick="remove_li(this)">Confirm the following relinquish defaults for Airflow Control Loops:</li>
+						<li id="airsys-relinquish-div-8000-airsys-relinquish-8001" onclick="remove_li(this)">Ramp Time: 300</li>
+						<li id="airsys-relinquish-div-8000-airsys-relinquish-8002" onclick="remove_li(this)">Setpoint: 1500</li>
+						<li id="airsys-relinquish-div-8000-airsys-relinquish-8003" onclick="remove_li(this)">Reset High: 3000</li>
+						<li id="airsys-relinquish-div-8000-airsys-relinquish-8004" onclick="remove_li(this)">Reset Low: 1500</li>
+						<li id="airsys-relinquish-div-8000-airsys-relinquish-8005" onclick="remove_li(this)">P-Gain: 0</li>
+						<li id="airsys-relinquish-div-8000-airsys-relinquish-8006" onclick="remove_li(this)">I-Gain: 4</li>
+						<li id="airsys-relinquish-div-8000-airsys-relinquish-8007" onclick="remove_li(this)">D-Gain: 2</li>
+						<li id="airsys-relinquish-div-8000-airsys-relinquish-8008" onclick="remove_li(this)">Sample Time: 1</li>
+						<li id="airsys-relinquish-div-8000-airsys-relinquish-8009" onclick="remove_li(this)">Bias: 0</li>
+						<li id="airsys-relinquish-div-8000-airsys-relinquish-8010" onclick="remove_li(this)">Start: 0</li>
 					</ul>
 			    </div>
 			    <div class="col-xl-5">
-			      <input type="radio" name="airsys-relinquish-8">
+			      <input type="radio" name="airsys-relinquish-8000">
 			      <label class="passfail">Pass</label>
-			      <input type="radio" name="airsys-relinquish-8">
+			      <input type="radio" name="airsys-relinquish-8000">
 			      <label class="passfail fail">Fail</label>
-			      <input type="radio" name="airsys-relinquish-8">
+			      <input type="radio" name="airsys-relinquish-8000">
 			      <label class="passfail na">NA</label>
-			      <input type="input" name="text" placeholder="Comment">
+			      <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-relinquish-remove-8000" name="remove">Remove</button>
+			      <button onclick="append_elem(this)" class="custom-buttons" id="airsys-relinquish-to-8000" name="to">Add To</button>
+			      <button onclick="before_elem(this)" class="custom-buttons" id="airsys-relinquish-before-8000" name="before">Add Before</button>
+			      <button onclick="after_elem(this)" class="custom-buttons" id="airsys-relinquish-after-8000" name="after">Add After</button>
 			    </div>
 		    </div>
-		    <div class='row'>
+		    <div class='row' id="airsys-relinquish-div-9000">
 				<div class="col-xl-7">
-					<ul>
-						<li>
-							Confirm the following relinquish defaults for Temperature Control Loops:
-							<ul>
-								<li>Setpoint: 55</li>
-								<li>Reset High: 65</li>
-								<li>Reset Low: 55</li>
-								<li>P-Gain: 500</li>
-								<li>I-Gain: 50</li>
-								<li>D-Gain: 0</li>
-								<li>Sample Time: 1</li>
-								<li>Bias: 0</li>
-								<li>Start: 0</li>
-							</ul>
-						</li>
+					<ul id="airsys-relinquish-div-9000-airsys-relinquish-ul-9000">
+						<li id="airsys-relinquish-div-9000-airsys-relinquish-9000" onclick="remove_li(this)">Confirm the following relinquish defaults for Temperature Control Loops:</li>
+						<li id="airsys-relinquish-div-9000-airsys-relinquish-9001" onclick="remove_li(this)">Setpoint: 55</li>
+						<li id="airsys-relinquish-div-9000-airsys-relinquish-9002" onclick="remove_li(this)">Reset High: 65</li>
+						<li id="airsys-relinquish-div-9000-airsys-relinquish-9003" onclick="remove_li(this)">Reset Low: 55</li>
+						<li id="airsys-relinquish-div-9000-airsys-relinquish-9004" onclick="remove_li(this)">P-Gain: 500</li>
+						<li id="airsys-relinquish-div-9000-airsys-relinquish-9005" onclick="remove_li(this)">I-Gain: 50</li>
+						<li id="airsys-relinquish-div-9000-airsys-relinquish-9006" onclick="remove_li(this)">D-Gain: 0</li>
+						<li id="airsys-relinquish-div-9000-airsys-relinquish-9007" onclick="remove_li(this)">Sample Time: 1</li>
+						<li id="airsys-relinquish-div-9000-airsys-relinquish-9008" onclick="remove_li(this)">Bias: 0</li>
+						<li id="airsys-relinquish-div-9000-airsys-relinquish-9009" onclick="remove_li(this)">Start: 0</li>
 					</ul>
 			    </div>
 			    <div class="col-xl-5">
-			      <input type="radio" name="airsys-relinquish-9">
+			      <input type="radio" name="airsys-relinquish-9000">
 			      <label class="passfail">Pass</label>
-			      <input type="radio" name="airsys-relinquish-9">
+			      <input type="radio" name="airsys-relinquish-9000">
 			      <label class="passfail fail">Fail</label>
-			      <input type="radio" name="airsys-relinquish-9">
+			      <input type="radio" name="airsys-relinquish-9000">
 			      <label class="passfail na">NA</label>
-			      <input type="input" name="text" placeholder="Comment">
+			      <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-relinquish-remove-9000" name="remove">Remove</button>
+			      <button onclick="append_elem(this)" class="custom-buttons" id="airsys-relinquish-to-9000" name="to">Add To</button>
+			      <button onclick="before_elem(this)" class="custom-buttons" id="airsys-relinquish-before-9000" name="before">Add Before</button>
+			      <button onclick="after_elem(this)" class="custom-buttons" id="airsys-relinquish-after-9000" name="after">Add After</button>
 			    </div>
 		    </div>
-		    <div class='row'>
+		    <div class='row' id="airsys-relinquish-div-10000">
 				<div class="col-xl-7">
-					<ul>
-						<li>
-							Confirm the following relinquish defaults for Humidity Control Loops:
-							<ul>
-								<li>Ramp Time: 300</li>
-								<li>Setpoint: 30</li>
-								<li>Reset High: 80</li>
-								<li>Reset Low: 30</li>
-								<li>P-Gain: 50</li>
-								<li>I-Gain: 5</li>
-								<li>D-Gain: 0</li>
-								<li>Sample Time: 1</li>
-								<li>Bias: 0</li>
-								<li>Start: 0</li>
-							</ul>
-						</li>
+					<ul id="airsys-relinquish-div-10000-airsys-relinquish-ul-10000">
+						<li id="airsys-relinquish-div-10000-airsys-relinquish-10000" onclick="remove_li(this)">Confirm the following relinquish defaults for Humidity Control Loops:</li>
+						<li id="airsys-relinquish-div-10000-airsys-relinquish-10001" onclick="remove_li(this)">Ramp Time: 300</li>
+						<li id="airsys-relinquish-div-10000-airsys-relinquish-10002" onclick="remove_li(this)">Setpoint: 30</li>
+						<li id="airsys-relinquish-div-10000-airsys-relinquish-10003" onclick="remove_li(this)">Reset High: 80</li>
+						<li id="airsys-relinquish-div-10000-airsys-relinquish-10004" onclick="remove_li(this)">Reset Low: 30</li>
+						<li id="airsys-relinquish-div-10000-airsys-relinquish-10005" onclick="remove_li(this)">P-Gain: 50</li>
+						<li id="airsys-relinquish-div-10000-airsys-relinquish-10006" onclick="remove_li(this)">I-Gain: 5</li>
+						<li id="airsys-relinquish-div-10000-airsys-relinquish-10007" onclick="remove_li(this)">D-Gain: 0</li>
+						<li id="airsys-relinquish-div-10000-airsys-relinquish-10008" onclick="remove_li(this)">Sample Time: 1</li>
+						<li id="airsys-relinquish-div-10000-airsys-relinquish-10009" onclick="remove_li(this)">Bias: 0</li>
+						<li id="airsys-relinquish-div-10000-airsys-relinquish-10010" onclick="remove_li(this)">Start: 0</li>
 					</ul>
 			    </div>
 			    <div class="col-xl-5">
-			      <input type="radio" name="airsys-relinquish-10">
+			      <input type="radio" name="airsys-relinquish-10000">
 			      <label class="passfail">Pass</label>
-			      <input type="radio" name="airsys-relinquish-10">
+			      <input type="radio" name="airsys-relinquish-10000">
 			      <label class="passfail fail">Fail</label>
-			      <input type="radio" name="airsys-relinquish-10">
+			      <input type="radio" name="airsys-relinquish-10000">
 			      <label class="passfail na">NA</label>
-			      <input type="input" name="text" placeholder="Comment">
+			      <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-relinquish-remove-10000" name="remove">Remove</button>
+			      <button onclick="append_elem(this)" class="custom-buttons" id="airsys-relinquish-to-10000" name="to">Add To</button>
+			      <button onclick="before_elem(this)" class="custom-buttons" id="airsys-relinquish-before-10000" name="before">Add Before</button>
+			      <button onclick="after_elem(this)" class="custom-buttons" id="airsys-relinquish-after-10000" name="after">Add After</button>
 			    </div>
 		    </div>
-		    <div class='row'>
+		    <div class='row' id="airsys-relinquish-div-11000">
 				<div class="col-xl-7">
-					<ul>
-						<li>Confirm all event enrollments for points have been set up with the correct triggers and times and that the appropriate notification classes have been assigned to alarmable points (On-site task)</li>
+					<ul id="airsys-relinquish-div-11000-airsys-relinquish-ul-11000">
+						<li id="airsys-relinquish-div-11000-airsys-relinquish-11000" onclick="remove_li(this)">Confirm all event enrollments for points have been set up with the correct triggers and times and that the appropriate notification classes have been assigned to alarmable points (On-site task)</li>
 					</ul>
 			    </div>
 			    <div class="col-xl-5">
-			      <input type="radio" name="airsys-relinquish-11">
+			      <input type="radio" name="airsys-relinquish-11000">
 			      <label class="passfail">Pass</label>
-			      <input type="radio" name="airsys-relinquish-11">
+			      <input type="radio" name="airsys-relinquish-11000">
 			      <label class="passfail fail">Fail</label>
-			      <input type="radio" name="airsys-relinquish-11">
+			      <input type="radio" name="airsys-relinquish-11000">
 			      <label class="passfail na">NA</label>
-			      <input type="input" name="text" placeholder="Comment">
+			      <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-relinquish-remove-11000" name="remove">Remove</button>
+			      <button onclick="append_elem(this)" class="custom-buttons" id="airsys-relinquish-to-11000" name="to">Add To</button>
+			      <button onclick="before_elem(this)" class="custom-buttons" id="airsys-relinquish-before-11000" name="before">Add Before</button>
+			      <button onclick="after_elem(this)" class="custom-buttons" id="airsys-relinquish-after-11000" name="after">Add After</button>
 			    </div>
 		    </div>
-		    <div class='row'>
+		    <div class='row' id="airsys-relinquish-div-12000">
 				<div class="col-xl-7">
-					<ul>
-						<li>Confirm all trends have been created using trend grid (found in trend wizard) and that notification class 7 has been assigned to all trended points (On-site task)</li>
+					<ul id="airsys-relinquish-div-12000-airsys-relinquish-ul-12000">
+						<li id="airsys-relinquish-div-12000-airsys-relinquish-12000" onclick="remove_li(this)">Confirm all trends have been created using trend grid (found in trend wizard) and that notification class 7 has been assigned to all trended points (On-site task)</li>
 					</ul>
 			    </div>
 			    <div class="col-xl-5">
-			      <input type="radio" name="airsys-relinquish-12">
+			      <input type="radio" name="airsys-relinquish-12000">
 			      <label class="passfail">Pass</label>
-			      <input type="radio" name="airsys-relinquish-12">
+			      <input type="radio" name="airsys-relinquish-12000">
 			      <label class="passfail fail">Fail</label>
-			      <input type="radio" name="airsys-relinquish-12">
+			      <input type="radio" name="airsys-relinquish-12000">
 			      <label class="passfail na">NA</label>
-			      <input type="input" name="text" placeholder="Comment">
+			      <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-relinquish-remove-12000" name="remove">Remove</button>
+			      <button onclick="append_elem(this)" class="custom-buttons" id="airsys-relinquish-to-12000" name="to">Add To</button>
+			      <button onclick="before_elem(this)" class="custom-buttons" id="airsys-relinquish-before-12000" name="before">Add Before</button>
+			      <button onclick="after_elem(this)" class="custom-buttons" id="airsys-relinquish-after-12000" name="after">Add After</button>
 			    </div>
 		    </div>
-		    <div class='row'>
+		    <div class='row' id="airsys-relinquish-div-13000">
 				<div class="col-xl-7">
-					<ul>
-						<li>Confirm bacnet schedule (and corresponding command) has been set up. Occupancy times are correct and that all SSTO parameters have been set up if appropriate (On-site task)</li>
+					<ul id="airsys-relinquish-div-13000-airsys-relinquish-ul-13000">
+						<li id="airsys-relinquish-div-13000-airsys-relinquish-13000" onclick="remove_li(this)">Confirm bacnet schedule (and corresponding command) has been set up. Occupancy times are correct and that all SSTO parameters have been set up if appropriate (On-site task)</li>
 					</ul>
 			    </div>
 			    <div class="col-xl-5">
-			      <input type="radio" name="airsys-relinquish-13">
+			      <input type="radio" name="airsys-relinquish-13000">
 			      <label class="passfail">Pass</label>
-			      <input type="radio" name="airsys-relinquish-13">
+			      <input type="radio" name="airsys-relinquish-13000">
 			      <label class="passfail fail">Fail</label>
-			      <input type="radio" name="airsys-relinquish-13">
+			      <input type="radio" name="airsys-relinquish-13000">
 			      <label class="passfail na">NA</label>
-			      <input type="input" name="text" placeholder="Comment">
+			      <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-relinquish-remove-13000" name="remove">Remove</button>
+			      <button onclick="append_elem(this)" class="custom-buttons" id="airsys-relinquish-to-13000" name="to">Add To</button>
+			      <button onclick="before_elem(this)" class="custom-buttons" id="airsys-relinquish-before-13000" name="before">Add Before</button>
+			      <button onclick="after_elem(this)" class="custom-buttons" id="airsys-relinquish-after-13000" name="after">Add After</button>
 			    </div>
 		    </div>
 		</div>
@@ -877,87 +916,102 @@
 	<div class='airsys hardware'>
 		<h4><span class="badge badge-secondary sequence-start">Air System Basic Hardware Check</span></h4>
 		<div class="fpt-container">
-			<div class='row'>
+			<div class='row' id="airsys-hardware-div-1000">
 				<div class="col-xl-7">
-					<ul>
-						<li>Using a magnehelic pressure guage and hand pump, ensure that all low and high static cutouts are tuned appropriately where low-static cutouts are typically tuned to -4"wc and high static cutouts at 4"wc</li>
+					<ul id="airsys-hardware-div-1000-airsys-hardware-ul-1000">
+						<li id="airsys-hardware-div-1000-airsys-hardware-1000" onclick="remove_li(this)">Using a magnehelic pressure guage and hand pump, ensure that all low and high static cutouts are tuned appropriately where low-static cutouts are typically tuned to -4"wc and high static cutouts at 4"wc</li>
 					</ul>
 			    </div>
 			    <div class="col-xl-5">
-			      <input type="checkbox" name="pass">
+			      <input type="radio" name="airsys-hardware-1000">
 			      <label class="passfail">Pass</label>
-			      <input type="checkbox" name="fail">
+			      <input type="radio" name="airsys-hardware-1000">
 			      <label class="passfail fail">Fail</label>
-			      <input type="checkbox" name="NA">
+			      <input type="radio" name="airsys-hardware-1000">
 			      <label class="passfail na">NA</label>
-			      <input type="input" name="text" placeholder="Comment">
+			      <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-relinquish-remove-1000" name="remove">Remove</button>
+			      <button onclick="append_elem(this)" class="custom-buttons" id="airsys-relinquish-to-1000" name="to">Add To</button>
+			      <button onclick="before_elem(this)" class="custom-buttons" id="airsys-relinquish-before-1000" name="before">Add Before</button>
+			      <button onclick="after_elem(this)" class="custom-buttons" id="airsys-relinquish-after-1000" name="after">Add After</button>
 			    </div>
 		    </div>
-		    <div class='row'>
+		    <div class='row' id="airsys-hardware-div-2000">
 				<div class="col-xl-7">
-					<ul>
-						<li>If the unit is equipped with a high-humidity cutout sensor, ensure the humidity sensor and cutout are an adequate distance from the humidifier to ensure they are not being sprayed directly</li>
+					<ul id="airsys-hardware-div-2000-airsys-hardware-ul-2000">
+						<li id="airsys-hardware-div-2000-airsys-hardware-2000" onclick="remove_li(this)">If the unit is equipped with a high-humidity cutout sensor, ensure the humidity sensor and cutout are an adequate distance from the humidifier to ensure they are not being sprayed directly</li>
 					</ul>
 			    </div>
 			    <div class="col-xl-5">
-			      <input type="checkbox" name="pass">
+			      <input type="radio" name="airsys-hardware-2000">
 			      <label class="passfail">Pass</label>
-			      <input type="checkbox" name="fail">
+			      <input type="radio" name="airsys-hardware-2000">
 			      <label class="passfail fail">Fail</label>
-			      <input type="checkbox" name="NA">
+			      <input type="radio" name="airsys-hardware-2000">
 			      <label class="passfail na">NA</label>
-			      <input type="input" name="text" placeholder="Comment">
+			      <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-relinquish-remove-2000" name="remove">Remove</button>
+			      <button onclick="append_elem(this)" class="custom-buttons" id="airsys-relinquish-to-2000" name="to">Add To</button>
+			      <button onclick="before_elem(this)" class="custom-buttons" id="airsys-relinquish-before-2000" name="before">Add Before</button>
+			      <button onclick="after_elem(this)" class="custom-buttons" id="airsys-relinquish-after-2000" name="after">Add After</button>
 			    </div>
 		    </div>
-		    <div class='row'>
+		    <div class='row' id="airsys-hardware-div-3000">
 				<div class="col-xl-7">
-					<ul>
-						<li>Confirm all Dampers and Actuators accept 0%, 50%, 100% commands where 0% is fully closed and 100% is fully open</li>
+					<ul id="airsys-hardware-div-3000-airsys-hardware-ul-3000">
+						<li id="airsys-hardware-div-3000-airsys-hardware-3000" onclick="remove_li(this)">Confirm all Dampers and Actuators accept 0%, 50%, 100% commands where 0% is fully closed and 100% is fully open</li>
 					</ul>
 			    </div>
 			    <div class="col-xl-5">
-			      <input type="checkbox" name="pass">
+			      <input type="radio" name="airsys-hardware-3000">
 			      <label class="passfail">Pass</label>
-			      <input type="checkbox" name="fail">
+			      <input type="radio" name="airsys-hardware-3000">
 			      <label class="passfail fail">Fail</label>
-			      <input type="checkbox" name="NA">
+			      <input type="radio" name="airsys-hardware-3000">
 			      <label class="passfail na">NA</label>
-			      <input type="input" name="text" placeholder="Comment">
+			      <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-relinquish-remove-3000" name="remove">Remove</button>
+			      <button onclick="append_elem(this)" class="custom-buttons" id="airsys-relinquish-to-3000" name="to">Add To</button>
+			      <button onclick="before_elem(this)" class="custom-buttons" id="airsys-relinquish-before-3000" name="before">Add Before</button>
+			      <button onclick="after_elem(this)" class="custom-buttons" id="airsys-relinquish-after-3000" name="after">Add After</button>
 			    </div>
 		    </div>
-		    <div class='row'>
+		    <div class='row' id="airsys-hardware-div-4000">
 				<div class="col-xl-7">
-					<ul>
-						<li>If the unit is equipped with mixing dampers, confirm that economizer, exhaust and return dampers all modulate based on the 'MAD' or 'RAD' command where the mixing (return) damper actuates the opposite of the others</li>
+					<ul id="airsys-hardware-div-4000-airsys-hardware-ul-4000">
+						<li id="airsys-hardware-div-4000-airsys-hardware-4000" onclick="remove_li(this)">If the unit is equipped with mixing dampers, confirm that economizer, exhaust and return dampers all modulate based on the 'MAD' or 'RAD' command where the mixing (return) damper actuates the opposite of the others</li>
 					</ul>
 			    </div>
 			    <div class="col-xl-5">
-			      <input type="checkbox" name="pass">
+			      <input type="radio" name="airsys-hardware-4000">
 			      <label class="passfail">Pass</label>
-			      <input type="checkbox" name="fail">
+			      <input type="radio" name="airsys-hardware-4000">
 			      <label class="passfail fail">Fail</label>
-			      <input type="checkbox" name="NA">
+			      <input type="radio" name="airsys-hardware-4000">
 			      <label class="passfail na">NA</label>
-			      <input type="input" name="text" placeholder="Comment">
+			      <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-relinquish-remove-4000" name="remove">Remove</button>
+			      <button onclick="append_elem(this)" class="custom-buttons" id="airsys-relinquish-to-4000" name="to">Add To</button>
+			      <button onclick="before_elem(this)" class="custom-buttons" id="airsys-relinquish-before-4000" name="before">Add Before</button>
+			      <button onclick="after_elem(this)" class="custom-buttons" id="airsys-relinquish-after-4000" name="after">Add After</button>
 			    </div>
 		    </div>
-			<div class='row'>
+			<div class='row' id="airsys-hardware-div-5000">
 				<div class="col-xl-7">
-					<ul>
-						<li>Command open the dampers to allow airflow to be drawn</li>
-						<li>Confirm all Fans go to minimum speed when started, accept half & full speed commands from the BMS as Hz or %</li>
-						<li>Confirm all Fans go to 0% or 0Hz when commanded to stop</li>
-						<li>Release all dampers and fan commands from Operator priority</li>
+					<ul id="airsys-hardware-div-5000-airsys-hardware-ul-5000">
+						<li id="airsys-hardware-div-5000-airsys-hardware-5000" onclick="remove_li(this)">Command open the dampers to allow airflow to be drawn</li>
+						<li id="airsys-hardware-div-5000-airsys-hardware-5001" onclick="remove_li(this)">Confirm all Fans go to minimum speed when started, accept half & full speed commands from the BMS as Hz or %</li>
+						<li id="airsys-hardware-div-5000-airsys-hardware-5002" onclick="remove_li(this)">Confirm all Fans go to 0% or 0Hz when commanded to stop</li>
+						<li id="airsys-hardware-div-5000-airsys-hardware-5003" onclick="remove_li(this)">Release all dampers and fan commands from Operator priority</li>
 					</ul>
 			    </div>
 			    <div class="col-xl-5">
-			      <input type="checkbox" name="pass">
+			      <input type="radio" name="airsys-hardware-5000">
 			      <label class="passfail">Pass</label>
-			      <input type="checkbox" name="fail">
+			      <input type="radio" name="airsys-hardware-5000">
 			      <label class="passfail fail">Fail</label>
-			      <input type="checkbox" name="NA">
+			      <input type="radio" name="airsys-hardware-5000">
 			      <label class="passfail na">NA</label>
-			      <input type="input" name="text" placeholder="Comment">
+			      <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-relinquish-remove-5000" name="remove">Remove</button>
+			      <button onclick="append_elem(this)" class="custom-buttons" id="airsys-relinquish-to-5000" name="to">Add To</button>
+			      <button onclick="before_elem(this)" class="custom-buttons" id="airsys-relinquish-before-5000" name="before">Add Before</button>
+			      <button onclick="after_elem(this)" class="custom-buttons" id="airsys-relinquish-after-5000" name="after">Add After</button>
 			    </div>
 		    </div>
 		</div>
@@ -1202,78 +1256,100 @@
 	function remove_li(elem) {
 		let origin = document.getElementById(elem.parentNode.id);
 		let li_elements = origin.getElementsByTagName('li');
+		console.log(li_elements);
 		if(li_elements.length > 1){
 			elem.remove();
-			console.log("removing " + elem.id);
 		}
 	}
 	function append_elem(elem) {
-		console.log(elem.parentNode.parentNode.id);
+		elem.innerHTML = "Close"
 		let origin = document.getElementById(elem.parentNode.parentNode.id);
 		append_elem_check = origin.getElementsByTagName('input');
-		let input = document.createElement("input");
-		let before_button = document.createElement("button");
-		let after_button = document.createElement("button");
-		input.style.width = "70%";
-		input.style.height = "30%";
-		before_button.style.width = "15%";
-		before_button.style.height = "37%";
-		before_button.textContent = "Append Before";
-		after_button.style.width = "15%";
-		after_button.style.height = "37%";
-		after_button.textContent = "Append After";
-		input.setAttribute("id", elem.parentNode.parentNode.id + "-appendinput-" + count);
-		input.setAttribute("class", "append");
-		before_button.setAttribute("id", elem.parentNode.parentNode.id + "-appendbefore-" + count);
-		before_button.setAttribute("class", "append");
-		after_button.setAttribute("id", elem.parentNode.parentNode.id + "-appendafter-" + count);
-		after_button.setAttribute("class", "append");
-		let li_elements = origin.getElementsByTagName('li');
-		document.getElementById(li_elements[li_elements.length-1].id).after(after_button);
-		document.getElementById(li_elements[li_elements.length-1].id).after(before_button);
-		document.getElementById(li_elements[li_elements.length-1].id).after(input); 
-		before_button_element = document.getElementById(before_button.id);
-		after_button_element = document.getElementById(after_button.id);
-		if(before_button_element){
-			before_button_element.addEventListener("click", function() {
-				let append_elements = origin.getElementsByTagName('li');
-				var ul = document.getElementById(li_elements[li_elements.length-1].id);
-			    var candidate = document.getElementById(input.id);
-			    var li = document.createElement("li");
-			    li.setAttribute("id", elem.parentNode.parentNode.id + "-connection-check-" + count)
-			    li.setAttribute("onclick","remove_li(this)")
-			    li.appendChild(document.createTextNode(candidate.value));
-			    ul.before(li);
-			    for(var i=1;i<append_elements.length;i++){
-					append_elements[i].setAttribute("onclick","remove_li(this)");
-				}
-			    count+=1;
-			});
-		}
-		if(after_button_element){
-			after_button_element.addEventListener("click", function() {
-				let append_elements = origin.getElementsByTagName('li');
-				var ul = document.getElementById(li_elements[li_elements.length-1].id);
-			    var candidate = document.getElementById(input.id);
-			    var li = document.createElement("li");
-			    li.setAttribute("id",elem.parentNode.parentNode.id + "-connection-check-" + count)
-			    li.setAttribute("onclick","remove_li(this)")
-			    li.appendChild(document.createTextNode(candidate.value));
-			    ul.after(li);
-			    for(var i=1;i<append_elements.length;i++){
-					append_elements[i].setAttribute("onclick","remove_li(this)");
-				}
-			    count+=1
-			});
+		if(append_elem_check.length == 3){
+			var input = document.createElement("input");
+			var before_button = document.createElement("button");
+			var after_button = document.createElement("button");
+			input.style.width = "70%";
+			input.style.height = "30%";
+			before_button.style.width = "15%";
+			before_button.style.height = "37%";
+			before_button.textContent = "Append Before";
+			after_button.style.width = "15%";
+			after_button.style.height = "37%";
+			after_button.textContent = "Append After";
+			input.setAttribute("id", elem.parentNode.parentNode.id + "-appendinput-" + count);
+			input.setAttribute("class", "append");
+			before_button.setAttribute("id", elem.parentNode.parentNode.id + "-appendbefore-" + count);
+			before_button.setAttribute("class", "append");
+			after_button.setAttribute("id", elem.parentNode.parentNode.id + "-appendafter-" + count);
+			after_button.setAttribute("class", "append");
+			let li_elements = origin.getElementsByTagName('li');
+			document.getElementById(li_elements[li_elements.length-1].id).after(after_button);
+			document.getElementById(li_elements[li_elements.length-1].id).after(before_button);
+			document.getElementById(li_elements[li_elements.length-1].id).after(input); 
+			before_button_element = document.getElementById(before_button.id);
+			after_button_element = document.getElementById(after_button.id);
+			if(before_button_element){
+				before_button_element.addEventListener("click", function() {
+					let append_elements = origin.getElementsByTagName('li');
+					var ul = document.getElementById(li_elements[li_elements.length-1].id);
+				    var candidate = document.getElementById(input.id);
+				    var li = document.createElement("li");
+				    li.setAttribute("id", elem.parentNode.parentNode.id + "-connection-check-" + count)
+				    li.setAttribute("onclick","remove_li(this)")
+				    li.appendChild(document.createTextNode(candidate.value));
+				    ul.before(li);
+				    for(var i=1;i<append_elements.length;i++){
+						append_elements[i].setAttribute("onclick","remove_li(this)");
+					}
+				    count+=1;
+				});
+			}
+			if(after_button_element){
+				after_button_element.addEventListener("click", function() {
+					let append_elements = origin.getElementsByTagName('li');
+					var ul = document.getElementById(li_elements[li_elements.length-1].id);
+				    var candidate = document.getElementById(input.id);
+				    var li = document.createElement("li");
+				    li.setAttribute("id",elem.parentNode.parentNode.id + "-connection-check-" + count)
+				    li.setAttribute("onclick","remove_li(this)")
+				    li.appendChild(document.createTextNode(candidate.value));
+				    ul.after(li);
+				    for(var i=1;i<append_elements.length;i++){
+						append_elements[i].setAttribute("onclick","remove_li(this)");
+					}
+				    count+=1
+				});
+			}
+		}else{
+			append_elem_check = origin.getElementsByTagName('input');
+			append_elem_check[0].remove();
+			append_elem_check = origin.getElementsByTagName('button');
+			append_elem_check[0].remove();
+			append_elem_check[0].remove();
+			elem.innerHTML = "Add To"
 		}
 	}
 	function before_elem(elem) {
 		let origin = document.getElementById(elem.parentNode.parentNode.id);
+		append_elem_check = origin.getElementsByTagName('input');
+		if(append_elem_check.length > 3){
+			append_elem_check[0].remove();
+		}
+		append_elem_check = origin.getElementsByTagName('button');
+		if(append_elem_check.length > 4){
+			append_elem_check[3].innerHTML = "Add To"
+			append_elem_check[0].remove();
+			append_elem_check[0].remove();
+		}
 		let newClone = origin.cloneNode(true);
 		newClone.setAttribute("id", origin.id + count);
+		let ul_elements = newClone.getElementsByTagName('ul');
+		ul_elements[0].setAttribute("id", ul_elements[0].id + count);
 		let li_elements = newClone.getElementsByTagName('li');
 		for(var i=0;i<li_elements.length;i++){
 			li_elements[i].setAttribute("id", li_elements[i].id + count);
+			li_elements[i].setAttribute("onclick","remove_li(this)");
 		}
 		let input_elements = newClone.getElementsByTagName('input');
 		for(var i=0;i<input_elements.length;i++){
@@ -1288,11 +1364,24 @@
 	}
 	function after_elem(elem){
 		let origin = document.getElementById(elem.parentNode.parentNode.id);
+		append_elem_check = origin.getElementsByTagName('input');
+		if(append_elem_check.length > 3){
+			append_elem_check[0].remove();
+		}
+		append_elem_check = origin.getElementsByTagName('button');
+		if(append_elem_check.length > 4){
+			append_elem_check[3].innerHTML = "Add To"
+			append_elem_check[0].remove();
+			append_elem_check[0].remove();
+		}
 		let newClone = origin.cloneNode(true);
 		newClone.setAttribute("id", origin.id + count);
+		let ul_elements = newClone.getElementsByTagName('ul');
+		ul_elements[0].setAttribute("id", ul_elements[0].id + count);
 		let li_elements = newClone.getElementsByTagName('li');
 		for(var i=0;i<li_elements.length;i++){
 			li_elements[i].setAttribute("id", li_elements[i].id + count);
+			li_elements[i].setAttribute("onclick","remove_li(this)");
 		}
 		let input_elements = newClone.getElementsByTagName('input');
 		for(var i=0;i<input_elements.length;i++){
@@ -1303,6 +1392,13 @@
 			button_elements[i].setAttribute("id", button_elements[i].id + count);
 		}
 		origin.after(newClone);
+		// append_elem_check = newClone.getElementsByTagName('input');
+		// append_elem_check = newClone.getElementsByTagName('input');
+		// append_elem_check[0].remove();
+		// append_elem_check = newClone.getElementsByTagName('button');
+		// append_elem_check[3].innerHTML = "Add To"
+		// append_elem_check[0].remove();
+		// append_elem_check[0].remove();
 		count+=1;
 	}
 </script>
