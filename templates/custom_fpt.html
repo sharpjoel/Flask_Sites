@@ -673,13 +673,32 @@
 <a href="/custom_fpt" target="blank" style="margin-left: 2%"><button class="btn btn-default" id="cmd" style="display: none;">Download!</button></a>
 <div id="fpt-container">
 	<h2><span class="badge badge-secondary sequence-start">Resources</span></h2>
+		<div class="fpt-container">
+			<div class="row" id="resources-div-1000">
+				<div class="col-xl-7">
+						<li id="resources-div-1000-resources-1000" onclick="remove_li(this)"><a href="https://www.google.com">Test1</a></li>
+						<li id="resources-div-1000-resources-1001" onclick="remove_li(this)"><a href="https://www.google.com">Test2</a></li>
+						<li id="resources-div-1000-resources-1002"><a href="https://www.google.com">Test3</a></li>
+			    </div>
+			    <div class="col-xl-5">
+			      <input type="radio" name="resources-1000">
+			      <label class="passfail">Pass</label>
+			      <input type="radio" name="resources-1000">
+			      <label class="passfail fail">Fail</label>
+			      <input type="radio" name="resources-1000">
+			      <label class="passfail na">NA</label>
+			      <button onclick="remove_elem(this)" class="custom-buttons" id="resources-remove-1000" name="remove" style="display: none;">Remove</button>
+			      <button onclick="append_elem(this)" class="custom-buttons" id="resources-to-1000" name="to" style="display: none;">Add To</button>
+			    </div>
+			</div>
+		</div>
 	<h2><span class="badge badge-secondary sequence-start">Preparation</span></h2>
 	<h4><span class="badge badge-secondary sequence-start">Field Panel Connection Check</span></h4>
 		<div class="fpt-container">
 			<div class="row" id="connection-check-div-1000">
 				<div class="col-xl-7">
 					<ul id="connection-check-div-1000-connection-check-ul-1000">
-						<li id="connection-check-div-1000-connection-check-1000" onclick="remove_li(this)">Turn off and close ZScaler</li><input id="connection-check-div-1000-appendinput-0" class="append" style="width: 70%; height: 30%; display: none;"><button id="connection-check-div-1000-appendbefore-0" class="append" style="width: 15%; height: 37%; display: none;">Append Before</button><button id="connection-check-div-1000-appendafter-0" class="append" style="width: 15%; height: 37%; display: none;">Append After</button>
+						<li id="connection-check-div-1000-connection-check-1000" onclick="remove_li(this)">Turn off and close ZScaler</li>
 					</ul>
 			    </div>
 			    <div class="col-xl-5">
@@ -690,15 +709,51 @@
 			      <input type="radio" name="connection-check-1000">
 			      <label class="passfail na">NA</label>
 			      <button onclick="remove_elem(this)" class="custom-buttons" id="connection-check-remove-1000" name="remove" style="display: none;">Remove</button>
-			      <button onclick="append_elem(this)" class="custom-buttons" id="connection-check-to-1000" name="to" style="display: none;">Close</button>
+			      <button onclick="append_elem(this)" class="custom-buttons" id="connection-check-to-1000" name="to" style="display: none;">Add To</button>
 			      <button onclick="before_elem(this)" class="custom-buttons" id="connection-check-before-1000" name="before" style="display: none;">Add Before</button>
 			      <button onclick="after_elem(this)" class="custom-buttons" id="connection-check-after-1000" name="after" style="display: none;">Add After</button>
+			    </div>
+		    </div><div class="row" id="connection-check-div-10009">
+				<div class="col-xl-7">
+					<ul id="connection-check-div-1000-connection-check-ul-10009">
+						<li id="connection-check-div-1000-connection-check-10009" onclick="remove_li(this)">Turn off and close ZScaler</li>
+					</ul>
+			    </div>
+			    <div class="col-xl-5">
+			      <input type="radio" name="connection-check-10009">
+			      <label class="passfail">Pass</label>
+			      <input type="radio" name="connection-check-10009">
+			      <label class="passfail fail">Fail</label>
+			      <input type="radio" name="connection-check-10009">
+			      <label class="passfail na">NA</label>
+			      <button onclick="remove_elem(this)" class="custom-buttons" id="connection-check-remove-10009" name="remove" style="display: none;">Remove</button>
+			      <button onclick="append_elem(this)" class="custom-buttons" id="connection-check-to-10009" name="to" style="display: none;">Add To</button>
+			      <button onclick="before_elem(this)" class="custom-buttons" id="connection-check-before-10009" name="before" style="display: none;">Add Before</button>
+			      <button onclick="after_elem(this)" class="custom-buttons" id="connection-check-after-10009" name="after" style="display: none;">Add After</button>
+			    </div>
+		    </div><div class="row" id="connection-check-div-10008">
+				<div class="col-xl-7">
+					<ul id="connection-check-div-1000-connection-check-ul-10008">
+						<li id="connection-check-div-1000-connection-check-10008" onclick="remove_li(this)">Turn off and close ZScaler</li>
+					</ul>
+			    </div>
+			    <div class="col-xl-5">
+			      <input type="radio" name="connection-check-10008">
+			      <label class="passfail">Pass</label>
+			      <input type="radio" name="connection-check-10008">
+			      <label class="passfail fail">Fail</label>
+			      <input type="radio" name="connection-check-10008">
+			      <label class="passfail na">NA</label>
+			      <button onclick="remove_elem(this)" class="custom-buttons" id="connection-check-remove-10008" name="remove" style="display: none;">Remove</button>
+			      <button onclick="append_elem(this)" class="custom-buttons" id="connection-check-to-10008" name="to" style="display: none;">Add To</button>
+			      <button onclick="before_elem(this)" class="custom-buttons" id="connection-check-before-10008" name="before" style="display: none;">Add Before</button>
+			      <button onclick="after_elem(this)" class="custom-buttons" id="connection-check-after-10008" name="after" style="display: none;">Add After</button>
 			    </div>
 		    </div>
 		    <div class="row" id="connection-check-div-2000">
 				<div class="col-xl-7">
 					<ul id="connection-check-div-2000-connection-check-ul-2000">
-						<li id="connection-check-div-2000-connection-check-2000" onclick="remove_li(this)">Disconnect from ABT Site</li><input id="connection-check-div-2000-appendinput-0" class="append" style="width: 70%; height: 30%; display: none;"><button id="connection-check-div-2000-appendbefore-0" class="append" style="width: 15%; height: 37%; display: none;">Append Before</button><button id="connection-check-div-2000-appendafter-0" class="append" style="width: 15%; height: 37%; display: none;">Append After</button>
+						<li id="connection-check-div-2000-connection-check-2000" onclick="remove_li(this)">Disconnect from ABT Site</li>
 					</ul>
 			    </div>
 			    <div class="col-xl-5">
@@ -709,7 +764,7 @@
 			      <input type="radio" name="connection-check-2000">
 			      <label class="passfail na">NA</label>
 			      <button onclick="remove_elem(this)" class="custom-buttons" id="connection-check-remove-2000" name="remove" style="display: none;">Remove</button>
-			      <button onclick="append_elem(this)" class="custom-buttons" id="connection-check-to-2000" name="to" style="display: none;">Close</button>
+			      <button onclick="append_elem(this)" class="custom-buttons" id="connection-check-to-2000" name="to" style="display: none;">Add To</button>
 			      <button onclick="before_elem(this)" class="custom-buttons" id="connection-check-before-2000" name="before" style="display: none;">Add Before</button>
 			      <button onclick="after_elem(this)" class="custom-buttons" id="connection-check-after-2000" name="after" style="display: none;">Add After</button>
 			    </div>
@@ -856,23 +911,23 @@
 	<div class="airsys relinquish">
 		<h4><span class="badge badge-secondary sequence-start">Air System Basic Relinquish Default Check</span></h4>
 		<div class="fpt-container">
-			<div class="row" id="airsys-relinquish-div-1000">
+			<div class="row" id="airsys-relinquish-div-10006">
 				<div class="col-xl-7">
-					<ul id="airsys-relinquish-div-1000-airsys-relinquish-ul-1000">
-						<li id="airsys-relinquish-div-1000-airsys-relinquish-1000" onclick="remove_li(this)">Confirm via HMI the panel back-up and auto-restore configuration (On-site task)</li>
+					<ul id="airsys-relinquish-div-1000-airsys-relinquish-ul-10006">
+						<li id="airsys-relinquish-div-1000-connection-check-06" onclick="remove_li(this)">Walk to jobsite</li>
 					</ul>
 			    </div>
 			    <div class="col-xl-5">
-			      <input type="radio" name="airsys-relinquish-1000">
+			      <input type="radio" name="airsys-relinquish-10006">
 			      <label class="passfail">Pass</label>
-			      <input type="radio" name="airsys-relinquish-1000">
+			      <input type="radio" name="airsys-relinquish-10006">
 			      <label class="passfail fail">Fail</label>
-			      <input type="radio" name="airsys-relinquish-1000">
+			      <input type="radio" name="airsys-relinquish-10006">
 			      <label class="passfail na">NA</label>
-			      <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-relinquish-remove-1000" name="remove" style="display: none;">Remove</button>
-			      <button onclick="append_elem(this)" class="custom-buttons" id="airsys-relinquish-to-1000" name="to" style="display: none;">Add To</button>
-			      <button onclick="before_elem(this)" class="custom-buttons" id="airsys-relinquish-before-1000" name="before" style="display: none;">Add Before</button>
-			      <button onclick="after_elem(this)" class="custom-buttons" id="airsys-relinquish-after-1000" name="after" style="display: none;">Add After</button>
+			      <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-relinquish-remove-10006" name="remove" style="display: none;">Remove</button>
+			      <button onclick="append_elem(this)" class="custom-buttons" id="airsys-relinquish-to-10006" name="to" style="display: none;">Add To</button>
+			      <button onclick="before_elem(this)" class="custom-buttons" id="airsys-relinquish-before-10006" name="before" style="display: none;">Add Before</button>
+			      <button onclick="after_elem(this)" class="custom-buttons" id="airsys-relinquish-after-10006" name="after" style="display: none;">Add After</button>
 			    </div>
 		    </div>
 		    <div class="row" id="airsys-relinquish-div-2000">
@@ -1150,87 +1205,102 @@
 	<div class="airsys hardware">
 		<h4><span class="badge badge-secondary sequence-start">Air System Basic Hardware Check</span></h4>
 		<div class="fpt-container">
-			<div class="row">
+			<div class="row" id="airsys-hardware-div-1000">
 				<div class="col-xl-7">
-					<ul>
-						<li>Using a magnehelic pressure guage and hand pump, ensure that all low and high static cutouts are tuned appropriately where low-static cutouts are typically tuned to -4"wc and high static cutouts at 4"wc</li>
+					<ul id="airsys-hardware-div-1000-airsys-hardware-ul-1000">
+						<li id="airsys-hardware-div-1000-airsys-hardware-1000" onclick="remove_li(this)">Using a magnehelic pressure guage and hand pump, ensure that all low and high static cutouts are tuned appropriately where low-static cutouts are typically tuned to -4"wc and high static cutouts at 4"wc</li>
 					</ul>
 			    </div>
 			    <div class="col-xl-5">
-			      <input type="checkbox" name="pass">
+			      <input type="radio" name="airsys-hardware-1000">
 			      <label class="passfail">Pass</label>
-			      <input type="checkbox" name="fail">
+			      <input type="radio" name="airsys-hardware-1000">
 			      <label class="passfail fail">Fail</label>
-			      <input type="checkbox" name="NA">
+			      <input type="radio" name="airsys-hardware-1000">
 			      <label class="passfail na">NA</label>
-			      <input type="input" name="text" placeholder="Comment">
+			      <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-relinquish-remove-1000" name="remove" style="display: none;">Remove</button>
+			      <button onclick="append_elem(this)" class="custom-buttons" id="airsys-relinquish-to-1000" name="to" style="display: none;">Add To</button>
+			      <button onclick="before_elem(this)" class="custom-buttons" id="airsys-relinquish-before-1000" name="before" style="display: none;">Add Before</button>
+			      <button onclick="after_elem(this)" class="custom-buttons" id="airsys-relinquish-after-1000" name="after" style="display: none;">Add After</button>
 			    </div>
 		    </div>
-		    <div class="row">
+		    <div class="row" id="airsys-hardware-div-2000">
 				<div class="col-xl-7">
-					<ul>
-						<li>If the unit is equipped with a high-humidity cutout sensor, ensure the humidity sensor and cutout are an adequate distance from the humidifier to ensure they are not being sprayed directly</li>
+					<ul id="airsys-hardware-div-2000-airsys-hardware-ul-2000">
+						<li id="airsys-hardware-div-2000-airsys-hardware-2000" onclick="remove_li(this)">If the unit is equipped with a high-humidity cutout sensor, ensure the humidity sensor and cutout are an adequate distance from the humidifier to ensure they are not being sprayed directly</li>
 					</ul>
 			    </div>
 			    <div class="col-xl-5">
-			      <input type="checkbox" name="pass">
+			      <input type="radio" name="airsys-hardware-2000">
 			      <label class="passfail">Pass</label>
-			      <input type="checkbox" name="fail">
+			      <input type="radio" name="airsys-hardware-2000">
 			      <label class="passfail fail">Fail</label>
-			      <input type="checkbox" name="NA">
+			      <input type="radio" name="airsys-hardware-2000">
 			      <label class="passfail na">NA</label>
-			      <input type="input" name="text" placeholder="Comment">
+			      <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-relinquish-remove-2000" name="remove" style="display: none;">Remove</button>
+			      <button onclick="append_elem(this)" class="custom-buttons" id="airsys-relinquish-to-2000" name="to" style="display: none;">Add To</button>
+			      <button onclick="before_elem(this)" class="custom-buttons" id="airsys-relinquish-before-2000" name="before" style="display: none;">Add Before</button>
+			      <button onclick="after_elem(this)" class="custom-buttons" id="airsys-relinquish-after-2000" name="after" style="display: none;">Add After</button>
 			    </div>
 		    </div>
-		    <div class="row">
+		    <div class="row" id="airsys-hardware-div-3000">
 				<div class="col-xl-7">
-					<ul>
-						<li>Confirm all Dampers and Actuators accept 0%, 50%, 100% commands where 0% is fully closed and 100% is fully open</li>
+					<ul id="airsys-hardware-div-3000-airsys-hardware-ul-3000">
+						<li id="airsys-hardware-div-3000-airsys-hardware-3000" onclick="remove_li(this)">Confirm all Dampers and Actuators accept 0%, 50%, 100% commands where 0% is fully closed and 100% is fully open</li>
 					</ul>
 			    </div>
 			    <div class="col-xl-5">
-			      <input type="checkbox" name="pass">
+			      <input type="radio" name="airsys-hardware-3000">
 			      <label class="passfail">Pass</label>
-			      <input type="checkbox" name="fail">
+			      <input type="radio" name="airsys-hardware-3000">
 			      <label class="passfail fail">Fail</label>
-			      <input type="checkbox" name="NA">
+			      <input type="radio" name="airsys-hardware-3000">
 			      <label class="passfail na">NA</label>
-			      <input type="input" name="text" placeholder="Comment">
+			      <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-relinquish-remove-3000" name="remove" style="display: none;">Remove</button>
+			      <button onclick="append_elem(this)" class="custom-buttons" id="airsys-relinquish-to-3000" name="to" style="display: none;">Add To</button>
+			      <button onclick="before_elem(this)" class="custom-buttons" id="airsys-relinquish-before-3000" name="before" style="display: none;">Add Before</button>
+			      <button onclick="after_elem(this)" class="custom-buttons" id="airsys-relinquish-after-3000" name="after" style="display: none;">Add After</button>
 			    </div>
 		    </div>
-		    <div class="row">
+		    <div class="row" id="airsys-hardware-div-4000">
 				<div class="col-xl-7">
-					<ul>
-						<li>If the unit is equipped with mixing dampers, confirm that economizer, exhaust and return dampers all modulate based on the 'MAD' or 'RAD' command where the mixing (return) damper actuates the opposite of the others</li>
+					<ul id="airsys-hardware-div-4000-airsys-hardware-ul-4000">
+						<li id="airsys-hardware-div-4000-airsys-hardware-4000" onclick="remove_li(this)">If the unit is equipped with mixing dampers, confirm that economizer, exhaust and return dampers all modulate based on the 'MAD' or 'RAD' command where the mixing (return) damper actuates the opposite of the others</li>
 					</ul>
 			    </div>
 			    <div class="col-xl-5">
-			      <input type="checkbox" name="pass">
+			      <input type="radio" name="airsys-hardware-4000">
 			      <label class="passfail">Pass</label>
-			      <input type="checkbox" name="fail">
+			      <input type="radio" name="airsys-hardware-4000">
 			      <label class="passfail fail">Fail</label>
-			      <input type="checkbox" name="NA">
+			      <input type="radio" name="airsys-hardware-4000">
 			      <label class="passfail na">NA</label>
-			      <input type="input" name="text" placeholder="Comment">
+			      <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-relinquish-remove-4000" name="remove" style="display: none;">Remove</button>
+			      <button onclick="append_elem(this)" class="custom-buttons" id="airsys-relinquish-to-4000" name="to" style="display: none;">Add To</button>
+			      <button onclick="before_elem(this)" class="custom-buttons" id="airsys-relinquish-before-4000" name="before" style="display: none;">Add Before</button>
+			      <button onclick="after_elem(this)" class="custom-buttons" id="airsys-relinquish-after-4000" name="after" style="display: none;">Add After</button>
 			    </div>
 		    </div>
-			<div class="row">
+			<div class="row" id="airsys-hardware-div-5000">
 				<div class="col-xl-7">
-					<ul>
-						<li>Command open the dampers to allow airflow to be drawn</li>
-						<li>Confirm all Fans go to minimum speed when started, accept half &amp; full speed commands from the BMS as Hz or %</li>
-						<li>Confirm all Fans go to 0% or 0Hz when commanded to stop</li>
-						<li>Release all dampers and fan commands from Operator priority</li>
+					<ul id="airsys-hardware-div-5000-airsys-hardware-ul-5000">
+						<li id="airsys-hardware-div-5000-airsys-hardware-5000" onclick="remove_li(this)">Command open the dampers to allow airflow to be drawn</li>
+						<li id="airsys-hardware-div-5000-airsys-hardware-5001" onclick="remove_li(this)">Confirm all Fans go to minimum speed when started, accept half &amp; full speed commands from the BMS as Hz or %</li>
+						<li id="airsys-hardware-div-5000-airsys-hardware-5002" onclick="remove_li(this)">Confirm all Fans go to 0% or 0Hz when commanded to stop</li>
+						<li id="airsys-hardware-div-5000-airsys-hardware-5003" onclick="remove_li(this)">Release all dampers and fan commands from Operator priority</li>
 					</ul>
 			    </div>
 			    <div class="col-xl-5">
-			      <input type="checkbox" name="pass">
+			      <input type="radio" name="airsys-hardware-5000">
 			      <label class="passfail">Pass</label>
-			      <input type="checkbox" name="fail">
+			      <input type="radio" name="airsys-hardware-5000">
 			      <label class="passfail fail">Fail</label>
-			      <input type="checkbox" name="NA">
+			      <input type="radio" name="airsys-hardware-5000">
 			      <label class="passfail na">NA</label>
-			      <input type="input" name="text" placeholder="Comment">
+			      <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-relinquish-remove-5000" name="remove" style="display: none;">Remove</button>
+			      <button onclick="append_elem(this)" class="custom-buttons" id="airsys-relinquish-to-5000" name="to" style="display: none;">Add To</button>
+			      <button onclick="before_elem(this)" class="custom-buttons" id="airsys-relinquish-before-5000" name="before" style="display: none;">Add Before</button>
+			      <button onclick="after_elem(this)" class="custom-buttons" id="airsys-relinquish-after-5000" name="after" style="display: none;">Add After</button>
 			    </div>
 		    </div>
 		</div>

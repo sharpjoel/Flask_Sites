@@ -60,12 +60,11 @@
 		}
 
 		.badge{
-			/*background-color: #202060;*/
-			color: #1bffff;
-			background-color: #505050;
+			color: #e7dfdd;
+			background-color: #343a40;
 			font-family: 'Roboto';
 			font-weight: bold;
-			font
+			font-size: 30px;
 		}
 
 		.scaleable-wrapper {
@@ -254,13 +253,13 @@
 		}
 
 		#fpt-container{
-			float:left;
-			margin-left:2%;
+			/*float:left;*/
+			margin-left:1%;
 			width:100%;
 			height:1500px;
-			font-size: 12px;
-			color: white;
-			/*font-family: 'Roboto';*/
+			font-size: 15px;
+			color: #BBBBBB;
+			font-family: 'Roboto';
 		}
 
 		#appForm{
@@ -329,11 +328,12 @@
 			margin-right:5px;
 			width: 10%;
 			text-align:center;
-			background:#1aff1a;
+			background:green;
 			border-top-right-radius: 2px 2px;
 			border-bottom-right-radius: 2px 2px;
 			border-top-left-radius: 2px 2px;
 			border-bottom-left-radius: 2px 2px;
+			color:white;
 			font-weight:thick;
 		}
 
@@ -342,11 +342,21 @@
 		}
 
 		.na{
-			background:#66ffff;
+			background:blue;
 		}
 
 		.row{
 			border:solid 2px #FF00FF;
+			margin-left: 0.1%;
+			margin-bottom: 0.5%;
+		}
+
+		.form-check-label{
+			font-size: 15px;
+		}
+
+		button{
+			margin-top: 1%;
 		}
 	</style>
 	<title>RSS-NA DXR Engineering Tool</title>
@@ -382,7 +392,7 @@
 			{% for item in fptterminalbox %}
 				<div class="form-check">
 					<input class="form-check-input" type="checkbox" value="" id="{{item}}">
-						<label class="form-check-label" for="{{item}}"><span class="badge badge-secondary">{{item}}</span></label>
+						<label class="form-check-label" for="{{item}}"><span class="badge badge-secondary form-check-label">{{item}}</span></label>
 				</div>
 			{% endfor %}
 		</div>
@@ -391,7 +401,7 @@
 			{% for item in fpttra %}
 				<div class="form-check">
 					<input class="form-check-input" type="checkbox" value="" id="{{item}}">
-						<label class="form-check-label" for="{{item}}"><span class="badge badge-secondary">{{item}}</span></label>
+						<label class="form-check-label" for="{{item}}"><span class="badge badge-secondary form-check-label">{{item}}</span></label>
 				</div>
 			{% endfor %}
 		</div>
@@ -400,7 +410,7 @@
 			{% for item in fptairsystems %}
 				<div class="form-check">
 					<input class="form-check-input" type="checkbox" value="" id="{{item}}">
-						<label class="form-check-label" for="{{item}}"><span class="badge badge-secondary">{{item}}</span></label>
+						<label class="form-check-label" for="{{item}}"><span class="badge badge-secondary form-check-label">{{item}}</span></label>
 				</div>
 			{% endfor %}
 		</div>
@@ -409,7 +419,7 @@
 			{% for item in cenfuncs %}
 				<div class="form-check">
 					<input class="form-check-input" type="checkbox" value="" id="{{item}}">
-						<label class="form-check-label" for="{{item}}"><span class="badge badge-secondary">{{item}}</span></label>
+						<label class="form-check-label" for="{{item}}"><span class="badge badge-secondary form-check-label">{{item}}</span></label>
 				</div>
 			{% endfor %}
 		</div>
@@ -417,15 +427,17 @@
 </div>
 <br><br>
 <form id="download"></form>
-<a href="{{url_for('.custom_fpt')}}" target="blank" style="margin-left: 2%"><button class='btn btn-default' id="cmd">Download!</button></a>
+<a href="{{url_for('.custom_fpt')}}" target="blank" style="margin-left: 1%"><button class='btn btn-default' id="cmd">Download!</button></a>
 <div id='fpt-container'>
 	<h2><span class="badge badge-secondary sequence-start">Resources</span></h2>
 		<div class="fpt-container">
 			<div class='row' id="resources-div-1000">
 				<div class="col-xl-7">
+					<ul>
 						<li id="resources-div-1000-resources-1000" onclick="remove_li(this)"><a href="https://www.google.com">Test1</a></li>
 						<li id="resources-div-1000-resources-1001" onclick="remove_li(this)"><a href="https://www.google.com">Test2</a></li>
 						<li id="resources-div-1000-resources-1002"><a href="https://www.google.com">Test3</a></li>
+					</ul>	
 			    </div>
 			    <div class="col-xl-5">
 			      <input type="radio" name="resources-1000">
@@ -525,7 +537,7 @@
 		    <div class='row' id="connection-check-div-5000">
 				<div class="col-xl-7">
 					<ul id="connection-check-div-5000-connection-check-ul-5000">
-						<li id="connection-check-div-5000-connection-check-5000" onclick="remove_li(this)">unzip the CT database in your Job Folder</li>
+						<li id="connection-check-div-5000-connection-check-5000" onclick="remove_li(this)">Unzip the CT database in your Job Folder</li>
 						<li id="connection-check-div-5000-connection-check-5001" onclick="remove_li(this)">Open Job Editor</li>
 						<li id="connection-check-div-5000-connection-check-5002" onclick="remove_li(this)">Open Online</li>
 						<li id="connection-check-div-5000-connection-check-5003" onclick="remove_li(this)">Select the appropriate atom.fdb file for your job</li>
@@ -549,7 +561,7 @@
 					<ul id="connection-check-div-6000-connection-check-ul-6000">
 						<li id="connection-check-div-6000-connection-check-6000" onclick="remove_li(this)">Open System Profile</li>
 						<li id="connection-check-div-6000-connection-check-6001" onclick="remove_li(this)">Insert new Insight</li>
-						<li id="connection-check-div-6000-connection-check-6002" onclick="remove_li(this)">Name must match Computer name. Computer name can be found by opening command prompt (CMD) and typing "whoami" and pressing enter</li>
+						<li id="connection-check-div-6000-connection-check-6002" onclick="remove_li(this)">Name must match Computer name. Computer name can be found by opening Control Panel on Windows and Clicking on System</li>
 						<li id="connection-check-div-6000-connection-check-6003" onclick="remove_li(this)">Move the BLNs from the existing Insight into your Insight</li>
 						<li id="connection-check-div-6000-connection-check-6004" onclick="remove_li(this)">Confirm the three names of the field panel (Name, System Name, Object Name), the panel instance ID, and the field panel IP Address ensuring that it is on the same subnet as your computer</li>
 					</ul>
