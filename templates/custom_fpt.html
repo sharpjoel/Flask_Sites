@@ -688,7 +688,11 @@
 	</form>
 </div>
 <br><br>
-<form id="download"></form>
+<div class="row">
+	<div class="col-xl-12">
+		<form id="download"></form>
+	</div>
+</div>
 <a href="/custom_fpt" target="blank" style="margin-left: 1%"><button class="btn btn-default" id="cmd" style="display: none;">Download!</button></a>
 <div id="fpt-container">
 	<h1><span class="badge badge-secondary sequence-start">Resources</span></h1>
@@ -696,20 +700,21 @@
 			<div class="row" id="resources-div-1000">
 				<div class="col-xl-7">
 					<ul>
-						<li id="resources-div-1000-resources-1000" onclick="remove_li(this)"><a href="https://www.google.com">Test1</a></li>
-						<li id="resources-div-1000-resources-1001" onclick="remove_li(this)"><a href="https://www.google.com">Test2</a></li>
-						<li id="resources-div-1000-resources-1002"><a href="https://www.google.com">Test3</a></li>
+						<li id="resources-div-1000-resources-1000" onclick="remove_li(this)"><a href="https://siemensnam.sharepoint.com/:v:/t/PacificZoneZTC-ProgrammingCommunity/EfJRUT3YVnVKhhW_DXOV_8wBP2Z442Ppb06LgAJg4Xqrmw?e=DJIgUP">Getting Online – How to quickly setup and get online to a field panel</a></li>
+						<li id="resources-div-1000-resources-1001" onclick="remove_li(this)"><a href="https://siemensnam.sharepoint.com/:v:/t/PacificZoneZTC-ProgrammingCommunity/EcLoaKpUEExMq7DjEcZCCO0By3vhOPyo679teICxGgh61g?e=7uuwjV">Point Name Changes – How to quickly change your panel and point names</a></li>
+						<li id="resources-div-1000-resources-1002"><a href="https://siemensnam.sharepoint.com/:v:/t/PacificZoneZTC-ProgrammingCommunity/EcxM9Eh6GY1Hlu5y_H72FjIBEWRmfCkKcA8L4g8CLcHR3Q?e=b4ck3R">NC &amp; EE – How to set up notification classes and Event Enrollments</a></li>
+						<li id="resources-div-1000-resources-1003"><a href="https://siemensnam.sharepoint.com/:v:/t/PacificZoneZTC-ProgrammingCommunity/ER_XURZcrxpDrcGBwCZrHmcBsaWKIkTIe40MuUgdht1Auw?e=r9B76Q">Trending w Trend Grid – How to set up Trends in Trend Grid + Demonstration of why you should use Trend Grid over Trend Wizard</a></li>
+						<li id="resources-div-1000-resources-1004"><a href="https://siemensnam.sharepoint.com/:v:/t/PacificZoneZTC-ProgrammingCommunity/EV09RtORaX5KrGCwdi4GBhgBqPst99wG9Ft9XX1vT_ge8Q?e=hEdU2L">Bacnet Scheduler &amp; SSTO – Setup of Bacnet Command Objects and Schedule as well as a demonstration of going into Vacancy, Occupancy, Warmup, Cooldown, Stop Cooling, Night Heating (Setback) and Night Cooling</a></li>
 					</ul>	
 			    </div>
 			    <div class="col-xl-5">
-			      <input type="radio" name="resources-1000">
-			      <label class="passfail">Pass</label>
-			      <input type="radio" name="resources-1000">
-			      <label class="passfail fail">Fail</label>
-			      <input type="radio" name="resources-1000">
-			      <label class="passfail na">NA</label>
-			      <button onclick="remove_elem(this)" class="custom-buttons" id="resources-remove-1000" name="remove" style="display: none;">Remove</button>
-			      <button onclick="append_elem(this)" class="custom-buttons" id="resources-to-1000" name="to" style="display: none;">Add To</button>
+			    	<input type="radio" name="resources-1000" style="visibility: hidden">
+			      <label class="passfail" style="visibility: hidden">Pass</label>
+			      <input type="radio" name="resources-1000" style="visibility: hidden">
+			      <label class="passfail fail" style="visibility: hidden">Fail</label>
+			      <input type="radio" name="resources-1000" style="visibility: hidden">
+			      <label class="passfail na" style="visibility: hidden">NA</label>
+			      <button onclick="append_link(this)" class="custom-buttons" id="resources-to-1000" name="to" style="display: none;">Add Reference</button>
 			    </div>
 			</div>
 		</div>
@@ -719,7 +724,7 @@
 			<div class="row" id="connection-check-div-1000">
 				<div class="col-xl-7">
 					<ul id="connection-check-div-1000-connection-check-ul-1000">
-						<li id="connection-check-div-1000-connection-check-1000" onclick="remove_li(this)">Turn off and close ZScaler</li>
+						<li id="connection-check-div-1000-connection-check-1000" onclick="remove_li(this)">Turn off and close ZScaler</li><li id="connection-check-div-1000-appended-0" onclick="remove_li(this)" class=" show">Call Mai</li>
 					</ul>
 			    </div>
 			    <div class="col-xl-5">
@@ -1425,51 +1430,6 @@
 		    </div>
 		</div>
 	</div>
-	<div class="airsys unoccupied">
-		<h4><span class="badge badge-secondary sequence-start">Air System Unoccupied Mode</span></h4>
-		<div class="fpt-container">
-			<div class="row" id="airsys-unoccupied-div-1000">
-				<div class="col-xl-7">
-					<ul id="airsys-unoccupied-div-1000-airsys-unoccupied-ul-1000">
-						<li id="airsys-unoccupied-div-1000-airsys-unoccupied-1000" onclick="remove_li(this)">Open Bacnet Scheduler and change Occupied Mode end-time to 5 minutes from now</li>
-						<li id="airsys-unoccupied-div-1000-airsys-unoccupied-1001" onclick="remove_li(this)">Wait 5 minutes and confirm Air System 'ZONE.MODE' goes into Unoccupied Mode</li>
-						<li id="airsys-unoccupied-div-1000-airsys-unoccupied-1002" onclick="remove_li(this)">Confirm all lines for Unoccupied Mode are traced and lines for Occupied Mode, Warmup, Cooldown, Night Heating, and Night Cooling are skipped</li>
-					</ul>
-			    </div>
-			    <div class="col-xl-5">
-			      <input type="radio" name="airsys-unoccupied-1000">
-			      <label class="passfail">Pass</label>
-			      <input type="radio" name="airsys-unoccupied-1000">
-			      <label class="passfail fail">Fail</label>
-			      <input type="radio" name="airsys-unoccupied-1000">
-			      <label class="passfail na">NA</label>
-			      <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-unoccupied-remove-1000" name="remove" style="display: none;">Remove</button>
-			      <button onclick="append_elem(this)" class="custom-buttons" id="airsys-unoccupied-to-1000" name="to" style="display: none;">Add To</button>
-			      <button onclick="before_elem(this)" class="custom-buttons" id="airsys-unoccupied-before-1000" name="before" style="display: none;">Add Before</button>
-			      <button onclick="after_elem(this)" class="custom-buttons" id="airsys-unoccupied-after-1000" name="after" style="display: none;">Add After</button>
-			    </div>
-		    </div>
-		    <div class="row" id="airsys-unoccupied-div-2000">
-				<div class="col-xl-7">
-					<ul id="airsys-unoccupied-div-2000-airsys-unoccupied-ul-2000">
-						<li id="airsys-unoccupied-div-2000-airsys-unoccupied-2001" onclick="remove_li(this)">Confirm all On/Off commands are turned off, Fan Speeds are commanded to 0 Hz or %, all Dampers and Actuators are commanded to 0% or 'Off', and all timers and counters are set to 0</li>
-					</ul>
-			    </div>
-			    <div class="col-xl-5">
-			      <input type="radio" name="airsys-unoccupied-2000">
-			      <label class="passfail">Pass</label>
-			      <input type="radio" name="airsys-unoccupied-2000">
-			      <label class="passfail fail">Fail</label>
-			      <input type="radio" name="airsys-unoccupied-2000">
-			      <label class="passfail na">NA</label>
-			      <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-unoccupied-remove-2000" name="remove" style="display: none;">Remove</button>
-			      <button onclick="append_elem(this)" class="custom-buttons" id="airsys-unoccupied-to-2000" name="to" style="display: none;">Add To</button>
-			      <button onclick="before_elem(this)" class="custom-buttons" id="airsys-unoccupied-before-2000" name="before" style="display: none;">Add Before</button>
-			      <button onclick="after_elem(this)" class="custom-buttons" id="airsys-unoccupied-after-2000" name="after" style="display: none;">Add After</button>
-			    </div>
-		    </div>
-		</div>
-	</div>
 	<div class="airsys occupied-sched">
 		<h4><span class="badge badge-secondary sequence-start">Air System Occupied Mode Scheduled</span></h4>
 		<div class="fpt-container">
@@ -2160,7 +2120,7 @@
 					<ul id="airsys-occupied-24-div-30200-airsys-occupied-24-ul-30200">
 						<li id="airsys-occupied-24-div-30200-airsys-occupied-24-30201" onclick="remove_li(this)">Command all fan speeds to 20%</li>
 						<li id="airsys-occupied-24-div-30200-airsys-occupied-24-30202" onclick="remove_li(this)">Command the Loop Output that commands fan speeds to 100%</li>
-						<li id="airsys-occupied-24-div-30200-airsys-occupied-24-30203" onclick="remove_li(this)">Confirm that after 5 minutes, and additional fan is called to run</li>
+						<li id="airsys-occupied-24-div-30200-airsys-occupied-24-30203" onclick="remove_li(this)">Confirm that after 5 minutes, and additional fan is called to run if all fans are not already running</li>
 						<li class="iso-dampers" id="airsys-occupied-24-div-30200-airsys-occupied-24-30204" onclick="remove_li(this)">Confirm that the next fan is commanded on, and that the isolation damper is only commanded open after the fan proofs on. This will prevent an overcurrent alarm</li>
 						<li class="iso-dampers" id="airsys-occupied-24-div-30200-airsys-occupied-24-30205" onclick="remove_li(this)">Confirm the Fan Speed Ramp Timer slowly increases</li>
 					</ul>
@@ -2183,7 +2143,7 @@
 					<ul id="airsys-occupied-24-div-30400-airsys-occupied-24-ul-30400">
 						<li id="airsys-occupied-24-div-30400-airsys-occupied-24-30401" onclick="remove_li(this)">Command all fan speeds to 20%</li>
 						<li id="airsys-occupied-24-div-30400-airsys-occupied-24-30402" onclick="remove_li(this)">Command the Loop Output that commands fan speeds to 30%</li>
-						<li id="airsys-occupied-24-div-30400-airsys-occupied-24-30403" onclick="remove_li(this)">Confirm that after 5 minutes, 1 fan is called to turn off</li>
+						<li id="airsys-occupied-24-div-30400-airsys-occupied-24-30403" onclick="remove_li(this)">Confirm that after 5 minutes, 1 fan is called to turn off if at least 2 fans are running</li>
 						<li class="iso-dampers" id="airsys-occupied-24-div-30400-airsys-occupied-24-30404" onclick="remove_li(this)">Confirm the Fan is commanded off and Isolation Damper is commanded closed</li>
 					</ul>
 			    </div>
@@ -2310,100 +2270,518 @@
 			    </div>
 		    </div>
 		</div>
-	</div>
-
-	<!-- Pre-Comfort -->
-
-	<div class="standby-mode" id="standby-mode" style="display:none">
-		<h6>Pre-Comfort(Standby) Mode</h6>
-		<ul>
-			<li class="seq-font">Triggers:</li>
-			<ol>
-				<li class="seq-font">User defined schedule.</li>
-				<li class="seq-font">Manual command from the central controller.</li>
-				<li class="seq-font standby-mode" style="display:none">Automatic if a configured occupancy detector detects no movement for 10 minutes(adjustable).</li>
-			</ol>
-			<li class="seq-font">Sequence</li>
-			<ol>
-				<li class="seq-font">Terminal unit will maintain the standby temperature setpoints.</li>
-				<li class="seq-font" id="standby-ventilation-mode" style="display:none">If the room temperature is within the heating/cooling deadband and room CO2 levels are below the high-limit threshold, the terminal unit will maintain the standby minimum ventilation airflow setpoint. If room CO2 levels rise above 1100ppm (adjustable), the terminal unit will engage the ventilation PID controller to increase airflow into the space to meet the occupied maximum ventilation airflow setpoint until room CO2 levels fall below 800ppm (adjustable), at which point, the ventilation PID controller will disengage. The ventilation PID controller takes precedence over both the heating and cooling PID controllers.</li>
-				<li class="seq-font" id="standby-ventilation-off" style="display:show">If the room temperature is within the heating/cooling deadband, the terminal unit will turn off.</li>
-			</ol>
-		</ul>
-	</div>
-
-	<!-- Unoccupied -->
-
-	<div id="unoccupied-mode" style="display:none">
-		<h6>Economy(Unoccupied) Mode</h6>
-		<ul>
-			<li class="seq-font">Triggers:</li>
-			<ol>
-				<li class="seq-font">User defined schedule</li>
-				<li class="seq-font">Manual command from the central controller.</li>
-				<li class="seq-font temp-comfort-btn" style="display:none">Automatic upon expiration of manual override.</li>
-			</ol>
-			<li class="seq-font">Sequence</li>
-			<ol>
-				<li class="seq-font">Terminal unit will maintain the unoccupied temperature setpoints.</li>
-				<li class="seq-font unocc-ventilation-mode" style="display:none">If the room temperature is within the heating/cooling deadband and room CO2 levels are below the high-limit threshold, the terminal unit will maintain the unoccupied minimum ventilation airflow setpoint. If room CO2 levels rise above 1200ppm (adjustable), the terminal unit will engage the ventilation PID controller to increase airflow into the space to meet the occupied maximum ventilation airflow setpoint until room CO2 levels fall below 800ppm (adjustable), at which point, the ventilation PID controller will disengage. The ventilation PID controller takes precedence over both the heating and cooling PID controllers.</li>
-				<li class="seq-font unocc-ventilation-off" style="display:show">If the room temperature is within the heating/cooling deadband, the terminal unit will turn off.</li>
-			</ol>
-		</ul>
-	</div>
-
-	<!-- Warm-up -->
-
-	<div id="warmup-mode" style="display:none">
-		<h6>Morning Warm-Up Mode</h6>
-		<ul>
-			<li class="seq-font">Triggers:</li>
-			<ol>
-				<li class="seq-font">Manual command from the central controller during scheduled unoccupancy.</li>
-			</ol>
-			<li class="seq-font">Sequence</li>
-			<ol>
-				<li class="seq-font">Terminal unit will maintain the warmup temperature setpoints.</li>
-				<li class="seq-font unocc-ventilation-mode" style="display:none">If the room temperature is within the heating/cooling deadband and room CO2 levels are below the high-limit threshold, the terminal unit will maintain the occupied minimum ventilation airflow setpoint. If room CO2 levels rise above 1200ppm (adjustable), the terminal unit will engage the ventilation PID controller to increase airflow into the space to meet the occupied maximum ventilation airflow setpoint until room CO2 levels fall below 800ppm (adjustable), at which point, the ventilation PID controller will disengage. The ventilation PID controller takes precedence over both the heating and cooling PID controllers.</li>
-				<li class="seq-font unocc-ventilation-off" style="display:show">If the room temperature is within the heating/cooling deadband, the terminal unit will turn off.</li>
-			</ol>
-		</ul>
-	</div>
-
-	<!-- Cooldown -->
-
-	<div id="cooldown-mode" style="display:none">
-		<h6>Morning Cool-Down Mode</h6>
-		<ul>
-			<li class="seq-font">Triggers:</li>
-			<ol>
-				<li class="seq-font">Manual command from the central controller during scheduled unoccupancy.</li>
-			</ol>
-			<li class="seq-font">Sequence</li>
-			<ol>
-				<li class="seq-font">Terminal unit will maintain the cooldown temperature setpoints.</li>
-				<li class="seq-font unocc-ventilation-mode" style="display:none">If the room temperature is within the heating/cooling deadband and room CO2 levels are below the high-limit threshold, the terminal unit will maintain the occupied minimum ventilation airflow setpoint. If room CO2 levels rise above 1200ppm (adjustable), the terminal unit will engage the ventilation PID controller to increase airflow into the space to meet the occupied maximum ventilation airflow setpoint until room CO2 levels fall below 800ppm (adjustable), at which point, the ventilation PID controller will disengage. The ventilation PID controller takes precedence over both the heating and cooling PID controllers.</li>
-				<li class="seq-font unocc-ventilation-off" style="display:show">If the room temperature is within the heating/cooling deadband, the terminal unit will turn off.</li>
-			</ol>
-		</ul>
-	</div>
-
-	<!-- Night-Cooling -->
-
-	<div id="nightcool-mode" style="display:none">
-		<h6>Night Cooling Mode</h6>
-		<ul>
-			<li class="seq-font">Triggers:</li>
-			<ol>
-				<li class="seq-font">Manual command from the central controller during scheduled unoccupancy<span class="standby-mode" style="display:none"> and occupancy detector detects no movement for 10 minutes(adjustable)</span>.</li>
-			</ol>
-			<li class="seq-font">Sequence</li>
-			<ol>
-				<li class="seq-font">Terminal unit will maintain the occupied cooling setpoints.</li>
-				<li class="seq-font unocc-ventilation-mode" style="display:none">If the room temperature is within the heating/cooling deadband and room CO2 levels are below the high-limit threshold, the terminal unit will maintain the unoccupied minimum ventilation airflow setpoint. If room CO2 levels rise above 1200ppm (adjustable), the terminal unit will engage the ventilation PID controller to increase airflow into the space to meet the occupied maximum ventilation airflow setpoint until room CO2 levels fall below 800ppm (adjustable), at which point, the ventilation PID controller will disengage. The ventilation PID controller takes precedence over both the heating and cooling PID controllers.</li>
-				<li class="seq-font unocc-ventilation-off" style="display:show">If the room temperature is within the heating/cooling deadband, the terminal unit will turn off.</li>
-			</ol>
-		</ul>
+		<h3><span class="badge badge-secondary sequence-start badge-function">Air System Stop Heating Mode</span></h3>
+		<div class="fpt-container">
+			<div class="row" id="airsys-stopheat-div-1000">
+				<div class="col-xl-7">
+					<ul id="airsys-stopheat-div-1000-airsys-stopheat-ul-1000">
+						<li id="airsys-stopheat-div-1000-airsys-stopheat-1000" onclick="remove_li(this)">Confirm the "ZONE.MODE" point is currently 2 or Occupied</li>
+						<li id="airsys-stopheat-div-1000-airsys-stopheat-1001" onclick="remove_li(this)">Open the Bacnet Schedule and Edit the SSTO (Schedule Optimization" parameters</li>
+						<li id="airsys-stopheat-div-1000-airsys-stopheat-1002" onclick="remove_li(this)">Confirm "Stop Optimization" is checked</li>
+						<li id="airsys-stopheat-div-1000-airsys-stopheat-1003" onclick="remove_li(this)">Go to the "Stop" tab and confirm the Heating Mode is set for "STOP_HTG"</li>
+						<li id="airsys-stopheat-div-1000-airsys-stopheat-1004" onclick="remove_li(this)">Record the current "Max Stop Duration" and Adjust it to 5 minutes</li>
+						<li id="airsys-stopheat-div-1000-airsys-stopheat-1005" onclick="remove_li(this)">Record the current "Calculation Constant" and Adjust it to 1 minute</li>
+						<li id="airsys-stopheat-div-1000-airsys-stopheat-1006" onclick="remove_li(this)">Record the Differential Temperature (Default = 1.8 degF)</li>
+						<li id="airsys-stopheat-div-1000-airsys-stopheat-1007" onclick="remove_li(this)">Confirm "Use Learning" is unchecked</li>
+						<li id="airsys-stopheat-div-1000-airsys-stopheat-1008" onclick="remove_li(this)">Command the Stop Heating Setpoint to the value of the current "Inside Temperature" used for SSTO - the Differential Temperature from the previous step + 0.5</li>
+						<li id="airsys-stopheat-div-1000-airsys-stopheat-1009" onclick="remove_li(this)">Press "OK"</li>
+						<li id="airsys-stopheat-div-1000-airsys-stopheat-1010" onclick="remove_li(this)">Change the Bacnet Schedule to end Occupancy in 10 minutes</li>
+						<li id="airsys-stopheat-div-1000-airsys-stopheat-1011" onclick="remove_li(this)">Wait 5-6 minutes and confirm "ZONE.MODE" is commanded to the Stop-Heating Mode Value</li>
+					</ul>
+			    </div>
+			    <div class="col-xl-5">
+			      <input type="radio" name="airsys-stopheat-1000">
+			      <label class="passfail">Pass</label>
+			      <input type="radio" name="airsys-stopheat-1000">
+			      <label class="passfail fail">Fail</label>
+			      <input type="radio" name="airsys-stopheat-1000">
+			      <label class="passfail na">NA</label>
+			      <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-stopheat-remove-1000" name="remove" style="display: none;">Remove</button>
+			      <button onclick="append_elem(this)" class="custom-buttons" id="airsys-stopheat-to-1000" name="to" style="display: none;">Add To</button>
+			      <button onclick="before_elem(this)" class="custom-buttons" id="airsys-stopheat-before-1000" name="before" style="display: none;">Add Before</button>
+			      <button onclick="after_elem(this)" class="custom-buttons" id="airsys-stopheat-after-1000" name="after" style="display: none;">Add After</button>
+			    </div>
+		    </div>
+		    <div class="row" id="airsys-stopheat-div-2000">
+				<div class="col-xl-7">
+					<ul id="airsys-stopheat-div-2000-airsys-stopheat-ul-2000">
+						<li id="airsys-stopheat-div-2000-airsys-stopheat-2001" onclick="remove_li(this)">Confirm all lines for Stop-Heating are traced, and the Air System turns off to conserve energy</li>
+					</ul>
+			    </div>
+			    <div class="col-xl-5">
+			      <input type="radio" name="airsys-stopheat-2000">
+			      <label class="passfail">Pass</label>
+			      <input type="radio" name="airsys-stopheat-2000">
+			      <label class="passfail fail">Fail</label>
+			      <input type="radio" name="airsys-stopheat-2000">
+			      <label class="passfail na">NA</label>
+			      <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-stopheat-remove-2000" name="remove" style="display: none;">Remove</button>
+			      <button onclick="append_elem(this)" class="custom-buttons" id="airsys-stopheat-to-2000" name="to" style="display: none;">Add To</button>
+			      <button onclick="before_elem(this)" class="custom-buttons" id="airsys-stopheat-before-2000" name="before" style="display: none;">Add Before</button>
+			      <button onclick="after_elem(this)" class="custom-buttons" id="airsys-stopheat-after-2000" name="after" style="display: none;">Add After</button>
+			    </div>
+		    </div>
+		    <div class="row" id="airsys-stopheat-div-3000">
+				<div class="col-xl-7">
+					<ul id="airsys-stopheat-div-3000-airsys-stopheat-ul-3000">
+						<li id="airsys-stopheat-div-3000-airsys-stopheat-3000" onclick="remove_li(this)">Wait 4-5 minutes and confirm the "ZONE.MODE" gets commanded to Vacancy (Unoccupied) Mode</li>
+						<li id="airsys-stopheat-div-3000-airsys-stopheat-3001" onclick="remove_li(this)">Release the Stop Heating Setpoint from Operator Priority</li>
+						<li id="airsys-stopheat-div-3000-airsys-stopheat-3002" onclick="remove_li(this)">Adjust the Max Stop Duration back to the recorded value</li>
+						<li id="airsys-stopheat-div-3000-airsys-stopheat-3003" onclick="remove_li(this)">Adjust the Calculation Constant back to the recorded value</li>
+						<li id="airsys-stopheat-div-3000-airsys-stopheat-3004" onclick="remove_li(this)">Confirm "Use Learning" is checked</li>
+						<li id="airsys-stopheat-div-3000-airsys-stopheat-3005" onclick="remove_li(this)">Adjust the Bacnet Schedule Occupancy end time back to its original value</li>
+					</ul>
+			    </div>
+			    <div class="col-xl-5">
+			      <input type="radio" name="airsys-stopheat-3000">
+			      <label class="passfail">Pass</label>
+			      <input type="radio" name="airsys-stopheat-3000">
+			      <label class="passfail fail">Fail</label>
+			      <input type="radio" name="airsys-stopheat-3000">
+			      <label class="passfail na">NA</label>
+			      <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-stopheat-remove-3000" name="remove" style="display: none;">Remove</button>
+			      <button onclick="append_elem(this)" class="custom-buttons" id="airsys-stopheat-to-3000" name="to" style="display: none;">Add To</button>
+			      <button onclick="before_elem(this)" class="custom-buttons" id="airsys-stopheat-before-3000" name="before" style="display: none;">Add Before</button>
+			      <button onclick="after_elem(this)" class="custom-buttons" id="airsys-stopheat-after-3000" name="after" style="display: none;">Add After</button>
+			    </div>
+		    </div>
+		</div>
+		<h3><span class="badge badge-secondary sequence-start badge-function">Air System Stop Cooling Mode</span></h3>
+		<div class="fpt-container">
+			<div class="row" id="airsys-stopcool-div-1000">
+				<div class="col-xl-7">
+					<ul id="airsys-stopcool-div-1000-airsys-stopcool-ul-1000">
+						<li id="airsys-stopcool-div-1000-airsys-stopcool-1000" onclick="remove_li(this)">Confirm the "ZONE.MODE" point is currently 2 or Occupied</li>
+						<li id="airsys-stopcool-div-1000-airsys-stopcool-1001" onclick="remove_li(this)">Open the Bacnet Schedule and Edit the SSTO (Schedule Optimization" parameters</li>
+						<li id="airsys-stopcool-div-1000-airsys-stopcool-1002" onclick="remove_li(this)">Confirm "Stop Optimization" is checked</li>
+						<li id="airsys-stopcool-div-1000-airsys-stopcool-1003" onclick="remove_li(this)">Go to the "Stop" tab and confirm the Cooling Mode is set for "STOP_CLG"</li>
+						<li id="airsys-stopcool-div-1000-airsys-stopcool-1004" onclick="remove_li(this)">Record the current "Max Stop Duration" and Adjust it to 5 minutes</li>
+						<li id="airsys-stopcool-div-1000-airsys-stopcool-1005" onclick="remove_li(this)">Record the current "Calculation Constant" and Adjust it to 1 minute</li>
+						<li id="airsys-stopcool-div-1000-airsys-stopcool-1006" onclick="remove_li(this)">Record the Differential Temperature (Default = 1.8 degF)</li>
+						<li id="airsys-stopcool-div-1000-airsys-stopcool-1007" onclick="remove_li(this)">Confirm "Use Learning" is unchecked</li>
+						<li id="airsys-stopcool-div-1000-airsys-stopcool-1008" onclick="remove_li(this)">Command the Stop Cooling Setpoint to the value of the current "Inside Temperature" used for SSTO + the Differential Temperature from the previous step - 0.5</li>
+						<li id="airsys-stopcool-div-1000-airsys-stopcool-1009" onclick="remove_li(this)">Press "OK"</li>
+						<li id="airsys-stopcool-div-1000-airsys-stopcool-1010" onclick="remove_li(this)">Change the Bacnet Schedule to end Occupancy in 10 minutes</li>
+						<li id="airsys-stopcool-div-1000-airsys-stopcool-1011" onclick="remove_li(this)">Wait 5-6 minutes and confirm "ZONE.MODE" is commanded to the Stop-Cooling Mode Value</li>
+					</ul>
+			    </div>
+			    <div class="col-xl-5">
+			      <input type="radio" name="airsys-stopcool-1000">
+			      <label class="passfail">Pass</label>
+			      <input type="radio" name="airsys-stopcool-1000">
+			      <label class="passfail fail">Fail</label>
+			      <input type="radio" name="airsys-stopcool-1000">
+			      <label class="passfail na">NA</label>
+			      <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-stopcool-remove-1000" name="remove" style="display: none;">Remove</button>
+			      <button onclick="append_elem(this)" class="custom-buttons" id="airsys-stopcool-to-1000" name="to" style="display: none;">Add To</button>
+			      <button onclick="before_elem(this)" class="custom-buttons" id="airsys-stopcool-before-1000" name="before" style="display: none;">Add Before</button>
+			      <button onclick="after_elem(this)" class="custom-buttons" id="airsys-stopcool-after-1000" name="after" style="display: none;">Add After</button>
+			    </div>
+		    </div>
+		    <div class="row" id="airsys-stopcool-div-2000">
+				<div class="col-xl-7">
+					<ul id="airsys-stopcool-div-2000-airsys-stopcool-ul-2000">
+						<li id="airsys-stopcool-div-2000-airsys-stopcool-2001" onclick="remove_li(this)">Confirm all lines for Stop-Cooling are traced, and the Air System turns off to conserve energy</li>
+					</ul>
+			    </div>
+			    <div class="col-xl-5">
+			      <input type="radio" name="airsys-stopcool-2000">
+			      <label class="passfail">Pass</label>
+			      <input type="radio" name="airsys-stopcool-2000">
+			      <label class="passfail fail">Fail</label>
+			      <input type="radio" name="airsys-stopcool-2000">
+			      <label class="passfail na">NA</label>
+			      <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-stopcool-remove-2000" name="remove" style="display: none;">Remove</button>
+			      <button onclick="append_elem(this)" class="custom-buttons" id="airsys-stopcool-to-2000" name="to" style="display: none;">Add To</button>
+			      <button onclick="before_elem(this)" class="custom-buttons" id="airsys-stopcool-before-2000" name="before" style="display: none;">Add Before</button>
+			      <button onclick="after_elem(this)" class="custom-buttons" id="airsys-stopcool-after-2000" name="after" style="display: none;">Add After</button>
+			    </div>
+		    </div>
+		    <div class="row" id="airsys-stopcool-div-3000">
+				<div class="col-xl-7">
+					<ul id="airsys-stopcool-div-3000-airsys-stopcool-ul-3000">
+						<li id="airsys-stopcool-div-3000-airsys-stopcool-3000" onclick="remove_li(this)">Wait 4-5 minutes and confirm the "ZONE.MODE" gets commanded to Vacancy (Unoccupied) Mode</li>
+						<li id="airsys-stopcool-div-3000-airsys-stopcool-3001" onclick="remove_li(this)">Release the Stop Cooling Setpoint from Operator Priority</li>
+						<li id="airsys-stopcool-div-3000-airsys-stopcool-3002" onclick="remove_li(this)">Adjust the Max Stop Duration back to the recorded value</li>
+						<li id="airsys-stopcool-div-3000-airsys-stopcool-3003" onclick="remove_li(this)">Adjust the Calculation Constant back to the recorded value</li>
+						<li id="airsys-stopcool-div-3000-airsys-stopcool-3004" onclick="remove_li(this)">Confirm "Use Learning" is checked</li>
+						<li id="airsys-stopcool-div-3000-airsys-stopcool-3005" onclick="remove_li(this)">Adjust the Bacnet Schedule Occupancy end time back to its original value</li>
+					</ul>
+			    </div>
+			    <div class="col-xl-5">
+			      <input type="radio" name="airsys-stopcool-3000">
+			      <label class="passfail">Pass</label>
+			      <input type="radio" name="airsys-stopcool-3000">
+			      <label class="passfail fail">Fail</label>
+			      <input type="radio" name="airsys-stopcool-3000">
+			      <label class="passfail na">NA</label>
+			      <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-stopcool-remove-3000" name="remove" style="display: none;">Remove</button>
+			      <button onclick="append_elem(this)" class="custom-buttons" id="airsys-stopcool-to-3000" name="to" style="display: none;">Add To</button>
+			      <button onclick="before_elem(this)" class="custom-buttons" id="airsys-stopcool-before-3000" name="before" style="display: none;">Add Before</button>
+			      <button onclick="after_elem(this)" class="custom-buttons" id="airsys-stopcool-after-3000" name="after" style="display: none;">Add After</button>
+			    </div>
+		    </div>
+		</div>
+	<div class="airsys unoccupied">
+		<h4><span class="badge badge-secondary sequence-start">Air System Unoccupied Mode</span></h4>
+		<div class="fpt-container">
+			<div class="row" id="airsys-unoccupied-div-1000">
+				<div class="col-xl-7">
+					<ul id="airsys-unoccupied-div-1000-airsys-unoccupied-ul-1000">
+						<li id="airsys-unoccupied-div-1000-airsys-unoccupied-1000" onclick="remove_li(this)">Open Bacnet Scheduler and change Occupied Mode end-time to 5 minutes from now</li>
+						<li id="airsys-unoccupied-div-1000-airsys-unoccupied-1001" onclick="remove_li(this)">Wait 5 minutes and confirm Air System 'ZONE.MODE' goes into Unoccupied Mode</li>
+						<li id="airsys-unoccupied-div-1000-airsys-unoccupied-1002" onclick="remove_li(this)">Confirm all lines for Unoccupied Mode are traced and lines for Occupied Mode, Warmup, Cooldown, Night Heating, and Night Cooling are skipped</li>
+					</ul>
+			    </div>
+			    <div class="col-xl-5">
+			      <input type="radio" name="airsys-unoccupied-1000">
+			      <label class="passfail">Pass</label>
+			      <input type="radio" name="airsys-unoccupied-1000">
+			      <label class="passfail fail">Fail</label>
+			      <input type="radio" name="airsys-unoccupied-1000">
+			      <label class="passfail na">NA</label>
+			      <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-unoccupied-remove-1000" name="remove" style="display: none;">Remove</button>
+			      <button onclick="append_elem(this)" class="custom-buttons" id="airsys-unoccupied-to-1000" name="to" style="display: none;">Add To</button>
+			      <button onclick="before_elem(this)" class="custom-buttons" id="airsys-unoccupied-before-1000" name="before" style="display: none;">Add Before</button>
+			      <button onclick="after_elem(this)" class="custom-buttons" id="airsys-unoccupied-after-1000" name="after" style="display: none;">Add After</button>
+			    </div>
+		    </div>
+		    <div class="row" id="airsys-unoccupied-div-2000">
+				<div class="col-xl-7">
+					<ul id="airsys-unoccupied-div-2000-airsys-unoccupied-ul-2000">
+						<li id="airsys-unoccupied-div-2000-airsys-unoccupied-2001" onclick="remove_li(this)">Confirm all On/Off commands are turned off, Fan Speeds are commanded to 0 Hz or %, all Dampers and Actuators are commanded to 0% or 'Off', and all timers and counters are set to 0</li>
+					</ul>
+			    </div>
+			    <div class="col-xl-5">
+			      <input type="radio" name="airsys-unoccupied-2000">
+			      <label class="passfail">Pass</label>
+			      <input type="radio" name="airsys-unoccupied-2000">
+			      <label class="passfail fail">Fail</label>
+			      <input type="radio" name="airsys-unoccupied-2000">
+			      <label class="passfail na">NA</label>
+			      <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-unoccupied-remove-2000" name="remove" style="display: none;">Remove</button>
+			      <button onclick="append_elem(this)" class="custom-buttons" id="airsys-unoccupied-to-2000" name="to" style="display: none;">Add To</button>
+			      <button onclick="before_elem(this)" class="custom-buttons" id="airsys-unoccupied-before-2000" name="before" style="display: none;">Add Before</button>
+			      <button onclick="after_elem(this)" class="custom-buttons" id="airsys-unoccupied-after-2000" name="after" style="display: none;">Add After</button>
+			    </div>
+		    </div>
+		</div>
+		<h3><span class="badge badge-secondary sequence-start badge-function">Air System Night Heating Mode</span></h3>
+		<div class="fpt-container">
+			<div class="row" id="airsys-ngtheat-div-1000">
+				<div class="col-xl-7">
+					<ul id="airsys-ngtheat-div-1000-airsys-ngtheat-ul-1000">
+						<li id="airsys-ngtheat-div-1000-airsys-ngtheat-1000" onclick="remove_li(this)">Confirm the "ZONE.MODE" point is currently 1 or Vacancy (Unoccupied)</li>
+						<li id="airsys-ngtheat-div-1000-airsys-ngtheat-1001" onclick="remove_li(this)">Open the Bacnet Schedule and Edit the SSTO (Schedule Optimization" parameters</li>
+						<li id="airsys-ngtheat-div-1000-airsys-ngtheat-1002" onclick="remove_li(this)">Confirm "Night Operation" is checked</li>
+						<li id="airsys-ngtheat-div-1000-airsys-ngtheat-1003" onclick="remove_li(this)">Go to the "Night" tab and record the Differential Temperature (Default = 1.8 degF)</li>
+						<li id="airsys-ngtheat-div-1000-airsys-ngtheat-1004" onclick="remove_li(this)">Confirm the Night Heating Mode is set to "NGHT_HTG"</li>
+						<li id="airsys-ngtheat-div-1000-airsys-ngtheat-1005" onclick="remove_li(this)">Command the Night Heating Setpoint to the value of the current "Inside Temperature" used for SSTO + the Differential Temperature from the previous step + 1</li>
+						<li id="airsys-ngtheat-div-1000-airsys-ngtheat-1006" onclick="remove_li(this)">Press "OK"</li>
+						<li id="airsys-ngtheat-div-1000-airsys-ngtheat-1007" onclick="remove_li(this)">Wait 1-2 minutes and confirm "ZONE.MODE" is commanded to the Night-Heating Mode Value</li>
+					</ul>
+			    </div>
+			    <div class="col-xl-5">
+			      <input type="radio" name="airsys-ngtheat-1000">
+			      <label class="passfail">Pass</label>
+			      <input type="radio" name="airsys-ngtheat-1000">
+			      <label class="passfail fail">Fail</label>
+			      <input type="radio" name="airsys-ngtheat-1000">
+			      <label class="passfail na">NA</label>
+			      <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-ngtheat-remove-1000" name="remove" style="display: none;">Remove</button>
+			      <button onclick="append_elem(this)" class="custom-buttons" id="airsys-ngtheat-to-1000" name="to" style="display: none;">Add To</button>
+			      <button onclick="before_elem(this)" class="custom-buttons" id="airsys-ngtheat-before-1000" name="before" style="display: none;">Add Before</button>
+			      <button onclick="after_elem(this)" class="custom-buttons" id="airsys-ngtheat-after-1000" name="after" style="display: none;">Add After</button>
+			    </div>
+		    </div>
+		    <div class="row" id="airsys-ngtheat-div-2000">
+				<div class="col-xl-7">
+					<ul id="airsys-ngtheat-div-2000-airsys-ngtheat-ul-2000">
+						<li id="airsys-ngtheat-div-2000-airsys-ngtheat-2001" onclick="remove_li(this)">Confirm all lines for Night-Heating are traced, and the Air System turns on to control airflow/static and temperature to bring the space back above the Night-Heating Setpoint</li>
+					</ul>
+			    </div>
+			    <div class="col-xl-5">
+			      <input type="radio" name="airsys-ngtheat-2000">
+			      <label class="passfail">Pass</label>
+			      <input type="radio" name="airsys-ngtheat-2000">
+			      <label class="passfail fail">Fail</label>
+			      <input type="radio" name="airsys-ngtheat-2000">
+			      <label class="passfail na">NA</label>
+			      <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-ngtheat-remove-2000" name="remove" style="display: none;">Remove</button>
+			      <button onclick="append_elem(this)" class="custom-buttons" id="airsys-ngtheat-to-2000" name="to" style="display: none;">Add To</button>
+			      <button onclick="before_elem(this)" class="custom-buttons" id="airsys-ngtheat-before-2000" name="before" style="display: none;">Add Before</button>
+			      <button onclick="after_elem(this)" class="custom-buttons" id="airsys-ngtheat-after-2000" name="after" style="display: none;">Add After</button>
+			    </div>
+		    </div>
+		    <div class="row" id="airsys-ngtheat-div-3000">
+				<div class="col-xl-7">
+					<ul id="airsys-ngtheat-div-3000-airsys-ngtheat-ul-3000">
+						<li id="airsys-ngtheat-div-3000-airsys-ngtheat-3001" onclick="remove_li(this)">Release the Night-Heating Setpoint from Operator priority</li>
+						<li id="airsys-ngtheat-div-3000-airsys-ngtheat-3002" onclick="remove_li(this)">Wait 1-2 minutes and confirm the "ZONE.MODE" point reverts back to Vacancy (Unoccupied) Mode</li>
+					</ul>
+			    </div>
+			    <div class="col-xl-5">
+			      <input type="radio" name="airsys-ngtheat-3000">
+			      <label class="passfail">Pass</label>
+			      <input type="radio" name="airsys-ngtheat-3000">
+			      <label class="passfail fail">Fail</label>
+			      <input type="radio" name="airsys-ngtheat-3000">
+			      <label class="passfail na">NA</label>
+			      <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-ngtheat-remove-3000" name="remove" style="display: none;">Remove</button>
+			      <button onclick="append_elem(this)" class="custom-buttons" id="airsys-ngtheat-to-3000" name="to" style="display: none;">Add To</button>
+			      <button onclick="before_elem(this)" class="custom-buttons" id="airsys-ngtheat-before-3000" name="before" style="display: none;">Add Before</button>
+			      <button onclick="after_elem(this)" class="custom-buttons" id="airsys-ngtheat-after-3000" name="after" style="display: none;">Add After</button>
+			    </div>
+		    </div>
+		</div>
+		<h3><span class="badge badge-secondary sequence-start badge-function">Air System Night Cooling Mode</span></h3>
+		<div class="fpt-container">
+			<div class="row" id="airsys-ngtcool-div-1000">
+				<div class="col-xl-7">
+					<ul id="airsys-ngtcool-div-1000-airsys-ngtcool-ul-1000">
+						<li id="airsys-ngtcool-div-1000-airsys-ngtcool-1000" onclick="remove_li(this)">Confirm the "ZONE.MODE" point is currently 1 or Vacancy (Unoccupied)</li>
+						<li id="airsys-ngtcool-div-1000-airsys-ngtcool-1001" onclick="remove_li(this)">Open the Bacnet Schedule and Edit the SSTO (Schedule Optimization" parameters</li>
+						<li id="airsys-ngtcool-div-1000-airsys-ngtcool-1002" onclick="remove_li(this)">Confirm "Night Operation" is checked</li>
+						<li id="airsys-ngtcool-div-1000-airsys-ngtcool-1003" onclick="remove_li(this)">Go to the "Night" tab and record the Differential Temperature (Default = 1.8 degF)</li>
+						<li id="airsys-ngtcool-div-1000-airsys-ngtcool-1004" onclick="remove_li(this)">Confirm the Night Cooling Mode is set to "NGHT_CLG"</li>
+						<li id="airsys-ngtcool-div-1000-airsys-ngtcool-1005" onclick="remove_li(this)">Command the Night Cooling Setpoint to the value of the current "Inside Temperature" used for SSTO - the Differential Temperature from the previous step - 1</li>
+						<li id="airsys-ngtcool-div-1000-airsys-ngtcool-1006" onclick="remove_li(this)">Press "OK"</li>
+						<li id="airsys-ngtcool-div-1000-airsys-ngtcool-1007" onclick="remove_li(this)">Wait 1-2 minutes and confirm "ZONE.MODE" is commanded to the Night-Cooling Mode Value</li>
+					</ul>
+			    </div>
+			    <div class="col-xl-5">
+			      <input type="radio" name="airsys-ngtcool-1000">
+			      <label class="passfail">Pass</label>
+			      <input type="radio" name="airsys-ngtcool-1000">
+			      <label class="passfail fail">Fail</label>
+			      <input type="radio" name="airsys-ngtcool-1000">
+			      <label class="passfail na">NA</label>
+			      <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-ngtcool-remove-1000" name="remove" style="display: none;">Remove</button>
+			      <button onclick="append_elem(this)" class="custom-buttons" id="airsys-ngtcool-to-1000" name="to" style="display: none;">Add To</button>
+			      <button onclick="before_elem(this)" class="custom-buttons" id="airsys-ngtcool-before-1000" name="before" style="display: none;">Add Before</button>
+			      <button onclick="after_elem(this)" class="custom-buttons" id="airsys-ngtcool-after-1000" name="after" style="display: none;">Add After</button>
+			    </div>
+		    </div>
+		    <div class="row" id="airsys-ngtcool-div-2000">
+				<div class="col-xl-7">
+					<ul id="airsys-ngtcool-div-2000-airsys-ngtcool-ul-2000">
+						<li id="airsys-ngtcool-div-2000-airsys-ngtcool-2001" onclick="remove_li(this)">Confirm all lines for Night-Cooling are traced, and the Air System turns on to control airflow/static and temperature to bring the space back above the Night-Cooling Setpoint</li>
+					</ul>
+			    </div>
+			    <div class="col-xl-5">
+			      <input type="radio" name="airsys-ngtcool-2000">
+			      <label class="passfail">Pass</label>
+			      <input type="radio" name="airsys-ngtcool-2000">
+			      <label class="passfail fail">Fail</label>
+			      <input type="radio" name="airsys-ngtcool-2000">
+			      <label class="passfail na">NA</label>
+			      <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-ngtcool-remove-2000" name="remove" style="display: none;">Remove</button>
+			      <button onclick="append_elem(this)" class="custom-buttons" id="airsys-ngtcool-to-2000" name="to" style="display: none;">Add To</button>
+			      <button onclick="before_elem(this)" class="custom-buttons" id="airsys-ngtcool-before-2000" name="before" style="display: none;">Add Before</button>
+			      <button onclick="after_elem(this)" class="custom-buttons" id="airsys-ngtcool-after-2000" name="after" style="display: none;">Add After</button>
+			    </div>
+		    </div>
+		    <div class="row" id="airsys-ngtcool-div-3000">
+				<div class="col-xl-7">
+					<ul id="airsys-ngtcool-div-3000-airsys-ngtcool-ul-3000">
+						<li id="airsys-ngtcool-div-3000-airsys-ngtcool-3001" onclick="remove_li(this)">Release the Night-Cooling Setpoint from Operator priority</li>
+						<li id="airsys-ngtcool-div-3000-airsys-ngtcool-3002" onclick="remove_li(this)">Wait 1-2 minutes and confirm the "ZONE.MODE" point reverts back to Vacancy (Unoccupied) Mode</li>
+					</ul>
+			    </div>
+			    <div class="col-xl-5">
+			      <input type="radio" name="airsys-ngtcool-3000">
+			      <label class="passfail">Pass</label>
+			      <input type="radio" name="airsys-ngtcool-3000">
+			      <label class="passfail fail">Fail</label>
+			      <input type="radio" name="airsys-ngtcool-3000">
+			      <label class="passfail na">NA</label>
+			      <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-ngtcool-remove-3000" name="remove" style="display: none;">Remove</button>
+			      <button onclick="append_elem(this)" class="custom-buttons" id="airsys-ngtcool-to-3000" name="to" style="display: none;">Add To</button>
+			      <button onclick="before_elem(this)" class="custom-buttons" id="airsys-ngtcool-before-3000" name="before" style="display: none;">Add Before</button>
+			      <button onclick="after_elem(this)" class="custom-buttons" id="airsys-ngtcool-after-3000" name="after" style="display: none;">Add After</button>
+			    </div>
+		    </div>
+		</div>
+		<h3><span class="badge badge-secondary sequence-start badge-function">Air System Warmup Mode</span></h3>
+		<div class="fpt-container">
+			<div class="row" id="airsys-warmup-div-1000">
+				<div class="col-xl-7">
+					<ul id="airsys-warmup-div-1000-airsys-warmup-ul-1000">
+						<li id="airsys-warmup-div-1000-airsys-warmup-1000" onclick="remove_li(this)">Confirm the "ZONE.MODE" point is currently 1 or Vacancy (Unoccupied)</li>
+						<li id="airsys-warmup-div-1000-airsys-warmup-1001" onclick="remove_li(this)">Open the Bacnet Schedule and Edit the SSTO (Schedule Optimization" parameters</li>
+						<li id="airsys-warmup-div-1000-airsys-warmup-1002" onclick="remove_li(this)">Confirm "Start Optimization" is checked</li>
+						<li id="airsys-warmup-div-1000-airsys-warmup-1003" onclick="remove_li(this)">Confirm the "Allowed Operation" and "Desired Operation" are both set to "Heating" or "Heating and Cooling"</li>
+						<li id="airsys-warmup-div-1000-airsys-warmup-1004" onclick="remove_li(this)">Go to the "Start" tab and confirm the "Heating Mode" is set to "WARMUP"</li>
+						<li id="airsys-warmup-div-1000-airsys-warmup-1005" onclick="remove_li(this)">Confirm "If too early" is set to "Switch to next scheduled occupancy mode"</li>
+						<li id="airsys-warmup-div-1000-airsys-warmup-1006" onclick="remove_li(this)">Confirm "If too late" is set to "Switch to mode WARMUP"</li>
+						<li id="airsys-warmup-div-1000-airsys-warmup-1007" onclick="remove_li(this)">Uncheck Use Learning and click "Advanced"</li>
+						<li id="airsys-warmup-div-1000-airsys-warmup-1008" onclick="remove_li(this)">Set the "Outside Temp Limit" to a value higher than the current Outside Air Temperature. If the current Outside Air Temperature is &gt; 87.8 degF leave the "Outside Temp Limit" at 59 degF</li>
+						<li id="airsys-warmup-div-1000-airsys-warmup-1009" onclick="remove_li(this)">Record the "Inside Temp Deviation" value</li>
+						<li id="airsys-warmup-div-1000-airsys-warmup-1010" onclick="remove_li(this)">Set the "Min Start Duration" to 0</li>
+						<li id="airsys-warmup-div-1000-airsys-warmup-1011" onclick="remove_li(this)">Set the "Max Start Duration" to 10</li>
+						<li id="airsys-warmup-div-1000-airsys-warmup-1012" onclick="remove_li(this)">Set the "Max Extension Time" to 0</li>
+						<li id="airsys-warmup-div-1000-airsys-warmup-1013" onclick="remove_li(this)">Set the "Max Setpoint Offset" to 0</li>
+						<li id="airsys-warmup-div-1000-airsys-warmup-1014" onclick="remove_li(this)">Press "OK"</li>
+						<li id="airsys-warmup-div-1000-airsys-warmup-1015" onclick="remove_li(this)">Go to the "General" tab</li>
+						<li id="airsys-warmup-div-1000-airsys-warmup-1016" onclick="remove_li(this)">If the current Outside Air Temperature &gt; 87.8 degF change "Outside Temperature" from a point name to numerical value and set the value to 45 degF</li>
+						<li id="airsys-warmup-div-1000-airsys-warmup-1017" onclick="remove_li(this)">Command the "Heating Set Points - During Occupancy" to the current "Inside Temperature" - "Inside Temp Deviation" - 1</li>
+						<li id="airsys-warmup-div-1000-airsys-warmup-1018" onclick="remove_li(this)">Press "OK"</li>
+						<li id="airsys-warmup-div-1000-airsys-warmup-1019" onclick="remove_li(this)">Set the Occupancy Start Time to 12 minutes from now. The Occupancy End Time should be adjusted accordingly</li>
+						<li id="airsys-warmup-div-1000-airsys-warmup-1020" onclick="remove_li(this)">Press "OK"</li>
+						<li id="airsys-warmup-div-1000-airsys-warmup-1021" onclick="remove_li(this)">Wait 2-3 minutes and confirm "ZONE.MODE" is commanded to the Morning-Warmup Mode Value</li>
+					</ul>
+			    </div>
+			    <div class="col-xl-5">
+			      <input type="radio" name="airsys-warmup-1000">
+			      <label class="passfail">Pass</label>
+			      <input type="radio" name="airsys-warmup-1000">
+			      <label class="passfail fail">Fail</label>
+			      <input type="radio" name="airsys-warmup-1000">
+			      <label class="passfail na">NA</label>
+			      <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-warmup-remove-1000" name="remove" style="display: none;">Remove</button>
+			      <button onclick="append_elem(this)" class="custom-buttons" id="airsys-warmup-to-1000" name="to" style="display: none;">Add To</button>
+			      <button onclick="before_elem(this)" class="custom-buttons" id="airsys-warmup-before-1000" name="before" style="display: none;">Add Before</button>
+			      <button onclick="after_elem(this)" class="custom-buttons" id="airsys-warmup-after-1000" name="after" style="display: none;">Add After</button>
+			    </div>
+		    </div>
+		    <div class="row" id="airsys-warmup-div-2000">
+				<div class="col-xl-7">
+					<ul id="airsys-warmup-div-2000-airsys-warmup-ul-2000">
+						<li id="airsys-warmup-div-2000-airsys-warmup-2001" onclick="remove_li(this)">Confirm all lines for Morning Warmup are traced, and the Air System turns on to control airflow/static and temperature to bring the space up to the Occupied Heating Setpoint in preparation for occupancy</li>
+					</ul>
+			    </div>
+			    <div class="col-xl-5">
+			      <input type="radio" name="airsys-warmup-2000">
+			      <label class="passfail">Pass</label>
+			      <input type="radio" name="airsys-warmup-2000">
+			      <label class="passfail fail">Fail</label>
+			      <input type="radio" name="airsys-warmup-2000">
+			      <label class="passfail na">NA</label>
+			      <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-warmup-remove-2000" name="remove" style="display: none;">Remove</button>
+			      <button onclick="append_elem(this)" class="custom-buttons" id="airsys-warmup-to-2000" name="to" style="display: none;">Add To</button>
+			      <button onclick="before_elem(this)" class="custom-buttons" id="airsys-warmup-before-2000" name="before" style="display: none;">Add Before</button>
+			      <button onclick="after_elem(this)" class="custom-buttons" id="airsys-warmup-after-2000" name="after" style="display: none;">Add After</button>
+			    </div>
+		    </div>
+		    <div class="row" id="airsys-warmup-div-3000">
+				<div class="col-xl-7">
+					<ul id="airsys-warmup-div-3000-airsys-warmup-ul-3000">
+						<li id="airsys-warmup-div-3000-airsys-warmup-3001" onclick="remove_li(this)">Confirm that after 10 minutes of the Air System being in Warmup Mode, the "ZONE.MODE" point gets commanded to Occupied Mode</li>
+						<li id="airsys-warmup-div-3000-airsys-warmup-3002" onclick="remove_li(this)">Release the Occupied Heating Setpoint from Operator Priority</li>
+						<li id="airsys-warmup-div-3000-airsys-warmup-3003" onclick="remove_li(this)">Open the Bacnet Schedule and Edit the SSTO (Schedule Optimization" parameters</li>
+						<li id="airsys-warmup-div-3000-airsys-warmup-3004" onclick="remove_li(this)">If the Outside Air Temperature reference was changed to a numerical value, change it back to the Outside Air Temperature point that should be referenced</li>
+						<li id="airsys-warmup-div-3000-airsys-warmup-3005" onclick="remove_li(this)">Open the "Start" tab and check the "Use Learning" checkbox</li>
+						<li id="airsys-warmup-div-3000-airsys-warmup-3006" onclick="remove_li(this)">Click on the "Advanced" button and set the "Outside Temp Limit" to its recorded value (Default is 59 degF)</li>
+						<li id="airsys-warmup-div-3000-airsys-warmup-3007" onclick="remove_li(this)">Set the "Max Start Duration" to 60 minutes</li>
+						<li id="airsys-warmup-div-3000-airsys-warmup-3008" onclick="remove_li(this)">Press "OK"</li>
+						<li id="airsys-warmup-div-3000-airsys-warmup-3009" onclick="remove_li(this)">Press "OK"</li>
+						<li id="airsys-warmup-div-3000-airsys-warmup-3010" onclick="remove_li(this)">Adjust the Occupied Start &amp; End Times back to their normal schedule</li>
+					</ul>
+			    </div>
+			    <div class="col-xl-5">
+			      <input type="radio" name="airsys-warmup-3000">
+			      <label class="passfail">Pass</label>
+			      <input type="radio" name="airsys-warmup-3000">
+			      <label class="passfail fail">Fail</label>
+			      <input type="radio" name="airsys-warmup-3000">
+			      <label class="passfail na">NA</label>
+			      <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-warmup-remove-3000" name="remove" style="display: none;">Remove</button>
+			      <button onclick="append_elem(this)" class="custom-buttons" id="airsys-warmup-to-3000" name="to" style="display: none;">Add To</button>
+			      <button onclick="before_elem(this)" class="custom-buttons" id="airsys-warmup-before-3000" name="before" style="display: none;">Add Before</button>
+			      <button onclick="after_elem(this)" class="custom-buttons" id="airsys-warmup-after-3000" name="after" style="display: none;">Add After</button>
+			    </div>
+		    </div>
+		</div>
+		<h3><span class="badge badge-secondary sequence-start badge-function">Air System Cooldown Mode</span></h3>
+		<div class="fpt-container">
+			<div class="row" id="airsys-cooldown-div-1000">
+				<div class="col-xl-7">
+					<ul id="airsys-cooldown-div-1000-airsys-cooldown-ul-1000">
+						<li id="airsys-cooldown-div-1000-airsys-cooldown-1000" onclick="remove_li(this)">Confirm the "ZONE.MODE" point is currently 1 or Vacancy (Unoccupied)</li>
+						<li id="airsys-cooldown-div-1000-airsys-cooldown-1001" onclick="remove_li(this)">Open the Bacnet Schedule and Edit the SSTO (Schedule Optimization" parameters</li>
+						<li id="airsys-cooldown-div-1000-airsys-cooldown-1002" onclick="remove_li(this)">Confirm "Start Optimization" is checked</li>
+						<li id="airsys-cooldown-div-1000-airsys-cooldown-1003" onclick="remove_li(this)">Confirm the "Allowed Operation" and "Desired Operation" are both set to "Heating" or "Heating and Cooling"</li>
+						<li id="airsys-cooldown-div-1000-airsys-cooldown-1004" onclick="remove_li(this)">Go to the "Start" tab and confirm the "Cooling Mode" is set to "Cooldown"</li>
+						<li id="airsys-cooldown-div-1000-airsys-cooldown-1005" onclick="remove_li(this)">Confirm "If too early" is set to "Switch to next scheduled occupancy mode"</li>
+						<li id="airsys-cooldown-div-1000-airsys-cooldown-1006" onclick="remove_li(this)">Confirm "If too late" is set to "Switch to mode Cooldown"</li>
+						<li id="airsys-cooldown-div-1000-airsys-cooldown-1007" onclick="remove_li(this)">Uncheck Use Learning and click "Advanced"</li>
+						<li id="airsys-cooldown-div-1000-airsys-cooldown-1008" onclick="remove_li(this)">Set the "Outside Temp Limit" to a value lower than the current Outside Air Temperature. If the current Outside Air Temperature is &lt; 32 degF leave the "Outside Temp Limit" at 68 degF</li>
+						<li id="airsys-cooldown-div-1000-airsys-cooldown-1009" onclick="remove_li(this)">Record the "Inside Temp Deviation" value</li>
+						<li id="airsys-cooldown-div-1000-airsys-cooldown-1010" onclick="remove_li(this)">Set the "Min Start Duration" to 0</li>
+						<li id="airsys-cooldown-div-1000-airsys-cooldown-1011" onclick="remove_li(this)">Set the "Max Start Duration" to 10</li>
+						<li id="airsys-cooldown-div-1000-airsys-cooldown-1012" onclick="remove_li(this)">Set the "Max Extension Time" to 0</li>
+						<li id="airsys-cooldown-div-1000-airsys-cooldown-1013" onclick="remove_li(this)">Set the "Max Setpoint Offset" to 0</li>
+						<li id="airsys-cooldown-div-1000-airsys-cooldown-1014" onclick="remove_li(this)">Press "OK"</li>
+						<li id="airsys-cooldown-div-1000-airsys-cooldown-1015" onclick="remove_li(this)">Go to the "General" tab</li>
+						<li id="airsys-cooldown-div-1000-airsys-cooldown-1016" onclick="remove_li(this)">If the current Outside Air Temperature &lt; 32 degF change "Outside Temperature" from a point name to numerical value and set the value to 85 degF</li>
+						<li id="airsys-cooldown-div-1000-airsys-cooldown-1017" onclick="remove_li(this)">Command the "Heating Set Points - During Occupancy" to the current "Inside Temperature" + "Inside Temp Deviation" + 1</li>
+						<li id="airsys-cooldown-div-1000-airsys-cooldown-1018" onclick="remove_li(this)">Press "OK"</li>
+						<li id="airsys-cooldown-div-1000-airsys-cooldown-1019" onclick="remove_li(this)">Set the Occupancy Start Time to 12 minutes from now. The Occupancy End Time should be adjusted accordingly</li>
+						<li id="airsys-cooldown-div-1000-airsys-cooldown-1020" onclick="remove_li(this)">Press "OK"</li>
+						<li id="airsys-cooldown-div-1000-airsys-cooldown-1021" onclick="remove_li(this)">Wait 2-3 minutes and confirm "ZONE.MODE" is commanded to the Morning-Cooldown Mode Value</li>
+					</ul>
+			    </div>
+			    <div class="col-xl-5">
+			      <input type="radio" name="airsys-cooldown-1000">
+			      <label class="passfail">Pass</label>
+			      <input type="radio" name="airsys-cooldown-1000">
+			      <label class="passfail fail">Fail</label>
+			      <input type="radio" name="airsys-cooldown-1000">
+			      <label class="passfail na">NA</label>
+			      <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-cooldown-remove-1000" name="remove" style="display: none;">Remove</button>
+			      <button onclick="append_elem(this)" class="custom-buttons" id="airsys-cooldown-to-1000" name="to" style="display: none;">Add To</button>
+			      <button onclick="before_elem(this)" class="custom-buttons" id="airsys-cooldown-before-1000" name="before" style="display: none;">Add Before</button>
+			      <button onclick="after_elem(this)" class="custom-buttons" id="airsys-cooldown-after-1000" name="after" style="display: none;">Add After</button>
+			    </div>
+		    </div>
+		    <div class="row" id="airsys-cooldown-div-2000">
+				<div class="col-xl-7">
+					<ul id="airsys-cooldown-div-2000-airsys-cooldown-ul-2000">
+						<li id="airsys-cooldown-div-2000-airsys-cooldown-2001" onclick="remove_li(this)">Confirm all lines for Morning Cooldown are traced, and the Air System turns on to control airflow/static and temperature to bring the space up to the Occupied Cooling Setpoint in preparation for occupancy</li>
+					</ul>
+			    </div>
+			    <div class="col-xl-5">
+			      <input type="radio" name="airsys-cooldown-2000">
+			      <label class="passfail">Pass</label>
+			      <input type="radio" name="airsys-cooldown-2000">
+			      <label class="passfail fail">Fail</label>
+			      <input type="radio" name="airsys-cooldown-2000">
+			      <label class="passfail na">NA</label>
+			      <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-cooldown-remove-2000" name="remove" style="display: none;">Remove</button>
+			      <button onclick="append_elem(this)" class="custom-buttons" id="airsys-cooldown-to-2000" name="to" style="display: none;">Add To</button>
+			      <button onclick="before_elem(this)" class="custom-buttons" id="airsys-cooldown-before-2000" name="before" style="display: none;">Add Before</button>
+			      <button onclick="after_elem(this)" class="custom-buttons" id="airsys-cooldown-after-2000" name="after" style="display: none;">Add After</button>
+			    </div>
+		    </div>
+		    <div class="row" id="airsys-cooldown-div-3000">
+				<div class="col-xl-7">
+					<ul id="airsys-cooldown-div-3000-airsys-cooldown-ul-3000">
+						<li id="airsys-cooldown-div-3000-airsys-cooldown-3001" onclick="remove_li(this)">Confirm that after 10 minutes of the Air System being in Cooldown Mode, the "ZONE.MODE" point gets commanded to Occupied Mode</li>
+						<li id="airsys-cooldown-div-3000-airsys-cooldown-3002" onclick="remove_li(this)">Release the Occupied Cooling Setpoint from Operator Priority</li>
+						<li id="airsys-cooldown-div-3000-airsys-cooldown-3003" onclick="remove_li(this)">Open the Bacnet Schedule and Edit the SSTO (Schedule Optimization" parameters</li>
+						<li id="airsys-cooldown-div-3000-airsys-cooldown-3004" onclick="remove_li(this)">If the Outside Air Temperature reference was changed to a numerical value, change it back to the Outside Air Temperature point that should be referenced</li>
+						<li id="airsys-cooldown-div-3000-airsys-cooldown-3005" onclick="remove_li(this)">Open the "Start" tab and check the "Use Learning" checkbox</li>
+						<li id="airsys-cooldown-div-3000-airsys-cooldown-3006" onclick="remove_li(this)">Click on the "Advanced" button and set the "Outside Temp Limit" to its recorded value (Default is 68 degF)</li>
+						<li id="airsys-cooldown-div-3000-airsys-cooldown-3007" onclick="remove_li(this)">Set the "Max Start Duration" to 60 minutes</li>
+						<li id="airsys-cooldown-div-3000-airsys-cooldown-3008" onclick="remove_li(this)">Press "OK"</li>
+						<li id="airsys-cooldown-div-3000-airsys-cooldown-3009" onclick="remove_li(this)">Press "OK"</li>
+						<li id="airsys-cooldown-div-3000-airsys-cooldown-3010" onclick="remove_li(this)">Adjust the Occupied Start &amp; End Times back to their normal schedule</li>
+					</ul>
+			    </div>
+			    <div class="col-xl-5">
+			      <input type="radio" name="airsys-cooldown-3000">
+			      <label class="passfail">Pass</label>
+			      <input type="radio" name="airsys-cooldown-3000">
+			      <label class="passfail fail">Fail</label>
+			      <input type="radio" name="airsys-cooldown-3000">
+			      <label class="passfail na">NA</label>
+			      <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-cooldown-remove-3000" name="remove" style="display: none;">Remove</button>
+			      <button onclick="append_elem(this)" class="custom-buttons" id="airsys-cooldown-to-3000" name="to" style="display: none;">Add To</button>
+			      <button onclick="before_elem(this)" class="custom-buttons" id="airsys-cooldown-before-3000" name="before" style="display: none;">Add Before</button>
+			      <button onclick="after_elem(this)" class="custom-buttons" id="airsys-cooldown-after-3000" name="after" style="display: none;">Add After</button>
+			    </div>
+		    </div>
+		</div>
 	</div>
 </div>
 <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
@@ -2458,7 +2836,7 @@
 					var ul = document.getElementById(li_elements[li_elements.length-1].id);
 				    var candidate = document.getElementById(input.id);
 				    var li = document.createElement("li");
-				    li.setAttribute("id", elem.parentNode.parentNode.id + "-connection-check-" + count)
+				    li.setAttribute("id", elem.parentNode.parentNode.id + "-appended-" + count)
 				    li.setAttribute("onclick","remove_li(this)")
 				    li.appendChild(document.createTextNode(candidate.value));
 				    ul.before(li);
@@ -2477,7 +2855,7 @@
 					var ul = document.getElementById(li_elements[li_elements.length-1].id);
 				    var candidate = document.getElementById(input.id);
 				    var li = document.createElement("li");
-				    li.setAttribute("id",elem.parentNode.parentNode.id + "-connection-check-" + count)
+				    li.setAttribute("id",elem.parentNode.parentNode.id + "-appended-" + count)
 				    li.setAttribute("onclick","remove_li(this)")
 				    li.appendChild(document.createTextNode(candidate.value));
 				    ul.after(li);
@@ -2495,6 +2873,67 @@
 			append_elem_check[0].remove();
 			append_elem_check = origin.getElementsByTagName('button');
 			append_elem_check[0].remove();
+			append_elem_check[0].remove();
+			elem.innerHTML = "Add To"
+		}
+	}
+	function append_link(elem) {
+		elem.innerHTML = "Close"
+		let origin = document.getElementById(elem.parentNode.parentNode.id);
+		append_elem_check = origin.getElementsByTagName('input');
+		if(append_elem_check.length == 3){
+			var href = document.createElement("input");
+			var title = document.createElement("input");
+			var after_button = document.createElement("button");
+			href.style.width = "35%";
+			title.style.width = "35%";
+			href.style.height = "30%";
+			title.style.height = "30%";
+			after_button.style.width = "15%";
+			after_button.style.height = "37%";
+			after_button.textContent = "Append After";
+			href.setAttribute("id", elem.parentNode.parentNode.id + "-appendhref-" + count);
+			href.setAttribute("class", "append");
+			href.setAttribute("placeholder", "http://www.google.com");
+			title.setAttribute("id", elem.parentNode.parentNode.id + "-appendtitle-" + count);
+			title.setAttribute("class", "append");
+			title.setAttribute("placeholder", "Google");
+			after_button.setAttribute("id", elem.parentNode.parentNode.id + "-appendafter-" + count);
+			after_button.setAttribute("class", "append");
+			let li_elements = origin.getElementsByTagName('li');
+			document.getElementById(li_elements[li_elements.length-1].id).after(after_button);
+			document.getElementById(li_elements[li_elements.length-1].id).after(href);
+			document.getElementById(li_elements[li_elements.length-1].id).after(title);
+			after_button_element = document.getElementById(after_button.id);
+			if(after_button_element){
+				after_button_element.addEventListener("click", function() {
+					let append_elements = origin.getElementsByTagName('li');
+					var href_candidate = document.getElementById(href.id);
+					var title_candidate = document.getElementById(title.id);
+					var a = document.createElement("a");
+					a.setAttribute("href",href.value);
+					a.innerText = title.value;
+					console.log(a.innerHTML);
+					var ul = document.getElementById(li_elements[li_elements.length-1].id);
+				    var candidate = document.getElementById(title.id);
+				    var li = document.createElement("li");
+				    li.setAttribute("id",elem.parentNode.parentNode.id + "-appended-" + count)
+				    li.appendChild(a);
+				    ul.after(li);
+				    for(var i=1;i<append_elements.length;i++){
+						append_elements[i].setAttribute("onclick","remove_li(this)");
+					}
+					setTimeout(function() {
+						li.className = li.className + " show";
+					}, 10);
+				    count+=1
+				});
+			}
+		}else{
+			append_elem_check = origin.getElementsByTagName('input');
+			append_elem_check[0].remove();
+			append_elem_check[0].remove();
+			append_elem_check = origin.getElementsByTagName('button');
 			append_elem_check[0].remove();
 			elem.innerHTML = "Add To"
 		}
@@ -2572,4 +3011,4 @@
 	}
 </script>
 
-</body>
+</div></body>
