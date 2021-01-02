@@ -170,6 +170,12 @@
 		.col-l-6 {
 			background-color: red;
 		}
+
+		.col-xl-5{
+			padding-left: 0px;
+			padding-right: 30px;
+		}
+
 		.col-xl-12{
 			height:150px;
 		}
@@ -361,6 +367,14 @@
 
 		button{
 			margin-top: 1%;
+			border-top-right-radius: 5px 5px;
+			border-bottom-right-radius: 5px 5px;
+			border-top-left-radius: 5px 5px;
+			border-bottom-left-radius: 5px 5px;
+			color: white;
+			background-color: #343a40;
+			font-family: 'Roboto';
+			font-weight: bold;
 		}
 	</style>
 	<title>RSS-NA DXR Engineering Tool</title>
@@ -430,12 +444,9 @@
 	</form>
 </div>
 <br><br>
-<form id="download"></form>
-<a href="{{url_for('.custom_fpt')}}" target="blank" style="margin-left: 1%"><button class='btn btn-default' id="cmd">Download!</button></a>
-<br><br>
 <div id='fpt-container'>
-	<h1><span class="badge badge-secondary sequence-start">Resources</span></h1>
-		<div class="fpt-container">
+	<h1 class="resources" style="display:none"><span class="badge badge-secondary sequence-start">Resources</span></h1>
+		<div class="fpt-container resources" style="display:none">
 			<div class='row' id="resources-div-1000">
 				<div class="col-xl-7">
 					<ul>
@@ -457,9 +468,9 @@
 			  </div>
 			</div>
 		</div>
-	<h2><span class="badge badge-secondary sequence-start">Preparation</span></h2>
-	<h4><span class="badge badge-secondary sequence-start">Field Panel Connection Check</span></h4>
-		<div class="fpt-container">
+	<h2 class="field-panel-prep" style="display:none"><span class="badge badge-secondary sequence-start">Preparation</span></h2>
+	<h4 class="field-panel-prep" style="display:none"><span class="badge badge-secondary sequence-start">Field Panel Connection Check</span></h4>
+		<div class="fpt-container field-panel-prep" style="display:none">
 			<div class='row' id="connection-check-div-1000">
 				<div class="col-xl-7">
 					<ul id="connection-check-div-1000-connection-check-ul-1000">
@@ -637,7 +648,7 @@
 	<!-- General Functionality -->
 	<!-- General Functionality -->
 	<!-- Basic Relinquish Default Check -->
-	<div class='airsys relinquish'>
+	<div class='airsys-relinquish' style="display:none">
 		<h4><span class="badge badge-secondary sequence-start">Air System Basic Relinquish Default Check</span></h4>
 		<div class="fpt-container">
 			<div class='row' id="airsys-relinquish-div-1000">
@@ -1012,7 +1023,7 @@
 
 	<!-- Basic Hardware Check -->
 	<br>
-	<div class='airsys hardware'>
+	<div class='airsys-hardware' style="display:none">
 		<h4><span class="badge badge-secondary sequence-start">Air System Basic Hardware Check</span></h4>
 		<div class="fpt-container">
 			<div class='row' id="airsys-hardware-div-1000">
@@ -1142,9 +1153,7 @@
 	<!-- Operating Mode Specific Functionality -->
 	<!-- Operating Mode Specific Functionality -->
 
-	<h5><span class="badge badge-secondary">Operating Mode-Specific Functionality</span></h5>
-
-	<div class='airsys return'>
+	<div class='airsys-power-return' style="display: none">
 		<h4><span class="badge badge-secondary sequence-start">Air System Return From Power Loss</span></h4>
 		<div class="fpt-container">
 			<div class='row' id="airsys-return-div-1000">
@@ -1169,7 +1178,7 @@
 		  </div>
 		</div>
 	</div>
-	<div class='airsys occupied-sched'>
+	<div class='airsys-occupied-sched' style="display: none">
 		<h4><span class="badge badge-secondary sequence-start">Air System Occupied Mode Scheduled</span></h4>
 		<div class="fpt-container">
 			<div class='row' id="airsys-occupied-sched-div-1000">
@@ -1198,9 +1207,9 @@
 		  </div>
 		</div>
 	</div>
-	<div class='airsys occupied-24'>
-		<h4><span class="badge badge-secondary sequence-start">Air System Occupied Mode 24 Hour</span></h4>
-		<div class="fpt-container">
+	<div class='airsys occupied-24' style="display:none">
+		<h4><span class="badge badge-secondary sequence-start">Air System Occupied Mode</span></h4>
+		<div class="fpt-container occupied-24" style="display:none">
 			<h3 ondblclick="remove_this(this)" ><span class="badge badge-secondary badge-function">Safety Check</span></h3>
 			<div class='row' id="airsys-occupied-24-div-1000">
 				<div class="col-xl-7">
@@ -1308,8 +1317,8 @@
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-19000" name="after">Add Test</button>
 			  </div>
 		  </div>
-		  <h3 ondblclick="remove_this(this)" class="sup-static-control"><span class="badge badge-secondary badge-function">Discharge Static Control</span></h3>
-		  <div class='row' id="airsys-occupied-24-div-3000">
+		  <h3 ondblclick="remove_this(this)" class="sup-static-control" style="display:none"><span class="badge badge-secondary badge-function">Discharge Static Control</span></h3>
+		  <div class='row sup-static-control' id="airsys-occupied-24-div-3000" style="display:none">
 				<div class="col-xl-7">
 					<ul id="airsys-occupied-24-div-3000-airsys-occupied-24-ul-3000">
 						<li class='static-control' id="airsys-occupied-24-div-3000-airsys-occupied-24-3001" ondblclick="remove_li(this)">Confirm the discharge static setpoint slowly ramps from 0 to the desired setpoint over a period of 5 minutes. Confirm loop stability and adjust gains if needed</li>
@@ -1328,7 +1337,7 @@
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-3000" name="after">Add Test</button>
 			  </div>
 		  </div>
-		  <div class='row' id="airsys-occupied-24-div-5000">
+		  <div class='row sup-static-control' id="airsys-occupied-24-div-5000" style="display:none">
 				<div class="col-xl-7">
 					<ul id="airsys-occupied-24-div-5000-airsys-occupied-24-ul-5000">
 						<li class='sup-static-control' id="airsys-occupied-24-div-5000-airsys-occupied-24-5000" ondblclick="remove_li(this)">Adjust the discharge static setpoint by 0.5"wc. Confirm loop stability and adjust gains as needed</li>
@@ -1348,8 +1357,8 @@
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-5000" name="after">Add Test</button>
 			  </div>
 		  </div>
-		  <h3 ondblclick="remove_this(this)" class="sup-static-reset"><span class="badge badge-secondary badge-function">Discharge Static Reset</span></h3>
-		  <div class='row' id="airsys-occupied-24-div-6000">
+		  <h3 ondblclick="remove_this(this)" class="sup-static-reset" style="display:none"><span class="badge badge-secondary badge-function">Discharge Static Reset</span></h3>
+		  <div class='row sup-static-reset' id="airsys-occupied-24-div-6000" style="display:none">
 				<div class="col-xl-7">
 					<ul id="airsys-occupied-24-div-6000-airsys-occupied-24-ul-6000">
 						<li class='sup-static-reset' id="airsys-occupied-24-div-6000-airsys-occupied-24-6001" ondblclick="remove_li(this)">Reduce the sample time for checking the maximum damper position from 300 seconds to 30 seconds</li>
@@ -1370,7 +1379,7 @@
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-6000" name="after">Add Test</button>
 			  </div>
 		  </div>
-		  <div class='row' id="airsys-occupied-24-div-7000">
+		  <div class='row sup-static-reset' id="airsys-occupied-24-div-7000" style="display:none">
 				<div class="col-xl-7">
 					<ul id="airsys-occupied-24-div-7000-airsys-occupied-24-ul-7000">
 						<li class='sup-static-reset' id="airsys-occupied-24-div-7000-airsys-occupied-24-7001" ondblclick="remove_li(this)">Command all dampers of terminal units served by this air system to 65% or command the "MAX.DMPR.POS" virtual point to 65%</li>
@@ -1391,8 +1400,8 @@
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-7000" name="after">Add Test</button>
 			  </div>
 		  </div>
-		  <h3 ondblclick="remove_this(this)" class="sup-flow-control"><span class="badge badge-secondary badge-function">Discharge Flow Control</span></h3>
-		  <div class='row' id="airsys-occupied-24-div-13000">
+		  <h3 ondblclick="remove_this(this)" class="sup-flow-control" style="display:none"><span class="badge badge-secondary badge-function">Discharge Flow Control</span></h3>
+		  <div class='row sup-flow-control' id="airsys-occupied-24-div-13000" style="display:none">
 				<div class="col-xl-7">
 					<ul id="airsys-occupied-24-div-13000-airsys-occupied-24-ul-13000">
 						<li class='sup-flow-control' id="airsys-occupied-24-div-13000-airsys-occupied-24-13000" ondblclick="remove_li(this)">Adjust the discharge flow setpoint by 500 CFM. Confirm loop stability and adjust gains as needed</li>
@@ -1412,8 +1421,8 @@
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-13000" name="after">Add Test</button>
 			  </div>
 		  </div>
-		  <h3 ondblclick="remove_this(this)" class="sup-flow-reset"><span class="badge badge-secondary badge-function">Discharge Flow Reset</span></h3>
-		  <div class='row' id="airsys-occupied-24-div-14000">
+		  <h3 ondblclick="remove_this(this)" class="sup-flow-reset" style="display:none"><span class="badge badge-secondary badge-function">Discharge Flow Reset</span></h3>
+		  <div class='row sup-flow-reset' id="airsys-occupied-24-div-14000" style="display:none">
 				<div class="col-xl-7">
 					<ul id="airsys-occupied-24-div-14000-airsys-occupied-24-ul-14000">
 						<li class='sup-flow-reset' id="airsys-occupied-24-div-14000-airsys-occupied-24-14001" ondblclick="remove_li(this)">Reduce the sample time for checking the maximum damper position from 300 seconds to 30 seconds</li>
@@ -1434,7 +1443,7 @@
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-14000" name="after">Add Test</button>
 			  </div>
 		  </div>
-		  <div class='row' id="airsys-occupied-24-div-15000">
+		  <div class='row sup-flow-reset' id="airsys-occupied-24-div-15000" style="display:none">
 				<div class="col-xl-7">
 					<ul id="airsys-occupied-24-div-15000-airsys-occupied-24-ul-15000">
 						<li class='sup-flow-reset' id="airsys-occupied-24-div-15000-airsys-occupied-24-15001" ondblclick="remove_li(this)">Command all dampers of terminal units served by this air system to 65% or command the "MAX.DMPR.POS" virtual point to 65%</li>
@@ -1455,8 +1464,8 @@
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-15000" name="after">Add Test</button>
 			  </div>
 		  </div>
-		  <h3 ondblclick="remove_this(this)" class="building-static-control"><span class="badge badge-secondary badge-function">Building Static Control</span></h3>
-		  <div class='row' id="airsys-occupied-24-div-8000">
+		  <h3 ondblclick="remove_this(this)" class="building-static-control" style="display:none"><span class="badge badge-secondary badge-function">Building Static Control</span></h3>
+		  <div class='row building-static-control' id="airsys-occupied-24-div-8000" style="display:none">
 				<div class="col-xl-7">
 					<ul id="airsys-occupied-24-div-8000-airsys-occupied-24-ul-8000">
 						<li class='building-static-control' id="airsys-occupied-24-div-8000-airsys-occupied-24-8001" ondblclick="remove_li(this)">Adjust the building static setpoint by 0.2"wc. Confirm loop stability and adjust gains as needed</li>
@@ -1476,8 +1485,8 @@
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-8000" name="after">Add Test</button>
 			  </div>
 		  </div>
-		  <h3 ondblclick="remove_this(this)" class="return-static-control"><span class="badge badge-secondary badge-function">Return Static Control</span></h3>
-		  <div class='row' id="airsys-occupied-24-div-9000">
+		  <h3 ondblclick="remove_this(this)" class="return-static-control" style="display:none"><span class="badge badge-secondary badge-function">Return Static Control</span></h3>
+		  <div class='row return-static-control' id="airsys-occupied-24-div-9000" style="display:none">
 				<div class="col-xl-7">
 					<ul id="airsys-occupied-24-div-9000-airsys-occupied-24-ul-9000">
 						<li class='return-static-control' id="airsys-occupied-24-div-9000-airsys-occupied-24-9001" ondblclick="remove_li(this)">Adjust the return static setpoint by 0.5"wc. Confirm loop stability and adjust gains as needed</li>
@@ -1497,8 +1506,8 @@
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-9000" name="after">Add Test</button>
 			  </div>
 		  </div>
-		  <h3 ondblclick="remove_this(this)" class="return-offset-control"><span class="badge badge-secondary badge-function">Return Flow Control - CFM Offset</span></h3>
-		  <div class='row' id="airsys-occupied-24-div-16000">
+		  <h3 ondblclick="remove_this(this)" class="return-offset-control" style="display:none"><span class="badge badge-secondary badge-function">Return Flow Control - CFM Offset</span></h3>
+		  <div class='row return-offset-control' id="airsys-occupied-24-div-16000" style="display:none">
 				<div class="col-xl-7">
 					<ul id="airsys-occupied-24-div-16000-airsys-occupied-24-ul-16000">
 						<li class='return-offset-control' id="airsys-occupied-24-div-16000-airsys-occupied-24-16001" ondblclick="remove_li(this)">Adjust the Return Cfm Offset setpoint by 200 CFM. Confirm loop stability and adjust gains as needed</li>
@@ -1518,8 +1527,8 @@
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-16000" name="after">Add Test</button>
 			  </div>
 		  </div>
-		  <h3 ondblclick="remove_this(this)" class="exh-static-control"><span class="badge badge-secondary badge-function">Exhaust Static Control</span></h3>
-		  <div class='row' id="airsys-occupied-24-div-10000">
+		  <h3 ondblclick="remove_this(this)" class="exh-static-control" style="display:none"><span class="badge badge-secondary badge-function">Exhaust Static Control</span></h3>
+		  <div class='row exh-static-control' id="airsys-occupied-24-div-10000" style="display:none">
 				<div class="col-xl-7">
 					<ul id="airsys-occupied-24-div-10000-airsys-occupied-24-ul-10000">
 						<li class='exh-static-control' id="airsys-occupied-24-div-10000-airsys-occupied-24-10001" ondblclick="remove_li(this)">Adjust the exhaust static setpoint by -0.5"wc. Confirm loop stability and adjust gains as needed</li>
@@ -1539,8 +1548,8 @@
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-10000" name="after">Add Test</button>
 			  </div>
 		  </div>
-		  <h3 ondblclick="remove_this(this)" class="exh-static-reset"><span class="badge badge-secondary badge-function">Exhaust Static Reset</span></h3>
-		  <div class='row' id="airsys-occupied-24-div-11000">
+		  <h3 ondblclick="remove_this(this)" class="exh-static-reset" style="display:none"><span class="badge badge-secondary badge-function">Exhaust Static Reset</span></h3>
+		  <div class='row exh-static-reset' id="airsys-occupied-24-div-11000" style="display:none">
 				<div class="col-xl-7">
 					<ul id="airsys-occupied-24-div-11000-airsys-occupied-24-ul-11000">
 						<li class='exh-static-reset' id="airsys-occupied-24-div-11000-airsys-occupied-24-11001" ondblclick="remove_li(this)">Reduce the sample time for checking the maximum damper position from 300 seconds to 30 seconds</li>
@@ -1561,7 +1570,7 @@
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-11000" name="after">Add Test</button>
 			  </div>
 		  </div>
-		  <div class='row' id="airsys-occupied-24-div-12000">
+		  <div class='row exh-static-reset' id="airsys-occupied-24-div-12000" style="display:none">
 				<div class="col-xl-7">
 					<ul id="airsys-occupied-24-div-12000-airsys-occupied-24-ul-12000">
 						<li class='exh-static-reset' id="airsys-occupied-24-div-12000-airsys-occupied-24-12001" ondblclick="remove_li(this)">Command all dampers of terminal units served by this air system to 65% or command the "MAX.DMPR.POS" virtual point to 65%</li>
@@ -1582,8 +1591,8 @@
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-12000" name="after">Add Test</button>
 			  </div>
 		  </div>
-		  <h3 ondblclick="remove_this(this)" class="economizer"><span class="badge badge-secondary badge-function">Economizer Control</span></h3>
-		  <div class='row' id="airsys-occupied-24-div-20700">
+		  <h3 ondblclick="remove_this(this)" class="economizer" style="display:none"><span class="badge badge-secondary badge-function">Economizer Control</span></h3>
+		  <div class='row economizer' id="airsys-occupied-24-div-20700" style="display:none">
 				<div class="col-xl-7">
 					<ul id="airsys-occupied-24-div-20700-airsys-occupied-24-ul-20700">
 						<li id="airsys-occupied-24-div-20700-airsys-occupied-24-20700" ondblclick="remove_li(this)">Update the Economizer DBSWIT statement so that the Air Handling Unit goes into Economizer Mode. Confirm Economizer Mode is Enabled if the Outside Air Temperature is greater than or equal to the Minimum Discharge Air Temperature Setpoint Threshold and less than the Return Temperature. The same should apply if enthalpy is used rather than temperature</li>
@@ -1602,7 +1611,7 @@
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-20700" name="after">Add Test</button>
 			  </div>
 		  </div>
-		  <div class='row' id="airsys-occupied-24-div-20800">
+		  <div class='row economizer' id="airsys-occupied-24-div-20800" style="display:none">
 				<div class="col-xl-7">
 					<ul id="airsys-occupied-24-div-20800-airsys-occupied-24-ul-20800">
 						<li id="airsys-occupied-24-div-20800-airsys-occupied-24-20800" ondblclick="remove_li(this)">Command the Discharge Air Temperature to 55°F</li>
@@ -1622,7 +1631,7 @@
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-20800" name="after">Add Test</button>
 			  </div>
 		  </div>
-		  <div class='row' id="airsys-occupied-24-div-20900">
+		  <div class='row economizer' id="airsys-occupied-24-div-20900" style="display:none">
 				<div class="col-xl-7">
 					<ul id="airsys-occupied-24-div-20900-airsys-occupied-24-ul-20900">
 						<li id="airsys-occupied-24-div-20900-airsys-occupied-24-20900" ondblclick="remove_li(this)">Command the Discharge Air Temperature to 85°F</li>
@@ -1644,8 +1653,8 @@
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-20900" name="after">Add Test</button>
 			  </div>
 		  </div>
-		  <h3 ondblclick="remove_this(this)" class="temperature-control"><span class="badge badge-secondary badge-function">Temperature Control</span></h3>
-		  <div class='row' id="airsys-occupied-24-div-20000">
+		  <h3 ondblclick="remove_this(this)" class="temperature-control" style="display:none"><span class="badge badge-secondary badge-function">Discharge Temperature Control</span></h3>
+		  <div class='row temperature-control' id="airsys-occupied-24-div-20000" style="display:none">
 				<div class="col-xl-7">
 					<ul id="airsys-occupied-24-div-20000-airsys-occupied-24-ul-20000">
 						<!-- Economizer Mode Disabled -->
@@ -1667,7 +1676,7 @@
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-20000" name="after">Add Test</button>
 			  </div>
 		  </div>
-		  <div class='row' id="airsys-occupied-24-div-20100">
+		  <div class='row temperature-control' id="airsys-occupied-24-div-20100" style="display:none">
 				<div class="col-xl-7">
 					<ul id="airsys-occupied-24-div-20100-airsys-occupied-24-ul-20100">
 
@@ -1691,8 +1700,8 @@
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-20100" name="after">Add Test</button>
 			  </div>
 		  </div>
-		  <h3 ondblclick="remove_this(this)" class="temp-reset"><span class="badge badge-secondary badge-function">Discharge Temperature Reset</span></h3>
-		  <div class='row' id="airsys-occupied-24-div-20200">
+		  <h3 ondblclick="remove_this(this)" class="temp-reset" style="display:none"><span class="badge badge-secondary badge-function">Discharge Temperature Reset</span></h3>
+		  <div class='row temp-reset' id="airsys-occupied-24-div-20200" style="display:none">
 				<div class="col-xl-7">
 					<ul id="airsys-occupied-24-div-20200-airsys-occupied-24-ul-20200">
 						<li id="airsys-occupied-24-div-20200-airsys-occupied-24-20200" ondblclick="remove_li(this)">Reduce the sample time for checking the zone cooling/heating demands from 300 seconds to 30 seconds</li>
@@ -1714,7 +1723,7 @@
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-20200" name="after">Add Test</button>
 			  </div>
 		  </div>
-		  <div class='row' id="airsys-occupied-24-div-20300">
+		  <div class='row temp-reset' id="airsys-occupied-24-div-20300" style="display:none">
 				<div class="col-xl-7">
 					<ul id="airsys-occupied-24-div-20300-airsys-occupied-24-ul-20300">
 						<li id="airsys-occupied-24-div-20300-airsys-occupied-24-20300" ondblclick="remove_li(this)">Command the terminal box heating demand collection virtual point to 0</li>
@@ -1738,8 +1747,8 @@
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-20300" name="after">Add Test</button>
 			  </div>
 		  </div>
-		  <h3 ondblclick="remove_this(this)" class="exh-static-reset"><span class="badge badge-secondary badge-function">Discharge Humidity Control</span></h3>
-		  <div class='row' id="airsys-occupied-24-div-20400">
+		  <h3 ondblclick="remove_this(this)" class="humidity-control" style="display:none"><span class="badge badge-secondary badge-function">Discharge Humidity Control</span></h3>
+		  <div class='row humidity-control' id="airsys-occupied-24-div-20400" style="display:none">
 				<div class="col-xl-7">
 					<ul id="airsys-occupied-24-div-20400-airsys-occupied-24-ul-20400">
 						<li id="airsys-occupied-24-div-20400-airsys-occupied-24-20400" ondblclick="remove_li(this)">Command the discharge humidity setpoint to 70%rh</li>
@@ -1762,8 +1771,8 @@
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-20400" name="after">Add Test</button>
 			  </div>
 		  </div>
-		  <h3 ondblclick="remove_this(this)" class="dehumidification"><span class="badge badge-secondary badge-function">Dehumidification</span></h3>
-		  <div class='row' id="airsys-occupied-24-div-30000">
+		  <h3 ondblclick="remove_this(this)" class="dehumidification" style="display:none"><span class="badge badge-secondary badge-function">Dehumidification</span></h3>
+		  <div class='row dehumidification' id="airsys-occupied-24-div-30000" style="display:none">
 				<div class="col-xl-7">
 					<ul id="airsys-occupied-24-div-30000-airsys-occupied-24-ul-30000">
 						<li id="airsys-occupied-24-div-30000-airsys-occupied-24-30000" ondblclick="remove_li(this)">Command the dehumidification setpoint to 5%rh</li>
@@ -1783,7 +1792,7 @@
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-30000" name="after">Add Test</button>
 			  </div>
 		  </div>
-		  <div class='row' id="airsys-occupied-24-div-30100">
+		  <div class='row dehumidification' id="airsys-occupied-24-div-30100" style="display:none">
 				<div class="col-xl-7">
 					<ul id="airsys-occupied-24-div-30100-airsys-occupied-24-ul-30100">
 						<li id="airsys-occupied-24-div-30100-airsys-occupied-24-30100" ondblclick="remove_li(this)">Command the dehumidification setpoint to 105%rh</li>
@@ -1804,8 +1813,8 @@
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-30100" name="after">Add Test</button>
 			  </div>
 		  </div>
-		  <h3 ondblclick="remove_this(this)" class="dcv"><span class="badge badge-secondary badge-function">Demand Control Ventilation</span></h3>
-		  <div class='row' id="airsys-occupied-24-div-20600">
+		  <h3 ondblclick="remove_this(this)" class="dcv" style="display:none"><span class="badge badge-secondary badge-function">Demand Control Ventilation</span></h3>
+		  <div class='row dcv' id="airsys-occupied-24-div-20600" style="display:none">
 				<div class="col-xl-7">
 					<ul id="airsys-occupied-24-div-20600-airsys-occupied-24-ul-20600">
 						<li id="airsys-occupied-24-div-20600-airsys-occupied-24-20600" ondblclick="remove_li(this)">Reduce the sample time for checking the zone/return CO2 from 300 seconds to 30 seconds</li>
@@ -1828,7 +1837,7 @@
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-20600" name="after">Add Test</button>
 			  </div>
 		  </div>
-		  <div class='row' id="airsys-occupied-24-div-20600">
+		  <div class='row dcv' id="airsys-occupied-24-div-20600" style="display:none">
 				<div class="col-xl-7">
 					<ul id="airsys-occupied-24-div-20600-airsys-occupied-24-ul-20600">
 						<li id="airsys-occupied-24-div-20600-airsys-occupied-24-20601" ondblclick="remove_li(this)">Command the Low CO2 threshold to 800ppm</li>
@@ -1853,8 +1862,8 @@
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-20600" name="after">Add Test</button>
 			  </div>
 		  </div>
-		  <h3 ondblclick="remove_this(this)" class="lead-lag"><span class="badge badge-secondary badge-function">Fan Wall Lead/Lag + Weekly Turnover</span></h3>
-		  <div class='row' id="airsys-occupied-24-div-30200">
+		  <h3 ondblclick="remove_this(this)" class="lead-lag" style="display:none"><span class="badge badge-secondary badge-function">Fan Wall Lead/Lag + Weekly Turnover</span></h3>
+		  <div class='row lead-lag' id="airsys-occupied-24-div-30200" style="display:none">
 				<div class="col-xl-7">
 					<ul id="airsys-occupied-24-div-30200-airsys-occupied-24-ul-30200">
 						<li id="airsys-occupied-24-div-30200-airsys-occupied-24-30201" ondblclick="remove_li(this)">Command all fan speeds to 20%</li>
@@ -1877,7 +1886,7 @@
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-30200" name="after">Add Test</button>
 			  </div>
 		  </div>
-		  <div class='row' id="airsys-occupied-24-div-30400">
+		  <div class='row lead-lag' id="airsys-occupied-24-div-30400" style="display:none">
 				<div class="col-xl-7">
 					<ul id="airsys-occupied-24-div-30400-airsys-occupied-24-ul-30400">
 						<li id="airsys-occupied-24-div-30400-airsys-occupied-24-30401" ondblclick="remove_li(this)">Command all fan speeds to 20%</li>
@@ -1899,7 +1908,7 @@
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-30400" name="after">Add Test</button>
 			  </div>
 		  </div>
-		  <div class='row' id="airsys-occupied-24-div-30300">
+		  <div class='row lead-lag' id="airsys-occupied-24-div-30300" style="display:none">
 				<div class="col-xl-7">
 					<ul id="airsys-occupied-24-div-30300-airsys-occupied-24-ul-30300">
 						<li id="airsys-occupied-24-div-30300-airsys-occupied-24-30301" ondblclick="remove_li(this)">Open each Fan Start/Stop point with "Commander" and reset totalization</li>
@@ -1927,8 +1936,8 @@
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-30300" name="after">Add Test</button>
 			  </div>
 		  </div>
-		  <h3 ondblclick="remove_this(this)" class="Alarming"><span class="badge badge-secondary badge-function">Alarm Checking</span></h3>
-		  <div class='row' id="airsys-occupied-24-div-18000">
+		  <h3 ondblclick="remove_this(this)" class="alarming" style="display:none"><span class="badge badge-secondary badge-function">Alarm Checking</span></h3>
+		  <div class='row alarming' id="airsys-occupied-24-div-18000" style="display:none">
 				<div class="col-xl-7">
 					<ul id="airsys-occupied-24-div-18000-airsys-occupied-24-ul-18000">
 
@@ -2009,8 +2018,8 @@
 			  </div>
 		  </div>
 		</div>
-		<h3 ondblclick="remove_this(this)" ><span class="badge badge-secondary sequence-start badge-function">Air System Stop Heating Mode</span></h3>
-		<div class="fpt-container">
+		<h3 ondblclick="remove_this(this)" class="stopheat" style="display:none"><span class="badge badge-secondary sequence-start badge-function">Air System Stop Heating Mode</span></h3>
+		<div class="fpt-container" class="stopheat" style="display:none">
 			<div class='row' id="airsys-stopheat-div-1000">
 				<div class="col-xl-7">
 					<ul id="airsys-stopheat-div-1000-airsys-stopheat-ul-1000">
@@ -2085,8 +2094,8 @@
 			  </div>
 		  </div>
 		</div>
-		<h3 ondblclick="remove_this(this)" ><span class="badge badge-secondary sequence-start badge-function">Air System Stop Cooling Mode</span></h3>
-		<div class="fpt-container">
+		<h3 ondblclick="remove_this(this)" class="stopcool" style="display:none"><span class="badge badge-secondary sequence-start badge-function">Air System Stop Cooling Mode</span></h3>
+		<div class="fpt-container" class="stopcool" style="display:none">
 			<div class='row' id="airsys-stopcool-div-1000">
 				<div class="col-xl-7">
 					<ul id="airsys-stopcool-div-1000-airsys-stopcool-ul-1000">
@@ -2161,7 +2170,7 @@
 			  </div>
 		  </div>
 		</div>
-	<div class='airsys unoccupied'>
+	<div class='airsys unoccupied' style="display:none">
 		<h4><span class="badge badge-secondary sequence-start">Air System Unoccupied Mode</span></h4>
 		<div class="fpt-container">
 			<div class='row' id="airsys-unoccupied-div-1000">
@@ -2205,8 +2214,8 @@
 			  </div>
 		  </div>
 		</div>
-		<h3 ondblclick="remove_this(this)" ><span class="badge badge-secondary sequence-start badge-function">Air System Night Heating Mode</span></h3>
-		<div class="fpt-container">
+		<h3 ondblclick="remove_this(this)" class="ngtheat" style="display:none"><span class="badge badge-secondary sequence-start badge-function">Air System Night Heating Mode</span></h3>
+		<div class="fpt-container" class="ngtheat" style="display:none">
 			<div class='row' id="airsys-ngtheat-div-1000">
 				<div class="col-xl-7">
 					<ul id="airsys-ngtheat-div-1000-airsys-ngtheat-ul-1000">
@@ -2273,8 +2282,8 @@
 			  </div>
 		  </div>
 		</div>
-		<h3 ondblclick="remove_this(this)" ><span class="badge badge-secondary sequence-start badge-function">Air System Night Cooling Mode</span></h3>
-		<div class="fpt-container">
+		<h3 ondblclick="remove_this(this)" class="ngtcool" style="display:none"><span class="badge badge-secondary sequence-start badge-function">Air System Night Cooling Mode</span></h3>
+		<div class="fpt-container" class="ngtcool" style="display:none">
 			<div class='row' id="airsys-ngtcool-div-1000">
 				<div class="col-xl-7">
 					<ul id="airsys-ngtcool-div-1000-airsys-ngtcool-ul-1000">
@@ -2341,8 +2350,8 @@
 			  </div>
 		  </div>
 		</div>
-		<h3 ondblclick="remove_this(this)" ><span class="badge badge-secondary sequence-start badge-function">Air System Warmup Mode</span></h3>
-		<div class="fpt-container">
+		<h3 ondblclick="remove_this(this)" class="warmup" style="display:none"><span class="badge badge-secondary sequence-start badge-function">Air System Warmup Mode</span></h3>
+		<div class="fpt-container warmup" style="display:none">
 			<div class='row' id="airsys-warmup-div-1000">
 				<div class="col-xl-7">
 					<ul id="airsys-warmup-div-1000-airsys-warmup-ul-1000">
@@ -2431,8 +2440,8 @@
 			  </div>
 		  </div>
 		</div>
-		<h3 ondblclick="remove_this(this)" ><span class="badge badge-secondary sequence-start badge-function">Air System Cooldown Mode</span></h3>
-		<div class="fpt-container">
+		<h3 ondblclick="remove_this(this)" class="cooldown" style="display:none"><span class="badge badge-secondary sequence-start badge-function">Air System Cooldown Mode</span></h3>
+		<div class="fpt-container cooldown" style="display:none">
 			<div class='row' id="airsys-cooldown-div-1000">
 				<div class="col-xl-7">
 					<ul id="airsys-cooldown-div-1000-airsys-cooldown-ul-1000">
@@ -2523,6 +2532,9 @@
 		</div>
 	</div>
 </div>
+<form id="download"></form>
+<a href="{{url_for('.custom_fpt')}}" target="blank" style="margin-left: 46%"><button class='btn btn-default' id="cmd">Download!</button></a>
+<br><br>
 <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

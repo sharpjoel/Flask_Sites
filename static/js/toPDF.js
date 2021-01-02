@@ -29,102 +29,97 @@ $(document).ready(function(){
 		$('#app-container').show();
 		$('#cmd').show();
 	});
-	// document.getElementById("connection-check-to-1").addEventListener("click", function() {
-	// 	let origin = document.getElementById("connection-check-div-1");
-	// 	let input = document.createElement("input");
-	// 	let before_button = document.createElement("button");
-	// 	let after_button = document.createElement("button");
-	// 	input.style.width = "70%";
-	// 	input.style.height = "30%";
-	// 	before_button.style.width = "15%";
-	// 	before_button.style.height = "37%";
-	// 	before_button.textContent = "Append Top";
-	// 	after_button.style.width = "15%";
-	// 	after_button.style.height = "37%";
-	// 	after_button.textContent = "Append Next";
-	// 	input.setAttribute("id", "connection-check-input-append-1" + count);
-	// 	input.setAttribute("class", "append");
-	// 	before_button.setAttribute("id", "connection-check-before-button-1" + count);
-	// 	before_button.setAttribute("class", "append");
-	// 	after_button.setAttribute("id", "connection-check-after-button-1" + count);
-	// 	after_button.setAttribute("class", "append");
-	// 	let li_elements = origin.getElementsByTagName('li');
-	// 	document.getElementById(li_elements[0].id).after(after_button);
-	// 	document.getElementById(li_elements[0].id).after(before_button);
-	// 	document.getElementById(li_elements[0].id).after(input); 
-	// 	before_button_element = document.getElementById(before_button.id);
-	// 	after_button_element = document.getElementById(after_button.id);
-	// 	if(before_button_element){
-	// 		before_button_element.addEventListener("click", function() {
-	// 			let append_elements = origin.getElementsByTagName('li');
-	// 			for(var i=0;i<append_elements.length;i++){
-	// 				append_elements[i].addEventListener("click",function(){
-	// 					append_elements[i].remove();
-	// 				})
-	// 			}
-	// 			var ul = document.getElementById(li_elements[0].id);
-	// 		    var candidate = document.getElementById(input.id);
-	// 		    var li = document.createElement("li");
-	// 		    li.setAttribute("id","connection-check-1" + count)
-	// 		    li.appendChild(document.createTextNode(candidate.value));
-	// 		    ul.before(li);
-	// 		    count+=1;
-	// 		});
-	// 	}
-	// 	if(after_button_element){
-	// 		after_button_element.addEventListener("click", function() {
-	// 			let append_elements = origin.getElementsByTagName('li');
-	// 			for(var i=0;i<append_elements.length;i++){
-	// 				append_elements[i].addEventListener("click",function(){
-	// 					append_elements[i].remove();
-	// 				})
-	// 			}
-	// 			var ul = document.getElementById(li_elements[0].id);
-	// 		    var candidate = document.getElementById(input.id);
-	// 		    var li = document.createElement("li");
-	// 		    li.setAttribute("id","connection-check-1" + count)
-	// 		    li.appendChild(document.createTextNode(candidate.value));
-	// 		    ul.appendChild(li);
-	// 		    count+=1
-	// 		});
-	// 	}
-	// });
-	// document.getElementById("connection-check-before-1").addEventListener("click", function() {
-	// 	let origin = document.getElementById("connection-check-div-1");
-	// 	let newClone = origin.cloneNode(true);
-	// 	newClone.setAttribute("id", origin.id + count);
-	// 	let li_elements = newClone.getElementsByTagName('li');
-	// 	for(var i=0;i<li_elements.length;i++){
-	// 		li_elements[i].setAttribute("id", li_elements[i].id + count);
-	// 	}
-	// 	let input_elements = newClone.getElementsByTagName('input');
-	// 	for(var i=0;i<input_elements.length;i++){
-	// 		input_elements[i].setAttribute("name", input_elements[i].name + count);
-	// 	}
-	// 	let button_elements = newClone.getElementsByTagName("button");
-	// 	for(var i=0;i<button_elements.length;i++){
-	// 		button_elements[i].setAttribute("id", button_elements[i].id + count);
-	// 	}
-	// 	origin.before(newClone);
-	// 	count+=1;
-	// });
-	// document.getElementById("connection-check-after-1").addEventListener("click", function() {
-	// 	let origin = document.getElementById("connection-check-div-1");
-	// 	let newClone = origin.cloneNode(true);
-	// 	newClone.setAttribute("id", origin.id + count);
-	// 	let li_elements = newClone.getElementsByTagName('li');
-	// 	for(var i=0;i<li_elements.length;i++){
-	// 		li_elements[i].setAttribute("id", li_elements[i].id + count);
-	// 	}
-	// 	let input_elements = newClone.getElementsByTagName('input');
-	// 	for(var i=0;i<input_elements.length;i++){
-	// 		input_elements[i].setAttribute("name", input_elements[i].name + count);
-	// 	}
-	// 	let button_elements = newClone.getElementsByTagName("button");
-	// 	for(var i=0;i<button_elements.length;i++){
-	// 		button_elements[i].setAttribute("id", button_elements[i].id + count);
-	// 	}
-	// 	origin.after(newClone);
-	// 	count+=1;
-	// });
+
+	$("input").click(function() {
+
+		function display_test_independent(input_1,target){
+			$(input_1).each(function(){
+				if($(this).prop("checked") == true){
+					  $(target).show();
+					}
+				else if($(this).prop("checked")==false){
+				  $(target).hide();
+				}
+				else{
+				  $(this).prop('checked', false);
+				}
+			});
+		}
+
+		function display_test_dependent(input_1,input_2,target){
+			$(input_1).each(function(){
+				if($(this).prop("checked") == true && $(input_2).prop("checked") == true){
+					  $(target).show();
+					}
+				else if($(this).prop("checked")==false){
+				  $(target).hide();
+				}
+				else{
+				  $(this).prop('checked', false);
+				}
+			});
+		}
+
+		function display_test_main(input,target_1,target_2,target_3,target_4,target_5,target_6,target_7){
+			$(input).each(function(){
+				if($(this).prop("checked") == true){
+					  $(target_1).show();
+					}
+				else if($(this).prop("checked")==false){
+				  $(target_1).hide();
+				  $(target_2).prop("checked", false);
+				  $(target_3).prop("checked", false);
+				  $(target_4).prop("checked", false);
+				  $(target_5).prop("checked", false);
+				  $(target_6).prop("checked", false);
+				  $(target_7).prop("checked", false);
+				}
+				else{
+				  $(this).prop('checked', false);
+				}
+			});
+		}
+
+		display_test_independent('input[id="Air System Resources"]',".resources")
+		display_test_independent('input[id="Field Panel Preparation"]',".field-panel-prep")
+		display_test_independent('input[id="Air System Relinquish Default Check"]',".airsys-relinquish")
+		display_test_independent('input[id="Air System Basic Hardware Check"]',".airsys-hardware")
+		display_test_independent('input[id="Occupied Mode 24 Hour"]',".occupied-24")
+		display_test_independent('input[id="Occupied Mode Scheduled"]',".occupied-24")
+		display_test_independent('input[id="Occupied Mode Scheduled"]',".airsys-occupied-sched")
+		display_test_independent('input[id="Return from Power Loss Reset"]',".airsys-power-return")
+		display_test_independent('input[id="Discharge Static Control"]',".sup-static-control")
+		display_test_independent('input[id="Discharge Static Reset"]',".sup-static-reset")
+		display_test_independent('input[id="Discharge Flow Control"]',".sup-flow-control")
+		display_test_independent('input[id="Discharge Flow Reset"]',".sup-flow-reset")
+		display_test_independent('input[id="Building Static Control - Exhaust Damper"]',".building-static-control")
+		display_test_independent('input[id="Building Static Control - Return Fan"]',".building-static-control")
+		display_test_independent('input[id="Return Static Control - Exhaust Damper"]',".return-static-control")
+		display_test_independent('input[id="Return Static Control - Return Fan"]',".return-static-control")
+		display_test_independent('input[id="Return Flow Control - CFM Offset"]',".return-offset-control")
+		display_test_independent('input[id="Exhaust Static Control"]',".exh-static-control")
+		display_test_independent('input[id="Exhaust Static Reset"]',".exh-static-reset")
+		display_test_independent('input[id="Economizer Control"]',".economizer")
+		display_test_independent('input[id="Discharge Temperature Control"]',".temperature-control")
+		display_test_independent('input[id="Discharge Temperature Reset"]',".temp-reset")
+		display_test_independent('input[id="Discharge Humidity Control"]',".humidity-control")
+		display_test_independent('input[id="Dehumidification Control"]',".dehumidification")
+		display_test_independent('input[id="Demand Control Ventilation"]',".dcv")
+		display_test_independent('input[id="Fan Wall Lead/Lag + Weekly turnover"]',".lead-lag")
+		display_test_independent('input[id="Alarm Checking"]',".alarming")
+
+		// Main Schedule
+		display_test_main('input[id="Unoccupied Mode"]',".unoccupied",'input[id="Optimum Stop when Heating"]','input[id="Optimum Stop when Cooling"]','input[id="Night Setback Heating"]','input[id="Night Setback Cooling"]','input[id="Optimum Start (Morning Warm-up)"]','input[id="Optimum Start (Morning Cool-down)"]')
+
+		// Scheduled Stuff
+		display_test_dependent('input[id="Optimum Stop when Heating"]','input[id="Unoccupied Mode"]',".stopheat")
+		display_test_dependent('input[id="Optimum Stop when Cooling"]','input[id="Unoccupied Mode"]',".stopcool")
+		display_test_dependent('input[id="Night Setback Heating"]','input[id="Unoccupied Mode"]',".ngtheat")
+		display_test_dependent('input[id="Night Setback Cooling"]','input[id="Unoccupied Mode"]',".ngtcool")
+		display_test_dependent('input[id="Optimum Start (Morning Warm-up)"]','input[id="Unoccupied Mode"]',".warmup")
+		display_test_dependent('input[id="Optimum Start (Morning Cool-down)"]','input[id="Unoccupied Mode"]',".cooldown")
+			
+
+
+	});
 });

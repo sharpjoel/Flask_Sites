@@ -651,6 +651,8 @@ def fpt():
     'Shading + HVAC':'D'
     }
     fptairsystems = {
+    'Air System Resources':'3',
+    'Field Panel Preparation':'4',
     'Air System Basic Hardware Check':'0',
     'Air System Relinquish Default Check':'1',
     'Return from Power Loss Reset':'A',
@@ -683,10 +685,7 @@ def fpt():
     'Return Flow Control - CFM Offset':'a',
     'Dehumidification Control':'b',
     'Fan Wall Lead/Lag + Weekly turnover':'c',
-    'Fan Proof Alarm':'d',
-    'HOA Alarm':'e',
-    'High/Low Static Alarm':'f',
-    'High/Low Temp Cutout Alarm':'g',
+    'Alarm Checking':'d'
     }
     rendered = render_template('ftp.html',fptterminalbox = fptterminalbox,fpttra = fpttra,fptairsystems = fptairsystems)
     # pdf = pdfkit.from_string(rendered, False)
