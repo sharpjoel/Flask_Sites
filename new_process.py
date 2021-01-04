@@ -701,7 +701,7 @@ def custom_fpt():
     # css = 'static/styles/new_form.css'
     if request.method == "POST":
         html = request.form['stuff']
-        with open("templates/custom_fpt.html", "w") as file:
+        with open(app.config['UPLOAD_FOLDER'] + "custom_fpt.html", "w") as file:
             file.write(html)
     # options = {"enable-local-file-access": None}
     # config = pdfkit.configuration(wkhtmltopdf='/usr/local/bin/wkhtmltopdf')
@@ -719,7 +719,7 @@ def custom_fpt():
 @app.route('/custom_fpt', methods=['GET'])
 def get_custom_pft():
     time.sleep(2)
-    return send_file("templates/custom_fpt.html" ,mimetype='text/html',as_attachment=True)
+    return send_file(app.config['UPLOAD_FOLDER'] + "custom_fpt.html" ,mimetype='text/html',as_attachment=True)
     # return render_template('custom_fpt.html')
 
 """
