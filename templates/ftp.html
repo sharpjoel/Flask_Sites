@@ -1181,7 +1181,34 @@
 	<div class='airsys-occupied-sched' style="display: none">
 		<h4><span class="badge badge-secondary sequence-start">Air System Occupied Mode Scheduled</span></h4>
 		<div class="fpt-container">
-			<div class='row' id="airsys-occupied-sched-div-1000">
+			
+		</div>
+	</div>
+	<div class='airsys occupied' style="display:none">
+		<h4><span class="badge badge-secondary sequence-start">Air System Occupied Mode</span></h4>
+		<div class="fpt-container occupied" style="display:none">
+			<h3 ondblclick="remove_this(this)" ><span class="badge badge-secondary badge-function">Safety Check</span></h3>
+			<div class='row' id="airsys-occupied-24-div-1000">
+				<div class="col-xl-7">
+					<ul id="airsys-occupied-24-div-1000-airsys-occupied-24-ul-1000">
+						<li id="airsys-occupied-24-div-1000-airsys-occupied-24-1001" ondblclick="remove_li(this)">Confirm no safeties for high/low static, high/low temperature, or high humidity are activated</li>
+					</ul>
+			  </div>
+			  <div class="col-xl-5">
+			   <input type="radio" name="airsys-occupied-24-1000">
+			   <label class="passfail">Pass</label>
+			   <input type="radio" name="airsys-occupied-24-1000">
+			   <label class="passfail fail">Fail</label>
+			   <input type="radio" name="airsys-occupied-24-1000">
+			   <label class="passfail na">NA</label>
+			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-occupied-24-remove-1000" name="remove">Remove</button>
+			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-occupied-24-to-1000" name="to">Add To</button>
+			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-occupied-24-before-1000" name="before">Add Heading</button>
+			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-1000" name="after">Add Test</button>
+			  </div>
+		  </div>
+		  <h3 ondblclick="remove_this(this)" ><span class="badge badge-secondary badge-function">System Enable</span></h3>
+		  <div class='row airsys-occupied-sched' id="airsys-occupied-sched-div-1000">
 				<div class="col-xl-7">
 					<ul id="airsys-occupied-sched-div-1000-airsys-occupied-sched-ul-1000">
 						<li id="airsys-occupied-sched-div-1000-airsys-occupied-sched-1000" ondblclick="remove_li(this)">Open Bacnet Scheduler and change Occupied start time to 5 minutes from now</li>
@@ -1205,33 +1232,7 @@
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-sched-after-1000" name="after">Add Test</button>
 			  </div>
 		  </div>
-		</div>
-	</div>
-	<div class='airsys occupied-24' style="display:none">
-		<h4><span class="badge badge-secondary sequence-start">Air System Occupied Mode</span></h4>
-		<div class="fpt-container occupied-24" style="display:none">
-			<h3 ondblclick="remove_this(this)" ><span class="badge badge-secondary badge-function">Safety Check</span></h3>
-			<div class='row' id="airsys-occupied-24-div-1000">
-				<div class="col-xl-7">
-					<ul id="airsys-occupied-24-div-1000-airsys-occupied-24-ul-1000">
-						<li id="airsys-occupied-24-div-1000-airsys-occupied-24-1001" ondblclick="remove_li(this)">Confirm no safeties for high/low static, high/low temperature, or high humidity are activated</li>
-					</ul>
-			  </div>
-			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-occupied-24-1000">
-			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-occupied-24-1000">
-			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-occupied-24-1000">
-			   <label class="passfail na">NA</label>
-			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-occupied-24-remove-1000" name="remove">Remove</button>
-			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-occupied-24-to-1000" name="to">Add To</button>
-			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-occupied-24-before-1000" name="before">Add Heading</button>
-			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-1000" name="after">Add Test</button>
-			  </div>
-		  </div>
-		  <h3 ondblclick="remove_this(this)" ><span class="badge badge-secondary badge-function">System Enable</span></h3>
-		  <div class='row' id="airsys-occupied-24-div-2000">
+		  <div class='row occupied-24' id="airsys-occupied-24-div-2000">
 				<div class="col-xl-7">
 					<ul id="airsys-occupied-24-div-2000-airsys-occupied-24-ul-2000">
 						<li id="airsys-occupied-24-div-2000-airsys-occupied-24-2000" ondblclick="remove_li(this)">Command Air System Enable point 'On'</li>
@@ -1995,8 +1996,8 @@
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-18000" name="after">Add Test</button>
 			  </div>
 		  </div>
-		  <h3 ondblclick="remove_this(this)" ><span class="badge badge-secondary badge-function">System Disable</span></h3>
-		  <div class='row' id="airsys-occupied-24-div-4000">
+		  <h3 ondblclick="remove_this(this)" class="occupied-24"><span class="badge badge-secondary badge-function">System Disable</span></h3>
+		  <div class='row occupied-24' id="airsys-occupied-24-div-4000">
 				<div class="col-xl-7">
 					<ul id="airsys-occupied-24-div-4000-airsys-occupied-24-ul-4000">
 						<li id="airsys-occupied-24-div-4000-airsys-occupied-24-4001" ondblclick="remove_li(this)">Command Air System Enable point 'Off'</li>

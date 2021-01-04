@@ -80,13 +80,30 @@ $(document).ready(function(){
 			});
 		}
 
+		function display_test_toggle(input_1,input_2,target_1,target_2,target_3,target_4){
+			$(input_1).click(function(){
+				if($(this).prop("checked") == true){
+					  $(input_2).prop("checked", false);
+					  $(target_1).hide();
+					}
+				else if($(input_2).prop("checked")==true){
+				  $(input_1).prop("checked", false);
+				}
+			});
+		}
+
 		display_test_independent('input[id="Air System Resources"]',".resources")
 		display_test_independent('input[id="Field Panel Preparation"]',".field-panel-prep")
 		display_test_independent('input[id="Air System Relinquish Default Check"]',".airsys-relinquish")
 		display_test_independent('input[id="Air System Basic Hardware Check"]',".airsys-hardware")
+
+		display_test_toggle('input[id="Occupied Mode 24 Hour"]','input[id="Occupied Mode Scheduled"]',".airsys-occupied-sched");
+		display_test_toggle('input[id="Occupied Mode Scheduled"]','input[id="Occupied Mode 24 Hour"]',".occupied-24");
+		display_test_independent('input[id="Occupied Mode 24 Hour"]',".occupied")
 		display_test_independent('input[id="Occupied Mode 24 Hour"]',".occupied-24")
-		display_test_independent('input[id="Occupied Mode Scheduled"]',".occupied-24")
+		display_test_independent('input[id="Occupied Mode Scheduled"]',".occupied")
 		display_test_independent('input[id="Occupied Mode Scheduled"]',".airsys-occupied-sched")
+
 		display_test_independent('input[id="Return from Power Loss Reset"]',".airsys-power-return")
 		display_test_independent('input[id="Discharge Static Control"]',".sup-static-control")
 		display_test_independent('input[id="Discharge Static Reset"]',".sup-static-reset")
@@ -109,9 +126,11 @@ $(document).ready(function(){
 		display_test_independent('input[id="Alarm Checking"]',".alarming")
 
 		// Main Schedule
+		display_test_dependent('input[id="Unoccupied Mode"]','input[id="Occupied Mode Scheduled"]',".unoccupied");
 		display_test_main('input[id="Unoccupied Mode"]',".unoccupied",'input[id="Optimum Stop when Heating"]','input[id="Optimum Stop when Cooling"]','input[id="Night Setback Heating"]','input[id="Night Setback Cooling"]','input[id="Optimum Start (Morning Warm-up)"]','input[id="Optimum Start (Morning Cool-down)"]')
 
 		// Scheduled Stuff
+		
 		display_test_dependent('input[id="Optimum Stop when Heating"]','input[id="Unoccupied Mode"]',".stopheat")
 		display_test_dependent('input[id="Optimum Stop when Cooling"]','input[id="Unoccupied Mode"]',".stopcool")
 		display_test_dependent('input[id="Night Setback Heating"]','input[id="Unoccupied Mode"]',".ngtheat")
