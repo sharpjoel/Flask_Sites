@@ -506,9 +506,9 @@
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="connection-check-remove-1000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="connection-check-to-1000" name="to">Add To</button>
-			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="connection-check-to-1000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="connection-check-before-1000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="connection-check-after-1000" name="after">Add Test</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="connection-check-to-1000" name="comment" style="display:none">Comment</button>
 			  </div>
 		  </div>
 		  <div class='row' id="connection-check-div-2000">
@@ -526,9 +526,9 @@
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="connection-check-remove-2000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="connection-check-to-2000" name="to">Add To</button>
-			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="connection-check-to-2000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="connection-check-before-2000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="connection-check-after-2000" name="after">Add Test</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="connection-check-to-2000" name="comment" style="display:none">Comment</button>
 			  </div>
 		  </div>
 		  <div class='row' id="connection-check-div-3000">
@@ -3009,8 +3009,10 @@
 			append_elem_check[0].remove();
 		}
 		append_elem_check = origin.getElementsByTagName('button');
-		if(append_elem_check.length > 4){
+		console.log(append_elem_check);
+		if(append_elem_check.length > 5){
 			append_elem_check[3].innerHTML = "Add To"
+			append_elem_check[4].innerHTML = "Add Heading"
 			append_elem_check[0].remove();
 			append_elem_check[0].remove();
 		}
