@@ -3,6 +3,25 @@ $(document).ready(function(){
 	var button_element = ""
 	var count = 0
 
+	const nameInput = document.querySelector('#system-name-input');
+	const nameDisplay = document.querySelector('#system-name');
+	const jobInput = document.querySelector('#job-number-input');
+	const jobDisplay = document.querySelector('#job-number');
+
+	nameInput.addEventListener('input',letter =>{
+		let nameDisplayTemp = letter.target.value;
+		nameDisplayTemp = nameDisplayTemp.split(" ").join("");
+		nameDisplayTemp = nameDisplayTemp.split(".").join("");
+		nameDisplay.textContent = nameDisplayTemp;
+	});
+
+	jobInput.addEventListener('input',letter =>{
+		let jobDisplayTemp = letter.target.value;
+		jobDisplayTemp = jobDisplayTemp.split(" ").join("");
+		jobDisplayTemp = jobDisplayTemp.split(".").join("");
+		jobDisplay.textContent = jobDisplayTemp;
+	});
+
 	$("#cmd").click(function(){
 
 		// Declare html to send
@@ -12,6 +31,53 @@ $(document).ready(function(){
 		$('#cmd').hide();
 		$('.append').hide();
 		$('.custom-buttons').hide();
+		$('.comment').show();
+		$('#job-inputs').hide();
+		// modify list elements
+		$('li').each(function(){
+			if(this.id){
+				var sys = $("#system-name").text()
+				var job = $("#job-number").text()
+				this.id= sys + "-" + job + "-" + this.id;
+			}
+		});
+		$('ul').each(function(){
+			if(this.id){
+				var sys = $("#system-name").text()
+				var job = $("#job-number").text()
+				this.id= sys + "-" + job + "-" + this.id;
+			}
+		});
+		$('button').each(function(){
+			if(this.id){
+				var sys = $("#system-name").text()
+				var job = $("#job-number").text()
+				this.id= sys + "-" + job + "-" + this.id;
+			}
+		});
+		$('div').each(function(){
+			if(this.id){
+				var sys = $("#system-name").text()
+				var job = $("#job-number").text()
+				this.id= sys + "-" + job + "-" + this.id;
+			}
+		});
+		$('input').each(function(){
+			if(this.id){
+				var sys = $("#system-name").text()
+				var job = $("#job-number").text()
+				this.id= sys + "-" + job + "-" + this.id;
+			}
+		});
+		$('input').each(function(){
+			if(this.name){
+				var sys = $("#system-name").text()
+				var job = $("#job-number").text()
+				this.name = sys + "-" + job + "-" + this.name;
+			}
+		});
+		document.querySelector('#system-name').textContent = "System Name: " + $("#system-name").text()
+		document.querySelector('#job-number').textContent = "Job Number: 440P-" + $("#job-number").text()
 		let html = $('html').html();
 		var dataToSend = JSON.stringify({'num':html})
 		$.post({
@@ -28,6 +94,9 @@ $(document).ready(function(){
 		$('nav').show();
 		$('#app-container').show();
 		$('#cmd').show();
+		$('.custom-buttons').show();
+		$('.comment').hide();
+		$('#job-inputs').show();
 	});
 
 	$("input").click(function() {

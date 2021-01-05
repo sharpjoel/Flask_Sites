@@ -262,6 +262,16 @@
 			height:1500px;
 		}
 
+		.fpt-container-style{
+			/*float:left;*/
+			margin-left:1%;
+			width:100%;
+			height:1500px;
+			font-size: 15px;
+			color: #BBBBBB;
+			font-family: 'Roboto';
+		}
+
 		#fpt-container{
 			/*float:left;*/
 			margin-left:1%;
@@ -403,6 +413,16 @@
  </div>
 </nav>
 <br>
+<div id="job-inputs">
+	<label class="badge badge-secondary" style="font-size: 20px">System Name</label>
+	<input type="text" name="system-name-input" id="system-name-input" value="AHU-NO-SPACES">
+	<label class="badge badge-secondary" style="font-size: 20px">44OP-</label>
+	<input type="text" name="job-number-input" id="job-number-input" value="123456">
+</div>
+<div>
+	<h3 ondblclick="remove_this(this)" style="margin-left: 1%"><span class="badge badge-secondary" id="system-name"></span></h3>
+	<h3 ondblclick="remove_this(this)" style="margin-left: 1%"><span class="badge badge-secondary" id="job-number"></span></h3>
+</div>
 <div id='app-container'>
 	<form class='form-container' id='appForm'>
 		<div class='form-container' id="standard-seq-1">
@@ -444,7 +464,7 @@
 	</form>
 </div>
 <br><br>
-<div id='fpt-container'>
+<div class="fpt-container-style" id='fpt-container'>
 	<h1 class="resources" style="display:none"><span class="badge badge-secondary sequence-start">Resources</span></h1>
 		<div class="fpt-container resources" style="display:none">
 			<div class='row' id="resources-div-1000">
@@ -458,11 +478,11 @@
 					</ul>	
 			  </div>
 			  <div class="col-xl-5">
-			  	<input type="radio" name="resources-1000" style="visibility: hidden">
+			  	<input type="radio" class="radio-buttons" name="resources-1000" style="visibility: hidden">
 			   <label class="passfail" style="visibility: hidden">Pass</label>
-			   <input type="radio" name="resources-1000" style="visibility: hidden">
+			   <input type="radio" class="radio-buttons" name="resources-1000" style="visibility: hidden">
 			   <label class="passfail fail" style="visibility: hidden">Fail</label>
-			   <input type="radio" name="resources-1000" style="visibility: hidden">
+			   <input type="radio" class="radio-buttons" name="resources-1000" style="visibility: hidden">
 			   <label class="passfail na" style="visibility: hidden">NA</label>
 			   <button onclick="append_link(this)" class="custom-buttons" id="resources-to-1000" name="to">Add Reference</button>
 			  </div>
@@ -478,14 +498,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="connection-check-1000">
+			   <input type="radio" class="radio-buttons" name="connection-check-1000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="connection-check-1000">
+			   <input type="radio" class="radio-buttons" name="connection-check-1000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="connection-check-1000">
+			   <input type="radio" class="radio-buttons" name="connection-check-1000" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="connection-check-remove-1000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="connection-check-to-1000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="connection-check-to-1000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="connection-check-before-1000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="connection-check-after-1000" name="after">Add Test</button>
 			  </div>
@@ -497,14 +518,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="connection-check-2000">
+			   <input type="radio" class="radio-buttons" name="connection-check-2000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="connection-check-2000">
+			   <input type="radio" class="radio-buttons" name="connection-check-2000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="connection-check-2000">
+			   <input type="radio" class="radio-buttons" name="connection-check-2000" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="connection-check-remove-2000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="connection-check-to-2000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="connection-check-to-2000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="connection-check-before-2000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="connection-check-after-2000" name="after">Add Test</button>
 			  </div>
@@ -516,14 +538,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="connection-check-3000">
+			   <input type="radio" class="radio-buttons" name="connection-check-3000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="connection-check-3000">
+			   <input type="radio" class="radio-buttons" name="connection-check-3000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="connection-check-3000">
+			   <input type="radio" class="radio-buttons" name="connection-check-3000" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="connection-check-remove-3000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="connection-check-to-3000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="connection-check-to-3000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="connection-check-before-3000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="connection-check-after-3000" name="after">Add Test</button>
 			  </div>
@@ -539,14 +562,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="connection-check-4000">
+			   <input type="radio" class="radio-buttons" name="connection-check-4000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="connection-check-4000">
+			   <input type="radio" class="radio-buttons" name="connection-check-4000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="connection-check-4000">
+			   <input type="radio" class="radio-buttons" name="connection-check-4000" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="connection-check-remove-4000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="connection-check-to-4000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="connection-check-to-4000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="connection-check-before-4000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="connection-check-after-4000" name="after">Add Test</button>
 			  </div>
@@ -561,14 +585,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="connection-check-5000">
+			   <input type="radio" class="radio-buttons" name="connection-check-5000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="connection-check-5001">
+			   <input type="radio" class="radio-buttons" name="connection-check-5000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="connection-check-5002">
+			   <input type="radio" class="radio-buttons" name="connection-check-5000" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="connection-check-remove-5000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="connection-check-to-5000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="connection-check-to-5000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="connection-check-before-5000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="connection-check-after-5000" name="after">Add Test</button>
 			  </div>
@@ -584,14 +609,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="connection-check-6000">
+			   <input type="radio" class="radio-buttons" name="connection-check-6000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="connection-check-6000">
+			   <input type="radio" class="radio-buttons" name="connection-check-6000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="connection-check-6000">
+			   <input type="radio" class="radio-buttons" name="connection-check-6000" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="connection-check-remove-6000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="connection-check-to-6000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="connection-check-to-6000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="connection-check-before-6000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="connection-check-after-6000" name="after">Add Test</button>
 			  </div>
@@ -613,14 +639,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="connection-check-7000">
+			   <input type="radio" class="radio-buttons" name="connection-check-7000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="connection-check-7000">
+			   <input type="radio" class="radio-buttons" name="connection-check-7000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="connection-check-7000">
+			   <input type="radio" class="radio-buttons" name="connection-check-7000" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="connection-check-remove-7000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="connection-check-to-7000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="connection-check-to-7000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="connection-check-before-7000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="connection-check-after-7000" name="after">Add Test</button>
 			  </div>
@@ -658,14 +685,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-relinquish-1000">
+			   <input type="radio" class="radio-buttons" name="airsys-relinquish-1000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-relinquish-1000">
+			   <input type="radio" class="radio-buttons" name="airsys-relinquish-1000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-relinquish-1000">
+			   <input type="radio" class="radio-buttons" name="airsys-relinquish-1000" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-relinquish-remove-1000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-relinquish-to-1000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-relinquish-comment-1000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-relinquish-before-1000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-relinquish-after-1000" name="after">Add Test</button>
 			  </div>
@@ -677,14 +705,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-relinquish-2000">
+			   <input type="radio" class="radio-buttons" name="airsys-relinquish-2000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-relinquish-2000">
+			   <input type="radio" class="radio-buttons" name="airsys-relinquish-2000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-relinquish-2000">
+			   <input type="radio" class="radio-buttons" name="airsys-relinquish-2000" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-relinquish-remove-2000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-relinquish-to-2000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-relinquish-comment-2000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-relinquish-before-2000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-relinquish-after-2000" name="after">Add Test</button>
 			  </div>
@@ -696,14 +725,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-relinquish-3000">
+			   <input type="radio" class="radio-buttons" name="airsys-relinquish-3000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-relinquish-3000">
+			   <input type="radio" class="radio-buttons" name="airsys-relinquish-3000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-relinquish-3000">
+			   <input type="radio" class="radio-buttons" name="airsys-relinquish-3000" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-relinquish-remove-3000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-relinquish-to-3000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-relinquish-comment-3000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-relinquish-before-3000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-relinquish-after-3000" name="after">Add Test</button>
 			  </div>
@@ -715,14 +745,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-relinquish-4000">
+			   <input type="radio" class="radio-buttons" name="airsys-relinquish-4000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-relinquish-4000">
+			   <input type="radio" class="radio-buttons" name="airsys-relinquish-4000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-relinquish-4000">
+			   <input type="radio" class="radio-buttons" name="airsys-relinquish-4000" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-relinquish-remove-4000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-relinquish-to-4000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-relinquish-comment-4000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-relinquish-before-4000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-relinquish-after-4000" name="after">Add Test</button>
 			  </div>
@@ -734,14 +765,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-relinquish-5000">
+			   <input type="radio" class="radio-buttons" name="airsys-relinquish-5000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-relinquish-5000">
+			   <input type="radio" class="radio-buttons" name="airsys-relinquish-5000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-relinquish-5000">
+			   <input type="radio" class="radio-buttons" name="airsys-relinquish-5000" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-relinquish-remove-5000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-relinquish-to-5000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-relinquish-comment-5000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-relinquish-before-5000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-relinquish-after-5000" name="after">Add Test</button>
 			  </div>
@@ -753,14 +785,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-relinquish-6000">
+			   <input type="radio" class="radio-buttons" name="airsys-relinquish-6000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-relinquish-6000">
+			   <input type="radio" class="radio-buttons" name="airsys-relinquish-6000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-relinquish-6000">
+			   <input type="radio" class="radio-buttons" name="airsys-relinquish-6000" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-relinquish-remove-6000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-relinquish-to-6000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-relinquish-comment-6000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-relinquish-before-6000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-relinquish-after-6000" name="after">Add Test</button>
 			  </div>
@@ -772,14 +805,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-relinquish-16000">
+			   <input type="radio" class="radio-buttons" name="airsys-relinquish-16000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-relinquish-16000">
+			   <input type="radio" class="radio-buttons" name="airsys-relinquish-16000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-relinquish-16000">
+			   <input type="radio" class="radio-buttons" name="airsys-relinquish-16000" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-relinquish-remove-16000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-relinquish-to-16000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-relinquish-comment-16000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-relinquish-before-16000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-relinquish-after-16000" name="after">Add Test</button>
 			  </div>
@@ -802,14 +836,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-relinquish-7000">
+			   <input type="radio" class="radio-buttons" name="airsys-relinquish-7000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-relinquish-7000">
+			   <input type="radio" class="radio-buttons" name="airsys-relinquish-7000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-relinquish-7000">
+			   <input type="radio" class="radio-buttons" name="airsys-relinquish-7000" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-relinquish-remove-7000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-relinquish-to-7000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-relinquish-comment-7000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-relinquish-before-7000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-relinquish-after-7000" name="after">Add Test</button>
 			  </div>
@@ -832,14 +867,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-relinquish-14000">
+			   <input type="radio" class="radio-buttons" name="airsys-relinquish-14000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-relinquish-14000">
+			   <input type="radio" class="radio-buttons" name="airsys-relinquish-14000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-relinquish-14000">
+			   <input type="radio" class="radio-buttons" name="airsys-relinquish-14000" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-relinquish-remove-14000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-relinquish-to-14000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-relinquish-comment-14000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-relinquish-before-14000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-relinquish-after-14000" name="after">Add Test</button>
 			  </div>
@@ -860,14 +896,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-relinquish-15000">
+			   <input type="radio" class="radio-buttons" name="airsys-relinquish-15000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-relinquish-15000">
+			   <input type="radio" class="radio-buttons" name="airsys-relinquish-15000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-relinquish-15000">
+			   <input type="radio" class="radio-buttons" name="airsys-relinquish-15000" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-relinquish-remove-15000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-relinquish-to-15000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-relinquish-comment-15000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-relinquish-before-15000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-relinquish-after-15000" name="after">Add Test</button>
 			  </div>
@@ -890,14 +927,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-relinquish-8000">
+			   <input type="radio" class="radio-buttons" name="airsys-relinquish-8000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-relinquish-8000">
+			   <input type="radio" class="radio-buttons" name="airsys-relinquish-8000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-relinquish-8000">
+			   <input type="radio" class="radio-buttons" name="airsys-relinquish-8000" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-relinquish-remove-8000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-relinquish-to-8000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-relinquish-comment-8000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-relinquish-before-8000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-relinquish-after-8000" name="after">Add Test</button>
 			  </div>
@@ -919,14 +957,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-relinquish-9000">
+			   <input type="radio" class="radio-buttons" name="airsys-relinquish-9000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-relinquish-9000">
+			   <input type="radio" class="radio-buttons" name="airsys-relinquish-9000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-relinquish-9000">
+			   <input type="radio" class="radio-buttons" name="airsys-relinquish-9000" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-relinquish-remove-9000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-relinquish-to-9000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-relinquish-comment-9000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-relinquish-before-9000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-relinquish-after-9000" name="after">Add Test</button>
 			  </div>
@@ -949,14 +988,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-relinquish-10000">
+			   <input type="radio" class="radio-buttons" name="airsys-relinquish-10000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-relinquish-10000">
+			   <input type="radio" class="radio-buttons" name="airsys-relinquish-10000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-relinquish-10000">
+			   <input type="radio" class="radio-buttons" name="airsys-relinquish-10000" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-relinquish-remove-10000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-relinquish-to-10000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-relinquish-comment-10000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-relinquish-before-10000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-relinquish-after-10000" name="after">Add Test</button>
 			  </div>
@@ -968,14 +1008,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-relinquish-11000">
+			   <input type="radio" class="radio-buttons" name="airsys-relinquish-11000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-relinquish-11000">
+			   <input type="radio" class="radio-buttons" name="airsys-relinquish-11000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-relinquish-11000">
+			   <input type="radio" class="radio-buttons" name="airsys-relinquish-11000" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-relinquish-remove-11000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-relinquish-to-11000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-relinquish-comment-11000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-relinquish-before-11000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-relinquish-after-11000" name="after">Add Test</button>
 			  </div>
@@ -987,14 +1028,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-relinquish-12000">
+			   <input type="radio" class="radio-buttons" name="airsys-relinquish-12000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-relinquish-12000">
+			   <input type="radio" class="radio-buttons" name="airsys-relinquish-12000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-relinquish-12000">
+			   <input type="radio" class="radio-buttons" name="airsys-relinquish-12000" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-relinquish-remove-12000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-relinquish-to-12000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-relinquish-comment-12000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-relinquish-before-12000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-relinquish-after-12000" name="after">Add Test</button>
 			  </div>
@@ -1006,14 +1048,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-relinquish-13000">
+			   <input type="radio" class="radio-buttons" name="airsys-relinquish-13000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-relinquish-13000">
+			   <input type="radio" class="radio-buttons" name="airsys-relinquish-13000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-relinquish-13000">
+			   <input type="radio" class="radio-buttons" name="airsys-relinquish-13000" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-relinquish-remove-13000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-relinquish-to-13000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-relinquish-comment-13000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-relinquish-before-13000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-relinquish-after-13000" name="after">Add Test</button>
 			  </div>
@@ -1033,16 +1076,17 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-hardware-1000">
+			   <input type="radio" class="radio-buttons" name="airsys-hardware-1000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-hardware-1000">
+			   <input type="radio" class="radio-buttons" name="airsys-hardware-1000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-hardware-1000">
+			   <input type="radio" class="radio-buttons" name="airsys-hardware-1000" value="na">
 			   <label class="passfail na">NA</label>
-			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-relinquish-remove-1000" name="remove">Remove</button>
-			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-relinquish-to-1000" name="to">Add To</button>
-			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-relinquish-before-1000" name="before">Add Heading</button>
-			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-relinquish-after-1000" name="after">Add Test</button>
+			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-hardware-remove-1000" name="remove">Remove</button>
+			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-hardware-to-1000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-hardware-comment-1000" name="comment" style="display:none">Comment</button>
+			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-hardware-before-1000" name="before">Add Heading</button>
+			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-hardware-after-1000" name="after">Add Test</button>
 			  </div>
 		  </div>
 		  <div class='row' id="airsys-hardware-div-2000">
@@ -1052,16 +1096,17 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-hardware-2000">
+			   <input type="radio" class="radio-buttons" name="airsys-hardware-2000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-hardware-2000">
+			   <input type="radio" class="radio-buttons" name="airsys-hardware-2000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-hardware-2000">
+			   <input type="radio" class="radio-buttons" name="airsys-hardware-2000" value="na">
 			   <label class="passfail na">NA</label>
-			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-relinquish-remove-2000" name="remove">Remove</button>
-			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-relinquish-to-2000" name="to">Add To</button>
-			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-relinquish-before-2000" name="before">Add Heading</button>
-			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-relinquish-after-2000" name="after">Add Test</button>
+			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-hardware-remove-2000" name="remove">Remove</button>
+			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-hardware-to-2000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-hardware-comment-2000" name="comment" style="display:none">Comment</button>
+			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-hardware-before-2000" name="before">Add Heading</button>
+			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-hardware-after-2000" name="after">Add Test</button>
 			  </div>
 		  </div>
 		  <div class='row' id="airsys-hardware-div-3000">
@@ -1073,16 +1118,17 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-hardware-3000">
+			   <input type="radio" class="radio-buttons" name="airsys-hardware-3000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-hardware-3000">
+			   <input type="radio" class="radio-buttons" name="airsys-hardware-3000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-hardware-3000">
+			   <input type="radio" class="radio-buttons" name="airsys-hardware-3000" value="na">
 			   <label class="passfail na">NA</label>
-			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-relinquish-remove-3000" name="remove">Remove</button>
-			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-relinquish-to-3000" name="to">Add To</button>
-			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-relinquish-before-3000" name="before">Add Heading</button>
-			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-relinquish-after-3000" name="after">Add Test</button>
+			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-hardware-remove-3000" name="remove">Remove</button>
+			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-hardware-to-3000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-hardware-comment-3000" name="comment" style="display:none">Comment</button>
+			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-hardware-before-3000" name="before">Add Heading</button>
+			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-hardware-after-3000" name="after">Add Test</button>
 			  </div>
 		  </div>
 		  <div class='row' id="airsys-hardware-div-4000">
@@ -1093,16 +1139,17 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-hardware-4000">
+			   <input type="radio" class="radio-buttons" name="airsys-hardware-4000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-hardware-4000">
+			   <input type="radio" class="radio-buttons" name="airsys-hardware-4000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-hardware-4000">
+			   <input type="radio" class="radio-buttons" name="airsys-hardware-4000" value="na">
 			   <label class="passfail na">NA</label>
-			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-relinquish-remove-4000" name="remove">Remove</button>
-			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-relinquish-to-4000" name="to">Add To</button>
-			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-relinquish-before-4000" name="before">Add Heading</button>
-			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-relinquish-after-4000" name="after">Add Test</button>
+			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-hardware-remove-4000" name="remove">Remove</button>
+			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-hardware-to-4000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-hardware-comment-4000" name="comment" style="display:none">Comment</button>
+			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-hardware-before-4000" name="before">Add Heading</button>
+			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-hardware-after-4000" name="after">Add Test</button>
 			  </div>
 		  </div>
 			<div class='row' id="airsys-hardware-div-5000">
@@ -1117,16 +1164,17 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-hardware-5000">
+			   <input type="radio" class="radio-buttons" name="airsys-hardware-5000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-hardware-5000">
+			   <input type="radio" class="radio-buttons" name="airsys-hardware-5000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-hardware-5000">
+			   <input type="radio" class="radio-buttons" name="airsys-hardware-5000" value="na">
 			   <label class="passfail na">NA</label>
-			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-relinquish-remove-5000" name="remove">Remove</button>
-			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-relinquish-to-5000" name="to">Add To</button>
-			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-relinquish-before-5000" name="before">Add Heading</button>
-			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-relinquish-after-5000" name="after">Add Test</button>
+			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-hardware-remove-5000" name="remove">Remove</button>
+			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-hardware-to-5000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-hardware-comment-5000" name="comment" style="display:none">Comment</button>
+			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-hardware-before-5000" name="before">Add Heading</button>
+			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-hardware-after-5000" name="after">Add Test</button>
 			  </div>
 		  </div>
 		</div>
@@ -1164,14 +1212,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-return-1000">
+			   <input type="radio" class="radio-buttons" name="airsys-return-1000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-return-1000">
+			   <input type="radio" class="radio-buttons" name="airsys-return-1000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-return-1000">
+			   <input type="radio" class="radio-buttons" name="airsys-return-1000" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-return-remove-1000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-return-to-1000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-return-comment-1000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-return-before-1000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-return-after-1000" name="after">Add Test</button>
 			  </div>
@@ -1195,14 +1244,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-occupied-24-1000">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-1000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-occupied-24-1000">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-1000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-occupied-24-1000">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-1000" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-occupied-24-remove-1000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-occupied-24-to-1000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-occupied-24-comment-1000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-occupied-24-before-1000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-1000" name="after">Add Test</button>
 			  </div>
@@ -1220,14 +1270,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-occupied-sched-1000">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-sched-1000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-occupied-sched-1000">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-sched-1000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-occupied-sched-1000">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-sched-1000" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-occupied-sched-remove-1000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-occupied-sched-to-1000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-occupied-sched-comment-1000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-occupied-sched-before-1000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-sched-after-1000" name="after">Add Test</button>
 			  </div>
@@ -1240,14 +1291,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-occupied-24-2000">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-2000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-occupied-24-2000">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-2000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-occupied-24-2000">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-2000" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-occupied-24-remove-2000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-occupied-24-to-2000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-occupied-24-comment-2000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-occupied-24-before-2000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-2000" name="after">Add Test</button>
 			  </div>
@@ -1283,14 +1335,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-occupied-24-17000">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-17000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-occupied-24-17000">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-17000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-occupied-24-17000">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-17000" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-occupied-24-remove-17000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-occupied-24-to-17000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-occupied-24-comment-17000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-occupied-24-before-17000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-17000" name="after">Add Test</button>
 			  </div>
@@ -1306,14 +1359,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-occupied-24-19000">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-19000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-occupied-24-19000">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-19000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-occupied-24-19000">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-19000" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-occupied-24-remove-19000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-occupied-24-to-19000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-occupied-24-comment-19000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-occupied-24-before-19000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-19000" name="after">Add Test</button>
 			  </div>
@@ -1326,14 +1380,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-occupied-24-3000">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-3000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-occupied-24-3000">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-3000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-occupied-24-3000">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-3000" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-occupied-24-remove-3000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-occupied-24-to-3000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-occupied-24-comment-3000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-occupied-24-before-3000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-3000" name="after">Add Test</button>
 			  </div>
@@ -1346,14 +1401,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-occupied-24-5000">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-5000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-occupied-24-5000">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-5000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-occupied-24-5000">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-5000" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-occupied-24-remove-5000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-occupied-24-to-5000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-occupied-24-comment-5000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-occupied-24-before-5000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-5000" name="after">Add Test</button>
 			  </div>
@@ -1368,14 +1424,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-occupied-24-6000">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-6000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-occupied-24-6000">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-6000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-occupied-24-6000">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-6000" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-occupied-24-remove-6000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-occupied-24-to-6000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-occupied-24-comment-6000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-occupied-24-before-6000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-6000" name="after">Add Test</button>
 			  </div>
@@ -1389,14 +1446,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-occupied-24-7000">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-7000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-occupied-24-7000">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-7000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-occupied-24-7000">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-7000" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-occupied-24-remove-7000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-occupied-24-to-7000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-occupied-24-comment-7000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-occupied-24-before-7000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-7000" name="after">Add Test</button>
 			  </div>
@@ -1410,14 +1468,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-occupied-24-13000">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-13000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-occupied-24-13000">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-13000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-occupied-24-13000">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-13000" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-occupied-24-remove-13000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-occupied-24-to-13000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-occupied-24-comment-13000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-occupied-24-before-13000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-13000" name="after">Add Test</button>
 			  </div>
@@ -1432,14 +1491,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-occupied-24-14000">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-14000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-occupied-24-14000">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-14000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-occupied-24-14000">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-14000" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-occupied-24-remove-14000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-occupied-24-to-14000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-occupied-24-comment-14000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-occupied-24-before-14000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-14000" name="after">Add Test</button>
 			  </div>
@@ -1453,14 +1513,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-occupied-24-15000">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-15000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-occupied-24-15000">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-15000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-occupied-24-15000">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-15000" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-occupied-24-remove-15000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-occupied-24-to-15000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-occupied-24-comment-15000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-occupied-24-before-15000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-15000" name="after">Add Test</button>
 			  </div>
@@ -1474,14 +1535,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-occupied-24-8000">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-8000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-occupied-24-8000">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-8000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-occupied-24-8000">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-8000" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-occupied-24-remove-8000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-occupied-24-to-8000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-occupied-24-comment-8000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-occupied-24-before-8000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-8000" name="after">Add Test</button>
 			  </div>
@@ -1495,14 +1557,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-occupied-24-9000">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-9000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-occupied-24-9000">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-9000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-occupied-24-9000">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-9000" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-occupied-24-remove-9000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-occupied-24-to-9000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-occupied-24-comment-9000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-occupied-24-before-9000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-9000" name="after">Add Test</button>
 			  </div>
@@ -1516,14 +1579,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-occupied-24-16000">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-16000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-occupied-24-16000">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-16000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-occupied-24-16000">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-16000" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-occupied-24-remove-16000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-occupied-24-to-16000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-occupied-24-comment-16000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-occupied-24-before-16000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-16000" name="after">Add Test</button>
 			  </div>
@@ -1537,14 +1601,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-occupied-24-10000">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-10000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-occupied-24-10000">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-10000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-occupied-24-10000">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-10000" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-occupied-24-remove-10000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-occupied-24-to-10000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-occupied-24-comment-10000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-occupied-24-before-10000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-10000" name="after">Add Test</button>
 			  </div>
@@ -1559,14 +1624,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-occupied-24-11000">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-11000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-occupied-24-11000">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-11000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-occupied-24-11000">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-11000" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-occupied-24-remove-11000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-occupied-24-to-11000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-occupied-24-comment-11000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-occupied-24-before-11000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-11000" name="after">Add Test</button>
 			  </div>
@@ -1580,14 +1646,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-occupied-24-12000">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-12000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-occupied-24-12000">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-12000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-occupied-24-12000">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-12000" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-occupied-24-remove-12000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-occupied-24-to-12000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-occupied-24-comment-12000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-occupied-24-before-12000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-12000" name="after">Add Test</button>
 			  </div>
@@ -1600,14 +1667,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-occupied-24-20700">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-20700" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-occupied-24-20700">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-20700" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-occupied-24-20700">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-20700" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-occupied-24-remove-20700" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-occupied-24-to-20700" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-occupied-24-comment-20700" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-occupied-24-before-20700" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-20700" name="after">Add Test</button>
 			  </div>
@@ -1620,14 +1688,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-occupied-24-20800">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-20800" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-occupied-24-20800">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-20800" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-occupied-24-20800">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-20800" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-occupied-24-remove-20800" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-occupied-24-to-20800" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-occupied-24-comment-20800" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-occupied-24-before-20800" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-20800" name="after">Add Test</button>
 			  </div>
@@ -1642,14 +1711,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-occupied-24-20900">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-20900" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-occupied-24-20900">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-20900" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-occupied-24-20900">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-20900" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-occupied-24-remove-20900" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-occupied-24-to-20900" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-occupied-24-comment-20900" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-occupied-24-before-20900" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-20900" name="after">Add Test</button>
 			  </div>
@@ -1665,14 +1735,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-occupied-24-20000">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-20000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-occupied-24-20000">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-20000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-occupied-24-20000">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-20000" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-occupied-24-remove-20000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-occupied-24-to-20000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-occupied-24-comment-20000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-occupied-24-before-20000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-20000" name="after">Add Test</button>
 			  </div>
@@ -1689,14 +1760,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-occupied-24-20100">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-20100" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-occupied-24-20100">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-20100" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-occupied-24-20100">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-20100" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-occupied-24-remove-20100" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-occupied-24-to-20100" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-occupied-24-comment-20100" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-occupied-24-before-20100" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-20100" name="after">Add Test</button>
 			  </div>
@@ -1712,14 +1784,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-occupied-24-20200">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-20200" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-occupied-24-20200">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-20200" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-occupied-24-20200">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-20200" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-occupied-24-remove-20200" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-occupied-24-to-20200" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-occupied-24-comment-20200" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-occupied-24-before-20200" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-20200" name="after">Add Test</button>
 			  </div>
@@ -1736,14 +1809,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-occupied-24-20300">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-20300" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-occupied-24-20300">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-20300" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-occupied-24-20300">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-20300" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-occupied-24-remove-20300" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-occupied-24-to-20300" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-occupied-24-comment-20300" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-occupied-24-before-20300" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-20300" name="after">Add Test</button>
 			  </div>
@@ -1760,14 +1834,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-occupied-24-20400">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-20400" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-occupied-24-20400">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-20400" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-occupied-24-20400">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-20400" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-occupied-24-remove-20400" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-occupied-24-to-20400" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-occupied-24-comment-20400" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-occupied-24-before-20400" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-20400" name="after">Add Test</button>
 			  </div>
@@ -1781,14 +1856,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-occupied-24-30000">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-30000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-occupied-24-30000">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-30000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-occupied-24-30000">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-30000" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-occupied-24-remove-30000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-occupied-24-to-30000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-occupied-24-comment-30000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-occupied-24-before-30000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-30000" name="after">Add Test</button>
 			  </div>
@@ -1802,14 +1878,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-occupied-24-30100">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-30100" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-occupied-24-30100">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-30100" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-occupied-24-30100">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-30100" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-occupied-24-remove-30100" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-occupied-24-to-30100" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-occupied-24-comment-30100" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-occupied-24-before-30100" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-30100" name="after">Add Test</button>
 			  </div>
@@ -1826,41 +1903,43 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-occupied-24-20600">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-20600" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-occupied-24-20600">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-20600" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-occupied-24-20600">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-20600" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-occupied-24-remove-20600" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-occupied-24-to-20600" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-occupied-24-comment-20600" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-occupied-24-before-20600" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-20600" name="after">Add Test</button>
 			  </div>
 		  </div>
-		  <div class='row dcv' id="airsys-occupied-24-div-20600" style="display:none">
+		  <div class='row dcv' id="airsys-occupied-24-div-30600" style="display:none">
 				<div class="col-xl-7">
-					<ul id="airsys-occupied-24-div-20600-airsys-occupied-24-ul-20600">
-						<li id="airsys-occupied-24-div-20600-airsys-occupied-24-20601" ondblclick="remove_li(this)">Command the Low CO2 threshold to 800ppm</li>
-						<li id="airsys-occupied-24-div-20600-airsys-occupied-24-20602" ondblclick="remove_li(this)">Command the High CO2 threshold to 1000ppm</li>
-						<li id="airsys-occupied-24-div-20600-airsys-occupied-24-20603" ondblclick="remove_li(this)">Confirm the Minimum Outside Airflow Setpoint decreases by 200cfm every 30 seconds until the high it reaches the Minimum Outside Airflow Setpoint</li>
-						<li id="airsys-occupied-24-div-20600-airsys-occupied-24-20604" ondblclick="remove_li(this)">Confirm the Outside Air Damper closes to maintain the Minimum Outside Airflow Setpoint. Adjust gains as necessary.</li>
-						<li id="airsys-occupied-24-div-20600-airsys-occupied-24-20604" ondblclick="remove_li(this)">Release the Low CO2 threshold from Operator Priority</li>
-						<li id="airsys-occupied-24-div-20600-airsys-occupied-24-20604" ondblclick="remove_li(this)">Release the High CO2 threshold from Operator Priority</li>
-						<li id="airsys-occupied-24-div-20600-airsys-occupied-24-20604" ondblclick="remove_li(this)">Increase the sample time for checking zone/return CO2 from 30 seconds to 300 seconds</li>
+					<ul id="airsys-occupied-24-div-30600-airsys-occupied-24-ul-30600">
+						<li id="airsys-occupied-24-div-30600-airsys-occupied-24-30601" ondblclick="remove_li(this)">Command the Low CO2 threshold to 800ppm</li>
+						<li id="airsys-occupied-24-div-30600-airsys-occupied-24-30602" ondblclick="remove_li(this)">Command the High CO2 threshold to 1000ppm</li>
+						<li id="airsys-occupied-24-div-30600-airsys-occupied-24-30603" ondblclick="remove_li(this)">Confirm the Minimum Outside Airflow Setpoint decreases by 200cfm every 30 seconds until the high it reaches the Minimum Outside Airflow Setpoint</li>
+						<li id="airsys-occupied-24-div-30600-airsys-occupied-24-30604" ondblclick="remove_li(this)">Confirm the Outside Air Damper closes to maintain the Minimum Outside Airflow Setpoint. Adjust gains as necessary.</li>
+						<li id="airsys-occupied-24-div-30600-airsys-occupied-24-30604" ondblclick="remove_li(this)">Release the Low CO2 threshold from Operator Priority</li>
+						<li id="airsys-occupied-24-div-30600-airsys-occupied-24-30604" ondblclick="remove_li(this)">Release the High CO2 threshold from Operator Priority</li>
+						<li id="airsys-occupied-24-div-30600-airsys-occupied-24-30604" ondblclick="remove_li(this)">Increase the sample time for checking zone/return CO2 from 30 seconds to 300 seconds</li>
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-occupied-24-20600">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-30600" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-occupied-24-20600">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-30600" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-occupied-24-20600">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-30600" value="na">
 			   <label class="passfail na">NA</label>
-			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-occupied-24-remove-20600" name="remove">Remove</button>
-			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-occupied-24-to-20600" name="to">Add To</button>
-			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-occupied-24-before-20600" name="before">Add Heading</button>
-			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-20600" name="after">Add Test</button>
+			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-occupied-24-remove-30600" name="remove">Remove</button>
+			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-occupied-24-to-30600" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-occupied-24-comment-30600" name="comment" style="display:none">Comment</button>
+			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-occupied-24-before-30600" name="before">Add Heading</button>
+			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-30600" name="after">Add Test</button>
 			  </div>
 		  </div>
 		  <h3 ondblclick="remove_this(this)" class="lead-lag" style="display:none"><span class="badge badge-secondary badge-function">Fan Wall Lead/Lag + Weekly Turnover</span></h3>
@@ -1875,14 +1954,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-occupied-24-30200">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-30200" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-occupied-24-30200">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-30200" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-occupied-24-30200">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-30200" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-occupied-24-remove-30200" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-occupied-24-to-30200" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-occupied-24-comment-30200" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-occupied-24-before-30200" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-30200" name="after">Add Test</button>
 			  </div>
@@ -1897,14 +1977,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-occupied-24-30400">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-30400" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-occupied-24-30400">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-30400" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-occupied-24-30400">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-30400" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-occupied-24-remove-30400" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-occupied-24-to-30400" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-occupied-24-comment-30400" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-occupied-24-before-30400" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-30400" name="after">Add Test</button>
 			  </div>
@@ -1925,14 +2006,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-occupied-24-30300">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-30300" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-occupied-24-30300">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-30300" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-occupied-24-30300">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-30300" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-occupied-24-remove-30300" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-occupied-24-to-30300" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-occupied-24-comment-30300" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-occupied-24-before-30300" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-30300" name="after">Add Test</button>
 			  </div>
@@ -1984,14 +2066,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-occupied-24-18000">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-18000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-occupied-24-18000">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-18000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-occupied-24-18000">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-18000" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-occupied-24-remove-18000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-occupied-24-to-18000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-occupied-24-comment-18000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-occupied-24-before-18000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-18000" name="after">Add Test</button>
 			  </div>
@@ -2006,14 +2089,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-occupied-24-4000">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-4000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-occupied-24-4000">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-4000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-occupied-24-4000">
+			   <input type="radio" class="radio-buttons" name="airsys-occupied-24-4000" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-occupied-24-remove-4000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-occupied-24-to-4000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-occupied-24-comment-4000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-occupied-24-before-4000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-occupied-24-after-4000" name="after">Add Test</button>
 			  </div>
@@ -2039,14 +2123,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-stopheat-1000">
+			   <input type="radio" class="radio-buttons" name="airsys-stopheat-1000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-stopheat-1000">
+			   <input type="radio" class="radio-buttons" name="airsys-stopheat-1000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-stopheat-1000">
+			   <input type="radio" class="radio-buttons" name="airsys-stopheat-1000" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-stopheat-remove-1000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-stopheat-to-1000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-stopheat-comment-1000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-stopheat-before-1000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-stopheat-after-1000" name="after">Add Test</button>
 			  </div>
@@ -2058,14 +2143,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-stopheat-2000">
+			   <input type="radio" class="radio-buttons" name="airsys-stopheat-2000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-stopheat-2000">
+			   <input type="radio" class="radio-buttons" name="airsys-stopheat-2000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-stopheat-2000">
+			   <input type="radio" class="radio-buttons" name="airsys-stopheat-2000" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-stopheat-remove-2000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-stopheat-to-2000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-stopheat-comment-2000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-stopheat-before-2000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-stopheat-after-2000" name="after">Add Test</button>
 			  </div>
@@ -2082,14 +2168,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-stopheat-3000">
+			   <input type="radio" class="radio-buttons" name="airsys-stopheat-3000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-stopheat-3000">
+			   <input type="radio" class="radio-buttons" name="airsys-stopheat-3000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-stopheat-3000">
+			   <input type="radio" class="radio-buttons" name="airsys-stopheat-3000" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-stopheat-remove-3000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-stopheat-to-3000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-stopheat-comment-3000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-stopheat-before-3000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-stopheat-after-3000" name="after">Add Test</button>
 			  </div>
@@ -2115,14 +2202,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-stopcool-1000">
+			   <input type="radio" class="radio-buttons" name="airsys-stopcool-1000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-stopcool-1000">
+			   <input type="radio" class="radio-buttons" name="airsys-stopcool-1000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-stopcool-1000">
+			   <input type="radio" class="radio-buttons" name="airsys-stopcool-1000" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-stopcool-remove-1000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-stopcool-to-1000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-stopcool-comment-1000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-stopcool-before-1000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-stopcool-after-1000" name="after">Add Test</button>
 			  </div>
@@ -2134,14 +2222,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-stopcool-2000">
+			   <input type="radio" class="radio-buttons" name="airsys-stopcool-2000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-stopcool-2000">
+			   <input type="radio" class="radio-buttons" name="airsys-stopcool-2000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-stopcool-2000">
+			   <input type="radio" class="radio-buttons" name="airsys-stopcool-2000" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-stopcool-remove-2000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-stopcool-to-2000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-stopcool-comment-2000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-stopcool-before-2000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-stopcool-after-2000" name="after">Add Test</button>
 			  </div>
@@ -2158,14 +2247,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-stopcool-3000">
+			   <input type="radio" class="radio-buttons" name="airsys-stopcool-3000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-stopcool-3000">
+			   <input type="radio" class="radio-buttons" name="airsys-stopcool-3000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-stopcool-3000">
+			   <input type="radio" class="radio-buttons" name="airsys-stopcool-3000" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-stopcool-remove-3000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-stopcool-to-3000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-stopcool-comment-3000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-stopcool-before-3000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-stopcool-after-3000" name="after">Add Test</button>
 			  </div>
@@ -2183,14 +2273,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-unoccupied-1000">
+			   <input type="radio" class="radio-buttons" name="airsys-unoccupied-1000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-unoccupied-1000">
+			   <input type="radio" class="radio-buttons" name="airsys-unoccupied-1000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-unoccupied-1000">
+			   <input type="radio" class="radio-buttons" name="airsys-unoccupied-1000" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-unoccupied-remove-1000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-unoccupied-to-1000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-unoccupied-comment-1000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-unoccupied-before-1000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-unoccupied-after-1000" name="after">Add Test</button>
 			  </div>
@@ -2202,14 +2293,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-unoccupied-2000">
+			   <input type="radio" class="radio-buttons" name="airsys-unoccupied-2000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-unoccupied-2000">
+			   <input type="radio" class="radio-buttons" name="airsys-unoccupied-2000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-unoccupied-2000">
+			   <input type="radio" class="radio-buttons" name="airsys-unoccupied-2000" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-unoccupied-remove-2000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-unoccupied-to-2000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-unoccupied-comment-2000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-unoccupied-before-2000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-unoccupied-after-2000" name="after">Add Test</button>
 			  </div>
@@ -2231,14 +2323,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-ngtheat-1000">
+			   <input type="radio" class="radio-buttons" name="airsys-ngtheat-1000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-ngtheat-1000">
+			   <input type="radio" class="radio-buttons" name="airsys-ngtheat-1000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-ngtheat-1000">
+			   <input type="radio" class="radio-buttons" name="airsys-ngtheat-1000" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-ngtheat-remove-1000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-ngtheat-to-1000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-ngtheat-comment-1000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-ngtheat-before-1000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-ngtheat-after-1000" name="after">Add Test</button>
 			  </div>
@@ -2250,14 +2343,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-ngtheat-2000">
+			   <input type="radio" class="radio-buttons" name="airsys-ngtheat-2000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-ngtheat-2000">
+			   <input type="radio" class="radio-buttons" name="airsys-ngtheat-2000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-ngtheat-2000">
+			   <input type="radio" class="radio-buttons" name="airsys-ngtheat-2000" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-ngtheat-remove-2000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-ngtheat-to-2000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-ngtheat-comment-2000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-ngtheat-before-2000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-ngtheat-after-2000" name="after">Add Test</button>
 			  </div>
@@ -2270,14 +2364,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-ngtheat-3000">
+			   <input type="radio" class="radio-buttons" name="airsys-ngtheat-3000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-ngtheat-3000">
+			   <input type="radio" class="radio-buttons" name="airsys-ngtheat-3000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-ngtheat-3000">
+			   <input type="radio" class="radio-buttons" name="airsys-ngtheat-3000" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-ngtheat-remove-3000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-ngtheat-to-3000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-ngtheat-comment-3000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-ngtheat-before-3000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-ngtheat-after-3000" name="after">Add Test</button>
 			  </div>
@@ -2299,14 +2394,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-ngtcool-1000">
+			   <input type="radio" class="radio-buttons" name="airsys-ngtcool-1000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-ngtcool-1000">
+			   <input type="radio" class="radio-buttons" name="airsys-ngtcool-1000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-ngtcool-1000">
+			   <input type="radio" class="radio-buttons" name="airsys-ngtcool-1000" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-ngtcool-remove-1000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-ngtcool-to-1000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-ngtcool-comment-1000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-ngtcool-before-1000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-ngtcool-after-1000" name="after">Add Test</button>
 			  </div>
@@ -2318,14 +2414,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-ngtcool-2000">
+			   <input type="radio" class="radio-buttons" name="airsys-ngtcool-2000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-ngtcool-2000">
+			   <input type="radio" class="radio-buttons" name="airsys-ngtcool-2000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-ngtcool-2000">
+			   <input type="radio" class="radio-buttons" name="airsys-ngtcool-2000" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-ngtcool-remove-2000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-ngtcool-to-2000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-ngtcool-comment-2000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-ngtcool-before-2000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-ngtcool-after-2000" name="after">Add Test</button>
 			  </div>
@@ -2338,14 +2435,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-ngtcool-3000">
+			   <input type="radio" class="radio-buttons" name="airsys-ngtcool-3000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-ngtcool-3000">
+			   <input type="radio" class="radio-buttons" name="airsys-ngtcool-3000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-ngtcool-3000">
+			   <input type="radio" class="radio-buttons" name="airsys-ngtcool-3000" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-ngtcool-remove-3000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-ngtcool-to-3000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-ngtcool-comment-3000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-ngtcool-before-3000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-ngtcool-after-3000" name="after">Add Test</button>
 			  </div>
@@ -2381,14 +2479,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-warmup-1000">
+			   <input type="radio" class="radio-buttons" name="airsys-warmup-1000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-warmup-1000">
+			   <input type="radio" class="radio-buttons" name="airsys-warmup-1000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-warmup-1000">
+			   <input type="radio" class="radio-buttons" name="airsys-warmup-1000" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-warmup-remove-1000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-warmup-to-1000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-warmup-comment-1000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-warmup-before-1000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-warmup-after-1000" name="after">Add Test</button>
 			  </div>
@@ -2400,14 +2499,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-warmup-2000">
+			   <input type="radio" class="radio-buttons" name="airsys-warmup-2000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-warmup-2000">
+			   <input type="radio" class="radio-buttons" name="airsys-warmup-2000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-warmup-2000">
+			   <input type="radio" class="radio-buttons" name="airsys-warmup-2000" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-warmup-remove-2000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-warmup-to-2000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-warmup-comment-2000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-warmup-before-2000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-warmup-after-2000" name="after">Add Test</button>
 			  </div>
@@ -2428,14 +2528,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-warmup-3000">
+			   <input type="radio" class="radio-buttons" name="airsys-warmup-3000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-warmup-3000">
+			   <input type="radio" class="radio-buttons" name="airsys-warmup-3000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-warmup-3000">
+			   <input type="radio" class="radio-buttons" name="airsys-warmup-3000" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-warmup-remove-3000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-warmup-to-3000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-warmup-comment-3000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-warmup-before-3000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-warmup-after-3000" name="after">Add Test</button>
 			  </div>
@@ -2471,14 +2572,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-cooldown-1000">
+			   <input type="radio" class="radio-buttons" name="airsys-cooldown-1000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-cooldown-1000">
+			   <input type="radio" class="radio-buttons" name="airsys-cooldown-1000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-cooldown-1000">
+			   <input type="radio" class="radio-buttons" name="airsys-cooldown-1000" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-cooldown-remove-1000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-cooldown-to-1000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-cooldown-comment-1000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-cooldown-before-1000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-cooldown-after-1000" name="after">Add Test</button>
 			  </div>
@@ -2490,14 +2592,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-cooldown-2000">
+			   <input type="radio" class="radio-buttons" name="airsys-cooldown-2000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-cooldown-2000">
+			   <input type="radio" class="radio-buttons" name="airsys-cooldown-2000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-cooldown-2000">
+			   <input type="radio" class="radio-buttons" name="airsys-cooldown-2000" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-cooldown-remove-2000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-cooldown-to-2000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-cooldown-comment-2000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-cooldown-before-2000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-cooldown-after-2000" name="after">Add Test</button>
 			  </div>
@@ -2518,14 +2621,15 @@
 					</ul>
 			  </div>
 			  <div class="col-xl-5">
-			   <input type="radio" name="airsys-cooldown-3000">
+			   <input type="radio" class="radio-buttons" name="airsys-cooldown-3000" value="pass">
 			   <label class="passfail">Pass</label>
-			   <input type="radio" name="airsys-cooldown-3000">
+			   <input type="radio" class="radio-buttons" name="airsys-cooldown-3000" value="fail">
 			   <label class="passfail fail">Fail</label>
-			   <input type="radio" name="airsys-cooldown-3000">
+			   <input type="radio" class="radio-buttons" name="airsys-cooldown-3000" value="na">
 			   <label class="passfail na">NA</label>
 			   <button onclick="remove_elem(this)" class="custom-buttons" id="airsys-cooldown-remove-3000" name="remove">Remove</button>
 			   <button onclick="append_elem(this)" class="custom-buttons" id="airsys-cooldown-to-3000" name="to">Add To</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="airsys-cooldown-comment-3000" name="comment" style="display:none">Comment</button>
 			   <button onclick="heading_elem(this)" class="custom-buttons" id="airsys-cooldown-before-3000" name="before">Add Heading</button>
 			   <button onclick="after_elem(this)" class="custom-buttons" id="airsys-cooldown-after-3000" name="after">Add Test</button>
 			  </div>
@@ -2534,14 +2638,65 @@
 	</div>
 </div>
 <form id="download"></form>
-<a href="{{url_for('.custom_fpt')}}" target="blank" style="margin-left: 46%"><button class='btn btn-default' id="cmd">Download!</button></a>
+<a href="{{url_for('.custom_fpt')}}" target="blank" style="margin-left: 46%"><button class='btn btn-default' id="cmd" onclick="save()">Build!</button></a>
 <br><br>
 <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script>
+	reload();
 	var button_element = ""
 	var count = 0
+	//add click functionality to radio buttons
+	Array.from(document.querySelectorAll('input[type="radio"]')).forEach(function(item, index) {
+	  item.addEventListener('click', save);
+	});
+
+	Array.from(document.querySelectorAll('button[name="comment"]')).forEach(function(item, index) {
+	  item.addEventListener('click', saveComment);
+	});
+
+	function save(){
+		let items = document.querySelectorAll('input[type="radio"]');
+		let checked = document.querySelectorAll('input[type="radio"]:checked');
+		for(var i=0;i<checked.length;i++){
+			for(var x=0;x<items.length;x++){
+				if(items[x].name == checked[i].name){
+					localStorage.setItem(checked[i].name,checked[i].value);
+				}
+			}
+		}
+	}
+
+	function saveComment(){
+		let saved_comments = document.querySelectorAll('li[class="comment show"]');
+		for(var i=0;i<saved_comments.length;i++){
+			localStorage.setItem(saved_comments[i].id,saved_comments[i].textContent);
+		}
+	}
+
+	function reload(){
+		let items = document.querySelectorAll('input[type="radio"]');
+		let stored = Object.keys({ ...localStorage });
+		let values = Object.values({...localStorage});
+		for(var i=0;i<stored.length;i++){
+			for(var x=0;x<items.length;x++){
+				if(items[x].name == stored[i] && items[x].value == 'pass' && values[i] == 'pass'){
+					items[x].checked = true;
+				}else if(items[x].name == stored[i] && items[x].value == 'fail' && values[i] == 'fail'){
+					items[x].checked = true;
+				}else if(items[x].name == stored[i] && items[x].value == 'na' && values[i] == 'na'){
+					items[x].checked = true;
+				}
+			}
+		}
+		let retrieved_comments = document.querySelectorAll('li[class="comment show"]');
+		for(var i=0;i<retrieved_comments.length;i++){
+			let retrieved = localStorage.getItem(retrieved_comments[i]);
+			retrieved_comments[i].textContent = retrieved;
+		} 
+	}
+
 	function remove_this(elem){
 		elem.remove();
 	}
@@ -2632,6 +2787,87 @@
 			elem.innerHTML = "Add To"
 		}
 	}
+
+	function comment_elem(elem) {
+		elem.innerHTML = "Save"
+		let origin = document.getElementById(elem.parentNode.parentNode.id);
+		append_elem_check = origin.getElementsByTagName('input');
+		if(append_elem_check.length == 3){
+			var input = document.createElement("input");
+			var before_button = document.createElement("button");
+			var after_button = document.createElement("button");
+			input.style.width = "70%";
+			input.style.height = "30%";
+			before_button.style.width = "15%";
+			before_button.style.height = "37%";
+			before_button.textContent = "Append Before";
+			after_button.style.width = "15%";
+			after_button.style.height = "37%";
+			after_button.textContent = "Append After";
+			input.setAttribute("id", elem.parentNode.parentNode.id + "-appendinput-" + count);
+			input.setAttribute("class", "append");
+			before_button.setAttribute("id", elem.parentNode.parentNode.id + "-appendbefore-" + count);
+			before_button.setAttribute("class", "append");
+			after_button.setAttribute("id", elem.parentNode.parentNode.id + "-appendafter-" + count);
+			after_button.setAttribute("class", "append");
+			let li_elements = origin.getElementsByTagName('li');
+			document.getElementById(li_elements[li_elements.length-1].id).after(after_button);
+			document.getElementById(li_elements[li_elements.length-1].id).after(before_button);
+			document.getElementById(li_elements[li_elements.length-1].id).after(input); 
+			before_button_element = document.getElementById(before_button.id);
+			after_button_element = document.getElementById(after_button.id);
+			if(before_button_element){
+				before_button_element.addEventListener("click", function() {
+					let append_elements = origin.getElementsByTagName('li');
+					var ul = document.getElementById(li_elements[li_elements.length-1].id);
+				  var candidate = document.getElementById(input.id);
+				  var li = document.createElement("li");
+				  li.setAttribute("id", elem.parentNode.parentNode.id + "-appended-" + count);
+				  li.setAttribute("class", "comment");
+				  li.setAttribute("ondblclick","remove_li(this)");
+				  li.setAttribute("style","color:red");
+				  li.appendChild(document.createTextNode(candidate.value));
+				  ul.before(li);
+				  for(var i=1;i<append_elements.length;i++){
+						append_elements[i].setAttribute("ondblclick","remove_li(this)");
+					}
+					setTimeout(function() {
+						li.className = li.className + " show";
+					}, 10);
+				  count+=1;
+				});
+			}
+			if(after_button_element){
+				after_button_element.addEventListener("click", function() {
+					let append_elements = origin.getElementsByTagName('li');
+					var ul = document.getElementById(li_elements[li_elements.length-1].id);
+				  var candidate = document.getElementById(input.id);
+				  var li = document.createElement("li");
+				  li.setAttribute("id",elem.parentNode.parentNode.id + "-appended-" + count);
+				  li.setAttribute("class", "comment");
+				  li.setAttribute("ondblclick","remove_li(this)");
+				  li.setAttribute("style","color:red");
+				  li.appendChild(document.createTextNode(candidate.value));
+				  ul.after(li);
+				  for(var i=1;i<append_elements.length;i++){
+						append_elements[i].setAttribute("ondblclick","remove_li(this)");
+					}
+					setTimeout(function() {
+						li.className = li.className + " show";
+					}, 10);
+				  count+=1
+				});
+			}
+		}else{
+			append_elem_check = origin.getElementsByTagName('input');
+			append_elem_check[0].remove();
+			append_elem_check = origin.getElementsByTagName('button');
+			append_elem_check[0].remove();
+			append_elem_check[0].remove();
+			elem.innerHTML = "Comment"
+		}
+	}
+
 	function append_link(elem) {
 		elem.innerHTML = "Close"
 		let origin = document.getElementById(elem.parentNode.parentNode.id);
