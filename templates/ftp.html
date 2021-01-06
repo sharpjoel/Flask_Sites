@@ -2644,9 +2644,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script>
+	var count = localStorage.getItem("lastCount");
 	reload();
 	var button_element = ""
-	var count = 0
 	//add click functionality to radio buttons
 	Array.from(document.querySelectorAll('input[type="radio"]')).forEach(function(item, index) {
 	  item.addEventListener('click', save);
@@ -2671,11 +2671,16 @@
 	function saveComment(){
 		let saved_comments = document.querySelectorAll('li[class="comment show"]');
 		for(var i=0;i<saved_comments.length;i++){
+			localStorage.setItem(saved_comments[i].textContent,saved_comments[i].parentNode.id);
+		}
+		for(var i=0;i<saved_comments.length;i++){
 			localStorage.setItem(saved_comments[i].id,saved_comments[i].textContent);
 		}
+		localStorage.setItem("lastCount",count);
 	}
 
 	function reload(){
+		console.log("the last count is " + count);
 		let items = document.querySelectorAll('input[type="radio"]');
 		let stored = Object.keys({ ...localStorage });
 		let values = Object.values({...localStorage});
@@ -2690,11 +2695,25 @@
 				}
 			}
 		}
-		let retrieved_comments = document.querySelectorAll('li[class="comment show"]');
-		for(var i=0;i<retrieved_comments.length;i++){
-			let retrieved = localStorage.getItem(retrieved_comments[i]);
-			retrieved_comments[i].textContent = retrieved;
-		} 
+		for(var i=0;i<values.length;i++){
+			for(var x=0;x<stored.length;x++){
+				if(values[i] == stored[x]){
+					let ul = document.getElementById(values[x]);
+					// console.log("comment is " + stored[x]);
+					// console.log("comment id is " + stored[i]);
+					// console.log("parent is " + values[x]);
+					let li = document.createElement("li");
+					li.setAttribute("ondblclick","remove_li(this)");
+					li.setAttribute("id",stored[i]);
+					li.setAttribute("style","color:red");
+					// li.setAttribute("class","comment show");
+					li.appendChild(document.createTextNode(stored[x]));
+					if(ul){
+						ul.appendChild(li);
+					}
+				}
+			}
+		}
 	}
 
 	function remove_this(elem){
@@ -2803,7 +2822,7 @@
 			before_button.textContent = "Append Before";
 			after_button.style.width = "15%";
 			// after_button.style.height = "37%";
-			after_button.textContent = "Append After";
+			after_button.textContent = "Submit";
 			input.setAttribute("id", elem.parentNode.parentNode.id + "-appendinput-" + count);
 			input.setAttribute("class", "append");
 			before_button.setAttribute("id", elem.parentNode.parentNode.id + "-appendbefore-" + count);
@@ -2812,7 +2831,7 @@
 			after_button.setAttribute("class", "append");
 			let li_elements = origin.getElementsByTagName('li');
 			document.getElementById(li_elements[li_elements.length-1].id).after(after_button);
-			document.getElementById(li_elements[li_elements.length-1].id).after(before_button);
+			// document.getElementById(li_elements[li_elements.length-1].id).after(before_button);
 			document.getElementById(li_elements[li_elements.length-1].id).after(input); 
 			before_button_element = document.getElementById(before_button.id);
 			after_button_element = document.getElementById(after_button.id);

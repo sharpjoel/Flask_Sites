@@ -81,7 +81,7 @@ $(document).ready(function(){
 		console.log(job_number);
 		document.querySelector('#system-name').textContent = "System Name: " + $("#system-name").text();
 		document.querySelector('#job-number').textContent = "";
-		document.querySelector('#job-number').textContent = "Job Number: 440P-" + job_number;
+		document.querySelector('#job-number').textContent = "Job Number_440P-" + job_number;
 		let html = $('html').html();
 		var dataToSend = JSON.stringify({'num':html})
 		$.post({
