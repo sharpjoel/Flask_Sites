@@ -413,17 +413,17 @@
  </div>
 </nav>
 <br>
-<div id="job-inputs">
+<div class="job-inputs" id="job-inputs">
 	<label class="badge badge-secondary" style="font-size: 20px">System Name</label>
 	<input type="text" name="system-name-input" id="system-name-input" value="AHU-NO-SPACES">
 	<label class="badge badge-secondary" style="font-size: 20px">44OP-</label>
-	<input type="text" name="job-number-input" id="job-number-input" value="123456">
+	<input type="text" class="job-number-input" name="job-number-input" id="job-number-input" value="123456">
 </div>
 <div>
 	<h3 ondblclick="remove_this(this)" style="margin-left: 1%"><span class="badge badge-secondary" id="system-name"></span></h3>
-	<h3 ondblclick="remove_this(this)" style="margin-left: 1%"><span class="badge badge-secondary" id="job-number"></span></h3>
+	<h3 ondblclick="remove_this(this)" style="margin-left: 1%"><span class="badge badge-secondary job-number" id="job-number"></span></h3>
 </div>
-<div id='app-container'>
+<div class="app-container" id='app-container'>
 	<form class='form-container' id='appForm'>
 		<div class='form-container' id="standard-seq-1">
 			<h3 ondblclick="remove_this(this)" ><span class="badge badge-secondary">Terminal Equipment</span></h3>
@@ -2638,7 +2638,7 @@
 	</div>
 </div>
 <form id="download"></form>
-<a href="{{url_for('.custom_fpt')}}" target="blank" style="margin-left: 46%"><button class='btn btn-default' id="cmd" onclick="save()">Build!</button></a>
+<a href="{{url_for('.custom_fpt')}}" target="blank" style="margin-left: 46%"><button class='btn btn-default cmd' id="cmd" onclick="save()">Build!</button></a>
 <br><br>
 <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -2797,12 +2797,12 @@
 			var before_button = document.createElement("button");
 			var after_button = document.createElement("button");
 			input.style.width = "70%";
-			input.style.height = "30%";
+			// input.style.height = "30%";
 			before_button.style.width = "15%";
-			before_button.style.height = "37%";
+			// before_button.style.height = "37%";
 			before_button.textContent = "Append Before";
 			after_button.style.width = "15%";
-			after_button.style.height = "37%";
+			// after_button.style.height = "37%";
 			after_button.textContent = "Append After";
 			input.setAttribute("id", elem.parentNode.parentNode.id + "-appendinput-" + count);
 			input.setAttribute("class", "append");

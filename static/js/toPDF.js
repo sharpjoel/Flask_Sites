@@ -2,6 +2,7 @@ $(document).ready(function(){
 
 	var button_element = ""
 	var count = 0
+	var job = "";
 
 	const nameInput = document.querySelector('#system-name-input');
 	const nameDisplay = document.querySelector('#system-name');
@@ -22,17 +23,17 @@ $(document).ready(function(){
 		jobDisplay.textContent = jobDisplayTemp;
 	});
 
-	$("#cmd").click(function(){
+	$(".cmd").click(function(){
 
 		// Declare html to send
 		$('#ftp-container').css('font-family','');
 		$('nav').hide();
-		$('#app-container').hide();
-		$('#cmd').hide();
+		$('.app-container').hide();
+		$('.cmd').hide();
 		$('.append').hide();
 		$('.custom-buttons').hide();
 		$('.comment').show();
-		$('#job-inputs').hide();
+		$('.job-inputs').hide();
 		// modify list elements
 		$('li').each(function(){
 			if(this.id){
@@ -76,8 +77,11 @@ $(document).ready(function(){
 				this.name = sys + "-" + job + "-" + this.name;
 			}
 		});
-		document.querySelector('#system-name').textContent = "System Name: " + $("#system-name").text()
-		document.querySelector('#job-number').textContent = "Job Number: 440P-" + $("#job-number").text()
+		var job_number = $(".job-number-input").val();
+		console.log(job_number);
+		document.querySelector('#system-name').textContent = "System Name: " + $("#system-name").text();
+		document.querySelector('#job-number').textContent = "";
+		document.querySelector('#job-number').textContent = "Job Number: 440P-" + job_number;
 		let html = $('html').html();
 		var dataToSend = JSON.stringify({'num':html})
 		$.post({
@@ -90,13 +94,13 @@ $(document).ready(function(){
 		.done(function(data) {
 			// $.get("custom_fpt.html");
 		});
+		$('.app-container').show();
 		$('#ftp-container').css('font-family','Roboto');
 		$('nav').show();
-		$('#app-container').show();
-		$('#cmd').show();
+		$('.cmd').show();
 		$('.custom-buttons').show();
 		$('.comment').hide();
-		$('#job-inputs').show();
+		$('.job-inputs').show();
 	});
 
 	$("input").click(function() {
