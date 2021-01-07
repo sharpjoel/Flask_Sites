@@ -2669,12 +2669,15 @@
 	}
 
 	function saveComment(){
+		var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' , hour: 'numeric', minute: 'numeric', second: 'numeric'};
+		var today  = new Date();
+		commentdate = today.toLocaleDateString("en-US", options)
 		let saved_comments = document.querySelectorAll('li[class="comment show"]');
 		for(var i=0;i<saved_comments.length;i++){
-			localStorage.setItem(saved_comments[i].textContent,saved_comments[i].parentNode.id);
+			localStorage.setItem(commentdate + "-" + saved_comments[i].textContent,saved_comments[i].parentNode.id);
 		}
 		for(var i=0;i<saved_comments.length;i++){
-			localStorage.setItem(saved_comments[i].id,saved_comments[i].textContent);
+			localStorage.setItem(saved_comments[i].id,commentdate + "-" + saved_comments[i].textContent);
 		}
 		localStorage.setItem("lastCount",count);
 	}
