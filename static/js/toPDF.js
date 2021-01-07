@@ -198,6 +198,9 @@ $(document).ready(function(){
 		display_test_independent('input[id="Fan Wall Lead/Lag + Weekly turnover"]',".lead-lag")
 		display_test_independent('input[id="Alarm Checking"]',".alarming")
 
+		// Water
+		display_test_independent('input[id="Demand Flow"]',".watersys-demandflow")
+
 		// Main Schedule
 		display_test_dependent('input[id="Unoccupied Mode"]','input[id="Occupied Mode Scheduled"]',".unoccupied");
 		display_test_main('input[id="Unoccupied Mode"]',".unoccupied",'input[id="Optimum Stop when Heating"]','input[id="Optimum Stop when Cooling"]','input[id="Night Setback Heating"]','input[id="Night Setback Cooling"]','input[id="Optimum Start (Morning Warm-up)"]','input[id="Optimum Start (Morning Cool-down)"]')

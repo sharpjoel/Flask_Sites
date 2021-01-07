@@ -454,7 +454,7 @@
 		</div>
 		<div class='form-container' id="standard-seq-4">
 			<h3 ondblclick="remove_this(this)" ><span class="badge badge-secondary">Water Systems</span></h3>
-			{% for item in cenfuncs %}
+			{% for item in fptwatersystems %}
 				<div class="form-check">
 					<input class="form-check-input" type="checkbox" value="" id="{{item}}">
 						<label class="form-check-label" for="{{item}}"><span class="badge badge-secondary form-check-label">{{item}}</span></label>
@@ -464,7 +464,6 @@
 	</form>
 </div>
 <br><br>
-<div class="fpt-container-style" id='fpt-container'>
 	<h1 class="resources" style="display:none"><span class="badge badge-secondary sequence-start">Resources</span></h1>
 		<div class="fpt-container resources" style="display:none">
 			<div class='row' id="resources-div-1000">
@@ -656,6 +655,134 @@
 		</div>
 	<br>
 	<h1><span class="badge badge-secondary sequence-start">Functional Performance Test</span></h1>
+	<!-- Water System - Demand Flow -->
+	<!-- Water System - Demand Flow -->
+	<!-- Water System - Demand Flow -->
+	<!-- Water System - Demand Flow -->
+	<!-- Water System - Demand Flow -->
+	<!-- Water System - Demand Flow -->
+	<!-- Water System - Demand Flow -->
+	<!-- Water System - Demand Flow -->
+	<!-- Water System - Demand Flow -->
+	<!-- Water System - Demand Flow -->
+	<!-- Water System - Demand Flow -->
+	<!-- Water System - Demand Flow -->
+	<!-- Water System - Demand Flow -->
+	<!-- Water System - Demand Flow -->
+	<!-- Water System - Demand Flow -->
+	<!-- Water System - Demand Flow -->
+	<!-- Water System - Demand Flow -->
+	<div class='fpt-container-style watersys-demandflow' style="display:none">
+		<h4><span class="badge badge-secondary sequence-start">Demand Flow</span></h4>
+		<div class='row' id="watersys-demandflow-div-1000">
+				<div class="col-xl-7">
+					<ul id="watersys-demandflow-div-1000-watersys-demandflow-ul-1000">
+						<li id="watersys-demandflow-div-1000-watersys-demandflow-1000" ondblclick="remove_li(this)">Command the "Chillers Required" to 1</li>
+						<li id="watersys-demandflow-div-1000-watersys-demandflow-1001" ondblclick="remove_li(this)">Confirm the first position chiller continues to run according to the rotation assignment and staging table</li>
+					</ul>
+			  </div>
+			  <div class="col-xl-5">
+			   <input type="radio" class="radio-buttons" name="watersys-demandflow-1000" value="pass">
+			   <label class="passfail">Pass</label>
+			   <input type="radio" class="radio-buttons" name="watersys-demandflow-1000" value="fail">
+			   <label class="passfail fail">Fail</label>
+			   <input type="radio" class="radio-buttons" name="watersys-demandflow-1000" value="na">
+			   <label class="passfail na">NA</label>
+			   <button onclick="remove_elem(this)" class="custom-buttons" id="watersys-demandflow-remove-1000" name="remove">Remove</button>
+			   <button onclick="append_elem(this)" class="custom-buttons" id="watersys-demandflow-to-1000" name="to">Add To</button>
+			   <button onclick="heading_elem(this)" class="custom-buttons" id="watersys-demandflow-before-1000" name="before">Add Heading</button>
+			   <button onclick="after_elem(this)" class="custom-buttons" id="watersys-demandflow-after-1000" name="after">Add Test</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="watersys-demandflow-to-1000" name="comment" style="display:none">Comment</button>
+			  </div>
+		</div>
+		<div class='row' id="watersys-demandflow-div-2000">
+				<div class="col-xl-7">
+					<ul id="watersys-demandflow-div-2000-watersys-demandflow-ul-2000">
+						<li id="watersys-demandflow-div-2000-watersys-demandflow-2000" ondblclick="remove_li(this)">Command the second position chiller to "Out of Service"</li>
+						<li id="watersys-demandflow-div-2000-watersys-demandflow-2001" ondblclick="remove_li(this)">Confirm the second position chiller remains off</li>
+						<li id="watersys-demandflow-div-2000-watersys-demandflow-2002" ondblclick="remove_li(this)">Confirm the third position chiller is enabled and ramps up</li>
+					</ul>
+			  </div>
+			  <div class="col-xl-5">
+			   <input type="radio" class="radio-buttons" name="watersys-demandflow-2000" value="pass">
+			   <label class="passfail">Pass</label>
+			   <input type="radio" class="radio-buttons" name="watersys-demandflow-2000" value="fail">
+			   <label class="passfail fail">Fail</label>
+			   <input type="radio" class="radio-buttons" name="watersys-demandflow-2000" value="na">
+			   <label class="passfail na">NA</label>
+			   <button onclick="remove_elem(this)" class="custom-buttons" id="watersys-demandflow-remove-2000" name="remove">Remove</button>
+			   <button onclick="append_elem(this)" class="custom-buttons" id="watersys-demandflow-to-2000" name="to">Add To</button>
+			   <button onclick="heading_elem(this)" class="custom-buttons" id="watersys-demandflow-before-2000" name="before">Add Heading</button>
+			   <button onclick="after_elem(this)" class="custom-buttons" id="watersys-demandflow-after-2000" name="after">Add Test</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="watersys-demandflow-to-2000" name="comment" style="display:none">Comment</button>
+			  </div>
+		</div>
+		<div class='row' id="watersys-demandflow-div-3000">
+				<div class="col-xl-7">
+					<ul id="watersys-demandflow-div-3000-watersys-demandflow-ul-3000">
+						<li id="watersys-demandflow-div-3000-watersys-demandflow-3000" ondblclick="remove_li(this)">Release the second position chiller from "Out of Service" override</li>
+						<li id="watersys-demandflow-div-3000-watersys-demandflow-3001" ondblclick="remove_li(this)">Review the chiller runtimes and confirm that the chiller with the lowest runtime is in the correct staging position</li>
+						<li id="watersys-demandflow-div-3000-watersys-demandflow-3002" ondblclick="remove_li(this)">Command the "Chiller Rotate" point</li>
+						<li id="watersys-demandflow-div-3000-watersys-demandflow-3003" ondblclick="remove_li(this)">Confirm that the two active chillers (positions 1 and 3) continue to run and that the position 2 chiller is enabled and ramps up</li>
+					</ul>
+			  </div>
+			  <div class="col-xl-5">
+			   <input type="radio" class="radio-buttons" name="watersys-demandflow-3000" value="pass">
+			   <label class="passfail">Pass</label>
+			   <input type="radio" class="radio-buttons" name="watersys-demandflow-3000" value="fail">
+			   <label class="passfail fail">Fail</label>
+			   <input type="radio" class="radio-buttons" name="watersys-demandflow-3000" value="na">
+			   <label class="passfail na">NA</label>
+			   <button onclick="remove_elem(this)" class="custom-buttons" id="watersys-demandflow-remove-3000" name="remove">Remove</button>
+			   <button onclick="append_elem(this)" class="custom-buttons" id="watersys-demandflow-to-3000" name="to">Add To</button>
+			   <button onclick="heading_elem(this)" class="custom-buttons" id="watersys-demandflow-before-3000" name="before">Add Heading</button>
+			   <button onclick="after_elem(this)" class="custom-buttons" id="watersys-demandflow-after-3000" name="after">Add Test</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="watersys-demandflow-to-3000" name="comment" style="display:none">Comment</button>
+			  </div>
+		</div>
+		<div class='row' id="watersys-demandflow-div-4000">
+				<div class="col-xl-7">
+					<ul id="watersys-demandflow-div-4000-watersys-demandflow-ul-4000">
+						<li id="watersys-demandflow-div-4000-watersys-demandflow-4000" ondblclick="remove_li(this)">Monitor the chilled water leaving temperature of the position 2 chiller</li>
+						<li id="watersys-demandflow-div-4000-watersys-demandflow-4001" ondblclick="remove_li(this)">Confirm the position 3 chiller is disabled once the chilled water leaving temperature of the position 2 chiller is within 4 degF of setpoint.</li>
+					</ul>
+			  </div>
+			  <div class="col-xl-5">
+			   <input type="radio" class="radio-buttons" name="watersys-demandflow-4000" value="pass">
+			   <label class="passfail">Pass</label>
+			   <input type="radio" class="radio-buttons" name="watersys-demandflow-4000" value="fail">
+			   <label class="passfail fail">Fail</label>
+			   <input type="radio" class="radio-buttons" name="watersys-demandflow-4000" value="na">
+			   <label class="passfail na">NA</label>
+			   <button onclick="remove_elem(this)" class="custom-buttons" id="watersys-demandflow-remove-4000" name="remove">Remove</button>
+			   <button onclick="append_elem(this)" class="custom-buttons" id="watersys-demandflow-to-4000" name="to">Add To</button>
+			   <button onclick="heading_elem(this)" class="custom-buttons" id="watersys-demandflow-before-4000" name="before">Add Heading</button>
+			   <button onclick="after_elem(this)" class="custom-buttons" id="watersys-demandflow-after-4000" name="after">Add Test</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="watersys-demandflow-to-4000" name="comment" style="display:none">Comment</button>
+			  </div>
+		</div>
+		<div class='row' id="watersys-demandflow-div-5000">
+				<div class="col-xl-7">
+					<ul id="watersys-demandflow-div-5000-watersys-demandflow-ul-5000">
+						<li id="watersys-demandflow-div-5000-watersys-demandflow-5000" ondblclick="remove_li(this)">Release the "Chiller Rotate" point from operator override</li>
+						<li id="watersys-demandflow-div-5000-watersys-demandflow-5001" ondblclick="remove_li(this)">Release the "Chillers Required" point from operator override</li>
+					</ul>
+			  </div>
+			  <div class="col-xl-5">
+			   <input type="radio" class="radio-buttons" name="watersys-demandflow-5000" value="pass">
+			   <label class="passfail">Pass</label>
+			   <input type="radio" class="radio-buttons" name="watersys-demandflow-5000" value="fail">
+			   <label class="passfail fail">Fail</label>
+			   <input type="radio" class="radio-buttons" name="watersys-demandflow-5000" value="na">
+			   <label class="passfail na">NA</label>
+			   <button onclick="remove_elem(this)" class="custom-buttons" id="watersys-demandflow-remove-5000" name="remove">Remove</button>
+			   <button onclick="append_elem(this)" class="custom-buttons" id="watersys-demandflow-to-5000" name="to">Add To</button>
+			   <button onclick="heading_elem(this)" class="custom-buttons" id="watersys-demandflow-before-5000" name="before">Add Heading</button>
+			   <button onclick="after_elem(this)" class="custom-buttons" id="watersys-demandflow-after-5000" name="after">Add Test</button>
+			   <button onclick="comment_elem(this)" class="custom-buttons comment" id="watersys-demandflow-to-5000" name="comment" style="display:none">Comment</button>
+			  </div>
+		</div>
+	</div>
 
 	<!-- General Functionality -->
 	<!-- General Functionality -->

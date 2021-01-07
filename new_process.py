@@ -687,7 +687,10 @@ def fpt():
     'Fan Wall Lead/Lag + Weekly turnover':'c',
     'Alarm Checking':'d'
     }
-    rendered = render_template('ftp.html',fptterminalbox = fptterminalbox,fpttra = fpttra,fptairsystems = fptairsystems)
+    fptwatersystems = {
+    'Demand Flow':'A'
+    }
+    rendered = render_template('ftp.html',fptterminalbox = fptterminalbox,fpttra = fpttra,fptairsystems = fptairsystems, fptwatersystems = fptwatersystems)
     # pdf = pdfkit.from_string(rendered, False)
 
     # response = make_response(pdf)
