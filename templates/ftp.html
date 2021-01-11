@@ -3557,7 +3557,8 @@
 	function remove_li(elem) {
 		let origin = document.getElementById(elem.parentNode.id);
 		let li_elements = origin.getElementsByTagName('li');
-		console.log(li_elements);
+		localStorage.removeItem(elem.id);
+		localStorage.removeItem(elem.textContent);
 		if(li_elements.length > 1){
 			elem.remove();
 		}
