@@ -626,21 +626,19 @@ def favicon():
 @app.route('/fpt',methods=['GET','POST'])
 def fpt():
     fptterminalbox = {
-    'Terminal Basic Hardware Check':'0',
-    'Terminal Relinquish Default Check':'1',
-    'Occupancy - Scheduled':'A',
-    'Vacancy - Scheduled':'2',
-    'Presence Detection':'3',
-    'Heating':'B',
-    'Cooling':'C',
-    'Deadband ventilation':'4',
-    'DCV':'D',
-    'Rapid Ventilation':'E',
-    'Air Volume Tracking':'F',
-    'Green Leaf':'G',
-    'Window Control':'5',
-    'Temperature Alarms':'H',
-    'Actuator Alarms':'I'
+    'Terminal Resources':'A',
+    'Terminal Connection Check':'B',
+    'Terminal Basic Hardware Check':'D',
+    'Terminal Heating Mode':'E',
+    'Terminal Cooling Mode':'F',
+    'Terminal Deadband Ventilation':'J',
+    'Terminal Demand Control Ventilation':'K',
+    'Terminal Rapid Ventilation':'L',
+    'Terminal Air Volume Tracking':'M',
+    'Terminal Green Leaf':'N',
+    'Terminal Window Control':'O',
+    'Terminal Presence Detection':'P',
+    'Terminal Condensate/Overtemp Detection':'Q'
     }
     fpttra = {
     'TRA Basic Hardware Check':'0',
