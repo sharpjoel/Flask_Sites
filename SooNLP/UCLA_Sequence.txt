@@ -4,8 +4,4 @@ This unit is equipped with a constant speed supply fan, chilled water-cooling co
 
 Morning Warmup
 
-This sequence calls for a morning warm up.
-
-Unoccupied Mode
-
-All Air Handlers will shut down.
+There is a morning warmup sequence that takes place here.
