@@ -14,7 +14,10 @@ short_docs = []
 
 considerations = []
 
-arr_txt = [x for x in os.listdir() if x.endswith(".txt")]
+# path to the folder with existing sequences
+soopath = "soo/"
+
+arr_txt = [x for x in os.listdir(soopath) if x.endswith(".txt")]
 for txt in range(0,len(arr_txt)):
     file_docs = []
     file2_docs = []
@@ -25,7 +28,7 @@ for txt in range(0,len(arr_txt)):
             for line in tokens:
                 file_docs.append(line)
 
-        with open (arr_txt[txt]) as f:
+        with open (soopath + arr_txt[txt]) as f:
             liblen = f.read()
             tokens2 = sent_tokenize(liblen)
             for line in tokens2:
