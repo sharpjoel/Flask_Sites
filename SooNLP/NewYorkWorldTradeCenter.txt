@@ -1,0 +1,5 @@
+Occupied Mode
+
+This unit is equipped with a constant speed supply fan, chilled water-cooling coil, and hot water heating coil. It provides temperature control for the basement holding area. While the fan operates at a constant volume, it is provided with a variable-frequency drive to aid in balancing and to provide soft starting.
+
+Something about static reset and pressure control.
