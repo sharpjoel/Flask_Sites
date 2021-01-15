@@ -1,0 +1,13 @@
+AHU-1
+The air unit shall be normally started and stopped by the DDC system during the occupied and unoccupied modes and shall be programmed for the same schedule as existing AHU-1.  Provide FLN feedback to verify fan operation.  Air unit volume shall be adjusted by varying the speed of the Variable Frequency Drive to deliver constant scheduled air flow.
+The system shall be manually started and stopped from the Hand and Off position of the Hand-Off-Auto switch at the associated VFD and automatically started and stopped by the DDC system when the switch is in the Auto position.  Provide Siemens FLN communications capability.  Emergency fan stop switch shall shut down the unit when activated.  All safety devices shall shut down the unit when activated.  All safety devices shall operate with the switch in the Hand and Auto position.
+In the event of power interruption or shutdown of the supply air fan, the control damper in the associated outside air intake shall be closed.  Air units shall be programmed for auto restart after power failure.
+Duct-mounted smoke detectors:
+Smoke detector in the supply air duct associated with AHU-1 shall shut down the unit when an abnormal condition exists.
+AHU-1 shall be interlocked with the fire alarm system and smoke detection system to shutdown the air unit when an abnormal condition exists.
+A differential pressure transmitter shall monitor the differential pressure across the bank of filters and provide a ‘Change Filter’ trouble identification if the differential pressure exceeds 0.60 inches (adjustable) of water gauge via the DDC system.
+Low-limit freeze-protection thermostats each with a capillary line set at 38 degrees F and sensing the coldest portion of air entering the chilled water coil shall extend across the face of the cooling coil and shall shut down the supply air fan if this low tow temperature conditions exists and provide an auxiliary alarm signal to the DDC system.
+The zone temperature sensor shall override the Off signal of the DDC system for AHU-1 and allow the air unit to run with the control dampers in the outside air intake duct closed if the zone temperature fall to 55 degrees F (adjustable) or increases to 85 degrees F (adjustable) during the unoccupied mode.
+The respective room temperature sensor shall modulate the cooling coil control valve or stage on the electric duct heater to maintain space temperature.
+If the zone temperature fall 5 degrees f (adjustable) below setpoint during occupied hours, a trouble alarm shall be sent to the central site.
+The respective electric duct heater shall be off if the internal safeties of the electric duct heater detect an abnormal condition.

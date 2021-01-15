@@ -1,0 +1,9 @@
+PAINT BOOTH EXHAUST FAN SYSTEM - CONTROL SEQUENCE -(PER SPEC 230993.3.11)
+
+
+A.	Exhaust fan EF-5 serves the paint booth and shall be constant volume.
+B.	Fan shall be started and stopped automatically through the BAS and shall operate continuously.
+C.	Current sensing at the fan motor shall be used to prove flow.
+D.	Fan shall have an automatic isolation damper. This damper shall be opened whenever associated exhaust fan is signaled to start and shall close whenever exhaust fan is signaled to stop. The isolation damper opening/closing speed shall be adjustable so that damper shall be completely closed only after fan completely stops. Exhaust fan shall not be allowed to start until its associated isolation damper is proven open by a limit switch.
+E.	Exhaust fan EF-5 shall be interlocked with the operation of a pushbutton switch located adjacent to the Paint Booth Room and with interlock to the paint booth door.  Whenever the switch is activated, exhaust fan EF-5 shall operate as described above.  Whenever the switch is deactivated and door is closed, EF-5 shall be de-energized after a 30second (FA) delay. Whenever exhaust fan EF-5 is operating, the make-up air damper located in the supply air ductwork shall open and the control damper shall modulate in response to the duct-mounted airflow measuring station to provide 7,000 cfm of make-up air. 
+F. 	Provide LED status light to indicate Exhaust fan status. Red shall indicate that the exhaust fan is off and Green shall indicate that the exhaust fan is on and the supply air damper is proven open. The LED lights should be installed local to the paint booth.

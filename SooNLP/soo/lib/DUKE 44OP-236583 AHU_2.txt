@@ -1,0 +1,90 @@
+DEDICATED OUTSIDE AIR HANDLING UNITS (AHU-1, AHU-2 & AHU-3) - CONTROL SEQUENCE) -(PER SPEC 230993.3.8)
+
+A.	General:
+1.	System is designed as a variable volume dedicated outside air system.
+2.	System is designed to supply conditioned outside air to all areas of the building.
+3.	System has supply fan array.
+4.	Unit is designed to handle the full latent load of the building by supplying outside air at a dew point much lower than the space set point.  This takes the entire latent load for the outside air and allows the conditioned outside air to absorb space latent load before being exhausted from the building.  Dehumidification downstream of the cooling coil is an integral part of this system.
+5.	System shall use the campus global Outdoor air temperature for all instances of outdoor air. In the case that the global outdoor air temperature point fails use the local OAT sensor in the AHU ductwork.
+6.	There shall be a Clear all virtual point located on the graphic that allows the user to restart the unit after shutdown by safety or maintenance.
+B.	Unit Operating Mode:
+1.	System shall operate continually with constant leaving air set point at all times unless shut down through the BAS.
+2.	Building automation system will program time initiated functions and other items as specified.
+3.	Control Contractor shall provide all necessary devices such as relays required for interface.
+C.	Unit Operation:
+1.	Unit operation shall be automatic and activated through building automation system.
+2.	Current sensing shall be used to prove fan operation.  Failure of the supply or exhaust fan(s) shall result in an alarm activated through BAS.  If a supply fan is signaled to start and fan does not start within 20 seconds (adj) of start command, or if operating fan fails based on motor current switch, or if VFD fails, respective fan shall be de-energized and an alarm shall be generated through the BAS.  The failed fan(s) shall remain locked out until manually reset through the BAS.
+D.	Interlocking:
+1.	Lab exhaust fans shall be interlocked via software with respective air handling unit supply fan array so that the exhaust fans operate whenever interlocked supply fans operate and operate at reduced speed whenever interlocked supply fans stop.
+2.	Interlock associated humidifier so that humidifier will be inoperative when any of the following conditions occur:
+a.	Unit supply fans are not operating
+b.	Unit is operating in cooling mode and control valve on cooling coil is open.
+c.	Average space relative humidity is above 40% (adj).
+3.	Humidifier interlock to supply fan shall be accomplished by utilizing both electrical interlock with supply fan and input signal from flow sensor on supply fan inlet.
+4.	When starting a single AHU, interlock smoke/isolation damper on unit supply air discharge and the isolation damper on the outside air intake with the supply fans so that the fans do not start until the dampers are proven open by a limit switch.  Damper shall open when the associated fans are commanded to start and close when associated fans are signaled to stop.  Damper closing rate shall be adjustable and set so that fans are stopped prior to complete closure of dampers.
+5.	When one or more AHUs are already operating, interlock smoke/isolation damper on unit outside air intake with the supply fans so that the fans do not start until the damper is proven open by a limit switch. Interlock smoke/isolation damper on the unit supply air discharge with the supply fans so that the damper does not open until the supply fans are started and operating at 25 Hz (adj). Exact speed to be determined during commissioning and TAB.
+E.	System Air Volume Control:
+1.	Unit supply fan and exhaust fans are furnished with variable frequency drives to maintain constant supply duct pressure and adjust the volume to match the building airflow demand.
+2.	Fans shall always start at low speed.  On failure of fan volume control signal, fans shall go to low speed and an alarm shall be signaled through the BAS.
+3.	Supply fans speed shall be modulated in parallel from common signal based on system static pressure. Unless otherwise shown on drawings, locate static pressure sensors in main supply duct two-thirds downstream from supply fan.  On a drop in static pressure below setpoint as measured by the pressure sensor/transmitter, the speed of the supply fans shall increase simultaneously and in parallel until static pressure setpoint has been satisfied.  On a rise in static pressure above setpoint, the speed of the supply fans shall decrease simultaneously and in parallel until the setpoint is satisfied. If a supply fan fails or trips off, an alarm shall be generated and remaining supply fans shall modulate to maintain static pressure setpoint.
+4.	Provide appropriate electrical signal input to volume control devices and necessary devices such as a transducer.
+5.	Static pressure controller with its corresponding static pressure sensing station in the supply duct shall modulate supply fan volume control device to maintain the static pressure setpoint.
+6.	Static pressure setpoint shall be reset based on the zone requiring the most pressure, i.e. the setpoint is reset 10% (adj) lower until one zone damper is 90% (adj) open. Upon 5% (adj) of zone dampers at 90% open, static pressure setpoint shall be reset up 10%. Static pressure reset shall utilize a 5 minute deadband to allow system to stabilize.
+7.	Control Contractor shall work in association with Test and Balance Contractor to determine actual required static pressure setpoints.  The contractors shall adjust supply airflow to maximum flow for all terminal boxes, and then gradually reduce (0.05 wg increments) the static pressure setpoint until at least one terminal box is greater than 90% open and all terminal boxes are meeting their airflow setpoints, then this static pressure shall become the static pressure setpoint for the system.
+F.	AHU Staging Control:
+1.	Initial AHU start-up sequence enables (1) AHU (AHU with the least cumulative runtime). The 1st lag AHU (fan with next-least cumulative runtime) shall be energized based on duct static pressure.  Whenever static pressure setpoint in the supply duct cannot be maintained with the lead AHU fans operating at 100% (FA) speed for five minutes (FA), the 1st lag AHU shall be energized. The lead AHU fans shall ramp down speed while the lag AHU fans simultaneously increase speed.  Once all AHU fans are operating at the same speed, they shall operate in tandem at the same speed to share the load.  On decreasing load, all AHU fans shall simultaneously slow their speed to maintain differential pressure setpoint at all sensing locations.  If all fans are operating at 40% (FA) speed for five minutes (FA), the AHU with the most accumulated runtime shall be de-energized and valves and control dampers shall modulate to their Off position. The other AHU fans shall operate to maintain static pressure setpoint.
+2.	The same sequence shall apply for staging the 2nd lag AHU.
+3.	Whenever an AHU is started, it shall operate for a minimum of 15 minutes (FA) before the AHU is allowed to stop.  Whenever an AHU is de-energized, the AHU shall not be enabled to re-start for a minimum of 15 minutes (FA).
+G.	VFD Control:
+1.	If there is an alarm from the drive, then an alarm shall be signaled through the BAS.
+2.	Instantaneous fan energy use, in units of kW, shall be output to the BAS from the VFDs via direct interface on the supply and exhaust fans.  The BAS shall trend this energy use for all system fans and totalize on a monthly basis in terms of kWh.
+H.	Unit Discharge Air Temperature Control:
+1.	Unit controller shall modulate control valve on cooling coil to maintain 47ºF (adj) discharge off cooling coil.
+2.	Whenever cooling coil control valve is modulated open and heating coil discharge air temperature is below 46ºF (adj) an alarm shall be signaled through the BAS.
+3.	Supply air temperature reset: When OA dewpoint is less than 50°F, cooling coil leaving air temperature shall be reset from 47°F to 58°F (adj).
+4.	Cooling coil control valve shall be closed whenever unit supply fan is not operating or whenever preheat coil valve is open except during a freezestat trip.
+5.	During cooling mode, the unit controller shall modulate control valves on wrap-around heat pipe circuits to ensure discharge air temperature downstream of the wrap-around heat pipe does not exceed 60°F (adj).  An alarm shall be signaled through the BAS if wrap-around heat pipe discharge temperature exceeds 60°F (adj).
+6.	When preheat valve is open the wrap-around heat pipe control valves shall be closed.
+7.	Discharge air dewpoint shall be calculated based on the temperature and relative humidity sensors mounted in the unit downstream of wrap-around heat pipe. This shall be displayed at the BAS, and an alarm shall be generated when the discharge dewpoint rises above the average building dewpoint.
+I.	Combined Preheat/Heat Recovery Coil Discharge Temperature Control:
+1.	Heating Mode: When outside air temperature is less than 50°F (adj) the system shall operate in Heating Mode. Preheat/heat recovery coil discharge air controller with sensor located immediately downstream of preheat/heat recovery coil shall modulate 2-way control valve serving preheat/heat recovery coils to maintain 55°F (adj) coil discharge temperature.
+2.	Cooling Mode: When outside air temperature is greater than 74°F (adj) the system shall operate in Cooling Mode: Preheat/heat recovery coil discharge air controller with sensor located immediately downstream of preheat/heat recovery coil shall modulate 2-way control valve 100% open.
+3.	Off/Disabled: When outside air temperature is between 50°F and 74°F (adj) the system shall be disabled and the preheat/heat recovery coil control valve shall be 100% closed.
+J.	Cold Start-Up Sequence:
+1.	When outdoor air temperature is below 40°F (adj) the following sequences shall apply when starting any AHU.
+a.	When AHU is commanded to start the preheat/heat recovery control valve shall modulate open to 100%for a duration of 5 minutes (adj).
+b.	After 5 minutes (adj) have elapsed the supply air and outside air isolation dampers shall open.
+c.	When isolation dampers have been proven open the supply fans shall be enabled and temperature control shall resume normal control.
+d.	Duct static pressure setpoint shall be slowly increased from 0 to normal setpoint over a period of 5 mins (adj). Once duct static pressure setpoint is met, normal fan control shall resume.
+K.	Miscellaneous:
+1.	Provide safety low limit control at entering side of cooling coil.  It shall de-energize unit supply and exhaust fans, open preheat valve to maintain a preheat temperature of 50ºF, open the chilled water control valve to 20%, and close outside air dampers when air temperature falls below 38ºF (adj).
+2.	High static pressure sensor mounted downstream of the supply fans shall shut the unit down if discharge static pressure rises above 5 in wg (adj).
+3.	Provide maintenance services switch, mounted on the side of each AHU. Pushing the button shall initiate BAS controlled shutdown of the AHU. Pushing the button shall ramp the supply fans slowly until they stop, shut isolation dampers and drive control valves to their Off position. Pulling the button shall initiate BAS controlled start-up of the AHU.
+
+PRIMARY HUMIDIFIERS (H-1, H-2 & H-3) - CONTROL SEQUENCE) -(PER SPEC 230993.3.7)
+A.	Control primary humidifiers, those located in the air handling units, AHU-1 thru 3, by humidity sensor acting through high limit dedicated humidity switch for each humidifier.  Controlling humidity sensor shall be set at 35%relative humidity (adj) at 70 °F.
+B.	Locate high limit humidity switch in supply ductwork at least 6 feet downstream of AHU discharge or in accordance with manufacturer’s recommendation if greater than 6 feet; set to de-energize humidifier whenever relative humidity exceeds 85 % RH at 61°F.  Humidifier control shall be by humidity sensors located in the Exhaust air ductwork (near the Heat Recovery Unit). A total of two sensors (one in each duct leg) shall be averaged and the average Exhaust air humidity shall be used as the control point for the active humidifiers.
+C.	At outside air temperature above 50°F, the humidifier shall become in operative.
+
+
+SMOKE/FIRE ALARM MODE - CONTROL SEQUENCE) -(PER SPEC 230993.3.10)
+Smoke Detectors in Ductwork: 
+2. Upon the Fire alarm activation the air handling units (AHU-1 thru 3) shall stop, AHU smoke/isolation dampers shall close, outside air dampers shall close and static pressure reset sequence on the HRU-1 exhaust fans shall be enabled. The units shall be re-started manually through BAS via master reset button. The AHUs shall shut down even when AHU drive is in bypass.
+B.	Smoke/ Isolation Dampers:
+2.	Smoke/isolation dampers shall close on signal from Fire Alarm Control Panel indicating alarm in damper’s associated duct mounted smoke detector. Air handling unit shall have manual restart through the BAS. Wire auxiliary contact on smoke/isolation damper to BAS for status indication.
+3.	Refer to AHU control sequences for interlocking of Smoke/Isolation dampers with AHU fans.
+
+TRENDING (For details see Spec. 230923.3.7)
+Pre-Configured Trends
+Air Handler – Heat Recovery Performance:
+Outside Air Temperature
+Heat Recovery Temperature (HRT1 & HRT2)
+Heat Recovery Exhaust Air Flow
+Outside Air damper position
+HRU damper positions
+Heat Recovery Exhaust Air Static Pressure
+Air Handler – Fan Performance:
+Supply Air Flow
+Supply Fan VFD Speed
+Supply fan power – sum if there are multiple supply fans
+Static pressure and setpoint for ductwork

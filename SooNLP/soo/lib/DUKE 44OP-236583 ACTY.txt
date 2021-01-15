@@ -1,0 +1,25 @@
+FACILITY MONITORING SYSTEM (FMS)(AIRCUITY) - CONTROL SEQUENCE -(PER SPEC 230993.3.3)
+
+
+General: 
+The Laboratory Airflow Control System (LACS) is comprised of the Siemens BMS and the Aircuity FMS system.
+Siemens will integrate via BACnet IP to the Aircuity FMS system. Siemens will receive Temperature, CO2, Dewpoint and TVOC for each room as indicated on the floorplan drawings and control the room airflow control valve with these readings as shown below.
+
+
+A.	The Laboratory Airflow Control System (LACS) will control the airflow control valves in response to the greatest of three demands:
+1.	Temperature control demand
+2.	Space exhaust demand
+3.	Demand Control Ventilation command from the FMS
+B.	The temperature controls and space exhaust controls will operate independent of the FMS and shall override the DCV command when required to maintain thermal comfort and space airflow offset.
+C.	The FMS will provide analog proportional DCV signals that correspond to the contaminant levels (TVOC, CO2, etc.) sensed at the wall-mounted sensors for each lab as indicated per the following DCV Signal and Differential Contaminant Ranges:
+
+
+
+
+
+
+
+D.	When the air contains a contaminant (e.g. TVOC, CO2, etc) concentration, as sensed by the FMS, that is below minimum setpoint (configured within the LACS) the minimum airflow setpoint within the LACS shall be as scheduled. The actual lab ACH shall be dynamic and equal to the higher of the temperature control demand, the space exhaust demand and the DCV command from the FMS.
+E.	When the air contains a contaminant concentration, as sensed by the FMS that is above maximum setpoint (configured within the LACS) the minimum airflow setpoint within the LACS shall be reset to the maximum scheduled airflow rates as indicated on the drawings during both occupied and unoccupied hours.
+F.	For contaminant concentration levels that are between the low and high setpoints, the LACS shall correspondingly and proportionally increase the minimum airflow during both occupied and unoccupied hours.
+G.	Once the air contains a contaminant concentration, as sensed by the FMS that is below setpoint (configured within the LACS) the minimum airflow setpoint within the LACS shall be reset as described above.

@@ -1,0 +1,24 @@
+SECONDARY CHILLED WATER SYSTEM - CONTROL SEQUENCE -(PER SPEC 230993.3.15)
+
+A.	General:
+1.	The secondary chilled water loop for the active chilled beams and passive chilled beams uses (2) heat exchangers (HX-SCH-1 and HX-SCH-2, each sized for 100% load) and the building chilled water system for heat rejection.
+2.	Two variable speed secondary chilled water pumps P-SCH-1 and P-SCH-2 will be provided as part of this project with control sequences as specified herein.
+3.	The BAS shall equalize run time on Pumps and HX on a monthly basis.
+
+B.	Secondary Chilled Water Pumps (P-SCH-1 and P-SCH-2) - Control Sequence:
+1.	Secondary chilled water pumps (P-SCH-1 and P-SCH-2) shall be started and stopped manually through the BAS.  A variable frequency drive (VFD) located at each pump shall be used to modulate system flow depending on load conditions.
+2.	Pumps P-SCH-1 and P-SCH-2 are each sized for 100% of the total secondary chilled water flow and piped in parallel. The pumps operate in a lead/standby arrangement.
+3.	The BAS shall equalize run time on pumps on a monthly basis.
+4.	Definition of lead and standby pumps shall be manually definable through the BAS.
+5.	The lead secondary chilled water pump, P-SCH-1 or P-SCH-2, shall start whenever manually initiated through the BAS.
+6.	A differential pressure switch and current sensing at each pump and pump motor shall be used to prove flow.
+7.	Provide lead-standby software switch to select lead pump.  If pump is signaled to start and does not start within 20 seconds (adj) of start command or if operating pump fails as proven by current switch or differential pressure switch across pump, or if VFD fails, the pump shall be de-energized, an alarm shall be generated at the BAS, and the standby pump shall start after a 30 second (adj) delay.  The failed pump shall remain locked out until manually reset through the BAS.
+8.	Provide differential pressure transmitter with sensors located in the secondary chilled water supply and return piping as shown on plans that will modulate the pump VFD as required to maintain a constant, predetermined, field adjustable differential pressure setpoint of 10 psig.
+9.	Whenever a pump is started, pump shall operate for a minimum of 15 minutes (adj) before the pump is allowed to stop.  After a pump is de-energized, the pump shall not be enabled to re-start for minimum of 5 minutes (adj).
+10.	Minimum allowable pump speed is 25% or 15 Hz (adj).
+11.	A two way control valve located in the building chilled water supply piping to each heat exchangers, HX-SCH-1 and HX-SCH-2, shall modulate to maintain 57ºF or 2°F greater than building dewpoint, whichever is higher (adj) secondary chilled water supply temperature.
+a.	The first time that a temperature reset is performed due to elevated building dewpoint temperature a notification shall be signaled at the BAS.
+b.	When a second temperature reset is performed due to a continued increase in building dewpoint temperature a 2nd notification shall be signaled at the BAS.
+
+C.	FAULT SWITCHOVER:
+1.	The Bas shall monitor secondary chilled water supply temperature at each heat exchanger.  If the HX is active and the SCHW supply temperature rises over 3 degrees F (adj) for more than 30 minutes (adj) , generate an alarm and switch to the standby HX.

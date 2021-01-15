@@ -1,0 +1,33 @@
+ACTIVE CHILLED BEAMS AND TERMINAL BOXES - CONTROL SEQUENCE -(PER SPEC 230993.3.17)
+
+A.	General:
+1.Control for terminal box shall be pressure independent with occupied and unoccupied airflow setpoints. Scheduling shall be provided through the BAS.
+2.Where active chilled beams are used, the supply air is ducted from the terminal box to the active chilled beam for room distribution.
+3.Space heating is provided by hydronic reheat coils in the air terminal box serving the active chilled beams or by heating coil in the active chilled beams.
+
+B.	Supply Airflow Control:  Terminal box shall supply constant airflow to the active chilled beams. The airflow volume setting shall be constant and controlled based on the mode. Mode shall be controlled for each terminal box and not a single point for all terminal boxes. Refer to Occupancy Control for determination of mode.
+
+C.	Temperature Setpoint Control:  Zoning shall be based on the mechanical floor plans. Five setpoints shall apply. Normal (72°F, adj.), standby heating (67°F), setback heating (65°F, adj.), standby cooling (78°F) and setback cooling (80°F, adj.). These three values shall be the only values changed by the operator to adjust space temperatures.  All other deadbands, differentials, etc. shall be calculated in the program logic (unless another means is provided to prohibit overlap of the heating and cooling loops and ensure a dead band such as function block templates that restrict the setpoint input).  During the normal periods, separate heating and cooling setpoints shall be calculated as follows:
+1.	Normal space cooling setpoint shall be the normal space temperature plus 3°F (adj.)
+2.	Normal space heating setpoint shall be the normal space temperature minus 2°F (adj.)
+
+D.	Secondary Chilled Water Valve:  When space temperature is above the space cooling setpoint, the secondary chilled water valve for active chilled beam shall modulate, up to the scheduled secondary chilled water flow rate, to maintain zone temperature setpoint.  Chilled water valve shall be closed when the space temperature is below the space cooling setpoint.
+
+E.	Hot Water Valve:  When space temperature is below the setpoint, the hot water valve for the active chilled beam or terminal box reheat coil shall modulate, up to the scheduled hot water flow rate, to maintain zone temperature setpoint.  Hot water valve shall be closed when the space temperature is above the setpoint.
+
+F.	Setpoint Adjustment: Occupant shall have the capability to adjust the setpoint temperature +3°F to -3°F from the setpoint temperature in the BAS.
+
+G.	Occupancy Control:
+1.  For spaces where the scheduled unoccupied volume setpoint is 0 cfm the following shall apply:
+a.	When ceiling occupancy sensor indicates that a room is vacant during building operating hours the volume setpoint shall be reset to 0 cfm and standby heating and cooling setpoint temperatures shall be maintained.
+b.	When ceiling occupancy sensor indicates that a room is vacant outside of building operating hours the volume setpoint shall be reset to 0 cfm and setback heating and cooling setpoint temperatures shall be maintained.
+c.	When ceiling occupancy sensor indicates that a room is occupied, regardless of building operating hours, the volume setpoint shall revert to occupied volume setpoints and Normal setpoint temperatures shall be maintained.
+d.	Where multiple spaces are served by a single air terminal box, all spaces served by that box must be vacant prior to reducing airflow and reducing temperatures to standby or setback setpoints. When any one space served by the air terminal box is occupied, regardless of building operating hours, then normal airflow and setpoint temperatures shall be maintained.
+2.  Presence button on room stat shall put room into occupied mode for 90 min. (adj).
+H.	Exhaust Air Tracking: Exhaust airflow shall be continuously measured through the BAS.  The exhaust terminal device shall modulate airflow as required to track supply airflow serving the space plus/minus any offset airflow as indicated on plans and schedules.  Where there are more supply air terminal devices serving a group of spaces than exhaust air terminals, the control system shall sum the supply airflows within the zones served by the supply air terminals to track the exhaust airflow with the overall supply airflow plus / minus any offset airflow as indicated on plans or schedules.
+
+CARBON DIOXIDE (CO2) MONITORING - CONTROL SEQUENCE -(PER SPEC 230993.3.8)
+
+A.	CO2 levels shall be monitored by space mounted analysis sensors located as shown on plans.
+B.	An alarm shall be displayed at the BAS if the CO2 level rises above 1000 ppm (adj).
+

@@ -1,0 +1,43 @@
+CONTROL WIRING
+All control wiring will be in conduit and/or plenum rated not in conduit where allowed by code
+as specified.
+All mechanical rooms or exposed spaces will be in conduit.
+
+Ethernet Communications:
+CAT6 wiring shall be used for floor level networks to Siemens room controls
+Where BACNET MSTP is required 1.5 pair TS cable shall be used
+
+
+
+BLN
+
+Siemens BAS APOGEE / Desigo CC (future)
+Siemens standard communications for FSU for this project will be BACNET via IP as coordinated with FSU.
+Server / workstations are existing
+Siemens Apogee/Desigo CC Software updates are not provided under this project. 
+Additional Siemens Apogee/Desigo CC Software licenses as required for building addition to Campus systems are not provided under this project. 
+This building is connected to the campus "Insight " server and will be moved to the Desigo CC "E&G" server in the future under scope of separate project. 
+All building graphics will be new.
+All existing non-IP BLN controllers shall remain as is, where is, unless noted otherwise in this submittal. 
+
+
+FLN
+
+All new DXR FLN equipment shall reside on IP FLN network. 
+All existing non-DXR and/or IP equipment shall remain as is, where is, unless noted otherwise in this submittal. 
+
+All 3rd party energy meters shall be provided by others with BACnet IP communication protocol (default). Siemens shall coordinate integration to 3rd party energy metering with responsible party. 
+
+Communication to VFDs and HHW System-10 BTU meter shall be via BACnet MS/TP (default). 
+Refer to estimated FLN path dwg for details. 
+
+
+CONTROL POWER
+
+Siemens shall deliver 24VAC control power to all FLN Devices furnished by Siemens.
+Energy meters shall be self-powered. 
+Where noted, control valves may require 120VAC power, to be provided by job E.C. 
+120VAC and above not by Siemens.
+FCU controllers to receive individual 120/24VAC step-down transformers.
+All other DXR equipment shall receive 24VAC power via power trunks wired to 500A or 300A enclosed XFMR cabinets with 5 or 3 100VA Class 2 outputs respectively. 
+Refer to estimated power trunk path dwg for details. 

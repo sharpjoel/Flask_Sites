@@ -1,0 +1,32 @@
+DOMESTIC HOT WATER SYSTEM - CONTROL SEQUENCE -(PER SPEC 230993.3.5)
+
+A.	General:
+1. The domestic hot water system has a packaged control system furnished by the equipment manufacturer as specified in Div 22. This contractor shall be responsible for installing and connecting controls required which are not factory installed and wired by equipment manufacturer.  This shall include providing control wiring to the equipment control panel for monitoring equipment operation and alarming through the BAS for fault condition. Refer to control diagrams for list of points to be displayed at the BAS. Capability shall be provided at the BAS to enable/disable domestic water circulating pumps PP-DHR1 and PP-DHR2
+
+B.	Domestic Hot Water Pumps (PP-DHR1 and PP-DHR2) - Control Sequence:
+1.	Domestic hot water pumps (PP-DHR1 and PP-DHR2) shall be started and stopped manually through the BAS.
+2.	Pumps PP-DHR1 and PP-DHR2 are each sized for 100% of the total domestic hot water flow and piped in parallel. The pumps operate in a lead/standby arrangement.
+3.	The BAS shall equalize run time on pumps on a monthly basis.
+4.	Definition of lead and standby pumps shall be manually definable through the BAS.
+5.	The lead domestic hot water pump, PP-DHR1 or PP-DHR2, shall start whenever manually initiated through the BAS.
+6.	A differential pressure switch and current sensing at each pump and pump motor shall be used to prove flow.
+7.	Provide lead-standby software switch to select lead pump.  If pump is signaled to start and does not start within 20 seconds (adj) of start command or if operating pump fails as proven by current switch or differential pressure switch across pump, or if the starter fails, the pump shall be de-energized, an alarm shall be generated at the BAS, and the standby pump shall start after a 30 second (adj) delay.  The failed pump shall remain locked out until manually reset through the BAS.
+8.	Whenever a pump is started, pump shall operate for a minimum of 15 minutes (adj) before the pump is allowed to stop.  After a pump is de-energized, the pump shall not be enabled to re-start for minimum of 5 minutes (adj).
+
+Points received via BACnet integration from MaxiTherm Skid:
+DWH-1
+1. ENTERING WATER TEMP (VIRTUAL)
+2. LEAVING WATER TEMP (VIRTUAL)
+3. FLOW SWITCH (VIRTUAL)
+4. STEAM START-UP CONTROL VALVE POSITION (VIRTUAL)
+5. STEAM ISOLATION VALVE POSITION (VIRTUAL)
+6. STEAM PRESSURE (VIRTUAL)
+7. CONDENSATE CONTROL VALVE POSITION (VIRTUAL)
+DWH-2
+1. ENTERING WATER TEMP (VIRTUAL)
+2. LEAVING WATER TEMP (VIRTUAL)
+3. FLOW SWITCH (VIRTUAL)
+4. STEAM START-UP CONTROL VALVE POSITION (VIRTUAL)
+5. STEAM ISOLATION VALVE POSITION (VIRTUAL)
+6. STEAM PRESSURE (VIRTUAL)
+7. CONDENSATE CONTROL VALVE POSITION (VIRTUAL)

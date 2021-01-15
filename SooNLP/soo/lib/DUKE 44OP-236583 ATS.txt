@@ -1,0 +1,10 @@
+AUTOMATIC TRANSFER SWITCH MONITORING - CONTROL SEQUENCE -(PER SPEC 230993.3.10)
+
+A.	Building automation system shall monitor and alarm the position of the following automatic transfer switches. Visual indication of the transfer switch positions shall be viewable from the BAS.
+1.	ATS-LR1
+2.	ATS-LR2
+3.	ATS-OP1
+4.	ATS-E
+B.	BAS shall also monitor a failed-to-sync alarm at each of the automatic transfer switches.
+
+

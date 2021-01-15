@@ -1,0 +1,13 @@
+FCU 4-Pipe CW and HW Valves Application Template 14051. The controller modulates separate heating coil valve (HclVlvPos) and cooling coil valve (CclVlvPos) in the fan coil unit to maintain room temperature heating setpoint (SpH) and cooling setpoint (SpC). The fan coil unit also has a fan (Fan1Spd) to circulate room air. In order for the fan coil unit to work properly, the central plant must provide chilled and hot water. Outside air temperature (TOa) is provided by the central automation system. 
+
+FIRE PUMP ROOM SEQUENCE (FCU-17 AND EF-6) (Per RFI-110 / 426)
+
+A global outside air temperature sensor shall determine operating mode. If outside air temperature is:
+Below 60°F (adj): The 2-way heating control valve (FO) on hot water coil of FCU-17 shall modulate to maintain space temperature setpoint of 65°F (adj).
+Above 85°F (adj): The 2-way cooling control valve (FC) on chilled water coil of FCU-17 shall modulate to maintain space Temperature setpoint of 80°F (adj).
+Between 60°F and 85°F (adj): The cooling and heating control valves on FCU-17 shall be closed and EF-6 shall be enabled.
+Current sensing at FCU-17 fan motor and EF-6 fan motor shall be used to prove status.
+Fan coil units shall be provided with a secondary drain pan with float switch. When float switch is activated (ie: high water level in secondary drain pan) the unit fan shall be de-energized, the chilled water valve shall be commanded closed and an alarm shall be generated at the BAS.
+Safety: If at any time, regardless of outdoor air temperature, the room temperature falls below 55°F or above 90°F (adj) EF-6 shall be disabled and FCU-17 shall be enabled to control to the heating or cooling space temperature setpoint.
+
+

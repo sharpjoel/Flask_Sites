@@ -1,0 +1,39 @@
+HEATING HOT WATER SYSTEM - CONTROL SEQUENCE -(PER SPEC 230993.3.12)
+
+A.	General:
+1.	Heating hot water will be generated using two vertical, flooded, shell and tube, steam to water convertors, each sized for 100% of the total preheat and reheat load.  High pressure stream at 125 psig is distributed to the building from the campus steam distribution system and is delivered to the heating hot water package.  A 1/3, 2/3 pressure reducing valve station within the building will generate low pressure steam at 15 psig for use at humidifiers.  The system will utilize a variable flow primary pumping arrangement.
+B.	The heating hot water system has a packaged control system furnished by the equipment manufacturer. This contractor shall be responsible for installing and connecting controls required which are not factory installed and wired by equipment manufacturer.  This shall include providing control wiring to the equipment control panel for monitoring equipment operation and alarming through the BAS for fault condition. Refer to control diagrams for list of points to be displayed at the BAS.
+
+Points received via BACnet integration from MaxiTherm Skid:
+HP-HW-1 
+TEMP SENSOR FAILURE (VIRTUAL)
+CV-HW-1
+1. ENTERING WATER TEMP (VIRTUAL)
+2. LEAVING WATER TEMP (VIRTUAL)
+3. FLOW SWITCH (VIRTUAL)
+4. STEAM START-UP CONTROL VALVE POSITION (VIRTUAL)
+5. STEAM ISOLATION VALVE POSITION (VIRTUAL)
+6. STEAM PRESSURE (VIRTUAL)
+7. CONDENSATE CONTROL VALVE POSITION (VIRTUAL)
+CV-HW-2
+1. ENTERING WATER TEMP (VIRTUAL)
+2. LEAVING WATER TEMP (VIRTUAL)
+3. FLOW SWITCH (VIRTUAL)
+4. STEAM START-UP CONTROL VALVE POSITION (VIRTUAL)
+5. STEAM ISOLATION VALVE POSITION (VIRTUAL)
+6. STEAM PRESSURE (VIRTUAL)
+7. CONDENSATE CONTROL VALVE POSITION (VIRTUAL)
+P-HW-1
+1. ON/OFF(VIRTUAL)
+2. POWER-KW (VIRTUAL)
+3. POWER-KWH (VIRTUAL)
+4. SPEED CONTROL (VIRTUAL)
+5. SPEED FEEDBACK (VIRTUAL)
+6. VFD FAULT (VIRTUAL)
+P-HW-2
+1. ON/OFF(VIRTUAL)
+2. POWER-KW(VIRTUAL)
+3. POWER-KWH (VIRTUAL)
+4. SPEED CONTROL (VIRTUAL)
+5. SPEED FEEDBACK (VIRTUAL)
+6. VFD FAULT (VIRTUAL)

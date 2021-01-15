@@ -1,0 +1,9 @@
+The space served by the power roof vent exhaust fan is controlled in Occupied and Unoccupied modes as follows:
+
+Occupied
+The DDC system opens the exhaust damper and turns on the exhaust fan.
+
+Unoccupied
+The exhaust fan is off.  
+
+The DDC system uses a current switch to monitor the exhaust fan status.

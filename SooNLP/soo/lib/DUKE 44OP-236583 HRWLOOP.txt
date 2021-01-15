@@ -1,0 +1,28 @@
+HEAT RECOVERY WATER SYSTEM - CONTROL SEQUENCE -(PER SPEC 230993.3.14)
+
+A.	General:
+1.	The heat recovery water loop ties together coils in the heat recovery unit (HRU-1) and the dedicated outdoor air units (AHU-1, 2 and 3).  During the cooling season, recovered sensible energy from building exhaust air in HRU-1 pre-cools outdoor air in the AHUs.  During heating season, recovered energy from building exhaust air in HRU-1 pre-heats outdoor air in the AHUs.  A set of (2) plate and frame heat exchangers supplement the heat recovery water loop with additional heat from the heating hot water loop to increase loop temperature during the heating season in order to prevent freezing of the pre-heat coils.
+
+B.	Operating Modes:
+1.	Heating Mode: When outside air temperature is less than 50°F (adj) the system shall operate in Heating Mode. Pumps shall be enabled and supplemental HX shall operate as indicated in this section.
+2.	Cooling Mode: When outside air temperature is greater than 74°F (adj) the system shall operate in Cooling Mode. Pumps shall be enabled, HX isolation control valves shall be closed and HX bypass valve shall be open.
+3.	Off/Disabled: When outside air temperature is between 50°F and 74°F (adj) the system shall be disabled. Pumps shall be off, HX isolation control valves shall be closed and AHU preheat/heat recovery coil control valves shall be closed.
+
+C.	Heat Recovery Water Pumps (P-HRW-1 and P-HRW-2) – Control Sequence:
+1.	Heat recovery water pumps (P-HRW-1 and P-HRW-2) shall be started and stopped automatically through the BAS and operating mode shall be determined by outdoor air temperature.  A variable frequency drive (VFD) located at each pump shall be used to modulate system flow depending on load conditions.
+2.	Pumps P-HRW-1 and P-HRW-2 are each sized for 100% of the total heat recovery water flow and piped in parallel.  The pumps operate in a lead/standby arrangement.
+3.	The BAS shall equalize run time on pumps on a monthly basis.
+4.	Definition of lead and standby hot water pumps shall be manually definable through the BAS.
+5.	A differential pressure switch and current switch on each pump and motor shall prove flow.
+6.	Provide lead-standby software switch to select lead pump.  Whenever lead pump does not start within 20 seconds (adj) of start command, or if operating pump fails as proven by current switch or different pressure switch across pump, or if VFD fails, pump shall be de-energized, a critical alarm shall be generated through the BAS, and the standby pump shall be energized after a 30 second (adj) delay.  The failed pump shall remain locked out until manually reset through the BAS.
+7.	The lead pump, P-HRW-1 or P-HRW-2, shall operate continuously.
+8.	Provide differential pressure transmitter with sensors located in the heat recovery water supply and return lines that will modulate pump VFD thru the BAS as required to maintain, constant, predetermined filed adjustable setpoint of 10 psig.
+9.	Pressure differential sensors/transmitter shall be installed as shown on drawings.
+10.	Whenever pump is started, pump shall operate for minimum of 5 minutes (adj) before the pump is allowed to stop.  Whenever a pump is de-energized, the pump shall not be enabled to re-start for minimum of 5 minutes (adj).
+
+D.	Supplemental Hot Water Control:
+1.	(2) plate and frame heat exchangers (HX-HR-1 and HX-HR-2), each sized for 100% of expected load, will allow supplemental heat to be transferred from the heating hot water system to the heat recovery water system when heat recovered from HRU-1 is not adequate to provide full pre-heat requirements at the AHUs.
+2.	Heat recovery water supply temperature setpoint shall be reset between 60°F and 85°F (adj) as outside air temperature drops from 50°F to 0°F (adj).
+3.	When heat recovery water return temperature (measured at discharge of HRU-1) falls below the heat recovery water supply temperature setpoint by 2°F the supplemental heat exchangers shall be enabled. Heat exchanger bypass control valve (V-HR-6) shall close, the heat exchanger isolation control valves (V-HR-4 and V-HR-5) shall open and 2-way modulating control valves on the heating hot water side of the heat exchangers shall modulate to maintain heat recovery water supply temperature setpoint.
+4.	When heat recovery water return temperature (measured at discharge of HRU-1) is equal to or greater than the heat recovery water supply temperature setpoint the supplemental heat exchangers shall be disabled. Heat exchanger bypass control valve (V-HR-6) shall open and the heat exchanger isolation control valves (V-HR-4 and V-HR-5) shall close.
+5.	Freeze Safety: If the heat recovery water temperature leaving an AHU preheat/heat recovery coil falls below 40°F the heat exchanger isolation control valves (V-HR-4 and V-HR-5) shall open, HX bypass valve (V-HR-6) shall close, the lead pump (P-HRW-1 or P-HRW-2) shall turn on and 2-way modulating control valves on the heating hot water side of the heat exchangers shall modulate to maintain heat recovery water supply temperature setpoint and to maintain heat recovery water return temperature above 40°F.

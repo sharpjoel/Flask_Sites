@@ -1,0 +1,14 @@
+SMOKE / FIRE ALARM MODE - CONTROL SEQUENCE -(PER SPEC 230993.3.10)
+
+
+General:  Siemens will monitor fire / smoke dampers status, via auxiliary contact on smoke/isolation damper (furnished by others).
+
+
+B.	Smoke/ Isolation Dampers:
+1.	Smoke/isolation dampers will be furnished by others, installed by Mechanical Contractor, and wired by Electrical Contractor.
+2.	Smoke/isolation dampers shall close on signal from Fire Alarm Control Panel indicating alarm in damper’s associated duct mounted smoke detector. Air handling unit shall have manual restart through the BAS. Wire auxiliary contact on smoke/isolation damper to BAS for status indication.
+3.	Refer to AHU control sequences for interlocking of Smoke/Isolation dampers with AHU fans.
+4.	Smoke / isolation dampers shall be provided in supply air discharge and outdoor air inlet for AHU-1 THRU 3.
+
+
+

@@ -1,0 +1,9 @@
+An application specific DDC controller using electric actuation controls the fan coil unit (FCU).  The controls will operate on heating or cooling cycles based on control system interlock to indicate whether heating or cooling is available.  The space served by the FCU is controlled in Occupied and Unoccupied modes as follows:
+
+Occupied
+The FCU fan operates continuously.  The controller monitors the room temperature sensor and modulates the FCU heating/cooling valve to maintain the space temperature at set point.
+
+Unoccupied
+The FCU is controlled using the Unoccupied space temperature set point.  The FCU fan is off when the space is satisfied.  The controller may reset to the Occupied mode for a predetermined time period upon a signal from the control system or manually from a switch at the room sensor.
+
+The DDC system uses a current switch to monitor the FCU fan status.

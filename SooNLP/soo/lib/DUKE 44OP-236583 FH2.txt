@@ -1,0 +1,41 @@
+LAB FLOW TRACKING ZONE WITH HOODS - CONTROL SEQUENCE -(PER SPEC 230993.3.1 )
+A.	General: BAS shall control the air systems in the zone including the supply air reheat terminal (SA) and the variable volume fume hood exhaust valves (VVFH). The flow setpoints on the terminals and valves shall be coordinated and the system shall be controlled to maintain a negative pressure in the room by maintaining the supply flow less than the exhaust, unless the lab is specifically designed as a positive pressure space.
+B.	Space Temperature Control: Where multiple thermostats are shown for one room, the thermostats shall control the terminals as designated on the mechanical plans. If multiple terminals are shown connected to a single thermostat the terminals shall all be controlled together to prevent the terminals from providing simultaneous heating and cooling to the same room. Use master/slave arrangement to control multiple terminals with single thermostat, so that damper position and hot water valve position are the same for each of the linked terminals. Refer to Mechanical plans for number and location of thermostats. Coordinate location of thermostat with Engineer if not shown on the plans or the location is in conflict with other equipment. Five setpoints shall apply.  Normal (72°F, adj.), standby heating (67°F), setback heating (65°F, adj.), standby cooling (78°F) and setback cooling (80°F, adj.). These three values shall be the only values changed by the operator to adjust space temperatures. All other deadbands, differentials, etc. shall be calculated in the program logic (unless another means is provided to prohibit overlap of the heating and cooling loops and ensure a dead band such as function block templates that restrict the setpoint input). During the normal periods, separate heating and cooling setpoints shall be calculated.
+1.  Normal space cooling setpoint shall be the normal space temperature plus 1.0°F (adj.)
+2.  Normal space heating setpoint shall be the normal space temperature minus 1.0°F (adj.)
+3.  When ceiling occupancy sensor indicates that a room is vacant during building operating hours the standby heating and cooling setpoint temperatures shall be maintained.
+4.  Presence button on room stat shall put room into occupied mode for 90 min. (adj).
+C.	Hydronic Reheat: Normally open zone reheat coil valve shall modulate in a PI loop to maintain space temperature heating setpoint as defined above with a 2F throttling range. Valve shall be closed whenever the parent AHU is off.
+D.	Cooling Request: This terminal unit shall issue a cooling request as follows:
+1.  Whenever the space temperature PID output is greater than 90%, or
+2.  Whenever the space temperature rises above the throttling range of the cooling loop
+E.	Pressure Request: This terminal shall issue a pressure request as follows:
+1.  Whenever the zone damper position is greater than 90% of fully open.
+F.	Setpoint Adjustment: Occupant shall have the capability to adjust the setpoint temperature +3°F to -3°F from the setpoint temperature in the BAS.
+G.	Hood Exhaust (VVFH) Control: Hood exhaust box shall be controlled to maintain a constant face velocity (adj.). Exact face velocity shall be coordinated with each hood approved shop drawing and the University. At no time shall the velocity be below 85 fpm. Actuators shall be capable of, and loop shall be tuned to stabilize (variations less than 10 FPM around the setpoint) within 5 seconds. The flow through the box shall continuously be determined by one of the following two methods:
+1.  Direct measurement using a vortex shedding air flow measuring station or
+2.  Calibrated valve position from venturi type value
+H.	Hood Monitoring Interface: BAS shall continuously monitor the face velocity of the hood and provide a local indication of the status of the hood. Safe conditions shall be set up for 30% of the active face velocity setpoint. Local visual and audible indication of unsafe conditions shall be enunciated. Include a silence button.
+I.	Supply Air (SA) Box Control
+1.  BAS shall modulate the damper on the supply box to maintain the supply flow setpoint. Where multiple supply boxes serve the zone, each supply air box shall operate at the same percentage of flow range based on output from a reset used to maintain the total supply air flow.
+a. Where multiple supply boxes serve the zone and one supply box serves active chilled beams. The airflow to the active chilled beams shall be constant volume
+2.  The total zone supply flow setpoint shall equal the sum of all exhausts in the zone served minus an offset value which shall be determined as follows:
+a. It shall be fixed at the differential scheduled on the drawings and/or as defined by the balancing contractor.
+3.  If the supply flow setpoint set in the paragraph above fails to maintain the space temperature setpoint, the supply air flow setpoint shall be reset towards the cooling maximum volume setpoint to maintain space temperature cooling setpoint.
+a. Where applicable: If the space temperature is above space temperature setpoint, the secondary chilled water valve for active chilled beams shall modulate, up to the scheduled secondary chilled water flow rate, to maintain zone temperature setpoint.  Chilled water valve shall be closed when the space temperature is below the space cooling setpoint.
+b. If the secondary chilled water valve is 100% open and space temperature is still above space temperature setpoint, the supply airflow shall be increased to maintain space temperature setpoint.
+c.  If the space temperature is below space temperature setpoint, the supply airflow shall be decreased to maintain space temperature setpoint.
+d.  If the space temperature continues to be below space temperature setpoint when the air terminal is at minimum scheduled airflow or as required to maintain space airflow offset, the hot water valve shall modulate to maintain space temperature setpoint.
+4.  Cooling Minimum Volume setpoint shall be as scheduled on the drawings during the occupied period.
+5.  Cooling Maximum Volume setpoint shall be as scheduled on the drawings during all occupancy modes.
+6.  Heating Minimum Volume setpoint: Whenever heating is requested from the box in any period, the minimum volume shall be set to an adjustable heating setpoint airflow.
+J.	Equipment Exhaust (EX) Flow Setpoint (where applicable): This setpoint shall be constant value based on terminal box schedule.
+K.	General Exhaust (GEX) Box Control (where applicable):
+1.  BAS shall continuously calculate a GEX flow setpoint based supply air to the zone. This setpoint shall be reset between maximum and minimum volume settings to maintain correct airflow offset in the lab.  GEX flow setpoint shall remain at the minimum volume setting whenever the supply airflow is at minimum flow.
+2.  When the SA Terminal setpoint is dictated by the room exhaust rate, the general exhaust flow rate shall be constant and equal to the minimum airflow as scheduled on the drawings.
+3.  When the SA Terminal setpoint is dictated by the space temperature cooling setpoint, the general exhaust flow rate shall be equal to the supply airflow minus the fume hood exhaust airflow minus the equipment exhaust airflow plus or minus (based on space pressure relationship) an offset value which shall be determined as follows:
+a.  It shall be fixed at the differential scheduled on the drawings and/or as defined by the balancing contractor.
+4.  GEX Minimum Volume setpoint shall be as scheduled on the drawings during the occupied and unoccupied modes.
+5.  GEX Maximum Volume setpoint shall be as scheduled on the drawings during all occupancy modes.
+L.	Lab Demand Control Ventilation
+1.  Refer to Facility Monitoring System (FMS) – Lab Control Sequence in this specification section. Drawing 701A.

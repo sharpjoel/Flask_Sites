@@ -1,0 +1,13 @@
+ADDITIONAL MONITORING POINTS - CONTROL SEQUENCE -(PER SPEC 230993.3.11)
+
+Auxiliary contacts shall be provided for remote alarm monitoring through the BAS for the following equipment
+1.	Laboratory Air Compressors: AC-1 and AC-2
+2.	Laboratory Vacuum Pump: VP-1 and VP-2
+3.	Reverse Osmosis System: RO-1
+
+
+
+NATURAL GAS MONITORING - CONTROL SEQUENCE -(PER SPEC 230993.3.19)
+
+A. Controls contractor shall integrate via BACnet MSTP with the building natural gas meter (provided by local utility) to record natural gas usage.
+

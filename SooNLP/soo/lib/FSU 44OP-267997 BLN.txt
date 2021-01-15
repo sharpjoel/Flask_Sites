@@ -1,0 +1,34 @@
+CONTROL WIRING
+All control wiring will be in conduit and/or plenum rated not in conduit where allowed by code
+as specified.
+All mechanical rooms or exposed spaces will be in conduit.
+
+Ethernet Communications:
+CAT6 wiring shall be used for floor level networks to Siemens room controls
+Where BACNET MSTP is required 1.5 pair TS cable shall be used
+
+
+
+BLN
+
+Siemens BAS APOGEE / Desigo CC
+Siemens standard communications for FSU for this project will be BACNET as coordinated with FSU.
+Server / workstations are existing
+Siemens Apogee/Desigo CC Software updates are not provided under this project. 
+Additional Siemens Apogee/Desigo CC Software licenses as required for building addition to Campus systems are not provided under this project. 
+This building is connected to the campus "Insight " server and will be moved to the Desigo CC "E&G" server in the future under scope of separate project. 
+All building graphics will be new.
+
+
+FLN
+
+NEW Lab controllers and FCUs on associated floors shall utilize Bacnet over IP FLN comm to BAS. 
+NEW non-lab controllers and FCUs on 1st floor shall utilize Bacnet over MS/TP comm to BAS.  
+Refer to associated FLN path drawings for details. 
+
+
+Existing PXCM in main mechanical room, 1st floor
+
+The scope of work includes expansion of existing controller. Refer to specific systems and controller layout dwg for detailed new work description. 
+
+

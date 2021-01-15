@@ -1,0 +1,9 @@
+CHILLED WATER PLANT
+When the control panel manual toggle (face of panel) switch is in the West Campus Plant position, the Library North chiller shall be Off.  When the control panel switch is in the Library North Chiller position, the Library North chiller shall operate with pumps, and tower controlled as presently operating.
+When the West Campus Plant selection is made from the control panel, the chilled water pump VFD’s (in the Auto mode) shall modulate the pumps, on a lead lag basis, to maintain 10 PSI differential pressure in the branch piping as sensed on the fifth floor.  One pump shall operate until it cannot maintain the pressure or until the flow rate exceeds 700 GPM.  The lag pump will then operate.  The second pump shall turn off if flow drops below 600 GPM.  Pumps shall soft start.  In the Manual mode, the pumps shall maintain 1750 RPM constant speed, or pre-programmed speed set as design flow rate.
+When the chiller plant is the Library North position, the drives shall function at constant speed as in the Manual mode.
+Pump drive or pump failure, as determined by electric current transducer signal, shall signal the lag pump to operate and shall initiate alarm condition.
+The chilled water supply and return sensors shall measure and report respective temperatures.
+The flow meter shall provide output flow rate in Gallons Per Minute.
+Software shall totalize the temperature/flow inputs to read out total Tons, either in West Campus or Library North chiller position.
+Heat tape sensor shall alarm the system if the pipe surface temperature drops below 40 degrees F.

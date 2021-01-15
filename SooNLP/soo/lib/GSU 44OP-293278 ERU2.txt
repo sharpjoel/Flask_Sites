@@ -1,0 +1,20 @@
+ERU-2 SEQUENCE OF OPERATION
+
+The energy recovery unit and the integral exhaust air and outside air intake fans shall be normally started and stopped by the DDC system during the occupied and unoccupied modes and shall be operated on the same schedule as AU-10, AU-8 and AU-6. provide a time delay between the start-up of the outside air and exhaust air fans and the energy recovery wheel after the opening of the smoke damper and control dampers in the outside air ducts associated with AU-10, AU-8 and AU-6.  The internal control dampers of ERU-2 shall be proved open before start-up of the outside air or exhaust air fans.
+
+The outside air intake fan shall be manually started and stopped from the hand and off position of the hand off auto switch at the associated variable frequency drive and automatically started and stopped by the DDC System when the switch is in the auto position.  All safety devices shall operate with the switch in the hand and auto position. Based upon the signals from the associated airflow monitoring stations, the speed of the outside air intake fan shall be modulated via its associated variable frequency drive to maintain the outside airflow setpoints.  Provide a manually reset outside air fan shutdown if the static pressure in the outside air duct exceeds the hi limit setpoint of positive 2.0 W.G. (adjustable).
+
+The exhaust air fan shall be manually started and stopped from the hand and off position of the hand off auto switch at the associated variable frequency drive and automatically started and stopped by the DDC system when the switch is in the auto position. Based upon the signals from the associated airflow monitoring stations, the speed of the exhaust air fan shall be modulated via its associated frequency drive to maintain the exhaust airflow setpoints. Provide a manually reset exhaust air fan shutdown if the static pressure in the exhaust air duct exceeds the hi-limit setpoint of negative 2.0 W.G. (adjustable).
+
+In the event of a power interruption or shutdown of the supply air or exhaust air fan, ERU-2 shall be shutdown.  Operation of the emergency fan stop switch shall shut down ERU-2 (See plans for location.)
+
+Duct Mounted Smoke Detectors
+Smoke detectors in the outside air intake duct or the smoke detectors in the exhaust air duct associated with ERU-2 shall shut down eru-2 and the exhaust air and outside air  intake fans integral to eru-2 via a fire alarm relay mounted within 3 feet of the eru vfds when an abnormal condition exists at any one of the smoke detectors.
+ERU-2 and integral exhaust air and outside air intake fans shall be shutdown when there is a shutdown of any one of the associated air handling units AU-10, AU-8 and AU-6.
+
+A differential pressure sensor shall monitor the differential pressure across each bank of filters and provide a respective change filter trouble identification if the differential pressure exceeds 0.85 inches (adjustable) of water gauge.
+
+The minimum leaving outside air temperature shall be maintained via a modulation of the electric heating capacity by the integral controls of ERU-2 when the integral controls of eru-2 when the integral controls detect that ERU-2 is operating during the wintertime.  ERU-2 shall receive a remote, 4-20 MAMP signal for reset upwards/downwards of the minimum leaving outside air temperature.
+
+If the enthalpy of the outside air is less than or equal to the enthalpy of the exhaust air and the outside air temperature is 5F greater than the setpoint for the minimum leaving outside air temperature for ERU-2 and there is a call for cooling by AU-10, AU-8 or AU-6, the energy recovery wheel shall be off.
+

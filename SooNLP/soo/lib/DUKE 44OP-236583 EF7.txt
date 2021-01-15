@@ -1,0 +1,8 @@
+The exhaust system shall be commanded to run whenever any of the 3 air handlers are operating.
+
+The exhaust system consists of 2 exhaust fans operate in a lead / standby arrangement.
+
+When the lead fan is commanded on, it shall be ramped up to a fixed speed (as determined by air balance).
+
+If the lead fan fails to start, the standby fan shall be commanded to on and its speed ramped up to a fixed speed.
+

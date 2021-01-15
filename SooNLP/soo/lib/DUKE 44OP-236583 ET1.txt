@@ -1,0 +1,41 @@
+TERMINAL BOXES AND REHEAT COILS - CONTROL SEQUENCE -(PER SPEC 230993.3.16)
+
+A.	General:
+1.  Control shall be pressure independent with minimum and maximum flow setpoints CO2 override and occupancy override and exhaust air tracking.  Scheduling shall be provided through the BAS.
+
+B.	Space Temperature Control:
+1.  Where multiple thermostats are shown for one box the room temperature used for control shall be the average of the thermostats.  If multiple boxes serve one space they shall all be controlled together, unless otherwise noted, to prevent the boxes from providing simultaneous heating and cooling to the same room.
+2.  Five setpoints shall apply.  Normal (72°F, adj.), standby heating (67°F), setback heating (65°F, adj.), standby cooling (78°F) and setback cooling (80°F, adj.).  These three values shall be the only values changed by the operator to adjust space temperatures.  All other deadbands, differentials, etc. shall be calculated in the program logic (unless another means is provided to prohibit overlap of the heating and cooling loops and ensure a dead band such as function block templates that restrict the setpoint input).
+3.  During the normal periods, separate heating and cooling setpoints shall be calculated as follows:
+a.  Normal space cooling setpoint shall be the normal space temperature plus 3°F (adj.)
+b.  Normal space heating setpoint shall be the normal space temperature minus 2°F (adj.)
+
+C.	Zone Damper:  Zone damper shall modulate to maintain zone volume setpoint.  Zone volume setpoint shall be reset between maximum and minimum volume settings to maintain space temperature cooling setpoint.  Zone volume setpoint shall go to the heating volume setpoint whenever the space temperature falls below the heating space temperature setpoint.
+1.  Cooling Minimum Volume setpoint shall be as scheduled on the drawings during the occupied period and shall be set to zero otherwise.
+2.  Heating Minimum Volume Setpoint:  Whenever heating is requested from the box in any period, the minimum volume shall be set to an adjustable heating setpoint airflow.
+
+D.	Hydronic Reheat: Normally open zone reheat coil valve shall modulate in a PI loop to maintain space temperature heating setpoint as defined above with a 2°F throttling range.  Valve shall be closed whenever the air handler serving the zone is off.
+
+E.	Setpoint Adjustment: Occupant shall have the capability to adjust the setpoint temperature +3°F to -3°F from the setpoint temperature in the BAS.
+
+F.	A space temperature sensor shall modulate a control valve (FO) to each hot water coil to maintain space set point temperature.
+
+G.	Alarms:
+1.  High Supply Air Temp (5°F greater than current room setpoint) in cooling mode.
+2.  Low Supply Air Temp (5°F less than current room setpoint) in heating mode.
+
+H.	CO2 Override:
+1.	For spaces served by VAV boxes with a space mounted CO2 sensor (see room list below), the zone airflow shall be overridden to maintain the design CO2 setpoint of 1000 ppm (adj).
+a.  127A-Design Center Conference Room
+b.  137C-Custodial Break Room
+
+I.	Occupancy Control:
+1.  For spaces where the scheduled unoccupied volume setpoint is 0 cfm the following shall apply:
+a.	When ceiling occupancy sensor indicates that a room is vacant during building operating hours the volume setpoint shall be reset to 0 cfm and standby heating and cooling setpoint temperatures shall be maintained.
+b.	When ceiling occupancy sensor indicates that a room is vacant outside of building operating hours the volume setpoint shall be reset to 0 cfm and setback heating and cooling setpoint temperatures shall be maintained.
+c.	When ceiling occupancy sensor indicates that a room is occupied, regardless of building operating hours, the volume setpoint shall revert to occupied volume setpoints and Normal setpoint temperatures shall be maintained.
+d.	Where multiple spaces are served by a single air terminal box, all spaces served by that box must be vacant prior to reducing airflow and reducing temperatures to standby or setback setpoints. When any one space served by the air terminal box is occupied, regardless of building operating hours, then normal airflow and setpoint temperatures shall be maintained.
+2.  Presence button on room stat shall put room into occupied mode for 90 min. (adj).  
+
+J.	Exhaust Air Tracking: Exhaust airflow shall be continuously measured through the BAS.  The exhaust terminal device shall modulate airflow as required to track supply airflow serving the space plus/minus any offset airflow as indicated on plans and schedules.  Where there are more supply air terminal devices serving a group of spaces than exhaust air terminals, the control system shall sum the supply airflows within the zones served by the supply air terminals to track the exhaust airflow with the overall supply airflow plus / minus any offset airflow as indicated on plans or schedules.
+

@@ -1,0 +1,63 @@
+MANIFOLD LAB EXHAUST FAN SYSTEMS (HRU-1) - CONTROL SEQUENCE) -(PER SPEC 230993.3.9)
+
+A.	General: 
+1.	BAS shall control the exhaust system and equipment and provide monitoring and diagnostic information for management purposes.
+2.	System shall use the campus global Outdoor air temperature for all instances of outdoor air. In the case that the global outdoor air temperature point fails use the local OAT sensor in the AHU ductwork.
+3.	There shall be a Clear all virtual point located on the graphic that allows the user to restart the unit after shutdown by safety or maintenance.
+4.	Exhaust air humidity sensors are used for building humidity calculations for the AHU humidifiers.
+5.	If all AHU supply fan status’ reads zero (no fan status), set all Exhaust fans to minimum speed.
+
+B.	Fan Control: BAS shall control the starting and stopping of the exhaust fans as follows:
+1.	Start/Stop: Each exhaust fan shall be started and stopped through the BAS. The lead fan (fan with lowest accumulated runtime) shall operate continuously.
+2.	The BAS shall accumulate fan runtimes and shall automatically rotate lead and lag fans on a weekly (FA) basis so that the lead fan has the least operating hours and the lag fan has the most operating hours.
+3.	Definition of lead and lag fans shall be manually definable through the BAS.
+4.	Proof: Current sensor shall prove fan operation and use the status indication to accumulate runtime. Upon fan failure, BAS shall report a Level 1 alarm. Upon failure of normal power, alarm shall be suppressed.
+5.	Provide lead-lag software to select lead fan. If fan is signaled to start and does not start within 20 seconds (FA) of start command or if operating fan fails as proven by current switch or if VFD fails, the pump shall be de-energized, a critical alarm shall be generated at the BAS, and the 1st lag fan shall start after a 30 second (FA) delay.  The failed fan shall remain locked out until manually reset through the BAS.  The lag fans shall be energized / de-energized based on fan staging control as outlined below.
+6.	VSD Control:
+a.	On start, all (2) fans will ramp to 40% (FA) speed until the isolation damper is proven open. Once the damper is proven, the VSD shall ramp to speed within adjustable acceleration limits. When commanded to stop the VSD shall ramp down within adjustable deceleration limits. BAS shall monitor a common alarm output from the drive and enunciate a level 2 alarm when an alarm is indicated.
+b.	Fans shall be variable volume and shall modulate together to maintain exhaust air plenum static pressure setpoint. If the exhaust air plenum static pressure setpoint is not maintained, the fans shall ramp up to maintain setpoint. If the exhaust air plenum static pressure is above setpoint (more negative) the fans shall ramp down. 
+1). If associated AHU’s are shut down the exhaust air plenum static pressure shall be reset to be less negative so that the building does not become overly negative. Control Contractor shall work in association with Test and Balance contractor to determine actual required static pressure setpoint. Setpoint shall result in door opening forces that exceed the code allowable force.
+c. Upon failure of (1) exhaust fan, the next fan in the lead/lag sequence shall start and ramp up to meet the static pressure setpoint. An alarm shall be activated. Once the failed fan is fixed and the software reset button clicked, the initial failed fan shall resume its running position as the lead fan.
+
+7.	Fan Staging
+a.	Quantity of fans operating shall be limited such that the discharge velocity exiting the 42 round exhaust stacks does not fall below 1500 fpm. Contractor shall work with the Test and Balance contractor to determine the minimum fan speed at which fans should be staged to maintain exhaust stack discharge velocity. The airflow volumes listed below correspond to 1500 fpm discharge velocity.
+1). 1 fan: No less than 15,000 cfm
+2). 2 fans: No less than 30,000 cfm
+3). 3 fans: No less than 45,000 cfm
+4). 4 fans: No less than 60,000 cfm
+b.	Initial fan start-up sequence enables (2) exhaust fans. The 1st lag fan (fan with next-least cumulative runtime) shall be energized based on exhaust air plenum static pressure.  Whenever static pressure setpoint in the exhaust air plenum cannot be maintained with the lead fans operating at 100% (FA) speed for five minutes (FA), the 1st lag fan shall be energized. The lead fans shall ramp down speed while the lag fan simultaneously increases speed.  Once all fans are operating at the same speed, they shall operate in tandem at the same speed to share the load.  On decreasing load, all fans shall simultaneously slow their speed to maintain differential pressure setpoint at all sensing locations.  If all fans are operating at 40% (FA) speed for five minutes (FA), the fan with the most accumulated runtime shall be de-energized and the other fans shall operate to maintain static pressure setpoint. Contractor shall work with Test and Balance contractor to determine the minimum fan speed at which fans should be staged to maintain exhaust stack discharge velocity.
+c.	The same sequence shall apply for staging the 2nd lag fan.
+d.	Whenever a fan is started, fan shall operate for a minimum of 5 minutes (FA) before the fan is allowed to stop.  Whenever a fan is de-energized, the fan shall not be enabled to re-start for a minimum of 5 minutes (FA).
+e.	Minimum fan speed shall be 25% or 15 Hz (FA).
+
+C.	Isolation Damper: Whenever a fan is energized, BAS shall open the associated isolation dampers after associated exhaust fan has ramped up to min speed (set by TAB). The exact fan speed shall be determined during commissioning and TAB. Whenever the fan is commanded off or fails, the damper shall close.
+
+D.	Air Flow Measurement: Provide air flow measuring stations as shown on the control drawings. Flow shall be provided as an analog input (AI) to the BAS for control.
+
+E.	Bypass Mode:
+1.	Bypass mode shall be used for HRU maintenance including filter replacement, coil cleaning, etc. In bypass mode, all exhaust air will bypass the exhaust filters and heat recovery coil.
+2.	Bypass mode shall be enabled and disabled manually through the BAS. BAS graphics shall include toggle switch to put HRU-1 into bypass mode.
+3.	When bypass mode is enabled the isolation control dampers upstream of the exhaust filters and downstream of the heat recovery coil shall close. The bypass damper shall open. Position of each damper shall be proved by end switch and visible at the BAS.
+4.	When bypass mode is disabled the isolation control dampers upstream of the exhaust filters and downstream of the heat recovery coil shall open. The bypass damper shall close. Position of each damper shall be proved by end switch and visible at the BAS.
+
+F.	Low Limit: Fan system shall be shut down if the pressure at the fan manifold goes below the low limit of negative 5 inches w.g. (FA) as measured by a duct mounted differential pressure switch. Fan shall be locked out until manually restarted, and the BAS shall enunciate an alarm.
+
+G.	Heat Recovery Coil: Heat recovery coil is provided on the general lab exhaust system (HRU-1). Refer to the heat recovery water system control sequence for more information.
+
+H.	Filter Differential Pressure: A differential pressure sensor shall be provided to measure drop across the filter and input the value as an AI into the BAS.
+
+I.	Fan Energy Use: Instantaneous fan energy use, in units of kW, shall be output to the BAS from the VSD's associated with the exhaust fans. The BAS shall trend and totalize this energy use on a monthly basis.
+
+J.	Filter Change / Maintenance:  A maintenance switch for changing the HRU filters shall will be mounted on the side of the AHU near the filter access.  When pressed this switch will initiate the HRU Bypass mode (see E. above).  A differential pressure switch will sense that the HRU is isolated and activate a green light to indicate that the HRU is safe to enter. Once the filters are changed, the switch shall be turned to be reset. Once the maintenance switch is reset, The AHU shall be restarted to normal operation.
+
+K.	Safety / Failure:  When one exhaust fan fails, the next fan in the line should start and and alarm activated. Once the failed fan is fixed and the software reset button clicked, the initial failed fan shall resume its running position as the lead fan.
+
+
+SMOKE/FIRE ALARM MODE - CONTROL SEQUENCE) -(PER SPEC 230993.3.10)
+
+Smoke Detectors in Ductwork: 
+2. Upon the Fire alarm activation the air handling units (AHU-1 thru 3) shall stop, AHU smoke/isolation dampers shall close, outside air dampers shall close and static pressure reset sequence on the HRU-1 exhaust fans shall be enabled. The units shall be re-started manually through BAS via master reset button. The AHUs shall shut down even when AHU drive is in bypass.
+B.	Smoke/ Isolation Dampers:
+2.	Smoke/isolation dampers shall close on signal from Fire Alarm Control Panel indicating alarm in damper’s associated duct mounted smoke detector. Air handling unit shall have manual restart through the BAS. Wire auxiliary contact on smoke/isolation damper to BAS for status indication.
+3.	Refer to AHU control sequences for interlocking of Smoke/Isolation dampers with AHU fans.
+

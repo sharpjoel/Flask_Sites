@@ -1,0 +1,5 @@
+Building Lighting Control
+
+Siemens to provide BACnet integration to the lighting panel meter.  The meter is to be furnished by others.  Siemens will monitor power usage at the meter.
+
+Where shown on contract drawings, Siemens will hardwire to dry contacts on room occupancy sensors (furnished by others). See Occupancy Control section of terminal box sequences for more details on this control.

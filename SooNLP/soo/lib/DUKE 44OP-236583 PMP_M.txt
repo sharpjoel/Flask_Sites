@@ -1,0 +1,20 @@
+ELEVATOR SUMPS - CONTROL SEQUENCE -(PER SPEC 230993.3.7)
+
+A. The sanitary and elevator sump pumps have a packaged control system as specified by equipment manufacturer in Section 22 13 00 – Sanitary Waste and Storm Drainage System.  This contractor shall be responsible for installing and connecting controls required which are not factory installed and wired by equipment manufacturer and are not specified to be wired by Div. 22 Contractor.  This shall include providing control wiring to the equipment control panel for monitoring equipment operation and alarming through the BAS for fault condition.
+
+
+Pump controls are to be furnished by others.
+
+Sewerage Ejector Pump (per Duke Standard):
+-Pumps are controlled by the standalone pump controller.
+-Controller automatically switches Lead/Lag Pumps after each start/stop cycle
+-The BAS monitors individual pump status along with high level float alarm.
+-The BAS sends and email notification upon single pump failure (loss of redundancy).
+-The BAS generates an alarm to the RENO pager upon pump failure during dual pump operation
+-The BAS generates an alarm to the RENO pager upon activation of High Level Alarm.
+
+
+Elevator Pit Pump:
+-Pumps are controlled by the standalone pump controller.
+- The BAS will monitor and alarm a high water point
+

@@ -1,0 +1,13 @@
+FCU 4-Pipe CW and HW Valves Application Template 14051. The controller modulates separate heating coil valve (HclVlvPos) and cooling coil valve (CclVlvPos) in the fan coil unit to maintain room temperature heating setpoint (SpH) and cooling setpoint (SpC). The fan coil unit also has a fan (Fan1Spd) to circulate room air. In order for the fan coil unit to work properly, the central plant must provide chilled and hot water. Outside air temperature (TOa) is provided by the central automation system. 
+
+FAN COIL UNITS (HEATING AND COOLING) - CONTROL SEQUENCE -(PER SPEC 230993.3.5)
+
+A.	Space temperature sensor shall energize supply fan and modulate 2-way control valve (FO) on hot water coil and 2-way control valve on cooling coil (FC) to maintain space temperature setpoint of 75 F (adj).  Valves shall be sequenced so that cooling coil valve shall not open until heating coil valve is closed and vice versa. When there is no call for heating or cooling the fan shall be off.
+B.	Fan coil units shall be provided with a secondary drain pan with float switch. When float switch is activated (ie: high water level in secondary drain pan) the unit fan shall be de-energized, the chilled water valve shall be commanded closed and an alarm shall be generated at the BAS.
+C.	Current sensing at supply fan motor shall be used to prove flow.
+
+Alarming (Telecom rooms only):
+-Alarm shall be generated if the temperature is +/- 5 degrees F off room setpoint for more than 10 minutes.
+-Alarm shall be generated if the float pan switch is activated.
+-Alarm shall be generated if the supply fan is commanded on but not proven at the status switch.
+

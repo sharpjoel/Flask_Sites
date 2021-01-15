@@ -15,7 +15,7 @@ short_docs = []
 considerations = []
 
 # path to the folder with existing sequences
-soopath = "soo/"
+soopath = "soo/lib/"
 
 arr_txt = [x for x in os.listdir(soopath) if x.endswith(".txt")]
 for txt in range(0,len(arr_txt)):
