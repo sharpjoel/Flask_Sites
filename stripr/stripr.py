@@ -5,8 +5,8 @@ from striprtf.striprtf import rtf_to_text
 
 path = "D:/UserData/Nextcloud/Programming/Flask_Sites/SooNLP/soo/lib/"
 rtfpath = "D:/UserData/Nextcloud/Programming/Flask_Sites/SooNLP/soo/rtf/"
-jobsite = "DUKE"
-jobnumber = "44OP-236583"
+jobsite = " "
+jobnumber = " "
 
 fileprefix = path + jobsite + " " + jobnumber + " "
 

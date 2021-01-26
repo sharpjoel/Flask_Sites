@@ -29,6 +29,7 @@ for txt in range(0,len(arr_txt)):
                 file_docs.append(line)
 
         with open (soopath + arr_txt[txt]) as f:
+        #with open(soopath + 'DUKE 44OP-236583 ACB1.txt') as f:
             liblen = f.read()
             tokens2 = sent_tokenize(liblen)
             for line in tokens2:
@@ -41,8 +42,8 @@ for txt in range(0,len(arr_txt)):
             long_docs = file2_docs
             short_docs = file_docs
 
-        # print(len(testlen))
-        # print(len(liblen))
+        #print(len(testlen))
+        #print(len(liblen))
 
         gen_docs = [[w.lower() for w in word_tokenize(text)]for text in long_docs]
         dictionary = gensim.corpora.Dictionary(gen_docs)
